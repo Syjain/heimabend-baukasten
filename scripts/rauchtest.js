@@ -19,13 +19,11 @@
                     (zusatz !== undefined ? "  [" + zusatz + "]" : ""));
   }
   function zuruecksetzen() {
-    ["fStufe", "fDauer", "fOrt", "fVorbereitung"].forEach(function (id) {
-      document.getElementById(id).value = "";
-    });
-    document.getElementById("fOhneMaterial").checked = false;
+    // Die App-eigene Funktion benutzen, damit der Test nicht vergisst,
+    // neue Filterfelder mitzuleeren.
     document.getElementById("suche").value = "";
-    pfad = { typ: "", kategorie: "", unterkategorie: "" };
-    aktualisiere();
+    pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+    setzeFilterZurueck();
   }
 
   // --- Daten ---
@@ -203,6 +201,63 @@
     pruefe("Baustein landet im Einstiegsplatz", plan.einstieg === einSpiel.id, plan.einstieg);
   }
   zeigeAnsicht("bausteine");
+
+  // --- Abkürzungen nach dem Platz im Abend ---
+  zuruecksetzen();
+  var abschlussKachel = Array.prototype.filter.call(
+    document.querySelectorAll("#kacheln .kachel"),
+    function (k) { return /Abschluss/.test(k.textContent); })[0];
+  pruefe("Startseite bietet 'Zum Abschluss'", !!abschlussKachel);
+  if (abschlussKachel) {
+    abschlussKachel.click();
+    pruefe("'Zum Abschluss' zeigt nur Abschlussspiele",
+           gefiltert.length > 50 && gefiltert.every(function (e) {
+             return e.slots.indexOf("abschluss") > -1;
+           }), gefiltert.length);
+  }
+  zuruecksetzen();
+
+  // --- Versteckte Bereiche sind wirklich weg ---
+  pruefe("Sortiermenü ist auf der Kachelseite nicht sichtbar",
+         getComputedStyle(document.getElementById("listenkopf")).display === "none");
+
+  // --- Stichworte in der Detailansicht ---
+  zeigeDetail(NACH_ID["eig-knoten-olympiade"] || ALLE[0]);
+  var wortChips = document.querySelectorAll("#detailInhalt .chip[data-wort]");
+  pruefe("Detailansicht bietet Stichworte", wortChips.length > 0, wortChips.length);
+  if (wortChips.length) {
+    var wort = wortChips[0].getAttribute("data-wort");
+    pruefe("Stichwort ist nicht der eigene Titel",
+           wort.toLowerCase() !== "knoten-olympiade", wort);
+    wortChips[0].click();
+    pruefe("Stichwort füllt die Suche",
+           document.getElementById("suche").value === wort && gefiltert.length > 0,
+           gefiltert.length + " Treffer für " + wort);
+  }
+  zuruecksetzen();
+
+  // --- Auswahl-Dialog: erst lesen, dann nehmen ---
+  plan = { einstieg: null, haupt: [null, null], abschluss: null };
+  zeichnePlan();
+  oeffneAuswahl(SLOTS[0], 0, true);
+  pruefe("Karten im Auswahl-Dialog haben 'Regeln lesen' und 'In den Plan'",
+         document.querySelectorAll("#auswahlListe .kartenfuss").length > 0 &&
+         document.querySelectorAll("#auswahlListe .kartenfuss .knopf").length >= 2);
+  pruefe("Chip-Reihen sind zugeklappt", !document.getElementById("auswahlEingrenzen").open);
+  var vorschlagsstreuung = auswahlListe.slice(0, 5).map(function (e) {
+    return e.titel.charAt(0).toUpperCase();
+  });
+  pruefe("Vorschläge fangen nicht alle mit demselben Buchstaben an",
+         new Set(vorschlagsstreuung).size > 1, vorschlagsstreuung.join(""));
+  schliesseUeberlagerung(document.getElementById("auswahl"), true);
+
+  // --- Material ---
+  pruefe("kein Baustein trägt 'keines' als Material",
+         !ALLE.some(function (e) {
+           return (e.material || []).some(function (m) {
+             return /^(kein(e|es)?|ohne material|nichts)$/i.test(m.trim());
+           });
+         }));
 
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);

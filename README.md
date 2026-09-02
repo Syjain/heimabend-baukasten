@@ -19,7 +19,11 @@ aus denen sich ein ca. zweistündiger Heimabend zusammenstellen lässt.
 | eigene Ideen (`data/eigene/`) | 61 | CC BY-SA 4.0 |
 | DPB-Probenbuch (`data/quellen/probenbuch/`) | 28 | Rechte beim Projektinhaber |
 
-Nach Typ: 766 Spiele, 225 Projekte, 35 Proben, 18 Aktivitäten.
+Nach Typ: 753 Spiele, 232 Projekte, 35 Proben, 18 Aktivitäten.
+
+`data/redaktion.json` hält fest, was aus den Quellen herausfällt, umbenannt oder
+korrigiert wird – mit Begründung je Eintrag. Ohne diese Datei holt der nächste
+Importlauf alles wieder herein, weil die Import-Skripte idempotent sind.
 
 Neu bauen:
 
@@ -39,6 +43,14 @@ ist ein kleiner Webserver:
 
 Danach `http://localhost:8000/web/index.html` aufrufen. Was die App kann, steht in
 `web/README.md`.
+
+Nach Änderungen an der App: `scripts/rauchtest.js` in die Browser-Konsole
+kopieren, das prüft 46 Punkte auf einmal (Anleitung oben in der Datei).
+
+## Was noch offen ist
+- Eigene Ideen in der App erfassen – Entwurf in `docs/eigene-ideen-erfassen.md`
+- Die Abbildungen des Probenbuchs (Knoten, Zeltbau, Karten) fehlen in der
+  Textfassung; betroffene Proben tragen einen Hinweis
 
 ## Lizenz
 Eigene Inhalte: CC BY-SA 4.0 (Vorschlag). Fremde Inhalte je Element unter der angegebenen Quell-Lizenz.
