@@ -9,189 +9,332 @@
 <style>
 /* ------------------------------------------------------------------
    Heimabend-Baukasten – Oberfläche
-   Mobile zuerst: alles ist auf ein Handy im Gruppenheim ausgelegt.
-   Kein Framework, keine Schriftarten von außen, keine Bilder.
+
+   Mobile zuerst: alles ist auf ein Handy im Gruppenheim ausgelegt,
+   oft einhändig bedient und bei schlechtem Licht gelesen.
+   Kein Framework, keine Schriften oder Bilder von fremden Servern.
    ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------- Farben & Maße */
 :root {
-  --grund: #f6f5f1;
-  --karte: #ffffff;
-  --text: #21201c;
-  --leise: #6b6862;
-  --linie: #c9c3b6;
-  --akzent: #2f5d3a;          /* Pfadfindergrün */
+  color-scheme: light;
+  --grund: #f4f2ec;           /* warmes Papier */
+  --grund-tief: #eae6dc;      /* für abgesetzte Flächen */
+  --karte: #fffefb;
+  --text: #1e1d19;
+  --leise: #67635a;
+  --linie: #d8d2c4;
+  --linie-stark: #b9b1a0;
+  --akzent: #2b5c39;          /* Pfadfindergrün */
+  --akzent-hell: #3d7a4e;
   --akzent-text: #ffffff;
-  --akzent-leicht: #e6efe7;
-  --warn: #a8531b;
-  --schatten: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.05);
-  --rund: 12px;
+  --akzent-leicht: #e4eee6;
+  --warn: #9c4a15;
+  --warn-leicht: #f7ead9;
+
+  --schatten: 0 1px 1px rgba(30,29,25,.04), 0 2px 8px rgba(30,29,25,.05);
+  --schatten-hoch: 0 2px 4px rgba(30,29,25,.06), 0 8px 24px rgba(30,29,25,.08);
+
+  --rund: 14px;
+  --rund-klein: 9px;
+  --r1: 4px;  --r2: 8px;  --r3: 12px;  --r4: 16px;  --r5: 24px;  --r6: 32px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --grund: #16181a;
-    --karte: #212427;
-    --text: #e9e7e2;
-    --leise: #a2a09a;
-    --linie: #4d5359;
-    --akzent: #7fb98c;
-    --akzent-text: #10231a;
-    --akzent-leicht: #23332a;
-    --warn: #e0a06a;
-    --schatten: 0 1px 2px rgba(0,0,0,.5);
+    color-scheme: dark;
+    --grund: #15171a;
+    --grund-tief: #101215;
+    --karte: #1f2226;
+    --text: #ebe8e2;
+    --leise: #a5a19a;
+    --linie: #383d43;
+    --linie-stark: #565d65;
+    --akzent: #86c095;
+    --akzent-hell: #9dd0aa;
+    --akzent-text: #0e2117;
+    --akzent-leicht: #223129;
+    --warn: #e2a771;
+    --warn-leicht: #33251a;
+    --schatten: 0 1px 2px rgba(0,0,0,.45);
+    --schatten-hoch: 0 4px 16px rgba(0,0,0,.55);
   }
 }
+
 * { box-sizing: border-box; }
-/* Ohne diese Regel ist beim Bedienen mit der Tastatur nicht zu erkennen,
-   wo man gerade steht – auf dem grünen Knopf war der Standardring kaum sichtbar. */
-:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; border-radius: 4px; }
-.knopf.stark:focus-visible, .chip.aktiv:focus-visible { outline-color: var(--text); }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-}
+/* Wichtig: .trefferzeile und .mehr setzen display:flex und würden damit das
+   hidden-Attribut überstimmen - Sortiermenü und "Weitere anzeigen" blieben
+   dann auch auf den Kachelseiten stehen. */
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--grund);
   color: var(--text);
-  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .4em; }
+h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .4em; font-weight: 650; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 
-/* ---------------------------------------------------------- Grundgerüst */
-.huelle { max-width: 720px; margin: 0 auto; padding: 0 12px 96px; }
+/* Ohne diese Regel ist beim Bedienen mit der Tastatur nicht zu erkennen,
+   wo man gerade steht – auf dem grünen Knopf war der Standardring kaum sichtbar. */
+:focus-visible {
+  outline: 3px solid var(--akzent);
+  outline-offset: 2px;
+  border-radius: var(--r1);
+}
+.knopf.stark:focus-visible, .chip.aktiv:focus-visible { outline-color: var(--text); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Kleine Überschrift über einer Gruppe – an vielen Stellen wiederverwendet */
+.marke {
+  font-size: .7rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--leise);
+}
+
+/* ----------------------------------------------------------- Grundgerüst */
+.huelle { max-width: 720px; margin: 0 auto; padding: 0 var(--r3) 96px; }
 
 header.kopf {
   position: sticky; top: 0; z-index: 20;
-  background: var(--grund);
+  background: color-mix(in srgb, var(--grund) 92%, transparent);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linie);
   padding-top: env(safe-area-inset-top);
 }
-.kopf-innen { max-width: 720px; margin: 0 auto; padding: 10px 12px 0; }
-.kopf h1 { font-size: 1.15rem; margin: 0 0 8px; letter-spacing: -.01em; }
-.kopf h1 span { color: var(--leise); font-weight: 400; font-size: .8rem; display: block; }
-
-.reiter { display: flex; gap: 4px; }
-.reiter button {
-  flex: 1; padding: 10px 8px; border: 0; border-bottom: 3px solid transparent;
-  background: none; color: var(--leise); font-weight: 600; font-size: .95rem;
+@supports not (backdrop-filter: blur(1px)) { header.kopf { background: var(--grund); } }
+.kopf-innen { max-width: 720px; margin: 0 auto; padding: var(--r3) var(--r3) 0; }
+.kopf h1 {
+  font-size: 1.06rem; margin: 0 0 var(--r3); letter-spacing: -.015em;
+  display: flex; align-items: baseline; gap: var(--r2);
 }
-.reiter button[aria-current="page"] { color: var(--text); border-bottom-color: var(--akzent); }
+.kopf h1 span {
+  color: var(--leise); font-weight: 400; font-size: .78rem; letter-spacing: 0;
+}
+@media (max-width: 400px) { .kopf h1 span { display: none; } }
+
+/* Reiter als abgesetzte Leiste statt Unterstrich */
+.reiter {
+  display: flex; gap: var(--r1); padding: var(--r1);
+  background: var(--grund-tief); border-radius: var(--rund);
+  margin-bottom: var(--r3);
+}
+.reiter button {
+  flex: 1; padding: 10px 8px; min-height: 44px; border: 0; border-radius: var(--rund-klein);
+  background: none; color: var(--leise); font-weight: 600; font-size: .92rem;
+  transition: background .15s, color .15s;
+}
+.reiter button[aria-current="page"] {
+  color: var(--text); background: var(--karte); box-shadow: var(--schatten);
+}
 /* Im Querformat fraßen Kopf und Summe zusammen 79 % der Höhe. */
 @media (max-height: 560px) {
+  .kopf h1 { font-size: .98rem; margin-bottom: var(--r2); }
   .kopf h1 span { display: none; }
-  .kopf h1 { font-size: 1rem; }
+  .kopf-innen { padding-top: var(--r2); }
+  .reiter { margin-bottom: var(--r2); }
 }
 
 /* ---------------------------------------------------------- Suche/Filter */
-.suchzeile { display: flex; gap: 8px; margin: 14px 0 8px; }
+.suchzeile { display: flex; gap: var(--r2); margin: var(--r4) 0 var(--r2); }
 .suchzeile input[type="search"] {
-  flex: 1; min-width: 0; padding: 11px 12px;
+  flex: 1; min-width: 0; padding: 12px 14px; min-height: 46px;
   border: 1px solid var(--linie); border-radius: var(--rund);
   background: var(--karte); -webkit-appearance: none;
+  transition: border-color .15s;
 }
-.knopf {
-  padding: 11px 14px; border: 1px solid var(--linie); border-radius: var(--rund);
-  background: var(--karte); font-weight: 600; white-space: nowrap;
-}
-.knopf.stark { background: var(--akzent); color: var(--akzent-text); border-color: var(--akzent); }
-.knopf.klein { padding: 11px 13px; min-height: 44px; font-size: .85rem; font-weight: 500; }
-.knopf:disabled { opacity: .45; cursor: default; }
+.suchzeile input[type="search"]:focus { border-color: var(--akzent); }
 
-details.filter { border: 1px solid var(--linie); border-radius: var(--rund); background: var(--karte); }
+.knopf {
+  padding: 12px 16px; min-height: 46px;
+  border: 1px solid var(--linie); border-radius: var(--rund);
+  background: var(--karte); font-weight: 600; white-space: nowrap;
+  transition: background .15s, border-color .15s;
+}
+.knopf:hover { border-color: var(--linie-stark); }
+.knopf.stark {
+  background: var(--akzent); color: var(--akzent-text); border-color: var(--akzent);
+}
+.knopf.stark:hover { background: var(--akzent-hell); border-color: var(--akzent-hell); }
+.knopf.klein { padding: 11px 13px; min-height: 44px; font-size: .85rem; font-weight: 550; }
+.knopf:disabled { opacity: .4; cursor: default; }
+
+details.filter {
+  border: 1px solid var(--linie); border-radius: var(--rund);
+  background: var(--karte); box-shadow: var(--schatten);
+}
 details.filter > summary {
-  padding: 11px 14px; cursor: pointer; font-weight: 600; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px var(--r4); min-height: 46px; cursor: pointer;
+  font-weight: 600; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: var(--r2);
 }
 details.filter > summary::-webkit-details-marker { display: none; }
-details.filter > summary::after { content: "▾"; color: var(--leise); }
-details.filter[open] > summary::after { content: "▴"; }
-.filter-raster {
-  padding: 0 14px 14px;
-  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px;
+details.filter > summary::after {
+  content: ""; flex: none; width: 8px; height: 8px; margin-left: auto;
+  border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise);
+  transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s;
 }
-@media (max-width: 400px) { .filter-raster { grid-template-columns: 1fr; } }
-.feld { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.feld label { font-size: .75rem; color: var(--leise); font-weight: 600;
-  text-transform: uppercase; letter-spacing: .03em; }
+details.filter[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+details.filter > summary span:last-child:not(:first-child) {
+  font-size: .78rem; font-weight: 600; color: var(--akzent);
+}
+.filter-raster {
+  padding: 0 var(--r4) var(--r4);
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--r3);
+}
+@media (max-width: 359px) { .filter-raster { grid-template-columns: minmax(0,1fr); } }
+.feld { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.feld label { font-size: .7rem; color: var(--leise); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; }
 .feld select {
-  padding: 9px 10px; min-height: 44px; font-size: 16px;
-  border: 1px solid var(--linie); border-radius: 8px;
+  padding: 10px 12px; min-height: 44px; font-size: 16px;
+  border: 1px solid var(--linie); border-radius: var(--rund-klein);
   background: var(--grund); width: 100%;
 }
-.schalter { display: flex; align-items: center; gap: 8px; grid-column: 1 / -1; min-height: 44px; }
-.schalter input { width: 24px; height: 24px; flex: none; accent-color: var(--akzent); }
+.schalter {
+  display: flex; align-items: center; gap: 10px;
+  grid-column: 1 / -1; min-height: 44px;
+}
+.schalter input { width: 22px; height: 22px; flex: none; accent-color: var(--akzent); }
 .schalter label { text-transform: none; font-size: .9rem; color: var(--text);
   font-weight: 400; letter-spacing: 0; padding: 11px 0; }
 .filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
 
-/* ------------------------------------------------------------ Brotkrumen */
-.pfad { display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
-  margin: 12px 2px 10px; font-size: .85rem; }
-.pfad button { background: none; border: 0; padding: 10px 8px; min-height: 44px;
-  color: var(--akzent); font-weight: 600; font-size: .85rem; }
-.pfad .jetzt { color: var(--leise); font-weight: 600; padding: 10px 8px; }
-.pfad .pfeil { color: var(--leise); }
+/* -------------------------------------------------------------- Brotkrumen */
+.pfad {
+  display: flex; flex-wrap: wrap; align-items: center;
+  margin: var(--r3) 2px 0; font-size: .85rem;
+}
+.pfad button {
+  background: none; border: 0; padding: 10px 6px; min-height: 44px;
+  color: var(--akzent); font-weight: 600; font-size: .85rem;
+  border-radius: var(--r1);
+}
+.pfad button:hover { text-decoration: underline; }
+.pfad .jetzt { color: var(--text); font-weight: 600; padding: 10px 6px; }
+.pfad .pfeil { color: var(--linie-stark); padding: 0 2px; }
 
-/* --------------------------------------------------------------- Kacheln */
-.kacheln { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8px; }
-@media (min-width: 560px) { .kacheln { grid-template-columns: 1fr 1fr 1fr; } }
+/* ----------------------------------------------------------------- Kacheln */
+.kacheln {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--r2);
+}
+@media (min-width: 560px) { .kacheln { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 .kachel {
-  text-align: left; background: var(--karte); border: 1px solid var(--linie);
-  border-radius: var(--rund); padding: 14px; box-shadow: var(--schatten);
-  display: flex; flex-direction: column; gap: 2px; min-height: 76px;
+  position: relative; overflow: hidden;
+  text-align: left; background: var(--karte);
+  border: 1px solid var(--linie); border-radius: var(--rund);
+  padding: var(--r4) var(--r4) var(--r4) var(--r5);
+  box-shadow: var(--schatten);
+  display: flex; flex-direction: column; gap: 3px; min-height: 84px;
   justify-content: center;
+  transition: border-color .15s, box-shadow .15s, transform .1s;
 }
+/* schmaler Streifen als ruhiger Farbakzent */
+.kachel::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--akzent); opacity: .5;
+}
+.kachel:hover { border-color: var(--linie-stark); box-shadow: var(--schatten-hoch); }
 .kachel:active { transform: scale(.99); }
-.kachel .name { font-weight: 600; font-size: .98rem; }
-.kachel .zahl { font-size: .8rem; color: var(--leise); }
-.kachel.gross { grid-column: 1 / -1; flex-direction: row; align-items: center;
-  justify-content: space-between; min-height: 0; padding: 12px 14px; }
-.kachel.gross .name { font-size: .92rem; color: var(--akzent); }
+.kachel .name { font-weight: 650; font-size: .97rem; letter-spacing: -.01em; }
+.kachel .zahl { font-size: .78rem; color: var(--leise); }
+.kachel.gross {
+  grid-column: 1 / -1; flex-direction: row; align-items: center;
+  justify-content: space-between; min-height: 0; padding: 13px var(--r4);
+  background: none; box-shadow: none; border-style: dashed;
+}
+.kachel.gross::before { display: none; }
+.kachel.gross .name { font-size: .9rem; color: var(--akzent); }
 
-/* ---------------------------------------------------------- Trefferzeile */
+/* Symbol für die vier Bausteinarten (nur auf der obersten Ebene) */
+.kachel.mitzeichen { padding-left: var(--r4); flex-direction: row; align-items: center;
+  gap: var(--r3); min-height: 92px; }
+.kachel.mitzeichen .zeichen { flex: none; color: var(--akzent); opacity: .9; }
+.kachel.mitzeichen .beschriftung { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+/* ------------------------------------------------------------ Trefferzeile */
 .trefferzeile {
-  display: flex; justify-content: space-between; align-items: center; gap: 10px;
-  margin: 14px 2px 8px; font-size: .85rem; color: var(--leise);
+  display: flex; justify-content: space-between; align-items: center; gap: var(--r3);
+  margin: var(--r3) 2px var(--r2); font-size: .84rem; color: var(--leise);
 }
+/* Kacheln haben nach der Brotkrume etwas mehr Luft nötig als die Liste */
+.kacheln:not(:empty) { margin-top: var(--r3); }
 .trefferzeile select {
-  border: 1px solid var(--linie); border-radius: 8px; background: var(--karte);
-  padding: 6px 8px; min-height: 44px; font-size: 16px; color: var(--text);
+  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  background: var(--karte); padding: 8px 10px; min-height: 44px;
+  font-size: 16px; color: var(--text); flex: none; max-width: 55%;
 }
 
-/* ---------------------------------------------------------------- Karten */
-.liste { display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 0; padding: 0; }
+/* ------------------------------------------------------------------ Karten */
+.liste {
+  display: flex; flex-direction: column; gap: var(--r2);
+  list-style: none; margin: 0; padding: 0;
+}
 .karte {
   width: 100%; text-align: left;
   background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: 12px 14px; box-shadow: var(--schatten);
+  padding: var(--r4); box-shadow: var(--schatten);
+  transition: border-color .15s, box-shadow .15s, transform .1s;
 }
+.karte:hover { border-color: var(--linie-stark); box-shadow: var(--schatten-hoch); }
 .karte:active { transform: scale(.995); }
-.karte h3 { font-size: 1rem; margin: 0 0 3px; }
-.karte p { margin: 0; font-size: .875rem; color: var(--leise);
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.merkmale { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.kartenkopf { display: flex; align-items: baseline; gap: var(--r3); }
+.karte h3 {
+  font-size: 1rem; margin: 0 0 var(--r1); flex: 1; min-width: 0;
+  letter-spacing: -.01em;
+}
+.kartenzeit {
+  flex: none; font-size: .78rem; font-weight: 650; color: var(--akzent);
+  white-space: nowrap; padding-top: 1px;
+}
+.karte p {
+  margin: 0; font-size: .87rem; color: var(--leise); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.merkmale { display: flex; flex-wrap: wrap; gap: 5px; margin-top: var(--r3); }
 .merkmal {
-  font-size: .72rem; padding: 2px 7px; border-radius: 999px;
+  font-size: .71rem; padding: 3px 9px; border-radius: 999px;
   border: 1px solid var(--linie); color: var(--leise);
   white-space: normal; max-width: 100%;
 }
-.merkmal.typ { background: var(--akzent-leicht); border-color: transparent;
-  color: var(--akzent); font-weight: 600; }
-.merkmal.zeit { background: var(--akzent-leicht); border-color: transparent;
-  color: var(--akzent); font-weight: 600; }
-.merkmal.offen { border-style: dashed; }
-@media (prefers-color-scheme: dark) {
-  .merkmal.typ, .merkmal.zeit { color: var(--text); }
+.merkmal.typ {
+  background: var(--akzent-leicht); border-color: transparent;
+  color: var(--akzent); font-weight: 650;
 }
+.merkmal.offen { border-style: dashed; }
+@media (prefers-color-scheme: dark) { .merkmal.typ { color: var(--text); } }
 
-.leer { text-align: center; color: var(--leise); padding: 36px 20px; }
-.leer button { background: none; border: 0; color: var(--akzent); font-weight: 600;
-  text-decoration: underline; padding: 11px 4px; min-height: 44px; }
-.mehr { margin: 12px 0; display: flex; justify-content: center; }
+.leer {
+  text-align: center; color: var(--leise); padding: var(--r6) var(--r5);
+  background: var(--karte); border: 1px dashed var(--linie); border-radius: var(--rund);
+}
+.leer button {
+  background: none; border: 0; color: var(--akzent); font-weight: 600;
+  text-decoration: underline; padding: 11px 4px; min-height: 44px;
+}
+.mehr { margin: var(--r3) 0; display: flex; justify-content: center; }
 
-/* ---------------------------------------------------------- Überlagerung */
+/* Ladezustand, bevor die Daten da sind */
+.laedt { display: grid; gap: var(--r2); grid-column: 1 / -1; }
+.laedt div {
+  height: 84px; border-radius: var(--rund); background: var(--karte);
+  border: 1px solid var(--linie); opacity: .55;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .laedt div { animation: pulsieren 1.6s ease-in-out infinite; }
+  .laedt div:nth-child(2) { animation-delay: .2s; }
+  .laedt div:nth-child(3) { animation-delay: .4s; }
+}
+@keyframes pulsieren { 0%,100% { opacity: .4; } 50% { opacity: .75; } }
+
+/* ------------------------------------------------------------ Überlagerung */
 .ueberlagerung {
   position: fixed; inset: 0; z-index: 50;
   background: var(--grund);
@@ -200,112 +343,189 @@ details.filter[open] > summary::after { content: "▴"; }
 }
 .ueberlagerung[hidden] { display: none; }
 .ueber-kopf {
-  position: sticky; top: 0; z-index: 5; background: var(--grund);
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--grund) 92%, transparent);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linie); padding-top: env(safe-area-inset-top);
-  display: flex; align-items: center; gap: 8px; padding-inline: 8px;
+  display: flex; align-items: center; gap: var(--r2); padding-inline: var(--r2);
 }
-.ueber-kopf .titel { font-weight: 600; flex: 1; min-width: 0; padding: 12px 0;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ueber-kopf button { background: none; border: 0; padding: 12px; font-size: 1rem;
-  font-weight: 600; color: var(--akzent); }
-.ueber-inhalt { max-width: 720px; margin: 0 auto; padding: 16px 14px 60px; }
-.ueber-inhalt h2 { font-size: 1.3rem; }
+@supports not (backdrop-filter: blur(1px)) { .ueber-kopf { background: var(--grund); } }
+.ueber-kopf .titel {
+  font-weight: 650; flex: 1; min-width: 0; padding: 13px 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ueber-kopf button {
+  background: none; border: 0; padding: 13px var(--r3); min-height: 46px;
+  font-size: .95rem; font-weight: 650; color: var(--akzent); border-radius: var(--r2);
+}
+.ueber-inhalt { max-width: 680px; margin: 0 auto; padding: var(--r5) var(--r4) 72px; }
+.ueber-inhalt h2 { font-size: 1.35rem; letter-spacing: -.02em; }
+.ueber-inhalt .anriss { color: var(--leise); margin: 0 0 var(--r2); font-size: .95rem; }
 
-.datenblatt { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 4px 14px;
-  margin: 14px 0; font-size: .9rem; }
+.datenblatt {
+  display: grid; grid-template-columns: auto minmax(0,1fr); gap: 7px var(--r4);
+  margin: var(--r5) 0; font-size: .9rem;
+  padding: var(--r4); background: var(--karte);
+  border: 1px solid var(--linie); border-radius: var(--rund);
+}
 .datenblatt dt { color: var(--leise); }
 .datenblatt dd { margin: 0; overflow-wrap: anywhere; }
 
-.text h4 { margin: 1.2em 0 .3em; font-size: 1rem; }
-.text p { margin: 0 0 .8em; }
-.text ul { margin: 0 0 .8em; padding-left: 1.2em; }
-.text li { margin-bottom: .25em; }
+.text { font-size: 1rem; line-height: 1.65; }
+.text h4 { margin: 1.4em 0 .35em; font-size: 1rem; color: var(--akzent); }
+@media (prefers-color-scheme: dark) { .text h4 { color: var(--akzent-hell); } }
+.text p { margin: 0 0 .85em; }
+.text ul { margin: 0 0 .85em; padding-left: 1.25em; }
+.text li { margin-bottom: .3em; }
+.text strong { font-weight: 650; }
 
-.kasten { border-radius: var(--rund); padding: 12px 14px; margin: 16px 0; font-size: .9rem; }
+.kasten {
+  border-radius: var(--rund); padding: var(--r4); margin: var(--r5) 0; font-size: .9rem;
+}
 .kasten.tipp { background: var(--akzent-leicht); }
-.kasten.quelle { border: 1px solid var(--linie); background: var(--karte); color: var(--leise); }
-.kasten.quelle a { color: inherit; }
+.kasten.quelle {
+  border: 1px solid var(--linie); background: var(--karte); color: var(--leise);
+  font-size: .84rem;
+}
+.kasten.quelle a { color: inherit; overflow-wrap: anywhere; }
 .kasten.dublette { border: 1px dashed var(--linie); background: none; color: var(--leise); }
-.kasten h4 { margin: 0 0 6px; font-size: .8rem; text-transform: uppercase;
-  letter-spacing: .04em; color: var(--leise); }
+.kasten h4 { margin: 0 0 var(--r2); font-size: .7rem; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--leise); font-weight: 700; }
 .kasten.tipp h4 { color: var(--akzent); }
-@media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--text); } }
-.kasten.dublette button { background: none; border: 0; padding: 11px 4px; min-height: 44px;
-  color: inherit; text-decoration: underline; font-size: inherit; }
+@media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--akzent-hell); } }
+.kasten.tipp .text { font-size: .92rem; line-height: 1.55; }
+.kasten.dublette button {
+  background: none; border: 0; padding: 11px 4px; min-height: 44px;
+  color: inherit; text-decoration: underline; font-size: inherit;
+}
 
-/* ------------------------------------------------------------ Chip-Reihen */
-.chipzeile { margin: 10px 0; }
-.planzeile { margin: 14px 0 4px; }
-.planzeile .chiptitel { font-size: .72rem; color: var(--leise); font-weight: 700;
-  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 5px; display: block; }
-.chipzeile .chiptitel { font-size: .72rem; color: var(--leise); font-weight: 700;
-  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 5px; }
+/* -------------------------------------------------------------- Chipreihen */
+.chipzeile { margin: var(--r3) 0; }
+.planzeile { margin: var(--r4) 0 var(--r2); }
+.chipzeile .chiptitel, .planzeile .chiptitel {
+  font-size: .7rem; color: var(--leise); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; display: block;
+}
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
-  padding: 11px 14px; min-height: 44px; border-radius: 999px; border: 1px solid var(--linie);
-  background: var(--karte); font-size: .82rem; color: var(--leise);
+  padding: 11px 14px; min-height: 44px; border-radius: 999px;
+  border: 1px solid var(--linie); background: var(--karte);
+  font-size: .82rem; color: var(--leise);
+  transition: border-color .15s, background .15s;
 }
-.chip.aktiv { background: var(--akzent); border-color: var(--akzent);
-  color: var(--akzent-text); font-weight: 600; }
-
-/* ---------------------------------------------------------------- Planer */
-.rahmen {
-  background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: 14px; margin: 14px 0 16px; box-shadow: var(--schatten);
+.chip:hover { border-color: var(--linie-stark); }
+.chip.aktiv {
+  background: var(--akzent); border-color: var(--akzent);
+  color: var(--akzent-text); font-weight: 650;
 }
-.rahmen h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
-  color: var(--leise); margin-bottom: 10px; }
-.rahmen .filter-raster { padding: 0; }
+.chip.mehrchips { border-style: dashed; color: var(--akzent); font-weight: 600; }
+.eingrenzen { margin: var(--r3) 0; }
+.eingrenzen > summary > span:last-child {
+  font-size: .78rem; font-weight: 500; color: var(--leise);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 55%;
+}
+#auswahlChips { padding: 0 var(--r4) var(--r3); }
+#auswahlChips .chipzeile:first-child { margin-top: 0; }
 
+/* ------------------------------------------------------------------ Planer */
+.rahmen { margin: var(--r4) 0 var(--r5); }
+.rahmen > summary > span:last-child {
+  font-size: .78rem; font-weight: 500; color: var(--leise);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 55%;
+}
+
+/* Ablauf als Zeitstrahl: die Reihenfolge ist der Kern des Heimabends */
+.plan-ablauf { position: relative; padding-left: 26px; }
+.plan-ablauf::before {
+  content: ""; position: absolute; left: 8px; top: 22px; bottom: 22px;
+  width: 2px; background: var(--linie); border-radius: 1px;
+}
 .slot {
+  position: relative;
   background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: 12px 14px; margin-bottom: 8px; box-shadow: var(--schatten);
+  padding: var(--r4); margin-bottom: var(--r2); box-shadow: var(--schatten);
 }
-.slot-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.slot-name { font-size: .75rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .04em; color: var(--leise); }
-.slot-dauer { font-size: .8rem; color: var(--leise); white-space: nowrap; }
-.slot-inhalt { margin-top: 6px; }
-.slot-inhalt .gewaehlt { font-weight: 600; }
-.slot-inhalt .kurz { font-size: .85rem; color: var(--leise); margin-top: 2px;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.slot-inhalt .frei { font-size: .85rem; color: var(--leise); margin-top: 2px; }
-.slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.slot.fest { background: none; box-shadow: none; border-style: dashed; }
+.slot::before {
+  content: ""; position: absolute; left: -23px; top: 20px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--akzent); box-shadow: 0 0 0 4px var(--grund);
+}
+.slot.fest {
+  background: none; box-shadow: none; border-style: dashed;
+}
+.slot.fest::before { background: var(--grund); border: 2px solid var(--linie-stark); }
 /* Der feste Slot lässt sich nicht öffnen – hier darf nichts abgeschnitten werden. */
 .slot.fest .kurz { display: block; overflow: visible; }
-.slot .quellzeile { font-size: .75rem; color: var(--leise); margin-top: 4px; }
+.slot.leer { border-style: dashed; }
+.slot.leer::before { background: var(--linie-stark); }
+
+.slot-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: var(--r2); }
+.slot-name {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--leise);
+}
+.slot-dauer { font-size: .8rem; color: var(--akzent); font-weight: 650; white-space: nowrap; }
+.slot.fest .slot-dauer, .slot.leer .slot-dauer { color: var(--leise); font-weight: 400; }
+.slot-inhalt { margin-top: 6px; }
+/* Der gewählte Baustein ist eine Schaltfläche, soll aber wie Text aussehen */
+.slot-oeffnen {
+  display: block; width: 100%; text-align: left;
+  background: none; border: 0; padding: 0; margin-top: 6px;
+  border-radius: var(--r2);
+}
+.slot-oeffnen:hover .gewaehlt { text-decoration: underline; }
+.slot-inhalt .gewaehlt { font-weight: 650; font-size: 1rem; letter-spacing: -.01em; }
+.slot-inhalt .kurz {
+  font-size: .86rem; color: var(--leise); margin-top: 3px; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.slot-inhalt .frei { font-size: .86rem; color: var(--leise); margin-top: 3px; }
+.slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--r3); }
+.slot .quellzeile { font-size: .75rem; color: var(--leise); margin-top: 5px; }
 
 .summe {
   position: sticky; bottom: 0; z-index: 10;
-  margin: 16px -12px 0; padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
-  background: var(--karte); border-top: 1px solid var(--linie);
+  margin: var(--r5) calc(-1 * var(--r3)) 0;
+  padding: var(--r3) var(--r3) calc(var(--r3) + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--karte) 94%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--linie);
 }
-.summe-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.summe-wert { font-size: 1.1rem; font-weight: 700; }
+@supports not (backdrop-filter: blur(1px)) { .summe { background: var(--karte); } }
+.summe-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: var(--r3); }
+.summe-wert { font-size: 1.1rem; font-weight: 700; letter-spacing: -.01em; }
 .summe-wert.knapp { color: var(--warn); }
-.balken { height: 6px; border-radius: 3px; background: var(--linie); margin: 8px 0 10px;
-  overflow: hidden; box-shadow: inset 0 0 0 1px var(--leise); }
-.balken i { display: block; height: 100%; background: var(--akzent); transition: width .2s; }
+.balken {
+  height: 6px; border-radius: 3px; background: var(--linie);
+  margin: var(--r2) 0 var(--r3); overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--linie-stark);
+}
+.balken i { display: block; height: 100%; background: var(--akzent); transition: width .25s; }
 .balken i.knapp { background: var(--warn); }
-/* Bei 320 px Breite brauchten die drei Knöpfe nebeneinander 309 von 296 px
-   und schoben die ganze Seite waagerecht weg. */
-.summe-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Bei 320 px brauchten drei Knöpfe nebeneinander 309 von 296 px. */
+.summe-knoepfe { display: flex; flex-wrap: wrap; gap: var(--r2); }
 .summe-knoepfe .knopf { flex: 1 1 auto; min-width: 0; text-align: center; }
 @media (max-width: 359px) { .summe-knoepfe .knopf.stark { flex-basis: 100%; } }
 
 .planausgabe {
-  width: 100%; min-height: 200px; margin-top: 12px; padding: 12px;
-  border: 1px solid var(--linie); border-radius: var(--rund);
-  background: var(--karte); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 16px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere;
+  width: 100%; min-height: 200px; padding: var(--r3);
+  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  background: var(--grund);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 16px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere;
 }
-.meldung { text-align: center; font-size: .85rem; color: var(--akzent);
-  min-height: 1.2em; margin-top: 8px; }
+.meldung {
+  text-align: center; font-size: .85rem; color: var(--akzent);
+  min-height: 1.2em; margin-top: var(--r2); font-weight: 600;
+}
 
-.fuss { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--linie);
-  font-size: .78rem; color: var(--leise); }
-.fuss p { margin: 0 0 .5em; }
+/* ----------------------------------------------------------------- Fußzeile */
+.fuss {
+  margin-top: var(--r6); padding-top: var(--r5);
+  border-top: 1px solid var(--linie); font-size: .78rem; color: var(--leise);
+}
+.fuss p { margin: 0 0 .6em; }
+.fuss .quellenliste { display: grid; gap: 3px; }
 </style>
 </head>
 <body>
@@ -329,8 +549,6 @@ details.filter[open] > summary::after { content: "▴"; }
              aria-label="Bausteine durchsuchen">
       <button class="knopf" id="zufallKnopf">Zufall</button>
     </div>
-
-    <nav class="pfad" id="pfad" aria-label="Wo bin ich"></nav>
 
     <details class="filter" id="filterBox">
       <summary><span>Filter</span><span id="filterZahl"></span></summary>
@@ -401,7 +619,13 @@ details.filter[open] > summary::after { content: "▴"; }
       </div>
     </details>
 
-    <div id="kacheln" class="kacheln"></div>
+    <nav class="pfad" id="pfad" aria-label="Wo bin ich"></nav>
+
+    <div id="kacheln" class="kacheln">
+      <div class="laedt" aria-live="polite" aria-label="Bausteine werden geladen">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
 
     <div class="trefferzeile" id="listenkopf" hidden>
       <span id="treffer" aria-live="polite"></span>
@@ -422,8 +646,8 @@ details.filter[open] > summary::after { content: "▴"; }
 
   <!-- ================================================ Ansicht: Planen -->
   <section id="ansichtPlanen" hidden>
-    <div class="rahmen">
-      <h2>Rahmen des Abends</h2>
+    <details class="filter rahmen" id="rahmenBox">
+      <summary><span>Rahmen des Abends</span><span id="rahmenKurz"></span></summary>
       <div class="filter-raster">
         <div class="feld">
           <label for="rZielzeit">Gesamtzeit</label>
@@ -478,9 +702,9 @@ details.filter[open] > summary::after { content: "▴"; }
           <label for="rOhneMaterial">nur Bausteine ohne Material</label>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div id="planSlots"></div>
+    <div id="planSlots" class="plan-ablauf"></div>
 
     <details class="filter" id="planTextKasten">
       <summary><span>Plan als Text</span><span>zum Kopieren</span></summary>
@@ -532,7 +756,10 @@ details.filter[open] > summary::after { content: "▴"; }
       <input type="checkbox" id="auswahlZeit">
       <label for="auswahlZeit" id="auswahlZeitText">nur was in die Zeit passt</label>
     </div>
-    <div id="auswahlChips"></div>
+    <details class="filter eingrenzen" id="auswahlEingrenzen">
+      <summary><span>Eingrenzen</span><span id="auswahlEingrenzenKurz"></span></summary>
+      <div id="auswahlChips"></div>
+    </details>
     <div class="trefferzeile"><span id="auswahlTreffer" aria-live="polite"></span></div>
     <ul class="liste" id="auswahlListe"></ul>
     <div class="mehr" id="auswahlMehrZeile" hidden>
@@ -591,6 +818,28 @@ var UNTER_TEXT = {
 };
 
 var ORT_TEXT = { drinnen: "drinnen", draussen: "draußen", beides: "drinnen & draußen" };
+
+/* Vier schlichte Strichzeichnungen, damit die oberste Ebene nicht nur aus
+   Text besteht. Kein Bild von außen, alles im Dokument. */
+var ZEICHEN = {
+  spiel: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" aria-hidden="true">' +
+    '<rect x="3.5" y="3.5" width="17" height="17" rx="4"/>' +
+    '<circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/>' +
+    '<circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/>' +
+    '<circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>',
+  probe: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="8.5"/>' +
+    '<path d="M15 9l-2.2 5.1L7.7 16l2.2-5.1z" stroke-linejoin="round"/></svg>',
+  aktivitaet: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M12 3.5l5 7h-3l4 6H6l4-6H7z"/><path d="M12 16.5v4"/></svg>',
+  projekt: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M12 3.5L3.5 19.5h17z"/><path d="M12 3.5v16"/>' +
+    '<path d="M9.2 19.5l2.8-5 2.8 5"/></svg>'
+};
 var ALTERSSTUFEN = ["Wölflinge", "Pfadfinder", "Ältere"];
 
 /* Feste Bestandteile jedes Heimabends – Rituale, keine Bausteine. */
@@ -881,16 +1130,20 @@ function sortiere(liste, art, suche, stufe) {
 }
 
 /* ------------------------------------------------------------ Karten */
-function karteHtml(e, zielzeit) {
+function karteHtml(e, zielzeit, kontext) {
+  // Was schon im Pfad steht, muss die Karte nicht wiederholen: in
+  // "Spiele > Kreisspiele > Singen & Tanzen" wären drei der Plaketten leer.
+  var wo = kontext || {};
   var merkmale = "";
-  if (zielzeit) {
-    merkmale += '<span class="merkmal zeit">' + schuetze(dauerText(e)) + "</span>";
-  } else {
-    merkmale += '<span class="merkmal typ">' + schuetze(TYP_EINZAHL[e.element_typ]) + "</span>";
-    merkmale += '<span class="merkmal">' + schuetze(dauerText(e)) + "</span>";
+  if (wo.typ !== e.element_typ) {
+    merkmale += '<span class="merkmal typ">' +
+                schuetze(TYP_EINZAHL[e.element_typ]) + "</span>";
   }
-  merkmale += '<span class="merkmal">' + schuetze(kategorieText(e)) + "</span>";
-  if (e.unterkategorie && e.unterkategorie !== "sonstiges") {
+  if (wo.kategorie !== e.kategorie) {
+    merkmale += '<span class="merkmal">' + schuetze(kategorieText(e)) + "</span>";
+  }
+  if (e.unterkategorie && e.unterkategorie !== "sonstiges" &&
+      wo.unterkategorie !== e.unterkategorie) {
     merkmale += '<span class="merkmal">' + schuetze(unterText(e.unterkategorie)) + "</span>";
   }
   merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
@@ -900,12 +1153,15 @@ function karteHtml(e, zielzeit) {
   if (e.dubletten && e.dubletten.length) {
     merkmale += '<span class="merkmal">' + schuetze((e.quelle || {}).name || "") + "</span>";
   }
-  return "<h3>" + schuetze(e.titel) + "</h3>" +
+  // Die Dauer steht rechts oben statt in der Plakettenreihe: sie ist die
+  // Angabe, nach der beim Planen zuerst geschaut wird.
+  return '<div class="kartenkopf"><h3>' + schuetze(e.titel) + "</h3>" +
+         '<span class="kartenzeit">' + schuetze(dauerText(e)) + "</span></div>" +
          "<p>" + schuetze(e.kurz) + "</p>" +
          '<div class="merkmale">' + merkmale + "</div>";
 }
 
-function baueKarte(e, beiKlick, zielzeit) {
+function baueKarte(e, beiKlick, zielzeit, kontext) {
   var eintrag = document.createElement("li");
   var knopf = document.createElement("button");
   knopf.className = "karte";
@@ -913,7 +1169,7 @@ function baueKarte(e, beiKlick, zielzeit) {
   // Kurzer Name fürs Vorleseprogramm; sonst liest es Titel, Kurztext und
   // sechs Plaketten am Stück vor.
   knopf.setAttribute("aria-label", e.titel);
-  knopf.innerHTML = karteHtml(e, zielzeit);
+  knopf.innerHTML = karteHtml(e, zielzeit, kontext);
   knopf.addEventListener("click", function () { beiKlick(e); });
   eintrag.appendChild(knopf);
   return eintrag;
@@ -934,13 +1190,17 @@ function zaehleNach(feld, f, p) {
   return zaehler;
 }
 
-function baueKachel(name, anzahl, beiKlick, gross) {
+function baueKachel(name, anzahl, beiKlick, gross, zeichen) {
   var knopf = document.createElement("button");
   knopf.type = "button";
-  knopf.className = "kachel" + (gross ? " gross" : "");
-  knopf.innerHTML = '<span class="name">' + schuetze(name) + "</span>" +
-                    '<span class="zahl">' + anzahl +
-                    (anzahl === 1 ? " Baustein" : " Bausteine") + "</span>";
+  knopf.className = "kachel" + (gross ? " gross" : "") + (zeichen ? " mitzeichen" : "");
+  var beschriftung = '<span class="name">' + schuetze(name) + "</span>" +
+                     '<span class="zahl">' + anzahl +
+                     (anzahl === 1 ? " Baustein" : " Bausteine") + "</span>";
+  knopf.innerHTML = zeichen
+    ? '<span class="zeichen">' + zeichen + '</span>' +
+      '<span class="beschriftung">' + beschriftung + "</span>"
+    : beschriftung;
   knopf.addEventListener("click", beiKlick);
   return knopf;
 }
@@ -962,6 +1222,9 @@ function zeichnePfad() {
   }
   var behaelter = $("pfad");
   behaelter.innerHTML = "";
+  // Auf der obersten Ebene stünde dort nur "Alle Bausteine" – das sagt nichts.
+  behaelter.hidden = teile.length < 2;
+  if (behaelter.hidden) return;
   for (var i = 0; i < teile.length; i++) {
     if (i > 0) {
       var pfeil = document.createElement("span");
@@ -1033,7 +1296,7 @@ function zeigeKacheln(behaelter, ebene, f) {
     for (var t = 0; t < TYP_REIHENFOLGE.length; t++) {
       var typ = TYP_REIHENFOLGE[t];
       if (nachTyp[typ]) {
-        eintraege.push({ name: TYP_TEXT[typ], anzahl: nachTyp[typ],
+        eintraege.push({ name: TYP_TEXT[typ], anzahl: nachTyp[typ], zeichen: ZEICHEN[typ],
                          ziel: { typ: typ, kategorie: "", unterkategorie: "" } });
       }
     }
@@ -1065,7 +1328,7 @@ function zeigeKacheln(behaelter, ebene, f) {
         pfad = eintrag.ziel;
         window.scrollTo(0, 0);
         aktualisiere();
-      }));
+      }, false, eintrag.zeichen));
     })(eintraege[i]);
   }
   // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
@@ -1118,7 +1381,9 @@ function zeichneListe(f) {
   }
   var stapel = document.createDocumentFragment();
   var bis = Math.min(sichtbar, gefiltert.length);
-  for (var i = 0; i < bis; i++) stapel.appendChild(baueKarte(gefiltert[i], zeigeDetail));
+  for (var i = 0; i < bis; i++) {
+    stapel.appendChild(baueKarte(gefiltert[i], zeigeDetail, false, pfad));
+  }
   behaelter.appendChild(stapel);
   $("mehrZeile").hidden = bis >= gefiltert.length;
   $("mehrKnopf").textContent = "Weitere anzeigen (" + (gefiltert.length - bis) + ")";
@@ -1129,7 +1394,13 @@ function zeigeDetail(e) {
   $("detailTitel").textContent = e.titel;
 
   var html = "<h2>" + schuetze(e.titel) + "</h2>";
-  html += '<p style="color:var(--leise);margin:0 0 4px">' + schuetze(e.kurz) + "</p>";
+  // Bei vielen Elementen ist der Kurztext aus dem Anfang der Beschreibung
+  // erzeugt – dann stünde er hier zweimal wörtlich untereinander.
+  var anfang = (e.beschreibung || "").replace(/\s+/g, " ").slice(0, 60);
+  var kurzAnfang = (e.kurz || "").replace(/\s+/g, " ").slice(0, 60);
+  if (kurzAnfang && kurzAnfang !== anfang) {
+    html += '<p class="anriss">' + schuetze(e.kurz) + "</p>";
+  }
 
   // Ohne diese Zeile sind Stöbern und Planen zwei getrennte Apps: man findet
   // etwas, muss den Reiter wechseln und den Titel erneut suchen.
@@ -1321,10 +1592,10 @@ function zieldauerFuer(slot, index) {
   }
   var offen = 0;
   for (var i = 0; i < plan.haupt.length; i++) if (!planElement("haupt", i)) offen++;
-  var anteil = rest / Math.max(1, offen);
-  // Untergrenze an die Zielzeit koppeln: bei 60 Minuten und drei Plätzen
-  // sind starre 15 Minuten je Platz rechnerisch nicht unterzubringen.
-  return Math.max(5, aufFuenf(Math.max(anteil, Math.min(15, anteil))));
+  // Ehrlich aufteilen. Eine starre Untergrenze von 15 Minuten je Platz war bei
+  // Zielzeit 60 mit drei Plätzen rechnerisch nicht unterzubringen und trieb den
+  // Plan im Median 33 % über das Ziel.
+  return Math.max(5, aufFuenf(rest / Math.max(1, offen)));
 }
 
 /** Wie viele Plätze sind noch leer? */
@@ -1384,10 +1655,13 @@ function slotKarte(slot, index) {
   var name = slot.name + (mehrere ? " " + (index + 1) : "");
 
   var knoten = document.createElement("div");
-  knoten.className = "slot";
+  knoten.className = "slot" + (e ? "" : " leer");
   var html = '<div class="slot-kopf"><span class="slot-name">' + schuetze(name) + "</span>" +
-             '<span class="slot-dauer">' + (e ? schuetze(dauerText(e)) : "–") + "</span></div>";
-  html += '<div class="slot-inhalt">';
+             '<span class="slot-dauer">' + (e ? schuetze(dauerText(e)) : "offen") + "</span></div>";
+  // Der gewählte Baustein ist selbst antippbar – das spart einen Knopf
+  // "Ansehen" und ist die naheliegende Geste.
+  html += e ? '<button type="button" class="slot-inhalt slot-oeffnen" data-tat="ansehen">'
+            : '<div class="slot-inhalt">';
   if (e) {
     html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
             '<div class="kurz">' + schuetze(e.kurz) + "</div>" +
@@ -1401,16 +1675,15 @@ function slotKarte(slot, index) {
       : "Die Zielzeit ist schon voll – dieser Platz verlängert den Abend um ca. " +
         vorschlag + " Min") + "</div>";
   }
-  html += "</div>";
+  html += e ? "</button>" : "</div>";
 
   html += '<div class="slot-knoepfe">';
   if (!e) html += '<button class="knopf klein stark" type="button" data-tat="vorschlag">Vorschläge</button>';
   html += '<button class="knopf klein" type="button" data-tat="waehlen">' +
-          (e ? "Anderen wählen" : "Alle durchsuchen") + "</button>" +
+          (e ? "Tauschen" : "Alle durchsuchen") + "</button>" +
           '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
   if (e) {
-    html += '<button class="knopf klein" type="button" data-tat="ansehen">Ansehen</button>' +
-            '<button class="knopf klein" type="button" data-tat="leeren">Entfernen</button>';
+    html += '<button class="knopf klein" type="button" data-tat="leeren">Entfernen</button>';
   }
   if (slot.mehrfach && plan.haupt.length > 1) {
     html += '<button class="knopf klein" type="button" data-tat="weg">Platz löschen</button>';
@@ -1669,36 +1942,70 @@ function ladePlan() {
 function oeffneAuswahl(slot, index, nurPassend) {
   var frei = freieZeit({ slot: slot, index: index });
   var ziel = zieldauerFuer(slot, index);
+  // Ist noch Zeit übrig, gilt genau diese – das verspricht der Haken.
   // Ist der Plan schon voll, wäre "höchstens 0 Minuten" gleichbedeutend mit
-  // "kein einziger Baustein". Dann gilt die Zieldauer als Spielraum.
+  // "kein einziger Baustein"; dann wird ein brauchbares Fenster geöffnet und
+  // die Beschriftung sagt, dass der Abend dadurch länger wird.
+  var spielraum = frei > 0 ? frei : Math.max(20, ziel);
   auswahlZiel = { slot: slot, index: index, frei: frei,
-                  spielraum: Math.max(frei, ziel), ziel: ziel };
+                  spielraum: spielraum, ziel: Math.max(ziel, 10) };
   auswahlPfad = { typ: "", kategorie: "", unterkategorie: "" };
+  chipsOffen = { typ: false, kategorie: false, unterkategorie: false };
+  $("auswahlEingrenzen").open = false;
   var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
   $("auswahlTitel").textContent = name;
   $("auswahlSuche").value = "";
   $("auswahlZeit").checked = !!nurPassend;
   $("auswahlZeitText").textContent = frei > 0
     ? "nur was in die Zeit passt (noch " + Math.round(frei) + " Min frei)"
-    : "nur bis ca. " + ziel + " Min (die Zielzeit ist schon voll)";
+    : "nur bis " + spielraum + " Min (die Zielzeit ist schon voll)";
   auswahlSichtbar = SEITENGROESSE;
   zeichneAuswahl();
   oeffneUeberlagerung($("auswahl"));
 }
 
-/** Baut eine Reihe Auswahl-Chips (Art, Kategorie, Unterkategorie). */
-function chipReihe(titel, eintraege, aktiv, beiKlick) {
+/* Merkt sich, welche Chip-Reihe ganz ausgeklappt ist. */
+var chipsOffen = { typ: false, kategorie: false, unterkategorie: false };
+var CHIPS_SICHTBAR = 6;
+
+/**
+ * Baut eine Reihe Auswahl-Chips (Art, Kategorie, Unterkategorie).
+ * Lange Reihen werden gekürzt – die Kategorie-Reihe hatte sonst 18 und die
+ * Unterkategorie-Reihe 28 Chips, bevor der erste Vorschlag zu sehen war.
+ */
+function chipReihe(titel, eintraege, aktiv, feld) {
   if (eintraege.length < 2) return "";
-  var html = '<div class="chipzeile"><div class="chiptitel">' + schuetze(titel) + "</div>";
+  var offen = chipsOffen[feld];
+  var zeigen = eintraege;
+  var versteckt = 0;
+  if (!offen && eintraege.length > CHIPS_SICHTBAR) {
+    zeigen = eintraege.slice(0, CHIPS_SICHTBAR);
+    // Die gewählte Kategorie muss sichtbar bleiben, sonst wirkt sie verschwunden
+    if (aktiv && !zeigen.some(function (x) { return x.wert === aktiv; })) {
+      var gewaehltes = eintraege.filter(function (x) { return x.wert === aktiv; })[0];
+      if (gewaehltes) zeigen = [gewaehltes].concat(zeigen.slice(0, CHIPS_SICHTBAR - 1));
+    }
+    versteckt = eintraege.length - zeigen.length;
+  }
+
+  var html = '<div class="chipzeile" data-feld="' + schuetze(feld) + '">' +
+             '<div class="chiptitel">' + schuetze(titel) + "</div>";
   html += '<div class="chips">';
   html += '<button type="button" class="chip' + (aktiv ? "" : " aktiv") +
           '" aria-pressed="' + (aktiv ? "false" : "true") + '" data-wert="">alle</button>';
-  for (var i = 0; i < eintraege.length; i++) {
-    var gewaehlt = aktiv === eintraege[i].wert;
+  for (var i = 0; i < zeigen.length; i++) {
+    var gewaehlt = aktiv === zeigen[i].wert;
     html += '<button type="button" class="chip' + (gewaehlt ? " aktiv" : "") +
             '" aria-pressed="' + (gewaehlt ? "true" : "false") +
-            '" data-wert="' + schuetze(eintraege[i].wert) + '">' +
-            schuetze(eintraege[i].name) + " " + eintraege[i].anzahl + "</button>";
+            '" data-wert="' + schuetze(zeigen[i].wert) + '">' +
+            schuetze(zeigen[i].name) + " " + zeigen[i].anzahl + "</button>";
+  }
+  if (versteckt) {
+    html += '<button type="button" class="chip mehrchips" data-mehr="' +
+            schuetze(feld) + '">+ ' + versteckt + " weitere</button>";
+  } else if (offen && eintraege.length > CHIPS_SICHTBAR) {
+    html += '<button type="button" class="chip mehrchips" data-mehr="' +
+            schuetze(feld) + '">weniger</button>";'.slice(0, -1);
   }
   return html + "</div></div>";
 }
@@ -1755,30 +2062,36 @@ function zeichneAuswahl() {
     auswahlPfad.unterkategorie = "";
   }
 
-  var chipHtml = chipReihe("Art", nachTyp, auswahlPfad.typ) +
-                 chipReihe("Kategorie", nachKategorie, auswahlPfad.kategorie) +
-                 chipReihe("Unterkategorie", nachUnter, auswahlPfad.unterkategorie);
-  $("auswahlChips").innerHTML = chipHtml;
+  var gewaehlt = [];
+  if (auswahlPfad.typ) gewaehlt.push(TYP_TEXT[auswahlPfad.typ] || auswahlPfad.typ);
+  if (auswahlPfad.kategorie) {
+    gewaehlt.push(KATEGORIE_TEXT[auswahlPfad.kategorie] || auswahlPfad.kategorie);
+  }
+  if (auswahlPfad.unterkategorie) gewaehlt.push(unterText(auswahlPfad.unterkategorie));
+  $("auswahlEingrenzenKurz").textContent = gewaehlt.length
+    ? gewaehlt.join(" · ") : "Art, Kategorie, Thema";
 
-  var reihen = $("auswahlChips").querySelectorAll(".chipzeile");
-  var felder = [];
-  if (nachTyp.length > 1) felder.push("typ");
-  if (nachKategorie.length > 1) felder.push("kategorie");
-  if (nachUnter.length > 1) felder.push("unterkategorie");
-  for (var r = 0; r < reihen.length; r++) {
-    (function (feld) {
-      var knoepfe = reihen[r].querySelectorAll(".chip");
-      for (var c = 0; c < knoepfe.length; c++) {
-        knoepfe[c].addEventListener("click", function () {
-          auswahlPfad[feld] = this.getAttribute("data-wert");
-          // tiefere Ebenen zurücksetzen, sonst passt nichts mehr zusammen
-          if (feld === "typ") { auswahlPfad.kategorie = ""; auswahlPfad.unterkategorie = ""; }
-          if (feld === "kategorie") auswahlPfad.unterkategorie = "";
-          auswahlSichtbar = SEITENGROESSE;
-          zeichneAuswahl();
-        });
+  $("auswahlChips").innerHTML =
+    chipReihe("Art", nachTyp, auswahlPfad.typ, "typ") +
+    chipReihe("Kategorie", nachKategorie, auswahlPfad.kategorie, "kategorie") +
+    chipReihe("Unterkategorie", nachUnter, auswahlPfad.unterkategorie, "unterkategorie");
+
+  var knoepfe = $("auswahlChips").querySelectorAll(".chip");
+  for (var c = 0; c < knoepfe.length; c++) {
+    knoepfe[c].addEventListener("click", function () {
+      var feld = this.parentNode.parentNode.getAttribute("data-feld");
+      if (this.hasAttribute("data-mehr")) {
+        chipsOffen[feld] = !chipsOffen[feld];
+        zeichneAuswahl();
+        return;
       }
-    })(felder[r]);
+      auswahlPfad[feld] = this.getAttribute("data-wert");
+      // tiefere Ebenen zurücksetzen, sonst passt nichts mehr zusammen
+      if (feld === "typ") { auswahlPfad.kategorie = ""; auswahlPfad.unterkategorie = ""; }
+      if (feld === "kategorie") auswahlPfad.unterkategorie = "";
+      auswahlSichtbar = SEITENGROESSE;
+      zeichneAuswahl();
+    });
   }
 
   auswahlListe = mitKategorie.filter(function (e) {
@@ -1812,7 +2125,7 @@ function zeichneAuswahl() {
     stapel.appendChild(baueKarte(auswahlListe[i], function (e) {
       slotSetzen(auswahlZiel.slot.schluessel, auswahlZiel.index, e.id);
       schliesseUeberlagerung($("auswahl"));
-    }, nurPassend));
+    }, nurPassend, auswahlPfad));
   }
   behaelter.appendChild(stapel);
   $("auswahlMehrZeile").hidden = bis >= auswahlListe.length;
@@ -1828,9 +2141,10 @@ function zeichneFuss() {
     quellen[schluessel] = (quellen[schluessel] || 0) + 1;
   }
   var namen = Object.keys(quellen).sort(function (a, b) { return quellen[b] - quellen[a]; });
-  var html = "<p><strong>" + ALLE.length + " Bausteine</strong> aus diesen Quellen:</p><p>";
+  var html = "<p><strong>" + ALLE.length + " Bausteine</strong> aus diesen Quellen:</p>" +
+             '<p class="quellenliste">';
   for (var n = 0; n < namen.length; n++) {
-    html += schuetze(namen[n]) + " (" + quellen[namen[n]] + ")<br>";
+    html += "<span>" + schuetze(namen[n]) + " · " + quellen[namen[n]] + "</span>";
   }
   html += "</p><p>Jeder Baustein steht unter der Lizenz seiner Quelle; sie wird in der " +
           "Detailansicht genannt. Das Projekt ist nicht-kommerziell.</p>";
@@ -1849,10 +2163,26 @@ function zeigeAnsicht(name) {
   if (!bausteine) { $("reiterPlanen").setAttribute("aria-current", "page"); }
   else { $("reiterPlanen").removeAttribute("aria-current"); }
   window.scrollTo(0, 0);
-  if (!bausteine) zeichnePlan();
+  if (!bausteine) {
+    $("rahmenKurz").textContent = rahmenKurzfassung();
+    zeichnePlan();
+  }
 }
 
 /* ------------------------------------------------------------ Start */
+/** Kurzfassung des Rahmens für die zugeklappte Kopfzeile. */
+function rahmenKurzfassung() {
+  var teile = [rahmen.zielzeit + " Min"];
+  if (rahmen.stufe) teile.push(rahmen.stufe);
+  if (rahmen.teilnehmer) {
+    teile.push(rahmen.teilnehmer + (rahmen.teilnehmer >= 25 ? "+" : "") + " Kinder");
+  }
+  if (rahmen.ort) teile.push(ORT_TEXT[rahmen.ort]);
+  if (rahmen.vorbereitung) teile.push("Vorb. " + rahmen.vorbereitung);
+  if (rahmen.ohneMaterial) teile.push("ohne Material");
+  return teile.join(" · ");
+}
+
 function liesRahmen() {
   rahmen.zielzeit = parseInt($("rZielzeit").value, 10) || 120;
   rahmen.stufe = $("rStufe").value;
@@ -1860,6 +2190,7 @@ function liesRahmen() {
   rahmen.ort = $("rOrt").value;
   rahmen.vorbereitung = $("rVorbereitung").value;
   rahmen.ohneMaterial = $("rOhneMaterial").checked;
+  $("rahmenKurz").textContent = rahmenKurzfassung();
   speicherePlan();
   zeichnePlan();
 }
