@@ -64,8 +64,6 @@ AUSGESCHLOSSENE_WIKI_KATEGORIEN = {"Trinkspiel"}
 # Art-Vorlage -> Schema-Kategorie, in dieser Reihenfolge geprüft (erste passende gewinnt).
 KATEGORIE_REIHENFOLGE = [
     ("Geländespiel", "gelaende"),
-    ("Versteckspiel", "gelaende"),
-    ("Suchspiel", "gelaende"),
     ("Namenslernspiel", "ankommen"),
     ("Kennenlernspiel", "ankommen"),
     ("Gruppenfindungsspiel", "ankommen"),
@@ -93,6 +91,10 @@ KATEGORIE_REIHENFOLGE = [
     ("Musikspiel", "kreis"),
     ("Tanzspiel", "kreis"),
     ("Reaktionsspiel", "kreis"),
+    # Verstecken und Suchen sind keine Geländespiele - "Uhrensuche" ist ein
+    # ruhiges Suchspiel im Zimmer. Sie laufen über den Ort in bewegung_*.
+    ("Versteckspiel", "bewegung"),
+    ("Suchspiel", "bewegung"),
     ("Fangspiel", "bewegung"),
     ("Laufspiel", "bewegung"),
     ("Staffelspiel", "bewegung"),

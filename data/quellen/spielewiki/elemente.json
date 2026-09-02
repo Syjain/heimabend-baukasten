@@ -4268,7 +4268,7 @@
    "id": "sw-dracula",
    "titel": "Dracula",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -4845,7 +4845,7 @@
    "id": "sw-eiersuche",
    "titel": "Eiersuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -6440,7 +6440,7 @@
    "id": "sw-fuchs-suche",
    "titel": "Fuchs-Suche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_draussen",
    "slots": [
     "hauptteil"
    ],
@@ -7960,7 +7960,7 @@
    "id": "sw-heiss-kalt",
    "titel": "Heiß Kalt",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -15273,10 +15273,11 @@
    "id": "sw-s-kriecht-a-schneckli",
    "titel": "S' kriecht a Schneckli",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "kreis",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -15374,7 +15375,7 @@
    "id": "sw-sardinli",
    "titel": "Sardinli",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -18575,10 +18576,11 @@
    "id": "sw-uhrensuche",
    "titel": "Uhrensuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 5,
@@ -18842,7 +18844,7 @@
    "id": "sw-verstecken",
    "titel": "Verstecken",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "hauptteil"
    ],
@@ -18873,7 +18875,7 @@
    "id": "sw-verstecken-im-dunkeln",
    "titel": "Verstecken im Dunkeln",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -18905,7 +18907,7 @@
    "id": "sw-verstecken-in-gedanken",
    "titel": "Verstecken in Gedanken",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "hauptteil"
    ],
@@ -19237,7 +19239,7 @@
    "id": "sw-wald-schatzsuche",
    "titel": "Wald-Schatzsuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_draussen",
    "slots": [
     "hauptteil"
    ],
@@ -20073,7 +20075,7 @@
    "id": "sw-wo-ist-es",
    "titel": "Wo ist es",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"

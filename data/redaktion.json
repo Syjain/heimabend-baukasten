@@ -5,7 +5,6 @@
     "stand": "2026-09-03",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
-
   "gesperrt": [
     {
       "id": "sw-bleigiessen",
@@ -32,7 +31,6 @@
       "grund": "Schlagen ist als reguläre Spielmechanik vorgesehen ('(sanft) Schlagen'). In der Jugendarbeit nicht vermittelbar."
     }
   ],
-
   "umbenannt": [
     {
       "id": "ps-mischling",
@@ -45,7 +43,6 @@
       "grund": "Der bisherige Titel ist eine Obszönität und stünde so im geteilten Heimabend-Plan. Der neue Titel beschreibt die Spielregel."
     }
   ],
-
   "korrekturen": [
     {
       "id": "ps-crazy-mother-fucker",
@@ -54,31 +51,57 @@
     },
     {
       "id": "sw-pflockeln",
-      "felder": { "altersstufen": ["Ältere"], "ort": "draussen", "kategorie": "bewegung_draussen" },
+      "felder": {
+        "altersstufen": [
+          "Ältere"
+        ],
+        "ort": "draussen",
+        "kategorie": "bewegung_draussen"
+      },
       "hinweis": "Die Quelle warnt selbst: nur mit langer Hose und stabilen Schuhen, und das Spiel eignet sich erst ab einem gewissen Alter. Ein angespitzter Pflock wird neben die Beine der Gegenspielerin geschleudert - nur mit Aufsicht.",
       "grund": "Verletzungsrisiko. Die Quelle sagt selbst 'im Freien' und 'erst ab einem gewissen Alter', beides stand nicht in den Feldern."
     },
     {
       "id": "sw-nageln",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "hinweis": "Die Quelle schreibt: eignet sich nur für ältere Mitspieler. Hammer und Nägel im Kreis stehender Personen - Abstand halten und beaufsichtigen.",
       "grund": "Altersangabe stand nur im Fließtext."
     },
     {
       "id": "sw-lateral",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "hinweis": "Die abgedruckten Rätsel haben durchweg Tötungs- und Suizidmotive. Für Wölflinge ungeeignet; sucht für jüngere Gruppen eigene, harmlose Rätsel.",
       "grund": "Inhalt der Rätsel."
     },
     {
       "id": "sw-black-stories",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "hinweis": "Die Rätsel drehen sich um Todesfälle. Für Wölflinge ungeeignet.",
       "grund": "Inhalt der Rätsel."
     },
     {
       "id": "eig-schwarze-geschichten-bei-kerzenschein",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "grund": "Gleiche Gattung wie oben: Rätsel um Todesfälle."
     },
     {
@@ -98,7 +121,12 @@
     },
     {
       "id": "sw-low-v",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "hinweis": "Die Quelle setzt eine Sicherung durch die Mitspielenden voraus. Nur mit eingewiesener Aufsicht.",
       "grund": "Sicherungspflicht stand nur im Fließtext."
     },
@@ -130,51 +158,232 @@
     },
     {
       "id": "insp-appel-und-n-ei-das-tauschspiel",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "hinweis": "Beim Tauschen an fremden Haustüren klingeln Kinder bei Unbekannten. Nur in Begleitung, in bekannter Umgebung und ohne Feuerzeug als Tauschobjekt.",
       "grund": "Kindeswohl: unbeaufsichtigter Kontakt zu Fremden an Privatwohnungen."
     },
     {
       "id": "ps-giftteich",
-      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "felder": {
+        "altersstufen": [
+          "Pfadfinder",
+          "Ältere"
+        ]
+      },
       "grund": "Variante 2 ist eine Seilquerung mit Klettergurt. alter_ab war 10, die Altersstufen nannten trotzdem Wölflinge (ab 7)."
     },
     {
       "id": "sw-briefbomben",
       "titel": "Minensucher",
       "grund": "Der Titel ist unnötig terror-konnotiert. Die Quelle nennt Minesweeper selbst als Alias; das Spiel ist harmlos."
+    },
+    {
+      "id": "insp-typische-1-hilfe-fallbeispiele",
+      "felder": {
+        "element_typ": "probe",
+        "kategorie": "erste_hilfe",
+        "slots": [
+          "hauptteil"
+        ]
+      },
+      "grund": "Erste-Hilfe-Szenen nachspielen ist Probenbuch-Wissen, keine Entdeckungs-Aktion. Stand als projekt/entdecken."
+    },
+    {
+      "id": "insp-feuer-wasser-sturm",
+      "felder": {
+        "ort": "drinnen"
+      },
+      "grund": "Der Ablauf verlangt einen eckigen Raum mit Tischen, Stühlen und Wänden zum Anfassen."
+    },
+    {
+      "id": "eig-chaosspiel",
+      "felder": {
+        "ort": "draussen"
+      },
+      "grund": "Die Kärtchen sind laut Beschreibung im Gelände versteckt."
+    },
+    {
+      "id": "sw-aufstehen",
+      "felder": {
+        "kategorie": "kooperation"
+      },
+      "grund": "Die Aufgabe wird gemeinsam und ohne Absprache gelöst - das ist Zusammenarbeit, nicht Toben."
+    },
+    {
+      "id": "sw-streichholz-reflexion",
+      "felder": {
+        "kategorie": "ruhig"
+      },
+      "hinweis": "Offene Flamme: Streichhölzer nur unter Aufsicht und mit Löschmöglichkeit in Reichweite.",
+      "grund": "Die Quelle nennt es selbst eine Reflexionsmethode; dazu fehlte der Feuerhinweis."
+    },
+    {
+      "id": "insp-unser-lagerplatz-in-der-zukunft",
+      "felder": {
+        "ort": "drinnen"
+      },
+      "grund": "Gearbeitet wird an einem Bildschirm bzw. auf Papier, nicht draußen."
+    },
+    {
+      "id": "sw-teelichter-bewachen",
+      "hinweis": "Offene Flammen im Bewegungsspiel: Abstand zu Kleidung und langen Haaren halten, Löschmöglichkeit bereitlegen.",
+      "grund": "Feuerhinweis fehlte."
+    },
+    {
+      "id": "sw-wachsgiessen",
+      "hinweis": "Die Quelle weist selbst auf offenes Feuer und flüssiges Wachs hin. Nur mit Aufsicht, und kaltes Wasser für Verbrennungen bereithalten.",
+      "grund": "Selbstwarnung der Quelle stand nur im Fließtext."
     }
   ],
-
   "keine_dublette": [
     {
-      "ids": ["ps-bermudadreieck", "sw-bermudadreieck"],
+      "ids": [
+        "ps-bermudadreieck",
+        "sw-bermudadreieck"
+      ],
       "grund": "Gleicher Titel, verschiedene Spiele: bei pfadfinder-spiele.de ein Zieh- und Schiebespiel, im Spielewiki ein Namenslernspiel."
     },
     {
-      "ids": ["insp-ich-packe-meinen-koffer", "ps-ich-packe-meinen-koffer"],
+      "ids": [
+        "insp-ich-packe-meinen-koffer",
+        "ps-ich-packe-meinen-koffer"
+      ],
       "grund": "Gleicher Titel, verschiedene Spiele: beim Inspirator das Gegenstands-Merkspiel, bei pfadfinder-spiele.de ein Namensspiel mit Adjektiven."
     }
   ],
-
   "auch_dublette": [
-    { "ids": ["ps-bermudadreieck", "sw-hugo"], "grund": "Dasselbe Zieh- und Schiebespiel unter anderem Namen." },
-    { "ids": ["ps-im-singing-in-the-rain", "sw-singing-in-the-rain"], "grund": "Dasselbe Lied- und Bewegungsspiel." },
-    { "ids": ["ps-hannes", "sw-hi-my-name-is-joe"], "grund": "Die Quelle nennt die Übersetzung selbst: 'zu deutsch: Hallo, ich bin der Hannes'." },
-    { "ids": ["ps-moehren-ziehen", "sw-karottenziehen"], "grund": "Die Quelle führt Möhrenziehen als Zweitnamen." },
-    { "ids": ["ps-schnick-schnack-schnuck", "sw-schere-stein-papier"], "grund": "Die Quelle nennt Schnick Schnack Schnuck als Zweitnamen." },
-    { "ids": ["ps-kotzendes-kaenguru", "sw-toasterspiel"], "grund": "Gleiches Kreisspiel mit denselben Figuren (Elefant, Mixer, Toaster)." },
-    { "ids": ["ps-zuzwinkern-hundehuette", "sw-zwinkern"], "grund": "Die Quelle führt Hundehütte als Zweitnamen." },
-    { "ids": ["ps-das-schokoladenspiel", "eig-schokoladen-wettessen", "sw-schokoladeschneiden"], "grund": "Dasselbe Würfelspiel mit Mütze, Schal und Handschuhen." },
-    { "ids": ["insp-schmuggler-innen-spiel", "ps-schmuggler"], "grund": "Gleiches Geländespiel, nur die Fängerrolle heißt anders." },
-    { "ids": ["ps-fliegender-teppich", "sw-teppich-umdrehen"], "grund": "Teppich wenden, ohne den Boden zu berühren." },
-    { "ids": ["ps-gruppennetz", "sw-fadennetz"], "grund": "Wollknäuel-Netz im Kreis." },
-    { "ids": ["eig-waescheklammern-jagd", "ps-waescheklammern-klauen"], "grund": "Gleiches Spiel, nur die Klammerzahl unterscheidet sich." },
-    { "ids": ["ps-werwolf", "eig-werwolf-abend"], "grund": "Dasselbe Spiel." },
-    { "ids": ["insp-casino-heimabend", "eig-casino-abend"], "grund": "Derselbe Abend." },
-    { "ids": ["insp-sternenhimmel-erkunden", "eig-sternenkunde-abend"], "grund": "Beide: Polarstern finden und danach navigieren." },
-    { "ids": ["eig-kochduell-im-hordentopf", "insp-das-ultimative-kochduell"], "grund": "Zwei Teams, gleiche Zutaten, Jury." },
-    { "ids": ["sw-psychiatercouch", "sw-sofaspiel"], "grund": "Nahezu wortgleiche Artikel; einziger Unterschied ist der Name der Sitzgruppe." },
-    { "ids": ["insp-alle-die-obstsalat", "sw-platztausch", "ps-angesprochen"], "grund": "Dasselbe Stuhlkreis-Grundspiel ('alle, die ... tauschen die Plätze')." }
+    {
+      "ids": [
+        "ps-bermudadreieck",
+        "sw-hugo"
+      ],
+      "grund": "Dasselbe Zieh- und Schiebespiel unter anderem Namen."
+    },
+    {
+      "ids": [
+        "ps-im-singing-in-the-rain",
+        "sw-singing-in-the-rain"
+      ],
+      "grund": "Dasselbe Lied- und Bewegungsspiel."
+    },
+    {
+      "ids": [
+        "ps-hannes",
+        "sw-hi-my-name-is-joe"
+      ],
+      "grund": "Die Quelle nennt die Übersetzung selbst: 'zu deutsch: Hallo, ich bin der Hannes'."
+    },
+    {
+      "ids": [
+        "ps-moehren-ziehen",
+        "sw-karottenziehen"
+      ],
+      "grund": "Die Quelle führt Möhrenziehen als Zweitnamen."
+    },
+    {
+      "ids": [
+        "ps-schnick-schnack-schnuck",
+        "sw-schere-stein-papier"
+      ],
+      "grund": "Die Quelle nennt Schnick Schnack Schnuck als Zweitnamen."
+    },
+    {
+      "ids": [
+        "ps-kotzendes-kaenguru",
+        "sw-toasterspiel"
+      ],
+      "grund": "Gleiches Kreisspiel mit denselben Figuren (Elefant, Mixer, Toaster)."
+    },
+    {
+      "ids": [
+        "ps-zuzwinkern-hundehuette",
+        "sw-zwinkern"
+      ],
+      "grund": "Die Quelle führt Hundehütte als Zweitnamen."
+    },
+    {
+      "ids": [
+        "ps-das-schokoladenspiel",
+        "eig-schokoladen-wettessen",
+        "sw-schokoladeschneiden"
+      ],
+      "grund": "Dasselbe Würfelspiel mit Mütze, Schal und Handschuhen."
+    },
+    {
+      "ids": [
+        "insp-schmuggler-innen-spiel",
+        "ps-schmuggler"
+      ],
+      "grund": "Gleiches Geländespiel, nur die Fängerrolle heißt anders."
+    },
+    {
+      "ids": [
+        "ps-fliegender-teppich",
+        "sw-teppich-umdrehen"
+      ],
+      "grund": "Teppich wenden, ohne den Boden zu berühren."
+    },
+    {
+      "ids": [
+        "ps-gruppennetz",
+        "sw-fadennetz"
+      ],
+      "grund": "Wollknäuel-Netz im Kreis."
+    },
+    {
+      "ids": [
+        "eig-waescheklammern-jagd",
+        "ps-waescheklammern-klauen"
+      ],
+      "grund": "Gleiches Spiel, nur die Klammerzahl unterscheidet sich."
+    },
+    {
+      "ids": [
+        "ps-werwolf",
+        "eig-werwolf-abend"
+      ],
+      "grund": "Dasselbe Spiel."
+    },
+    {
+      "ids": [
+        "insp-casino-heimabend",
+        "eig-casino-abend"
+      ],
+      "grund": "Derselbe Abend."
+    },
+    {
+      "ids": [
+        "insp-sternenhimmel-erkunden",
+        "eig-sternenkunde-abend"
+      ],
+      "grund": "Beide: Polarstern finden und danach navigieren."
+    },
+    {
+      "ids": [
+        "eig-kochduell-im-hordentopf",
+        "insp-das-ultimative-kochduell"
+      ],
+      "grund": "Zwei Teams, gleiche Zutaten, Jury."
+    },
+    {
+      "ids": [
+        "sw-psychiatercouch",
+        "sw-sofaspiel"
+      ],
+      "grund": "Nahezu wortgleiche Artikel; einziger Unterschied ist der Name der Sitzgruppe."
+    },
+    {
+      "ids": [
+        "insp-alle-die-obstsalat",
+        "sw-platztausch",
+        "ps-angesprochen"
+      ],
+      "grund": "Dasselbe Stuhlkreis-Grundspiel ('alle, die ... tauschen die Plätze')."
+    }
   ]
 }

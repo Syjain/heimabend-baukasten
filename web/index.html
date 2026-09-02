@@ -226,6 +226,8 @@ details.filter > summary span:last-child:not(:first-child) {
   display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--r2);
 }
 @media (min-width: 560px) { .kacheln { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+/* Sonst stehen die vier Bausteinarten als 3 + 1 da */
+@media (min-width: 700px) { .kacheln { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 .kachel {
   position: relative; overflow: hidden;
   text-align: left; background: var(--karte);

@@ -1841,6 +1841,44 @@
    "unterkategorie": ""
   },
   {
+   "id": "insp-typische-1-hilfe-fallbeispiele",
+   "titel": "Typische 1. Hilfe Fallbeispiele",
+   "element_typ": "probe",
+   "kategorie": "erste_hilfe",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 30,
+   "dauer_max": 45,
+   "ort": "beides",
+   "material": [
+    "Erste Hilfe Rucksack/Tasche"
+   ],
+   "vorbereitung": "gering",
+   "kurz": "Spielt Erste-Hilfe-Szenen wie Sonnenstich, Pflaster kleben, Verbrennung oder Zecken entfernen nach! Was ist im Erste-Hilfe-Set?",
+   "beschreibung": "Mit eurer Gruppe könnte ihr typische Pfadfinder-Situationen nachspielen, in denen erste Hilfe zu leisten ist.\n\nBeispiele:\n\n- Behandlung eines Sonnenstichs\n\n- Fingerkuppen Pflaster\n\n- Verbrennung\n\n- Gebrochenes Bein\n\n- Zecke entfernen\n\n- Heimweh\n\n-  \n\nBei der Gelegenheit könnt ihr euch auch mit dem EH-Set beschäftigen und herausfinden, was darin alles enthalten ist und was wann eine Rolle spielen kann.",
+   "tipps": "",
+   "tags": [
+    "1. Hilfe",
+    "Lernen",
+    "Forschen"
+   ],
+   "themen": [
+    "1. Hilfe"
+   ],
+   "quelle": {
+    "name": "Heimabend-Inspirator (DPBM)",
+    "url": "https://gruppenstunde.de/activity/details/10",
+    "autor": "Heimabend-Inspirator (DPBM)",
+    "lizenz": "CC BY-NC 4.0"
+   },
+   "unterkategorie": ""
+  },
+  {
    "id": "pb-unsere-kluft",
    "titel": "Unsere Kluft",
    "element_typ": "probe",
@@ -3385,7 +3423,7 @@
    ],
    "dauer_min": 60,
    "dauer_max": 90,
-   "ort": "beides",
+   "ort": "draussen",
    "material": [
     "Nummernkarten",
     "Aufgabenliste",
@@ -11005,44 +11043,6 @@
    "unterkategorie": "kochen"
   },
   {
-   "id": "insp-typische-1-hilfe-fallbeispiele",
-   "titel": "Typische 1. Hilfe Fallbeispiele",
-   "element_typ": "projekt",
-   "kategorie": "entdecken",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 30,
-   "dauer_max": 45,
-   "ort": "beides",
-   "material": [
-    "Erste Hilfe Rucksack/Tasche"
-   ],
-   "vorbereitung": "gering",
-   "kurz": "Spielt Erste-Hilfe-Szenen wie Sonnenstich, Pflaster kleben, Verbrennung oder Zecken entfernen nach! Was ist im Erste-Hilfe-Set?",
-   "beschreibung": "Mit eurer Gruppe könnte ihr typische Pfadfinder-Situationen nachspielen, in denen erste Hilfe zu leisten ist.\n\nBeispiele:\n\n- Behandlung eines Sonnenstichs\n\n- Fingerkuppen Pflaster\n\n- Verbrennung\n\n- Gebrochenes Bein\n\n- Zecke entfernen\n\n- Heimweh\n\n-  \n\nBei der Gelegenheit könnt ihr euch auch mit dem EH-Set beschäftigen und herausfinden, was darin alles enthalten ist und was wann eine Rolle spielen kann.",
-   "tipps": "",
-   "tags": [
-    "1. Hilfe",
-    "Lernen",
-    "Forschen"
-   ],
-   "themen": [
-    "1. Hilfe"
-   ],
-   "quelle": {
-    "name": "Heimabend-Inspirator (DPBM)",
-    "url": "https://gruppenstunde.de/activity/details/10",
-    "autor": "Heimabend-Inspirator (DPBM)",
-    "lizenz": "CC BY-NC 4.0"
-   },
-   "unterkategorie": "sonstiges"
-  },
-  {
    "id": "insp-unser-lagerplatz-in-der-zukunft",
    "titel": "Unser Lagerplatz in der Zukunft",
    "element_typ": "projekt",
@@ -11057,7 +11057,7 @@
    ],
    "dauer_min": 45,
    "dauer_max": 75,
-   "ort": "beides",
+   "ort": "drinnen",
    "material": [
     "Internet"
    ],
@@ -13203,7 +13203,7 @@
    "id": "sw-aufstehen",
    "titel": "Aufstehen",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "kooperation",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -17162,7 +17162,7 @@
    "id": "sw-dracula",
    "titel": "Dracula",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -17797,7 +17797,7 @@
    "id": "sw-eiersuche",
    "titel": "Eiersuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -18947,7 +18947,7 @@
    ],
    "dauer_min": 10,
    "dauer_max": 30,
-   "ort": "beides",
+   "ort": "drinnen",
    "material": [
     "Tisch",
     "Stühle"
@@ -19724,7 +19724,7 @@
    "id": "sw-fuchs-suche",
    "titel": "Fuchs-Suche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_draussen",
    "slots": [
     "hauptteil"
    ],
@@ -21740,7 +21740,7 @@
    "id": "sw-heiss-kalt",
    "titel": "Heiß Kalt",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -31153,10 +31153,11 @@
    "id": "sw-s-kriecht-a-schneckli",
    "titel": "S' kriecht a Schneckli",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "kreis",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -31334,7 +31335,7 @@
    "id": "sw-sardinli",
    "titel": "Sardinli",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -34026,7 +34027,7 @@
    "vorbereitung": "gering",
    "kurz": "Die Streichholz-Reflexion ist eine Reflexionsmethode. Es eignet sich für spontane, schnelle Reflexionen in kleineren Gruppen. Qualitativ hochwertige Antworten können nicht erwartet werden, sondern eher ein Stimmungsbild ähnlich der Blitzlicht-Reflexion.",
    "beschreibung": "Die **Streichholz-Reflexion** ist eine Reflexionsmethode. Es eignet sich für spontane, schnelle Reflexionen in kleineren Gruppen. Qualitativ hochwertige Antworten können nicht erwartet werden, sondern eher ein Stimmungsbild ähnlich der Blitzlicht-Reflexion.\n\n## Material\nJeder Teilnehmer benötigt ein Streichholz, daneben natürlich eine Reibfläche zum Entzünden und einen Ort zum Entsorgen der abgebrannten Überreste (einen Aschenbecher, ein Lagerfeuer, etc.).\n\n## Ablauf\nDie Teilnehmer stehen bevorzugt im Kreis. Der Leiter formuliert eine Frage, typischerweise \"wie geht es euch nach der (zuvor gestellten) Aufgabe\". Reihum beantworten die Teilnehmer die Frage. Allerdings darf jeder Teilnehmer nur genau so lange sprechen, wie sein Streichholz brennt. Je länger er also sprechen möchte, desto länger sollte er die Flamme seines Streichholzes am Leben halten ...",
-   "tipps": "",
+   "tipps": "Offene Flamme: Streichhölzer nur unter Aufsicht und mit Löschmöglichkeit in Reichweite.",
    "tags": [
     "Reflexionsmethode"
    ],
@@ -34660,7 +34661,7 @@
    "vorbereitung": "gering",
    "kurz": "Teelicht bewachen ist ein Bewegungsspiel. Zwei oder mehr Gruppen treten gegeneinander an.",
    "beschreibung": "**Teelicht bewachen** ist ein Bewegungsspiel. Zwei oder mehr Gruppen treten gegeneinander an.\n\n## Material\nFür jede Gruppe werden mehrere Teelichter (oder ähnliche Kerzen) benötigt.\n\n## Ablauf\nZwei oder mehr Teams treten gegeneinander an. Sie bekommen jeweils mehrere brennende Teelichter, die sie verteidigen müssen. Ein einmal ausgeblasenes oder sonst wie ausgegangenes Teelicht darf nicht wieder angezündet werden. Gewonnen hat das Team, bei dem als letztes noch mindestens ein Licht brennt.\n\nDie genauen Regeln des Bewerbes sollten mit den Teilnehmern vorab aufgrund der Gegebenheiten vereinbart werden:\n- Wie intensiv darf \"gekämpft\" werden?\n- Dürfen die Teelichter getragen werden?\n- Dürfen Gegenstände oder sogar Wasser gegen die Teelichter geworfen/geschüttet werden?\n- etc.\n\nACHTUNG: je länger die Kerzen brennen, desto eher kann flüssiges und heißes Wachs eine Verletzungsgefahr darstellen!",
-   "tipps": "",
+   "tipps": "Offene Flammen im Bewegungsspiel: Abstand zu Kleidung und langen Haaren halten, Löschmöglichkeit bereitlegen.",
    "tags": [
     "Bewegungsspiel",
     "Geschicklichkeitsspiel",
@@ -35518,10 +35519,11 @@
    "id": "sw-uhrensuche",
    "titel": "Uhrensuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 5,
@@ -35910,7 +35912,7 @@
    "id": "sw-verstecken",
    "titel": "Verstecken",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "hauptteil"
    ],
@@ -35942,7 +35944,7 @@
    "id": "sw-verstecken-im-dunkeln",
    "titel": "Verstecken im Dunkeln",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
@@ -35975,7 +35977,7 @@
    "id": "sw-verstecken-in-gedanken",
    "titel": "Verstecken in Gedanken",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "hauptteil"
    ],
@@ -36385,7 +36387,7 @@
    "vorbereitung": "gering",
    "kurz": "Wachsgießen ist eine Variante des bekannten Bleigießen-Spiels, das sich besonders zu Silvester großer Beliebtheit erfreut. Die gegossenen Figuren sollen die Zukunft (insbesondere das nächste Jahr) vorhersagen.",
    "beschreibung": "**Wachsgießen** ist eine Variante des bekannten Bleigießen-Spiels, das sich besonders zu Silvester großer Beliebtheit erfreut. Die gegossenen Figuren sollen die Zukunft (insbesondere das nächste Jahr) vorhersagen. Im Gegensatz zu Bleigießen ist es zwar weniger gefährlich, trotzdem muss auf die Gefahren (offenes Feuer, flüssiges Wachs) Rücksicht genommen werden.\n\n## Material\n- Kerze\n- größerer Löffel\n- Kerzenwachs\n- Wasserschüssel\n- eventuell Spülmittel\n\n## Ablauf\nDie Spieler erwärmen im Löffel Kerzenwachs über der Flamme und bringen das Wachs so zum Schmelzen. Anschließend gießen sie das Wachs mit einem Ruck in die Wasserschüssel. Das Wachs erstarrt dadurch zu einer Figur. Diese Figur kann analysiert werden und soll je nach Form die Zukunft vorhersagen.\n\nEin wenig Spülmittel im Wasser kann die Qualität der entstandenen Figuren verbessern.",
-   "tipps": "",
+   "tipps": "Die Quelle weist selbst auf offenes Feuer und flüssiges Wachs hin. Nur mit Aufsicht, und kaltes Wasser für Verbrennungen bereithalten.",
    "tags": [
     "Glücksspiel",
     "Partyspiel",
@@ -36714,7 +36716,7 @@
    "id": "sw-wald-schatzsuche",
    "titel": "Wald-Schatzsuche",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_draussen",
    "slots": [
     "hauptteil"
    ],
@@ -37743,7 +37745,7 @@
    "id": "sw-wo-ist-es",
    "titel": "Wo ist es",
    "element_typ": "spiel",
-   "kategorie": "gelaende",
+   "kategorie": "bewegung_drinnen",
    "slots": [
     "einstieg",
     "hauptteil"
