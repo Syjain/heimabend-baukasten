@@ -866,6 +866,20 @@ def main():
     if bericht["unbekannt"]:
         print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(", ".join(bericht["unbekannt"])))
 
+    # Ein "Spiel" ist laut Schema 5-45 Minuten lang. Was mindestens eine Stunde
+    # dauert (Highland Games, Kochduell, Chaos-Spiel), füllt den Abend und ist
+    # ein Projekt - sonst würfelt der Planer es neben zwei weitere Bausteine.
+    umgestuft = []
+    for element in elemente:
+        if element["element_typ"] == "spiel" and element["dauer_min"] >= 60:
+            element["element_typ"] = "projekt"
+            element["kategorie"] = "spiel"
+            element["slots"] = ["hauptteil"]
+            umgestuft.append(element["titel"])
+    if umgestuft:
+        print("\nLange Spiele zu Projekten umgestuft ({}): {}".format(
+            len(umgestuft), ", ".join(sorted(umgestuft))))
+
     for element in elemente:
         element["unterkategorie"] = bestimme_unterkategorie(element)
 

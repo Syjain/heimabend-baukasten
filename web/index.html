@@ -181,6 +181,7 @@ details.filter[open] > summary::after { content: "▴"; }
   color: var(--akzent); font-weight: 600; }
 .merkmal.zeit { background: var(--akzent-leicht); border-color: transparent;
   color: var(--akzent); font-weight: 600; }
+.merkmal.offen { border-style: dashed; }
 @media (prefers-color-scheme: dark) {
   .merkmal.typ, .merkmal.zeit { color: var(--text); }
 }
@@ -389,6 +390,10 @@ details.filter[open] > summary::after { content: "▴"; }
         <div class="schalter">
           <input type="checkbox" id="fOhneMaterial">
           <label for="fOhneMaterial">nur ohne Material</label>
+        </div>
+        <div class="schalter">
+          <input type="checkbox" id="fMitAlter">
+          <label for="fMitAlter">nur mit geprüfter Altersangabe</label>
         </div>
         <div class="filter-fuss">
           <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
@@ -657,8 +662,14 @@ function gruppenText(e) {
   if (e.gruppe_max) return "bis " + e.gruppe_max + " Personen";
   return "";
 }
+/** True, wenn die Quelle gar nichts zum Alter sagt (betrifft rund zwei Drittel). */
+function ohneAltersangabe(e) {
+  return !(e.altersstufen && e.altersstufen.length) && !e.alter_ab;
+}
 function stufenText(e) {
-  return (e.altersstufen && e.altersstufen.length) ? e.altersstufen.join(", ") : "alle Stufen";
+  if (e.altersstufen && e.altersstufen.length) return e.altersstufen.join(", ");
+  // Nicht "alle Stufen" behaupten, was die Quelle nicht hergibt
+  return "keine Angabe – bitte selbst einschätzen";
 }
 function kategorieText(e) { return KATEGORIE_TEXT[e.kategorie] || e.kategorie; }
 function unterText(schluessel) { return UNTER_TEXT[schluessel] || schluessel; }
@@ -727,7 +738,7 @@ function ladeSkriptdaten() {
 /* ------------------------------------------------------------ Filtern */
 function leereFilter() {
   return { suche: "", stufe: "", dauer: 0, teilnehmer: 0, ort: "",
-           vorbereitung: "", ohneMaterial: false };
+           vorbereitung: "", ohneMaterial: false, mitAlter: false };
 }
 
 /** Die Einstellungen aus dem Filter-Klappfeld der Baustein-Ansicht. */
@@ -739,7 +750,8 @@ function filterWerte() {
     teilnehmer: $("fTeilnehmer").value ? parseInt($("fTeilnehmer").value, 10) : 0,
     ort: $("fOrt").value,
     vorbereitung: $("fVorbereitung").value,
-    ohneMaterial: $("fOhneMaterial").checked
+    ohneMaterial: $("fOhneMaterial").checked,
+    mitAlter: $("fMitAlter").checked
   };
 }
 
@@ -750,6 +762,7 @@ function aktiveFilter() {
     if (f[name]) zahl++;
   });
   if (f.ohneMaterial) zahl++;
+  if (f.mitAlter) zahl++;
   return zahl;
 }
 
@@ -758,6 +771,7 @@ function setzeFilterZurueck() {
     $(id).value = "";
   });
   $("fOhneMaterial").checked = false;
+  $("fMitAlter").checked = false;
   aktualisiere();
 }
 
@@ -791,6 +805,7 @@ function passtZuFilter(e, f) {
   if (f.vorbereitungHoechstens &&
       VORBEREITUNG_RANG[e.vorbereitung] > VORBEREITUNG_RANG[f.vorbereitungHoechstens]) return false;
   if (f.ohneMaterial && e.material && e.material.length) return false;
+  if (f.mitAlter && ohneAltersangabe(e)) return false;
   if (f.suche) {
     // Mehrere Wörter werden einzeln geprüft, sonst findet "Gelände spiel" nichts.
     var woerter = f.suche.split(/\s+/);
@@ -842,7 +857,7 @@ function suchrang(e, suche, woerter) {
   return 4;
 }
 
-function sortiere(liste, art, suche) {
+function sortiere(liste, art, suche, stufe) {
   // Rang einmal je Element bestimmen. Im Vergleicher berechnet, wären es bei
   // 700 Treffern rund 13000 Aufrufe pro Tastendruck.
   if (suche) {
@@ -852,6 +867,12 @@ function sortiere(liste, art, suche) {
     }
   }
   return liste.sort(function (a, b) {
+    // Ist eine Altersstufe gewählt, stehen geprüfte Bausteine vorn und die
+    // ohne Altersangabe hinten – herausfiltern wäre zu hart, sie sind zu viele.
+    if (stufe) {
+      var offenA = ohneAltersangabe(a) ? 1 : 0, offenB = ohneAltersangabe(b) ? 1 : 0;
+      if (offenA !== offenB) return offenA - offenB;
+    }
     if (suche && a._rang !== b._rang) return a._rang - b._rang;
     if (art === "dauer" && a.dauer_min !== b.dauer_min) return a.dauer_min - b.dauer_min;
     if (art === "dauer-ab" && a.dauer_min !== b.dauer_min) return b.dauer_min - a.dauer_min;
@@ -874,6 +895,7 @@ function karteHtml(e, zielzeit) {
   }
   merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
+  if (ohneAltersangabe(e)) merkmale += '<span class="merkmal offen">Alter offen</span>';
   // Gibt es denselben Titel in einer anderen Quelle, hilft der Quellname beim Unterscheiden
   if (e.dubletten && e.dubletten.length) {
     merkmale += '<span class="merkmal">' + schuetze((e.quelle || {}).name || "") + "</span>";
@@ -1062,11 +1084,14 @@ function zeigeListe(f) {
     typ: pfad.typ, kategorie: pfad.kategorie,
     unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
   };
-  gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche);
+  gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche, f.stufe);
   sichtbar = SEITENGROESSE;
   $("listenkopf").hidden = false;
-  $("treffer").textContent = gefiltert.length === 1
-    ? "1 Baustein" : gefiltert.length + " Bausteine";
+  var offene = 0;
+  for (var i = 0; i < gefiltert.length; i++) if (ohneAltersangabe(gefiltert[i])) offene++;
+  $("treffer").textContent = (gefiltert.length === 1
+    ? "1 Baustein" : gefiltert.length + " Bausteine") +
+    (f.stufe && offene ? " · " + offene + " ohne Altersangabe" : "");
   $("zufallKnopf").disabled = gefiltert.length === 0;
   zeichneListe(f);
 }
@@ -1767,7 +1792,7 @@ function zeichneAuswahl() {
              nachTitel(a, b);
     });
   } else {
-    sortiere(auswahlListe, "dauer", f.suche);
+    sortiere(auswahlListe, "dauer", f.suche, rahmen.stufe);
   }
 
   var behaelter = $("auswahlListe");
@@ -1845,7 +1870,8 @@ function verdrahte() {
     clearTimeout(entprellen);
     entprellen = setTimeout(aktualisiere, 150);
   });
-  var felder = ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung", "fOhneMaterial"];
+  var felder = ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung",
+                "fOhneMaterial", "fMitAlter"];
   for (var i = 0; i < felder.length; i++) {
     $(felder[i]).addEventListener("change", aktualisiere);
   }

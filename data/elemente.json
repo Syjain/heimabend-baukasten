@@ -2141,6 +2141,38 @@
    "unterkategorie": "pfaditechnik"
   },
   {
+   "id": "sw-action-game",
+   "titel": "Action Game",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 120,
+   "dauer_max": 150,
+   "ort": "draussen",
+   "material": [
+    "nach Bedarf"
+   ],
+   "vorbereitung": "hoch",
+   "kurz": "Ein Action Game ist eine Möglichkeit, ein umfangreicheres Geländespiel zu gestalten. Es kann mit einem konkreten Motto (Thema) versehen und mit vielen verschiedenen Stationen durchgeführt werden.",
+   "beschreibung": "Ein **Action Game** ist eine Möglichkeit, ein umfangreicheres Geländespiel zu gestalten. Es kann mit einem konkreten Motto (Thema) versehen und mit vielen verschiedenen Stationen durchgeführt werden.\n\n## Material\nDas benötigte Material hängt vom konkreten Spiel, insbesondere von den ausgewählten Stationen ab. In vielen Fällen wird ein Übersichtsplan benötigt, wo alle Stationen eingezeichnet sind.\n\n## Ablauf\nGrundidee eines Action Games ist folgende: Die Teilnehmer (die typischerweise in Gruppen antreten) müssen eine Aufgabe lösen. Um dies zu erreichen, werden sie von Station zu Station geschickt, allerdings ohne vorab den genauen Ablauf zu kennen. Sie können die Stationen frei anlaufen, es gibt keine (offensichtliche) Reihenfolge (das Spiel ist also kein \"Stationenlauf\"). Allerdings gibt es letztlich eine Reihenfolge, in der die Stationen absolviert werden müssen, da viele Stationen auf den Ergebnissen anderer Stationen aufbauen. Um eine Station zu absolvieren, kann es notwendig sein, dass die Teilnehmer eine Aufgabe zu lösen; dies wird typischerweise an die Spielgeschichte angepasst. Viele Stationen werden zweimal angelaufen, da beim ersten Mal die Vorbedingungen noch nicht erfüllt, und die Teilnehmer erfahren diese ja erst an der Station direkt. Die Aufgabe wird erst beim zweiten Mal gestellt, wenn die Station wirklich absolviert wird; es kann aber auch (oder nur dann) beim Abfragen der Information, was die Vorbedingungen für diese Station sind, bereits eine Aufgabe gestellt werden.\n\nDazu ein einfaches Beispiel mit 4 Stationen:\n- Die Aufgabe lautet, eine bestimmte Tür zu öffnen; die Tür ist offensichtlich abgeschlossen, der Schlüssel nicht vorhanden.\n- Es bestehen drei Stationen: ein Schlüsselmacher, die Erzmine und ein Schmied\n- Die Teilnehmer können alle Stationen frei anlaufen. Absolvieren können Sie die Stationen allerdings nur in der korrekten Reihenfolge:\n- Da die Tür verschlossen ist, werden die Teilnehmer zum Schlüsselmacher gehen; dieser benötigt für seine Arbeit allerdings einen Metallrohling. Dieser wiederum erhalten die Teilnehmer beim Schmied, der dafür Erz aus der Mine benötigt. Die \"korrekte\" Reihenfolge in diesem Fall ist also: Tür->Schlüsselmacher->Schmied->Erzmine->Schmied->Erzmine\n- Bei der Erzmine müssen mehrere Erzklumpen (Steine) ausgegraben werden, die in einer Mine (Sandkiste) vergraben sind.\n- Beim Schmied wird aus dem Erz der Metallrohling geformt; falls möglich, kann hierzu wirklich etwas geschmiedet werden, oder es wird eine andere (dazu passende Aufgabe gelöst), worauf hin der Schmied den Rohling aushändigt\n- Beim Schlüsselmacher wiederum ist ebenfalls eine Aufgabe zu lösen, um an den fertigen Schlüssel zu kommen.\n- Mit dem Schlüssel kann die Tür geöffnet werden: die Aufgabe ist erledigt!\n\n### Variationsmöglichkeiten\n\"Grundlegende\" Stationen (wie im Beispiel die Erzmine) können an sich in beliebiger Reihenfolge angelaufen werden; im Prinzip auch dann schon, wenn noch überhaupt nicht klar ist, ob und warum die Ressource benötigt wird. Allerdings können solche Stationen auch zur Verwirrung der Teilnehmer eingebaut werden; so können etwa die Aufgaben der Gruppen variiert werden, so dass nicht alle Teilnehmer alle Ressourcen benötigen.\n\nIdealerweise befinden sich die Stationen ein wenig voneinander entfernt. Dann sollte ein Übersichtsplan zur Verfügung stehen, auf dem alle Stationen mit sprechendem Namen eingezeichnet sind. Dieser Plan kann auch mehr Stationen eingezeichnet haben, als tatsächlich zur Verfügung stehen - damit wissen die Teilnehmer nicht von Anfang an, da noch nicht bekannt ist, welche Stationen tatsächlich zu absolvieren sind.\n\nEs muss vorab geklärt sein, wie mit mehreren teilnehmenden Gruppen umgegangen wird. Können diese die Stationen zeitgleich absolvieren? Starten diese hintereinander mit einem gewissen Zeitabstand? Bekommen sie leicht unterschiedlich Aufgaben, also müssen sie die Stationen letztlich in einer anderen Reihenfolge absolvieren?",
+   "tipps": "",
+   "tags": [
+    "Geländespiel",
+    "Spieletyp"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Action_Game",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "unterkategorie": "spiel"
+  },
+  {
    "id": "insp-action-painting",
    "titel": "Action Painting",
    "element_typ": "projekt",
@@ -3294,6 +3326,49 @@
    "unterkategorie": "gruppe",
    "dubletten": [
     "eig-casino-abend"
+   ]
+  },
+  {
+   "id": "ps-chaos-spiel",
+   "titel": "Chaos-Spiel",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Wölflinge",
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 60,
+   "dauer_max": 120,
+   "ort": "draussen",
+   "material": [
+    "Diverses"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Das Chaos-Spiel ist der absolute Klassiker für Zeltlager oder lange Gruppenstunden. Es ist eine Mischung aus Brettspiel und Geländelauf. Vorbereitung",
+   "beschreibung": "Das Chaos-Spiel ist der absolute Klassiker für Zeltlager oder lange Gruppenstunden. Es ist eine Mischung aus Brettspiel und Geländelauf.\n\nVorbereitung\n\nIhr benötigt einen großen Spielplan (z.B. auf einem Plakat oder mit Kreide auf dem Boden) mit 50 durchnummerierten Feldern. Im Gelände verteilt ihr 50 Zettel (oder kleine Kärtchen), auf denen ebenfalls die Nummern 1 bis 50 stehen. Auf der Rückseite jedes Zettels steht ein Codewort oder ein Bild (z.B. „Banane“, „Zelthering“, „Lagerfeuer“).\n\nSpielablauf\n\nDie Gruppe wird in Kleingruppen (3-6 Personen) eingeteilt. Jede Gruppe hat eine Spielfigur auf dem Plan. Es wird reihum gewürfelt. Würfelt Gruppe A eine 4, zieht sie auf Feld 4. Nun rennt die ganze Gruppe los und muss im Gelände den Zettel mit der Nummer 4 suchen.\n\nHaben sie den Zettel gefunden, merken sie sich das Codewort (Zettel hängen lassen!) und rennen zur Spielleitung zurück. Wenn die Gruppe vollständig bei der Spielleitung ist und das Codewort stimmt, bekommt die Gruppe eine Aufgabe gestellt. Erst wenn diese Aufgabe erfüllt ist, darf erneut gewürfelt werden. Das stellen der Aufgabe kann eine Assistenz der Spielleitung übernehmen.\n\nZiel ist es, möglichst schnell bei der 50 anzukommen.\n\nBei 2 oder 3 Gruppen kann die Spielleitung sein*e eigene*r Assistent*in sein. Für ca. 4 -5 Gruppen reicht ein*e Assistent*in. Bei mehr Gruppen empfehlen sich mehrere Assistenzen, die jeweils die gleichen Aufgaben haben und auf die die Gruppen dann von der Spielleitung aufgeteilt werden, damit keine Warteschlangen zum Lösen der Aufgaben entstehen.\n\nFür internationalen Austausch\n\nIn der internationalen Gruppen werden Bilder auf die Rückseiten der Nummern machen. Bei bilingualen Gruppe kann die Regel festgelegt werden, dass das Codewort immer auf beiden Sprachen gesagt werden muss. Die Aufgaben müssen in beiden Sprachen gestellt werden.\n\nBeispiele für Aufgaben\n\n- Bringt 5 verschiedene Sorten Blätter.\n\n- Singt gemeinsam ein Lied.\n\n- Macht 20 Kniebeugen.\n\n- Buchstabiert „Pfadfinden“ rückwärts.\n\nHier findest du Vorlagen für weitere Aufgaben und Nummernkarten:\n\n- Chaosspiel_Aufgaben\n\n- Chaosspiel_Nummernkarten\n\nVariante:\n\nAuf dem Spielplan gibt es „Chaos-Felder“. Wer darauf kommt, stürzt ab (z.B. zurück auf Start oder 10 Felder zurück). Das Ziel ist es, als erstes Team das letzte Feld (die 50) zu erreichen.",
+   "tipps": "Hinweis",
+   "tags": [
+    "Geländespiel",
+    "Mannschaftsspiel",
+    "Bewegungsspiel",
+    "Leiter-Spiel im Gelände"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "pfadfinder-spiele.de",
+    "url": "https://pfadfinder-spiele.de/chaos-spiel/",
+    "autor": "Dorothea Schümann",
+    "lizenz": "CC BY-NC-SA 4.0"
+   },
+   "alter_ab": 8,
+   "gruppe_min": 10,
+   "unterkategorie": "spiel",
+   "dubletten": [
+    "eig-chaosspiel"
    ]
   },
   {
@@ -5165,6 +5240,39 @@
    "unterkategorie": "bund"
   },
   {
+   "id": "sw-fotorallye",
+   "titel": "Fotorallye",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 60,
+   "dauer_max": 90,
+   "ort": "draussen",
+   "material": [
+    "Fotos",
+    "Landkarte"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Eine Fotorallye ist ein Geländespiel für Gruppen. Die Teilnehmeranzahl ist durch das Spielprinzip nicht vorgegeben, mit bis zu zehn Spielern funktioniert es aber wohl am besten.",
+   "beschreibung": "Eine **Fotorallye** ist ein Geländespiel für Gruppen. Die Teilnehmeranzahl ist durch das Spielprinzip nicht vorgegeben, mit bis zu zehn Spielern funktioniert es aber wohl am besten.\n\n## Material\n\n**Vorbereitungsphase**\n- Fotokamera\n- Notizblock und Stift\n\n**Durchführung**\n- ausgearbeitete Fotos\n- Landkarte / Luftbild\n\n## Vorbereitung\nZur Vorbereitung werden im geplanten Gelände Fotos geschossen. Das Gebiet sollte dabei \"abwechslungsreich\" und möglichst unverwechselbare Elemente beinhalten - ein Wald eignet sich dafür etwa schlechter als eine Siedlung. Die genommene Route (oder zumindest einige Wegpunkte) und die Fotos werden auf der Karte eingezeichnet.\n\n## Ablauf\nDie Spieler erhalten nun - möglichst in einer Spielgeschichte verpackt - die Aufgabe, die Fotos wiederzufinden. Sie erhalten dabei eine Karte des Zielgebiets und eine ungefähre Angabe, wo die Fotos gemacht wurden. Ziel ist es, alle Fotomotive wieder zu identifizieren.\n\n### Kombination\nDas Spiel kann gut mit ähnlichen Geländespielen (etwa einer Schnitzeljagd) kombiniert werden oder eine Aufgabe in einem umfangreicheren Geländespiel sein.",
+   "tipps": "",
+   "tags": [
+    "Geländespiel"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Fotorallye",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "gruppe_max": 10,
+   "unterkategorie": "spiel"
+  },
+  {
    "id": "insp-gedaechtnisbildnis",
    "titel": "Gedächtnisbildnis",
    "element_typ": "projekt",
@@ -6260,6 +6368,39 @@
    "unterkategorie": "sonstiges"
   },
   {
+   "id": "sw-highland-games",
+   "titel": "Highland Games",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 60,
+   "dauer_max": 90,
+   "ort": "draussen",
+   "material": [
+    "je nach Wettkämpfen"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Die Highland Games (deutsch Hochland-Spiele) sind ein Wettkampf, bei dem mehrere Mitspieler (oder Teams von Mitspielern) gegeneinander antreten. Es ist eine Variante der Sportolympiade.",
+   "beschreibung": "Die **Highland Games** (deutsch Hochland-Spiele) sind ein Wettkampf, bei dem mehrere Mitspieler (oder Teams von Mitspielern) gegeneinander antreten. Es ist eine Variante der Sportolympiade und hat \"Schottland\" als thematischen Schwerpunkt. Wettkämpfe dieser Art werden traditionell in Schottland veranstaltet.\n\n## Material\nJe nach angebotenen Wettbewerben werden unterschiedliche Gegenstände benötigt, typisch sind\n- Bälle\n- Seile\n- etc.\n\n## Ablauf\nDie Spieler treten einzeln oder in Gruppen gegeneinander an. Sie müssen mehrere Wettkämpfe bestreiten, bei denen jeweils ihre Leistung festgehalten wird (Laufzeit, Punkte, Wurfweite, etc.). Zum Abschluss werden die Punkte aller Spieler oder Teams ausgewertet und ein Gesamtsieger ermittelt.\n\n### Wettkämpfe\nWelche Wettkämpfe angeboten werden, liegt im Ermessen und an den Möglichkeiten der Betreuer. Sie sollten thematisch jedoch zum Thema Schottland passen. Üblicherweise orientiert man sich an den traditionellen schottischen Wettkämpfen und versucht diese, für die Fähigkeiten der Mitspieler zu adaptieren:\n\n- Baumstammwerfen\n- Hammerwerfen (etwa mit Tennisball in einer Socke)\n- Laufbewerbe\n- Ringkampf (etwa in Form des Liegestütz-Kampfs)\n- etc.",
+   "tipps": "",
+   "tags": [
+    "Bewegungsspiel",
+    "Geschicklichkeitsspiel"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Highland_Games",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "gruppe_min": 6,
+   "unterkategorie": "sonstiges"
+  },
+  {
    "id": "insp-holz-osterhasen",
    "titel": "Holz-Osterhasen",
    "element_typ": "projekt",
@@ -6863,6 +7004,41 @@
     "lizenz": "CC BY-NC 4.0"
    },
    "unterkategorie": "pfaditechnik"
+  },
+  {
+   "id": "sw-kochduell",
+   "titel": "Kochduell",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 120,
+   "dauer_max": 150,
+   "ort": "beides",
+   "material": [
+    "Zutaten",
+    "Kochplatten",
+    "Geschirr"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Beim Kochduell treten mehrere Gruppen gegeneinander an und Kochen ohne Vorausplanung mit anderen Gruppen um die Wette.",
+   "beschreibung": "Beim **Kochduell** treten mehrere Gruppen gegeneinander an und Kochen ohne Vorausplanung mit anderen Gruppen um die Wette.\n\n## Material\n- Kochzutaten, aus denen unterschiedliche Mahlzeiten (eventuell mehrere Gänge) zubereitet werden kann\n- mehrere räumlich getrennte Kochplätze (Kochplatten, Herd)\n- Kochgeschirr (Töpfe, Kochlöffel, Messer, ...) in ausreichender Anzahl\n\n## Ablauf\nEs werden mehrere Teams gebildet. Diese erhalten nun die Zutaten. Dazu erhalten entweder alle Gruppen das gleiche Set an Zutaten, oder sie können reihum jeweils eine der Zutaten wählen. Eventuell können die Zutaten auch um Spielgeld versteigert werden. In jedem Fall müssen die erhaltenen Zutaten ausreichen, um ein möglichst schmackhaftes Menü zu kochen.\n\nDie Gruppen erhalten nun eine gewisse Zeit vorgegeben, um ihr Menü abzuschließen. Danach werden die entstandenen Kreationen verkostet und bewertet.",
+   "tipps": "",
+   "tags": [
+    "Kreativspiel",
+    "Spiel mit Essen"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Kochduell",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "gruppe_max": 10,
+   "unterkategorie": "sonstiges"
   },
   {
    "id": "eig-kochduell-im-hordentopf",
@@ -9583,6 +9759,42 @@
    "unterkategorie": "pfaditechnik"
   },
   {
+   "id": "ps-salzschmuggler",
+   "titel": "Salzschmuggler",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 60,
+   "dauer_max": 120,
+   "ort": "draussen",
+   "material": [
+    "Diverses"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Teams versuchen, Salz an einer Kontrolle vorbei zu einem Zielort zu transportieren, wobei der Trick ist, das Salz in Wasser aufzulösen und am Ziel wieder herauszukochen.",
+   "beschreibung": "Es spielen Gruppen mit jeweils 3-7 Personen gegeneinander. Zu Beginn werden Wasserflaschen, Kocher, Töpfe, Tüten und Münzen an jede Gruppe verteilt. Das Ziel des Spiels ist es, möglichst viel Salz zu einen bestimmten Zielort, an einer Kontrolle vorbei zu bringen. Beim Dealer können sie Salz gegen die Münzen erhalten und müssen versuchen das Salz an der Kontrolle vorbei zum Zielort transportieren. Die Salzkontrolle steht an einem schmalen Durchgang, so dass sie jeden abfangen und auf Salz kontrollieren können. Die Kontrolle stoppt jede Gruppe und kontrolliert sie auf Salz. Alles, was gefunden wird, wird einkassiert. Gewonnen hat die Gruppe, die am meisten echtes Salz ans Ziel bringt.",
+   "tipps": "Hinweis für die Spielleitung: Der Trick ist es, das Salz im Wasser aufzulösen und am Ziel wieder heraus zu kochen.",
+   "tags": [
+    "Geländespiel"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "pfadfinder-spiele.de",
+    "url": "https://pfadfinder-spiele.de/salzschmuggler/",
+    "autor": "Dorothea Schümann",
+    "lizenz": "CC BY-NC-SA 4.0"
+   },
+   "alter_ab": 13,
+   "gruppe_min": 10,
+   "unterkategorie": "spiel"
+  },
+  {
    "id": "insp-schale-aus-zeitungspapier",
    "titel": "Schale aus Zeitungspapier",
    "element_typ": "projekt",
@@ -10226,6 +10438,40 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "unterkategorie": "basteln"
+  },
+  {
+   "id": "sw-sportolympiade",
+   "titel": "Sportolympiade",
+   "element_typ": "projekt",
+   "kategorie": "spiel",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 60,
+   "dauer_max": 90,
+   "ort": "draussen",
+   "material": [
+    "je nach Wettkämpfen"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Eine Sportolympiade (oder einfach nur Olympiade) ist ein Wettkampf für mehrere Spieler oder Teams. Es können beliebig viele Mitspieler teilnehmen, die Anzahl ist nach oben hin nur durch die Anzahl der verfügbaren Stationsbetreuer begrenzt.",
+   "beschreibung": "Eine **Sportolympiade** (oder einfach nur **Olympiade**) ist ein Wettkampf für mehrere Spieler oder Teams. Es können beliebig viele Mitspieler teilnehmen, die Anzahl ist nach oben hin nur durch die Anzahl der verfügbaren Stationsbetreuer begrenzt.\n\n## Material\nDas benötigte Material ist abhängig von den angebotenen \"Sportarten\". Typisch sind:\n- Bälle\n- Stelzen\n- Pfeil und Bogen\n- Dosen (für Dosenschießen)\n\n## Ablauf\nBei der Olympiade handelt es sich um einen Mehrkampf. Die Teilnehmer können einzeln oder in Teams antreten und müssen nacheinander in mehreren Sportarten Wettkämpfe bestreiten. Bei jedem Wettkampf wird die Leistung (benötigte Zeit, Wurfweite, Anzahl der Treffer, etc.) notiert, etwa in einer Laufkarte.\n\nZum Schluss des Spieles werden die Leistungen aller Mitspieler ausgewertet und ein Gesamtsieger ermittelt.\n\n## Wettbewerbe\nBei der Gestaltung der angebotenen Wettbewerbe sind der Phantasie der Betreuer keine Grenzen gesetzt. Der Schwerpunkt kann auf Sport (Bewegung) oder auf Geschicklichkeit gesetzt werden, auch sind thematische Aspekte berücksichtigbar (siehe Highlandgames).\n\n- Laufwettbewerbe\n- Hindernisparcours\n- Kartoffellauf (Eierlauf)\n- Liegestütz-Kampf\n- Sackhüpfen\n- Schubkarrenrennen\n- Gummistiefel-Weitwurf\n- Hammerwerfen (mit einem Tennisball in einer Socke)\n- Seilziehen\n- Dosenschießen\n- Bogenschießen\n- Zielwerfen (mit Bällen)\n- Hufeisenwerfen\n- ...",
+   "tipps": "",
+   "tags": [
+    "Bewegungsspiel",
+    "Geschicklichkeitsspiel",
+    "Spiel mit Laufkarte"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Sportolympiade",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "gruppe_min": 6,
+   "unterkategorie": "sonstiges"
   },
   {
    "id": "insp-stadt-land-fluss",
@@ -12053,38 +12299,6 @@
    "gruppe_min": 5,
    "gruppe_max": 15,
    "unterkategorie": "team"
-  },
-  {
-   "id": "sw-action-game",
-   "titel": "Action Game",
-   "element_typ": "spiel",
-   "kategorie": "gelaende",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 120,
-   "dauer_max": 150,
-   "ort": "draussen",
-   "material": [
-    "nach Bedarf"
-   ],
-   "vorbereitung": "hoch",
-   "kurz": "Ein Action Game ist eine Möglichkeit, ein umfangreicheres Geländespiel zu gestalten. Es kann mit einem konkreten Motto (Thema) versehen und mit vielen verschiedenen Stationen durchgeführt werden.",
-   "beschreibung": "Ein **Action Game** ist eine Möglichkeit, ein umfangreicheres Geländespiel zu gestalten. Es kann mit einem konkreten Motto (Thema) versehen und mit vielen verschiedenen Stationen durchgeführt werden.\n\n## Material\nDas benötigte Material hängt vom konkreten Spiel, insbesondere von den ausgewählten Stationen ab. In vielen Fällen wird ein Übersichtsplan benötigt, wo alle Stationen eingezeichnet sind.\n\n## Ablauf\nGrundidee eines Action Games ist folgende: Die Teilnehmer (die typischerweise in Gruppen antreten) müssen eine Aufgabe lösen. Um dies zu erreichen, werden sie von Station zu Station geschickt, allerdings ohne vorab den genauen Ablauf zu kennen. Sie können die Stationen frei anlaufen, es gibt keine (offensichtliche) Reihenfolge (das Spiel ist also kein \"Stationenlauf\"). Allerdings gibt es letztlich eine Reihenfolge, in der die Stationen absolviert werden müssen, da viele Stationen auf den Ergebnissen anderer Stationen aufbauen. Um eine Station zu absolvieren, kann es notwendig sein, dass die Teilnehmer eine Aufgabe zu lösen; dies wird typischerweise an die Spielgeschichte angepasst. Viele Stationen werden zweimal angelaufen, da beim ersten Mal die Vorbedingungen noch nicht erfüllt, und die Teilnehmer erfahren diese ja erst an der Station direkt. Die Aufgabe wird erst beim zweiten Mal gestellt, wenn die Station wirklich absolviert wird; es kann aber auch (oder nur dann) beim Abfragen der Information, was die Vorbedingungen für diese Station sind, bereits eine Aufgabe gestellt werden.\n\nDazu ein einfaches Beispiel mit 4 Stationen:\n- Die Aufgabe lautet, eine bestimmte Tür zu öffnen; die Tür ist offensichtlich abgeschlossen, der Schlüssel nicht vorhanden.\n- Es bestehen drei Stationen: ein Schlüsselmacher, die Erzmine und ein Schmied\n- Die Teilnehmer können alle Stationen frei anlaufen. Absolvieren können Sie die Stationen allerdings nur in der korrekten Reihenfolge:\n- Da die Tür verschlossen ist, werden die Teilnehmer zum Schlüsselmacher gehen; dieser benötigt für seine Arbeit allerdings einen Metallrohling. Dieser wiederum erhalten die Teilnehmer beim Schmied, der dafür Erz aus der Mine benötigt. Die \"korrekte\" Reihenfolge in diesem Fall ist also: Tür->Schlüsselmacher->Schmied->Erzmine->Schmied->Erzmine\n- Bei der Erzmine müssen mehrere Erzklumpen (Steine) ausgegraben werden, die in einer Mine (Sandkiste) vergraben sind.\n- Beim Schmied wird aus dem Erz der Metallrohling geformt; falls möglich, kann hierzu wirklich etwas geschmiedet werden, oder es wird eine andere (dazu passende Aufgabe gelöst), worauf hin der Schmied den Rohling aushändigt\n- Beim Schlüsselmacher wiederum ist ebenfalls eine Aufgabe zu lösen, um an den fertigen Schlüssel zu kommen.\n- Mit dem Schlüssel kann die Tür geöffnet werden: die Aufgabe ist erledigt!\n\n### Variationsmöglichkeiten\n\"Grundlegende\" Stationen (wie im Beispiel die Erzmine) können an sich in beliebiger Reihenfolge angelaufen werden; im Prinzip auch dann schon, wenn noch überhaupt nicht klar ist, ob und warum die Ressource benötigt wird. Allerdings können solche Stationen auch zur Verwirrung der Teilnehmer eingebaut werden; so können etwa die Aufgaben der Gruppen variiert werden, so dass nicht alle Teilnehmer alle Ressourcen benötigen.\n\nIdealerweise befinden sich die Stationen ein wenig voneinander entfernt. Dann sollte ein Übersichtsplan zur Verfügung stehen, auf dem alle Stationen mit sprechendem Namen eingezeichnet sind. Dieser Plan kann auch mehr Stationen eingezeichnet haben, als tatsächlich zur Verfügung stehen - damit wissen die Teilnehmer nicht von Anfang an, da noch nicht bekannt ist, welche Stationen tatsächlich zu absolvieren sind.\n\nEs muss vorab geklärt sein, wie mit mehreren teilnehmenden Gruppen umgegangen wird. Können diese die Stationen zeitgleich absolvieren? Starten diese hintereinander mit einem gewissen Zeitabstand? Bekommen sie leicht unterschiedlich Aufgaben, also müssen sie die Stationen letztlich in einer anderen Reihenfolge absolvieren?",
-   "tipps": "",
-   "tags": [
-    "Geländespiel",
-    "Spieletyp"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Action_Game",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "unterkategorie": "gelaende"
   },
   {
    "id": "sw-affe-affe-elefant",
@@ -15325,49 +15539,6 @@
    "gruppe_min": 2,
    "gruppe_max": 20,
    "unterkategorie": "tisch"
-  },
-  {
-   "id": "ps-chaos-spiel",
-   "titel": "Chaos-Spiel",
-   "element_typ": "spiel",
-   "kategorie": "gelaende",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Wölflinge",
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 60,
-   "dauer_max": 120,
-   "ort": "draussen",
-   "material": [
-    "Diverses"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Das Chaos-Spiel ist der absolute Klassiker für Zeltlager oder lange Gruppenstunden. Es ist eine Mischung aus Brettspiel und Geländelauf. Vorbereitung",
-   "beschreibung": "Das Chaos-Spiel ist der absolute Klassiker für Zeltlager oder lange Gruppenstunden. Es ist eine Mischung aus Brettspiel und Geländelauf.\n\nVorbereitung\n\nIhr benötigt einen großen Spielplan (z.B. auf einem Plakat oder mit Kreide auf dem Boden) mit 50 durchnummerierten Feldern. Im Gelände verteilt ihr 50 Zettel (oder kleine Kärtchen), auf denen ebenfalls die Nummern 1 bis 50 stehen. Auf der Rückseite jedes Zettels steht ein Codewort oder ein Bild (z.B. „Banane“, „Zelthering“, „Lagerfeuer“).\n\nSpielablauf\n\nDie Gruppe wird in Kleingruppen (3-6 Personen) eingeteilt. Jede Gruppe hat eine Spielfigur auf dem Plan. Es wird reihum gewürfelt. Würfelt Gruppe A eine 4, zieht sie auf Feld 4. Nun rennt die ganze Gruppe los und muss im Gelände den Zettel mit der Nummer 4 suchen.\n\nHaben sie den Zettel gefunden, merken sie sich das Codewort (Zettel hängen lassen!) und rennen zur Spielleitung zurück. Wenn die Gruppe vollständig bei der Spielleitung ist und das Codewort stimmt, bekommt die Gruppe eine Aufgabe gestellt. Erst wenn diese Aufgabe erfüllt ist, darf erneut gewürfelt werden. Das stellen der Aufgabe kann eine Assistenz der Spielleitung übernehmen.\n\nZiel ist es, möglichst schnell bei der 50 anzukommen.\n\nBei 2 oder 3 Gruppen kann die Spielleitung sein*e eigene*r Assistent*in sein. Für ca. 4 -5 Gruppen reicht ein*e Assistent*in. Bei mehr Gruppen empfehlen sich mehrere Assistenzen, die jeweils die gleichen Aufgaben haben und auf die die Gruppen dann von der Spielleitung aufgeteilt werden, damit keine Warteschlangen zum Lösen der Aufgaben entstehen.\n\nFür internationalen Austausch\n\nIn der internationalen Gruppen werden Bilder auf die Rückseiten der Nummern machen. Bei bilingualen Gruppe kann die Regel festgelegt werden, dass das Codewort immer auf beiden Sprachen gesagt werden muss. Die Aufgaben müssen in beiden Sprachen gestellt werden.\n\nBeispiele für Aufgaben\n\n- Bringt 5 verschiedene Sorten Blätter.\n\n- Singt gemeinsam ein Lied.\n\n- Macht 20 Kniebeugen.\n\n- Buchstabiert „Pfadfinden“ rückwärts.\n\nHier findest du Vorlagen für weitere Aufgaben und Nummernkarten:\n\n- Chaosspiel_Aufgaben\n\n- Chaosspiel_Nummernkarten\n\nVariante:\n\nAuf dem Spielplan gibt es „Chaos-Felder“. Wer darauf kommt, stürzt ab (z.B. zurück auf Start oder 10 Felder zurück). Das Ziel ist es, als erstes Team das letzte Feld (die 50) zu erreichen.",
-   "tipps": "Hinweis",
-   "tags": [
-    "Geländespiel",
-    "Mannschaftsspiel",
-    "Bewegungsspiel",
-    "Leiter-Spiel im Gelände"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "pfadfinder-spiele.de",
-    "url": "https://pfadfinder-spiele.de/chaos-spiel/",
-    "autor": "Dorothea Schümann",
-    "lizenz": "CC BY-NC-SA 4.0"
-   },
-   "alter_ab": 8,
-   "gruppe_min": 10,
-   "unterkategorie": "gelaende",
-   "dubletten": [
-    "eig-chaosspiel"
-   ]
   },
   {
    "id": "sw-chaosfangen",
@@ -19241,39 +19412,6 @@
    "unterkategorie": "vertrauen"
   },
   {
-   "id": "sw-fotorallye",
-   "titel": "Fotorallye",
-   "element_typ": "spiel",
-   "kategorie": "gelaende",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 60,
-   "dauer_max": 90,
-   "ort": "draussen",
-   "material": [
-    "Fotos",
-    "Landkarte"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Eine Fotorallye ist ein Geländespiel für Gruppen. Die Teilnehmeranzahl ist durch das Spielprinzip nicht vorgegeben, mit bis zu zehn Spielern funktioniert es aber wohl am besten.",
-   "beschreibung": "Eine **Fotorallye** ist ein Geländespiel für Gruppen. Die Teilnehmeranzahl ist durch das Spielprinzip nicht vorgegeben, mit bis zu zehn Spielern funktioniert es aber wohl am besten.\n\n## Material\n\n**Vorbereitungsphase**\n- Fotokamera\n- Notizblock und Stift\n\n**Durchführung**\n- ausgearbeitete Fotos\n- Landkarte / Luftbild\n\n## Vorbereitung\nZur Vorbereitung werden im geplanten Gelände Fotos geschossen. Das Gebiet sollte dabei \"abwechslungsreich\" und möglichst unverwechselbare Elemente beinhalten - ein Wald eignet sich dafür etwa schlechter als eine Siedlung. Die genommene Route (oder zumindest einige Wegpunkte) und die Fotos werden auf der Karte eingezeichnet.\n\n## Ablauf\nDie Spieler erhalten nun - möglichst in einer Spielgeschichte verpackt - die Aufgabe, die Fotos wiederzufinden. Sie erhalten dabei eine Karte des Zielgebiets und eine ungefähre Angabe, wo die Fotos gemacht wurden. Ziel ist es, alle Fotomotive wieder zu identifizieren.\n\n### Kombination\nDas Spiel kann gut mit ähnlichen Geländespielen (etwa einer Schnitzeljagd) kombiniert werden oder eine Aufgabe in einem umfangreicheren Geländespiel sein.",
-   "tipps": "",
-   "tags": [
-    "Geländespiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Fotorallye",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_max": 10,
-   "unterkategorie": "gelaende"
-  },
-  {
    "id": "sw-foursquare",
    "titel": "Foursquare",
    "element_typ": "spiel",
@@ -21737,39 +21875,6 @@
    ]
   },
   {
-   "id": "sw-highland-games",
-   "titel": "Highland Games",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_draussen",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 60,
-   "dauer_max": 90,
-   "ort": "draussen",
-   "material": [
-    "je nach Wettkämpfen"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Die Highland Games (deutsch Hochland-Spiele) sind ein Wettkampf, bei dem mehrere Mitspieler (oder Teams von Mitspielern) gegeneinander antreten. Es ist eine Variante der Sportolympiade.",
-   "beschreibung": "Die **Highland Games** (deutsch Hochland-Spiele) sind ein Wettkampf, bei dem mehrere Mitspieler (oder Teams von Mitspielern) gegeneinander antreten. Es ist eine Variante der Sportolympiade und hat \"Schottland\" als thematischen Schwerpunkt. Wettkämpfe dieser Art werden traditionell in Schottland veranstaltet.\n\n## Material\nJe nach angebotenen Wettbewerben werden unterschiedliche Gegenstände benötigt, typisch sind\n- Bälle\n- Seile\n- etc.\n\n## Ablauf\nDie Spieler treten einzeln oder in Gruppen gegeneinander an. Sie müssen mehrere Wettkämpfe bestreiten, bei denen jeweils ihre Leistung festgehalten wird (Laufzeit, Punkte, Wurfweite, etc.). Zum Abschluss werden die Punkte aller Spieler oder Teams ausgewertet und ein Gesamtsieger ermittelt.\n\n### Wettkämpfe\nWelche Wettkämpfe angeboten werden, liegt im Ermessen und an den Möglichkeiten der Betreuer. Sie sollten thematisch jedoch zum Thema Schottland passen. Üblicherweise orientiert man sich an den traditionellen schottischen Wettkämpfen und versucht diese, für die Fähigkeiten der Mitspieler zu adaptieren:\n\n- Baumstammwerfen\n- Hammerwerfen (etwa mit Tennisball in einer Socke)\n- Laufbewerbe\n- Ringkampf (etwa in Form des Liegestütz-Kampfs)\n- etc.",
-   "tipps": "",
-   "tags": [
-    "Bewegungsspiel",
-    "Geschicklichkeitsspiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Highland_Games",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 6,
-   "unterkategorie": "geschick"
-  },
-  {
    "id": "ps-hilfe-die-katze-kommt",
    "titel": "Hilfe die Katze kommt",
    "element_typ": "spiel",
@@ -23903,41 +24008,6 @@
    "gruppe_min": 10,
    "gruppe_max": 10,
    "unterkategorie": "kampf"
-  },
-  {
-   "id": "sw-kochduell",
-   "titel": "Kochduell",
-   "element_typ": "spiel",
-   "kategorie": "ruhig",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 120,
-   "dauer_max": 150,
-   "ort": "beides",
-   "material": [
-    "Zutaten",
-    "Kochplatten",
-    "Geschirr"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Beim Kochduell treten mehrere Gruppen gegeneinander an und Kochen ohne Vorausplanung mit anderen Gruppen um die Wette.",
-   "beschreibung": "Beim **Kochduell** treten mehrere Gruppen gegeneinander an und Kochen ohne Vorausplanung mit anderen Gruppen um die Wette.\n\n## Material\n- Kochzutaten, aus denen unterschiedliche Mahlzeiten (eventuell mehrere Gänge) zubereitet werden kann\n- mehrere räumlich getrennte Kochplätze (Kochplatten, Herd)\n- Kochgeschirr (Töpfe, Kochlöffel, Messer, ...) in ausreichender Anzahl\n\n## Ablauf\nEs werden mehrere Teams gebildet. Diese erhalten nun die Zutaten. Dazu erhalten entweder alle Gruppen das gleiche Set an Zutaten, oder sie können reihum jeweils eine der Zutaten wählen. Eventuell können die Zutaten auch um Spielgeld versteigert werden. In jedem Fall müssen die erhaltenen Zutaten ausreichen, um ein möglichst schmackhaftes Menü zu kochen.\n\nDie Gruppen erhalten nun eine gewisse Zeit vorgegeben, um ihr Menü abzuschließen. Danach werden die entstandenen Kreationen verkostet und bewertet.",
-   "tipps": "",
-   "tags": [
-    "Kreativspiel",
-    "Spiel mit Essen"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Kochduell",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_max": 10,
-   "unterkategorie": "darstellen"
   },
   {
    "id": "sw-konigsball",
@@ -31155,42 +31225,6 @@
    "unterkategorie": "team"
   },
   {
-   "id": "ps-salzschmuggler",
-   "titel": "Salzschmuggler",
-   "element_typ": "spiel",
-   "kategorie": "gelaende",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 60,
-   "dauer_max": 120,
-   "ort": "draussen",
-   "material": [
-    "Diverses"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Teams versuchen, Salz an einer Kontrolle vorbei zu einem Zielort zu transportieren, wobei der Trick ist, das Salz in Wasser aufzulösen und am Ziel wieder herauszukochen.",
-   "beschreibung": "Es spielen Gruppen mit jeweils 3-7 Personen gegeneinander. Zu Beginn werden Wasserflaschen, Kocher, Töpfe, Tüten und Münzen an jede Gruppe verteilt. Das Ziel des Spiels ist es, möglichst viel Salz zu einen bestimmten Zielort, an einer Kontrolle vorbei zu bringen. Beim Dealer können sie Salz gegen die Münzen erhalten und müssen versuchen das Salz an der Kontrolle vorbei zum Zielort transportieren. Die Salzkontrolle steht an einem schmalen Durchgang, so dass sie jeden abfangen und auf Salz kontrollieren können. Die Kontrolle stoppt jede Gruppe und kontrolliert sie auf Salz. Alles, was gefunden wird, wird einkassiert. Gewonnen hat die Gruppe, die am meisten echtes Salz ans Ziel bringt.",
-   "tipps": "Hinweis für die Spielleitung: Der Trick ist es, das Salz im Wasser aufzulösen und am Ziel wieder heraus zu kochen.",
-   "tags": [
-    "Geländespiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "pfadfinder-spiele.de",
-    "url": "https://pfadfinder-spiele.de/salzschmuggler/",
-    "autor": "Dorothea Schümann",
-    "lizenz": "CC BY-NC-SA 4.0"
-   },
-   "alter_ab": 13,
-   "gruppe_min": 10,
-   "unterkategorie": "gelaende"
-  },
-  {
    "id": "ps-samurai",
    "titel": "Samurai",
    "element_typ": "spiel",
@@ -33297,40 +33331,6 @@
    "gruppe_min": 10,
    "gruppe_max": 10,
    "unterkategorie": "team"
-  },
-  {
-   "id": "sw-sportolympiade",
-   "titel": "Sportolympiade",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_draussen",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 60,
-   "dauer_max": 90,
-   "ort": "draussen",
-   "material": [
-    "je nach Wettkämpfen"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Eine Sportolympiade (oder einfach nur Olympiade) ist ein Wettkampf für mehrere Spieler oder Teams. Es können beliebig viele Mitspieler teilnehmen, die Anzahl ist nach oben hin nur durch die Anzahl der verfügbaren Stationsbetreuer begrenzt.",
-   "beschreibung": "Eine **Sportolympiade** (oder einfach nur **Olympiade**) ist ein Wettkampf für mehrere Spieler oder Teams. Es können beliebig viele Mitspieler teilnehmen, die Anzahl ist nach oben hin nur durch die Anzahl der verfügbaren Stationsbetreuer begrenzt.\n\n## Material\nDas benötigte Material ist abhängig von den angebotenen \"Sportarten\". Typisch sind:\n- Bälle\n- Stelzen\n- Pfeil und Bogen\n- Dosen (für Dosenschießen)\n\n## Ablauf\nBei der Olympiade handelt es sich um einen Mehrkampf. Die Teilnehmer können einzeln oder in Teams antreten und müssen nacheinander in mehreren Sportarten Wettkämpfe bestreiten. Bei jedem Wettkampf wird die Leistung (benötigte Zeit, Wurfweite, Anzahl der Treffer, etc.) notiert, etwa in einer Laufkarte.\n\nZum Schluss des Spieles werden die Leistungen aller Mitspieler ausgewertet und ein Gesamtsieger ermittelt.\n\n## Wettbewerbe\nBei der Gestaltung der angebotenen Wettbewerbe sind der Phantasie der Betreuer keine Grenzen gesetzt. Der Schwerpunkt kann auf Sport (Bewegung) oder auf Geschicklichkeit gesetzt werden, auch sind thematische Aspekte berücksichtigbar (siehe Highlandgames).\n\n- Laufwettbewerbe\n- Hindernisparcours\n- Kartoffellauf (Eierlauf)\n- Liegestütz-Kampf\n- Sackhüpfen\n- Schubkarrenrennen\n- Gummistiefel-Weitwurf\n- Hammerwerfen (mit einem Tennisball in einer Socke)\n- Seilziehen\n- Dosenschießen\n- Bogenschießen\n- Zielwerfen (mit Bällen)\n- Hufeisenwerfen\n- ...",
-   "tipps": "",
-   "tags": [
-    "Bewegungsspiel",
-    "Geschicklichkeitsspiel",
-    "Spiel mit Laufkarte"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Sportolympiade",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 6,
-   "unterkategorie": "geschick"
   },
   {
    "id": "sw-spyfall",
