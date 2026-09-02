@@ -24,6 +24,7 @@ https://creativecommons.org/licenses/by-sa/4.0/). Als Autor wird die Autorenscha
 Wikis genannt; einzelne Benutzernamen werden nicht übernommen (siehe CLAUDE.md).
 Werbe-Bausteine ({{Amazon}}) und Zählpixel ({{METIS}}) werden entfernt.
 """
+import html
 import json
 import re
 import sys
@@ -291,6 +292,8 @@ def wikitext_zu_text(wikitext):
     text = re.sub(r"\[https?://\S+\]", "", text)
 
     text = re.sub(r"<[^>]+>", "", text)
+    # Wikitext enthält vereinzelt HTML-Entities (z. B. &nbsp; in Koordinaten)
+    text = html.unescape(text)
 
     # Zeilenweise: Überschriften und Aufzählungen aufbereiten.
     # Achtung: das muss VOR der Fett-Umwandlung passieren, sonst hält die

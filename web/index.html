@@ -964,6 +964,10 @@ function textZuHtml(roh) {
   for (var i = 0; i < zeilen.length; i++) {
     var zeile = zeilen[i].trim();
     var inhalt = schuetze(zeile).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    // Internetadressen anklickbar machen. Der Text ist zu diesem Zeitpunkt
+    // schon maskiert, es kann also nichts eingeschleust werden.
+    inhalt = inhalt.replace(/(https?:\/\/[^\s<]+)/g,
+      '<a href="$1" target="_blank" rel="noopener">$1</a>');
     if (!zeile) { absatzSchliessen(); listeSchliessen(); continue; }
     var ueberschrift = zeile.match(/^(#{2,4})\s+(.*)$/);
     if (ueberschrift) {

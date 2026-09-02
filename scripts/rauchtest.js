@@ -259,6 +259,17 @@
            });
          }));
 
+  // --- Internetadressen und Schutz vor eingeschleustem HTML ---
+  var probe = document.createElement("div");
+  probe.innerHTML = textZuHtml(
+    "Böse <img src=x onerror=alert(1)> und https://example.org/a?b=1&c=2 Ende");
+  pruefe("HTML aus den Daten wird als Text angezeigt",
+         (probe.innerHTML.match(/<[a-z]+/gi) || []).join(",") === "<p,<a",
+         (probe.innerHTML.match(/<[a-z]+/gi) || []).join(","));
+  pruefe("Adressen werden anklickbar",
+         probe.querySelector("a") &&
+         probe.querySelector("a").getAttribute("href").indexOf("https://example.org") === 0);
+
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);
   pruefe("Detailansicht öffnet", !document.getElementById("detail").hidden);

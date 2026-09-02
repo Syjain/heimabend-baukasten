@@ -885,6 +885,25 @@ def main():
         for zeile in bereinigt:
             print("   {}".format(zeile))
 
+    # Die Materialangaben des Inspirators sind in der Quelldatei hart auf
+    # 29 Zeichen abgeschnitten (Feldlänge der Ursprungsdatenbank) - meist
+    # mitten im Wort: "Computer/ Endgerät mit Intern". Das lässt sich nicht
+    # wiederherstellen, aber es soll wenigstens als abgeschnitten erkennbar sein.
+    abgeschnitten = 0
+    for element in elemente:
+        if not element["id"].startswith("insp-"):
+            continue
+        neue = []
+        for eintrag in element.get("material") or []:
+            if len(eintrag) == 29 and not eintrag.endswith(("…", ".", ")")):
+                eintrag = eintrag.rstrip() + " …"
+                abgeschnitten += 1
+            neue.append(eintrag)
+        element["material"] = neue
+    if abgeschnitten:
+        print("\n{} Materialangaben des Inspirators als abgeschnitten markiert"
+              .format(abgeschnitten))
+
     # Ein "Spiel" ist laut Schema 5-45 Minuten lang. Was mindestens eine Stunde
     # dauert (Highland Games, Kochduell, Chaos-Spiel), füllt den Abend und ist
     # ein Projekt - sonst würfelt der Planer es neben zwei weitere Bausteine.

@@ -2228,8 +2228,8 @@
    "material": [
     "Zeitungspapier oder Folie",
     "alte Klamotten",
-    "Pinsel; Schwämme; Zahnbürsten",
-    "Leinwand; Tapete oder Plakate"
+    "Pinsel; Schwämme; Zahnbürsten …",
+    "Leinwand; Tapete oder Plakate …"
    ],
    "vorbereitung": "gering",
    "kurz": "Mach dich bereit für Action Painting! Kleckse, spritze, werfe Farbe – Hauptsache kreativ! Lass deiner Fantasie freien Lauf und hab Spaß!",
@@ -3881,7 +3881,7 @@
    "dauer_max": 105,
    "ort": "drinnen",
    "material": [
-    "Computer/ Endgerät mit Intern"
+    "Computer/ Endgerät mit Intern …"
    ],
    "vorbereitung": "gering",
    "kurz": "Rettet die Pfadis! Entkommt dem Pfadiheim im Online Escape Room! 60 Minuten, schafft ihr's? Spielt allein oder mit Freunden: [Link-Kürzung nötig]",
@@ -3976,7 +3976,7 @@
     "Salz",
     "Spülmittel",
     "eisgekühlter Spiritus",
-    "evtl. Tinte oder Lebensmittel"
+    "evtl. Tinte oder Lebensmittel …"
    ],
    "vorbereitung": "gering",
    "kurz": "Entdecke deine DNA! Spül deinen Mund mit Salzwasser, gib Spüli dazu, dann kalten Spiritus. Deine DNA erscheint als weiße Fäden!",
@@ -4559,8 +4559,8 @@
    "dauer_max": 75,
    "ort": "beides",
    "material": [
-    "Aufnahmegerät (Handy oder Lap",
-    "eventuell Hintergrundgeräusch",
+    "Aufnahmegerät (Handy oder Lap …",
+    "eventuell Hintergrundgeräusch …",
     "Eine Geschichte eurer Wahl",
     "passende Software"
    ],
@@ -6331,7 +6331,7 @@
    "dauer_max": 105,
    "ort": "drinnen",
    "material": [
-    "Wenige Tropfen ätherisches Öl",
+    "Wenige Tropfen ätherisches Öl …",
     "Ecco Verde",
     "Avocadostore)",
     "Kakaobutter",
@@ -7554,7 +7554,7 @@
    "dauer_max": 30,
    "ort": "beides",
    "material": [
-    "Die Zutaten für euer exquisit"
+    "Die Zutaten für euer exquisit …"
    ],
    "vorbereitung": "gering",
    "kurz": "Entdeckt Lebensmittel! Backt Brot, macht Chips, lernt, woher Milch und Fleisch kommen. Selbermachen schmeckt besser!",
@@ -10924,7 +10924,7 @@
    "material": [
     "Papier",
     "Stifte",
-    "Glasflasche oder anderes Gefä",
+    "Glasflasche oder anderes Gefä …",
     "Kleber",
     "Sand",
     "Wachs zum Versiegeln"
@@ -11342,7 +11342,7 @@
     "günstiges Mineralwasser",
     "Wasser ohne Kohlensäure",
     "Quellwasser",
-    "Wasser aus einer Plastikflasc"
+    "Wasser aus einer Plastikflasc …"
    ],
    "vorbereitung": "gering",
    "kurz": "Teste verschiedene Wasser! Schmeckt Leitungswasser anders als Mineralwasser? Erkennst du teures Wasser am Geschmack?",
@@ -11512,7 +11512,7 @@
    "material": [
     "Blatt Papier",
     "Stift",
-    "Ausgedruckten Pfadfinderregel"
+    "Ausgedruckten Pfadfinderregel …"
    ],
    "vorbereitung": "gering",
    "kurz": "Welche Pfadfinderregel findest du am wenigsten wichtig? Sortiert die Regeln nach Wichtigkeit und sprecht darüber!",
@@ -20093,7 +20093,7 @@
    ],
    "vorbereitung": "mittel",
    "kurz": "Geocaching ist ein Geländespiel der etwas anderen Art.",
-   "beschreibung": "**Geocaching** ist ein Geländespiel der etwas anderen Art.\n\n## Material\nJeder Teilnehmer oder jede Teilnehmergruppe benötigt einen GPS-Empfänger, der zumindest die aktuellen Geokoordinaten anzeigen kann. PDAs, GPS-fähige Mobiltelefone oder spezielle GPS-Empfänger mit Display eignen sich dafür gut; Notebooks mit GPS-Empfänger sind für den mobilen Einsatz im Gelände natürlich weniger geeignet.\n\n## Ablauf\nZiel des Spiele ist es, einen vorgegebenen Punkt in der Landschaft (oder auch der Stadt) zu erreichen. Dort ist ein Behälter (ein Cache) versteckt. Dieser enthält typischerweise eine Nachricht oder einen Gegenstand. Der Punkt wird über die genaue Geokoordinate (Beispiel: 48°&nbsp;46′&nbsp;17″&nbsp;N, 13°&nbsp;51′&nbsp;26″&nbsp;O) den Teilnehmer mitgeteilt, die mit Hilfe des GPS-Empfängers den Punkt so schnell wie möglich erreichen sollen und das geheime Versteck finden.\n\n### Eigentliches Geocaching\nDie ursprüngliche Idee ist es, in den Caches Dinge zu verstecken und den Cache zu dokumentieren (meist im Internet, etwa auf geocaching.com). Wer den Cache findet, tauscht den Gegenstand oft durch einen eigenen aus und Dokumentiert den Fund im Internet.\n\n### Als Gruppenspiel\nAls Gruppenspiel lässt sich Geocaching etwa als Schnitzeljagd oder Schatzsuche einsetzen oder in diese Spiele einbauen.",
+   "beschreibung": "**Geocaching** ist ein Geländespiel der etwas anderen Art.\n\n## Material\nJeder Teilnehmer oder jede Teilnehmergruppe benötigt einen GPS-Empfänger, der zumindest die aktuellen Geokoordinaten anzeigen kann. PDAs, GPS-fähige Mobiltelefone oder spezielle GPS-Empfänger mit Display eignen sich dafür gut; Notebooks mit GPS-Empfänger sind für den mobilen Einsatz im Gelände natürlich weniger geeignet.\n\n## Ablauf\nZiel des Spiele ist es, einen vorgegebenen Punkt in der Landschaft (oder auch der Stadt) zu erreichen. Dort ist ein Behälter (ein Cache) versteckt. Dieser enthält typischerweise eine Nachricht oder einen Gegenstand. Der Punkt wird über die genaue Geokoordinate (Beispiel: 48° 46′ 17″ N, 13° 51′ 26″ O) den Teilnehmer mitgeteilt, die mit Hilfe des GPS-Empfängers den Punkt so schnell wie möglich erreichen sollen und das geheime Versteck finden.\n\n### Eigentliches Geocaching\nDie ursprüngliche Idee ist es, in den Caches Dinge zu verstecken und den Cache zu dokumentieren (meist im Internet, etwa auf geocaching.com). Wer den Cache findet, tauscht den Gegenstand oft durch einen eigenen aus und Dokumentiert den Fund im Internet.\n\n### Als Gruppenspiel\nAls Gruppenspiel lässt sich Geocaching etwa als Schnitzeljagd oder Schatzsuche einsetzen oder in diese Spiele einbauen.",
    "tipps": "",
    "tags": [
     "Geländespiel"
