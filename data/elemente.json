@@ -2,7 +2,7 @@
  "meta": {
   "name": "Heimabend-Baukasten – Elemente",
   "beschreibung": "Zusammengeführte Bausteine für Heimabende. Jedes Element trägt die Lizenz seiner Quelle.",
-  "anzahl": 1044,
+  "anzahl": 1038,
   "quellen": [
    "DPB-Probenbuch (3. Auflage)",
    "Heimabend-Baukasten (eigene Sammlung)",
@@ -647,7 +647,10 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": ""
+   "unterkategorie": "",
+   "dubletten": [
+    "insp-sternenhimmel-erkunden"
+   ]
   },
   {
    "id": "eig-upcycling-werkstatt",
@@ -2357,7 +2360,6 @@
     "hauptteil"
    ],
    "altersstufen": [
-    "Wölflinge",
     "Pfadfinder",
     "Ältere"
    ],
@@ -2371,7 +2373,7 @@
    "vorbereitung": "gering",
    "kurz": "Tauscht euch reich! Startet mit Kleinigkeiten und tauscht sie gegen etwas Besseres. Wer am Ende den wertvollsten Gegenstand hat, gewinnt! Oder tauscht Äpfel gegen anderes Obst für einen leckeren Obstsalat. Los geht's!",
    "beschreibung": "Von einer Büroklammer zu einer Villa ... an einem Heimabend nur etwas kleiner!\n\nIhr startet in kleinen Gruppen mit einem Gegenstand (Feuerzeug, Apfel, ...). Dann haben die Gruppen Zeit, an Haustüren zu klingeln und ihre Sache gegen eine andere (wertvollere) zu tauschen und so ihr 'Vermögen' zu erhöhen.\n\nWer am Ende den teuersten/ größten/ ... Gegenstand ertauscht hat, hat gewonnen.\n\nAlternativ können alle mit Äpfeln starten und jede Gruppe bringt zum Schluss anderes Obst mit. Wenn alle zurück sind, kann man gemeinsam einen bunten Obstsalat machen.",
-   "tipps": "",
+   "tipps": "Beim Tauschen an fremden Haustüren klingeln Kinder bei Unbekannten. Nur in Begleitung, in bekannter Umgebung und ohne Feuerzeug als Tauschobjekt.",
    "tags": [
     "Bewegung",
     "Gesellschaftliches",
@@ -3244,7 +3246,10 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "sonstiges"
+   "unterkategorie": "sonstiges",
+   "dubletten": [
+    "insp-casino-heimabend"
+   ]
   },
   {
    "id": "insp-casino-heimabend",
@@ -3286,7 +3291,10 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "gruppe"
+   "unterkategorie": "gruppe",
+   "dubletten": [
+    "eig-casino-abend"
+   ]
   },
   {
    "id": "eig-chaosspiel",
@@ -3460,7 +3468,10 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "kochen"
+   "unterkategorie": "kochen",
+   "dubletten": [
+    "eig-kochduell-im-hordentopf"
+   ]
   },
   {
    "id": "insp-debattenkultur",
@@ -6893,7 +6904,10 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "kochen"
+   "unterkategorie": "kochen",
+   "dubletten": [
+    "insp-das-ultimative-kochduell"
+   ]
   },
   {
    "id": "insp-kohte-blind-aufbauen",
@@ -9771,7 +9785,10 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "spiel"
+   "unterkategorie": "spiel",
+   "dubletten": [
+    "ps-schmuggler"
+   ]
   },
   {
    "id": "insp-schnitzeljagd-mit-abstand",
@@ -10421,7 +10438,10 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "pfaditechnik"
+   "unterkategorie": "pfaditechnik",
+   "dubletten": [
+    "eig-sternenkunde-abend"
+   ]
   },
   {
    "id": "eig-stockbrot-und-lagerfeuer",
@@ -11399,7 +11419,10 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "sonstiges"
+   "unterkategorie": "sonstiges",
+   "dubletten": [
+    "ps-werwolf"
+   ]
   },
   {
    "id": "insp-wetter-beobachten",
@@ -11984,7 +12007,7 @@
    "vorbereitung": "gering",
    "kurz": "Achterbahn ist ein actionreiches Geschicklichkeitsspiel/Bewegungsspiel. Es benötigt kein Material, aber Achtung: es ist nicht ganz ungefährlich.",
    "beschreibung": "**Achterbahn** ist ein actionreiches Geschicklichkeitsspiel/Bewegungsspiel. Es benötigt kein Material, aber Achtung: es ist nicht ganz ungefährlich.\n\n## Material\nFür dieses Spiel wird kein Material benötigt.\n\n## Regeln\nDie Spieler stellen sich in Form eines Achters auf. Sie drehen sich so, dass sie eine endlose Schlange bilden, also alle entlang des Achters sehen.\n\nDie Gruppe beginnt nun langsam entlang des Achters zu gehen. Zuerst bewegt sich die Gruppe nur langsam, mit etwas Übung geht es immer schneller voran. Achtung aber natürlich am Kreuzungspunkt der Figur: hier muss darauf geachtet werden, dass keine Zusammenstöße geschehen. Welche Gruppe schafft die höchste Geschwindigkeit?",
-   "tipps": "",
+   "tipps": "Die Quelle warnt selbst vor Zusammenstößen am Kreuzungspunkt. Langsam beginnen und das Tempo nur allmählich steigern.",
    "tags": [
     "Bewegungsspiel",
     "Geschicklichkeitsspiel",
@@ -12246,7 +12269,11 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "toben"
+   "unterkategorie": "toben",
+   "dubletten": [
+    "ps-angesprochen",
+    "sw-platztausch"
+   ]
   },
   {
    "id": "sw-alphabet-ruckwarts",
@@ -12375,7 +12402,7 @@
    "vorbereitung": "gering",
    "kurz": "Ameisenkönig ist ein Scherzspiel, das über einen längeren Zeitraum gespielt werden kann. Es hat keine intensive Handlung, kann aber zu sehr lustigen Situationen führen.",
    "beschreibung": "**Ameisenkönig** ist ein Scherzspiel, das über einen längeren Zeitraum gespielt werden kann. Es hat keine intensive Handlung, kann aber zu sehr lustigen Situationen führen.\n\n## Material\n- eine Art von Auswahlkriterium für den König. Es eignen sich etwa Spielkarten, sonstige beschriftete Zettel, oder ähnliches.\n\n## Ablauf\nDie Spieler erhalten ihre Rollen geteilt (gelost). Die meisten Spieler sind normale Ameisen, nur einige (je nach Spieleranzahl) sind Ameisenkönige oder -Königinnen. Diese haben nun eine gewisse Spieldauer lang Zeit, sich zu erkennen zu geben. Dies kann sich auch über Tage hinziehen, wenn das so vereinbart wurde.\n\nGibt einer der Könige seine Funktion bekannt, müssen ihn die anderen Spieler auf die vorhin vereinbarte Weise huldigen - durch Niederknien, Niederlegen auf den Rücken und Wegstrecken der Arme und Beine etc. Spieler, die das nicht (schnell genug) machen, werden mit anderen Strafen zur Huldigung des Königs belegt (Arbeitsdienste zum Wohl des Königs, etc.).",
-   "tipps": "",
+   "tipps": "Im Spiel huldigen Mitspielende einem 'König' durch Niederknien und bekommen bei Ungehorsam Strafen und Arbeitsdienste. Wenn ihr es spielt, dann kurz, freiwillig und mit wechselnder Rolle - sonst entsteht eine echte Rangordnung in der Gruppe.",
    "tags": [
     "Scherzspiel",
     "Länger andauerndes Spiel",
@@ -12576,7 +12603,11 @@
    "alter_ab": 8,
    "gruppe_min": 10,
    "gruppe_max": 25,
-   "unterkategorie": "namen"
+   "unterkategorie": "namen",
+   "dubletten": [
+    "insp-alle-die-obstsalat",
+    "sw-platztausch"
+   ]
   },
   {
    "id": "sw-anna",
@@ -13266,6 +13297,48 @@
    "unterkategorie": "ball"
   },
   {
+   "id": "ps-mischling",
+   "titel": "Ballraub",
+   "element_typ": "spiel",
+   "kategorie": "bewegung_draussen",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Wölflinge",
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 15,
+   "dauer_max": 35,
+   "ort": "draussen",
+   "material": [
+    "Ball",
+    "Seil"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Zwei Teams versuchen, alle sechs Bälle in ihre Ecke zu bringen oder das gegnerische Team ins Gefängnis zu befördern, indem sie Gegner ticken oder mit einem siebten Ball abwerfen.",
+   "beschreibung": "Die Gruppe wird in zwei, möglichst gleichstarke, Teams eingeteilt. Das Spielfeld ist ein großes Quadrat, mit einer Kantenlänge von etwa 25m, je nach Gruppengröße. In zwei diagonal gegenüberliegenden Ecken des Quadrats werden jeweils 3 Bälle gelegt. In die anderen beiden Ecken wird mit Hütchen ein kleiner Bereich (Ca. 4 m²) markiert, welcher als Gefängnis dient. Das Spielfeld wird nun durch eine Mittellinie, hier kommt ein Seil sehr gelegen, genau in der Hälfte geteilt, sodass zwei identische Spielfeldhälften entstehen. Jedem Team wird eine Seite zugeordnet. Das Spielziel ist es, ähnlich wie bei Capture the Flag, alle 6 Bälle in die eigene abgesteckte Ballecke zu bekommen, oder das gesamte gegnerische Team in das eigene Gefängnis zu bringen. Gegenspieler:innen kommen in das Gefängnis, indem sie auf der eigenen Seite getickt, oder sie mit einem 7. Ball, welcher am besten kleiner ist als die „Punktbälle“, abgeworfen werden, was auf jeder Seite geschehen darf. Mit dem Ball dürfen nur 3 Schritte gemacht werden. Gefangene Person müssen selbstständig in das gegnerische Gefängnis gehen und dürfen sich nicht aus diesem bewegen, ohne durch das eigene Team befreit zu werden. Mitspieler:innen können aus dem Gefängnis befreit werden, indem man zu dem Gefängnis läuft, eine:n Gefangene:n freitickt und mit der Person zurück auf die eigene Spielfeldseite geht. Außerdem können sich die Gefangenen selber freiwerfen, indem sie mit dem Wurfball aus dem Gefängnis heraus jemanden abwerfen. Hat sich oder wurde ein:e Gefangene:r befreit muss er/sie direkt in die eigene Hälfte zurückkehren, bevor er/sie wieder getickt werden oder am Spielgeschehen teilnehmen darf. Das selbe gilt ggf. für den/die befreiende:n Läufer:in.",
+   "tipps": "",
+   "tags": [
+    "Bewegungsspiel",
+    "Renn- & Fangenspiel",
+    "Mannschaftsspiel"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "pfadfinder-spiele.de",
+    "url": "https://pfadfinder-spiele.de/mischling/",
+    "autor": "Dorothea Schümann",
+    "lizenz": "CC BY-NC-SA 4.0"
+   },
+   "alter_ab": 10,
+   "gruppe_min": 6,
+   "gruppe_max": 25,
+   "titel_geaendert": true,
+   "unterkategorie": "fangen"
+  },
+  {
    "id": "sw-ballweitergabe-mit-beinen",
    "titel": "Ballweitergabe mit Beinen",
    "element_typ": "spiel",
@@ -13501,7 +13574,7 @@
    "vorbereitung": "mittel",
    "kurz": "Begrüßung international ist ein Kennenlernspiel. Die Teilnehmer sich unbekannter Gruppen können so ihre Kollegen kennen lernen.",
    "beschreibung": "**Begrüßung international** ist ein Kennenlernspiel. Die Teilnehmer sich unbekannter Gruppen können so ihre Kollegen kennen lernen.\n\n## Material\nAn Materialien wird benötigt:\n- Zettel und Stifte\n\n## Ablauf\nJeder Spieler erhält von den Spielleitern einen Zettel zugeteilt (oder zieht diesen). Darauf ist ein Land (oder Volk oder Region) und eine Begrüßungsmethode aufgeschrieben. Jeweils zwei Spieler erhalten die gleiche Begrüßungsmethode. Sie müssen ihren Partner finden und diesen auf die beschriebene Weise begrüßen. Dabei soll natürlich auch der Name ausgetauscht werden. Anschließend werden die Zettel zurückgegeben und eine neue Runde beginnt.\n\n## Begrüßungsmethoden\nBeispiele für Begrüßungsmethoden sind:\n\n- Arabien: mit der Hand vom Gesicht bis zum Bauch streichen (Salam)\n- Europa: Hände schütteln\n- Eskimos: Nasen aneinander reiben\n- Frankreich: Kuss auf die Wangen\n- Hawaii: Surfergruß, rechte Hand zur Faust ballen aber Daumen und kleinen Finger spreizen (Shaka)\n- Indianer: erhobene rechte Hand\n- Indien: Verbeugung mit gefalteten Händen (Namaste)\n- Japan: Tiefe Verbeugungen, kniend\n- etc.",
-   "tipps": "",
+   "tipps": "Die Liste enthält Stereotype und veraltete Fremdbezeichnungen ('Eskimos' statt Inuit, 'Indianer', 'Arabien' als Einheit). Sucht die Begrüßungen lieber gemeinsam nach und benennt die Länder richtig.",
    "tags": [
     "Kennenlernspiel"
    ],
@@ -13594,7 +13667,7 @@
    "gruppe_max": 15,
    "unterkategorie": "fangen",
    "dubletten": [
-    "sw-bermudadreieck"
+    "sw-hugo"
    ]
   },
   {
@@ -13629,10 +13702,7 @@
    },
    "gruppe_min": 10,
    "gruppe_max": 40,
-   "unterkategorie": "namen",
-   "dubletten": [
-    "ps-bermudadreieck"
-   ]
+   "unterkategorie": "namen"
   },
   {
    "id": "sw-beruhmte-paare",
@@ -13878,41 +13948,6 @@
    "unterkategorie": "geschick"
   },
   {
-   "id": "sw-bierkisten-klettern",
-   "titel": "Bierkisten-Klettern",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
-   "ort": "drinnen",
-   "material": [
-    "Bierkisten",
-    "Klettersicherung"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Bierkisten-Klettern ist ein Geschicklichkeitsspiel, an dem jeweils ein Teilnehmer seine Geschicklichkeit beim Klettern und Balancieren beweisen kann. Es kann nur mit professioneller Sicherung (Klettergurt, etc.) durchgeführt werden.",
-   "beschreibung": "**Bierkisten-Klettern** (auch: **Bierkisten-Stapeln**) ist ein Geschicklichkeitsspiel, an dem jeweils ein Teilnehmer seine Geschicklichkeit beim Klettern und Balancieren beweisen kann. Es kann nur mit professioneller Sicherung (Klettergurt, etc.) durchgeführt werden.\n\n## Material\n- Stapelbare Bierkisten (mindestens 10 Stück)\n- Kletter-Sicherung\n- Stabiler Untergrund\n\n## Ablauf\nJeweils ein Spieler wird mittels Klettergurt und Seilen gesichert. Er stapelt anschließend die Bierkisten aufeinander und klettert auf den so entstehenden Turm. Je weiter nach oben er kommt, desto besser ist das natürlich. Irgendwann bricht der Turm zusammen. Der Teilnehmer darf dann natürlich nicht auf den Boden stürzen, sondern muss in der Sicherung aufgefangen werden!",
-   "tipps": "",
-   "tags": [
-    "Geschicklichkeitsspiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Bierkisten-Klettern",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 1,
-   "gruppe_max": 1,
-   "unterkategorie": "geschick"
-  },
-  {
    "id": "sw-bierkistenbrucke",
    "titel": "Bierkistenbrücke",
    "element_typ": "spiel",
@@ -14129,7 +14164,10 @@
     "hauptteil",
     "abschluss"
    ],
-   "altersstufen": [],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
    "dauer_min": 10,
    "dauer_max": 20,
    "ort": "beides",
@@ -14139,7 +14177,7 @@
    "vorbereitung": "mittel",
    "kurz": "Die Black Stories sind eine Reihe an Rätselgeschichten. Sie sind eine kommerzielle Variante der Laterale.",
    "beschreibung": "Die **Black Stories** sind eine Reihe an Rätselgeschichten. Sie sind eine kommerzielle Variante der Laterale. Es handelt sich dabei meist um skurrile Kriminalfälle, oft mit Todesfolge, die vom Publikum aufgeklärt werden müssen. Unterschiedliche Decks an Karten mit Aufgaben werden angeboten, viele mit besonderen Themenkreisen.\n\n## Material\nEs wird jeweils ein Kartendeck mit den Geschichten und Lösungen benötigt.\n\n## Ablauf\nDer Spielleiter stellt die Spielgeschichte vor und erklärt die Spielregeln. Die übrigen Spieler, die die Lösung noch nicht kennen, dürfen nun Reihum oder nach Belieben Fragen an den Spielleiter stellen. Dieser darf die Fragen allerdings nur mit \"ja\" oder \"nein\" beantworten. Ziel ist es, dass die Spieler auf die Lösung kommen und damit aufklären, wie das Verbrechen geschehen ist.\n\n### Kartendecks\n\n- Black Stories 1\n- Black Stories 2\n- Black Stories 3\n- Black Stories 4\n- Black Stories 5\n- Black Stories 6\n- Black Stories 7\n- Black Stories 8\n- Black Stories - Funny Death Edition: 50 rabenschwarze Rätsel rund um die skurrilsten realen Todesfälle\n- Black Stories - Holiday Edition\n- Black Stories - Movie Edition\n- Black Stories - Krimi Edition\n- Suche nach \"Black Stories\" auf amazon.de",
-   "tipps": "",
+   "tipps": "Die Rätsel drehen sich um Todesfälle. Für Wölflinge ungeeignet.",
    "tags": [
     "Rätsel",
     "Kommerzielles Spiel",
@@ -14154,47 +14192,6 @@
    },
    "gruppe_min": 2,
    "unterkategorie": "denken"
-  },
-  {
-   "id": "sw-bleigiessen",
-   "titel": "Bleigießen",
-   "element_typ": "spiel",
-   "kategorie": "ruhig",
-   "slots": [
-    "einstieg",
-    "hauptteil",
-    "abschluss"
-   ],
-   "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
-   "ort": "drinnen",
-   "material": [
-    "Kerze",
-    "Löffel",
-    "Blei",
-    "Wassergefäß"
-   ],
-   "vorbereitung": "gering",
-   "kurz": "Bleigießen ist eine beliebte Aktivität bei Silvesterparties. Die Formen der gegossenen Figuren sollen die Zukunft, insbesondere das folgende Jahr, vorhersagen.",
-   "beschreibung": "**Bleigießen** ist eine beliebte Aktivität bei Silvesterparties. Die Formen der gegossenen Figuren sollen die Zukunft, insbesondere das folgende Jahr, vorhersagen.\n\n## Material\nFolgendes Material wird zum Bleigießen benötigt. Vor der Silvesternacht können passende Sets im Handel erworben werden.\n\n- Kerze\n- Löffel, Blei (meist im Set erhältlich)\n- Wassergefäß\n\n## Ablauf\nDie Spieler erhitzen nacheinander ein Stück Blei in einem Löffel bis dieses geschmolzen ist. Das flüssige Blei wird dann in ein Gefäß mit kaltem Wasser gegossen. Es erstarrt und aus der entstandenen Figur kann man, entsprechenden Aberglauben und etwas Phantasie vorausgesetzt, die Zukunft des Gießers erkennen.",
-   "tipps": "",
-   "tags": [
-    "Glücksspiel",
-    "Partyspiel",
-    "Silvester",
-    "Spiel mit Feuer"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Bleigie%C3%9Fen",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 2,
-   "gruppe_max": 10,
-   "unterkategorie": "tisch"
   },
   {
    "id": "sw-blind-fuhren",
@@ -14724,40 +14721,6 @@
    "gruppe_min": 6,
    "gruppe_max": 25,
    "unterkategorie": "gelaende"
-  },
-  {
-   "id": "sw-briefbomben",
-   "titel": "Briefbomben",
-   "element_typ": "spiel",
-   "kategorie": "kooperation",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 15,
-   "dauer_max": 25,
-   "ort": "drinnen",
-   "material": [
-    "Kuverts mit Farbkarten",
-    "Spielkarten"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Briefbomben, auch Minesweeper genannt, ist ein gruppendynamisches Spiel für kleinere Gruppen. Es bedarf der vorbereiteten Briefkuverts.",
-   "beschreibung": "**Briefbomben** (oder auch **Minesweeper**) ist ein gruppendynamisches Spiel für kleinere Gruppen.\n\n## Material\nEs werden ungefähr 20 bis 50 Briefbomben benötigt. Etwa tatsächlich Briefkuverts mit Sichtfenster und eingelegten Farbkarten (Rot = Bombe, Grün = ungefährlich) oder Spielkarten mit unterschiedlichen Farben (beispielsweise Rot und Schwarz).\n\n## Vorbereitung\nDie \"Bomben\" (Karten) werden so am Boden aufgelegt, dass die Farben nicht sichtbar sind. Zum leichteren Merken sollten die Karten dabei in einem regelmäßigen Raster aufgelegt werden, beispielsweise in einem 5x5- oder 6x6-Muster. Die Größe des Feldes (Anzahl der Karten) hängt von der Anzahl und den Fähigkeiten der Spieler ab. Eine nicht all zu kleine Gruppe Erwachsener sollte auch ein 7x7- oder 8x8-Feld lösen können (und dementsprechend mit einem 5x5-Feld unterfordert sein).\n\n## Ablauf\nDie Gruppe erhält nun die Aufgabenstellung: Sie darf sich die Karten eine gewisse Zeit lang - etwa 3-5 Minuten - anschauen (also Karte umdrehen, die Farbe sehen und einprägen und Karte wieder zurückdrehen). Um die Aufgabe nicht zu sehr zu vereinfachen, dürfen die Personen dabei nicht sprechen oder sonst wie kommunizieren (zum Beispiel die Karten berühren).\n\nAnschließend verlässt die Gruppe den Raum. Erst dann erfährt die Gruppe die eigentliche Aufgabe: Sie darf sich nun besprechen, welches Team-Mitglied anschließend die Karten aufdeckt. Dabei müssen alle Karten umgedreht werden, die keine Bomben sind (Beispielsweise die mit schwarzer Farbe). Keinesfalls darf eine Bombe (die Karten in roter Farbe) umgedreht werden. Es darf dies nur ein Team-Mitglied machen, das währenddessen keine weiteren Informationen von der Gruppe einholen darf. Eventuell darf aber eine \"Informationsphase\" hinzugefügt werden, das heißt der Aufdecker darf sich einmal zusätzlich mit seinem Team beraten (um eventuelle Gedächtnislücken zu füllen).",
-   "tipps": "",
-   "tags": [
-    "gruppendynamisches Spiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Briefbomben",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 5,
-   "gruppe_max": 15,
-   "unterkategorie": "team"
   },
   {
    "id": "sw-brieftrager",
@@ -15543,42 +15506,6 @@
    "unterkategorie": "reaktion"
   },
   {
-   "id": "ps-crazy-mother-fucker",
-   "titel": "Crazy Mother Fucker",
-   "element_typ": "spiel",
-   "kategorie": "ruhig",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 30,
-   "dauer_max": 60,
-   "ort": "drinnen",
-   "material": [],
-   "vorbereitung": "gering",
-   "kurz": "Zwei „Doktoren“ versuchen, eine „Krankheit“ der Gruppe zu erraten: Jede:r denkt, er/sie sei die Person zwei Plätze rechts. Bei Falschantwort auf Ja/Nein-Fragen und „Crazy mother fucker“-Ruf tauschen alle (außer Doktoren) Plätze.",
-   "beschreibung": "Zwei der Gruppe, die das Spiel nicht kennen, gehen vor die Tür. Sie sind die Doktoren. Alle anderen haben eine Krankheit, welche sie erklärt bekommen: Sie haben eine Persönlichkeitsstörung. Das heißt, dass sie denken sie wären die Person, die zwei Plätze weiter rechts sitzt. Dabei werden die Doktoren, die später mit im Kreis sitzen übersprungen. Nun werden die Doktoren rein geholt und setzen sich mit in den Kreis. Ihre Aufgabe ist es nun die Krankheit heraus zu finden. dazu können sie abwechselnd an einzelne Personen Ja und Nein Fragen stellen. Die gefragt Person muss also so antworten als wäre sie die Person zwei Plätze rechts von ihr. Wenn jemand die Frage falsch beantwortet, sollte das die Person, für die geantwortet wurde bemerken. Dann sagt diese Person „Crazy mother fucker“. Das ist das Signal, das alle Spielenden (außer die Doktoren, die das System nicht kennen) ihre Plätze tauschen.",
-   "tipps": "",
-   "tags": [
-    "Konzentrationsspiel",
-    "ohne Material"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "pfadfinder-spiele.de",
-    "url": "https://pfadfinder-spiele.de/crazy-mother-fucker/",
-    "autor": "Dorothea Schümann",
-    "lizenz": "CC BY-NC-SA 4.0"
-   },
-   "alter_ab": 13,
-   "gruppe_min": 10,
-   "gruppe_max": 25,
-   "unterkategorie": "konzentration"
-  },
-  {
    "id": "sw-das-habe-ich-noch-nie-gemacht",
    "titel": "Das habe ich noch nie gemacht",
    "element_typ": "spiel",
@@ -15763,7 +15690,11 @@
    "alter_ab": 6,
    "gruppe_min": 3,
    "gruppe_max": 15,
-   "unterkategorie": "warmup"
+   "unterkategorie": "warmup",
+   "dubletten": [
+    "eig-schokoladen-wettessen",
+    "sw-schokoladeschneiden"
+   ]
   },
   {
    "id": "ps-das-schreispiel",
@@ -18406,38 +18337,6 @@
    "unterkategorie": "wettkampf"
   },
   {
-   "id": "sw-eselspiel",
-   "titel": "Eselspiel",
-   "element_typ": "spiel",
-   "kategorie": "kooperation",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 5,
-   "dauer_max": 15,
-   "ort": "beides",
-   "material": [],
-   "vorbereitung": "gering",
-   "kurz": "Das Eselspiel ist ein gruppendynamisches Spiel für beliebig viele Mitspieler ab etwa 10.",
-   "beschreibung": "Das **Eselspiel** ist ein gruppendynamisches Spiel für beliebig viele Mitspieler ab etwa 10.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDie Spieler werden in zwei Gruppen geteilt. Eine Gruppe - meist hat diese etwas mehr Mitglieder - spielt störrische Esel. Jeder Esel denkt sich aus, mit welcher Methode man ihn dazu bringen kann, doch zu gehorchen. Beispiele hierfür wären höfliches Bitten, Huckepack-Tragen, an der Hand hin führen, (sanft) Schlagen, ...\n\nDie anderen Spieler sind die Eselshirten. Sie müssen nun alle Esel von einer Seite des Raumes zur anderen bringen. Diese - als störrische Esel - weigern sich natürlich, mit zu gehen. Wird jedoch einer der Esel auf die von ihm bestimmte Art \"gebeten\", dann geht er mit. Ziel ist es, alle Esel so in das Zielgebiet zu bewegen.",
-   "tipps": "",
-   "tags": [
-    "Gruppendynamisches Spiel",
-    "ohne Material"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Eselspiel",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 10,
-   "unterkategorie": "team"
-  },
-  {
    "id": "eig-evolution",
    "titel": "Evolution",
    "element_typ": "spiel",
@@ -18661,7 +18560,10 @@
    },
    "gruppe_min": 8,
    "gruppe_max": 20,
-   "unterkategorie": "namen"
+   "unterkategorie": "namen",
+   "dubletten": [
+    "ps-gruppennetz"
+   ]
   },
   {
    "id": "sw-fahrbahnen",
@@ -18985,41 +18887,6 @@
    "unterkategorie": "tisch"
   },
   {
-   "id": "sw-flaschendrehen",
-   "titel": "Flaschendrehen",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 30,
-   "ort": "drinnen",
-   "material": [
-    "eine Flasche"
-   ],
-   "vorbereitung": "gering",
-   "kurz": "Flaschendrehen oder Tat oder Wahrheit ist ein Spiel für etwa 5-10 Personen.",
-   "beschreibung": "**Flaschendrehen** (auch: **Wahrheit oder Pflicht** oder **Tat oder Wahrheit**) ist ein Spiel für etwa 5-10 Personen.\n\n## Material\n- eine Flasche oder ein ähnlicher Gegenstand\n\n## Ablauf\nDie Spieler sitzen im Kreis, in der Mitte liegt die Flasche. Diese wird mit Schwung gedreht. Bleibt sie stehen, zeigt sie mit dem Hals auf eine Person. Dieser Spieler hat nun die Wahl, ob er eine Frage ehrlich beantworten (Wahrheit) oder eine Aufgabe erfüllen will (Tat). Die Aufgabe sollte ohne viel Aufwand in sehr kurzer Zeit schaffbar sein. Nach der Wahl entscheiden die übrigen Spieler (meist der, der zum Drehen der Flasche am Zug war) über die konkrete Frage oder die Tat. Der Spieler muss die Frage nun beantworten oder die Aufgabe erfüllen. Tut er dies (glaubhaft), dann ist der nächste Spieler an der Reihe mit dem Drehen der Flasche. Schafft der Spieler die Aufgabe nicht oder beantwortet er die Frage nicht (glaubhaft), oder verweigert er die Durchführung überhaupt, dann scheidet er aus.\n\nOft kommen die Fragen und Aufgabenstellungen aus dem erotischen Bereich, allerdings ist hier der Phantasie der Spieler keine Grenze gesetzt.",
-   "tipps": "",
-   "tags": [
-    "Partyspiel",
-    "Glücksspiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Flaschendrehen",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 5,
-   "gruppe_max": 10,
-   "unterkategorie": "tisch"
-  },
-  {
    "id": "sw-flaschenhals",
    "titel": "Flaschenhals",
    "element_typ": "spiel",
@@ -19202,7 +19069,10 @@
    "alter_ab": 10,
    "gruppe_min": 6,
    "gruppe_max": 25,
-   "unterkategorie": "team"
+   "unterkategorie": "team",
+   "dubletten": [
+    "sw-teppich-umdrehen"
+   ]
   },
   {
    "id": "sw-flohhupfen",
@@ -20485,7 +20355,6 @@
     "hauptteil"
    ],
    "altersstufen": [
-    "Wölflinge",
     "Pfadfinder",
     "Ältere"
    ],
@@ -21074,7 +20943,10 @@
    "alter_ab": 6,
    "gruppe_min": 10,
    "gruppe_max": 25,
-   "unterkategorie": "namen"
+   "unterkategorie": "namen",
+   "dubletten": [
+    "sw-fadennetz"
+   ]
   },
   {
    "id": "sw-gruppenski",
@@ -21277,41 +21149,6 @@
    },
    "gruppe_min": 2,
    "gruppe_max": 2,
-   "unterkategorie": "kampf"
-  },
-  {
-   "id": "sw-hahnenkampf-im-wasser",
-   "titel": "Hahnenkampf im Wasser",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_draussen",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 5,
-   "dauer_max": 10,
-   "ort": "draussen",
-   "material": [],
-   "vorbereitung": "gering",
-   "kurz": "Der Hahnenkampf im Wasser ist ein Kampf- und Geschicklichkeitsspiel für vier Personen. Die Grundvariante Hahnenkampf wird hier etwas abgewandelt, so dass das Spiel im Wasser spielbar wird.",
-   "beschreibung": "Der **Hahnenkampf im Wasser** ist ein Kampf- und Geschicklichkeitsspiel für vier Personen. Die Grundvariante Hahnenkampf wird hier etwas abgewandelt, so dass das Spiel im Wasser spielbar wird. Das Wasser sollte dabei so tief sein, dass es den Spielern bis zum Oberkörper reicht (dass sie also gut stehen können). Die Spieler treten in zweier-Teams gegeneinander an. Möchten mehr Personen gegeneinander antreten, kann in einem Liga- oder Turniermodus gespielt werden.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDie Spieler arbeiten in 2er-Teams zusammen. Jeweils einer (Träger) trägt dabei den anderen (Kämpfer) auf den Schultern. Die Kämpfer haben die Hände vor der Brust verschränkt.\n\nNach dem Startsignal versuchen sich die Kämpfer so aus dem Gleichgewicht zu bringen, dass sie von den Trägern herunterfallen oder die Träger umfallen. Verloren hat die Gruppe, die zuerst umfällt oder deren Kämpfer mit dem Kopf das Wasser berührt.",
-   "tipps": "",
-   "tags": [
-    "Geschicklichkeitsspiel",
-    "Kampfspiel",
-    "Spiel im Wasser",
-    "ohne Material"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Hahnenkampf_im_Wasser",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 4,
-   "gruppe_max": 4,
    "unterkategorie": "kampf"
   },
   {
@@ -21535,7 +21372,10 @@
    },
    "alter_ab": 6,
    "gruppe_min": 6,
-   "unterkategorie": "warmup"
+   "unterkategorie": "warmup",
+   "dubletten": [
+    "sw-hi-my-name-is-joe"
+   ]
   },
   {
    "id": "sw-hannes-liebt",
@@ -21903,7 +21743,10 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "unterkategorie": "singen"
+   "unterkategorie": "singen",
+   "dubletten": [
+    "ps-hannes"
+   ]
   },
   {
    "id": "sw-highland-games",
@@ -22258,7 +22101,10 @@
    },
    "gruppe_min": 2,
    "gruppe_max": 20,
-   "unterkategorie": "geschick"
+   "unterkategorie": "geschick",
+   "dubletten": [
+    "ps-bermudadreieck"
+   ]
   },
   {
    "id": "ps-huhn-spiel",
@@ -22445,10 +22291,7 @@
    "alter_ab": 10,
    "gruppe_min": 3,
    "gruppe_max": 15,
-   "unterkategorie": "namen",
-   "dubletten": [
-    "insp-ich-packe-meinen-koffer"
-   ]
+   "unterkategorie": "namen"
   },
   {
    "id": "insp-ich-packe-meinen-koffer",
@@ -22484,10 +22327,7 @@
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
    },
-   "unterkategorie": "sonstiges",
-   "dubletten": [
-    "ps-ich-packe-meinen-koffer"
-   ]
+   "unterkategorie": "sonstiges"
   },
   {
    "id": "sw-ich-sehe-was-was-du-nicht-siehst",
@@ -22713,7 +22553,7 @@
    "vorbereitung": "gering",
    "kurz": "Irrenhaus (auch bekannt als Psychose oder Doktor im Narrenhaus) ist ein Rätsel für beliebig viele Mitspieler. Man kann es mit nur einem eingeweihten Spieler spielen.",
    "beschreibung": "**Irrenhaus** (auch bekannt als **Psychose** oder **Doktor im Narrenhaus**) ist ein Rätsel für beliebig viele Mitspieler. Man kann es mit nur einem eingeweihten Spieler spielen. Aufgabe der übrigen Spieler ist es, das System hinter diesem Spiel zu erkennen.\n\n## Material\n- Es wird kein Material benötigt.\n\n## Ablauf\nDie nicht eingeweihten Spieler sind die Irrenärzte, die bereits \"wissenden\" Spieler stellen die Irren dar. Die Ärzte dürfen Fragen stellen, jeweils ein Irrer antwortet drauf. Die Antwort klingt dabei meist so, als wäre sie Schwachsinn. Tatsächlich steckt aber System dahinter! Jeder, der beweisen kann, das System zu kennen, darf auch zum Irren werden. Natürlich wird die Lösung nicht erraten, sondern die Spieler müssen durch aktives Tun beweisen, das Wissen zu besitzen.\n\n## Lösung\nLösung Die Lösung zu diesem Rätsel findet sich auf Irrenhaus/Lösung.",
-   "tipps": "",
+   "tipps": "Die Quelle spricht von 'Irren' und 'Schwachsinn'. Nennt das Spiel in der Gruppe anders und lasst die Zuschreibungen weg.",
    "tags": [
     "Rätsel",
     "Spiel für Videokonferenzen",
@@ -22766,7 +22606,10 @@
    },
    "alter_ab": 8,
    "gruppe_min": 6,
-   "unterkategorie": "warmup"
+   "unterkategorie": "warmup",
+   "dubletten": [
+    "sw-singing-in-the-rain"
+   ]
   },
   {
    "id": "sw-ja-nein-schwarz-weiss",
@@ -23220,7 +23063,10 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "unterkategorie": "toben"
+   "unterkategorie": "toben",
+   "dubletten": [
+    "ps-moehren-ziehen"
+   ]
   },
   {
    "id": "sw-kartenkuss",
@@ -24622,7 +24468,10 @@
    "alter_ab": 6,
    "gruppe_min": 6,
    "gruppe_max": 25,
-   "unterkategorie": "konzentration"
+   "unterkategorie": "konzentration",
+   "dubletten": [
+    "sw-toasterspiel"
+   ]
   },
   {
    "id": "sw-krabben",
@@ -25287,7 +25136,10 @@
     "hauptteil",
     "abschluss"
    ],
-   "altersstufen": [],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
    "dauer_min": 10,
    "dauer_max": 20,
    "ort": "beides",
@@ -25295,7 +25147,7 @@
    "vorbereitung": "mittel",
    "kurz": "Ein Lateral ist eine Rätselgeschichte. Es handelt sich dabei meist um skurrile Kriminalfälle, die vom Publikum aufgeklärt werden müssen.",
    "beschreibung": "Ein **Lateral** ist eine Rätselgeschichte. Es handelt sich dabei meist um skurrile Kriminalfälle, die vom Publikum aufgeklärt werden müssen. Eine kommerzielle Variante davon sind die Black Stories.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDer Spielleiter stellt die Spielgeschichte vor und erklärt die Spielregeln. Die übrigen Spieler, die die Lösung noch nicht kennen, dürfen nun Reihum oder nach Belieben Fragen an den Spielleiter stellen. Dieser darf die Fragen allerdings nur mit \"ja\" oder \"nein\" beantworten. Ziel ist es, dass die Spieler auf die Lösung kommen und damit aufklären, wie das Verbrechen geschehen ist.\n\n### Geschichten\nBekannte Laterale sind:\n- Romeo und Julia liegen tot am nassen Teppich, um sie befinden sich Glasscherben. Das Fenster ist offen. Was war geschehen?\n- Ein nackter Mann liegt in der Wüste und hat ein abgebrochenes Streichholz in der Hand. Warum?\n- Feuerwehrleute finden einen verkohlten Mann im Taucheranzug in den Ästen eines Baumes. Wie kam der dort hin?\n- Ein Mann geht in sein Wohnzimmer, sieht die Sägespäne nicht, und bringt sich um. Warum?",
-   "tipps": "",
+   "tipps": "Die abgedruckten Rätsel haben durchweg Tötungs- und Suizidmotive. Für Wölflinge ungeeignet; sucht für jüngere Gruppen eigene, harmlose Rätsel.",
    "tags": [
     "Rätsel",
     "Spiel für Videokonferenzen",
@@ -25759,7 +25611,7 @@
    "vorbereitung": "gering",
    "kurz": "Der Liegestütz-Kampf ist ein Spiel für zwei Spieler. Es geht dabei um Kraft, aber auch um Geschicklichkeit. Spielen mehr als zwei Spieler, so können mehrere Einzelspiele in einem Liga- oder Turniermodus verbunden werden.",
    "beschreibung": "Der **Liegestütz-Kampf** ist ein Spiel für zwei Spieler. Es geht dabei um Kraft, aber auch um Geschicklichkeit. Spielen mehr als zwei Spieler, so können mehrere Einzelspiele in einem Liga- oder Turniermodus verbunden werden.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDie gehen \"Kopf an Kopf\" in Liegestütz-Stellung. Nach dem Startsignal des Schiedsrichters versuchen sie, sich gegenseitig aus dem Gleichgewicht zu bringen. Meist geht dies am einfachsten durch das Wegziehen eines Armes.\n\nZiel ist es, dass der Gegner den Boden mit der Brust (oder einem anderen Körperteil außer Händen und Füßen) berührt. Ist dies der Fall, wird der siegreiche Spieler zum Gewinner der Runde erklärt.\n\nJe nach genauem Modus kann auch \"auf mehrere Gewonnene\" Runden gespielt werden. Auch ist möglich, einen Turniermodus einzuführen, bei dem der Gewinner in die nächste Spielrunde mit einem neuen Gegner aufsteigt.\n\n;Achtung Verletzungsgefahr\nNatürlich handelt es sich dabei um einen Kampf, bei dem gewisse Regeln gelten müssen: etwa, dass der Kopf tabu ist. Kleinere Blessuren sind aber leider nie ganz auszuschließen. Es ist daher wichtig, den Teilnehmern vorab die Regel klar zu erklären und sicher zu gehen, dass sie sich an diese halten und auch eine gewisse Vorsicht und Rücksichtnahme an den Tag legen.",
-   "tipps": "",
+   "tipps": "Die Quelle nimmt kleinere Blessuren ausdrücklich in Kauf. Nur mit klaren Regeln und Aufsicht, und niemanden dazu drängen.",
    "tags": [
     "Geschicklichkeitsspiel",
     "Kampfspiel",
@@ -25994,7 +25846,10 @@
    "slots": [
     "hauptteil"
    ],
-   "altersstufen": [],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
    "dauer_min": 20,
    "dauer_max": 30,
    "ort": "beides",
@@ -26004,7 +25859,7 @@
    "vorbereitung": "mittel",
    "kurz": "Low V ist eine Übung für jeweils zwei Spieler auf einem über dem Boden gespannten Seil (Slackline). Mehrere weitere Spieler werden benötigt, um die aktiven Spieler zu sichern.",
    "beschreibung": "Das **Low V** ist eine Übung für jeweils zwei Spieler auf einem über dem Boden gespannten Seil (\"Slackline\"). Mehrere weitere Spieler werden benötigt, um die aktiven Spieler zu sichern.\n\nIm Gegensatz zur Variante High V kann das Low V ohne professionelle Sicherung (wie in einem Hochseilgarten) durchgeführt werden. Gerade deswegen benötigen die Spielleiter etwas Erfahrung, um die Sicherung trotzdem gewährleisten zu können. Nur wenn eine entsprechende Sicherung (durch die Mitspieler) vorhanden ist und die Spielleiter auf deren Zuverlässigkeit vertrauen können, sollte die Übung durchgeführt werden!\n\n## Material\n- zwei Slacklines (oder eine längere) oder notfalls Seile\n- drei, im Dreieck stehende Bäume\n\n## Vorbereitung\n\nDie Slacklines werden zwischen drei Bäumen gespannt. Dabei sollten beide von einem Baum ausgehen in Richtung zweier anderer Bäume gespannt sein, so dass sich von oben gesehen die Form des Buchstaben \"V\" ergibt. Die Slacklines sollten relativ eben über Boden, in einer Höhe von ca. 50-80 Zentimetern gespannt sein.\n\n## Ablauf\nZwei Spieler steigen auf die Slacklines, an der Stelle, wo sich beide an einem Baum treffen. Sie stehen jeweils auf ihrer \"eigenen\" Slackline, Gesicht zueinander und halten sich an den Händen.\n\nPro Spieler auf der Slackline stehen zwei Spieler zwischen den Slacklines und sichern ihren anvertrauten Spieler. Sie nehmen sich dazu an den Armen und bilden so eine Auflagefläche, in die der Spieler herunterfallen kann, wenn er sich nicht mehr auf der Slackline halten kann. Eine weitere Person hinter dem Spieler auf der Slackline, so dass dieser nicht nach außen stürzen kann.\n\nSobald die Sicherung bereit ist, bewegen sich die beiden Spieler seitwärts entlang ihrer Slackline. Aufgrund der \"V\"-Form der Slacklines wird dabei ihr Abstand größer, sie müssen sich immer weiter in die Mitte hinein kippen. Jeder Spieler für sich würde abstürzen und wird nur durch den jeweils anderen Spieler gestützt. Ziel ist es, auf diese Weise möglichst weit zu kommen.\n\n;Tipp\nDie Übung wird für beide Spieler leichter, wenn sie die Arme nicht vor der Brust, sondern über Kopf halten. Dadurch wird das System der zwei Spieler insgesamt stabiler.",
-   "tipps": "",
+   "tipps": "Die Quelle setzt eine Sicherung durch die Mitspielenden voraus. Nur mit eingewiesener Aufsicht.",
    "tags": [
     "Geschicklichkeitsspiel",
     "Vertrauensspiel",
@@ -27109,6 +26964,41 @@
    "unterkategorie": "team"
   },
   {
+   "id": "sw-briefbomben",
+   "titel": "Minensucher",
+   "element_typ": "spiel",
+   "kategorie": "kooperation",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 15,
+   "dauer_max": 25,
+   "ort": "drinnen",
+   "material": [
+    "Kuverts mit Farbkarten",
+    "Spielkarten"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Briefbomben, auch Minesweeper genannt, ist ein gruppendynamisches Spiel für kleinere Gruppen. Es bedarf der vorbereiteten Briefkuverts.",
+   "beschreibung": "**Briefbomben** (oder auch **Minesweeper**) ist ein gruppendynamisches Spiel für kleinere Gruppen.\n\n## Material\nEs werden ungefähr 20 bis 50 Briefbomben benötigt. Etwa tatsächlich Briefkuverts mit Sichtfenster und eingelegten Farbkarten (Rot = Bombe, Grün = ungefährlich) oder Spielkarten mit unterschiedlichen Farben (beispielsweise Rot und Schwarz).\n\n## Vorbereitung\nDie \"Bomben\" (Karten) werden so am Boden aufgelegt, dass die Farben nicht sichtbar sind. Zum leichteren Merken sollten die Karten dabei in einem regelmäßigen Raster aufgelegt werden, beispielsweise in einem 5x5- oder 6x6-Muster. Die Größe des Feldes (Anzahl der Karten) hängt von der Anzahl und den Fähigkeiten der Spieler ab. Eine nicht all zu kleine Gruppe Erwachsener sollte auch ein 7x7- oder 8x8-Feld lösen können (und dementsprechend mit einem 5x5-Feld unterfordert sein).\n\n## Ablauf\nDie Gruppe erhält nun die Aufgabenstellung: Sie darf sich die Karten eine gewisse Zeit lang - etwa 3-5 Minuten - anschauen (also Karte umdrehen, die Farbe sehen und einprägen und Karte wieder zurückdrehen). Um die Aufgabe nicht zu sehr zu vereinfachen, dürfen die Personen dabei nicht sprechen oder sonst wie kommunizieren (zum Beispiel die Karten berühren).\n\nAnschließend verlässt die Gruppe den Raum. Erst dann erfährt die Gruppe die eigentliche Aufgabe: Sie darf sich nun besprechen, welches Team-Mitglied anschließend die Karten aufdeckt. Dabei müssen alle Karten umgedreht werden, die keine Bomben sind (Beispielsweise die mit schwarzer Farbe). Keinesfalls darf eine Bombe (die Karten in roter Farbe) umgedreht werden. Es darf dies nur ein Team-Mitglied machen, das währenddessen keine weiteren Informationen von der Gruppe einholen darf. Eventuell darf aber eine \"Informationsphase\" hinzugefügt werden, das heißt der Aufdecker darf sich einmal zusätzlich mit seinem Team beraten (um eventuelle Gedächtnislücken zu füllen).",
+   "tipps": "",
+   "tags": [
+    "gruppendynamisches Spiel"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "Spielewiki",
+    "url": "https://www.spielewiki.org/wiki/Briefbomben",
+    "autor": "Spielewiki-Autor*innen",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   "gruppe_min": 5,
+   "gruppe_max": 15,
+   "titel_geaendert": true,
+   "unterkategorie": "team"
+  },
+  {
    "id": "sw-minutenreferat",
    "titel": "Minutenreferat",
    "element_typ": "spiel",
@@ -27174,47 +27064,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "unterkategorie": "denken"
-  },
-  {
-   "id": "ps-mischling",
-   "titel": "Mischling",
-   "element_typ": "spiel",
-   "kategorie": "bewegung_draussen",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Wölflinge",
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 15,
-   "dauer_max": 35,
-   "ort": "draussen",
-   "material": [
-    "Ball",
-    "Seil"
-   ],
-   "vorbereitung": "mittel",
-   "kurz": "Zwei Teams versuchen, alle sechs Bälle in ihre Ecke zu bringen oder das gegnerische Team ins Gefängnis zu befördern, indem sie Gegner ticken oder mit einem siebten Ball abwerfen.",
-   "beschreibung": "Die Gruppe wird in zwei, möglichst gleichstarke, Teams eingeteilt. Das Spielfeld ist ein großes Quadrat, mit einer Kantenlänge von etwa 25m, je nach Gruppengröße. In zwei diagonal gegenüberliegenden Ecken des Quadrats werden jeweils 3 Bälle gelegt. In die anderen beiden Ecken wird mit Hütchen ein kleiner Bereich (Ca. 4 m²) markiert, welcher als Gefängnis dient. Das Spielfeld wird nun durch eine Mittellinie, hier kommt ein Seil sehr gelegen, genau in der Hälfte geteilt, sodass zwei identische Spielfeldhälften entstehen. Jedem Team wird eine Seite zugeordnet. Das Spielziel ist es, ähnlich wie bei Capture the Flag, alle 6 Bälle in die eigene abgesteckte Ballecke zu bekommen, oder das gesamte gegnerische Team in das eigene Gefängnis zu bringen. Gegenspieler:innen kommen in das Gefängnis, indem sie auf der eigenen Seite getickt, oder sie mit einem 7. Ball, welcher am besten kleiner ist als die „Punktbälle“, abgeworfen werden, was auf jeder Seite geschehen darf. Mit dem Ball dürfen nur 3 Schritte gemacht werden. Gefangene Person müssen selbstständig in das gegnerische Gefängnis gehen und dürfen sich nicht aus diesem bewegen, ohne durch das eigene Team befreit zu werden. Mitspieler:innen können aus dem Gefängnis befreit werden, indem man zu dem Gefängnis läuft, eine:n Gefangene:n freitickt und mit der Person zurück auf die eigene Spielfeldseite geht. Außerdem können sich die Gefangenen selber freiwerfen, indem sie mit dem Wurfball aus dem Gefängnis heraus jemanden abwerfen. Hat sich oder wurde ein:e Gefangene:r befreit muss er/sie direkt in die eigene Hälfte zurückkehren, bevor er/sie wieder getickt werden oder am Spielgeschehen teilnehmen darf. Das selbe gilt ggf. für den/die befreiende:n Läufer:in.",
-   "tipps": "",
-   "tags": [
-    "Bewegungsspiel",
-    "Renn- & Fangenspiel",
-    "Mannschaftsspiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "pfadfinder-spiele.de",
-    "url": "https://pfadfinder-spiele.de/mischling/",
-    "autor": "Dorothea Schümann",
-    "lizenz": "CC BY-NC-SA 4.0"
-   },
-   "alter_ab": 10,
-   "gruppe_min": 6,
-   "gruppe_max": 25,
-   "unterkategorie": "fangen"
   },
   {
    "id": "sw-modenschau",
@@ -27289,7 +27138,10 @@
    "alter_ab": 6,
    "gruppe_min": 6,
    "gruppe_max": 25,
-   "unterkategorie": "wettkampf"
+   "unterkategorie": "wettkampf",
+   "dubletten": [
+    "sw-karottenziehen"
+   ]
   },
   {
    "id": "sw-molkky",
@@ -27989,7 +27841,10 @@
     "einstieg",
     "hauptteil"
    ],
-   "altersstufen": [],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
    "dauer_min": 5,
    "dauer_max": 15,
    "ort": "beides",
@@ -28001,7 +27856,7 @@
    "vorbereitung": "gering",
    "kurz": "Nageln ist ein Geschicklichkeitsspiel. Es eignet sich nur für ältere Mitspieler und bedarf \"spezieller\" Materialien, ist dafür um so spannender.",
    "beschreibung": "**Nageln** ist ein Geschicklichkeitsspiel. Es eignet sich nur für ältere Mitspieler und bedarf \"spezieller\" Materialien, ist dafür um so spannender.\n\n## Material\n- Baumstamm (oder dickere Holzscheibe)\n- Nägel\n- Hammer, idealerweise Schlosserhammer (spitzes Ende)\n\n## Ablauf\nJeder Spieler setzt einen Nagel an der Oberseite des Baumstammes an und schlägt ihn leicht ein.\n\nAnschließend kommen die Spieler im Uhrzeigersinn an die Reihe. Jeder darf den Nagel mit einem Schlag tiefer versenken. Wichtig dabei: es darf nur die spitze Seite des Hammers verwendet werden!\n\nGewonnen hat der Spieler, der seinen Nagel zuerst zur Gänze versenkt hat.",
-   "tipps": "",
+   "tipps": "Die Quelle schreibt: eignet sich nur für ältere Mitspieler. Hammer und Nägel im Kreis stehender Personen - Abstand halten und beaufsichtigen.",
    "tags": [
     "Geschicklichkeitsspiel"
    ],
@@ -29782,21 +29637,23 @@
    "id": "sw-pflockeln",
    "titel": "Pflöckeln",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "bewegung_draussen",
    "slots": [
     "hauptteil"
    ],
-   "altersstufen": [],
+   "altersstufen": [
+    "Ältere"
+   ],
    "dauer_min": 20,
    "dauer_max": 40,
-   "ort": "beides",
+   "ort": "draussen",
    "material": [
     "ein Holzpflock"
    ],
    "vorbereitung": "gering",
    "kurz": "Pflöckeln ist ein Bewegungsspiel und Geschicklichkeitsspiel für zwei Spieler. Es wird im Freien gespielt, da erdiger Untergrund benötigt wird. Achtung: aufgrund einer (geringen) Verletzungsgefahr soll es nur mit langer Hose und stabilen Schuhen gespielt werden.",
    "beschreibung": "**Pflöckeln** ist ein Bewegungsspiel und Geschicklichkeitsspiel für zwei Spieler. Es wird im Freien gespielt, da erdiger Untergrund benötigt wird. Achtung: aufgrund einer (geringen) Verletzungsgefahr soll es nur mit langer Hose und stabilen Schuhen gespielt werden. Das Spiel eignet sich erst ab einem gewissen Alter der Mitspieler!\n\n## Material\nein leicht angespitzter Holzpflock (nicht zu spitz, er soll aber in der Erde stecken bleiben wenn er auf den Boden geschleudert wird).\n\n## Ablauf\nDie beiden Spieler stellen sich mit geschlossenen Beinen gegenüber (etwa 1 Meter Abstand) auf. Einer der Spieler beginnt und schleudert den Pflock neben die Beine des anderen Spielers. Bleibt der Pflock dabei in der Erde stecken, muss der Spieler mit seinem Bein an den Pflock heranrücken. Fällt der Pflock jedoch um, passiert nichts. Anschließend ist der andere Spieler an der Reihe.\n\nWird der Pflock zwischen die Beine geworfen, dann muss der Spieler eine 180-Grad-Drehung springen und mit beiden Beinen auf der jeweils anderen Seite des Pflocks landen.\n\nVerliert ein Spieler das Gleichgewicht oder erreicht er den (korrekt in den Boden geworfenen) Pflock des Gegners nicht, so hat er verloren. Dabei darf der Pflock natürlich nicht unerreichbar weit geworfen werden - manche Spieler konkretisieren diese Regel: der Pflock darf Maximal eine Pflock-Länge weit geworfen werden.",
-   "tipps": "",
+   "tipps": "Die Quelle warnt selbst: nur mit langer Hose und stabilen Schuhen, und das Spiel eignet sich erst ab einem gewissen Alter. Ein angespitzter Pflock wird neben die Beine der Gegenspielerin geschleudert - nur mit Aufsicht.",
    "tags": [
     "Bewegungsspiel",
     "Geschicklichkeitsspiel"
@@ -30019,7 +29876,11 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "unterkategorie": "ruhig"
+   "unterkategorie": "ruhig",
+   "dubletten": [
+    "insp-alle-die-obstsalat",
+    "ps-angesprochen"
+   ]
   },
   {
    "id": "sw-plus-minus-interessant",
@@ -30333,7 +30194,7 @@
    "vorbereitung": "mittel",
    "kurz": "Die Psychiatercouch ist ein Denkspiel mit gruppendynamischen Elementen. Zwei Gruppen kämpfen dabei gleichzeitig um den Sieg.",
    "beschreibung": "Die **Psychiatercouch** ist ein Denkspiel mit gruppendynamischen Elementen. Zwei Gruppen kämpfen dabei gleichzeitig um den Sieg.\n\n## Material\nBenötigt werden:\n- Stühle (oder sonstige eindeutig abgegrenzte Sitzmöglichkeiten), einen mehr als Mitspieler\n- Papierzettel\n\n## Vorbereitung\nDie Spielleitung bereitet kleine Papierzettel vor. Auf jeden Zettel wird der Name jeweils eines der Mitspieler geschrieben. Die Namen sollten dabei eindeutig sein; mehrfach vorkommende Namen müssen durch Spitznamen oder Nachnamen eindeutig zugeordnet werden können. Die Kärtchen werden 1-2 Mal gefaltet, so dass der Name nicht von außen gelesen werden kann.\n\n## Ablauf\nDie Spieler werden in zwei (möglichst gleich große) Gruppen eingeteilt. Es sollte deutlich sichtbar sein, welcher Spieler zu welcher Gruppe gehört. Die Gruppen sollten zu beginn möglichst gemischt im Stuhlkreis Platz nehmen. Jeder Spieler erhält eines der Namenskärtchen.\n\nEin Teil der Stühle (meist 4-6) wird als \"Psychiatercouch\" definiert. Je mehr Stühle gewählt werden, desto schwieriger wird die Aufgabe.\n\nDer prinzipielle Ablauf folgt dem Spiel Mein linker Platz ist frei: der Spieler, dessen linker Nachbarplatz frei ist, darf sich einen anderen Spieler herbeiwünschen. Dabei ist allerdings zu beachten: es zählen nicht die tatsächlichen Namen, sondern die Namen, die auf den Papierkärtchen notiert sind. Wird also \"Hans\" herbeigerufen, so kommt nicht Hans, sondern der Spieler, der die \"Hans\"-Karte aktuell hält. Anschließend tauschen die beiden Spieler, der herbeiwünschende und der herbeigerufene, ihre Spielkärtchen. Nun ist der Spieler an der Reihe, der wieder einen freien Platz links neben sich hat; er darf ebenfalls einen Namen herbeiwünschen (allerdings nicht den gleichen wie in der Runde unmittelbar davor).\n\nZiel des Spieles ist, dass auf der Psychiatercouch nur mehr Spieler einer Gruppe sitzen: diese Gruppe hat dann gewonnen.\n\nAlle Teilnehmer müssen sich also möglichst gut merken, welcher Spieler gerade welches Namenskärtchen trägt. Da bei jedem Spielzug allerdings auch zwei Kärtchen getauscht werden, bedarf dies hoher Konzentration.",
-   "tipps": "",
+   "tipps": "Nennt die Sitzgruppe einfach 'Sofa' - das Spiel funktioniert genauso. Siehe auch das gleichlautende Spiel 'Sofaspiel'.",
    "tags": [
     "Denkspiel",
     "gruppendynamisches Spiel"
@@ -30347,7 +30208,10 @@
    },
    "gruppe_min": 10,
    "gruppe_max": 20,
-   "unterkategorie": "team"
+   "unterkategorie": "team",
+   "dubletten": [
+    "sw-sofaspiel"
+   ]
   },
   {
    "id": "sw-pubquiz",
@@ -31693,7 +31557,10 @@
    },
    "gruppe_min": 2,
    "gruppe_max": 2,
-   "unterkategorie": "tisch"
+   "unterkategorie": "tisch",
+   "dubletten": [
+    "ps-schnick-schnack-schnuck"
+   ]
   },
   {
    "id": "sw-schere-stein-papier-online",
@@ -31963,7 +31830,10 @@
    },
    "alter_ab": 13,
    "gruppe_min": 25,
-   "unterkategorie": "gelaende"
+   "unterkategorie": "gelaende",
+   "dubletten": [
+    "insp-schmuggler-innen-spiel"
+   ]
   },
   {
    "id": "sw-schnapsen",
@@ -32076,7 +31946,10 @@
    },
    "alter_ab": 6,
    "gruppe_min": 6,
-   "unterkategorie": "warmup"
+   "unterkategorie": "warmup",
+   "dubletten": [
+    "sw-schere-stein-papier"
+   ]
   },
   {
    "id": "sw-schnitzeljagd",
@@ -32150,7 +32023,11 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "sonstiges"
+   "unterkategorie": "sonstiges",
+   "dubletten": [
+    "ps-das-schokoladenspiel",
+    "sw-schokoladeschneiden"
+   ]
   },
   {
    "id": "sw-schokoladeschneiden",
@@ -32190,7 +32067,11 @@
    },
    "gruppe_min": 5,
    "gruppe_max": 10,
-   "unterkategorie": "tisch"
+   "unterkategorie": "tisch",
+   "dubletten": [
+    "eig-schokoladen-wettessen",
+    "ps-das-schokoladenspiel"
+   ]
   },
   {
    "id": "sw-schreiben-und-zeichnen",
@@ -32839,41 +32720,6 @@
    "unterkategorie": "denken"
   },
   {
-   "id": "sw-sexy-zahlen-spiel",
-   "titel": "Sexy-Zahlen-Spiel",
-   "element_typ": "spiel",
-   "kategorie": "kooperation",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
-   "ort": "beides",
-   "material": [],
-   "vorbereitung": "gering",
-   "kurz": "Das Sexy-Zahlen-Spiel ist ein Kommunikationsspiel für Erwachsene.",
-   "beschreibung": "Das **Sexy-Zahlen-Spiel** ist ein Kommunikationsspiel für Erwachsene.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDer Ablauf des Spieles ist einfach: es wird die Aufgabe gestellt, unterschiedliche Zahlen zu nennen. Allerdings: es sollen ausschließlich \"sexy\" Zahlen sein. Als Beispiel wird die Zahl 6 genannt. Die übrigen Spieler werden hier sicherlich zustimmen können, oder? Anschließend soll der nächste Spieler eine \"sexy\" Zahl nennen. Vielleicht nennt er 2? Vielleicht wird 69 gewählt? Informatikern gefällt vielleicht 10101010?\n\nEs ist überraschend, welche Eigendynamik entsteht, welche Zahlen von der Gruppe als \"sexy\" identifiziert werden.",
-   "tipps": "",
-   "tags": [
-    "Kommunikationsspiel",
-    "Spiel für Erwachsene",
-    "Spiel für Videokonferenzen",
-    "ohne Material"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Sexy-Zahlen-Spiel",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 2,
-   "gruppe_max": 10,
-   "unterkategorie": "team"
-  },
-  {
    "id": "sw-simon-says",
    "titel": "Simon Says",
    "element_typ": "spiel",
@@ -32938,7 +32784,10 @@
     "autor": "Spielewiki-Autor*innen",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "singen"
+   "unterkategorie": "singen",
+   "dubletten": [
+    "ps-im-singing-in-the-rain"
+   ]
   },
   {
    "id": "sw-sisyphos",
@@ -33281,7 +33130,10 @@
    },
    "gruppe_min": 10,
    "gruppe_max": 20,
-   "unterkategorie": "denken"
+   "unterkategorie": "denken",
+   "dubletten": [
+    "sw-psychiatercouch"
+   ]
   },
   {
    "id": "sw-speeddating",
@@ -35136,7 +34988,10 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 6,
-   "unterkategorie": "team"
+   "unterkategorie": "team",
+   "dubletten": [
+    "ps-fliegender-teppich"
+   ]
   },
   {
    "id": "sw-tetris",
@@ -35452,7 +35307,7 @@
    "vorbereitung": "gering",
    "kurz": "Das Toastbrot-Wettessen ist ein Geschicklichkeitsspiel mit Wettbewerbs-Charakter.",
    "beschreibung": "Das **Toastbrot-Wettessen** ist ein Geschicklichkeitsspiel mit Wettbewerbs-Charakter.\n\n## Material\nEs wird Toastbrot benötigt, eine Scheibe pro Teilnehmer.\n\n## Ablauf\nDie Teilnehmer bekommen die Aufgabe, möglichst schnell eine Scheibe Toastbrot zu essen. Es starten dabei alle Teilnehmer gleichzeitig auf ein Startsignal. Der Spieler, der zuerst den Mund wieder frei hat und Pfeifen kann, gewinnt das Spiel.",
-   "tipps": "",
+   "tipps": "Wettessen auf Zeit birgt Erstickungsgefahr. Ohne Zeitdruck spielen oder etwas anderes wählen.",
    "tags": [
     "Geschicklichkeitsspiel",
     "Spiel mit Essen"
@@ -35499,7 +35354,10 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "unterkategorie": "reaktion"
+   "unterkategorie": "reaktion",
+   "dubletten": [
+    "ps-kotzendes-kaenguru"
+   ]
   },
   {
    "id": "sw-topfschlagen",
@@ -36648,7 +36506,10 @@
    },
    "alter_ab": 6,
    "gruppe_min": 10,
-   "unterkategorie": "fangen"
+   "unterkategorie": "fangen",
+   "dubletten": [
+    "eig-waescheklammern-jagd"
+   ]
   },
   {
    "id": "ps-waescheklammern-sortieren",
@@ -36761,7 +36622,10 @@
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
    },
-   "unterkategorie": "fangen"
+   "unterkategorie": "fangen",
+   "dubletten": [
+    "ps-waescheklammern-klauen"
+   ]
   },
   {
    "id": "sw-wascheklammernspiel",
@@ -37552,7 +37416,7 @@
   },
   {
    "id": "sw-wer-hat-angst-vorm-schwarzen-mann",
-   "titel": "Wer hat Angst vorm Schwarzen Mann",
+   "titel": "Wer hat Angst vorm weißen Hai?",
    "element_typ": "spiel",
    "kategorie": "bewegung_draussen",
    "slots": [
@@ -37567,7 +37431,7 @@
    "vorbereitung": "gering",
    "kurz": "Wer hat Angst vorm Schwarzen Mann oder auch Wer hat Angst vorm Weißen Hai ist ein Fangspiel für beliebig große Gruppen ab etwa 10.",
    "beschreibung": "**Wer hat Angst vorm Schwarzen Mann** oder auch **Wer hat Angst vorm Weißen Hai** ist ein Fangspiel für beliebig große Gruppen ab etwa 10 Teilnehmern.\n\n## Material\nEs wird kein Material für das Spiel benötigt.\n\n## Regeln\nEin Spieler ist der Fänger (schwarzer Mann oder weißer Hai). Er stellt sich an ein Ende des Spielfeldes, die übrigen Spieler an das gegenüber liegende.\n\nFolgender Dialog beginnt zwischen dem Fänger und den restlichen Mitspielern:\n\nFänger: Wer fürchtet sich vorm schwarzen Mann?\nRest: Niemand!\nFänger: Wenn er aber kommt?\nRest: Dann laufen wir davon!\n\nDaraufhin läuft der Fänger los und versucht, so viele Mitspieler wie möglich zu berühren. Alle, die er erwischt, sind gefangen und werden ab der nächsten Runde ebenfalls zu Fängern.\n\nRetten können sich die flüchtenden Spieler allerdings dadurch, dass sie das gegenüberliegende Ende des Spielfeldes erreichen (von dem der Fänger gestartet ist). Jeder, der dieses Ende erreicht, kann (in dieser Runde) nicht mehr gefangen werden.",
-   "tipps": "",
+   "tipps": "Der überlieferte Name des Spiels gilt als rassistisch konnotiert. Die Quelle nennt diese Fassung selbst als Alternative.",
    "tags": [
     "Fangspiel",
     "ohne Material"
@@ -37580,6 +37444,7 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
+   "titel_geaendert": true,
    "unterkategorie": "fangen"
   },
   {
@@ -37729,7 +37594,10 @@
    "alter_ab": 10,
    "gruppe_min": 10,
    "gruppe_max": 25,
-   "unterkategorie": "team"
+   "unterkategorie": "team",
+   "dubletten": [
+    "eig-werwolf-abend"
+   ]
   },
   {
    "id": "sw-wetttransport",
@@ -38933,7 +38801,10 @@
    "alter_ab": 6,
    "gruppe_min": 10,
    "gruppe_max": 25,
-   "unterkategorie": "konzentration"
+   "unterkategorie": "konzentration",
+   "dubletten": [
+    "sw-zwinkern"
+   ]
   },
   {
    "id": "sw-zwei-euro",
@@ -39004,6 +38875,43 @@
    },
    "gruppe_min": 6,
    "unterkategorie": "team"
+  },
+  {
+   "id": "ps-crazy-mother-fucker",
+   "titel": "Zwei Plätze weiter",
+   "element_typ": "spiel",
+   "kategorie": "ruhig",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "gering",
+   "kurz": "Zwei „Doktoren“ versuchen, eine „Krankheit“ der Gruppe zu erraten: Jede:r denkt, er/sie sei die Person zwei Plätze rechts. Bei Falschantwort auf Ja/Nein-Fragen und „Crazy mother fucker“-Ruf tauschen alle (außer Doktoren) Plätze.",
+   "beschreibung": "Zwei der Gruppe, die das Spiel nicht kennen, gehen vor die Tür. Sie sind die Doktoren. Alle anderen haben eine Krankheit, welche sie erklärt bekommen: Sie haben eine Persönlichkeitsstörung. Das heißt, dass sie denken sie wären die Person, die zwei Plätze weiter rechts sitzt. Dabei werden die Doktoren, die später mit im Kreis sitzen übersprungen. Nun werden die Doktoren rein geholt und setzen sich mit in den Kreis. Ihre Aufgabe ist es nun die Krankheit heraus zu finden. dazu können sie abwechselnd an einzelne Personen Ja und Nein Fragen stellen. Die gefragt Person muss also so antworten als wäre sie die Person zwei Plätze rechts von ihr. Wenn jemand die Frage falsch beantwortet, sollte das die Person, für die geantwortet wurde bemerken. Dann sagt diese Person „Crazy mother fucker“. Das ist das Signal, das alle Spielenden (außer die Doktoren, die das System nicht kennen) ihre Plätze tauschen.",
+   "tipps": "Die Quelle nennt die Ratenden 'Doktoren' und das Ratespiel eine 'Persönlichkeitsstörung'. Nennt die Ratenden lieber Detektive und die Regel schlicht 'jede und jeder antwortet als die Person zwei Plätze weiter rechts'. Psychische Erkrankungen sind keine Pointe.",
+   "tags": [
+    "Konzentrationsspiel",
+    "ohne Material"
+   ],
+   "themen": [],
+   "quelle": {
+    "name": "pfadfinder-spiele.de",
+    "url": "https://pfadfinder-spiele.de/crazy-mother-fucker/",
+    "autor": "Dorothea Schümann",
+    "lizenz": "CC BY-NC-SA 4.0"
+   },
+   "alter_ab": 13,
+   "gruppe_min": 10,
+   "gruppe_max": 25,
+   "titel_geaendert": true,
+   "unterkategorie": "konzentration"
   },
   {
    "id": "sw-zweierzeichnung",
@@ -39077,7 +38985,10 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "unterkategorie": "ruhig"
+   "unterkategorie": "ruhig",
+   "dubletten": [
+    "ps-zuzwinkern-hundehuette"
+   ]
   }
  ]
 }

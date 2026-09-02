@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "name": "Redaktionelle Entscheidungen",
+    "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
+    "stand": "2026-09-03",
+    "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
+  },
+
+  "gesperrt": [
+    {
+      "id": "sw-bleigiessen",
+      "grund": "Blei ist neurotoxisch; Bleigieß-Sets sind in der EU seit 2018 für Verbraucher verboten (REACH). Die harmlosen Varianten Wachsgießen und Teiggießen bleiben in der Sammlung."
+    },
+    {
+      "id": "sw-flaschendrehen",
+      "grund": "Laut Quelltext kommen die Aufgaben 'oft aus dem erotischen Bereich', und wer sich verweigert, scheidet aus. Beides geht in einer Kinder- und Jugendgruppe nicht."
+    },
+    {
+      "id": "sw-sexy-zahlen-spiel",
+      "grund": "Die Quelle bezeichnet es selbst als 'Kommunikationsspiel für Erwachsene'."
+    },
+    {
+      "id": "sw-hahnenkampf-im-wasser",
+      "grund": "Reiterkampf im Wasser, Siegbedingung ist das Untertauchen des Kopfes. Ertrinkungs- und Halswirbelrisiko, ohne Aufsichts- oder Rettungsschwimmerauflage."
+    },
+    {
+      "id": "sw-bierkisten-klettern",
+      "grund": "Die Quelle schreibt selbst: nur mit professioneller Sicherung durchführbar, der Turm bricht zusammen und der Kletternde muss aufgefangen werden. Das ist Klettersport mit Ausbildung, kein Heimabend-Baustein."
+    },
+    {
+      "id": "sw-eselspiel",
+      "grund": "Schlagen ist als reguläre Spielmechanik vorgesehen ('(sanft) Schlagen'). In der Jugendarbeit nicht vermittelbar."
+    }
+  ],
+
+  "umbenannt": [
+    {
+      "id": "ps-mischling",
+      "titel": "Ballraub",
+      "grund": "Der bisherige Titel ist ein Zentralbegriff der NS-Rassengesetzgebung. Das Spiel selbst ist ein Ball-Geländespiel nach Art von Capture the Flag und hat mit dem Wort nichts zu tun. Der neue Titel beschreibt, worum es geht."
+    },
+    {
+      "id": "ps-crazy-mother-fucker",
+      "titel": "Zwei Plätze weiter",
+      "grund": "Der bisherige Titel ist eine Obszönität und stünde so im geteilten Heimabend-Plan. Der neue Titel beschreibt die Spielregel."
+    }
+  ],
+
+  "korrekturen": [
+    {
+      "id": "ps-crazy-mother-fucker",
+      "hinweis": "Die Quelle nennt die Ratenden 'Doktoren' und das Ratespiel eine 'Persönlichkeitsstörung'. Nennt die Ratenden lieber Detektive und die Regel schlicht 'jede und jeder antwortet als die Person zwei Plätze weiter rechts'. Psychische Erkrankungen sind keine Pointe.",
+      "grund": "Rahmung entschärfen, ohne den Quelltext umzuschreiben."
+    },
+    {
+      "id": "sw-pflockeln",
+      "felder": { "altersstufen": ["Ältere"], "ort": "draussen", "kategorie": "bewegung_draussen" },
+      "hinweis": "Die Quelle warnt selbst: nur mit langer Hose und stabilen Schuhen, und das Spiel eignet sich erst ab einem gewissen Alter. Ein angespitzter Pflock wird neben die Beine der Gegenspielerin geschleudert - nur mit Aufsicht.",
+      "grund": "Verletzungsrisiko. Die Quelle sagt selbst 'im Freien' und 'erst ab einem gewissen Alter', beides stand nicht in den Feldern."
+    },
+    {
+      "id": "sw-nageln",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "hinweis": "Die Quelle schreibt: eignet sich nur für ältere Mitspieler. Hammer und Nägel im Kreis stehender Personen - Abstand halten und beaufsichtigen.",
+      "grund": "Altersangabe stand nur im Fließtext."
+    },
+    {
+      "id": "sw-lateral",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "hinweis": "Die abgedruckten Rätsel haben durchweg Tötungs- und Suizidmotive. Für Wölflinge ungeeignet; sucht für jüngere Gruppen eigene, harmlose Rätsel.",
+      "grund": "Inhalt der Rätsel."
+    },
+    {
+      "id": "sw-black-stories",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "hinweis": "Die Rätsel drehen sich um Todesfälle. Für Wölflinge ungeeignet.",
+      "grund": "Inhalt der Rätsel."
+    },
+    {
+      "id": "eig-schwarze-geschichten-bei-kerzenschein",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "grund": "Gleiche Gattung wie oben: Rätsel um Todesfälle."
+    },
+    {
+      "id": "sw-toastbrot-wettessen",
+      "hinweis": "Wettessen auf Zeit birgt Erstickungsgefahr. Ohne Zeitdruck spielen oder etwas anderes wählen.",
+      "grund": "Aspirationsgefahr, in der Quelle nicht erwähnt."
+    },
+    {
+      "id": "sw-liegestutz-kampf",
+      "hinweis": "Die Quelle nimmt kleinere Blessuren ausdrücklich in Kauf. Nur mit klaren Regeln und Aufsicht, und niemanden dazu drängen.",
+      "grund": "Verletzungen werden als Normalfall beschrieben."
+    },
+    {
+      "id": "sw-achterbahn",
+      "hinweis": "Die Quelle warnt selbst vor Zusammenstößen am Kreuzungspunkt. Langsam beginnen und das Tempo nur allmählich steigern.",
+      "grund": "Selbstwarnung der Quelle stand nur im Fließtext."
+    },
+    {
+      "id": "sw-low-v",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "hinweis": "Die Quelle setzt eine Sicherung durch die Mitspielenden voraus. Nur mit eingewiesener Aufsicht.",
+      "grund": "Sicherungspflicht stand nur im Fließtext."
+    },
+    {
+      "id": "sw-ameisenkonig",
+      "hinweis": "Im Spiel huldigen Mitspielende einem 'König' durch Niederknien und bekommen bei Ungehorsam Strafen und Arbeitsdienste. Wenn ihr es spielt, dann kurz, freiwillig und mit wechselnder Rolle - sonst entsteht eine echte Rangordnung in der Gruppe.",
+      "grund": "Unterwerfungsritual über mehrere Tage angelegt."
+    },
+    {
+      "id": "sw-wer-hat-angst-vorm-schwarzen-mann",
+      "titel": "Wer hat Angst vorm weißen Hai?",
+      "hinweis": "Der überlieferte Name des Spiels gilt als rassistisch konnotiert. Die Quelle nennt diese Fassung selbst als Alternative.",
+      "grund": "Umbenennung nach dem Vorschlag der Quelle."
+    },
+    {
+      "id": "sw-begrussung-international",
+      "hinweis": "Die Liste enthält Stereotype und veraltete Fremdbezeichnungen ('Eskimos' statt Inuit, 'Indianer', 'Arabien' als Einheit). Sucht die Begrüßungen lieber gemeinsam nach und benennt die Länder richtig.",
+      "grund": "Stereotype Darstellung."
+    },
+    {
+      "id": "sw-irrenhaus",
+      "hinweis": "Die Quelle spricht von 'Irren' und 'Schwachsinn'. Nennt das Spiel in der Gruppe anders und lasst die Zuschreibungen weg.",
+      "grund": "Abwertende Begriffe für psychisch kranke Menschen."
+    },
+    {
+      "id": "sw-psychiatercouch",
+      "hinweis": "Nennt die Sitzgruppe einfach 'Sofa' - das Spiel funktioniert genauso. Siehe auch das gleichlautende Spiel 'Sofaspiel'.",
+      "grund": "Abwertende Rahmung; inhaltlich mit sw-sofaspiel identisch."
+    },
+    {
+      "id": "insp-appel-und-n-ei-das-tauschspiel",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "hinweis": "Beim Tauschen an fremden Haustüren klingeln Kinder bei Unbekannten. Nur in Begleitung, in bekannter Umgebung und ohne Feuerzeug als Tauschobjekt.",
+      "grund": "Kindeswohl: unbeaufsichtigter Kontakt zu Fremden an Privatwohnungen."
+    },
+    {
+      "id": "ps-giftteich",
+      "felder": { "altersstufen": ["Pfadfinder", "Ältere"] },
+      "grund": "Variante 2 ist eine Seilquerung mit Klettergurt. alter_ab war 10, die Altersstufen nannten trotzdem Wölflinge (ab 7)."
+    },
+    {
+      "id": "sw-briefbomben",
+      "titel": "Minensucher",
+      "grund": "Der Titel ist unnötig terror-konnotiert. Die Quelle nennt Minesweeper selbst als Alias; das Spiel ist harmlos."
+    }
+  ],
+
+  "keine_dublette": [
+    {
+      "ids": ["ps-bermudadreieck", "sw-bermudadreieck"],
+      "grund": "Gleicher Titel, verschiedene Spiele: bei pfadfinder-spiele.de ein Zieh- und Schiebespiel, im Spielewiki ein Namenslernspiel."
+    },
+    {
+      "ids": ["insp-ich-packe-meinen-koffer", "ps-ich-packe-meinen-koffer"],
+      "grund": "Gleicher Titel, verschiedene Spiele: beim Inspirator das Gegenstands-Merkspiel, bei pfadfinder-spiele.de ein Namensspiel mit Adjektiven."
+    }
+  ],
+
+  "auch_dublette": [
+    { "ids": ["ps-bermudadreieck", "sw-hugo"], "grund": "Dasselbe Zieh- und Schiebespiel unter anderem Namen." },
+    { "ids": ["ps-im-singing-in-the-rain", "sw-singing-in-the-rain"], "grund": "Dasselbe Lied- und Bewegungsspiel." },
+    { "ids": ["ps-hannes", "sw-hi-my-name-is-joe"], "grund": "Die Quelle nennt die Übersetzung selbst: 'zu deutsch: Hallo, ich bin der Hannes'." },
+    { "ids": ["ps-moehren-ziehen", "sw-karottenziehen"], "grund": "Die Quelle führt Möhrenziehen als Zweitnamen." },
+    { "ids": ["ps-schnick-schnack-schnuck", "sw-schere-stein-papier"], "grund": "Die Quelle nennt Schnick Schnack Schnuck als Zweitnamen." },
+    { "ids": ["ps-kotzendes-kaenguru", "sw-toasterspiel"], "grund": "Gleiches Kreisspiel mit denselben Figuren (Elefant, Mixer, Toaster)." },
+    { "ids": ["ps-zuzwinkern-hundehuette", "sw-zwinkern"], "grund": "Die Quelle führt Hundehütte als Zweitnamen." },
+    { "ids": ["ps-das-schokoladenspiel", "eig-schokoladen-wettessen", "sw-schokoladeschneiden"], "grund": "Dasselbe Würfelspiel mit Mütze, Schal und Handschuhen." },
+    { "ids": ["insp-schmuggler-innen-spiel", "ps-schmuggler"], "grund": "Gleiches Geländespiel, nur die Fängerrolle heißt anders." },
+    { "ids": ["ps-fliegender-teppich", "sw-teppich-umdrehen"], "grund": "Teppich wenden, ohne den Boden zu berühren." },
+    { "ids": ["ps-gruppennetz", "sw-fadennetz"], "grund": "Wollknäuel-Netz im Kreis." },
+    { "ids": ["eig-waescheklammern-jagd", "ps-waescheklammern-klauen"], "grund": "Gleiches Spiel, nur die Klammerzahl unterscheidet sich." },
+    { "ids": ["ps-werwolf", "eig-werwolf-abend"], "grund": "Dasselbe Spiel." },
+    { "ids": ["insp-casino-heimabend", "eig-casino-abend"], "grund": "Derselbe Abend." },
+    { "ids": ["insp-sternenhimmel-erkunden", "eig-sternenkunde-abend"], "grund": "Beide: Polarstern finden und danach navigieren." },
+    { "ids": ["eig-kochduell-im-hordentopf", "insp-das-ultimative-kochduell"], "grund": "Zwei Teams, gleiche Zutaten, Jury." },
+    { "ids": ["sw-psychiatercouch", "sw-sofaspiel"], "grund": "Nahezu wortgleiche Artikel; einziger Unterschied ist der Name der Sitzgruppe." },
+    { "ids": ["insp-alle-die-obstsalat", "sw-platztausch", "ps-angesprochen"], "grund": "Dasselbe Stuhlkreis-Grundspiel ('alle, die ... tauschen die Plätze')." }
+  ]
+}

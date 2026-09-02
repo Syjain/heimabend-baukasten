@@ -366,7 +366,7 @@ details.filter[open] > summary::after { content: "▴"; }
             <option value="10">10 Kinder</option>
             <option value="15">15 Kinder</option>
             <option value="20">20 Kinder</option>
-            <option value="25">25 und mehr</option>
+            <option value="25">25 oder mehr</option>
           </select>
         </div>
         <div class="feld">
@@ -449,7 +449,7 @@ details.filter[open] > summary::after { content: "▴"; }
             <option value="10">10 Kinder</option>
             <option value="15">15 Kinder</option>
             <option value="20">20 Kinder</option>
-            <option value="25">25 und mehr</option>
+            <option value="25">25 oder mehr</option>
           </select>
         </div>
         <div class="feld">
@@ -586,6 +586,7 @@ var UNTER_TEXT = {
 };
 
 var ORT_TEXT = { drinnen: "drinnen", draussen: "draußen", beides: "drinnen & draußen" };
+var ALTERSSTUFEN = ["Wölflinge", "Pfadfinder", "Ältere"];
 
 /* Feste Bestandteile jedes Heimabends – Rituale, keine Bausteine. */
 var KREIS_DAUER = 5;
@@ -611,7 +612,9 @@ var UNTEREBENE_AB = 20;
 
 /* ------------------------------------------------------------ Zustand */
 var ALLE = [];
-var NACH_ID = {};
+// Object.create(null): sonst liefert NACH_ID["constructor"] ein Objekt der
+// Prototypkette und die Planansicht stürzt bei kaputtem Speicher ab.
+var NACH_ID = Object.create(null);
 var pfad = { typ: "", kategorie: "", unterkategorie: "" };
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
@@ -827,25 +830,29 @@ function nachTitel(a, b) {
  * Ohne das steht bei "knoten" ein Bastelabend oben, in dessen Beschreibung
  * das Wort irgendwo vorkommt, und die Knoten-Olympiade weit unten.
  */
-function suchrang(e, suche) {
-  var titel = vereinfache(e.titel);
+function suchrang(e, suche, woerter) {
+  var titel = e._titeltext;
   if (titel === suche) return 0;
   if (titel.indexOf(suche) !== -1) return 1;
-  var woerter = suche.split(/\s+/).filter(Boolean);
-  var alleImTitel = woerter.every(function (w) { return titel.indexOf(w) !== -1; });
-  if (alleImTitel) return 2;
-  var kopf = vereinfache([e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
-                          kategorieText(e), unterText(e.unterkategorie)].join(" "));
-  if (woerter.every(function (w) { return kopf.indexOf(w) !== -1; })) return 3;
+  var w;
+  for (w = 0; w < woerter.length; w++) if (titel.indexOf(woerter[w]) === -1) break;
+  if (w === woerter.length) return 2;
+  for (w = 0; w < woerter.length; w++) if (e._kopftext.indexOf(woerter[w]) === -1) break;
+  if (w === woerter.length) return 3;
   return 4;
 }
 
 function sortiere(liste, art, suche) {
-  return liste.sort(function (a, b) {
-    if (suche) {
-      var rangA = suchrang(a, suche), rangB = suchrang(b, suche);
-      if (rangA !== rangB) return rangA - rangB;
+  // Rang einmal je Element bestimmen. Im Vergleicher berechnet, wären es bei
+  // 700 Treffern rund 13000 Aufrufe pro Tastendruck.
+  if (suche) {
+    var woerter = suche.split(/\s+/).filter(Boolean);
+    for (var i = 0; i < liste.length; i++) {
+      liste[i]._rang = suchrang(liste[i], suche, woerter);
     }
+  }
+  return liste.sort(function (a, b) {
+    if (suche && a._rang !== b._rang) return a._rang - b._rang;
     if (art === "dauer" && a.dauer_min !== b.dauer_min) return a.dauer_min - b.dauer_min;
     if (art === "dauer-ab" && a.dauer_min !== b.dauer_min) return b.dauer_min - a.dauer_min;
     return nachTitel(a, b);
@@ -869,7 +876,7 @@ function karteHtml(e, zielzeit) {
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
   // Gibt es denselben Titel in einer anderen Quelle, hilft der Quellname beim Unterscheiden
   if (e.dubletten && e.dubletten.length) {
-    merkmale += '<span class="merkmal">' + schuetze(e.quelle.name) + "</span>";
+    merkmale += '<span class="merkmal">' + schuetze((e.quelle || {}).name || "") + "</span>";
   }
   return "<h3>" + schuetze(e.titel) + "</h3>" +
          "<p>" + schuetze(e.kurz) + "</p>" +
@@ -1118,7 +1125,7 @@ function zeigeDetail(e) {
   html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
   html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
   html += "<dt>Alter</dt><dd>" + schuetze(stufenText(e)) +
-          (e.alter_ab ? " · ab " + e.alter_ab + " Jahren" : "") + "</dd>";
+          (e.alter_ab ? " · ab " + schuetze(e.alter_ab) + " Jahren" : "") + "</dd>";
   var gruppe = gruppenText(e);
   if (gruppe) html += "<dt>Gruppe</dt><dd>" + schuetze(gruppe) + "</dd>";
   html += "<dt>Material</dt><dd>" +
@@ -1247,7 +1254,8 @@ window.addEventListener("popstate", function () {
 /* ------------------------------------------------------ Ansicht: Plan */
 function planElement(schluessel, index) {
   var id = schluessel === "haupt" ? plan.haupt[index] : plan[schluessel];
-  return id ? NACH_ID[id] || null : null;
+  if (!id || typeof id !== "string") return null;
+  return NACH_ID[id] || null;
 }
 
 /** Alle Plätze als flache Liste – erleichtert das Rechnen. */
@@ -1288,7 +1296,10 @@ function zieldauerFuer(slot, index) {
   }
   var offen = 0;
   for (var i = 0; i < plan.haupt.length; i++) if (!planElement("haupt", i)) offen++;
-  return Math.max(15, aufFuenf(rest / Math.max(1, offen)));
+  var anteil = rest / Math.max(1, offen);
+  // Untergrenze an die Zielzeit koppeln: bei 60 Minuten und drei Plätzen
+  // sind starre 15 Minuten je Platz rechnerisch nicht unterzubringen.
+  return Math.max(5, aufFuenf(Math.max(anteil, Math.min(15, anteil))));
 }
 
 /** Wie viele Plätze sind noch leer? */
@@ -1356,7 +1367,7 @@ function slotKarte(slot, index) {
     html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
             '<div class="kurz">' + schuetze(e.kurz) + "</div>" +
             '<div class="quellzeile">' + schuetze(kategorieText(e)) + " · " +
-            schuetze(e.quelle.name) + "</div>";
+            schuetze((e.quelle || {}).name || "") + "</div>";
   } else {
     var frei = freieZeit({ slot: slot, index: index });
     var vorschlag = zieldauerFuer(slot, index);
@@ -1427,13 +1438,30 @@ function slotAktion(tat, slot, index) {
  */
 var gelockert = false;   // merkt sich, ob der Rahmen aufgeweicht werden musste
 
+/** IDs, die bereits im Plan stehen – die sollen nicht doppelt gewürfelt werden. */
+function bereitsImPlan() {
+  var ids = {};
+  var slots = alleSlots();
+  for (var i = 0; i < slots.length; i++) {
+    var e = planElement(slots[i].slot.schluessel, slots[i].index);
+    if (e) ids[e.id] = true;
+  }
+  return ids;
+}
+
 function wuerfleBaustein(slot, zieldauer) {
-  var moegliche = sammle(rahmenFilter(), null, slot.passt);
+  var schonDa = bereitsImPlan();
+  var moegliche = sammle(rahmenFilter(), null, function (e) {
+    return slot.passt(e) && !schonDa[e.id];
+  });
   if (!moegliche.length) {
     // Sonst bekäme man kommentarlos ein Draußen-Spiel mit Material,
     // obwohl man "drinnen, ohne Material" eingestellt hat.
     gelockert = true;
-    moegliche = sammle(leereFilter(), null, slot.passt);
+    moegliche = sammle(leereFilter(), null, function (e) {
+      return slot.passt(e) && !schonDa[e.id];
+    });
+    if (!moegliche.length) moegliche = sammle(leereFilter(), null, slot.passt);
   }
   if (!moegliche.length) return null;
 
@@ -1518,8 +1546,9 @@ function planAlsText() {
     if (!e) { zeilen.push(nummer++ + ". " + name + ": — noch offen —"); continue; }
     zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
     zeilen.push("   " + e.kurz);
-    zeilen.push("   Quelle: " + e.quelle.name + " · " + e.quelle.lizenz +
-                (e.quelle.url ? " · " + e.quelle.url : ""));
+    var q = e.quelle || {};
+    zeilen.push("   Quelle: " + (q.name || "?") + " · " + (q.lizenz || "?") +
+                (q.url ? " · " + q.url : ""));
     for (var m = 0; m < (e.material || []).length; m++) {
       if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
     }
@@ -1536,9 +1565,11 @@ function planAlsText() {
   return zeilen.join("\n");
 }
 
+var meldeUhr = null;
 function melde(text) {
   $("planMeldung").textContent = text;
-  setTimeout(function () { $("planMeldung").textContent = ""; }, 2500);
+  clearTimeout(meldeUhr);   // sonst löscht die ältere Zeitschaltung die neuere Meldung
+  meldeUhr = setTimeout(function () { $("planMeldung").textContent = ""; }, 4000);
 }
 function planTeilen() {
   var text = planAlsText();
@@ -1575,10 +1606,30 @@ function ladePlan() {
     if (!roh) return;
     var gespeichert = JSON.parse(roh);
     if (gespeichert && gespeichert.plan && Array.isArray(gespeichert.plan.haupt)) {
-      plan = gespeichert.plan;
+      plan = {
+        einstieg: typeof gespeichert.plan.einstieg === "string" ? gespeichert.plan.einstieg : null,
+        abschluss: typeof gespeichert.plan.abschluss === "string" ? gespeichert.plan.abschluss : null,
+        haupt: gespeichert.plan.haupt.map(function (id) {
+          return typeof id === "string" ? id : null;
+        })
+      };
+      if (!plan.haupt.length) plan.haupt = [null, null];
     }
     if (gespeichert && gespeichert.rahmen) {
-      rahmen = gespeichert.rahmen;
+      var gemerkt = gespeichert.rahmen;
+      // Alles prüfen: ein verstellter Wert wie zielzeit 0 oder "abc" führt
+      // sonst zu "noch NaN Min frei" und einem Balken, der nie mehr stimmt.
+      var zeiten = ["60", "90", "120", "150", "180"];
+      var zielzeit = parseInt(gemerkt.zielzeit, 10);
+      rahmen = {
+        zielzeit: zeiten.indexOf(String(zielzeit)) !== -1 ? zielzeit : 120,
+        stufe: ALTERSSTUFEN.indexOf(gemerkt.stufe) !== -1 ? gemerkt.stufe : "",
+        teilnehmer: parseInt(gemerkt.teilnehmer, 10) > 0 ? parseInt(gemerkt.teilnehmer, 10) : 0,
+        ort: ["drinnen", "draussen"].indexOf(gemerkt.ort) !== -1 ? gemerkt.ort : "",
+        vorbereitung: ["gering", "mittel"].indexOf(gemerkt.vorbereitung) !== -1
+                      ? gemerkt.vorbereitung : "",
+        ohneMaterial: !!gemerkt.ohneMaterial
+      };
       $("rZielzeit").value = String(rahmen.zielzeit);
       $("rStufe").value = rahmen.stufe || "";
       $("rTeilnehmer").value = rahmen.teilnehmer ? String(rahmen.teilnehmer) : "";
@@ -1657,16 +1708,27 @@ function zeichneAuswahl() {
 
   var nachTyp = alsEintraege(zaehleFeld(grundmenge, "element_typ"),
                              function (k) { return TYP_TEXT[k] || k; });
+  if (auswahlPfad.typ && !nachTyp.some(function (x) { return x.wert === auswahlPfad.typ; })) {
+    auswahlPfad.typ = "";
+  }
   var mitTyp = grundmenge.filter(function (e) {
     return !auswahlPfad.typ || e.element_typ === auswahlPfad.typ;
   });
   var nachKategorie = alsEintraege(zaehleFeld(mitTyp, "kategorie"),
                                    function (k) { return KATEGORIE_TEXT[k] || k; });
+  if (auswahlPfad.kategorie &&
+      !nachKategorie.some(function (x) { return x.wert === auswahlPfad.kategorie; })) {
+    auswahlPfad.kategorie = "";
+  }
   var mitKategorie = mitTyp.filter(function (e) {
     return !auswahlPfad.kategorie || e.kategorie === auswahlPfad.kategorie;
   });
   var nachUnter = alsEintraege(zaehleFeld(mitKategorie, "unterkategorie"),
                                unterText);
+  if (auswahlPfad.unterkategorie &&
+      !nachUnter.some(function (x) { return x.wert === auswahlPfad.unterkategorie; })) {
+    auswahlPfad.unterkategorie = "";
+  }
 
   var chipHtml = chipReihe("Art", nachTyp, auswahlPfad.typ) +
                  chipReihe("Kategorie", nachKategorie, auswahlPfad.kategorie) +
@@ -1846,6 +1908,10 @@ function starte(elemente) {
     NACH_ID[e.id] = e;
     if (typeof e.unterkategorie !== "string") e.unterkategorie = "";
     // Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig
+    e._titeltext = vereinfache(e.titel);
+    e._kopftext = vereinfache([e.kurz, (e.tags || []).join(" "),
+                               (e.themen || []).join(" "), kategorieText(e),
+                               unterText(e.unterkategorie)].join(" "));
     e._suchtext = vereinfache([
       e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
       kategorieText(e), unterText(e.unterkategorie), e.beschreibung

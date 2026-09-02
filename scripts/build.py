@@ -42,6 +42,7 @@ PROBENBUCH = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb.json"
 INSPIRATOR = WURZEL / "data" / "quellen" / "inspirator" / "inspirator-ideen.json"
 PFADFINDER_SPIELE = WURZEL / "data" / "quellen" / "pfadfinder-spiele" / "elemente.json"
 SPIELEWIKI = WURZEL / "data" / "quellen" / "spielewiki" / "elemente.json"
+REDAKTION = WURZEL / "data" / "redaktion.json"
 AUSGABE_JSON = WURZEL / "data" / "elemente.json"
 AUSGABE_JS = WURZEL / "web" / "elemente.js"
 
@@ -570,6 +571,64 @@ def lade_import(pfad):
         return json.load(datei)["elemente"]
 
 
+# ------------------------------------------------------------ Redaktion
+def lade_redaktion():
+    """Liest data/redaktion.json; fehlt die Datei, wird nichts gefiltert."""
+    if not REDAKTION.exists():
+        print("  Hinweis: {} fehlt – keine redaktionellen Regeln.".format(REDAKTION))
+        return {}
+    with open(REDAKTION, encoding="utf-8") as datei:
+        return json.load(datei)
+
+
+def wende_redaktion_an(elemente, redaktion):
+    """
+    Sperrt, benennt um und korrigiert Felder.
+
+    Nötig, weil die Import-Skripte idempotent sind: ohne diesen Schritt holt
+    der nächste Lauf zum Beispiel das Bleigießen wieder herein.
+    Gibt (elemente, bericht) zurück.
+    """
+    bericht = {"gesperrt": [], "umbenannt": [], "korrigiert": [], "unbekannt": []}
+    nach_id = {e["id"]: e for e in elemente}
+
+    gesperrt = set()
+    for eintrag in redaktion.get("gesperrt", []):
+        if eintrag["id"] in nach_id:
+            gesperrt.add(eintrag["id"])
+            bericht["gesperrt"].append("{} ({})".format(nach_id[eintrag["id"]]["titel"], eintrag["id"]))
+        else:
+            bericht["unbekannt"].append(eintrag["id"])
+
+    for eintrag in redaktion.get("umbenannt", []):
+        element = nach_id.get(eintrag["id"])
+        if not element:
+            bericht["unbekannt"].append(eintrag["id"])
+            continue
+        bericht["umbenannt"].append("{} -> {}".format(element["titel"], eintrag["titel"]))
+        element["titel"] = eintrag["titel"]
+        element["titel_geaendert"] = True
+
+    for eintrag in redaktion.get("korrekturen", []):
+        element = nach_id.get(eintrag["id"])
+        if not element:
+            bericht["unbekannt"].append(eintrag["id"])
+            continue
+        if eintrag.get("titel"):
+            bericht["umbenannt"].append("{} -> {}".format(element["titel"], eintrag["titel"]))
+            element["titel"] = eintrag["titel"]
+            element["titel_geaendert"] = True
+        for feld, wert in (eintrag.get("felder") or {}).items():
+            element[feld] = wert
+        if eintrag.get("hinweis"):
+            # Der Hinweis steht vorn, damit er in der App zuerst gelesen wird.
+            element["tipps"] = (eintrag["hinweis"] + "\n\n" + (element.get("tipps") or "")).strip()
+        bericht["korrigiert"].append("{} ({})".format(element["titel"], eintrag["id"]))
+
+    elemente = [e for e in elemente if e["id"] not in gesperrt]
+    return elemente, bericht
+
+
 # ------------------------------------------------------- Unterkategorien
 # Mit 766 Spielen ist die Kategorie allein zu grob: "bewegung_drinnen" hat über
 # 200 Einträge. Die Quellen liefern aber Spielarten (pfadfinder-spiele.de:
@@ -641,19 +700,54 @@ def bestimme_unterkategorie(element):
 
 
 # ---------------------------------------------------------------- Dubletten
-def markiere_dubletten(elemente):
-    """Markiert Elemente mit gleichem normalisiertem Titel gegenseitig."""
+def markiere_dubletten(elemente, redaktion):
+    """
+    Markiert Elemente, die dasselbe Spiel meinen, gegenseitig.
+
+    Grundlage ist der normalisierte Titel. Das findet nur Titelgleichheit –
+    "Möhren ziehen" und "Karottenziehen" fallen durch. Deshalb kommen aus
+    data/redaktion.json zusätzliche Gruppen dazu, und falsch verknüpfte
+    Namensgleichheiten werden wieder gelöst.
+    """
+    nach_id = {e["id"]: e for e in elemente}
+    verbunden = defaultdict(set)
+
+    def verbinde(ids):
+        vorhanden = [i for i in ids if i in nach_id]
+        for eins in vorhanden:
+            for zwei in vorhanden:
+                if eins != zwei:
+                    verbunden[eins].add(zwei)
+
     nach_titel = defaultdict(list)
     for element in elemente:
-        nach_titel[dubletten_schluessel(element["titel"])].append(element)
-    gruppen = 0
+        nach_titel[dubletten_schluessel(element["titel"])].append(element["id"])
     for gruppe in nach_titel.values():
-        if len(gruppe) < 2:
-            continue
-        gruppen += 1
-        for element in gruppe:
-            element["dubletten"] = sorted(a["id"] for a in gruppe if a["id"] != element["id"])
-    return gruppen
+        if len(gruppe) > 1:
+            verbinde(gruppe)
+
+    for eintrag in redaktion.get("auch_dublette", []):
+        verbinde(eintrag["ids"])
+
+    # Gleicher Titel, verschiedenes Spiel: Verbindung wieder auflösen
+    getrennt = 0
+    for eintrag in redaktion.get("keine_dublette", []):
+        ids = [i for i in eintrag["ids"] if i in nach_id]
+        for eins in ids:
+            for zwei in ids:
+                if eins != zwei and zwei in verbunden.get(eins, set()):
+                    verbunden[eins].discard(zwei)
+                    getrennt += 1
+
+    gruppen = set()
+    for element in elemente:
+        partner = sorted(verbunden.get(element["id"], set()))
+        if partner:
+            element["dubletten"] = partner
+            gruppen.add(tuple(sorted([element["id"]] + partner)))
+        else:
+            element.pop("dubletten", None)
+    return len(gruppen), getrennt // 2
 
 
 # ---------------------------------------------------------------- Prüfung
@@ -758,13 +852,29 @@ def main():
         elemente += geladen
         print("  {:<20} {}".format(name + ":", len(geladen)))
 
+    redaktion = lade_redaktion()
+    elemente, bericht = wende_redaktion_an(elemente, redaktion)
+    print()
+    print("Redaktion (data/redaktion.json):")
+    print("  gesperrt:   {}".format(len(bericht["gesperrt"])))
+    for zeile in bericht["gesperrt"]:
+        print("     - {}".format(zeile))
+    print("  umbenannt:  {}".format(len(bericht["umbenannt"])))
+    for zeile in bericht["umbenannt"]:
+        print("     - {}".format(zeile))
+    print("  korrigiert: {}".format(len(bericht["korrigiert"])))
+    if bericht["unbekannt"]:
+        print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(", ".join(bericht["unbekannt"])))
+
     for element in elemente:
         element["unterkategorie"] = bestimme_unterkategorie(element)
 
-    gruppen = markiere_dubletten(elemente)
+    gruppen, getrennt = markiere_dubletten(elemente, redaktion)
     betroffen = sum(1 for e in elemente if e.get("dubletten"))
-    print("\nDubletten: {} Titel doppelt vergeben, {} Elemente markiert "
-          "(nichts gelöscht)".format(gruppen, betroffen))
+    print("\nDubletten: {} Gruppen, {} Elemente markiert (nichts gelöscht)"
+          .format(gruppen, betroffen))
+    if getrennt:
+        print("  {} falsche Verknüpfung(en) laut Redaktion wieder gelöst".format(getrennt))
 
     fehler = pruefe(elemente)
     if fehler:
