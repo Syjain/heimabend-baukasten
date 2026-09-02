@@ -1,0 +1,595 @@
+#!/usr/bin/env python3
+"""
+Führt alle Quellen zur gemeinsamen Datenbasis `data/elemente.json` zusammen.
+
+Aufruf:
+    python3 scripts/build.py
+
+Gelesen werden:
+    data/eigene/heimabend-ideen.json                    (61 eigene Ideen)
+    data/quellen/inspirator/inspirator-ideen.json       (211 Ideen, CC BY-NC 4.0)
+    data/quellen/pfadfinder-spiele/elemente.json        (Ausgabe von import_pfadfinder_spiele.py)
+    data/quellen/spielewiki/elemente.json               (Ausgabe von import_spielewiki.py)
+
+Geschrieben werden:
+    data/elemente.json   – alle Elemente nach data/SCHEMA.md, für App und spätere Flutter-App
+    web/elemente.js      – dasselbe als `window.ELEMENTE = [...]`, damit die Web-App auch
+                           per Doppelklick auf index.html funktioniert (fetch() ist dort gesperrt)
+
+Was passiert:
+- Die beiden Rohquellen (eigene, Inspirator) werden nach den Regeln aus data/SCHEMA.md
+  auf das Element-Schema gemappt; die beiden Import-Ausgaben sind schon im Schema.
+- IDs bekommen ein Quell-Präfix: eig-, insp-, ps-, sw-
+- Dubletten werden über normalisierte Titel erkannt und mit `dubletten: [ids]`
+  gegenseitig markiert – gelöscht wird nichts (verschiedene Quellen, verschiedene Lizenzen).
+- Pflichtfelder und Wertebereiche werden geprüft; Fehler brechen den Lauf ab.
+- Zum Schluss gibt es eine Statistik nach Typ, Kategorie, Quelle und Lizenz.
+
+Lizenzhinweis: Jedes Element behält die Lizenz seiner Quelle. Texte verschiedener
+Quellen werden nie vermischt (siehe CLAUDE.md).
+"""
+import json
+import re
+import sys
+import unicodedata
+from collections import Counter, defaultdict
+from pathlib import Path
+
+WURZEL = Path(__file__).resolve().parent.parent
+EIGENE = WURZEL / "data" / "eigene" / "heimabend-ideen.json"
+INSPIRATOR = WURZEL / "data" / "quellen" / "inspirator" / "inspirator-ideen.json"
+PFADFINDER_SPIELE = WURZEL / "data" / "quellen" / "pfadfinder-spiele" / "elemente.json"
+SPIELEWIKI = WURZEL / "data" / "quellen" / "spielewiki" / "elemente.json"
+AUSGABE_JSON = WURZEL / "data" / "elemente.json"
+AUSGABE_JS = WURZEL / "web" / "elemente.js"
+
+# ---------------------------------------------------------------- Wertebereiche
+ELEMENT_TYPEN = {"spiel", "probe", "aktivitaet", "projekt"}
+ORTE = {"drinnen", "draussen", "beides"}
+VORBEREITUNGEN = {"gering", "mittel", "hoch"}
+SLOTS = {"eroeffnung", "einstieg", "hauptteil", "aktivitaet", "abschluss"}
+ALTERSSTUFEN = {"Wölflinge", "Pfadfinder", "Ältere"}
+
+KATEGORIEN_SPIEL = {
+    "ankommen", "bewegung_drinnen", "bewegung_draussen", "gelaende",
+    "kreis", "ruhig", "kooperation", "abschluss",
+}
+KATEGORIEN_PROBE = {
+    "knoten", "karte_kompass", "feuer", "erste_hilfe", "zelte_bauten",
+    "natur", "bundeskunde", "fahrtentechnik", "sonstiges",
+}
+KATEGORIEN_AKTIVITAET = {"draussen", "kreativ", "kochen", "musisch", "soziales"}
+# Bei Projekten lässt das Schema die Kategorie frei ("Hauptthema"). Eine feste,
+# kleine Liste hält das Filtermenü der App brauchbar; die feinen Themen stehen
+# weiterhin im Feld "themen".
+KATEGORIEN_PROJEKT = {
+    "themenabend", "wissen", "entdecken", "spiel", "raetsel",
+    "draussen", "kreativ", "kochen", "musisch", "soziales",
+}
+KATEGORIEN = {
+    "spiel": KATEGORIEN_SPIEL,
+    "probe": KATEGORIEN_PROBE,
+    "aktivitaet": KATEGORIEN_AKTIVITAET,
+    "projekt": KATEGORIEN_PROJEKT,
+}
+PFLICHTFELDER = [
+    "id", "titel", "element_typ", "kategorie", "slots", "altersstufen",
+    "dauer_min", "dauer_max", "ort", "material", "vorbereitung",
+    "kurz", "beschreibung", "tags", "themen", "quelle",
+]
+
+
+# ---------------------------------------------------------------- Hilfsmittel
+def entschaerfe(text):
+    """Kleinbuchstaben ohne Umlaute/Akzente – Grundlage für ID und Dublettensuche."""
+    text = (text or "").lower()
+    for alt, neu in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")):
+        text = text.replace(alt, neu)
+    text = unicodedata.normalize("NFKD", text)
+    return "".join(z for z in text if not unicodedata.combining(z))
+
+
+def mache_id(praefix, titel, vergeben):
+    """Baut eine eindeutige ID mit Quell-Präfix, z. B. eig-knoten-olympiade."""
+    kern = re.sub(r"[^a-z0-9]+", "-", entschaerfe(titel)).strip("-") or "element"
+    kandidat = "{}-{}".format(praefix, kern)
+    nummer = 2
+    while kandidat in vergeben:
+        kandidat = "{}-{}-{}".format(praefix, kern, nummer)
+        nummer += 1
+    vergeben.add(kandidat)
+    return kandidat
+
+
+def dubletten_schluessel(titel):
+    """Vergleichsform für die Dublettensuche: nur Buchstaben und Ziffern."""
+    return re.sub(r"[^a-z0-9]+", "", entschaerfe(titel))
+
+
+def kurzfassung(text, laenge=220):
+    """Erzeugt einen Kurztext aus den ersten Sätzen einer Beschreibung."""
+    text = re.sub(r"\s+", " ", (text or "").strip())
+    if len(text) <= laenge:
+        return text
+    schnitt = text[:laenge]
+    punkt = max(schnitt.rfind(". "), schnitt.rfind("! "), schnitt.rfind("? "))
+    if punkt > 60:
+        return schnitt[:punkt + 1]
+    return schnitt.rsplit(" ", 1)[0] + " …"
+
+
+def normalisiere_ort(wert):
+    """"draußen"/"Draussen" -> "draussen"."""
+    wert = entschaerfe(wert).strip()
+    if wert.startswith("drau"):
+        return "draussen"
+    if wert.startswith("drin"):
+        return "drinnen"
+    return "beides"
+
+
+def normalisiere_stufen(stufen):
+    """Stufennamen vereinheitlichen; der Inspirator nennt die Älteren "Rover"."""
+    ergebnis = []
+    for stufe in stufen or []:
+        stufe = stufe.strip()
+        if stufe.lower() in ("rover", "ältere", "aeltere", "ranger", "ranger/rover"):
+            stufe = "Ältere"
+        elif stufe.lower().startswith("wölf") or stufe.lower().startswith("woelf"):
+            stufe = "Wölflinge"
+        elif stufe.lower().startswith("pfadfinder") or stufe.lower().startswith("jungpfad"):
+            stufe = "Pfadfinder"
+        if stufe in ALTERSSTUFEN and stufe not in ergebnis:
+            ergebnis.append(stufe)
+    reihenfolge = ["Wölflinge", "Pfadfinder", "Ältere"]
+    return sorted(ergebnis, key=reihenfolge.index)
+
+
+# ---------------------------------------------------------------- eigene Ideen
+# Kategorie der eigenen Sammlung -> Kategorie für element_typ "aktivitaet"
+EIGENE_AKTIVITAET = {
+    "Draußen & Natur": "draussen",
+    "Kreativ & Werken": "kreativ",
+    "Kochen & Essen": "kochen",
+    "Musisch": "musisch",
+    "Gruppe & Soziales": "soziales",
+    "Denken & Rätsel": "soziales",
+}
+# ... und -> Kategorie für element_typ "projekt"
+EIGENE_PROJEKT = {
+    "Themenabende": "themenabend",
+    "Draußen & Natur": "draussen",
+    "Kreativ & Werken": "kreativ",
+    "Kochen & Essen": "kochen",
+    "Musisch": "musisch",
+    "Gruppe & Soziales": "soziales",
+    "Denken & Rätsel": "raetsel",
+    "Spiel & Action": "spiel",
+    "Pfadfindertechnik": "wissen",
+}
+# Stichwort im Titel/Tag -> Probenthema (erste Übereinstimmung gewinnt)
+PROBEN_THEMEN = [
+    ("knoten", "knoten"),
+    ("bund", "zelte_bauten"),
+    ("seilbrücke", "zelte_bauten"),
+    ("kohte", "zelte_bauten"),
+    ("jurte", "zelte_bauten"),
+    ("zelt", "zelte_bauten"),
+    ("erste hilfe", "erste_hilfe"),
+    ("feuer", "feuer"),
+    ("karte", "karte_kompass"),
+    ("kompass", "karte_kompass"),
+    ("orientierung", "karte_kompass"),
+    ("waldläuferzeichen", "karte_kompass"),
+    ("spuren", "natur"),
+    ("natur", "natur"),
+    ("baum", "natur"),
+    ("stern", "natur"),
+    ("bipi", "bundeskunde"),
+    ("geschichte", "bundeskunde"),
+    ("symbolik", "bundeskunde"),
+    ("versprechen", "bundeskunde"),
+    ("lied", "bundeskunde"),
+    ("schnitz", "fahrtentechnik"),
+    ("messer", "fahrtentechnik"),
+    ("werkzeug", "fahrtentechnik"),
+    ("packen", "fahrtentechnik"),
+    ("kochen", "fahrtentechnik"),
+    ("haik", "fahrtentechnik"),
+    ("morse", "sonstiges"),
+    ("geheimschrift", "sonstiges"),
+]
+# Stichwort -> Kategorie, wenn eine eigene Idee ein "spiel" wird
+EIGENE_SPIEL_KATEGORIE = [
+    ("warm-up", "ankommen"),
+    ("kennenlern", "ankommen"),
+    ("geländespiel", "gelaende"),
+    ("postenlauf", "gelaende"),
+    ("stationen", "gelaende"),
+    ("kooperation", "kooperation"),
+    ("vertrauen", "kooperation"),
+    ("rätsel", "ruhig"),
+    ("kim-spiel", "ruhig"),
+    ("ruhig", "ruhig"),
+    ("quiz", "ruhig"),
+]
+
+
+def probenthema(idee):
+    """Bestimmt das Probenthema aus Titel und Tags."""
+    heuhaufen = entschaerfe(idee["titel"] + " " + " ".join(idee.get("tags", [])))
+    for stichwort, thema in PROBEN_THEMEN:
+        if entschaerfe(stichwort) in heuhaufen:
+            return thema
+    return "sonstiges"
+
+
+def eigene_spielkategorie(idee, ort):
+    """Bestimmt die Spielkategorie einer eigenen Idee."""
+    heuhaufen = entschaerfe(idee["titel"] + " " + " ".join(idee.get("tags", [])))
+    for stichwort, kategorie in EIGENE_SPIEL_KATEGORIE:
+        if entschaerfe(stichwort) in heuhaufen:
+            return kategorie
+    return "bewegung_draussen" if ort == "draussen" else "bewegung_drinnen"
+
+
+def ist_spielhaft(idee):
+    """
+    True, wenn eine eigene Idee im Kern ein Spiel ist. Neben den Kategorien
+    "Spiel & Action" und "Denken & Rätsel" zählt auch der Tag "Geländespiel"
+    dazu – sonst landet z. B. "Fahnenraub im Wald" unter Bastel-Aktivitäten.
+    """
+    if idee.get("kategorie") in ("Spiel & Action", "Denken & Rätsel"):
+        return True
+    return any(entschaerfe(t) == "gelaendespiel" for t in idee.get("tags", []))
+
+
+def eigener_typ(idee):
+    """
+    Bestimmt den element_typ nach der Mapping-Tabelle in data/SCHEMA.md.
+
+    Reihenfolge (bewusst so gewählt, siehe Commit-Nachricht):
+    1. Pfadfindertechnik ist immer eine Probe – auch wenn sie 90 Minuten dauert,
+       sonst landet Probenbuch-Wissen unter "Projekt".
+    2. Themenabende sind Projekte.
+    3. Spielhaftes bis 45 (bzw. höchstens 60) Minuten ist ein Spiel; das Schema
+       sieht für "spiel" 5-45 Minuten vor. Längere Spiele füllen den Abend
+       und werden deshalb zum Projekt.
+    4. Alles Übrige ab 90 Minuten füllt ebenfalls den Abend -> Projekt.
+    5. Der Rest ist eine Gemeinschaftsaktivität (laut Schema 30-90 Minuten).
+    """
+    kategorie = idee.get("kategorie", "")
+    dauer_min = idee.get("dauer_min") or 0
+    dauer_max = idee.get("dauer_max") or dauer_min
+    if kategorie == "Pfadfindertechnik":
+        return "probe"
+    if kategorie == "Themenabende":
+        return "projekt"
+    if ist_spielhaft(idee):
+        return "spiel" if dauer_min <= 45 and dauer_max <= 60 else "projekt"
+    if dauer_min >= 90:
+        return "projekt"
+    return "aktivitaet"
+
+
+def slots_fuer(element_typ, kategorie, dauer_min):
+    """Wo im Heimabend passt das Element?"""
+    if element_typ == "spiel":
+        slots = []
+        if kategorie == "ankommen" or dauer_min <= 10:
+            slots.append("einstieg")
+        slots.append("hauptteil")
+        if dauer_min <= 15 and kategorie in ("kreis", "ruhig", "ankommen"):
+            slots.append("abschluss")
+        return slots
+    if element_typ == "aktivitaet":
+        return ["hauptteil", "aktivitaet"]
+    return ["hauptteil"]  # probe und projekt
+
+
+def lade_eigene(vergeben):
+    """Mappt data/eigene/heimabend-ideen.json auf das Element-Schema."""
+    with open(EIGENE, encoding="utf-8") as datei:
+        daten = json.load(datei)
+    lizenz = "CC BY-SA 4.0"
+    elemente = []
+    for idee in daten["ideen"]:
+        typ = eigener_typ(idee)
+        ort = normalisiere_ort(idee.get("ort", "beides"))
+        if typ == "spiel":
+            kategorie = eigene_spielkategorie(idee, ort)
+        elif typ == "probe":
+            kategorie = probenthema(idee)
+        elif typ == "aktivitaet":
+            kategorie = EIGENE_AKTIVITAET.get(idee["kategorie"], "soziales")
+        elif ist_spielhaft(idee):
+            # langes Spiel als Projekt: "raetsel" für Denkaufgaben, sonst "spiel"
+            kategorie = "raetsel" if idee["kategorie"] == "Denken & Rätsel" else "spiel"
+        else:
+            kategorie = EIGENE_PROJEKT.get(idee["kategorie"], "themenabend")
+        beschreibung = (idee.get("beschreibung") or "").strip()
+        dauer_min = idee.get("dauer_min") or 30
+        elemente.append({
+            "id": mache_id("eig", idee["titel"], vergeben),
+            "titel": idee["titel"],
+            "element_typ": typ,
+            "kategorie": kategorie,
+            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "altersstufen": normalisiere_stufen(idee.get("altersstufen")),
+            "dauer_min": dauer_min,
+            "dauer_max": idee.get("dauer_max") or dauer_min,
+            "ort": ort,
+            "material": [m for m in idee.get("material", []) if m],
+            "vorbereitung": idee.get("vorbereitung", "gering"),
+            "kurz": kurzfassung(beschreibung),
+            "beschreibung": beschreibung,
+            "tipps": (idee.get("tipps") or "").strip(),
+            "tags": list(idee.get("tags", [])),
+            "themen": list(idee.get("tags", [])) if typ in ("probe", "projekt") else [],
+            "quelle": {
+                "name": "Heimabend-Baukasten (eigene Sammlung)",
+                "url": "",
+                "autor": "Heimabend-Baukasten",
+                "lizenz": lizenz,
+            },
+        })
+    return elemente
+
+
+# ---------------------------------------------------------------- Inspirator
+# arten des Inspirators -> Kategorie für element_typ "projekt"
+INSPIRATOR_PROJEKT = [
+    ("Rezept", "kochen"),
+    ("Kreatives", "kreativ"),
+    ("Forschen", "entdecken"),
+    ("Lernen", "wissen"),
+    ("Spiel", "spiel"),
+]
+INSPIRATOR_VORBEREITUNG = {
+    "keine": "gering", "5 min": "gering",
+    "30 min": "mittel",
+    "60 min": "hoch", ">60 min": "hoch",
+}
+
+
+def inspirator_ort(orte):
+    """orte[] (Drinnen, Draußen, Wald, Garten, Ausflug) -> ort."""
+    drinnen = "Drinnen" in (orte or [])
+    draussen = bool(set(orte or []) & {"Draußen", "Wald", "Garten", "Ausflug"})
+    if drinnen and draussen:
+        return "beides"
+    if draussen:
+        return "draussen"
+    if drinnen:
+        return "drinnen"
+    return "beides"
+
+
+def lade_inspirator(vergeben):
+    """Mappt data/quellen/inspirator/inspirator-ideen.json auf das Element-Schema."""
+    with open(INSPIRATOR, encoding="utf-8") as datei:
+        daten = json.load(datei)
+    elemente = []
+    for idee in daten["ideen"]:
+        arten = idee.get("arten") or []
+        dauer_min = idee.get("dauer_min") or 45
+        # Ausnahme laut SCHEMA.md: reine Spiele unter 30 Minuten sind ein "spiel"
+        typ = "spiel" if arten == ["Spiel"] and dauer_min < 30 else "projekt"
+        ort = inspirator_ort(idee.get("orte"))
+        if typ == "spiel":
+            kategorie = "bewegung_draussen" if ort == "draussen" else "bewegung_drinnen"
+        else:
+            kategorie = "wissen"
+            for art, bucket in INSPIRATOR_PROJEKT:
+                if art in arten:
+                    kategorie = bucket
+                    break
+        material = []
+        for eintrag in idee.get("material") or []:
+            name = (eintrag.get("name") or "").strip() if isinstance(eintrag, dict) else str(eintrag)
+            if name and name not in material:
+                material.append(name)
+        beschreibung = (idee.get("beschreibung_text") or "").strip()
+        elemente.append({
+            "id": mache_id("insp", idee["titel"], vergeben),
+            "titel": idee["titel"],
+            "element_typ": typ,
+            "kategorie": kategorie,
+            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "altersstufen": normalisiere_stufen(idee.get("stufen")),
+            "dauer_min": dauer_min,
+            "dauer_max": idee.get("dauer_max") or dauer_min,
+            "ort": ort,
+            "material": material,
+            "vorbereitung": INSPIRATOR_VORBEREITUNG.get(idee.get("vorbereitung"), "gering"),
+            "kurz": kurzfassung(idee.get("kurz") or beschreibung),
+            "beschreibung": beschreibung,
+            "tipps": "",
+            "tags": list(idee.get("themen") or []) + list(arten),
+            "themen": list(idee.get("themen") or []),
+            "quelle": {
+                "name": "Heimabend-Inspirator (DPBM)",
+                "url": idee.get("url", ""),
+                # Bewusst ohne die Vornamen der Autor*innen: CLAUDE.md untersagt
+                # personenbezogene Daten. Die Namensnennung erfolgt über Quelle + URL.
+                "autor": "Heimabend-Inspirator (DPBM)",
+                "lizenz": "CC BY-NC 4.0",
+            },
+        })
+    return elemente
+
+
+# ---------------------------------------------------------------- Importe
+def lade_import(pfad):
+    """Liest eine fertige Import-Ausgabe (schon im Element-Schema)."""
+    if not pfad.exists():
+        print("  ACHTUNG: {} fehlt – bitte das zugehörige Import-Skript laufen lassen.".format(pfad))
+        return []
+    with open(pfad, encoding="utf-8") as datei:
+        return json.load(datei)["elemente"]
+
+
+# ---------------------------------------------------------------- Dubletten
+def markiere_dubletten(elemente):
+    """Markiert Elemente mit gleichem normalisiertem Titel gegenseitig."""
+    nach_titel = defaultdict(list)
+    for element in elemente:
+        nach_titel[dubletten_schluessel(element["titel"])].append(element)
+    gruppen = 0
+    for gruppe in nach_titel.values():
+        if len(gruppe) < 2:
+            continue
+        gruppen += 1
+        for element in gruppe:
+            element["dubletten"] = sorted(a["id"] for a in gruppe if a["id"] != element["id"])
+    return gruppen
+
+
+# ---------------------------------------------------------------- Prüfung
+def pruefe(elemente):
+    """Prüft Pflichtfelder und Wertebereiche. Gibt die Liste der Fehler zurück."""
+    fehler = []
+    gesehen = set()
+    for element in elemente:
+        kennung = element.get("id", "<ohne id>")
+        for feld in PFLICHTFELDER:
+            if feld not in element:
+                fehler.append("{}: Feld '{}' fehlt".format(kennung, feld))
+        if kennung in gesehen:
+            fehler.append("{}: ID doppelt vergeben".format(kennung))
+        gesehen.add(kennung)
+        if not (element.get("titel") or "").strip():
+            fehler.append("{}: leerer Titel".format(kennung))
+        if len((element.get("beschreibung") or "").strip()) < 20:
+            fehler.append("{}: Beschreibung fehlt oder ist zu kurz".format(kennung))
+        typ = element.get("element_typ")
+        if typ not in ELEMENT_TYPEN:
+            fehler.append("{}: unbekannter element_typ '{}'".format(kennung, typ))
+        elif element.get("kategorie") not in KATEGORIEN[typ]:
+            fehler.append("{}: Kategorie '{}' passt nicht zu '{}'".format(
+                kennung, element.get("kategorie"), typ))
+        if element.get("ort") not in ORTE:
+            fehler.append("{}: unbekannter Ort '{}'".format(kennung, element.get("ort")))
+        if element.get("vorbereitung") not in VORBEREITUNGEN:
+            fehler.append("{}: unbekannte Vorbereitung '{}'".format(
+                kennung, element.get("vorbereitung")))
+        if not element.get("slots") or set(element["slots"]) - SLOTS:
+            fehler.append("{}: ungültige Slots {}".format(kennung, element.get("slots")))
+        if set(element.get("altersstufen") or []) - ALTERSSTUFEN:
+            fehler.append("{}: ungültige Altersstufe {}".format(kennung, element["altersstufen"]))
+        dauer_min, dauer_max = element.get("dauer_min"), element.get("dauer_max")
+        if not isinstance(dauer_min, int) or not isinstance(dauer_max, int):
+            fehler.append("{}: Dauer ist keine ganze Zahl".format(kennung))
+        elif dauer_min < 1 or dauer_max < dauer_min:
+            fehler.append("{}: unplausible Dauer {}-{}".format(kennung, dauer_min, dauer_max))
+        quelle = element.get("quelle") or {}
+        for feld in ("name", "autor", "lizenz"):
+            if not (quelle.get(feld) or "").strip():
+                fehler.append("{}: quelle.{} fehlt".format(kennung, feld))
+        if "url" not in quelle:
+            fehler.append("{}: quelle.url fehlt".format(kennung))
+    return fehler
+
+
+# ---------------------------------------------------------------- Ausgabe
+def statistik(elemente):
+    """Gibt die Statistik auf der Konsole aus."""
+    def zeige(titel, zaehler):
+        print("\n{}".format(titel))
+        breite = max((len(str(k)) for k in zaehler), default=0)
+        for schluessel, anzahl in zaehler.most_common():
+            print("  {:<{b}}  {:>4}".format(str(schluessel), anzahl, b=breite))
+
+    print("\n" + "=" * 58)
+    print("STATISTIK  –  {} Elemente insgesamt".format(len(elemente)))
+    print("=" * 58)
+    zeige("nach Typ:", Counter(e["element_typ"] for e in elemente))
+    zeige("nach Quelle:", Counter(e["quelle"]["name"] for e in elemente))
+    zeige("nach Lizenz:", Counter(e["quelle"]["lizenz"] for e in elemente))
+    for typ in ("spiel", "probe", "aktivitaet", "projekt"):
+        teilmenge = [e for e in elemente if e["element_typ"] == typ]
+        if teilmenge:
+            zeige("Kategorien ({}, {} Stück):".format(typ, len(teilmenge)),
+                  Counter(e["kategorie"] for e in teilmenge))
+    zeige("nach Ort:", Counter(e["ort"] for e in elemente))
+    zeige("nach Vorbereitung:", Counter(e["vorbereitung"] for e in elemente))
+    zeige("nach Slot:", Counter(s for e in elemente for s in e["slots"]))
+    zeige("nach Altersstufe:", Counter(
+        s for e in elemente for s in (e["altersstufen"] or ["(alle / keine Angabe)"])))
+    print("\nohne Material: {}".format(sum(1 for e in elemente if not e["material"])))
+
+
+def main():
+    vergeben = set()
+    print("Lese Quellen ...")
+    elemente = []
+    elemente += lade_eigene(vergeben)
+    print("  eigene Ideen:        {}".format(len(elemente)))
+    vorher = len(elemente)
+    elemente += lade_inspirator(vergeben)
+    print("  Inspirator:          {}".format(len(elemente) - vorher))
+    for pfad, name in ((PFADFINDER_SPIELE, "pfadfinder-spiele.de"), (SPIELEWIKI, "Spielewiki")):
+        geladen = lade_import(pfad)
+        for element in geladen:
+            # ID trotzdem gegen Kollisionen absichern
+            if element["id"] in vergeben:
+                element["id"] = mache_id(element["id"].split("-")[0], element["titel"], vergeben)
+            else:
+                vergeben.add(element["id"])
+        elemente += geladen
+        print("  {:<20} {}".format(name + ":", len(geladen)))
+
+    gruppen = markiere_dubletten(elemente)
+    betroffen = sum(1 for e in elemente if e.get("dubletten"))
+    print("\nDubletten: {} Titel doppelt vergeben, {} Elemente markiert "
+          "(nichts gelöscht)".format(gruppen, betroffen))
+
+    fehler = pruefe(elemente)
+    if fehler:
+        print("\n{} FEHLER bei der Prüfung:".format(len(fehler)))
+        for eintrag in fehler[:40]:
+            print("  - {}".format(eintrag))
+        if len(fehler) > 40:
+            print("  ... und {} weitere".format(len(fehler) - 40))
+        return 1
+    print("Prüfung: alle Pflichtfelder und Wertebereiche in Ordnung.")
+
+    elemente.sort(key=lambda e: (e["element_typ"], entschaerfe(e["titel"])))
+
+    AUSGABE_JSON.parent.mkdir(parents=True, exist_ok=True)
+    inhalt = {
+        "meta": {
+            "name": "Heimabend-Baukasten – Elemente",
+            "beschreibung": "Zusammengeführte Bausteine für Heimabende. "
+                            "Jedes Element trägt die Lizenz seiner Quelle.",
+            "anzahl": len(elemente),
+            "quellen": sorted({e["quelle"]["name"] for e in elemente}),
+            "lizenzen": sorted({e["quelle"]["lizenz"] for e in elemente}),
+            "hinweis": "Erzeugt von scripts/build.py – nicht von Hand bearbeiten. "
+                       "Das Projekt ist nicht-kommerziell (NC-Inhalte enthalten).",
+        },
+        "elemente": elemente,
+    }
+    with open(AUSGABE_JSON, "w", encoding="utf-8") as datei:
+        json.dump(inhalt, datei, ensure_ascii=False, indent=1)
+
+    AUSGABE_JS.parent.mkdir(parents=True, exist_ok=True)
+    with open(AUSGABE_JS, "w", encoding="utf-8") as datei:
+        datei.write("// Erzeugt von scripts/build.py – nicht von Hand bearbeiten.\n")
+        datei.write("// Ermöglicht der Web-App, auch per Doppelklick auf index.html zu laufen\n")
+        datei.write("// (der Browser sperrt fetch() bei file://-Adressen).\n")
+        datei.write("window.ELEMENTE = ")
+        # kompakt geschrieben: die Datei liest nur der Browser, und am Handy
+        # zählt jedes Kilobyte. Die lesbare Fassung steht in data/elemente.json.
+        json.dump(elemente, datei, ensure_ascii=False, separators=(",", ":"))
+        datei.write(";\n")
+
+    statistik(elemente)
+    print("\nGeschrieben:")
+    print("  {}".format(AUSGABE_JSON))
+    print("  {}".format(AUSGABE_JS))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
