@@ -75,7 +75,7 @@ KATEGORIEN = {
     "projekt": KATEGORIEN_PROJEKT,
 }
 PFLICHTFELDER = [
-    "id", "titel", "element_typ", "kategorie", "slots", "altersstufen",
+    "id", "titel", "element_typ", "kategorie", "unterkategorie", "slots", "altersstufen",
     "dauer_min", "dauer_max", "ort", "material", "vorbereitung",
     "kurz", "beschreibung", "tags", "themen", "quelle",
 ]
@@ -570,6 +570,76 @@ def lade_import(pfad):
         return json.load(datei)["elemente"]
 
 
+# ------------------------------------------------------- Unterkategorien
+# Mit 766 Spielen ist die Kategorie allein zu grob: "bewegung_drinnen" hat über
+# 200 Einträge. Die Quellen liefern aber Spielarten (pfadfinder-spiele.de:
+# spielart, Spielewiki: die Art-Vorlagen) – daraus wird eine zweite Ebene.
+# Geprüft wird in dieser Reihenfolge, die erste Übereinstimmung gewinnt;
+# deshalb stehen die aussagekräftigen Arten oben und "Bewegungsspiel" ganz unten.
+UNTERKATEGORIE_SPIEL = [
+    ("gelaende", ["Geländespiel"]),
+    ("verstecken", ["Versteckspiel", "Suchspiel"]),
+    ("namen", ["Namenslernspiel", "Kennenlernspiel"]),
+    ("vertrauen", ["Vertrauensspiel", "Vertrauensübung"]),
+    ("team", ["Kooperationsspiel", "Gruppendynamisches Spiel", "Kommunikationsspiel",
+              "Gruppenfindungsspiel", "Diskussionsspiel"]),
+    ("reflexion", ["Reflexionsmethode"]),
+    ("merken", ["Kimspiel", "Merkspiel", "Spiel mit den Sinnen"]),
+    ("denken", ["Denkspiel", "Rätsel", "Ratespiel", "Quiz"]),
+    ("singen", ["Singspiel", "Musikspiel", "Tanzspiel", "Klatschspiel", "Spiel mit Musik"]),
+    ("darstellen", ["Kreativspiel", "Darstellungsspiel", "Pantomime"]),
+    ("tisch", ["Kartenspiel", "Glücksspiel", "Spiel am Tisch", "Partyspiel",
+               "Spiel mit Münzen", "Würfelspiel"]),
+    ("ball", ["Ballspiel", "Abschießspiel", "Spiel mit Frisbees"]),
+    ("fangen", ["Fangspiel", "Renn- & Fangenspiel", "Laufspiel"]),
+    ("kampf", ["Kampfspiel"]),
+    ("wettkampf", ["Staffelspiel", "Mannschaftsspiel", "Spiel für Stationenlauf",
+                   "Hindernisparcours"]),
+    ("reaktion", ["Reaktionsspiel"]),
+    ("konzentration", ["Konzentrationsspiel"]),
+    ("geschick", ["Geschicklichkeitsspiel"]),
+    ("ruhig", ["ruhiges Spiel", "Ruhiges Spiel", "Sitzkreis"]),
+    ("warmup", ["Warm up"]),
+    ("toben", ["Bewegungsspiel", "Bewegung"]),
+]
+# Projekte: 91 der 225 liegen in der Kategorie "kreativ". Die Themen aus dem
+# Inspirator und der eigenen Sammlung ergeben auch hier eine zweite Ebene.
+UNTERKATEGORIE_PROJEKT = [
+    ("pfaditechnik", ["Knoten", "Karte Kompass", "Feuer machen", "Schwarzzelte",
+                      "Haik", "Kohte", "Jurte", "Erste Hilfe", "Fahrtenplanung"]),
+    ("kochen", ["Küche", "Backen", "Kochen", "Essen"]),
+    ("basteln", ["Basteln", "Handwerkliches", "Schnitzen", "Werken", "Upcycling"]),
+    ("natur", ["Pflanzen", "Baum", "Tier", "Wasser", "Sternenkunde", "Unsere Erde",
+               "Natur", "Sterne"]),
+    ("bund", ["Unser Bund", "Symbolik", "Versprechen", "Pfa. Geschichte", "Geschichte",
+              "BiPi", "Bundeskunde"]),
+    ("nachhaltigkeit", ["Nachhaltigkeit", "Umwelt"]),
+    ("gruppe", ["Unsere Sippe", "Gesellschaftliches", "Beteiligung", "Gemeinschaft"]),
+    ("musisch", ["Musisches", "Geschichten", "Singen", "Theater", "Musik"]),
+    ("spiel", ["Bewegung", "Kim-Spiel", "Detektiv", "Geländespiel", "Wettkampf"]),
+]
+
+
+def bestimme_unterkategorie(element):
+    """
+    Vergibt die zweite Gliederungsebene aus den Tags bzw. Themen.
+    Für Proben und Aktivitäten bleibt sie leer – dort sind es so wenige
+    Einträge, dass die Kategorie allein reicht.
+    """
+    if element["element_typ"] == "spiel":
+        tabelle, quelle = UNTERKATEGORIE_SPIEL, element.get("tags")
+    elif element["element_typ"] == "projekt":
+        tabelle, quelle = UNTERKATEGORIE_PROJEKT, (element.get("themen") or []) + (element.get("tags") or [])
+    else:
+        return ""
+    vorhanden = set(entschaerfe(t) for t in (quelle or []))
+    for schluessel, begriffe in tabelle:
+        for begriff in begriffe:
+            if entschaerfe(begriff) in vorhanden:
+                return schluessel
+    return "sonstiges"
+
+
 # ---------------------------------------------------------------- Dubletten
 def markiere_dubletten(elemente):
     """Markiert Elemente mit gleichem normalisiertem Titel gegenseitig."""
@@ -609,6 +679,8 @@ def pruefe(elemente):
         elif element.get("kategorie") not in KATEGORIEN[typ]:
             fehler.append("{}: Kategorie '{}' passt nicht zu '{}'".format(
                 kennung, element.get("kategorie"), typ))
+        if not isinstance(element.get("unterkategorie"), str):
+            fehler.append("{}: unterkategorie ist kein Text".format(kennung))
         if element.get("ort") not in ORTE:
             fehler.append("{}: unbekannter Ort '{}'".format(kennung, element.get("ort")))
         if element.get("vorbereitung") not in VORBEREITUNGEN:
@@ -652,6 +724,9 @@ def statistik(elemente):
         if teilmenge:
             zeige("Kategorien ({}, {} Stück):".format(typ, len(teilmenge)),
                   Counter(e["kategorie"] for e in teilmenge))
+            unter = Counter(e["unterkategorie"] for e in teilmenge if e["unterkategorie"])
+            if unter:
+                zeige("Unterkategorien ({}):".format(typ), unter)
     zeige("nach Ort:", Counter(e["ort"] for e in elemente))
     zeige("nach Vorbereitung:", Counter(e["vorbereitung"] for e in elemente))
     zeige("nach Slot:", Counter(s for e in elemente for s in e["slots"]))
@@ -682,6 +757,9 @@ def main():
                 vergeben.add(element["id"])
         elemente += geladen
         print("  {:<20} {}".format(name + ":", len(geladen)))
+
+    for element in elemente:
+        element["unterkategorie"] = bestimme_unterkategorie(element)
 
     gruppen = markiere_dubletten(elemente)
     betroffen = sum(1 for e in elemente if e.get("dubletten"))
