@@ -2,8 +2,9 @@
  "meta": {
   "name": "Heimabend-Baukasten – Elemente",
   "beschreibung": "Zusammengeführte Bausteine für Heimabende. Jedes Element trägt die Lizenz seiner Quelle.",
-  "anzahl": 1016,
+  "anzahl": 1044,
   "quellen": [
+   "DPB-Probenbuch (3. Auflage)",
    "Heimabend-Baukasten (eigene Sammlung)",
    "Heimabend-Inspirator (DPBM)",
    "Spielewiki",
@@ -12,7 +13,8 @@
   "lizenzen": [
    "CC BY-NC 4.0",
    "CC BY-NC-SA 4.0",
-   "CC BY-SA 4.0"
+   "CC BY-SA 4.0",
+   "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
   ],
   "hinweis": "Erzeugt von scripts/build.py – nicht von Hand bearbeiten. Das Projekt ist nicht-kommerziell (NC-Inhalte enthalten)."
  },
@@ -709,6 +711,338 @@
    }
   },
   {
+   "id": "pb-aufgaben-in-der-gruppe",
+   "titel": "Aufgaben in der Gruppe",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Als Pfadfinder solltest du Aufgaben in deiner Gruppe übernehmen und regelmäßig an Heimabenden und Fahrten teilnehmen. Diese Probe wird dir bestätigt, wenn du ein Amt mindestens ein Jahr lang ordentlich erfüllt hast.",
+   "beschreibung": "Als Pfadfinder solltest du Aufgaben in deiner Gruppe übernehmen und regelmäßig an Heimabenden und Fahrten teilnehmen. Diese Probe wird dir bestätigt, wenn du ein Amt mindestens ein Jahr lang ordentlich erfüllt hast.\n\nBeispiele:\n- Kornett\n- Kassenwart\n- Geräte- und Materialwart\n- Führer einer Gruppe\n\nTätigkeit\n\nZeitraum\n\nUnterschrift des Prüfers",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 18"
+   ],
+   "themen": [
+    "Aufgaben in der Gruppe"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-baeume-und-getreide",
+   "titel": "Bäume und Getreide",
+   "element_typ": "probe",
+   "kategorie": "natur",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Die freie Natur ist auf der Fahrt unser Zuhause. Wer sich der Natur verbunden fühlt sollte auch wissen, wie die Pflanzen seiner Heimat heißen.",
+   "beschreibung": "Die freie Natur ist auf der Fahrt unser Zuhause. Wer sich der Natur verbunden fühlt sollte auch wissen, wie die Pflanzen seiner Heimat heißen. Wenn du diese Probe ablegen möchtest, legst du dir am besten ein Herbarium an. Das ist eine Mappe, in der du die gepressten und getrockneten Blätter und Blüten von Bäumen, Büschen und Blumen einklebst. Dazu kannst du die Früchte malen oder (bei kleineren Früchten) auch einkleben. Bei manchen Bäumen lohnt es sich die Struktur der Rinde (ein Blatt Papier auf die Rinde legen und durchpausen) oder das Erscheinungsbild des ganzen Baumes dazu zu zeichnen. Auch Getreide und Gräser kannst du gepresst und getrocknet in die Mappe kleben. Neben jede Pflanze schreibst du den Namen und eventuell interessante Informationen zur Pflanze. Diese Mappe könnt ihr auch mit mehreren anfertigen oder ihr erstellt sie mit der ganzen Gruppe auf eurem Heimabend. Ihr solltet versuchen die folgenden Bäume und Getreide für eure Mappe zu finden:\n\nKiefer\n\nLärche\n\nEibe\n\nFichte\n\nTanne\n\nEberesche Pappel\n\nKastanie\n\nErle\n\nBirke\n\nStieleiche\n\nTraubeneiche\n\nHainbuche\n\nLinde\n\nRotbuche\n\nPlatane\n\nAhorn\n\nMais\n\nRoggen\n\nWeizen\n\nGerste\n\nHafer",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 24"
+   ],
+   "themen": [
+    "Bäume und Getreide"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-basteln-und-ausbessern",
+   "titel": "Basteln und Ausbessern",
+   "element_typ": "probe",
+   "kategorie": "fahrtentechnik",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [
+    "Nadel und Faden",
+    "Werkzeug"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Der Pfadfinder muss in der Lage sein, einfache Gegenstände für Fahrt und Lager oder für das Heim zu basteln. Er versteht die Werkzeuge zu benutzen und ist in der Lage sein Fahrrad zu reparieren.",
+   "beschreibung": "Der Pfadfinder muss in der Lage sein, einfache Gegenstände für Fahrt und Lager oder für das Heim zu basteln. Er versteht die Werkzeuge zu benutzen und ist in der Lage sein Fahrrad zu reparieren. Zur Bestätigung dieser Probe kannst du etwas basteln, bauen oder verzieren. Beispielsweise kannst du eine Bombillia oder ein Brettchen basteln, ein Vogelhäuschen bauen oder deinen Brotbeutel besticken. Oder er beweist seine Können an Bauten auf der Zitadelle und am Gruppenheim oder bei der Reperatur von Gruppenmaterial..",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 16"
+   ],
+   "themen": [
+    "Basteln und Ausbessern"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-das-fahrtengepaeck",
+   "titel": "Das Fahrtengepäck",
+   "element_typ": "probe",
+   "kategorie": "fahrtentechnik",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [
+    "Fahrtenrucksack",
+    "Fahrtengepäck"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Der Pfadfinder ist sparsam. Leider kommen wir auf Fahrt und Lager nicht ganz ohne Gepäck aus. Trotzdem gilt die Devise, alles Unnötige bleibt zu Hause.",
+   "beschreibung": "Der Pfadfinder ist sparsam. Leider kommen wir auf Fahrt und Lager nicht ganz ohne Gepäck aus. Trotzdem gilt die Devise, alles Unnötige bleibt zu Hause. Besonders überflüssige Verpackungen, Dosen, Süßigkeiten, Spielzeug, Gameboys und Handys haben auf Fahrt und Lager nichts zu suchen. Beim Wandern hat sich als Rucksack der Affe bewährt. Er kann zwar mit den modernen Trekking-Rucksäcken nicht konkurrieren, doch er passt zur Kluft und in unsere Fahrtenkultur. Der Felltornister ist schon lange ein Teil unserer Tradition geworden. Der Schlafsack kann in einer Rolle oder in den Poncho gewickelt um den Affen gelegt werden. Auch die Feldflasche, das Kochgeschirr und ähnliche Gepäckstücke können mit Riemen am Affen befestigt werden. Der normale Affe besteht aus zwei Kammern. Die große Hauptkammer muss sorgfältig gepackt werden, damit euch keine harten Gegenstände in den Rücken drücken. Legt den Boden weich aus, Ersatzwäsche, Handtuch und Sportkluft sind hierfür geeignet. Danach könnt ihr die sperrigen Gepäckstücke in das Fach legen. Das Fach im Deckel kann reißen, wenn man sperrige Dinge hineinstopft. Hier solltet ihr die restliche Ersatzwäsche und andere weiche Gepäckstücke unterbringen. Packen solltet ihr immer selbst. Eure Eltern dürfen euch helfen, aber ihr müsst auf Fahrt und Lager wissen, was wo in eurem Gepäck liegt. Lebensmittel befreit ihr aus den vielfachen Verpackungen und verstaut sie am besten im Eßgeschirr und in Frischhaltedosen. Bei warmen Wetter bleiben Bananen, Frischwurst und leicht verderbliche Lebensmittel am besten zu Hause. Äpfel, Gemüse, Scnittkäse und viele andere Dinge überleben selbst den heißesten Tag.\n\nHier eine Liste der Dinge, die ihr auf jeder Fahrt und jedem Lager braucht: Schlafsack Poncho (Regenschutz) Isoliermatte\n\nKerze, Feuer Im Brotbeutel oder der Hemdtasche: Schreibzeug etwas Geld etwas Toilettenpapier\n\nSportkluft Ersatzsocken, -unterwäsche T-Shirt Kaltverpflegung Fahrtenmesser (ab 12 Jahre) Eßbesteck (meist reicht ein Löffel) Kochgeschirr Feldflasche Brettchen, Bombilia (Trinkgefäß) Waschzeug:\n\nSonstiges: Liederbuch, Instrumente, Fotoapparat\n\n1 kl. Handtuch Seife Zahnbürste u. -pasta Kamm/Bürste\n\n1 Geschirrtuch\n\n2\n\nDie Schlafsackrolle: Den Schlafsack in den Poncho zu rollen ist viel einfacher, als es auf der Skizze wirkt. Als erstes müsst ihr wissen, wie lang die Rolle werden muss. Dazu messt ihr mit der Handspanne grob die Länge der Seiten 1, 2 und 3 (s. Skizze).\n\n1 3\n\n1.\n\n1.\n\nDann legt ihr den Schlafsack in die Mitte des ausgebreiteten 3. Ponchos und faltet den Schlafsack so, dass er genauso lang\n\n3.\n\n2. 1.\n\n1.\n\nist, wie die Affenseiten 1+2+3. 1.) Nun klappt ihr die überstehenden Aussenseiten des Ponchos (links und rechts) 2. über den Schlafsack, 2.) danach macht ihr dasselbe mit der Unterseite. 3.) Aus der oberen Seite faltet ihr eine Kapuze. 4.) In diese rollt ihr den Schlafsack; zu zweit gehts leichter.\n\nKapuze\n\n4.) rollen\n\n4.) rollen\n\nNun müsst ihr die Rolle nur noch mit den 4 Riemen (je nach Modell auch nur 3) an den Seiten 1+2+3 festschnallen.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 10"
+   ],
+   "themen": [
+    "Das Fahrtengepäck"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-das-pfadfindergesetz",
+   "titel": "Das Pfadfindergesetz",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "BiPi, der Gründer der Pfadfinder, sagte über die Pfadfindergesetze: „Es hat nicht den geringsten Wert, die Pfadfindergesetze jemandem einzutrichtern oder als Befehle auszugeben.",
+   "beschreibung": "BiPi, der Gründer der Pfadfinder, sagte über die Pfadfindergesetze: „Es hat nicht den geringsten Wert, die Pfadfindergesetze jemandem einzutrichtern oder als Befehle auszugeben. Jeder braucht seine eigene Auslegung der Gesetze und das Verlangen, sie zu befolgen.“\n\nDas Gesetz der Wölflinge lautet: 1.\n\nDer Wölfling folgt dem Altwolf nach.\n\n2.\n\nDer Wölfling gibt sich selbst nicht nach.\n\nDas Gesetz der Pfadfinder lautet: 1.\n\nDer Pfadfinder ist zuverlässig und steht zu seinem Wort.\n\n2.\n\nDer Pfadfinder achtet die, die ihn führen und die, die er führt. Er erfüllt seine Pflicht gegenüber seiner Familie und seinem Vaterland und bekennt sich zu seinem Glauben.\n\n3.\n\nDer Pfadfinder ist hilfsbereit und einsatzfreudig.\n\n4.\n\nDer Pfadfinder bekennt sich zur Bruderschaft aller Pfadfinder der Welt. Er achtet alle Menschen ohne Unterschied von Rasse, Nation, Religion und Weltanschauung.\n\n5.\n\nDer Pfadfinder ist höflich und freundlich gegen jedermann.\n\n6.\n\nDer Pfadfinder schont und schützt nach besten Kräften alles Leben.\n\n7.\n\nDer Pfadfinder handelt überlegt und selbstbeherrscht.\n\n8.\n\nDer Pfadfinder ist einsichtsvoll.\n\n9.\n\nDer Pfadfinder ist maßvoll und sparsam.\n\n10.\n\nDer Pfadfinder ist anständig in Wort und Tat.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 8"
+   ],
+   "themen": [
+    "Das Pfadfindergesetz"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-der-deutsche-pfadfinderbund",
+   "titel": "Der Deutsche Pfadfinderbund",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Der DPB ist nicht bloß ein Verein, sondern ein Bund. Bund ist keine Organisation, sondern eine Lebensgemeinschaft. Unter Bund verstehen wir das, was uns miteinander verbindet.",
+   "beschreibung": "Der DPB ist nicht bloß ein Verein, sondern ein Bund. Bund ist keine Organisation, sondern eine Lebensgemeinschaft. Unter Bund verstehen wir das, was uns miteinander verbindet. Es ist kein fassbarer Begriff, der sich einfach erklären lässt. Bund muss man erleben. Da wir aber auch ein Verein im rechtlichen Sinne sind, besitzen wir auch eine Bundesordnung. In dieser Ordnung ist festgehalten in welchen Formen und unter welchen Regeln wir zusammenleben . In der Bundesordnung ist unsere Kluft, der Aufbau des Bundes, die Wahl von Führern und Ämtern, die Gerichtsbarkeit und vieles andere geregelt. Vor der geschriebenen Ordnung steht im Bund immer zuerst die gelebte Ordnung. Eine gute Gruppe erkennt man daran, dass sie der geschriebenen Ordnung nicht bedarf. Das oberste gemeinsame Gremium des Bundes ist das Bundesthing. Es wählt unter anderem den Bundesvogt und die Bundesführung, entscheidet über alle bundesübergreifenden Angelegenheiten und die Finanzen des Bundes und diskutiert darüber, wie die Bundesordnung in konkreten Fällen umzusetzen ist. Das Bundesthing ist auch in der Lage die Bundesordnung zu ändern. Das Wesen des Bundes muss dabei jedoch bewahrt werden. Neben dem Thing gibt es den Bunderat und die Räte des Jungen- und Mädchenbundes. Die Orden haben jeweils ihre eigene Ordnung und Vertretung. Das Bundesehrengericht ist eine unabhängige Instanz. Es wird vom Thing gewählt und verhandelt bei Verstößen gegen die Bundesordnung. Es hat keine Befugnisse außerhalb unseres Bundes.\n\nUnser Bund ist eine Erziehungsgemeinschaft. In unserem Bund erziehen jedoch nicht nur die Älteren die Jüngeren. Gemeinsam lernen wir von einander und entwickeln uns in einem Prozess der gegenseitigen Erziehung und der Selbsterziehung immer weiter. Das Ziel unserer Erziehung ist der „Ritterliche Mensch.“ Die Bundesordnung beschreibt dieses Erziehungsziel wie folgt:\n\nWeg und Ziel des Deutschen Pfadfinderbundes 1.\n\nDie Jungen und Mädchen zu lehren, dass sie mit offenen Augen durch die Welt gehen, dass sie überall helfen, wo ihre Hilfe gebraucht wird, dass sie sich bemühen, das als gut zu erkennen, was gut ist, und dass sie sich mit dem Schlechten auseinandersetzen und es zu ändern suchen.\n\n2.\n\nDie Jungen und Mädchen erkennen zu lassen, dass das Wesentliche im Zusammenleben der Menschen nicht die Betonung des Trennenden, sondern die des Gemeinsamen und die Achtung vor der freien, menschlichen Persönlichkeit ist.\n\n3.\n\nDie Jungen und Mädchen zu selbständigem, unvoreingenommenem Denken zu führen, sie vor einseitiger Beeinflussung zu bewahren, sie jedoch zur Kritikfähigkeit zu erziehen, damit sie ihren späteren Weg als politisch mündige Bürger unseres Staates aus eigener Erkenntnis finden.\n\nWir sind bündische Pfadfinder. Wir fühlen uns der Pfadfinderbewegung genauso verpflichtet, wie der Bündischen Jugend. Gesetz und Versprechen der Pfadfinder sind für uns eben so wichtig, wie die Autonomie unserer Gruppe, die Freiheit der Jugend und die Rechte und Pflichten, die aus der Meißnerformel erwachsen. Das Selbstverständnis des DPB wird in der Bundesordnung folgendermaßen zusammengefasst:\n\nWas ist der DPB? Der Deutsche Pfadfinderbund ist\n\n1.\n\nein Pfadfinderbund, der das Pfadfindergesetz zur Grundlage seines Handelns macht, der im Geiste und in den Formen der weltweiten Bruderschaft lebt und seinen Weg in ein freies, weltoffenes Menschentum sucht;\n\n2.\n\nein autonomer Bund, wurzelnd in den Menschenrechten und in der Grundordnung unseres Landes, von niemanden abhängig und keinem verpflichtet als unserem Gewissen und Gesetz;\n\n3.\n\nbündische Jugend, die aus innerer Bindung Gemeinschaft bildet und die ihr Leben aus eigener Bestimmung, vor eigener Verantwortung und mit innerer Wahrhaftigkeit führt.\n\nDiese Probe steht nicht ohne Grund am Ende des Probenbuches. Was unser Bund ist, kann man nicht beschreiben, sondern nur erleben. Es genügt nicht, die Formeln auswendig zu lernen. Ihr müsst auch in der Lage sein, die Worte mit Sinn zu füllen. Dazu hilft das Grundwissen über unsere Geschichte. Ihr benötigt aber auch einige Erfahrung in unserem Bund. Lasst euch diese Probe von euren Führern ausführlich erklären, bevor ihr sie ablegt.\n\nMichael, der Gründer und erste Bundesvogt des heutigen DPB\n\nDieses Probenbuch gehört: Name:\n\n_____________________\n\nFahrtenname: ____________________\n\nVorname:\n\n_____________________\n\nGruppe:\n\n____________________\n\nIch habe mein Probenbuch am _____._____.__________ begonnen.\n\nBestätigungen: Probe 1. Unser Bundeslied 2. Drei Lieder 3. Waldläuferzeichen 4. Organisatorischer Aufbau 5. Ständeaufbau des DPB 6. Unsere Kluft 7. Die Lilie 8. Das Pfadfindergesetz 9. Pfadfindergruß und Pfadfinderversprechen 10. Das Fahrtengepäck 11. Knoten und Bünde 12. Zeltbau 13. Feuerstellen 14. Lagerbau 15. Kochen\n\nabgelegt am\n\nUnterschrift des Prüfers\n\nProbe\n\nabgelegt am\n\nUnterschrift des Prüfers\n\n16. Basteln und Ausbessern 17. Sport 18. Aufgaben in der Gruppe 19. Orientieren 20. Der Kompass 21. Die Karte 22. Karte und Kompass 23. Tierkunde 24. Bäume und Getreide 25. Erste Hilfe 26. Wundverbände 27. Die Geschichte der Pfadfinder 28. Die Geschichte der Bündischen Jugend 29. Die Geschichte des DPB 30. Der DPB\n\nDie Proben können ohne bestimmte Reihenfolge von den Mädchen bei einer bestätigten Führerin oder bei jedem Mädchen ab dem Stand des Gildenmädchens, von den Jungen bei einem Späher oder einem Führer ab der Bundeseinheit Trupp abgelegt werden. Zur Aufnahme und Ernennung ist zwar eine bestimmte Anzahl von Proben erforderlich. Entscheidend jedoch ist die Einstellung und Haltung als Pfadfinder.\n\nErforderliche Proben: zum Wildling: zum Wölfling zum Neuling (bis 13 Jahre) zum Neuling (ab 14 Jahre) zur Jungpfadfinderin / zum Jungwolf zum Gildenmädchen / zum Knappen zur Gildin / zum Späher\n\n4 Proben 8 Proben 6 Proben 8 Proben 12 Proben 20 Proben 30 Proben\n\n1. Auflage 1986 2. Auflage 1990 © Ring Goldener Löwe im Deutschen Pfadfinderbund, Gelsenkirchen 1986 Recklinghausen 1990 3. komplett überarbeitete Auflage 2003 © Gau Goldener Löwe im Deutschen Pfadfinderbund, Herten 2003 Idee, Konzeption: Arnold Mertens (Topi) Redaktion: Arnold Mertens (Topi), Ludger Westfal (Zeus), Norbert Westfal (Robbe), Ute Krawelitzki (Krabbe), Ute Teliczan (Licze), Hauke Holdefleiss (Don Camilllo), Heike Ortner (Sprotte) und Claus Hinn (Bibo). Redaktion der 3. Auflage: atréju (Thorsten Malzahn), Bataki (Alexander Kühnapfel), Daedalus (Martin Ongsiek), Iwubu (Tobias Tolksdorf), Naja (Marietta Hinn) und troubadix (Stefan Malzahn). Die neuen Bilder der 3. Auflage sind teilweise aus anderen Büchern oder dem Internet entnommen und nicht Eigentum des Goldenen Löwen.",
+   "tipps": "Probe 30 (Der DPB): Zahlen/Gliederungen prüfen",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 30"
+   ],
+   "themen": [
+    "Der Deutsche Pfadfinderbund"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-der-kompass",
+   "titel": "Der Kompass",
+   "element_typ": "probe",
+   "kategorie": "karte_kompass",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Kompass"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Der Marschkompass wurde im Jahre 1100 v. Chr. von den Chinesen erfunden. Von China gelangte er im Jahre 1295 durch Marco Polo nach Europa.",
+   "beschreibung": "Der Marschkompass wurde im Jahre 1100 v. Chr. von den Chinesen erfunden. Von China gelangte er im Jahre 1295 durch Marco Polo nach Europa. Der Kompass ist zwar nicht mehr das beste Orientierungsmittel, aber für unsere Zwecke immer noch das geeignetste. Die Nadel im Kompass ist magnetisch. An den Polen der Welt liegen sehr starke Magnetfelder. Deshalb weist der Kompass immer in Nord-Süd-Richtung. Die Kompassnadel ist am Nordende markiert. Der geographische Nordpol und der magnetische Nordpol liegen leider nicht an der gleichen Stelle. Der magnetische Nordpol liegt bei der Halbinsel Bothia Felix. Sie ist 2200 km südwestlicher Richtung vom geographischen Nordpol entfernt. Dieser große Abstand ist auf Grund der weiten Entfernung von unseren Breiten nicht so gravierend. Je weiter man jedoch nach Norden fährt, desto größer wird die Missweisung, so nennt man die Abweichungen der Pole. Seefahrer benutzen Listen, mit denen man die Missweisung berechnen kann. Auf guten Landkarten ist in der Legende der Grad der Missweisung angegeben. Er beträgt bei uns 3° West. Das bedeutet geographisch liegt Norden eine halbe Marschzahl westlich von der Stelle, auf welche die Nadel zeigt. Die magnetische Nadel kann von anderen Magneten oder von den magnetischen Metallen Eisen, Kobald und Nickel abgelenkt werden. Sie dürfen nicht in eurer nächsten Umgebung sein. Auch starke Elektrizität (Hochspannungsleitungen) kann den Kompass beeinflussen. Die Himmelsrichtungen sind auf dem Kompass in 64 Teilstrichen (Marschzahlen) unterteilt (oder in 360°). Norden liegt auf der Null und der 64; Süden liegt auf der 32; Osten auf der 16 und Westen auf der 48. 1. Durchbruch mit Visierdraht (Korn) 2. Ablesemarke 3. selbstdrehende Teilringscheibe 4. Kimme 5. Lupe\n\n4. 5.\n\n1.\n\n2.\n\n3.\n\n6. Anlegekante",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 20"
+   ],
+   "themen": [
+    "Der Kompass"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-die-karte",
+   "titel": "Die Karte",
+   "element_typ": "probe",
+   "kategorie": "karte_kompass",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Karte"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Die Karte ist ein verkleinertes, maßstabgerechtes, verebnetes und durch Kartenzeichen erläutertes Abbild eines Teiles der Erdoberfläche. Was bedeutet maßstabgerecht?",
+   "beschreibung": "Die Karte ist ein verkleinertes, maßstabgerechtes, verebnetes und durch Kartenzeichen erläutertes Abbild eines Teiles der Erdoberfläche.\n\nWas bedeutet maßstabgerecht? Wenn jemand ein Model von seinem Haus bauen möchte, muss er alle Teile des Hauses im gleichen Maß verkleinern. Er kann nicht die Tür 10x so klein bauen, wie in Wirklichkeit und die Fenster 20x so klein. Das Modell wäre total verzerrt. Der Maßstab gibt also an, wie stark man eine Sache verkleinert oder vergrössert. Der Maßstab auf Landkarten wird in Zentimetern angegeben. 1 : 50.000 bedeutet, ein Zentimeter auf der Karte sind 50.000 Zentimeter in der Wirklichkeit. Mit dieser Aussage kann man leider nicht arbeiten. Wir wollen wissen, wieviel Meter oder Kilometer 1cm auf der Karte sind. 1 m = 100 cm\n\n50.000 : 100 = 500\n\nAlso sind 50.000 Zentimeter 500 Meter.\n\n1km = 1000m\n\n500 : 1000 = 0,5\n\nAlso sind 500 Meter ein halber Kilometer.\n\nDer Maßstab 1:50.000 bedeutet also, 1cm auf der Karte ist ein halber Kilometer in der Wirklichkeit. Um also von Zentimetern auf Kilometer umzurechnen, muss man die Zahl erst durch 100 teilen (zwei Nullen wegstreichen) dann hat man die Meterzahl, diese teilt man durch 1000 (drei Nullen wegstreichen), dann hat man eine Kilometerangabe. 1 : 250.000 heißt:\n\n1cm = 250.000cm oder 1cm = 2500m oder 1cm = 2,5 km.\n\n1 : 500.000 heißt:\n\n1cm = 500.000cm oder 1cm = 5000m oder 1cm = 5 km.\n\nSo ist ein Maßstab auf der Karte verzeichnet.\n\nWas bedeutet verebnet? Etwas eben machen ist eine alte Wortwendung für etwas flach machen. (Eine Ebene ist eine flache/ebene Landschaft.) Eine Karte ist flach, sie ist kein Modell der Landschaft. Trotzdem kann man aus einer Karte ersehen, wie Berge, Hügel und Schluchten verlaufen. Höhenlinien (Isohypsen) verlaufen immer auf einer Höhe. Sie teilen die Berge in Schichten. Sind die Höhenlinien eng aneinander ist der Berg steil, liegen sie weit auseinander ist der Hang flach.\n\nWas sind Kartenzeichen? Eine Karte erinnert an ein Foto der Landschaft von oben. Auf einem Foto kann man aber nicht alles erkennen. Bäume verdecken die Sicht und manche Kleinigkeit ist aus der Luft nicht zu sehen. Deshalb benutzt man auf Karten festgelegte Zeichen für Bäume, Häuser, Straßen, usw. . Ihr findet diese Zeichen in der Legende der Karte. Auf vielen Karten werden jedoch die gleichen Zeichen verwendet, deshalb lohnt es sich, die wichtigsten zu kennen.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 21"
+   ],
+   "themen": [
+    "Die Karte"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-die-lilie",
+   "titel": "Die Lilie",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Eines der ältesten wegweisenden Zeichen ist die Lilie. Sie gilt als das Zeichen der Reinheit. Schon die Chinesen hatten sie als Nordzeichen auf dem Kompass; Marco Polo brachte sie 1295 nach Europa.",
+   "beschreibung": "Eines der ältesten wegweisenden Zeichen ist die Lilie. Sie gilt als das Zeichen der Reinheit. Schon die Chinesen hatten sie als Nordzeichen auf dem Kompass; Marco Polo brachte sie 1295 nach Europa. Heute findet man sie auf alten Landkarten, in Wappen, alten Kirchen, an Bauten und als Firmenzeichen. Wie immer man den Kompass auch dreht, die Lilie wird stets in die richtige Richtung weisen. Auch in uns ist ein solcher Kompass, und wie uns das Schicksal auch herumwirbelt, wir werden immer wieder den rechten Weg finden, wenn wir auf die Lilie schauen. Darum ist die Lilie auch das Zeichen aller Pfadfinder in der Welt und unser Bundeszeichen. Unsere Bundeslilie wurde 1922 von Christian Rietschel, Rulf und Michael für den Neudeutschen Pfadfinderbund geschaffen. Bei der großen Bündigung im Jahre 1932 wählte die Reichsschaft Deutscher Pfadfinder die Lilie des in ihr aufgenommenen Neudeutschen Pfadfinderbundes als Zeichen. Als 1945 aus dem Zusammenschluss der beiden alten Bundesführungen der Reichsschaft Deutscher Pfadfinder und des Deutschen Pfadfinderbundes der neue Bund unter dem Namen Deutscher Pfadfinderbund entstand, war es wieder diese Lilie, die das gemeinsame Zeichen wurde. Und als 1948 auf Veranlassung der Besatzungsmächte auch in Westdeutschland ein Pfadfinderbund ins Leben gerufen wurde (BDP, Bund Deutscher Pfadfinder), übernahm dieser die vom DPB getragene Lilie, um die Verbundenheit der westdeutschen Pfadfinder mit dem damals hauptsächlich auf Berlin beschränkten DPB unter Beweis zu stellen (s. Probe 29). Die Lilie, die wir heute tragen, ist also ureigenste Schöpfung unseres Bundes, des Deutschen Pfadfinderbundes. Die Gestalt der Lilie hat sich aus den heraldischen Formen der einzelnen Länder entwickelt. Wir tragen heute die sogenannte Rauten- oder burgundische Lilie, weil wir glauben, dass sie in ihren straffen Formen unser Wesen wiedergibt.\n\nWölflingslilie\n\nBundeslilie\n\nSt. Georgslilie\n\nSymbole und Lilien: Schachbrett: Erstes Bundeszeichen des Deutschen Pfadfinderbundes DPB 1911\n\nGerspitze: Bundeszeichen des DPB ab 1921 nach Ablösung der Uniform durch die Kluft\n\nDPV - Deutscher Pfadfinderverband\n\nRing Deutscher Pfadfinderverbände BdP - Bund der Pfadfinderinnen und Pfadfinder\n\nDPSG - Deutsche Pfadfinderschaft St. Georg\n\nPSG - Pfadfinderinnenschaft St. Georg\n\nVCP - Verband Christlicher Pfadfinder und Pfadfinderinnen\n\nSymbole der Weltorganisationen der Pfadfinderbewegung\n\nMädchen\n\nJungen",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 7"
+   ],
+   "themen": [
+    "Die Lilie"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-erste-hilfe",
+   "titel": "Erste Hilfe",
+   "element_typ": "probe",
+   "kategorie": "erste_hilfe",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Verbandsmaterial"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Verhalten bei Unfällen: Wenn sich jemand aus eurer Gruppe verletzt, oder ihr einen Verletzten findet, ist das Wichtigste, dass ihr zunächst einmal professionelle Hilfe holt.",
+   "beschreibung": "Verhalten bei Unfällen: Wenn sich jemand aus eurer Gruppe verletzt, oder ihr einen Verletzten findet, ist das Wichtigste, dass ihr zunächst einmal professionelle Hilfe holt. Einer von euch läuft zum nächsten Telefon, der andere bleibt beim Patienten. Der Notruf: Die Nummer des Notrufs in unserer Region ist 112, in manchen Bundesländern werdet ihr aber auch über die 110 mit der Notrufstelle verbunden. Beim Notruf ist es wichtig, dass ihr Ruhe bewahrt und genau Auskunft gebt. Legt nicht einfach auf, wenn ihr glaubt alles gesagt zu haben. Die fünf W-Fragen helfen euch nichts zu vergessen. Wo? Was? Wie viele Verletzte? Welche Verletzungen? Wer? Warten!\n\nAm besten gebt ihr die Adresse des Unfallortes durch. Wenn es keine gibt, müsst ihr die Lage des Ortes so gut es geht beschreiben. Was ist passiert? Ein Autounfall, ein Hausbrand, ein Sportunfall, ein Sturz etc. Hier geht es besonders um die Schwere der Verletzungen. Liegt Lebensgefahr vor? Nun sagt ihr euren Namen, damit der Rettungsdienst weiß, wer der Ansprechpartner ist. Das sechste W erinnert euch daran nicht einfach aufzulegen.\n\nAm Unfallort kann es eine Menge zu tun geben. Manchmal reicht es aber auch, dass ihr euch mit dem Verletzten unterhaltet und ihn beruhigt. Manche Patienten sind geschockt und versuchen den Unfallort zu verlassen. Obwohl sie sich fit fühlen, können sie doch starke Verletzungen haben. Deshalb dürfen sie nicht ohne die Zustimmung eines Arztes gehen. Bei stärkeren Verletzungen steigen die Anforderungen an eure Fähigkeiten. Ihr müsst Wunden versorgen, Gliedmaßen stilllegen und im schlimmsten Fall auch die Wiederbelebung einleiten. Wir können euch im Probenbuch nur die einfachsten Griffe erklären. Jeder Pfadfinder sollte sich mit Erster Hilfe beschäftigen, um auch die schwierigeren Griffe zu erlernen. Auf Fahrt kann es euch das Leben retten.\n\nOhnmacht: Der Betroffene ist blaß, Schweiß steht ihm auf der Stirn; dann fällt er wie leblos zusammen. Flachlagerung in frischer Luft, beengende Kleidung öffnen, Beine hoch lagern. Erst nach genügender Erholung aufstehen lassen. Bei längerer Ohnmacht Arzt rufen.\n\nHitzschlag: Beim Arbeiten in heißem, schwülem Sommerwetter in unzweckmäßiger Kleidung kommt es zu einer Wärmestauung im Körper. Der Hitzschlag kündigt sich durch gerötetes Gesicht, Schwindel, Aufhören der Schweißsekretion an und geht über in Bewußtlosigkeit mit oberflächlicher, schwacher Atmung. Die Haut ist heiß und trocken. Lagerung mit erhöhtem Oberkörper an schattigem, kühlen Ort; Kleider öffnen, kalte Abwaschungen, zufächeln kühler Luft. Nach Wiedererlangung des Bewußtseins laben (d. h.: etwas zu trinken und zu essen geben). Gefahr von Rückfällen.\n\nSonnenstich: Entsteht durch starke Einwirkung von Sonnenstrahlen auf den unbedeckten Kopf. Kennzeichen sind hochroter, heißer Kopf, schnelle Atmung und schneller Puls, kalter Schweiß am ganzen Körper, Übelkeit, Erbrechen, Bewußtlosigkeit. Lagerung mit erhöhtem Kopf an kühlem, schattigen Ort; beengende Kleidung öffnen, kalte Umschläge auf Kopf und Nacken. Nach Wiederkehr des Bewußtseins laben. Arzt rufen.\n\nVerbrennungen: Leichte Verbrennungen lange (20 Minuten) unter kaltem, fließendem Wasser kühlen. Bei starken Verbrennungen Wunde keimfrei verbinden, Arzt aufsuchen. Keine Salben auftragen. Textilien, Kleidungsreste werden nicht aus der Wunde entfernt. Normal kühlen, verbinden, Arzt aufsuchen.\n\nKnochenbrüche und Verstauchungen: Ruhigstellung des Knochens oder des Gelenks. Je nach Mobilität Arzt aufsuchen oder rufen.\n\nInsektenstiche und Zeckenbisse: Den Stachel entfernen ohne das Gift aus dem herausragenden Ende des Stachels in den Körper zu drücken. Nach Allergien fragen und den Einstich beobachten. Stiche im Rachen und am Hals müssen stark gekühlt und vom Notarzt versorgt werden. Zecken am besten mit der Zeckenzange gegen den Uhrzeiger aus der Haut drehen. Nur leicht ziehen. Die Zecke muß ganz entfernt werden. Bleibt der Kopf in der Wunde, Arzt aufsuchen. Nach der Fahrt müssen die Eltern informiert werden, da Krankheiten noch nach Wochen auftreten können.\n\nStabile Seitenlage: Bewusstlose mit Puls und Atmung lagert man bis der Arzt kommt am besten in der stabilen Seitenlage. Auch wache Patienten, die sehr schwach und von Bewusstlosigkeit bedroht sind lagert man so. 1. 2. 3. 4.\n\n5. 6.\n\n7. 8.\n\nDu trittst seitlich an den Bewusstlosen heran. Das Bein auf dieser Seite beugst du an und stellst den Fuß an das Gesäß. Den Arm auf deiner Seite schiebst du so weit wie möglich unter das Gesäß. Nun fasst du die Schulter und die Hüftgegend der anderen Seite, und ziehst den Verletzten vorsichtig und gleichmäßig zu dir. Stütz den Bewusstlosen während der Drehung mit deinem Bein. Nun kannst du den Arm, den du vorhin unter den Körper gelegt hast, vorsichtig am Ellenbogen nach hinten hervorziehen. Fasse den Kopf an Kinn und Stirn, beuge ihn nackenwärts, und drehe dann das Gesicht erdwärts. Finger der nahen Hand unter die Wange schieben und so die Kopflage stabilisieren.\n\nPulskontrolle: Zur Feststellung des Bewusstseins gehört neben der Atemkontrolle die Pulskontrolle. Normalerweise schlägt das Herz 60-80 mal in der Minute. Den Puls misst man am Handgelenk oder am Hals. Man fühlt den Puls mit Ring-, Zeige- und Mittelfinger, nie mit dem Daumen, da er einen eigenen Puls hat. Ihr findet den Puls am Handgelenk auf Daumenhöhe (s. Abbildung) Puls messen am Handgelenk\n\nDie Erste Hilfe ist ein sehr großer und wichtiger Bereich, den man nicht auf wenigen Seiten zusammenfassen kann. Am besten besucht ihr einen Erste-Hilfe-Kurs. Dies ist auch mit der ganzen Gruppe möglich.",
+   "tipps": "Probe 25/26 (Erste Hilfe, Wundverbände): Stand 2003 — unbedingt an aktuelle Erste-Hilfe-Leitlinien anpassen",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 25"
+   ],
+   "themen": [
+    "Erste Hilfe"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
    "id": "eig-erste-hilfe-parcours",
    "titel": "Erste-Hilfe-Parcours",
    "element_typ": "probe",
@@ -793,6 +1127,42 @@
    }
   },
   {
+   "id": "pb-feuerstellen",
+   "titel": "Feuerstellen",
+   "element_typ": "probe",
+   "kategorie": "feuer",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [
+    "Feuerholz",
+    "Streichhölzer",
+    "Löschwasser"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Auf das Feuer können wir auf Fahrt und Lager nicht verzichten. Es spendet uns Wärme und Licht. Auf ihm kochen wir unsere Mahlzeiten und Tee.",
+   "beschreibung": "Auf das Feuer können wir auf Fahrt und Lager nicht verzichten. Es spendet uns Wärme und Licht. Auf ihm kochen wir unsere Mahlzeiten und Tee. Gerade weil das Feuer zu unserem Alltag gehört, dürfen wir nie vergessen, wie gefährlich es ist. Ein offenes Feuer, selbst eine Kerze, darf man niemals unbeobachtet lassen. Auch wenn man sich noch so sicher fühlt.\n\nVorbereitung: Schon beim Anlegen der Feuerstelle müsst ihr an die Sicherheit denken:\n- Auf Torf und moosigem Boden darf man kein Feuer machen, es könnte unter der Erde weiter wandern und an anderen Stellen ausbrechen.\n- Die Feuerstelle muss ausreichend entfernt von Bäumen, Büschen, Häusern und Scheunen sein. Durch Funkenflug kann auch der Heuhaufen in zehn Metern Entfernung noch entzündet werden. Beachtet deshalb die Windrichtung.\n- Entfernt Laub, kleine Äste und andere entzündliche Materialien aus dem Feuerkreis.\n- Stecht mit dem Spaten Grasfladen aus dem Boden und legt sie mit der Grasnarbe nach unten um die dadurch entstandene Mulde. Ihr braucht die Fladen, um die Feuerstelle hinterher wieder zu schließen.\n- Anstatt der Grasfladen könnt ihr auch Steine oder morsche Baumstämme zur Umrandung der Feuerstelle nutzen. Die Feuerstelle ist nun fertig. Jetzt wird Brennholz gesammelt. Zum Entzünden des Feuers braucht ihr dünne, trockne Äste, Reisig und Späne. Daneben lagert ihr dickere und längere Äste. Dazu braucht ihr noch einen Stapel mit dickem, festem Brennholz. Diesen Stapel benötigt ihr erst, wenn das Feuer gut brennt und sich Glut entwickelt hat.\n\nTrockene Äste findet man auch bei nassem Wetter am Stamm von Nadelbäumen oder unter Büschen und Sträuchern. Die dünnen weißen Fäden der Birkenrinde sind ideales Zündmaterial. Nadelhölzer und Birke sind gute Zünd- und Kochhölzer. Buchen, Eichen und Obstbäume brennen nicht so heftig. Sie sind gute „Nachtspeicher“, da sie lang und warm glühen.\n\nEntzünden des Feuers: Es gibt viele Möglichkeiten ein Feuer zu entzünden. Der Pfadfinder schont die Natur, deshalb machen wir Feuer ohne Spiritus, Benzin und Berge von Papier zu entzünden. Hier eine gute und sichere Methode ein Feuer zu machen: 1. Zwei kurze Äste legt man im Abstand von etwa 10 cm nebeneinander. Sie sollten nicht zu dünn sein. 2. Auf beide Äste legt ihr ein Gitter aus dünnen Ästchen. Der Raum zwischen den zwei Ästen bleibt als „Zündraum“ frei. 3. Auf das Gitter legt ihr trockene Späne und eventuell etwas Papier. 4. Nun lehnt ihr pyramidenförmig dünne Äste an das „Häufchen“. Lasst dabei einen Tunnel zum Zündraum frei. 5. Nun entzündet ihr einen langen dünnen Span (Kienspan) an einer Kerze und führt ihn in den Zündraum. 6. Gelingt es die Späne auf dem Gitter zu entzünden, pustet ihr in die Glut (lange, leichte Luftstösse). 7. Dabei erweitert ihr nach und nach die Pyramide. Das Holz wird zunehmend dicker und länger. 8. Mit etwas Glück und Übung habt ihr nun ein sicher brennendes Feuer. Ihr braucht nun nur noch nachzulegen.\n\nEntfernen einer Feuerstelle: „Hinterlasst nichts am Lagerplatz außer eurem Dank an den Besitzer!“ (Bi Pi) Wir sind keine wilden Camper. Wenn wir einen Lagerplatz verlassen, ist er befreit von Müll und Dreck. Auch die Feuerstelle lassen wir verschwinden. Im Idealfall sieht man gar nicht, dass wir da waren. 1. 2. 3. 4.\n\nIhr lasst das Feuer ganz abbrennen. Ihr löscht die warme Asche mit reichlich Wasser. Ihr füllt die Feuerstelle mit Erde und deckt sie mit den Grasfladen ab. Ihr entfernt das übrige Brennholz und verteilt es im Wald\n\nFeuerstellen und Feuerarten: Es gibt im Wesentlichen drei Feuerarten: 1. Kochfeuer Kochfeuer bedient man mit dünnen Ästen und führt viel Luft unter die Töpfe und Pfannen. Es gibt unterschiedliche Wege den Topf übers Feuer zu hängen: a) Dreibein / Hirtenfeuer b) Feuerschlauch / Trapperkochstelle (gut geeignet für mehrere Töpfe und Pfannen) c) Ast über zwei Astgabeln / Galgenfeuer\n\n2. Wachfeuer / Heizfeuer Wachfeuer oder Feuer, die uns in der Nacht wärmen, sollen nicht besonders hell sein, dafür sollen sie lange brennen. Deshalb verwendet man Buche, Eiche und ähnliches Holz, das lang und warm glüht. z. B.: Sternfeuer\n\n3. Fest- und Freudenfeuer Beim Feiern brauchen wir große helle Feuer. Eine Mischung aus dicken, lang glühenden Hölzern und dünnen, hell brennenden Ästen sorgt dafür, dass das Feuer hell brennt, ohne dass wir zu oft nachlegen müssen. a) Pyramidenfeuer b) Pagodenfeuer",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 13"
+   ],
+   "themen": [
+    "Feuerstellen"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
    "id": "eig-geheimschriften-und-codes",
    "titel": "Geheimschriften und Codes",
    "element_typ": "probe",
@@ -832,6 +1202,75 @@
     "url": "",
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "pb-karte-und-kompass",
+   "titel": "Karte und Kompass",
+   "element_typ": "probe",
+   "kategorie": "karte_kompass",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [
+    "Karte",
+    "Kompass"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Leider funktionieren nicht alle Kompanten gleich. Die neueren haben eine Teilringscheibe, auf der sich die Marschzahlen selbständig mit der Magnetnadel drehen. Das erleichtert die Arbeit mit Karte und Kompass enorm.",
+   "beschreibung": "Leider funktionieren nicht alle Kompanten gleich. Die neueren haben eine Teilringscheibe, auf der sich die Marschzahlen selbständig mit der Magnetnadel drehen. Das erleichtert die Arbeit mit Karte und Kompass enorm. Bei den alten Kompanten muss man die Teilringscheibe selbst drehen. Dadurch entstehen andere Arbeitsschritte. Da wir hauptsächlich mit den neuen Kompanten arbeiten, beschreiben wir hier nur ihre Anwendung.\n\n1. Einnorden: Bevor wir mit Karte und Kompass arbeiten können, müssen wir zunächst die Karte mit dem Gelände in Übereinstimmung bringen. Sonst könnte es passieren, dass wir in die falsche Richtung losmarschieren. Man legt den Kompass mit der Anlegekannte an eine senkrechte (von Norden nach Süden verlaufende) Gitternetzlinie. Dabei muss der Richtungspfeil zum oberen Kartenrand (Norden) weisen. Nun wird die Karte so lange gedreht, bis die Magnetnadel mit der Spitze (Norden) auf die Ablesemarke zeigt. Die Karte darf nun nicht mehr verrückt werden. Stößt jemand an die Karte muss sie neu eingenordet werden. Es lohnt sich beim Arbeiten mit der Karte hin und wieder zu kontrollieren, ob sie noch eingenordet ist.\n\n2. Feststellen einer Marschzahl im Gelände: Zunächst stellt ihr den Spiegel des Kompanten so ein, dass ihr die Ablesemarke sehen könnt. Dann peilt ihr über Kimme und Korn den zu visierenden Punkt im Gelände an. Haltet den Punkt und lest im Spiegel die Marschzahl ab.\n\n3. Feststellen einer Marschzahl auf der Karte: Als erstes wird die Karte eingenordet. Dann verbindet ihr euren Standpunkt (auf der Karte) und euer Ziel mit einer Linie. Legt die Anlegekante des Kompanten mit dem Richtungspfeil in Richtung Ziel an die Linie. An der Ablesemarke könnt ihr nun die Marschzahl ablesen.\n\n4. Übertragen einer Marschzahl auf die Karte: Angenommen ihr habt bei einem Geländespiel den Auftrag zwei Kilometer in Richtung einer bestimmten Marschzahl zu laufen. Nun könntet ihr direkt nach der Marschzahl wandern (s.6.). Ihr könnt aber auch auf der Karte nachsehen, wo euer Ziel liegt und dann mit der Karte laufen. Das ist oft einfacher und sicherer. Dazu müsst ihr als erstes die Karte einnorden. Dann legt ihr den Kompass mit der Anlegekante an euren Standpunkt und dreht ihn (am Standpunkt) bis die besagte Marschzahl an der Ablesemarke steht. Nun zieht ihr eine Linie entlang der Anlegekante. (Eventuell mit einem Lineal verlängern.) Nun müsst ihr mit Hilfe des Maßstabes und eines Lineals den Abstand von zwei Kilometer zwischen dem Standpunkt und dem Ziel auf der Linie bestimmen.\n\n5. Bestimmen des eigenen Standpunktes mit dem Kompass: Ihr benötigt zwei markante Punkte im Gelände, die auf der Karte verzeichnet sind (Kirchturm, Weggabelung, usw.). Nun stellen wir die Marschzahl des ersten Punktes im Gelände fest (3.). Dann legt ihr den Kompass mit der Anlegekante an diesen Punkt auf der Karte und dreht ihn so lange (am Punkt) bis die Marschzahl an der Ablesemarke steht. Nun zieht ihr eine Linie an der Anlegekante und verlängert sie nach hinten. Das gleiche macht ihr mit dem zweiten Punkt. Die nach hinten verlängerten Linien müssen sich nun in einem Punkt kreuzen. Dort ist euer Standort. Mit drei markanten Punkten wird das Ergebnis noch genauer.\n\n6. Wandern nach Marschzahlen Über Kimme und Korn peilt ihr eure Marschzahl an. (Sich mit dem Kompass so lange drehen, bis die Marschzahl an der Ablesemarke steht. Zum Ablesen den Spiegel benutzen.) Nun sucht ihr einen markanten Punkt, der auf eurer Marschzahl (in dieser Richtung) liegt. Wandert zu diesem Punkt und beginnt von dort aus wieder mit dem Anpeilen. Findet ihr keinen markanten Punkt in der Landschaft müsst ihr jemanden mit der Fahne vorschicken. Dirigiert ihn mit Handzeichen solange, bis er auf der Marschzahl steht. Lauft zu ihm und beginnt erneut mit dem Anpeilen. Bei Nacht müsst ihr jemanden mit einer Lampe, Fackel oder Kerze vorschicken.\n\n7. Umgehen eines Hindernisses: Beim Wandern nach Marschzahlen ohne Karte kann es passieren, dass man auf ein unüberbrückbares Hindernis stößt (See, Sumpf, Haus). Um nach dem Hindernis wieder in die richtige Richtung zu laufen, muss man einiges beachten: Vor dem Hindernis dreht ihr euch in einem Viertelkreis (45°) entweder nach rechts oder links. Ein Viertelkreis entspricht 16 Marschzahlen (64:4=16). Biegt ihr nach rechts ab, dreht ihr euch im Uhrzeigersinn, deshalb müsst ihr zu eurer Marschzahl 16 hinzu zählen. Biegt ihr nach links, dreht ihr euch gegen den Uhrzeigersinn, also müsst ihr von eurer Marschzahl 16 abziehen. Ihr folgt der neuen Marschzahl und zählt die Schritte (Doppelschritte), bis ihr das Hindernis in seiner Breite überwunden habt. Nun wandert ihr wieder auf eurer alten Marschzahl, bis ihr das Hindernis in seiner Länge umlaufen habt. Dann wendet ihr euch in Richtung eurer Ausgangsroute (Links -16; Rechts +16). In Richtung der neuen Marschzahl geht ihr genauso viele Schritte zurück, wie ihr auf dem Hinweg gegangen seit. Deshalb musstet ihr die Schritte zählen. Danach seid ihr auf der anderen Seite des Hindernisses. Nun folgt ihr wieder eurer Ausgangsmarschzahl.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 22"
+   ],
+   "themen": [
+    "Karte und Kompass"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-knoten-und-buende",
+   "titel": "Knoten und Bünde",
+   "element_typ": "probe",
+   "kategorie": "knoten",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Seile/Reepschnüre"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Der Tampen (Seil) ist auf Fahrt und im Lager nicht weg zu denken. Wir ziehen an ihm die Kohte hoch, bauen mit ihm das Lagertor und manchmal ersetzt er einfach einen verloren gegangenen Riemen oder die Wäscheleine.",
+   "beschreibung": "Der Tampen (Seil) ist auf Fahrt und im Lager nicht weg zu denken. Wir ziehen an ihm die Kohte hoch, bauen mit ihm das Lagertor und manchmal ersetzt er einfach einen verloren gegangenen Riemen oder die Wäscheleine. Der Tampen allein reicht aber noch nicht. Es ist wichtig, dass man für jeden Zweck den richtigen Knoten kennt. Unzweckmäßige Knoten können wieder aufgehen, oder ziehen sich so fest, dass sie niemand mehr auseinander bekommt. Besonders bei starkem Regen quillt so mancher Knoten auf und wird zu einem eisernen Schloss. Wer den richtigen Knoten kennt, muss ihn zudem auch noch ordentlich anwenden. Wenn der Knoten genau dem Muster entspricht, kann er nicht verrutschen und hält fest. Nach Gebrauch ist ein solcher Knoten auch wieder leicht zu öffnen. Die Schere könnt ihr zu Hause lassen und euer Tampen lebt länger.\n\nDoppelschlinge: Zum Verbinden zweier etwa gleichstarker Seile.\n\nWeberknoten: Zum Verbinden zweier etwa gleichstarker Seile\n\nSeemannsknoten: Zum Verbinden ungleichstarker Seile\n\nFessel- oder Zugschlinge: Zum Fesseln\n\nHalfterwurf: Zur Befestigung eines Gegenstandes\n\nSchifferknoten: Zur Befestigung eines Gegenstandes\n\nZimmermannsschlag: Zum Anschlagen einer Last\n\nMastwurf: Zur Befestigung eines Seiles an einem Baum, Mast oder Gegenstand.\n\nPalsteg: Schlinge die sich nicht zuzieht z. B.: als Schlaufe unterm Doppel- bzw. Dreibock\n\nVerkürzungsschlinge: Zur Vekürzung eines Seils dessen Enden befestigt sind.\n\nMittelmannknoten: Für Bergsteiger, zum Abseilen des mittleren Seilgefährten.\n\nStrickleiterknoten: Zur Befestigung eines Seiles. Er darf nur in eine Richtung belastet werden.\n\nRäuberknoten: Zum Kletttern gut geeignet, da er von unten wieder gelöst werden kann.\n\nKreuzbund: Zum Verbinden zweier sich kreuzender Hölzer\n\nEinbaum (Kohtenstange) 1. Mastwurf 2. sich kreuzende Schlaufe 3. strammes Umwickeln 4. Halbe Schläge\n\nKohtenkreuz: Wie Kreuzbund mit Endschlinge (Ende des Tampens zu einer Schlinge legen; Tampen diagonal unterm Kreuz herführen und über dem Kreuz durch die Schlinge ziehen).\n\nDreibockbund: Zum Verbinden dreier Stangen, z. B. von Jurtenstangen und Dreibeinen für Feuerstellen\n\nDoppelbock oder Zweibein: wie Dreibock, bloß mit zwei Stangen",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 11"
+   ],
+   "themen": [
+    "Knoten und Bünde"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
    }
   },
   {
@@ -876,6 +1315,41 @@
    }
   },
   {
+   "id": "pb-kochen",
+   "titel": "Kochen",
+   "element_typ": "probe",
+   "kategorie": "fahrtentechnik",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Kochgeschirr",
+    "Zutaten"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Auch auf Fahrt und Lagern soll gut gegessen werden. Dazu ist es nicht nötig ins Restaurant zu gehen oder sich etwas von der Bauersfrau kochen zu lassen.",
+   "beschreibung": "Auch auf Fahrt und Lagern soll gut gegessen werden. Dazu ist es nicht nötig ins Restaurant zu gehen oder sich etwas von der Bauersfrau kochen zu lassen. Es gibt eine Menge Gerichte, die man leicht auf dem Feuer zubereiten kann. Alles ist machbar, was nicht zu viele Töpfe und Pfannen erfordert. Auch auf den Backofen muss man auf den meisten Fahrten und Lagern verzichten. Lasst euch trotzdem nicht davon abhalten originell zu kochen. Zur Bestätigung dieser Probe musst du auf Fahrt oder Lager ein Gericht kochen. Hier einige leichte Fahrtenrezepte für ca. 5 Esser:\n\nEierpfannkuchen: 500 g Mehl, 5 Eier und ein Teelöffel Salz mit Milch zu einem dünnflüssigen Teig anrühren. Fett in der Pfanne erhitzen und den Teig in dünnen Lagen backen. Der Teig kann beim Braten wie eine Pizza belegt werden. Oder ihr macht die Pfannkuchen süß: Zucker in den Teig und beim Braten mit Äpfeln oder Bananen belegen.\n\nCurry-Pfanne: 750 g zartes Fleisch (ihr könnt Huhn, Pute, Schwein oder anderes Fleisch verwenden) in dünne Streifen oder Würfel schneiden und anbraten. Danach den Saft aus einer Dose Ananas hinzugeben und darin zwei zu halben Ringen geschnittene Zwiebeln dünsten. Nun könnt ihr Bambuskeime, Chinesische Pilze und ähnliches hinzugeben (insgesamt nicht mehr als 500 g). Als letztes gebt ihr die Ananasstückchen hinzu (ca. 2 Dosen). Das ganze mit Sahne , Curry und Salz abschmecken. Dazu kocht ihr 1kg Reis.\n\nCowboy-Pfanne: Dies Pfanne schreckt einige erst ab, ist aber sehr schmackhaft und eines der leichtesten und schnellsten Fahrtengerichte. Ihr braucht nur eine Pfanne. 500 g Speck in Würfel schneiden und mit zwei gewürfelten Zwiebeln anbraten. 2 kg dicke grüne Bohnen dazu geben und braten, bis die Bohnen weich werden. Evtl. mit etwas Salz und Pfeffer würzen (in der Regel gibt der Speck genug Salz). Fertig. Man kann auch weniger Bohnen nehmen und die Pfanne mit Reis mischen, dann ist sie nicht so herb.\n\nLinseneintopf: 500 g Linsen in 3 Liter Wasser zusammen mit 500 g gewürfeltem, durchwachsenen Bauchspeck zum Kochen bringen. Nach 40 Minuten 1kg geschälte, kleingeschnittene Kartoffeln, 250 g Suppengrün und etwas Salz hinzugeben und das Ganze gar werden lassen. Zum Schluss mit Essig und Salz abschmecken. Statt Linsen könnt ihr Erbsen nehmen und das Ganze zum Schluss mit Majoran und Salz abschmecken.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 15"
+   ],
+   "themen": [
+    "Kochen"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
    "id": "eig-kohten-und-jurtenbau-training",
    "titel": "Kohten- und Jurtenbau-Training",
    "element_typ": "probe",
@@ -917,6 +1391,41 @@
     "url": "",
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "pb-lagerbau",
+   "titel": "Lagerbau",
+   "element_typ": "probe",
+   "kategorie": "zelte_bauten",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [
+    "Seile",
+    "Stangen"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Lagerplatz: Bevor man ein Lager plant, muss man den Lagerplatz erkunden, wobei folgende Punkte zu beachten sind: - Der Lagerplatz sollte nicht zu weit vom nächsten Ort entfernt sein, denn Entfernungen über 7 km machen …",
+   "beschreibung": "Lagerplatz: Bevor man ein Lager plant, muss man den Lagerplatz erkunden, wobei folgende Punkte zu beachten sind:\n- Der Lagerplatz sollte nicht zu weit vom nächsten Ort entfernt sein, denn Entfernungen über 7 km machen die Versorgung mit Lebensmitteln zu schwierig und zeitraubend.\n- Arzt, Apotheke, Post und Telefon müssen zu erreichen sein.\n- Die Größe muss der Teilnehmerzahl entsprechen.\n- Das Lager sollte nicht auf moorigem oder feuchtem Boden aufgeschlagen werden.\n- Feuerstellen müssen abgesichert werden, um eine Brandgefahr auszuschließen.\n- Das umliegende Gelände muss gute Möglichkeiten für Pfadfinderläufe, Wettkämpfe und Geländespiele bieten.\n- In der näheren Umgebung sollte genügend Brennholz und Holz für Lagerbauten vorhanden sein.\n- Trink- und Waschwasser muss in ausreichenden Mengen zur Verfügung stehen. Ist der Lagerplatz geeignet, muss die Erlaubnis zum Lagern beim Besitzer eingeholt werden. In der Regel fragt man erst die Bauern, ob sie ein geeignetes Feld haben. Dann fragt man nach Feuer, Feuerholz, Wasser, Waschstellen etc. Zur Planung des Lagers auf dem Heimabend ist es sinnvoll eine Lagerskizze anzufertigen. Eine gute Planung ist das A und O zum Gelingen eines Lagers.\n\nBeispiele für Lagerbauten:\n\nEurer Phantasie für eigene Lagerbauten sind keine Grenzen gesetzt.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 14"
+   ],
+   "themen": [
+    "Lagerbau"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
    }
   },
   {
@@ -998,6 +1507,105 @@
     "url": "",
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "pb-organisatorischer-aufbau",
+   "titel": "Organisatorischer Aufbau",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "1. Horte/Gilde mindestens 5 2. Trupp „ 10 Jungen/Mädchen Jungen 3. Stamm/Hag „ 20 Jungen/Mädchen 4. Jungen- / Mädelschaft „ 40 Jungen/Mädchen 5. Pfadfinderring „ 80 Jungen/Mädchen 6. Gau „ 120 Jungen/Mädchen 7.",
+   "beschreibung": "1.\n\nHorte/Gilde\n\nmindestens\n\n5\n\n2.\n\nTrupp\n\n„\n\n10\n\nJungen/Mädchen Jungen\n\n3.\n\nStamm/Hag\n\n„\n\n20\n\nJungen/Mädchen\n\n4.\n\nJungen- / Mädelschaft\n\n„\n\n40\n\nJungen/Mädchen\n\n5.\n\nPfadfinderring\n\n„\n\n80\n\nJungen/Mädchen\n\n6.\n\nGau\n\n„\n\n120\n\nJungen/Mädchen\n\n7.\n\nLandesmark\n\n„\n\n240\n\nJungen/Mädchen\n\n8.\n\nDeutscher Pfadfinder Bund (DPB)\n\nHorten/Gilden und Trupps werden vom Führer der übergeordneten Bundeseinheit anerkannt, erst dann dürfen sie Schild und Wimpel führen. Die Bestätigung darf erst erfolgen, wenn alle Voraussetzungen erfüllt sind. Die Voraussetzungen im Goldenen Löwen sind: 1. Fünf Mädchen und eine Führerin oder fünf Jungen und ein Führer. 2. Die Jungen/Mädchen müssen das Versprechen abgelegt haben. 3. Wimpel und Schild sind vorhanden.\n\nDer Deutsche Pfadfinderbund gliedert sich in vier Säulen: Deutscher Pfadfinderbund O rden St. G eorg (M änner) K onvente\n\nJungenbund G aue R inge Jungenschaften\n\nM ädchenbund\n\nO rden St. Christophorus (Frauen)\n\nG aue Bundesgilde K onvente R inge M ädelschaften\n\nWer die Probe ablegt. muss außerdem wissen, wie die Gruppen heißen, der sie/er angehört. Von der Gilde/Horte bis zum Bund kennt das Mädchen/der Junge Gruppen und FührerInnen.",
+   "tipps": "Probe 4/5 (Organisatorischer Aufbau, Ständeaufbau): prüfen, ob Struktur des Bundes noch aktuell ist",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 4"
+   ],
+   "themen": [
+    "Organisatorischer Aufbau"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-orientieren",
+   "titel": "Orientieren",
+   "element_typ": "probe",
+   "kategorie": "karte_kompass",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [
+    "Karte",
+    "Kompass"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Als Pfadfinder musst du dich auch in unbekanntem Gelände, abseits der Strassen und Wege, bei Dunkelheit und im Nebel, im Wald und unter schwierigen Verhältnissen rasch und sicher zurechtfinden können.",
+   "beschreibung": "Als Pfadfinder musst du dich auch in unbekanntem Gelände, abseits der Strassen und Wege, bei Dunkelheit und im Nebel, im Wald und unter schwierigen Verhältnissen rasch und sicher zurechtfinden können. Anderenfalls wirst du dich leicht verirren. Gut entwickelter Ortssinn und Vertrautheit mit der Natur sind für das Zurechtfinden Voraussetzung. Um mit den Hilfsmitteln zur Orientierung, die wir kennen, arbeiten zu können, braucht man eine genaue Kenntnis der Himmelsrichtungen. Auf einer Windrose sind alle wichtigen Himmelsrichtungen angegeben. In unserem Fall haben wir sogar noch die Marschzahlen dazu geschrieben. Es ist notwendig zu wissen, welche Marschzahl in welche Himmelsrichtung weist.\n\n0 / 64 Norden 60\n\n4 NNW\n\n56 52 48\n\nNNO\n\nNW\n\nNO\n\nWNW\n\nONO\n\nWesten\n\n44\n\n12\n\nOsten\n\nWSW\n\n40\n\n8\n\n20\n\nOSO\n\nSW\n\nSO SSW\n\n16\n\n24\n\nSSO\n\n36\n\n28 Süden 32\n\nDas wichtigste Orientierungsmittel ist der Kompass. Aber auch ohne Kompass sind wir nicht verloren. Uns dienen als Hilfsmittel zur Orientierung: a) natürliche Merkmale b) künstliche Merkmale\n\na) natürliche Merkmale: Die sichersten natürlichen Merkmale finden wir am Himmel. Tags leitet uns die Sonne und Nachts weisen uns die Sterne den richtigen Weg. 1. Die Sonne: Bei Tag kann, wenn die Uhrzeit bekannt ist, nach dem Stand der Sonne die Himmelsrichtung bestimmt werden. Die Sonne steht bei uns: zur Winterzeit um zur Sommerzeit um 6.30 Uhr im Osten 7.30 Uhr im Osten 9.30 Uhr im Südosten 10.30 Uhr im Südosten 12.30 Uhr im Süden 13.30 Uhr im Süden 15.30 Uhr im Südwesten 16.30 Uhr im Südwesten 18.30 Uhr im Westen 19.30 Uhr im Westen 22.30 Uhr im Nordwesten (sehr selten) In Ostdeutschland muss man jeweils eine halbe Stunde abziehen. 2. Die Sonne und eine Zeigeruhr Mit Hilfe einer Zeigeruhr kannst du auch zu den übrigen Tageszeiten relativ einfach feststellen, wo Süden liegt. Halte die Uhr waagerecht, so dass der kleine Stundenzeiger mit der Spitze zur Sonne zeigt. Am Vormittag halbiere den Winkel zwischen dem kleinen Zeiger und der 12 vor der 12 . Dort ist Süden. Am Nachmittag halbiere den Winkel zwischen dem kleinen Zeiger und der 12 nach der 12. Dies gilt nur für die Winterzeit. Im Sommer halbiere den Winkel zwischen dem kleinen Zeiger und der 1.\n\nVormittags\n\nNachmittag\n\n3. Der Mond: Es gibt Tabellen, mit denen man auch nach dem Mond jederzeit die Himmelsrichtungen bestimmen kann. Das ist relativ kompliziert. Einfach ist es hingegen beim Vollmond, denn der steht der Sonne genau gegenüber. Das heisst er steht um 18.30 im Osten, um 0.30 im Süden und um 6.30 im Westen. Zur Sommerzeit eine Stunde später; in Ostdeutschland eine halbe Stunde eher. Mit Zeigeruhr und Mond verfahre wie mit der Sonne: Abends den Winkel vor der 12, morgens nach der 12. 3. Die Sterne: Der Polarstern steht immer genau im Norden, daher wird er auch Nordstern genannt. Ihr findet ihn, indem ihr zunächst am nördlichen Himmel den Großen Wagen sucht. Verlängert man dessen Hinterachse 5 mal nach oben, so trifft man auf den Polarstern. Als auffallend heller Stern bildet er gleichzeitig den Deichselstern des Kleinen Wagens.\n\nIn den Wintermonaten kann man sich auch am Sternbild des Orion orientieren. Die drei Sterne, die den Gürtel bilden, gehen im Osten auf und im Westen unter. Die Schwertspitze zeigt immer nach Süden.\n\n4. Die Wetterseite: Der Wind kommt in unseren Breiten häufig aus Nordwest. Diese Seite freistehender Bäume, Zäune, Stangen, usw. ist von der Witterung (Regen, Wind etc.) stärker betroffen. Sie wird schneller morsch und setzt eher Moos an. Der Wind biegt allein stehende Bäume in südöstliche Richtung. Selbst bei gefällten Bäumen kann man dies noch erkennen. Die Jahresringe liegen an der Südostseite näher bei einander.\n\n5. Weingärten liegen in Deutschland oft am Südhang. Aber auch noch auf West- und Osthängen. Sie liegen jedoch niemals auf der Nordseite. Es gibt noch weitere natürliche Merkmale, doch diese werden zunehmend ungenauer. Auf einen weitverbreiteten Irrtum muss hier aufmerksam gemacht werden: Die Sonnenblume ist keine sonnenwendige Pflanze. Sie dreht sich nicht mit der Blüte zur Sonne.\n\nb) künstliche Merkmale: 1. (Alte) Kirchen: Sie stehen in Ost-West-Richtung. Der Turm steht im Westen und der Altar im Osten.\n\n2. Grabsteine: Die beschriftete Seite alter Grabsteine zeigt ebenfalls häufig nach Osten.\n\n3. Windmühlen: An dem feststehenden Unterbau von Windmühlen sind oft Marken für Himmelsrichtungen angebracht.\n\n4. Der Trigonometrische Punkt. Auf der Oberseite der Steine für die Landvermessung ist ein Kreuz eingemeißelt, dessen Achsen in Richtung der Haupthimmelsrichtungen weisen. Die mit TP (Trigonometrischer Punkt) gekennzeichnete Stirnseite der Steine zeigt nach Süden. 5. Windrad und Wetterhahn: Sie sitzen oft auf einer Windrose. Aber sei vorsichtig, nicht jeder Besitzer hat seinen Wetterhahn eingenordet.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 19"
+   ],
+   "themen": [
+    "Orientieren"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-pfadfindergruss-und-pfadfinderversprechen",
+   "titel": "Pfadfindergruß und Pfadfinderversprechen",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Der Pfadfindergruß Wenn sich Pfadfinder begegnen, in Kluft oder in gewöhnlicher Kleidung, grüßen sie sich durch besondere Zeichen. Die rechte Hand wird bis zur Schulterhöhe gehoben.",
+   "beschreibung": "Der Pfadfindergruß Wenn sich Pfadfinder begegnen, in Kluft oder in gewöhnlicher Kleidung, grüßen sie sich durch besondere Zeichen. Die rechte Hand wird bis zur Schulterhöhe gehoben. Die drei mittleren Finger bleiben gestreckt, der Daumen wird über den kleinen Finger gelegt. Der Gruß wiederholt symbolisch die durch den Ring zusammengehaltenen drei Blätter der Pfadfinderlilie. Gleichzeitig erinnert er uns an die Dreizahl des Versprechens: Treue dem Vaterland Hilfsbereit für andere Gehorsam dem Pfadfindergesetz Der über den kleinen Finger gelegte Daumen soll versinnbildlichen: Der Stärkere schützt den Schwächeren. Die Wölflinge grüßen genauso, nur dass der Zeigefinger und der Mittelfinger gespreizt werden, während der Daumen über dem Ringfinger liegt. Die beiden gespreizten Finger sollen an die beiden Wölflingsgesetze erinnern: Der Wölfling folgt dem Altwolf nach. Der Wölfling gibt sich selbst nicht nach. Pfadfinder und Wölflinge reichen sich die linke Hand mit gespreiztem kleinen Finger zum Handschlag und grüßen: „allzeit bereit“.\n\nGruß des Pfadfinders\n\nGruß des Wölflings\n\nVersprechen und Gelöbnisse: Neuling: Ich verspreche, gute Kameradschaft zu halten, zu lernen und den Gesetzen zu gehorchen. Wölfling: Ich verspreche, nach besten Kräften meine Pflicht zu erfüllen und an jedem Tag eine gute Tat zu tun. Jungwolf / Jungpfadfinderin: Ich verspreche, nach besten Kräften meine Pflicht als Pfadfinder zu erfüllen, dem Pfadfindergesetz zu gehorchen und meinen Mitmenschen jederzeit zu helfen. Knappe / Glildenmädchen: Ich verspreche bei meiner Ehre, meine Pflicht gegenüber Gott und meinem Vaterland zu erfüllen, dem Pfadfindergesetz nachzufolgen und meinen Mitmenschen jederzeit zu helfen. Späher / Gildin: Ich gelobe meine Pflicht zu erfüllen, dem Gesetz zu gehorchen und im Dienst am Nächsten meine Umwelt verantwortlich mitzugestalten.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 9"
+   ],
+   "themen": [
+    "Pfadfindergruß und Pfadfinderversprechen"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
    }
   },
   {
@@ -1086,6 +1694,168 @@
    ]
   },
   {
+   "id": "pb-sport",
+   "titel": "Sport",
+   "element_typ": "probe",
+   "kategorie": "sonstiges",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Der Pfadfinder hält seinen Körper gesund, indem er sich regelmäßig sportlich betätigt. Hier eine Aufstellung der Sportübungen, die jeder Pfadfinder erfüllen sollte: 1. Zehn Frühsportübungen kennen 2.",
+   "beschreibung": "Der Pfadfinder hält seinen Körper gesund, indem er sich regelmäßig sportlich betätigt. Hier eine Aufstellung der Sportübungen, die jeder Pfadfinder erfüllen sollte: 1.\n\nZehn Frühsportübungen kennen\n\n2.\n\nDen Frühsport oder ähnliches leiten\n\n3.\n\nMauer oder Baum an einem Seil erklettern oder einen Graben an einem Seil hangelnd überqueren\n\n4.\n\n200 m Schwimmen\n\n5.\n\n10 Minuten ohne Pause durch Wald und Feld joggen\n\n6.\n\nAn einem Fahrtentag 20 km mit Fahrtengepäck wandern\n\n7.\n\nAn einem Fahrtentag 60 km mit Fahrtengepäck Rad fahren\n\nBestätigungen: Nr. 1. 2. 3. 4. 5. 6. 7.\n\nabgelegt am\n\nUnterschrift des Prüfers",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 17"
+   ],
+   "themen": [
+    "Sport"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-staendeaufbau-des-dpb",
+   "titel": "Ständeaufbau des DPB",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Aufnahmen: Wildling Neuling bis 11 Jahre ab 12 Jahre Halstuch Halstuch 1. Wölfling 8-11 Jahre Wölflingslilie 2. Jungpfadfinderin -Speermädchen ab 12 Jahre Bundeslilie -Bundeslilie und Geerspitze 3.",
+   "beschreibung": "Aufnahmen: Wildling Neuling\n\nbis 11 Jahre ab 12 Jahre\n\nHalstuch Halstuch\n\n1. Wölfling\n\n8-11 Jahre\n\nWölflingslilie\n\n2. Jungpfadfinderin -Speermädchen\n\nab 12 Jahre\n\nBundeslilie -Bundeslilie und Geerspitze\n\n3. Gildenmädchen\n\nab 15 Jahre\n\nBundeslilie und rote Kordel\n\n4. Gildin\n\nab 17 Jahre\n\nBundeslilie und graue Kordel\n\nBei den Mädchen:\n\n5. I) Bundesgilde: Gildenmeisterin ab 19 Jahre oder II) Orden St. Christophorus Pilgerin ab 21 Jahre\n\nBundeslilie und weiße Kordel Bundeslilie und weiße Kordel\n\nDie Gildin entscheidet sich, ob sie den Weg in die Bundesgilde oder den Orden St. Christophorus wählt.\n\nBei den Jungen: 1. Wölfling\n\n8-11 Jahre\n\nWölflingslilie\n\n2. Jungwolf -Speerjunge\n\nab 12 Jahre\n\nBundeslilie -Bundeslilie und Gerspitze\n\n3. Knappe\n\nab 15 Jahre\n\nBundeslilie und rote Kordel\n\n4. Späher\n\nab 17 Jahre\n\nBundeslilie und graue Kordel\n\n5. Orden St. Georg a) St.-Georgs-Knappe b) Ordensritter c) St.-Georgs-Ritter\n\nab 17 Jahre ab 18 Jahre ab 21 Jahre\n\nBundeslilie und graue Kordel Bundeslilie und weiße Kordel St. Georgslilie\n\nWird der Späher in einen Konvent des Ordens St. Georg aufgenommen, wird er zum St.-Georgs-Knappen.",
+   "tipps": "Probe 4/5 (Organisatorischer Aufbau, Ständeaufbau): prüfen, ob Struktur des Bundes noch aktuell ist",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 5"
+   ],
+   "themen": [
+    "Ständeaufbau des DPB"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-tierkunde",
+   "titel": "Tierkunde",
+   "element_typ": "probe",
+   "kategorie": "natur",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Auf Fahrt und Lager haben wir oft die Möglichkeit wilde Tiere in ihrem natürlichen Lebensraum zu beobachten. Leider gibt es in der Natur keine Schilder, auf denen steht, welches Tier zu sehen ist.",
+   "beschreibung": "Auf Fahrt und Lager haben wir oft die Möglichkeit wilde Tiere in ihrem natürlichen Lebensraum zu beobachten. Leider gibt es in der Natur keine Schilder, auf denen steht, welches Tier zu sehen ist. Deshalb solltet ihr euch schon vorher mit den Tieren unserer Heimat beschäftigen, damit ihr nicht völlig dumm dasteht, wenn plötzlich eines vor euch aus dem Dickicht bricht.\n\nBodentiere: Wildkaninchen sind bei einem Gewicht von ca. 1,5 - 2,5 kg 35-45 cm lang. Sie leben in bis zu 3 m tiefen unterirdischen Bauten. Kaninchen sind häufig anzutreffen und beliebtes Jagdwild. Der Feldhase dagegen wird bis zu 65 cm lang, sein Gewicht steigt auf bis zu 5 kg. Er lebt nicht in Höhlen, sondern duckt sich in flache Mulden, Sasse genannt. Feldhasen sind selten und gesetzlich besonders geschützt.\n\nHase (Trittsiegel / Spur)\n\nDie Fährte des Hasen ist ca. doppelt so lang wie die des Kaninchens. Flüchtet der Hase, setzt er nur noch mit den Zehenspitzen auf.\n\nWildschweine werden bis zu 1,80 m lang und bis zu 200 kg schwer. Beim Laufen hinterlassen sie nicht nur den Abdruck ihrer schalenförmigen Hufe, sondern auch den der etwas höher ansetzenden „Afterklaue“.\n\nFüchse werden bis zu 75 cm lang und erreichen ein Gewicht von bis zu 8 kg. Sie leben sehr zurückgezogen und sind meist nur in der Nacht auf Nahrungssuche. Die Spur eines Fuchses ähnelt der des Hundes, ist jedoch nicht rund, sondern eher oval\n\nHauskatze / Hund (Dackel)\n\nDer Rothirsch wird bis zu 2,5 m lang und erreicht ein Gewicht von bis zu 350 kg.\n\nDer Damhirsch bleibt bei einer Länge von bis zu 1,60 m und einem Gewicht von bis zu 100 kg wesentlich kleiner. Er trägt auch im ausgewachsenem Stadium eine charakteristische Fleckenzeichnung.\n\nDas Reh ist dagegen bei einer Körperlänge von 1,30 m ein Fliegengewicht von maximal 30 kg. Bei allen dreien tragen die männlichen Tiere ein Geweih, das sich in Form und Größe erheblich unterscheidet.\n\nVögel: Schwalben erkennt man a) am gegabelten Schwanz b) an den sehr spitzen Flügeln c) daran, dass sie sehr wendige Flieger sind.\n\nKohl und Blaumeise sind beide am Rücken grünlich und am Bauch gelb. Bei der Kohlmeise ist der Kopf auffällig gezeichnet, bei der Blaumeise schimmert er wie die Flügeloberseite bläulich.\n\nDer Sperling (Spatz) ist klein, flink und bräunlich gefärbt.\n\nDas Amselmännchen ist schwarz mit gelbem Schnabel, das Weibchen ist braun.\n\nFinken haben einen kurzen, spitzen Schnabel. Der Buchfink ist rötlich braun mit grauem Kopf. Seine Flügeloberseiten sind weiß, gelb, schwarz gemustert.\n\nDas Rotkehlchen ist auf dem Rücken grünlich braun, am Bauch weiß und im Kehlbereich rot gefärbt.\n\nDas Rebhuhn wird fast 30 cm groß und hat kräftige Laufbeine. Sein Federkleid schillert in unterschiedlichen Brauntönen.\n\nFasanenmännchen werden bis zu 80 cm lang, ihr Kopf ist schwarz mit roter Zeichnung am Auge. Die Brust ist ebenso wie die auffallend langen Schwanzfedern goldbraun und schwarz gemustert.\n\nKrähen werden ca. 45 cm groß und sind schwarz. Raben dagegen haben einen noch stärkeren Schnabel und werden über 60 cm groß.\n\nElstern sind auffällig schwarz und weiß gezeichnet und haben einen sehr langen Schwanz. Seine Länge entspricht in etwa der Körperlänge.\n\nGreifvögel: Steinadler: breite, lange Schwingen; großer, breiter Stoss; Segelflieger\n\n(Flugbild)\n\nFalken: spitze Schwingen, langer Stoss, rascher Verfolgungsflug über freiem Gelände. Falken „rütteln“, d.h. sie stehen in der Luft auf einer Stelle, in dem sie mit den Schwingen rasche Bewegungen ausführen.\n\nHabicht: kurze, runde Schwingen, langer Stoss, wendiger Flug, auch im Wald. Habichte jagen im Überraschungsangriff. Sie leben daher versteckt in Wäldern und Feldgehölzen.\n\nMäusebussard: breite Schwinge, breiter Stoss, Segelflieger. Bussarde sind die Vögel der offenen Landschaft. Sie kreisen oft stundenlang am Himmel oder lauern im Ansitz auf Beute (z.B. auf Zaunpfählen).\n\nMilan: schmale, lange Schwingen; gegerbter Stoß; Segelflieger\n\nZu den Körperlängen der Tiere muss man wissen, dass die Länge der Bodentiere von der Nasenspitze bis zum Hinterteil gemessen wird. Bei Vögeln misst man vom Schnabel bis zum Schwanz. Zum Ablegen der Probe solltet ihr die Tiere auf einem Bild erkennen können. Größe und Gewicht braucht ihr nicht auswendig lernen. Sie stehen dabei, damit ihr euch die Tiere besser vorstellen könnt.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 23"
+   ],
+   "themen": [
+    "Tierkunde"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-unsere-kluft",
+   "titel": "Unsere Kluft",
+   "element_typ": "probe",
+   "kategorie": "bundeskunde",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "drinnen",
+   "material": [
+    "Kluft"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Der Gründer der Pfadfinderbewegung, Lord Baden Powell (Bi Pi), entwarf für die Jungen eine einheitliche, für das Fahrten- und Lagerleben zweckmäßige Bekleidung.",
+   "beschreibung": "Der Gründer der Pfadfinderbewegung, Lord Baden Powell (Bi Pi), entwarf für die Jungen eine einheitliche, für das Fahrten- und Lagerleben zweckmäßige Bekleidung. Da sie nicht sehr kostspielig war, konnte sich jeder Junge unabhängig von seiner sozialen Herkunft, also egal ob er arm oder reich war, eine solche Kluft beschaffen. Die Kluft ist keine Uniform und will uns auch nicht uniformieren (gleichmachen). Sie ist Ausdruck unserer Gemeinschaft und zeigt nach innen und nach außen, dass wir zusammen gehören. Die Kluft verhindert das Angeben mit teuren „Markenklamotten“ und soll helfen, die Unterschiede zwischen Arm und Reich in unserer Gruppe zu überwinden. Heute tragen alle Pfadfinderorganisationen der Welt ihre eigene Kluft. Die Bundestracht des Deutschen Pfadfinderbundes, so wie wir sie heute tragen, findet ihre Ursprünge im alten DPB (1911), im Neudeutschen Pfadfinderbund (1922) und in der Reichsschaft Deutscher Pfadfinder (1932).\n\nMädchen: Sommer:\n\n-dunkelblaues Hemd -grau-rotes Halstuch mit DPB-Halstuchring -dunkelblauer Rock -Bundeskoppel -graue Socken\n\nWinter:\n\n-dunkelblaue Jungenschaftsjacke (Juja) -dunkelblaues Hemd -grau-rotes Halstuch mit DPBHalstuchring -dunkelblauer Rock -Bundeskoppel -dunkelblaue Strumpfhose -graue Wollsocken\n\nJungen: Sommer:\n\n-dunkelblaues Hemd -grau-rotes Halstuch mit DPB-Halstuchring -kurze Lederhose -Bundeskoppel -graue Socken\n\nWinter:\n\n-dunkelblaue Jungenschaftsjacke (Juja) -dunkelblaues Hemd -grau-rotes Halstuch mit DPBHalstuchring -dunkelblaue o. schwarze Kniebundhose -Bundeskoppel -graue Socken\n\nZur Kluft trägt man dunkles, festes Schuhwerk, keine Turnschuhe. Unsere Kluft ist zum größten Teil blau. Das liegt daran, dass die Farbe des Deutschen Pfadfinderbundes blau ist. Auf dem Hemd tragen wir den Deutschland- oder Europastreifen. Er sagt den Leuten in anderen Ländern oder auf internationalen Lagern, wo wir herkommen. Auf der linken Brustasche (über dem Herzen) tragen wir die Lilie. Das soll symbolisieren, dass wir sie auch in unserem Herzen tragen. Auf dem linken Ärmel tragen wir unser Wappen, den Goldenen Löwen (etwa eine Handbreit unter der Schulternaht). Andere Gruppen tragen ihre Wappen. Die Ritter trugen ihre Schilde mit ihren Zeichen auch links, weil sie mit der rechten Hand ihr Schwert halten mussten.\n\nDie Jungenschaftsjacke entwickelte tusk für die Jungenschaft (dj.1.11.) (s. Probe 28.4), daher der Name. Die Juja fand schnell Verbreitung in allen Gruppen der Bündischen Jugend (s. Probe 28.5). Sie war in der Verbotszeit durch die Nazis (1933-1945) (s. Probe 28.6) ein Erkennungsmerkmal der Bündischen. Auch heute noch ist sie ein Zeichen dafür, dass wir uns zur Bündischen Jugend zählen. Das Halstuch tragen alle Pfadfinder der Welt in den jeweils eigenen Farben. Die Farben Grau und Rot sind die Farben der Jungenschaft (s. Probe 28.4). Grau waren aber auch die Ordensmäntel der dienenden Brüder des Deutschen Ritterordens und der meisten europäischen Orden. Wir tragen deshalb das Halstuch wie einen Rittermantel über dem Kragen. Die rote Einfassung entspricht der Farbe des Georgkreuzes. Der Adler auf dem Halstuchring ist kein politisches Symbol, sondern der Adler der Reichsschaft Deutscher Pfadfinder (1932). Die kurze Hose war bei den Wandervögeln (s. Probe 28.1), aber auch noch in der Nachkriegszeit, ein Zeichen der Jugend. Erwachsene trugen lange Hosen. Manch einer bekam seine erste lange Hose erst mit zwölf. Auch die Kniebundhose galt als kurze Hose und ist somit ein altes Merkmal der Jugend im Winter. Die kurze Lederhose setzte sich erst in den fünfziger Jahren durch. Heute gilt sie als ein Erkennungszeichen der Bündischen. In der NS-Zeit waren weiße Socken ein Symbol des Widerstandes (s. Probe 28.6). Auch wir tragen zu hohen Festen weiße Socken zur Kluft, zur Erinnerung an den bündischen Widerstand. Auf Fahrt und Lager haben sich jedoch die grauen Socken bewährt.",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 6"
+   ],
+   "themen": [
+    "Unsere Kluft"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-waldlaeuferzeichen",
+   "titel": "Waldläuferzeichen",
+   "element_typ": "probe",
+   "kategorie": "karte_kompass",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Jeder Pfadfinder markiert seinen Weg für die nachfolgenden Freunde mit Hölzern, Gräsern oder Steinen, notfalls auch mit Strichzeichnungen auf dem Boden.",
+   "beschreibung": "Jeder Pfadfinder markiert seinen Weg für die nachfolgenden Freunde mit Hölzern, Gräsern oder Steinen, notfalls auch mit Strichzeichnungen auf dem Boden. Man benutzt also was man in der Natur findet, außer Müll, den beseitigt man lieber. Waldläuferzeichen legt man in der Regel immer an den rechten Wegrand. Ein Birkenzweig in einer Fichte oder eine Farndolde im Einfriedungszaun sind ganz einfache, jedoch für den Pfadfinder unverkennbare Zeichen. Die Bedeutung dieser Zeichen ist (zum größten Teil) international festgelegt. Kennt jedes Mädchen und jeder Junge diese Zeichen, können sie der Gruppe bei Geländespielen und Pfadfinderläufen den Sieg bringen.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 3"
+   ],
+   "themen": [
+    "Waldläuferzeichen"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
    "id": "eig-waldlaeuferzeichen-rallye",
    "titel": "Waldläuferzeichen-Rallye",
    "element_typ": "probe",
@@ -1125,6 +1895,78 @@
     "url": "",
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "pb-wundverbaende",
+   "titel": "Wundverbände",
+   "element_typ": "probe",
+   "kategorie": "erste_hilfe",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "beides",
+   "material": [
+    "Verbandsmaterial",
+    "Dreiecktücher"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "Handverband Fußverband Armschlinge Kopfverband (Wunde am Hinterkopf) Bei einer Stirnverletzung wird der Kopfverband seitenverkehrt angelegt, damit der Knoten nicht auf die Wunde drückt.",
+   "beschreibung": "Handverband\n\nFußverband\n\nArmschlinge\n\nKopfverband (Wunde am Hinterkopf) Bei einer Stirnverletzung wird der Kopfverband seitenverkehrt angelegt, damit der Knoten nicht auf die Wunde drückt.\n\nArmverband\n\nBrustverband\n\nTragering Die Träger fassen mit den äußeren Händen den Tragering, damit sie mit ihrem anderen Arm den Verletzten stützen, bzw. festhalten können.\n\nKnieverband",
+   "tipps": "Probe 25/26 (Erste Hilfe, Wundverbände): Stand 2003 — unbedingt an aktuelle Erste-Hilfe-Leitlinien anpassen\n\nDie Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 26"
+   ],
+   "themen": [
+    "Wundverbände"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-zeltbau",
+   "titel": "Zeltbau",
+   "element_typ": "probe",
+   "kategorie": "zelte_bauten",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [],
+   "dauer_min": 30,
+   "dauer_max": 60,
+   "ort": "draussen",
+   "material": [
+    "Kohte oder Jurte",
+    "Zeltstangen",
+    "Heringe",
+    "Seile"
+   ],
+   "vorbereitung": "mittel",
+   "kurz": "In unserem Bund verwenden wir weder Haus- noch Militärzelte, auch wenn sie noch so schick oder nützlich erscheinen. Unsere Fahrtenzelte sind die schwarzen Kohten und Jurten, die aus Dreiecks- bzw.",
+   "beschreibung": "In unserem Bund verwenden wir weder Haus- noch Militärzelte, auch wenn sie noch so schick oder nützlich erscheinen. Unsere Fahrtenzelte sind die schwarzen Kohten und Jurten, die aus Dreiecks- bzw. Vierecksbahnen bestehen und schnell aufgebaut werden können. Sie sind Teil unserer Fahrtenkultur und wurzeln in den Traditionen der bündischen Jugend. Sie erweisen sich als praktisch, weil man sie auf die Wandergruppe aufteilen, in ihnen Feuer machen kann und weil sie der ganzen Gruppe auf Fahrt eine Heimat geben. Die Bahnen lassen sich in unterschiedlicher Zusammensetzung und Anzahl zu den verschiedensten Zelttypen zusammenbauen. So gibt eine Kohtenbahn allein aufgestellt ein kleines Einmannzelt, das wir Kröte nennen.\n\nDie Kohte: Diese Zeltform findet man noch heute bei den Rentierjägern in Lappland. Sie wurde in den zwanziger Jahren von Tusk, dem Führer der dj1.11, in leicht abgewandelter Form nach Deutschland gebracht. Dort breitete sie sich in rasanter Geschwindigkeit unter den Gruppen der Bündischen Jugend aus. Heute ist sie zu einem wesentlichen Merkmal bündischer Fahrtenkultur geworden. (s.: Probe 28.4) Für uns Pfadfinder ist die Kohte mehr als nur eine Übernachtungsmöglichkeit. Auf unseren Fahrten und Lagern ist sie uns eine Wohnung, in der wir zur Horte/Gilde, zur Gemeinschaft zusammenwachsen. Eine Kohtenmannschaft besteht aus bis zu acht Mädchen oder Jungen. Auch bei winterlichen Temperaturen ist die Kohte eine ideale Unterkunft, in der wir uns an einem Feuer wärmen und unsere Mahlzeiten kochen können. Der Rauch zieht durch die obere Öffnung ab.\n\nDie Jurte: In der Mongolei und bei den arabischen Nomadenvölkern leben noch heute die Menschen in großen Rundzelten, aus denen sich unsere Jurten entwickelt haben. Die Jurte besteht aus sechs Kohten- und zwölf quadratischen Vierecksbahnen. Sie bietet einer Mädeloder Jungenschaft als Versammlungszelt genügend Platz. Genau wie in der Kohte kann auch hier ein Feuer entzündet werden.\n\nVor dem Zeltaufbau sollte man sich den Lagerplatz genau ansehen und auf einen trockenen Untergrund und eine windgeschützte Lage achten. Der Eingang muss auf der windabgewandten Seite liegen, denn sonst kann der Wind die Kohte wie einen Luftballon aufblasen und bei heftigem Sturm zum Einsturz bringen. Stelle das Zelt nie in eine Senke oder Vertiefung, denn dort ist der Boden feucht; wenn es außerdem noch regnet, läuft das Wasser ins Zelt, wovor auch der tiefste Graben keinen Schutz bietet.\n\nEs ist richtig, wenn man das Zelt auf einem leicht gewölbten Hang aufbaut, wobei man Baumgruppen, Hecken und Felsen als Windschutz ausnutzen sollte. Beim Aufbau der Kohte ist folgendes zu beachten: Zuerst knüpfen wir die Bahnen zusammen; dann werden die vier Ecken gespannt (ihr erseht es aus den Zeichnungen). Die Heringe werden mit der breiten Seite zur Kohtenmitte zeigend im 60° Winkel zum Boden, mit dem Kopf von der Kohte weisend eingeschlagen. Nun müsst ihr das Kohtenkreuz einhängen. Anschließend werden die Kohtenbäume aufgerichtet. Zum Schluß werden auch die restlichen Ecken gespannt, so dass die Kohte ein sauberes Achteck bildet. Die verschiedenen Bauarten erseht ihr ebenfalls aus den Zeichnungen.\n\nEinschlagen des Herings:\n\n60°\n\ndas Knüpfen:\n\nKohtenansicht von innen\n\nder Abschlussknoten:\n\nDie Knoten die ihr für den Bau von Kohten und Jurten benötigt, findet ihr in der Probe „Knoten und Bünde“.",
+   "tipps": "Die Zeichnungen aus dem gedruckten Probenbuch fehlen in dieser Textfassung – für den Heimabend mitbringen.",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 12"
+   ],
+   "themen": [
+    "Zeltbau"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
    }
   },
   {
@@ -4494,6 +5336,111 @@
     "url": "https://gruppenstunde.de/activity/details/95",
     "autor": "Heimabend-Inspirator (DPBM)",
     "lizenz": "CC BY-NC 4.0"
+   }
+  },
+  {
+   "id": "pb-geschichte-der-buendischen-jugend",
+   "titel": "Geschichte der Bündischen Jugend",
+   "element_typ": "projekt",
+   "kategorie": "wissen",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 90,
+   "dauer_max": 120,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "1. Die Wandervögel Eigentlich begann alles recht unspektakulär mit einem Kurs für Stenographie (Schnellschrift) in Berlin Steglitz.",
+   "beschreibung": "1. Die Wandervögel Eigentlich begann alles recht unspektakulär mit einem Kurs für Stenographie (Schnellschrift) in Berlin Steglitz. Die Teilnehmer, Steglitzer Gymnasiasten, fanden ein Tagebuch ihres Kursleiters, dem Studenten Hermann Hoffmann. Darin berichtete er von abenteuerlichen Fahrten. So etwas wollten sie auch machen. Also unternahmen sie im Sommer 1896 erste mehrwöchige Wanderfahrten. Damals rechnete noch niemand damit, dass aus diesem Privatvergnügen eine ganze Jugendbewegung entstehen würde. Im Jahre 1901 gründete man zunächst einen Verein, der sich den Namen „Wandervogel“ gab. Es war vor allem Hoffmanns Nachfolger Karl Fischer, der sich für eine weitere Verbreitung der Idee einsetzte. Die Aktivitäten der Wandervögel fanden viel Anklang bei der Jugend und in wenigen Jahren gründeten sich Ortsgruppen in allen Teilen Deutschlands, sowie in Österreich und der Schweiz. Die jungen Leute konnten nun an den Wochenenden und in den Ferien ihren braven, bürgerlichen Familienverhältnissen entkommen, übernachteten im Freien oder in Scheunen, durchstreiften die freie Natur und kochten sich ihr Essen auf dem Feuer. Aber schon bald spaltete sich die Bewegung. Die erste Abspaltung im Jahre 1904 hatte noch eher persönliche Gründe; aber als sich 1907 der „Wandervogel Deutscher Bund“ vom Mutterbund trennte, der sich inzwischen „Altwandervogel“ nannte, stritt man sich um zentrale Fragen des Gruppenlebens. Hans Breuer, der Gründer des neuen Bundes, forderte unter anderem 1.) dass nicht mehr nur Jungen, sondern auch Mädchen Wandervögel werden und an den Fahrten teilnehmen konnten, 2.) dass auch die Älteren auf den Fahrten auf Alkohol verzichteten und 3.) dass die Ortsgruppen selbständig, ohne Einmischung der Bundesführung, über ihre Angelegenheiten entscheiden konnten. Mit der Aufnahme der Mädchen trug der „Wandervogel Deutscher Bund“ zur damaligen Emanzipationsbewegung bei. Bei dem Verzicht auf Alkohol ging es ihm vor allem darum, die Jüngeren und die Älteren der Gruppen nicht durch verschiedene Rechte voneinander zu trennen. Bei der Forderung nach Selbständigkeit der Ortsgruppen ging es um das Streben nach Autonomie (Unabhängigkeit/ Selbstbestimmung) der Jugend, wegen dem sich 1910 auch der „Jungwandervogel“ abspaltete. Er forderte, die Erwachsenen und vor allem die vielen Lehrer aus dem Gruppenleben auszuschließen. Der „Wandervogel Deutscher Bund“ wuchs sehr schnell zum größten der Wandervögel-Bünde, und trug viel zur Entfaltung der farbigen Kultur der Bewegung bei. Hans Breuer gab das erste Wandervogel-Liederbuch, den „Zupfgeigenhansel“ heraus, in dem man bereits viele Lieder findet, die wir heute noch singen. Der Volkstanz wurde wieder entdeckt, es wurden Zeitschriften heraus gebracht, der typische Schattenriss-Zeichenstil entwickelt und viele Mädchen nähten sich sogenannte Eigenkleider; das waren Kleider in einem luftigen Trachtenstil, bei denen von Fäden und Knöpfen an alles selbst hergestellt war. Mit Fidel, Gitarre und Blumen im Haar zogen die Gruppen der Wandervögel durchs Land.\n\nPr. 28.2 - S. 1\n\n2. Das Meißnerfest Am 11. und 12. Oktober 1913 fand auf dem „Hohen Meißner“, einem Berg bei Kassel, das sogenannte Meißnerfest statt. Es gilt bis heute als eines der wichtigsten Ereignisse der Jugendbewegung. Hier kamen die Wandervögel mit anderen Gruppierungen und Vertretern einer allgemeinen bürgerlichen Reformbewegung zusammen, die in den letzten Jahren der Kaiserzeit an Bedeutung gewonnen hatte, und zu der die Wandervögel längst zu zählen waren. Neben den Wandervögeln gab es da unter anderem die Reformpädagogen, die Schulen schaffen wollten, in denen die Schüler gleichberechtigt den Schulalltag mitgestalten sollten. Die FKK-Bewegung wollte sich der Natur enger verbunden fühlen und befreite sich deshalb bei ihren Treffen von der beengenden Kleidung jener Zeit und tanzte nackt im Grünen. Die Abstinenzler verzichteten auf Alkohol und Nikotin, weil sie empfanden, dass deren Genuss unfrei macht. Bei den ersten Vegetariern kamen bereits recht modern klingende ökologische Erwägungen ins Spiel. Der Zusammenschluss all dieser Gruppierungen nannte sich „Freideutsche Jugend“. Das Fest selber war als eine Gegenveranstaltung zu den offiziellen Feiern zum hundertsten Jahrestag der Völkerschlacht bei Leipzig gedacht. Der selbstgefälligbierdünstigen Atmosphäre jener Veranstaltungen sollte ein stilvolles Fest der Jugend entgegen gesetzt werden. In eisiger Kälte wurden auf den Hängen des Meißners die Zelte aufgeschlagen und viele kleine Lagerfeuer entzündet. Es wurde getanzt und gesungen und in großen Sitzkreisen über den gemeinsamen Weg zu einer besseren Gesellschaft diskutiert. Sie hatten nämlich durchaus den Anspruch, dass die Jugend künftig als eigenständiger, ernst zu nehmender Faktor auf das Leben der ganzen Gesellschaft Einfluss nehmen soll. Was die „Freideutsche Jugend“ wollte und sein sollte, versuchte man in der sogenannten „Meißnerformel“ auszudrücken. Ihren Kernsatz sehen noch heute eigentlich alle bündischen Gruppen für sich als gültig an. Er lautet: Die Freideutsche Jugend will aus eigener Bestimmung, vor eigener Verantwortung, mit innerer Wahrhaftigkeit ihr Leben gestalten. In der Forderung, sein Leben aus eigener Bestimmung zu gestalten, findet sich das Streben der Jugend nach Autonomie wieder. In dem Ruf nach eigener Verantwortung steckt die Bereitschaft, die mit dieser Freiheit verbundene Last auf sich zu nehmen. Er enthält aber auch den Wunsch die letztliche Verantwortung, welche immer noch bei den Erwachsenen lag, selbst zu übernehmen. In dem Verlangen nach innerer Wahrhaftigkeit steckt der Wunsch nach Echtheit und Natürlichkeit und der Anspruch, dass das, was man will und als richtig erkannt hat, mit dem eigenen Handeln übereinstimmt. In dem sogenannten „Zusatz“ versprach man sich, in Zukunft zusammen zu halten, sich regelmäßig zu treffen und bei diesen gemeinsamen Treffen mit Rücksicht auf die Abstinenzler auf Alkohol und Nikotin zu verzichten. Der „Zusatz“ lautet:\n\nPr. 28.2 - S. 2\n\n„Für diese innere Freiheit tritt sie [die Freideutsche Jugend] unter allen Umständen geschlossen ein. Zur gegenseitigen Verständigung werden in regelmäßigen Abständen Freideutsche Jugendtage abgehalten. Alle gemeinsamen Veranstaltungen der Freideutschen Jugend sind alkohol- und nikotinfrei.“ All diese Pläne wurden aber bald zunichte gemacht, denn kein Jahr später brach der Erste Weltkrieg aus. Auch wenn die Freideutsche Jugend der Gesellschaft ihrer Zeit kritisch gegenüber stand, ließen sich die meisten jungen Leute doch von der Kriegsbegeisterung anstecken. Viele Wandervögel und andere Freideutsche meldeten sich freiwillig. Sie hofften, sich an der Front als anerkannte Mitglieder der Gesellschaft bewähren zu können, und als Offiziere ihr ideelles Gedankengut an ihre Untergebenen weitergeben zu können. Viele Persönlichkeiten der Bewegung verloren ihr Leben.\n\nPr. 28.3 - S. 1\n\n3. Der Beginn der bündischen Phase Nach diesem Krieg hatte sich für die Bewegung vieles verändert. Nicht nur das Land, in dem man lebte, war ein völlig anderes geworden. Während des Krieges hatten sich die Bünde daran gewöhnen müssen, ohne die volljährigen jungen Männer auszukommen. So hatten vielerorts Mädchen und junge Frauen die Führung der Gruppen übernommen. Dadurch wuchs ihre Bedeutung innerhalb der Bewegung zum vorerst letzten mal deutlich an. Auch die minderjährigen Jungen rückten in die Führungspositionen vor, und verboten nach dem Krieg teilweise allen über Achtzehnjährigen, in die Bünde zurück zu kehren. Zu Beginn der 20er Jahre trat die Bewegung in eine völlig neue Phase. Nach der Vermischung mit den deutschen Pfadfindern nannte man sich jetzt „Bündische Jugend“. Pfadfinder gab es in Deutschland bereits seit 1909 (siehe „Geschichte der Pfadfinder“ u. „Geschichte des DPB“). Den deutschen Pfadfindern wurde aber der Vorwurf gemacht, einen zu militärischen Ton zu haben. Außerdem waren sie nicht jugendbewegt sondern ‚jugendpflegerisch‘, dass heißt, die Gruppen wurden nicht von fast Gleichaltrigen geführt, sondern von Lehren, Ärzten und Offizieren mit klaren erzieherischen Vorstellungen geleitet. Bald spalteten sich aber erste Gruppen vom damaligen DPB ab (den wir, um ihn von unserem Nachkriegs-DPB zu unterscheiden „alter DPB“ nennen). Der bekannteste dieser Splitterbünde war der „Bund der Neupfadfinder“ unter Martin Voelkel. Voelkel hatte aber eigentlich nicht das Ziel, die Bewegung noch weiter aufzuspalten. Er träumte vielmehr davon, alle Pfadfinder und Wandervögel in einem „Hochbund“ zu vereinen. So schloss er sich bald mit mehreren kleineren Pfadfinderbünden und größeren Wandervögelbünden zusammen. Nach zwei Vorstufen nannte sich dieser Zusammenschluss ab 1927 „Deutsche Freischar“, mit dem Untertitel „Bund der Pfadfinder und Wandervögel“. Er wurde schnell (mit ca. 10 000 Mitgliedern) zu einem der größten Bünde der Bewegung. Auch in den vielen Bünden, in denen sich Pfadfinder und Wandervögel nicht wirklich vereinigten, vermischten sich doch ihre Stilelemente. So bestanden die jugendlichen Pfadfinder fortan darauf, sich selber zu führen, und drängten die militärischen Formen zurück. Die Wandervögel tauschten ihre zusammengewürfelten Trachten gegen einheitliche Kluft und übernahmen stärker gegliederte Strukturen. Die Idee des Bundes als Lebensgemeinschaft gewann an Bedeutung. Neben die Fahrten der Wandervögel traten die großen Lager. In den Zeltstädten der Bündischen wurden bereits große Versammlungszelte aufgebaut und Lagerolympiaden abgehalten. Die Zahl der Bünde, die sich zur Bündischen Jugend rechneten, nahm erstmals unübersichtliche Ausmaße an. Auch der damalige DPB wurde bald bündisch, und so zum wohl größten Bund der Bewegung. Die Mädchen verschwanden allerdings fast völlig aus den Gruppen. Schon einige Gründungsbünde der Freischar – auch die Neupfadfinder – hatten die Mädchen ganz aktiv ausgeschlossen, da sie in ihr Bild eines elitären Ritterbundes nicht mehr zu passen schienen.\n\nPr. 28.3 - S. 1\n\n4.\n\nDie autonome Jungenschaft\n\nKaum hatte sich der bündische Stil ausgebreitet, begann schon die Zeit der autonomen Jungenschaften, die sich selber als neue Phase, die „dritte Welle der Jugendbewegung“, verstanden. Die wichtigste dieser Jungenschaften war die „dj.1.11.“, deren Stil das Bild der Bündischen Jugend bis heute prägt. Ihr Gründer war Eberhard Koebel, mit Fahrtennamen „tusk“. Wegen seiner enormen Kreativität und seinem ungebändigtem Tatendrang, aber auch wegen seiner Hitzköpfigkeit und seinen oft recht krassen Ansichten stellt er wohl die schillerndste und zwiespältigste Figur in der Geschichte der Bewegung dar. Auch in seinen persönlichen politischen Ansichten tendierte er stets zum Extremen, und trat 1932 (bewusst am Tag von Hitlers Geburtstag) der kommunistischen Partei bei. Als Jungenführer wollte er die große autonome Jungenschaft schaffen, in der die Jungen aller Bünde, wenn nicht sogar des ganzen Landes vereinigt sein sollten, und in der kein Erwachsener mehr etwas zu suchen hatte. In der Tat war es damals nicht nur in der dj.1.11. üblich, dass die jungen Führer sich mit etwas über zwanzig Jahren aus den Gruppen zurückzogen und selbst große Gaue von Jüngeren geführt wurden. „Jungenschaft“ meint hier also etwas anderes als unsere Bezeichnung für eine bestimmte Gruppengröße. Jeder Versuch, sich mit anderen Bünden zu vereinigen, scheiterte aber an seinen extremen Forderungen, seiner mangelnden Kompromissbereitschaft und seiner Ungeduld. So schlug ein Versuch, die dj.1.11. mit dem DPB zusammen zu schließen fehl, nachdem er vorher schon aus seinem Heimatbund, der Deutschen Freischar, ausgeschlossen worden war. Nachdem er nämlich die Führung seines Gaues an sich gerissen hatte, indem er bei einer Feier auf den Tisch sprang und sich selbst zu seinem Führer erklärte, waren ihm höhere Führungsämter verweigert worden. Deshalb gründete er am 1.11.1929 mit seinen vertrautesten Jungen eine Verschwörung, die als Keimzelle die Umsetzung seiner Träume von der großen autonomen Jungenschaft herbeiführen sollte. Nach dem Gründungsdatum nannte er diesen Geheimbund „deutsche Jungenschaft vom 1. 11.“, kurz „dj 1.11.“.1930 trat die dj. 1.11. aus der Freischar aus und konnte nun ganz öffentlich auf die Bewegung Einfluss nehmen. Tusks Fahrtenbericht von einer abenteuerlichen Großfahrt in die lappische Wildnis wurde in fast allen Bünden gelesen. Von dort hatte tusk die Kohte mitgebracht. Er hat auch die Jungenschaftjacke erfunden (siehe „Zeltbau“ u. „unsere Kluft“), und wenn es sicherlich auch schon vorher in den Bünden Interesse an internationalem Liedgut und Fahrten in ferne Länder gab, hatte tusk hier für einen deutlichen Schub gesorgt; vor allem was die Kosakenlieder betrifft. Wegen ihres großen Tatendrangs, ihres revolutionären Anspruchs und ihres Auftretens machten die Jungen der dj.1.11. stets einen großen Eindruck, wenn sie auf andere Bündische trafen. In ihrer ganzen Haltung brachten sie zum Ausdruck, dass bei der dj.1.11. zu sein, etwas besonderes war. Zum Beispiel stand vor der rot-grauen Fahne mit dem Falken und den drei Wellen stets schweigend ein junger Wächter mit Säbel. Schnell begannen die Jungen aller anderen Bünde, sich Jungenschaftsjacken zu nähen, Kohten zu besorgen, und sangen tusks Lieder.\n\nPr. 28.5 - S. 1\n\n5. Die Verbotszeit Im Januar 1933 ergriff Hitler die Macht über das Deutsche Reich. Die Nazis wollten, dass alle Deutschen ausschließlich in NS-Organisationen tätig waren. So sollten alle Jungen in die HJ (Hitlerjugend) oder ins Jungvolk, die Mädchen in den BdM (Bund deutscher Mädchen). Alle anderen Jugendorganisationen wurden verboten. Die Bündische Jugend versuchte auf mehrere unterschiedliche Weisen mit dieser Situation umzugehen, und wurde von den Nazis bald zu ihrem Hauptgegner in Sachen Jugend erklärt. Einige Bündische traten durchaus freiwillig der HJ bei, entweder weil sie selbst mit den politischen Vorstellungen der Nazis übereinstimmten, oder weil sie in der HJ eine mögliche Verwirklichung des großen Traumes von der vereinigten deutschen Jugend sahen. In den ersten Jahren gelang es sogar, die HJ teilweise regelrecht zu unterwandern, indem bündische Führer mit Hilfe ihrer größeren Erfahrung Führungspositionen übernahmen, mit ihren Gruppen im alten Stil auf Fahrt gingen, bündische Lieder sangen und die Ver mittlung nationalsozialistischer Inhalte vernachlässigten. Als dies der Reichsjugendführung aber bewusst wurde, ging sie entschieden dagegen vor, verbat alle bündischen Formen, und gab Listen heraus, welche Lieder in der HJ nicht mehr gesungen werden durften. Viele Bündische versuchten aber, sich der Auflösung zu widersetzen. Zunächst glaubten sie, die Nazis könnten sie nicht verbieten, wenn sie eine möglichst große Organisation darstellten. So gelang in der Not kurzzeitig, wovon man vorher nur geträumt hatte: Viele große Bünde, darunter der damalige DPB, schlossen sich im März 1933 zum „Großdeutschen Bund“, mit über 70 000 Mitgliedern zusammen. Aber auch das hinderte die Nazis nicht daran, das Pfingstlager – mit 10 000 Teilnehmern – aufzulösen. Etwas länger überlebte ein anderer Hochbund, die von Michael gegründete „Reichsschaft Deutscher Pfadfinder“ (siehe „Geschichte des DPB“ u.a.). Als sie im Mai 1934 dann doch von der Nazi-Größe Heydrich persönlich verboten wurde, hieß es in der Begründung: „In der ‚Reichsschaft Deutscher Pfadfinder‘ haben mehr und mehr Personen Aufnahme gesucht und gefunden, die dem nationalsozialistischen Staat und der nationalsozialistischen Bewegung ablehnend gegenüber stehen. Sie ist zu einer Zufluchtstätte dem neuen Staat feindlicher junger Menschen geworden […] und wird zugleich die Sammelstelle von Personen, deren Zugehörigkeit zur H.J. und zum Jungvolk nicht erwünscht ist.“ Wer jetzt nicht aufgeben wollte, dem blieb nur die Illegalität. Dabei war freilich nicht zu erwarten, dass die Jugendlichen das Übel am Nationalsozialismus durchschauten, und sich darauf hin bewusst zu gezielten Schlägen gegen das Regime entschlossen, wie es uns etwa von Michael bekannt ist. Er soll an der Vorbereitung eines berühmten, aber misslungenen Attentats gegen Hitler im Juni 1944 beteiligt gewesen sein. Die Jugendlichen wollten sich ihr Gruppen- und Fahrtenleben nicht nehmen lassen, das ihnen offensichtlich viel bedeutete. Bis in die Kriegsjahre hinein setzten sie ihre Aktivitäten fort, die von den Nazis als „Bündische Umtriebe“ bezeichnet wurden. Die Propaganda der Nazis konnte sie nicht reizen und das Angebot der HJ war langweilig, verglichen mit dem, was sie gewohnt waren. Durch ihre Erfahrungen mit dem jungenschaftlichen Fahrtenleben waren sie es auch nicht gewohnt, sich von anderen Leuten\n\nPr. 28.5 - S. 2\n\nin irgendetwas hineinreden zu lassen. Sie wollten weiterhin ihre eigenen Herren bleiben. Dafür hatten sie freilich mit einigen Gefahren zu leben. Kamen Bündische ins Jugendgefängnis, wurden sie mitunter übel mißhandelt. Von einem Prozess in Berlin wird zum Beispiel berichtet, dass der Angeklagte mit gebrochenen Beinen in den Saal geführt wurde. Aus solchen Erfahrungen konnte natürlich schnell bewusster Widerstand entstehen. Für den moralischen Rückhalt spielte auch der Kontakt zu Bündischen im Exil, wie etwa tusk, ein Rolle. Auch für viele andere Gruppen des Jugendwiderstandes, die nicht unbedingt der Bündischen Jugend zuzurechnen sind, spielten bündische Einflüsse eine große Rolle; vor allem der Einfluss der dj.1.11. Das hängt nicht zuletzt mit den vielen veröffentlichten Erklärungen der Nazis zusammen, woran man illegale Bündische erkennt. Hieran konnte man sich orientieren, wenn man sich der Vereinnahmung durch dass NS-System widersetzen wollte. Im Ruhrgebiet und im Kölner Raum waren die sogenannten „Edelweispiraten“, besonders in den Kriegsjahren, sehr verbreitet. Vom Alter her konnten diese Jugendlichen die Bündische Phase vor der Verbotszeit kaum noch selber miterlebt haben. Außerdem kamen sie, im Gegensatz zu den meisten Bündischen, aus Arbeiterfamilien. Trotzdem unternahmen sie Fahrten im bündischen Stil und sangen die bündischen Lieder. Die „Edelweißpiraten“ lieferten sich mitunter blutige Straßenschlachten mit der HJ, und waren im kriegszerrütteten Deutschland kaum noch von den Nazis unter Kontrolle zu bekommen. Selbst die berühmte „Weiße Rose“ war bündisch beeinflusst, denn drei Mitglieder waren vorher in illegalen bündischen Gruppen, Hans Scholl zum Beispiel in der dj.1.11..\n\nPr. 28.6 - S. 1\n\n6. Von der Nachkriegszeit bis heute Nach dem Zweiten Weltkrieg wurden viele Bünde unter alten und neuen Namen wieder aufgebaut. Bis in die frühen sechziger Jahre hinein blieb die Bündische Jugend eine wichtige deutsche Jugendkultur. Auch viele Jugendorganisationen, die sonst nichts mit der Bündischen Jugend zu tun hatten, übernahmen – wie schon vor dem Krieg – ihre Formen, und gingen mit Kluft und Affen auf Fahrt. Die kurzen Lederhosen und das Trampen kamen in Mode. Schon bald gehörten auch die Mädchen wieder ganz selbstverständlich zur Bewegung. In der DDR, die wieder eine einheitliche Staatsjugend aufbaute, waren bündische Gruppen freilich verboten, und so kann dort erst seit der Wiedervereinigung langsam wieder eine bündische Kultur wachsen. Im Westen ist die Entwicklung des bündischen Stils durchaus nicht stehen geblieben, wenn sie auch nicht mehr die kreative Energie der ersten Jahrzehnte entwickelte. Die Jurte, der Tschai und eine Menge der Lieder, die wir singen, entstammen der Nachkriegszeit. Die Zahl der Bünde ist heute noch viel unübersichtlicher, als sie es in den zwanziger Jahren schon war. Es gibt alleine weit über fünfzig Bünde, die das Wort ‚Pfadfinder‘ im Namen führen. Dabei ist natürlich nicht jeder Pfadfinderbund in Deutschland automatisch auch bündisch. So hat etwa die Bundesleitung des größten deutschen Pfadfinderbundes – die katholische DPSG – mehrfach nachdrücklich darauf hingewiesen, dass sie mit der Bündischen Jugend nichts zu tun haben will. Der evangelische VCP und der überkonfessionelle BdP stehen dem Bündischen schon wesentlich offener gegenüber. Nach ihnen sind wir wohl der größte Bund überhaupt, der sich geschlossen zur Bündischen Jugend bekennt. Neben den bündischen Pfadfindern gehören zur Bewegung natürlich noch unzählige andere Bünde. Sie lassen sich vielleicht grob in folgende Gruppierungen unterteilen: Die Wandervögel orientieren sich teilweise noch recht stark am Stil der verschiedenen alten Wandervögelbünde vor dem Ersten Weltkrieg. Von dieser Gruppe unterscheidet sich der recht eigenwillige Nerother Wandervogel, den es seit 1919 gibt. Viele, oft recht kleine, Gruppen fühlen sich der Jungenschaftlichen Bewegung, meist im Stil der dj.1.11. verpflichtet. Sie führen auch oft das Wort „Jungenschaft“ im Namen, wenn sie sich nicht gleich „dj.1.11.“ nennen. Darüber hinaus gibt es noch viele andere Bünde, die sich Freischar, Zugvögel oder ähnlich nennen, oder vom Namen her gar nicht als bündisch zu erkennen sind. Dieses ganze Spektrum trifft man unter anderem auf den überbündischen Singewettstreiten, von denen der Hamburger und Würzburger heute wohl die größten und bekanntesten sind. Überbündische Zeitschriften, wie etwa „scouting“ oder die „Buschtrommel“ berichten darüber, was in den Bünden so passiert. Auf der „Jugendburg Ludwigstein“, in der Nähe des „Hohen Meißners“, wurde ein großes Archiv zur Geschichte der Bewegung angelegt. Außerdem finden dort oft Veranstaltungen statt, und auch so trifft man dort oft andere Bündische an.\n\nPr. 28.Anhang - S. 1\n\nAnhang: Zeittafel\n\n1901 1907\n\n1927 1929\n\n1934 1939 – 1945 1945\n\nWiederaufleben der Bündischen Jugend\n\nMachtergreifung Hitlers\n\n1933\n\nErster Weltkrieg\n\nAustritt des „Bund der Neupfadfinder“ aus dem DPB Martin Voelkl Gründung der „Deutschen Freischar“ 1. November: Gründung der „dj.1.11.“ tusk Verbot der Bündischen Jugend Auflösung des „Großdeutschen Bundes“ Verbot der „Reichsschaft Deutscher Pfadfinder“ Michael\n\nWeimarer Republik\n\n1913 1914 – 1918 1920\n\nerste Fahrten der Wandervögel Hermann Hoffmann Gründung des späteren „Alt-Wandervogels“ Karl Fischer Abspaltung des „Wandervogel Deutscher Bund“ Hans Breuer 11./12. Oktober: Meißnerfest\n\nEnde der Kaiserzeit\n\n1896\n\nZweiter Weltkrieg Nachkriegszeit\n\nLeseempfehlungen: In „jugendbewegung für anfänger“ wird die gesamte Geschichte der Bewegung knapp und doch ausführlich in einer sehr verständlichen Sprache vorgestellt. In karikaturhaften Zeichnungen wird der Stil der verschiedenen Strömungen eingefangen. (Malzacher/Daenschel, Jugendbewegung für Anfänger. Witzenhausen 1993) In „Es begann in Steglitz“ wird die Geschichte der Bewegung aus der Perspektive des Berliner Stadtteils wiedergegeben. Das Buch enthält sehr ausführliche Kapitel zu allgemein interessanten Themen, wie Mädchen in der Bewegung, Kriegsbegeisterung oder Verbotszeit. (Ille/Köhler, Der Wandervogel. Es begann in Steglitz. Berlin 1987) Neben diesen beiden Gesamtdarstellungen gibt es unzählige Bücher zu den einzelnen Themen. Fragt doch einfach mal in eurer Bücherei nach! Wenn ihr lieber Geschichten lest: „Für Mädchen Verboten“ spielt in der Wandervogelzeit, „Kariertes Hemd und weiße Strümpfe“ ist ein Erlebnisbericht aus der Verbotszeit und „Edelweißpiraten“ der eines Edelweisspiraten. (N. Kohlhagen, Für Mädchen verboten! Die Geschichte von einer, die anders leben wollte. Hamburg 1984; Herr xyz, Kariertes Hemd und weiße Strümpfe. Eierbach 1234; F. Theilen, Edelweißpiraten. Frankfurt 1984.)\n\nPr. 28.Anhang - S. 2\n\nThema 1. Der Wandervogel 2. Das Meißnerfest 3. Der Beginn der bündischen Phase 4. Die autonome Jungenschaft 5. Die Verbotszeit 6. Die Nachkriegszeit\n\nabgelegt am\n\nUnterschrift des Prüfers",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 28"
+   ],
+   "themen": [
+    "Geschichte der Bündischen Jugend"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-geschichte-der-pfadfinder",
+   "titel": "Geschichte der Pfadfinder",
+   "element_typ": "projekt",
+   "kategorie": "wissen",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 90,
+   "dauer_max": 120,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Die Geschichte der Pfadfinder ist so stark mit der Biographie (Lebensgeschichte) Bi Pi‘s, dem Gründer der Pfadfinderbewegung verknüpft, dass es kaum Sinn macht, sie voneinander zu trennen.",
+   "beschreibung": "Die Geschichte der Pfadfinder ist so stark mit der Biographie (Lebensgeschichte) Bi Pi‘s, dem Gründer der Pfadfinderbewegung verknüpft, dass es kaum Sinn macht, sie voneinander zu trennen. Bi Pi, mit späterem vollem Namen Sir Robert Stephenson Smyth Baden Powell, Lord of Gilwell, wurde am 22.2.1857 als zwölftes von 14 Kindern eines Pfarrers in London (England) geboren. Schon als Schüler unternahm er mit seinen Freunden in den Ferien lange Reisen durch die Wildnis und machte dabei erste eigene Waldläufererfahrungen. Als Offizier in Indien kamen ihm diese Kenntnisse zugute. Man ernannte ihn zum Ausbilder der Scouts (Pfadfinder/ Spurensucher), die nicht an der Waffe dienten, sondern als Späher das feindliche Gebiet auskundschafteten. Bei der Ausbildung dieser Scouts hielt er sich nicht an herkömmliche Methoden, er legte keinen Wert auf Drill (Lernen unter Druck durch ständige Wiederholung einer Tätigkeit), sondern versuchte seine Schützlinge für ihre Aufgaben zu begeistern, in dem er ihnen Sinn und Zweck ihrer Tätigkeiten erklärte oder ihnen spielerisch beibrachte, was sie wissen mussten. Er gab keine strikten Anordnungen, sondern Tipps und Anregungen. Er forderte von seinen Schützlingen selbständiges Denken und eigenverantwortliches Handeln. Diese Scouts gaben ihm auch den Namen Bi Pi, der aus den Anfangsbuchstaben seines Namens Baden Powell gebildet worden war. Auf einer militärischen Mission in Afrika 1897 lernte er von den Eingeborenen eine Menge waldläuferischer Tricks, die er noch nicht kannte. Er schrieb ein Buch „Aids for Scouting“ („Hilfe für Spurensucher“). Es war für seine jungen Offiziere gedacht und enthielt sein waldläuferisches Wissen. Als es 1899 erschien, wurde es sofort als allgemeine Ausbildungslektüre für Offiziere empfohlen. Im Burenkrieg 1899 verteidigte Bi Pi über 217 Tage die Stadt Mafeking mit nur 700 Mann gegen eine Übermacht von 9000 Soldaten der Buren. Er tat dies jedoch nicht mit Gewalt, sondern mit List. Er täuschte den Buren eine viel größere Zahl an Verteidigern und eine unbegrenzte Menge von Munition vor, indem er Strohpuppen auf Schutzwälle legte, geschnitzte Holzgewehre über Schießscharten hinausragen ließ und mit leeren Konservendosen Attrappen von Geschützen aufbaute. Die bewaffneten Truppen ließ er blitzschell die Stellung wechseln, so dass die Buren glaubten, die Stadt strotze nur so vor Verteidigern. Um die Soldaten zu entlasten, bildete Bi Pi aus den Jungen der Stadt eine Truppe, die Sanitätsaufgaben hatte oder als Meldegänger und für Spähtrupps eingesetzt wurde. Bi Pi stellte mit Verblüffung fest, dass die Jungen durchaus fähig waren Verantwortung zu übernehmen und Gefahren zu bestehen, wenn man ihnen nur Vertrauen schenkte und ihnen freie Hand für selbständige, improvisierte Entscheidungen gab. Diese Erkenntnis war revolutionär in einer Zeit, in der man der Jugend nichts zutraute, sie mit aller Strenge erzog und ihr jeden Schritt vorschrieb.\n\nDie Presse berichtete ausführlich über Mafeking und als Bi Pi 1901 nach England zurückkehrte, war er ohne sein Wissen und seinen Willen ein Held und ein Idol der Jugend geworden. Viele Jungen hatten sich sein Buch „Aids for Scouting“ besorgt, und lasen über die Waldläufergeheimnisse ihres Idols. Bi Pi fand dies sehr bedenklich, denn das Buch war für Soldaten geschrieben. Als Mann, der den Frieden liebte, wollte er nicht, dass das Buch in die Hände von Jungen kam, doch sie begannen bereits es zu lesen. Deshalb beschloss Bi Pi ein zweites Buch „Scouting for Boys“ zu schreiben, in dem er seine neuen Erkenntnisse über die Jugend aus seiner Zeit in Mafeking mit seinem Waldläuferwissen verknüpfte. Doch er hatte wenig Zeit zum Schreiben. Erst bildete er die neugegründete Schutzpolizei Südafrikas aus. Sie trugen einen Filzhut mit breitem Rand, Halstuch und Khakihemd - die spätere Tracht der Pfadfinder. 1903 wurde er zum Generalinspekteur der gesamten britischen Kavallerie ernannt und reiste von Garnison zu Garnison. Als er 1907 endlich die Zeit fand sein Buch zu schreiben, wollte er zuvor noch einige Erfahrungen sammeln. Er trommelte 22 Jungen aus verschiedenen Gesellschaftsschichten zusammen, vom reichen Adelssohn bis zum armen Arbeiterkind, und veranstaltete mit ihnen ein Zeltlager auf der Insel Brownsea. Dieses Lager kann man als das allererste Pfadfinderlager bezeichnen. „Der Trupp der Jungen“, so berichtete Bi Pi, „ wurde aufgeteilt in Patrouillen (Horten) zu fünf Mann. Der Älteste wurde Patrouillenführer. Jedem Patrouillenführer wurde volle Verantwortung für das Verhalten seiner Leute übertragen. Die Patrouille war eine Einheit für Ausbildung, Arbeit und Spiel. Sie lagerte an ihrem eigenen Platz. Die Jungen wurden bei ihrer Ehre verpflichtet, die angeordneten Dinge auch auszuführen. Verantwortlichkeit und gesunde Rivalität wurden auf diese Weise geweckt. Eine gute, grundlegende Ausbildung erfolgte jeden Tag und so wurde der gesamte Trupp fortschreitend in den Dingen des Pfadfindertums geübt.“ Zwar forderte Bi Pi Gehorsam, er legte aber Wert darauf, dass die Jungen ihm freiwillig folgten, ohne Zwang und ohne Strafe, nur auf Grund seiner Überzeugungskraft, seines guten Beispiels und seiner Persönlichkeit. Bi Pi hatte seine eigentliche Berufung erkannt und wollte von der kriegerischen Tätigkeit eines Offiziers nichts mehr wissen. Er wurde auf eigenen Wunsch pensioniert, um sich ganz seiner neuen Aufgabe widmen zu können. So wurde der General Baden Powell in seinem fünfzigsten Lebensjahr Jugendführer. In Ruhe schrieb er sein Buch „Scouting for Boys“. Es erschien 1908 als Serie, Kapitel für Kapitel, in der Jugendzeitschrift „The Scout“. Dank Bi Pi`s Popularität war es in Windeseile bis über die Grenzen des britischen Königreiches hinaus bekannt. In „Scouting for Boys“ beschrieb Bi Pi nicht nur, wie man Feuer ohne Streichhölzer machte, Knoten und Kompass gebrauchte oder den Spuren der Tiere folgte. Er beschrieb seine Idee der Pfadfinder: Er empfahl seinen jungen Lesern, sich zu kleinen Gruppen zusammenzuschließen, sich ein Wappentier zu wählen wie die Indianer, ein Versprechen abzulegen wie die Ritter, ein eigenes Gesetz anzuerkennen, täglich eine gute Tat zu tun und immer hilfsbereit zu sein. Sie sollten die freie Natur erleben und dem Rauch der Städte entfliehen.\n\nÜberall in England gründeten sich kleine Gruppen mit selbst gewählten Patrouillenführern, sie spielten und arbeiteten nach den Empfehlungen der monatlich erscheinenden Zeitschriftenserie und sie überredeten Erwachsene, die Oberleitung von mehreren Patrouillen zu übernehmen. Von selbst ergab sich für diese Erwachsenen der Name „Scoutmaster“. 1909 empfingen Bi Pi auf einer Urlaubsreise nach Südamerika zu seinem Erstaunen Pfadfinder in Chile, von deren Existenz er selbst nichts wußte. Im gleichen Jahr unternahmen zwei englische Patrouillen den ersten Pfadfinder-Auslandsbesuch. Sie durchwanderten Deutschland und trafen überall auf junge Menschen, die von der Pfadfinderidee begeistert waren und eigene Patrouillen gründeten. Damals erkannte Bi Pi, dass er mit seiner Jugendbewegung den Nerv der Zeit getroffen hatte und dass die Möglichkeit bestand, das Pfadfindertum über die ganze Welt zu verbreiten. Er entwickelte den Traum einer großen Bruderschaft, gleich den Ritterorden des Mittelalters, jedoch für friedliche Zwecke, ohne Trennung durch Gesellschaftsklasse, Rasse, Nationalität oder Religionsgemeinschaft. Die Ritterlichkeit war für Bi Pi eine besonders wertvolle Charaktereigenschaft, und deshalb wurde er auch nicht müde, in Gesprächen und seinen Schriften die Ritter als Vorbild darzustellen. Im Ritter St. Georg fand er die Tugenden der Ritterlichkeit vereint und er erklärte ihn offiziell zum Schutzpatron der Pfadfinder. Auf einem Pfadfindertreffen 1909 in London erblickte Bi Pi unter seinen Boy Scouts plötzlich eine Schar von Mädchen, die ebenfalls die Pfadfindertracht trugen. Sie kamen auf ihn zu und sagten: „Wir sind Girl Scouts, Mister Baden Powell.“ Er war begeistert, dass sich seiner ursprünglich nur für Jungen gedachten Organisation nun auch Mädchen anschließen wollten und er ging sofort daran, Gruppen von Pfadfinderinnen zu gründen. Die gemeinsame Erziehung von Jungen und Mädchen war zu der Zeit kaum denkbar. Deshalb entstand eine von den Boy Scouts streng getrennte, eigene Organisation weiblicher Pfadfinder, die von Bi Pi „Girl Guides“ genannt wurde. Einige Gruppen nannten sich aber weiterhin „Girl Scouts“. Bi Pi wollte damals sein Buch „Scouting for Boys“ für die Interessen der Mädchen umschreiben. Er merkte aber, dass er als Mann dafür nicht so recht geeignet war. Die Girl Guides waren am Anfang ohne zentrale Führung etwas organisationslos. Doch das Schicksal führte Bi Pi auf einer Schiffsreise im Jahr 1912 mit der 22jährigen Olave St. Clair zusammen, in die er sich verliebte und die er kurz darauf heiratete. Olave begeisterte sich für die Pfadfinderidee ihres Mannes und übernahm 1916 die Führung der Girl Guides. Im selben Jahr kam Bi Pi zu der Überzeugung, dass es sinnvoll sei, die Jugendlichen in zwei Altersgruppen zu teilen: In die „Wölflinge“ (bis zum elften Lebensjahr) und die eigentlichen Pfadfinder, die mindestens zwölf Jahre alt sein sollten. Beide Gruppen sollten eine getrennte, ihrem Alter gemäße Ausbildung erhalten. Seit 1919 gibt es auch eine dritte Altersgruppe: Die „Rover“ (vom 19. bis zu 21. Lebensjahr). 1919 bekamen die Pfadfinder von einem schottischen Landedelmann den Gilwellpark bei London als Ausbildungsort für Scoutmaster geschenkt.\n\n1920 veranstaltete Bi Pi das erste internationale Pfadfindertreffen (Jamboree) in London, wo in der Olympia Hall 8000 Pfadfinder aus 27 Ländern zusammen kamen. Bei dieser Gelegenheit wurde er zum ersten und einzigen „Chief Scout of the World“ (Weltpfadfinderführer) ausgerufen. 1922 entstand das zwölfköpfige Weltkomitee, die Weltkonferenz und das internationale Büro. Zu dieser Zeit zählte die Pfadfinderbewegung über eine Million Mitglieder in 32 Ländern. Der Name des Gilwell Parks wurde 1929 auch Bestandteil des Namens von Bi Pi, als ihn der König zum Lord adelte. Fortan hieß er Sir Baden Powell, Lord of Gilwell. Er war damals 72 Jahre alt. Im Jahr darauf wurde Lady Olave Baden Powell zur “Chief Guide of the World“ zur obersten Weltpfadfinderführerin. Sie blieb dies bis zu ihrem Tod im Jahr 1977. Bi Pi zog sich 1937 nach Nyeri in Kenia zurück. Er starb dort am 8.1.1941. Kurz zuvor schrieb er einen Brief in dem er sich von seinen Scouts verabschiedete. Er liegt in Nyeri begraben. Auf seinem Grabstein ist ein Kreis mit einem Punkt in der Mitte. Dies ist ein Waldläuferzeichen und bedeutet: „Ich habe meinen Auftrag erfüllt und bin nach Hause gegangen.“\n\nDie wichtigsten Daten aus dem Leben von Bi Pi: 1857 1859 1870 1876 1884-85 1888 1889-92 1899 1901\n\n1903 1907 1908 1909 1912 1914 1916 1919 1920 1922 1929 1937 1941\n\nAm 22. Februar in London geboren Vater: Baden Powell Mutter: Henrietta Grace Smith Tod des Vaters Eintritt in die Charterhouse-Schule Eintritt in die militärische Laufbahn Übersiedlung nach Indien Zieht mit seinem Regiment über Afrika zurück nach England Teilnahme am Feldzug im Zululand Teilnahme am Aschantifeldzug Er lernt Waldläufertechniken von den Eingeborenen und schreibt „Aids for Scouting“ Veröffentlichung des Buches „Aids for Scouting“ Burenkrieg: 217 Tage Verteidigung von Mafeking Setzt Jungen als Späher, Melder und Sanitäter ein Zurück nach England Beförderung zum General, Auszeichnung durch das Kreuz des Bath-Ordens Ausbildung der Schutzpolizei Südafrikas Generalinspekteur der gesamten britischen Kavallerie Erstes Pfadfinderlager mit 22 Jungen auf der Insel Brownsea Austritt aus der Armee, widmet sich ganz der Pfadfinderarbeit Er schreibt „Scouting for Boys“ Veröffentlichung von „Scouting for Boys“ in der Zeitschrift „The Scout“ Sprunghaftes Wachstum der Pfadfinderbewegung Erste Pfadfinderinnen „Girl Guides“ oder „Girl Scouts“ Pfadfinder außerhalb Englands Heirat mit Miss Olave St. Chair Soames Mobilmachung der englischen Pfadfinder für die Landesverteidigung im Ersten Weltkrieg Tod der Mutter Olave St. Chair übernimmt die Führung der englischen Girl Guides Aufteilung in Wölflinge und Pfadfinder Eröffnung der Roverbewegung Erstes internationales Jamboree in London Bi Pi wird „Chief Scout of the World“ Einführung des Weltkomitees, der Weltkonferenz und des internationalen Pfadfinderbüros Geadelt zum Lord of Gilwell Abschied von den Pfadfindern beim Jamboree in Holland Übersiedlung nach Afrika Tod am 8. Januar Beerdigt in Nyerie / Kenia am 9. Januar\n\nPr. 28.1 - S. 1",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 27"
+   ],
+   "themen": [
+    "Geschichte der Pfadfinder"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
+   }
+  },
+  {
+   "id": "pb-geschichte-des-dpb",
+   "titel": "Geschichte des DPB",
+   "element_typ": "projekt",
+   "kategorie": "wissen",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 90,
+   "dauer_max": 120,
+   "ort": "drinnen",
+   "material": [],
+   "vorbereitung": "mittel",
+   "kurz": "Der „Deutsche Pfadfinderbund“, dem wir angehören, wurde im Jahr 1945 von Walter Jansen, mit Fahrtennamen Michael, gegründet (Michael wurde am 27.10.1897 geboren und starb am 5.11.1959).",
+   "beschreibung": "Der „Deutsche Pfadfinderbund“, dem wir angehören, wurde im Jahr 1945 von Walter Jansen, mit Fahrtennamen Michael, gegründet (Michael wurde am 27.10.1897 geboren und starb am 5.11.1959). Die Wurzeln unseres Bundes reichen jedoch weit in die Vorkriegszeit hinein. So hat es schon vor dem Zweiten Weltkrieg einen DPB gegeben. Um ihn von unserem Bund zu unterscheiden, nennen wir ihn auch den Alten DPB. Er ist der älteste aller Pfadfinderbünde Deutschlands. Nachdem Bi Pi 1908 die Pfadfinderbewegung in England ins Leben gerufen hatte, gab es bereits 1909 erste Pfadfinder in Deutschland. In diesem Jahr übersetzten Dr. Alexander Lion und Maximilian Bayer das Buch „Scouting for Boys“ von Bi Pi ins Deutsche. Unter dem Titel „Das Pfadfinderbuch“ half es der Pfadfinderbewegung in Deutschland zu einer raschen Verbreitung. Am 18. Januar 1911 wurde der „Deutsche Pfadfinderbund“ ausgerufen. Sein erster „Reichsfeldmeister“ (Bundesvogt) war Maximilian Bayer. Im Ersten Weltkrieg (1914-1918) waren deutsche, sowie englische Pfadfinder im Kriegshilfsdienst tätig. Ein trauriges Kapitel für eine Bewegung, die als weltweite Friedensgemeinschaft erdacht worden war. Nach dem Krieg war der DPB in sich stark zerstritten. Viele kritisierten den straffen, militärischen Stil des Bundes. 1920 traten einige Gruppen unter Martin Voelkel aus dem DPB aus und nannten sich fortan „Bund der Neupfadfinder“. Sie wollten Wandervögel und Pfadfinder vereinen, autoritäre Strukturen durch eine brüderliche Gemeinschaft ablösen und forderten eine junge Führerschaft, die aus den Gruppen herauswuchs. Erstmals kam der Begriff „Bündische Pfadfinder“ auf (siehe Probe 28, Kapitel 3). Die neuen Ideen setzten sich auch im DPB durch und bereits 1922 bekannte sich der DPB zur bündischen Jugend. In diesem Jahr wurde unabhängig vom DPB der Neudeutsche Pfadfinderbund gegründet. Michael war Mitglied und später Führer dieses Bundes. Es war ein bündischer Pfadfinderbund, der sich den Gedanken des Bundes der Neupfadfinder sehr verbunden fühlte. Die von Bi Pi geprägte Idee des ritterlichen Menschen fand hier sehr großen Zuspruch. Der Orden, ein wichtiger Teil unseres Bundes, gewann hier erstmals Gestalt. Unsere Bundeslilie ist die Lilie des Neudeutschen Pfadfinderbundes. Im Jahre 1932 schlossen sich der Neudeutsche Pfadfinderbund, der Deutsche Späherbund, der Bund der Reichspfadfinder und die Ringgemeinschaft Deutscher Pfadfinder zur Reichsschaft Deutscher Pfadfinder zusammen. 1933 wurde Michael ihr Reichsvogt (Bundesvogt). Unser Bundeslied, unserer Kluft und wesentliche Formen unseres Bundes stammen aus der Reichsschaft Deutscher Pfadfinder. In den Jahren 1933/34 wurde die Bündische Jugend von den Nazis verboten. Dieses Verbot hatte sowohl die Auflösung des DPB, wie auch der Reichsschaft zur Folge. Michael ging in den aktiven Widerstand und beteiligte sich 1944 an einem Attentat auf Hitler und kam\n\ndafür ins Konzentrationslager Sachsenhausen. Doch die Idee des Bundes lebte weiter. Michael schrieb in seinem Pfadfinderspiegel: „Der Gedanke des Ordens wurde von der Reichsschaft (1932) übernommen und nach der gewaltsamen Auflösung der letzten deutschen Pfadfinderbünde im Mai 1934 auch in den Gefängnissen und Konzentrationslagern bewahrt.“ So kam es, dass Michael 1945, nach der Befreiung Deutschlands von der Diktatur, im zerbombten Berlin sofort wieder einen neuen Bund aufbaute. Um Michael sammelten sich Führer aus nahezu allen Pfadfinderbünden der Vorkriegszeit. Eine wichtige Rolle spielte Ebbo (Eberhart Plewe, langjähriger Auslandsvertreter der Bünde vor 1934). Der neue Bund lebte in den Formen der Reichsschaft, trug aber mit Einverständnis des letzten Reichsvogtes des alten DPB den Namen Deutscher Pfadfinderbund. In diesem Jahr schrieb Michael auch den Pfadfinderspiegel. Er schrieb ihn für die jungen Pfadfinder und beschrieb sowohl die Geschichte der Bündischen Jugend und der Pfadfinderbewegung, als auch unseren Bund in seinen Formen und in seinem Wesen. Dieses Buch ist noch heute wichtig für unseren Bund und ihr solltet euch nicht davor scheuen es zu lesen. 1946 wurde der Orden am 17. Oktober mit dem Namen „Orden St. Georg über der Jungenschaft“ von Michael neu gestiftet.\n\n1976 - Bundeslager an der Wupper\n\nDie Siegermächte (Rußland, USA, Frankreich, England) hatten ganz Deutschland und Berlin in Besatzungszonen eingeteilt. Die Russen wehrten sich gegen den neuen Pfadfinderbund und so hieß der DPB in seinen ersten Jahren offiziell „Bund Deutscher Jugend von Berlin“. 1950 konnte wir uns „Deutscher Pfadfinderbund im Bund Deutscher Jugend“ nennen und erst ab 1952 hießen wir auch offiziell „Deutscher Pfadfinderbund“. In Westdeutschland wurden die Pfadfinder nach einem kurzen Verbot in der unmittelbaren Nachkriegszeit bald zugelassen und von den Besatzungsmächten gefördert. Nach der Teilung Berlins beschränkte sich das Gebiet des Deutschen Pfadfinderbundes auf den Westteil der Stadt. 1948 schlossen sich die westdeutschen Pfadfinder unter Moderation der Besatzungsmächte zum Ring Deutscher Pfadfinderverbände zusammen. Es entstanden die drei großen Bünde: Bund Deutscher Pfadfinder (BDP), unkonfessionell Deutsche Pfadfinderschaft St. Georg (DPSG), katholisch Christliche Pfadfinderschaft (CP), evangelisch Sie fanden Aufnahme im Londoner Büro des Weltscoutverbandes ohne den DPB, von dem sie wußten und der größer war als jeder dieser Bünde, darüber zu informieren. Das Londoner Büro nimmt pro Land nur einen Verband auf. Um dem Weltverband anzugehören müßten wir dem Ring Deutscher Pfadfinderverbände beitreten. Dies wurde uns verwehrt. Unsere Ablehnung gilt also nicht dem Weltverband, sondern dem Ring Deutscher Pfadfinderverbände. Während in den ersten Nachkriegsjahren der DPB nur auf Berlin beschränkt war, fanden später westdeutsche Gruppen zum Bund, besonders solche, die dem alten DPB oder der Reichsschaft nahestanden. Beim ersten Bundeslager in Rittersheim 1951 waren bereits westdeutsche Stämme vertreten. Heute hat sich das Gewicht des Bundes stärker nach Westdeutschland verlagert. 1959 starb Michael. Er war bis zu seinem Tod unser Bundesvogt. Die Jahre nach seinem Tod waren nicht einfach. Der Bund war sich über seinen Weg nicht mehr einig. Im Zuge der 68er Bewegung wurden Forderungen laut, die Kluft abzuschaffen und die Form des Bundes von Grund auf zu verändern. Dies konnte mit einer knappen Mehrheit im Bundesthing gerade noch verhindert werden. Mädchen gab es im DPB schon fast seit der ersten Stunde. Ihre Rolle war jedoch ungeklärt. Michael förderte zwar die Mädchenarbeit, schrieb seinen Pfadfinderspiegel und einen Großteil seiner Reden aber nur für Jungen. Mitte der 50er Jahre bildeten sich aus den Mädchengruppen erste Gaue. Die Führerinnen der Mädchengruppen begannen eigene Treffen zu veranstalten und kamen sich so näher. 1957 erhielt Lotte Hengst von Michael den Auftrag zur Bildung eines „Konventes der Geusinnen“ ähnlich den Konventen der Ritter im Orden St. Georg. Pfingsten 1960 nahm der Konvent seine Arbeit auf. Im Oktober des gleichen Jahres schlossen sich die Mädchengaue und Mädelschaften auf der Führerinnentagung auf der Wewelsburg (bei Paderborn) zum DPB - Mädchenbund zusammen. Mit der Ablehnung des Namens „Deutscher Pfadfinderinnenbund“ bekannten sich die Mädchen zu ihren Wurzeln und bildeten als eigener Bund eine Einheit des DPB. Erste Führerin des Mädchenbundes wurde Lotte.\n\n1969 entstand parallel zum Mädchenbund der Jungenbund. Sein erster Bundesvogt war Wag. Seit der Deutschen Einheit und dem Ende der DDR (9.11.89 Fall der Mauer / 3.10. 1990 „Tag d. deutschen Einheit“) breitet sich unser Bund (hauptsächlich von Berlin aus) auch in den neuen Bundesländern aus. Das Bundeslager 1993 fand bereits in Mönchswinkel, südöstlich von Berlin, an der Spree statt. Der „Konvent der Geusinnen“ hatte nur knapp sechs Jahre gehalten. Anstatt eines eigenen Ordens entwickelte sich bei den Mädchen die Bundesgilde. Ihr gehören alle Gildenmeisterinnen des Mädchenbundes an. Sie hat, wie der Orden, eine eigene Ordnung und Lebensform und ist eine Gemeinschaft der Frauen des Bundes, die dem Mädchenalter entwachsen sind. Mitte der 90er Jahre fand sich ein Kreis von Frauen, die in den Formen eines Ordens leben wollten. Der Stiftung eines Frauenordens standen jedoch einige Hindernisse im Weg. Erstens musste die Bundesordnung geändert werden, nach der sich der DPB in den Mädchenbund, den Jungenbund und den Orden St. Georg gliederte. Zweitens musste ein Stifter gefunden werden und drittens musste geklärt werden, welche Rolle die Bundesgilde fortan spielen sollte. Erst Ostern 1999 stiftete Defense auf den Wunsch einiger Frauen hin den Orden St. Christophorus auf der Insel Kreta. Der Orden wurde als vierte Säule im DPB aufgenommen. Die Bundesgilde blieb als fester Bestandteil des Mädchenbundes bestehen. Die Reihenfolge der Bundesvögte bis 2003 lautet: Michael, Grim, Sim, Manne, Grim, Sim, Wag, Pingi, Bolko, Horst, Bolko, Defense, Evi.\n\nUm die Geschichte des DPB nicht zu kompliziert zu gestalten, haben wir das Leben Michaels nur kurz angesprochen. Hier sollen nun noch einmal einige Stationen seines Lebens zusammen gefasst werden. Diesen Teil der Probe sollt ihr nicht auswendig lernen. Die Jahreszahlen dienen nur der Orientierung. Ihr sollt ein Bild bekommen von dem Mann, der unseren Bund gründete und prägte. Am 27. Oktober 1897 erblickte Walter Jansen, als Sohn von Oskar und Camilla Jansen, in Breslau das Licht der Welt. Sein Bruder war zwei und seine kleine Schwester drei Jahre jünger. Als ältester Sohn sollte er die Zahntechnikerpraxis seines Vaters übernehmen. Er war jedoch ein schlechter Schüler, der nur durch seine Begabung im Schreiben auffiel. Im Ersten Weltkrieg ging er freiwillig an die Front und überlebte dort nur mit viel Glück. Sein Wissen über das Grauen des Krieges hat ihn sein Leben lang nicht verlassen und manche Entscheidung mit geprägt. Schon vor dem Krieg hatte sich Michael einer Gruppe angeschlossen, die dem Wandervogel nahe stand. Nach dem Krieg entwickelte sich eine neue Gruppe, die sich von einem Wanderverein schnell zum Neudeutschen Pfadfinderbund entwickelte. Michael beendete in dieser Zeit seine Ausbildung zum Zahntechniker und arbeitete mit dem Vater. Etwa ab 1921 betätigte er sich als freier Schriftsteller. Bis etwa 1938 war er in einem Verlag als Lektor und Archivar tätig. Ab 1933 hatte er ständig Ärger mit der Gestapo („Polizei“ der Nazis) wegen illegaler Weiterführung einer verbotenen Jugendorganisation. 1938 kam er das erste mal in Gestapohaft. Nach kurzem Exil in Holland bekam Michael durch Beziehungen eine Stelle im Auswärtigen Amt als Pressearchivar. Er war dadurch über die Verhältnisse im In- und Ausland informiert und wusste früh von den Vernichtungslagern der Nazis und von den militärischen Niederlagen. Dieses Wissen verstärkte seine Aktivität im Widerstand. Von 1943 bis 1944 lief gegen ihn ein Verfahren wegen antinationalsozialistischer Tätigkeit. Nach dem gescheiterten Attentat auf Hitler am 20.7.1944 kam er am 26.7. in Gestapohaft (Moabit/Berlin). Von dort aus wurde er in das KZ Sachsenhausen verlegt. Er überlebte den „Todesmarsch nach Wittstock“ auf dem die Gefangenen, die zu langsam waren, einfach erschossen wurden. Anfang Mai wurde er von den Russen befreit und 1946 als Opfer des Faschismus offiziell anerkannt. Er arbeitete weiter für das Auswärtige Amt und widmete seine ganze Zeit der Pfadfinderidee und dem Orden. Er zog nach Bonn und seine Wohnung war jedes Wochenende voll von Pfadfindern aus ganz Deutschland. Er war ein guter Koch und leidenschaftlicher Esser. Er muss eine starke Ausstrahlung gehabt haben und wird immer wieder als idealer Jungenführer bezeichnet. Michael war ein guter Schlichter und Zuhörer. Von seinen tiefen Gedanken finden wir heute Spuren in seinen Gedichten, Liedern und Texten. Er war ein sehr gläubiger Mensch und als Idealist führte er sein Leben in eiserner Konsequenz. Nicht edel denken, sondern anständig handeln! Nicht das Gute wollen, sondern das Gute tun! Nicht den rechten Weg wissen, sondern den rechten Weg gehen. Michael starb am 5. November 1959 in Hamburg und wurde dort am 10.11. von seinen Bundesbrüdern zu Grabe getragen.\n\nZeittabelle zur Geschichte des DPB: 1897 1908 1909 1911 1920 1922 1932 1933/34 1938 - 1945 1945 1946 1948 1951 1959 1960 1969 1990 1999\n\nWalter Jansen (Michael) wird am 27.10. geboren Bi Pi gründet die Pfadfinderbewegung in England Erste Pfadfinder in Deutschland Dr. Alexander Lion und Maximilian Bayer übersetzen „Scouting for Boys“ Gründung des „Deutschen Pfadfinderbundes“ Maximilian Bayer Abspaltung des „Bund der Neupfadfinder“ Martin Voelkel Gründung des „Neudeutschen Pfadfinderbundes“ Rulf / Michael Vereinigung zur „Reichsschaft Deutscher Pfadfinder“ Verbot der Bündischen Jugend und der Pfadfinder Widerstand im Zweiten Weltkrieg Neugründung des DPB unter dem Namen: „Bund Deutscher Jugend in Berlin“ Neustiftung des „Orden St. Georg über der Jungenschaft“ (Männerorden) Gründung des „Ring Deutscher Pfadfinder“ in West-Deutschland Erstes Bundeslager in Rittersheim Michael stirbt am 5.11. in Hamburg Gründung des Mädchenbundes Gründung des Jungenbundes Deutsche Einheit – Ausbreitung des Bundes in Ost-Deutschland Stiftung des „Orden St. Christophorus“ (Frauenorden)",
+   "tipps": "",
+   "tags": [
+    "Probenbuch",
+    "Pfadfinderwissen",
+    "Probe 29"
+   ],
+   "themen": [
+    "Geschichte des DPB"
+   ],
+   "quelle": {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers"
    }
   },
   {

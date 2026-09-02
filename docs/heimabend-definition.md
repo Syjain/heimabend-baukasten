@@ -27,4 +27,6 @@ Andere Gruppen (z. B. der Heimabend-Inspirator des DPBM, heute gruppenstunde.de)
 - **Gemeinschaftsaktivitäten** (raus gehen, Wald, Werken, Kochen, Singen, gute Tat)
 - **Projekte** – eigene Kategorie, in die die Inhalte des DPBM-Inspirators passen
 
-Offen: Probenbuch-Inhalte des DPB als eigene Quelle erfassen (dafür gibt es keine offene Datenquelle).
+Erledigt (03.09.2026): Die Proben des DPB-Probenbuchs (3. Auflage) liegen als eigene Quelle unter
+`data/quellen/probenbuch/`. Offen bleiben die Abbildungen (Knoten, Zeltbau, Karten), die in der
+Textextraktion fehlen, und die beiden Lied-Proben.

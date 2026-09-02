@@ -9,6 +9,7 @@
 | Spielereader https://github.com/oliverklee/spielereader | PDF/LaTeX, 7 Kapitel | CC BY-SA 3.0 DE | selektiv, manuell taggen |
 | Heimabend-Inspirator (DPBM) | 211 Ideen in `data/quellen/inspirator/` | CC BY-NC 4.0 | liegt bereits im Repo, siehe README dort |
 | eigene Ideen | 61 in `data/eigene/` | eigene (Vorschlag CC BY-SA 4.0) | liegt im Repo |
+| DPB-Probenbuch, 3. Auflage | 30 Proben (28 mit Text), Stand ca. 2003, ohne Abbildungen | Rechte beim Projektinhaber | `data/quellen/probenbuch/proben-dpb.json`, aus dem PDF extrahiert; siehe README dort |
 
 ## Nur mit Erlaubnis (anfragen)
 - ejb.vernetzt Spielekatalog https://ejb-vernetzt.de/spielekatalog/ – ~160 Spiele, offene API `https://ejb-vernetzt.de/wp-json/wc/store/v1/products?per_page=100`, keine Lizenzangabe

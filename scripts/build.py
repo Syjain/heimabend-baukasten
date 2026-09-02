@@ -7,6 +7,7 @@ Aufruf:
 
 Gelesen werden:
     data/eigene/heimabend-ideen.json                    (61 eigene Ideen)
+    data/quellen/probenbuch/proben-dpb.json             (30 Proben aus dem DPB-Probenbuch)
     data/quellen/inspirator/inspirator-ideen.json       (211 Ideen, CC BY-NC 4.0)
     data/quellen/pfadfinder-spiele/elemente.json        (Ausgabe von import_pfadfinder_spiele.py)
     data/quellen/spielewiki/elemente.json               (Ausgabe von import_spielewiki.py)
@@ -37,6 +38,7 @@ from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
 EIGENE = WURZEL / "data" / "eigene" / "heimabend-ideen.json"
+PROBENBUCH = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb.json"
 INSPIRATOR = WURZEL / "data" / "quellen" / "inspirator" / "inspirator-ideen.json"
 PFADFINDER_SPIELE = WURZEL / "data" / "quellen" / "pfadfinder-spiele" / "elemente.json"
 SPIELEWIKI = WURZEL / "data" / "quellen" / "spielewiki" / "elemente.json"
@@ -336,6 +338,145 @@ def lade_eigene(vergeben):
     return elemente
 
 
+# ---------------------------------------------------------------- Probenbuch
+# Rechte am Probenbuch liegen beim Projektinhaber (Auskunft 02.09.2026).
+# Diese Angaben stehen bei jedem Element in der App.
+PROBENBUCH_QUELLE = {
+    "name": "DPB-Probenbuch (3. Auflage)",
+    "url": "",
+    "autor": "Deutscher Pfadfinderbund",
+    "lizenz": "DPB-Probenbuch – Nutzung mit Erlaubnis des Rechteinhabers",
+}
+
+# Zuordnung jeder Probe: Nummer -> (element_typ, kategorie, ort, Material)
+# Bewusst als vollständige Tabelle, damit sie nachprüfbar und leicht zu korrigieren ist.
+# Die Nummern 1 und 2 (Liednoten) fehlen absichtlich – sie haben keinen Text.
+PROBENBUCH_ZUORDNUNG = {
+    3:  ("probe", "karte_kompass", "draussen", []),
+    4:  ("probe", "bundeskunde", "drinnen", []),
+    5:  ("probe", "bundeskunde", "drinnen", []),
+    6:  ("probe", "bundeskunde", "drinnen", ["Kluft"]),
+    7:  ("probe", "bundeskunde", "drinnen", []),
+    8:  ("probe", "bundeskunde", "beides", []),
+    9:  ("probe", "bundeskunde", "beides", []),
+    10: ("probe", "fahrtentechnik", "drinnen", ["Fahrtenrucksack", "Fahrtengepäck"]),
+    11: ("probe", "knoten", "beides", ["Seile/Reepschnüre"]),
+    12: ("probe", "zelte_bauten", "draussen", ["Kohte oder Jurte", "Zeltstangen", "Heringe", "Seile"]),
+    13: ("probe", "feuer", "draussen", ["Feuerholz", "Streichhölzer", "Löschwasser"]),
+    14: ("probe", "zelte_bauten", "draussen", ["Seile", "Stangen"]),
+    15: ("probe", "fahrtentechnik", "beides", ["Kochgeschirr", "Zutaten"]),
+    16: ("probe", "fahrtentechnik", "drinnen", ["Nadel und Faden", "Werkzeug"]),
+    17: ("probe", "sonstiges", "draussen", []),
+    18: ("probe", "bundeskunde", "drinnen", []),
+    19: ("probe", "karte_kompass", "draussen", ["Karte", "Kompass"]),
+    20: ("probe", "karte_kompass", "beides", ["Kompass"]),
+    21: ("probe", "karte_kompass", "beides", ["Karte"]),
+    22: ("probe", "karte_kompass", "draussen", ["Karte", "Kompass"]),
+    23: ("probe", "natur", "draussen", []),
+    24: ("probe", "natur", "draussen", []),
+    25: ("probe", "erste_hilfe", "beides", ["Verbandsmaterial"]),
+    26: ("probe", "erste_hilfe", "beides", ["Verbandsmaterial", "Dreiecktücher"]),
+    # Die drei Geschichts-Kapitel sind zu umfangreich für eine Probe im Hauptteil
+    # und füllen einen ganzen Abend -> Projekt (Entscheidung vom 02.09.2026).
+    27: ("projekt", "wissen", "drinnen", []),
+    28: ("projekt", "wissen", "drinnen", []),
+    29: ("projekt", "wissen", "drinnen", []),
+    30: ("probe", "bundeskunde", "drinnen", []),
+}
+# Proben, bei denen die Zeichnungen aus dem gedruckten Buch fehlen und deshalb
+# gebraucht werden (die JSON-Extraktion enthält nur den Text).
+PROBENBUCH_BRAUCHT_BILDER = {3, 11, 12, 13, 19, 20, 21, 22, 23, 24, 26}
+
+
+def probenbuch_absaetze(text):
+    """
+    Fügt den harten Zeilenumbruch der PDF-Extraktion wieder zu Absätzen zusammen.
+    Leerzeilen trennen Absätze, Zeilen mit "- " bleiben eigene Aufzählungspunkte.
+    """
+    absaetze = []
+    for absatz in re.split(r"\n\s*\n", text or ""):
+        teile = []
+        for zeile in (z.strip() for z in absatz.split("\n")):
+            if not zeile:
+                continue
+            if re.match(r"^[-–•*]\s+", zeile):
+                teile.append("- " + re.sub(r"^[-–•*]\s+", "", zeile))
+            elif teile:
+                teile[-1] += " " + zeile
+            else:
+                teile.append(zeile)
+        if teile:
+            absaetze.append("\n".join(teile))
+    return "\n\n".join(absaetze)
+
+
+def lade_probenbuch(vergeben):
+    """Mappt data/quellen/probenbuch/proben-dpb.json auf das Element-Schema."""
+    if not PROBENBUCH.exists():
+        print("  ACHTUNG: {} fehlt – Proben werden übersprungen.".format(PROBENBUCH))
+        return []
+    with open(PROBENBUCH, encoding="utf-8") as datei:
+        daten = json.load(datei)
+
+    # Die Warnungen aus meta.achtung_veraltet den betroffenen Proben zuordnen,
+    # damit niemand versehentlich Erste Hilfe von 2003 vermittelt.
+    warnungen = {}
+    for warnung in daten.get("meta", {}).get("achtung_veraltet", []):
+        for nummer in re.findall(r"\d+", warnung.split(":")[0]):
+            warnungen.setdefault(int(nummer), []).append(warnung.strip())
+
+    elemente, ohne_text, ohne_zuordnung = [], [], []
+    for probe in daten.get("proben", []):
+        nummer = probe.get("nummer")
+        beschreibung = probenbuch_absaetze(probe.get("text_roh"))
+        if len(beschreibung) < 40:
+            ohne_text.append("{} {}".format(nummer, probe.get("titel")))
+            continue
+        if nummer not in PROBENBUCH_ZUORDNUNG:
+            ohne_zuordnung.append("{} {}".format(nummer, probe.get("titel")))
+            continue
+        typ, kategorie, ort, material = PROBENBUCH_ZUORDNUNG[nummer]
+
+        hinweise = list(warnungen.get(nummer, []))
+        if probe.get("hinweis"):
+            hinweise.append(probe["hinweis"].strip())
+        if nummer in PROBENBUCH_BRAUCHT_BILDER:
+            hinweise.append("Die Zeichnungen aus dem gedruckten Probenbuch fehlen in "
+                            "dieser Textfassung – für den Heimabend mitbringen.")
+
+        if typ == "projekt":
+            dauer_min, dauer_max = 90, 120
+            altersstufen = ["Pfadfinder", "Ältere"]
+        else:
+            dauer_min, dauer_max = 30, 60
+            altersstufen = []  # gilt für alle Stufen
+
+        elemente.append({
+            "id": mache_id("pb", probe["titel"], vergeben),
+            "titel": probe["titel"],
+            "element_typ": typ,
+            "kategorie": kategorie,
+            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "altersstufen": altersstufen,
+            "dauer_min": dauer_min,
+            "dauer_max": dauer_max,
+            "ort": ort,
+            "material": list(material),
+            "vorbereitung": "mittel",  # eine Probe will vorbereitet sein
+            "kurz": kurzfassung(beschreibung),
+            "beschreibung": beschreibung,
+            "tipps": "\n\n".join(hinweise),
+            "tags": ["Probenbuch", "Pfadfinderwissen", "Probe {}".format(nummer)],
+            "themen": [probe["titel"]],
+            "quelle": dict(PROBENBUCH_QUELLE),
+        })
+    if ohne_text:
+        print("    ohne Text übersprungen: {}".format(", ".join(ohne_text)))
+    if ohne_zuordnung:
+        print("    ohne Zuordnung in PROBENBUCH_ZUORDNUNG: {}".format(", ".join(ohne_zuordnung)))
+    return elemente
+
+
 # ---------------------------------------------------------------- Inspirator
 # arten des Inspirators -> Kategorie für element_typ "projekt"
 INSPIRATOR_PROJEKT = [
@@ -525,6 +666,9 @@ def main():
     elemente = []
     elemente += lade_eigene(vergeben)
     print("  eigene Ideen:        {}".format(len(elemente)))
+    vorher = len(elemente)
+    elemente += lade_probenbuch(vergeben)
+    print("  DPB-Probenbuch:      {}".format(len(elemente) - vorher))
     vorher = len(elemente)
     elemente += lade_inspirator(vergeben)
     print("  Inspirator:          {}".format(len(elemente) - vorher))
