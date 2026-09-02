@@ -106,7 +106,7 @@ KATEGORIE_REIHENFOLGE = [
 # Vorlagen, die ersatzlos aus dem Text verschwinden (Werbung, Navigation, Zählpixel).
 TEMPLATE_ENTFERNEN = {
     "amazon", "metis", "box kategorien", "weitere", "bilderwunsch",
-    "hauptartikel", "siehe auch", "toc", "nowiki",
+    "hauptartikel", "siehe auch", "toc", "nowiki", "lösung", "loesung",
 }
 # Abschnitte, die nicht in die Beschreibung gehören (Verweise nach außen).
 ABSCHNITT_ENTFERNEN = {
@@ -252,8 +252,6 @@ def entferne_vorlagen(text):
             return ""
         if not teile:
             return inhalt.strip()  # z. B. {{Ohne Material}} -> "Ohne Material"
-        if name in ("lösung", "loesung"):
-            return "Lösung: " + teile[-1].split("=")[-1]
         return ""
 
     vorher = None
@@ -314,8 +312,17 @@ def wikitext_zu_text(wikitext):
             continue
         ziel = tipps if abschnitt in ABSCHNITT_TIPPS else beschreibung
         aufzaehlung = re.match(r"^\s*[*#]+\s*(.*)$", zeile)
+        begriff = re.match(r"^;\s*(.+?)\s*$", zeile)
+        erklaerung = re.match(r"^:\s*(.+?)\s*$", zeile)
         if aufzaehlung:
             ziel.append("- " + aufzaehlung.group(1).strip())
+        elif begriff:
+            # MediaWiki-Definitionsliste: ";Achtung, Verletzungsgefahr!" wäre
+            # sonst als Fließtext mit führendem Semikolon gelandet.
+            ziel.append("")
+            ziel.append("**" + begriff.group(1).rstrip(":") + "**")
+        elif erklaerung:
+            ziel.append(erklaerung.group(1))
         else:
             ziel.append(zeile.strip())
 
@@ -411,6 +418,67 @@ def map_ort(wert):
     return "beides"  # "überall", "beliebig", "Spielfeld" oder beides genannt
 
 
+def entferne_leere_ueberschriften(text):
+    """Wirft Überschriften weg, unter denen nichts mehr steht."""
+    zeilen = text.split("\n")
+    ergebnis = []
+    for i, zeile in enumerate(zeilen):
+        if re.match(r"^#+ ", zeile):
+            rest = [z for z in zeilen[i + 1:] if z.strip()]
+            if not rest or re.match(r"^#+ ", rest[0]):
+                continue
+        ergebnis.append(zeile)
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(ergebnis)).strip()
+
+
+def saeubere_loesung(text):
+    """Nimmt der Lösungsseite ihre eigene Überschrift und den Vorspann."""
+    text = re.sub(r"(?mi)^#+ *Lösung.*$", "", text)
+    text = re.sub(r"(?mi)^Lösung\s*$", "", text)
+    text = re.sub(r"(?mi)^Diese Seite beschreibt die Lösung.*$", "", text)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
+def entferne_loesungsverweis(text):
+    """
+    Entfernt den toten Satz "Die Lösung ... findet sich auf X/Lösung."
+    Die Unterseite selbst wird jetzt mitgeholt und angehängt.
+    """
+    text = re.sub(r"(?m)^.*/Lösung.*$", "", text)
+    return entferne_leere_ueberschriften(text)
+
+
+def trenne_ausserhalb_klammern(text):
+    """
+    Trennt an Komma, Semikolon, " und ", " oder " und " sowie " – aber nicht
+    innerhalb von Klammern. Sonst wird aus "20 Spielkarten (doppeldeutsch oder
+    französisch)" ein Eintrag "französisch)".
+    """
+    teile, aktuell, tiefe = [], [], 0
+    i = 0
+    while i < len(text):
+        zeichen = text[i]
+        if zeichen in "([":
+            tiefe += 1
+        elif zeichen in ")]":
+            tiefe = max(0, tiefe - 1)
+        if tiefe == 0:
+            if zeichen in ",;":
+                teile.append("".join(aktuell)); aktuell = []; i += 1; continue
+            for wort in (" und ", " oder ", " sowie "):
+                if text[i:i + len(wort)].lower() == wort:
+                    teile.append("".join(aktuell)); aktuell = []; i += len(wort)
+                    break
+            else:
+                aktuell.append(zeichen); i += 1
+                continue
+            continue
+        aktuell.append(zeichen)
+        i += 1
+    teile.append("".join(aktuell))
+    return [t for t in teile if t.strip()]
+
+
 def map_material(wert, wiki_kategorien):
     """Material-Feld -> Liste; leere Liste heißt: kein Material nötig."""
     text = nur_text(wert)
@@ -418,7 +486,7 @@ def map_material(wert, wiki_kategorien):
         return []
     if not text or re.match(r"^(ohne material|kein(e|es|erlei)?|-{1,2}|nichts)$", text.strip(), re.I):
         return []
-    teile = [t.strip(" .;") for t in re.split(r"[,;]| und | oder |\bsowie\b", text) if t.strip(" .;")]
+    teile = [t.strip(" .;") for t in trenne_ausserhalb_klammern(text) if t.strip(" .;")]
     if not teile:
         return []
     # Sehr lange Fließtext-Angaben nicht zerhacken
@@ -612,15 +680,38 @@ def main():
         titel = [m["title"] for m in mitglieder if m.get("ns") == 0]
         print("Hole den Wikitext von {} Seiten ...".format(len(titel)))
         seiten = hole_wikitexte(titel)
+        # Bei Rätselspielen steht die Lösung auf einer Unterseite, die selbst
+        # nicht in der Kategorie steht. Ohne sie ist das Spiel nicht spielbar.
+        loesungen = [t + "/Lösung" for t in titel]
+        print("Hole {} mögliche Lösungsseiten ...".format(len(loesungen)))
+        for name, seite in hole_wikitexte(loesungen).items():
+            seiten[name] = seite
+        print("  davon vorhanden: {}".format(
+            sum(1 for name in seiten if name.endswith("/Lösung"))))
         with open(ROH_SEITEN, "w", encoding="utf-8") as datei:
             json.dump(seiten, datei, ensure_ascii=False, indent=1)
         print("  Rohdaten gespeichert: {}".format(RAW))
+
+    # Lösungsseiten sind keine eigenen Spiele – sie gehören an ihr Spiel
+    loesungen = {}
+    for name in list(seiten):
+        if name.endswith("/Lösung"):
+            loesungen[name[:-len("/Lösung")]] = seiten.pop(name)
 
     elemente = []
     ausgeschlossen = []
     ohne_beschreibung = []
     for titel in sorted(seiten):
         element, wiki_kategorien = seite_zu_element(titel, seiten[titel])
+        element["beschreibung"] = entferne_loesungsverweis(element["beschreibung"])
+        if titel in loesungen:
+            loesungstext, _, _ = wikitext_zu_text(hole_wikitext(loesungen[titel]))
+            loesungstext = saeubere_loesung(loesungstext)
+            if loesungstext:
+                # Hat die Hauptseite schon einen Lösungsabschnitt, nicht doppelt betiteln
+                trenner = "\n\n" if element["beschreibung"].rstrip().endswith("## Lösung") \
+                          else "\n\n## Lösung\n"
+                element["beschreibung"] = element["beschreibung"].rstrip() + trenner + loesungstext
         if AUSGESCHLOSSENE_WIKI_KATEGORIEN and (
             set(wiki_kategorien) & AUSGESCHLOSSENE_WIKI_KATEGORIEN
         ):
