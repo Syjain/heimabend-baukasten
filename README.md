@@ -28,7 +28,17 @@ Neu bauen:
     python3 scripts/build.py                      # führt alles zu data/elemente.json zusammen
 
 Die beiden Import-Skripte kennen `--offline` und arbeiten dann nur mit den bereits
-geholten Rohdaten. Die Web-App entsteht in `web/` (siehe Prompt).
+geholten Rohdaten.
+
+## Die App benutzen
+
+`web/index.html` per Doppelklick öffnen – mehr braucht es nicht. Näher an GitHub Pages
+ist ein kleiner Webserver:
+
+    python3 -m http.server 8000
+
+Danach `http://localhost:8000/web/index.html` aufrufen. Was die App kann, steht in
+`web/README.md`.
 
 ## Lizenz
 Eigene Inhalte: CC BY-SA 4.0 (Vorschlag). Fremde Inhalte je Element unter der angegebenen Quell-Lizenz.

@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Heimabend-Baukasten</title>
+<meta name="description" content="Bausteine für den Heimabend: Spiele, Proben, Aktivitäten und Projekte für Pfadfindergruppen.">
+<style>
+/* ------------------------------------------------------------------
+   Heimabend-Baukasten – Oberfläche
+   Mobile zuerst: alles ist auf ein Handy im Gruppenheim ausgelegt.
+   Kein Framework, keine Schriftarten von außen, keine Bilder.
+   ------------------------------------------------------------------ */
+:root {
+  --grund: #f6f5f1;
+  --karte: #ffffff;
+  --text: #21201c;
+  --leise: #6b6862;
+  --linie: #ddd9d0;
+  --akzent: #2f5d3a;          /* Pfadfindergrün */
+  --akzent-text: #ffffff;
+  --akzent-leicht: #e6efe7;
+  --warn: #a8531b;
+  --schatten: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.05);
+  --rund: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #16181a;
+    --karte: #212427;
+    --text: #e9e7e2;
+    --leise: #a2a09a;
+    --linie: #34383c;
+    --akzent: #7fb98c;
+    --akzent-text: #10231a;
+    --akzent-leicht: #23332a;
+    --warn: #e0a06a;
+    --schatten: none;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-wrap: break-word;
+}
+h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .4em; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+/* ---------------------------------------------------------- Grundgerüst */
+.huelle { max-width: 720px; margin: 0 auto; padding: 0 12px 96px; }
+
+header.kopf {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--grund);
+  border-bottom: 1px solid var(--linie);
+  padding-top: env(safe-area-inset-top);
+}
+.kopf-innen { max-width: 720px; margin: 0 auto; padding: 10px 12px 0; }
+.kopf h1 { font-size: 1.15rem; margin: 0 0 8px; letter-spacing: -.01em; }
+.kopf h1 span { color: var(--leise); font-weight: 400; font-size: .8rem; display: block; }
+
+.reiter { display: flex; gap: 4px; }
+.reiter button {
+  flex: 1; padding: 10px 8px; border: 0; border-bottom: 3px solid transparent;
+  background: none; color: var(--leise); font-weight: 600; font-size: .95rem;
+}
+.reiter button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--akzent); }
+
+/* ---------------------------------------------------------- Suche/Filter */
+.suchzeile { display: flex; gap: 8px; margin: 14px 0 8px; }
+.suchzeile input[type="search"] {
+  flex: 1; min-width: 0; padding: 11px 12px;
+  border: 1px solid var(--linie); border-radius: var(--rund);
+  background: var(--karte); -webkit-appearance: none;
+}
+.knopf {
+  padding: 11px 14px; border: 1px solid var(--linie); border-radius: var(--rund);
+  background: var(--karte); font-weight: 600; white-space: nowrap;
+}
+.knopf.stark { background: var(--akzent); color: var(--akzent-text); border-color: var(--akzent); }
+.knopf.klein { padding: 7px 11px; font-size: .85rem; font-weight: 500; }
+.knopf:disabled { opacity: .45; cursor: default; }
+
+details.filter { border: 1px solid var(--linie); border-radius: var(--rund); background: var(--karte); }
+details.filter > summary {
+  padding: 11px 14px; cursor: pointer; font-weight: 600; list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+}
+details.filter > summary::-webkit-details-marker { display: none; }
+details.filter > summary::after { content: "▾"; color: var(--leise); }
+details.filter[open] > summary::after { content: "▴"; }
+.filter-raster {
+  padding: 0 14px 14px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+@media (max-width: 400px) { .filter-raster { grid-template-columns: 1fr; } }
+.feld { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.feld label { font-size: .75rem; color: var(--leise); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.feld select {
+  padding: 9px 10px; border: 1px solid var(--linie); border-radius: 8px;
+  background: var(--grund); width: 100%;
+}
+.schalter { display: flex; align-items: center; gap: 8px; grid-column: 1 / -1; }
+.schalter input { width: 18px; height: 18px; accent-color: var(--akzent); }
+.filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
+
+.trefferzeile {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 14px 2px 8px; font-size: .85rem; color: var(--leise);
+}
+
+/* ---------------------------------------------------------- Karten */
+.liste { display: flex; flex-direction: column; gap: 8px; }
+.karte {
+  width: 100%; text-align: left;
+  background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
+  padding: 12px 14px; box-shadow: var(--schatten);
+}
+.karte:active { transform: scale(.995); }
+.karte h3 { font-size: 1rem; margin: 0 0 3px; }
+.karte p { margin: 0; font-size: .875rem; color: var(--leise);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.merkmale { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.merkmal {
+  font-size: .72rem; padding: 2px 7px; border-radius: 999px;
+  background: var(--grund); border: 1px solid var(--linie); color: var(--leise);
+  white-space: nowrap;
+}
+.merkmal.typ { background: var(--akzent-leicht); border-color: transparent; color: var(--akzent); font-weight: 600; }
+@media (prefers-color-scheme: dark) { .merkmal.typ { color: var(--text); } }
+
+.leer { text-align: center; color: var(--leise); padding: 40px 20px; }
+.mehr { margin: 12px 0; display: flex; justify-content: center; }
+
+/* ---------------------------------------------------------- Detailansicht */
+.ueberlagerung {
+  position: fixed; inset: 0; z-index: 50;
+  background: var(--grund);
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.ueberlagerung[hidden] { display: none; }
+.ueber-kopf {
+  position: sticky; top: 0; background: var(--grund);
+  border-bottom: 1px solid var(--linie); padding-top: env(safe-area-inset-top);
+  display: flex; align-items: center; gap: 8px; padding-inline: 8px;
+}
+.ueber-kopf .titel { font-weight: 600; flex: 1; min-width: 0; padding: 12px 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ueber-kopf button { background: none; border: 0; padding: 12px; font-size: 1rem; font-weight: 600; color: var(--akzent); }
+.ueber-inhalt { max-width: 720px; margin: 0 auto; padding: 16px 14px 60px; }
+.ueber-inhalt h2 { font-size: 1.3rem; }
+
+.datenblatt { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px;
+  margin: 14px 0; font-size: .9rem; }
+.datenblatt dt { color: var(--leise); }
+.datenblatt dd { margin: 0; }
+
+.text h4 { margin: 1.2em 0 .3em; font-size: 1rem; }
+.text p { margin: 0 0 .8em; }
+.text ul { margin: 0 0 .8em; padding-left: 1.2em; }
+.text li { margin-bottom: .25em; }
+
+.kasten { border-radius: var(--rund); padding: 12px 14px; margin: 16px 0; font-size: .9rem; }
+.kasten.tipp { background: var(--akzent-leicht); }
+.kasten.quelle { border: 1px solid var(--linie); background: var(--karte); color: var(--leise); }
+.kasten.quelle a { color: inherit; }
+.kasten.dublette { border: 1px dashed var(--linie); background: none; color: var(--leise); }
+.kasten h4 { margin: 0 0 6px; font-size: .8rem; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--leise); }
+.kasten.tipp h4 { color: var(--akzent); }
+@media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--text); } }
+.kasten.dublette button { background: none; border: 0; padding: 0; color: inherit;
+  text-decoration: underline; font-size: inherit; }
+
+/* ---------------------------------------------------------- Planer */
+.plan-hinweis { color: var(--leise); font-size: .875rem; margin: 14px 2px; }
+.slot {
+  background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
+  padding: 12px 14px; margin-bottom: 8px; box-shadow: var(--schatten);
+}
+.slot-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.slot-name { font-size: .75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--leise); }
+.slot-dauer { font-size: .8rem; color: var(--leise); white-space: nowrap; }
+.slot-inhalt { margin-top: 6px; }
+.slot-inhalt .gewaehlt { font-weight: 600; }
+.slot-inhalt .kurz { font-size: .85rem; color: var(--leise); margin-top: 2px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.slot.fest { background: none; box-shadow: none; border-style: dashed; }
+
+.summe {
+  position: sticky; bottom: 0; z-index: 10;
+  margin: 16px -12px 0; padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
+  background: var(--karte); border-top: 1px solid var(--linie);
+}
+.summe-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.summe-wert { font-size: 1.15rem; font-weight: 700; }
+.summe-wert.knapp { color: var(--warn); }
+.balken { height: 6px; border-radius: 3px; background: var(--linie); margin: 8px 0 10px; overflow: hidden; }
+.balken i { display: block; height: 100%; background: var(--akzent); transition: width .2s; }
+.balken i.knapp { background: var(--warn); }
+.summe-knoepfe { display: flex; gap: 8px; }
+.summe-knoepfe .knopf { flex: 1; text-align: center; }
+
+.planausgabe {
+  width: 100%; min-height: 220px; margin-top: 12px; padding: 12px;
+  border: 1px solid var(--linie); border-radius: var(--rund);
+  background: var(--karte); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .8rem; line-height: 1.45; white-space: pre; overflow-x: auto;
+}
+.meldung { text-align: center; font-size: .85rem; color: var(--akzent); min-height: 1.2em; margin-top: 8px; }
+
+.fuss { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--linie);
+  font-size: .78rem; color: var(--leise); }
+.fuss p { margin: 0 0 .5em; }
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="kopf-innen">
+    <h1>Heimabend-Baukasten <span>Bausteine für die Gruppenstunde</span></h1>
+    <nav class="reiter" role="tablist">
+      <button id="reiterBausteine" role="tab" aria-selected="true">Bausteine</button>
+      <button id="reiterPlanen" role="tab" aria-selected="false">Heimabend planen</button>
+    </nav>
+  </div>
+</header>
+
+<main class="huelle">
+
+  <!-- ============================================== Ansicht: Bausteine -->
+  <section id="ansichtBausteine">
+    <div class="suchzeile">
+      <input type="search" id="suche" placeholder="Suchen …" autocomplete="off"
+             aria-label="Bausteine durchsuchen">
+      <button class="knopf" id="zufallKnopf" title="Zufälliger Vorschlag">Zufall</button>
+    </div>
+
+    <details class="filter" id="filterBox">
+      <summary>Filter</summary>
+      <div class="filter-raster">
+        <div class="feld">
+          <label for="fTyp">Art</label>
+          <select id="fTyp"><option value="">alle</option></select>
+        </div>
+        <div class="feld">
+          <label for="fKategorie">Kategorie</label>
+          <select id="fKategorie"><option value="">alle</option></select>
+        </div>
+        <div class="feld">
+          <label for="fStufe">Altersstufe</label>
+          <select id="fStufe">
+            <option value="">alle</option>
+            <option>Wölflinge</option>
+            <option>Pfadfinder</option>
+            <option>Ältere</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="fDauer">Dauer</label>
+          <select id="fDauer">
+            <option value="">egal</option>
+            <option value="15">höchstens 15 Min</option>
+            <option value="30">höchstens 30 Min</option>
+            <option value="45">höchstens 45 Min</option>
+            <option value="60">höchstens 60 Min</option>
+            <option value="90">höchstens 90 Min</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="fOrt">Ort</label>
+          <select id="fOrt">
+            <option value="">egal</option>
+            <option value="drinnen">drinnen</option>
+            <option value="draussen">draußen</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="fVorbereitung">Vorbereitung</label>
+          <select id="fVorbereitung">
+            <option value="">egal</option>
+            <option value="gering">gering</option>
+            <option value="mittel">mittel</option>
+            <option value="hoch">hoch</option>
+          </select>
+        </div>
+        <div class="schalter">
+          <input type="checkbox" id="fOhneMaterial">
+          <label for="fOhneMaterial" style="text-transform:none;font-size:.9rem;color:var(--text)">
+            nur ohne Material
+          </label>
+        </div>
+        <div class="filter-fuss">
+          <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
+        </div>
+      </div>
+    </details>
+
+    <div class="trefferzeile">
+      <span id="treffer">lädt …</span>
+    </div>
+
+    <div class="liste" id="liste"></div>
+    <div class="mehr" id="mehrZeile" hidden>
+      <button class="knopf" id="mehrKnopf">Weitere anzeigen</button>
+    </div>
+
+    <footer class="fuss" id="fuss"></footer>
+  </section>
+
+  <!-- ================================================ Ansicht: Planen -->
+  <section id="ansichtPlanen" hidden>
+    <p class="plan-hinweis">
+      Stell dir deinen Heimabend zusammen. Eröffnungs- und Schlusskreis sind fest
+      eingeplant, den Rest füllst du selbst – oder lässt würfeln.
+    </p>
+
+    <div id="planSlots"></div>
+
+    <div class="summe">
+      <div class="summe-zeile">
+        <span class="slot-name">Gesamtdauer</span>
+        <span class="summe-wert" id="summeWert">10 Min</span>
+      </div>
+      <div class="balken"><i id="summeBalken" style="width:8%"></i></div>
+      <div class="summe-knoepfe">
+        <button class="knopf" id="planWuerfeln">Würfeln</button>
+        <button class="knopf" id="planLeeren">Leeren</button>
+        <button class="knopf stark" id="planKopieren">Plan kopieren</button>
+      </div>
+      <div class="meldung" id="planMeldung"></div>
+    </div>
+
+    <textarea class="planausgabe" id="planText" readonly aria-label="Plan als Text"></textarea>
+  </section>
+
+</main>
+
+<!-- ==================================================== Detailansicht -->
+<div class="ueberlagerung" id="detail" hidden role="dialog" aria-modal="true" aria-label="Baustein">
+  <div class="ueber-kopf">
+    <button id="detailZurueck">‹ Zurück</button>
+    <span class="titel" id="detailTitel"></span>
+  </div>
+  <div class="ueber-inhalt" id="detailInhalt"></div>
+</div>
+
+<!-- ================================================ Auswahl für Slots -->
+<div class="ueberlagerung" id="auswahl" hidden role="dialog" aria-modal="true" aria-label="Baustein auswählen">
+  <div class="ueber-kopf">
+    <button id="auswahlZurueck">‹ Zurück</button>
+    <span class="titel" id="auswahlTitel"></span>
+  </div>
+  <div class="ueber-inhalt">
+    <div class="suchzeile">
+      <input type="search" id="auswahlSuche" placeholder="Suchen …" autocomplete="off"
+             aria-label="Bausteine durchsuchen">
+    </div>
+    <div class="trefferzeile"><span id="auswahlTreffer"></span></div>
+    <div class="liste" id="auswahlListe"></div>
+    <div class="mehr" id="auswahlMehrZeile" hidden>
+      <button class="knopf" id="auswahlMehr">Weitere anzeigen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ==================================================================
+   Heimabend-Baukasten – Anwendungslogik
+   Reines JavaScript, keine Bibliotheken. Läuft per Doppelklick auf
+   diese Datei und genauso auf GitHub Pages.
+   ================================================================== */
+
+/* ---------------------------------------------------- Beschriftungen */
+var TYP_TEXT = {
+  spiel: "Spiel", probe: "Probe", aktivitaet: "Aktivität", projekt: "Projekt"
+};
+var KATEGORIE_TEXT = {
+  // Spiele
+  ankommen: "Ankommen & Kennenlernen", bewegung_drinnen: "Bewegung drinnen",
+  bewegung_draussen: "Bewegung draußen", gelaende: "Geländespiel", kreis: "Kreisspiel",
+  ruhig: "Ruhig & Konzentration", kooperation: "Kooperation", abschluss: "Abschluss",
+  // Proben
+  knoten: "Knoten", karte_kompass: "Karte & Kompass", feuer: "Feuer",
+  erste_hilfe: "Erste Hilfe", zelte_bauten: "Zelte & Bauten", natur: "Natur",
+  bundeskunde: "Bundeskunde", fahrtentechnik: "Fahrtentechnik", sonstiges: "Sonstiges",
+  // Aktivitäten und Projekte
+  draussen: "Draußen", kreativ: "Kreativ & Werken", kochen: "Kochen",
+  musisch: "Musisch", soziales: "Gruppe & Soziales", themenabend: "Themenabend",
+  wissen: "Wissen", entdecken: "Entdecken", spiel: "Großes Spiel", raetsel: "Rätsel"
+};
+var ORT_TEXT = { drinnen: "drinnen", draussen: "draußen", beides: "drinnen & draußen" };
+
+/* Feste Bestandteile jedes Heimabends – Rituale, keine Bausteine. */
+var KREIS_DAUER = 5;
+
+/* Die Plätze, die gefüllt werden können. */
+var SLOTS = [
+  { schluessel: "einstieg", name: "Einstiegsspiel",
+    passt: function (e) { return e.element_typ === "spiel" && hat(e.slots, "einstieg"); } },
+  { schluessel: "haupt", name: "Hauptteil", mehrfach: true,
+    passt: function (e) { return hat(e.slots, "hauptteil"); } },
+  { schluessel: "abschluss", name: "Abschlussspiel",
+    passt: function (e) { return e.element_typ === "spiel" && hat(e.slots, "abschluss"); } }
+];
+var ZIEL_DAUER = 120;
+var SEITENGROESSE = 40;
+
+/* ------------------------------------------------------------ Zustand */
+var ALLE = [];
+var NACH_ID = {};
+var gefiltert = [];
+var sichtbar = SEITENGROESSE;
+var plan = { einstieg: null, haupt: [null, null], abschluss: null };
+var auswahlZiel = null;      // { schluessel, index } während der Slot-Auswahl
+var auswahlListe = [];
+var auswahlSichtbar = SEITENGROESSE;
+
+/* ------------------------------------------------------------ Helfer */
+function $(id) { return document.getElementById(id); }
+function hat(liste, wert) { return !!liste && liste.indexOf(wert) !== -1; }
+
+function schuetze(text) {
+  return String(text == null ? "" : text)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Kleinbuchstaben ohne Umlaute – für Suche und Vergleiche. */
+function vereinfache(text) {
+  return String(text || "").toLowerCase()
+    .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+}
+
+function dauerText(e) {
+  return e.dauer_min === e.dauer_max
+    ? e.dauer_min + " Min"
+    : e.dauer_min + "–" + e.dauer_max + " Min";
+}
+
+function gruppenText(e) {
+  if (e.gruppe_min && e.gruppe_max) return e.gruppe_min + "–" + e.gruppe_max + " Personen";
+  if (e.gruppe_min) return "ab " + e.gruppe_min + " Personen";
+  if (e.gruppe_max) return "bis " + e.gruppe_max + " Personen";
+  return "";
+}
+
+function stufenText(e) {
+  return (e.altersstufen && e.altersstufen.length)
+    ? e.altersstufen.join(", ") : "alle Stufen";
+}
+
+/**
+ * Wandelt das leichte Markdown der Beschreibungen in HTML:
+ * "## Überschrift", "- Aufzählung" und **fett**.
+ */
+function textZuHtml(roh) {
+  var zeilen = String(roh || "").split("\n");
+  var teile = [], absatz = [], liste = [];
+
+  function absatzSchliessen() {
+    if (absatz.length) { teile.push("<p>" + absatz.join(" ") + "</p>"); absatz = []; }
+  }
+  function listeSchliessen() {
+    if (liste.length) { teile.push("<ul>" + liste.join("") + "</ul>"); liste = []; }
+  }
+  for (var i = 0; i < zeilen.length; i++) {
+    var zeile = zeilen[i].trim();
+    var inhalt = schuetze(zeile).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    if (!zeile) { absatzSchliessen(); listeSchliessen(); continue; }
+    var ueberschrift = zeile.match(/^(#{2,4})\s+(.*)$/);
+    if (ueberschrift) {
+      absatzSchliessen(); listeSchliessen();
+      teile.push("<h4>" + schuetze(ueberschrift[2]) + "</h4>");
+    } else if (zeile.indexOf("- ") === 0) {
+      absatzSchliessen();
+      liste.push("<li>" + inhalt.slice(2) + "</li>");
+    } else {
+      listeSchliessen();
+      absatz.push(inhalt);
+    }
+  }
+  absatzSchliessen(); listeSchliessen();
+  return teile.join("");
+}
+
+/* ------------------------------------------------------------ Laden */
+/**
+ * Holt die Daten. Auf einem Webserver (GitHub Pages) klappt fetch.
+ * Beim Doppelklick auf die Datei sperrt der Browser fetch – dann wird
+ * elemente.js nachgeladen, das dieselben Daten als window.ELEMENTE enthält.
+ */
+function ladeDaten() {
+  return fetch("../data/elemente.json")
+    .then(function (antwort) {
+      if (!antwort.ok) throw new Error("HTTP " + antwort.status);
+      return antwort.json();
+    })
+    .then(function (inhalt) { return inhalt.elemente || inhalt; })
+    .catch(ladeSkriptdaten);
+}
+
+function ladeSkriptdaten() {
+  return new Promise(function (fertig, fehler) {
+    if (window.ELEMENTE) { fertig(window.ELEMENTE); return; }
+    var skript = document.createElement("script");
+    skript.src = "elemente.js";
+    skript.onload = function () {
+      window.ELEMENTE ? fertig(window.ELEMENTE) : fehler(new Error("elemente.js ohne Daten"));
+    };
+    skript.onerror = function () { fehler(new Error("elemente.js nicht gefunden")); };
+    document.head.appendChild(skript);
+  });
+}
+
+/* ------------------------------------------------------------ Filtern */
+function filterWerte() {
+  return {
+    suche: vereinfache($("suche").value.trim()),
+    typ: $("fTyp").value,
+    kategorie: $("fKategorie").value,
+    stufe: $("fStufe").value,
+    dauer: $("fDauer").value ? parseInt($("fDauer").value, 10) : 0,
+    ort: $("fOrt").value,
+    vorbereitung: $("fVorbereitung").value,
+    ohneMaterial: $("fOhneMaterial").checked
+  };
+}
+
+/** Filter, der nichts aussortiert. */
+function leereFilter() {
+  return { suche: "", typ: "", kategorie: "", stufe: "", dauer: 0,
+           ort: "", vorbereitung: "", ohneMaterial: false };
+}
+
+function passtZuFilter(e, f) {
+  if (f.typ && e.element_typ !== f.typ) return false;
+  if (f.kategorie && e.kategorie !== f.kategorie) return false;
+  // Elemente ohne Altersangabe (z. B. Spielewiki) gelten für alle Stufen
+  if (f.stufe && e.altersstufen && e.altersstufen.length && !hat(e.altersstufen, f.stufe)) return false;
+  if (f.dauer && e.dauer_min > f.dauer) return false;
+  if (f.ort && e.ort !== f.ort && e.ort !== "beides") return false;
+  if (f.vorbereitung && e.vorbereitung !== f.vorbereitung) return false;
+  if (f.ohneMaterial && e.material && e.material.length) return false;
+  if (f.suche && e._suchtext.indexOf(f.suche) === -1) return false;
+  return true;
+}
+
+function filtereListe(quelle, f, zusatz) {
+  var ergebnis = [];
+  for (var i = 0; i < quelle.length; i++) {
+    var e = quelle[i];
+    if (zusatz && !zusatz(e)) continue;
+    if (passtZuFilter(e, f)) ergebnis.push(e);
+  }
+  return sortiere(ergebnis, f.suche);
+}
+
+/**
+ * Sortiert alphabetisch. Wird gesucht, kommen Titeltreffer zuerst –
+ * bei "knoten" soll die Knoten-Olympiade oben stehen und nicht ein
+ * Bastelabend, in dessen Beschreibung das Wort irgendwo vorkommt.
+ */
+function sortiere(liste, suche) {
+  return liste.sort(function (a, b) {
+    if (suche) {
+      var rangA = vereinfache(a.titel).indexOf(suche) === -1 ? 1 : 0;
+      var rangB = vereinfache(b.titel).indexOf(suche) === -1 ? 1 : 0;
+      if (rangA !== rangB) return rangA - rangB;
+    }
+    return a.titel.localeCompare(b.titel, "de",
+           { ignorePunctuation: true, numeric: true, sensitivity: "base" });
+  });
+}
+
+/* ------------------------------------------------------ Kategorienliste */
+/** Füllt das Kategorie-Menü passend zur gewählten Art. */
+function baueKategorieMenue() {
+  var typ = $("fTyp").value;
+  var vorher = $("fKategorie").value;
+  var zaehler = {};
+  for (var i = 0; i < ALLE.length; i++) {
+    var e = ALLE[i];
+    if (typ && e.element_typ !== typ) continue;
+    zaehler[e.kategorie] = (zaehler[e.kategorie] || 0) + 1;
+  }
+  var schluessel = Object.keys(zaehler).sort(function (a, b) {
+    return (KATEGORIE_TEXT[a] || a).localeCompare(KATEGORIE_TEXT[b] || b, "de");
+  });
+  var html = '<option value="">alle</option>';
+  for (var k = 0; k < schluessel.length; k++) {
+    var s = schluessel[k];
+    html += '<option value="' + schuetze(s) + '">' +
+            schuetze(KATEGORIE_TEXT[s] || s) + " (" + zaehler[s] + ")</option>";
+  }
+  $("fKategorie").innerHTML = html;
+  if (zaehler[vorher]) $("fKategorie").value = vorher;
+}
+
+/* ------------------------------------------------------------ Karten */
+function karteHtml(e) {
+  var merkmale = '<span class="merkmal typ">' + schuetze(TYP_TEXT[e.element_typ] || e.element_typ) + "</span>";
+  merkmale += '<span class="merkmal">' + schuetze(KATEGORIE_TEXT[e.kategorie] || e.kategorie) + "</span>";
+  merkmale += '<span class="merkmal">' + schuetze(dauerText(e)) + "</span>";
+  merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
+  if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
+  // Gibt es denselben Titel in einer anderen Quelle, hilft der Quellname beim Unterscheiden
+  if (e.dubletten && e.dubletten.length) {
+    merkmale += '<span class="merkmal">' + schuetze(e.quelle.name) + "</span>";
+  }
+  return '<h3>' + schuetze(e.titel) + "</h3>" +
+         "<p>" + schuetze(e.kurz) + "</p>" +
+         '<div class="merkmale">' + merkmale + "</div>";
+}
+
+function baueKarte(e, beiKlick) {
+  var knopf = document.createElement("button");
+  knopf.className = "karte";
+  knopf.type = "button";
+  knopf.innerHTML = karteHtml(e);
+  knopf.addEventListener("click", function () { beiKlick(e); });
+  return knopf;
+}
+
+/* ------------------------------------------------- Ansicht: Bausteine */
+function zeichneListe() {
+  var behaelter = $("liste");
+  behaelter.innerHTML = "";
+  if (!gefiltert.length) {
+    behaelter.innerHTML = '<p class="leer">Nichts gefunden. Versuch weniger Filter.</p>';
+    $("mehrZeile").hidden = true;
+    return;
+  }
+  var stapel = document.createDocumentFragment();
+  var bis = Math.min(sichtbar, gefiltert.length);
+  for (var i = 0; i < bis; i++) stapel.appendChild(baueKarte(gefiltert[i], zeigeDetail));
+  behaelter.appendChild(stapel);
+  $("mehrZeile").hidden = bis >= gefiltert.length;
+  $("mehrKnopf").textContent = "Weitere anzeigen (" + (gefiltert.length - bis) + ")";
+}
+
+function aktualisiere() {
+  gefiltert = filtereListe(ALLE, filterWerte());
+  sichtbar = SEITENGROESSE;
+  $("treffer").textContent = gefiltert.length === 1
+    ? "1 Baustein" : gefiltert.length + " Bausteine";
+  $("zufallKnopf").disabled = gefiltert.length === 0;
+  zeichneListe();
+}
+
+/* ------------------------------------------------------ Detailansicht */
+function zeigeDetail(e) {
+  $("detailTitel").textContent = e.titel;
+
+  var html = "<h2>" + schuetze(e.titel) + "</h2>";
+  html += '<p style="color:var(--leise);margin:0 0 4px">' + schuetze(e.kurz) + "</p>";
+
+  html += '<dl class="datenblatt">';
+  html += "<dt>Art</dt><dd>" + schuetze(TYP_TEXT[e.element_typ] || e.element_typ) +
+          " · " + schuetze(KATEGORIE_TEXT[e.kategorie] || e.kategorie) + "</dd>";
+  html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
+  html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
+  html += "<dt>Alter</dt><dd>" + schuetze(stufenText(e)) +
+          (e.alter_ab ? " · ab " + e.alter_ab + " Jahren" : "") + "</dd>";
+  var gruppe = gruppenText(e);
+  if (gruppe) html += "<dt>Gruppe</dt><dd>" + schuetze(gruppe) + "</dd>";
+  html += "<dt>Material</dt><dd>" +
+          (e.material && e.material.length ? schuetze(e.material.join(", ")) : "keines") + "</dd>";
+  html += "<dt>Vorbereitung</dt><dd>" + schuetze(e.vorbereitung) + "</dd>";
+  if (e.themen && e.themen.length) {
+    html += "<dt>Themen</dt><dd>" + schuetze(e.themen.join(", ")) + "</dd>";
+  }
+  html += "</dl>";
+
+  html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
+
+  if (e.tipps) {
+    html += '<div class="kasten tipp"><h4>Hinweise für die Spielleitung</h4>' +
+            '<div class="text">' + textZuHtml(e.tipps) + "</div></div>";
+  }
+
+  if (e.dubletten && e.dubletten.length) {
+    var verweise = [];
+    for (var d = 0; d < e.dubletten.length; d++) {
+      var andere = NACH_ID[e.dubletten[d]];
+      if (andere) {
+        verweise.push('<button type="button" data-id="' + schuetze(andere.id) + '">' +
+                      schuetze(andere.quelle.name) + "</button>");
+      }
+    }
+    if (verweise.length) {
+      html += '<div class="kasten dublette"><h4>Gibt es auch bei</h4>' +
+              verweise.join(" · ") + "</div>";
+    }
+  }
+
+  var q = e.quelle || {};
+  html += '<div class="kasten quelle"><h4>Quelle</h4>';
+  html += schuetze(q.name || "") + (q.autor ? " · " + schuetze(q.autor) : "");
+  if (q.url) {
+    html += '<br><a href="' + schuetze(q.url) + '" target="_blank" rel="noopener">' +
+            schuetze(q.url) + "</a>";
+  }
+  html += "<br>Lizenz: " + schuetze(q.lizenz || "unbekannt") + "</div>";
+
+  $("detailInhalt").innerHTML = html;
+  $("detailInhalt").scrollTop = 0;
+
+  // Verweise auf Dubletten anklickbar machen
+  var knoepfe = $("detailInhalt").querySelectorAll(".kasten.dublette button");
+  for (var b = 0; b < knoepfe.length; b++) {
+    knoepfe[b].addEventListener("click", function () {
+      var ziel = NACH_ID[this.getAttribute("data-id")];
+      if (ziel) zeigeDetail(ziel);
+    });
+  }
+
+  oeffneUeberlagerung($("detail"));
+}
+
+/* -------------------------------------------------- Überlagerungen */
+function oeffneUeberlagerung(knoten) {
+  knoten.hidden = false;
+  knoten.scrollTop = 0;
+  document.body.style.overflow = "hidden";
+}
+function schliesseUeberlagerung(knoten) {
+  knoten.hidden = true;
+  if ($("detail").hidden && $("auswahl").hidden) document.body.style.overflow = "";
+}
+
+/* ------------------------------------------------------ Ansicht: Plan */
+function planElement(schluessel, index) {
+  var id = schluessel === "haupt" ? plan.haupt[index] : plan[schluessel];
+  return id ? NACH_ID[id] || null : null;
+}
+
+function zeichnePlan() {
+  var behaelter = $("planSlots");
+  behaelter.innerHTML = "";
+
+  behaelter.appendChild(festerSlot("Eröffnungskreis",
+    "Kreis schließen, kurz etwas sagen, mit dem Bundesgruß eröffnen."));
+
+  for (var s = 0; s < SLOTS.length; s++) {
+    var slot = SLOTS[s];
+    if (slot.mehrfach) {
+      for (var i = 0; i < plan.haupt.length; i++) {
+        behaelter.appendChild(slotKarte(slot, i));
+      }
+      var hinzu = document.createElement("div");
+      hinzu.className = "slot-knoepfe";
+      hinzu.style.margin = "0 0 8px";
+      hinzu.innerHTML = '<button class="knopf klein" type="button" id="hauptteilPlus">' +
+                        "+ Baustein im Hauptteil</button>";
+      behaelter.appendChild(hinzu);
+      $("hauptteilPlus").addEventListener("click", function () {
+        plan.haupt.push(null); speicherePlan(); zeichnePlan();
+      });
+    } else {
+      behaelter.appendChild(slotKarte(slot, 0));
+    }
+  }
+
+  behaelter.appendChild(festerSlot("Schlusskreis",
+    "Kreis noch einmal schließen, dann gehen alle ihrer Wege."));
+
+  aktualisiereSumme();
+  $("planText").value = planAlsText();
+}
+
+function festerSlot(name, beschreibung) {
+  var knoten = document.createElement("div");
+  knoten.className = "slot fest";
+  knoten.innerHTML =
+    '<div class="slot-kopf"><span class="slot-name">' + schuetze(name) + "</span>" +
+    '<span class="slot-dauer">' + KREIS_DAUER + " Min</span></div>" +
+    '<div class="slot-inhalt"><div class="kurz">' + schuetze(beschreibung) + "</div></div>";
+  return knoten;
+}
+
+function slotKarte(slot, index) {
+  var e = planElement(slot.schluessel, index);
+  var mehrere = slot.mehrfach && plan.haupt.length > 1;
+  var name = slot.name + (mehrere ? " " + (index + 1) : "");
+
+  var knoten = document.createElement("div");
+  knoten.className = "slot";
+  var html = '<div class="slot-kopf"><span class="slot-name">' + schuetze(name) + "</span>" +
+             '<span class="slot-dauer">' + (e ? schuetze(dauerText(e)) : "–") + "</span></div>";
+  html += '<div class="slot-inhalt">';
+  if (e) {
+    html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
+            '<div class="kurz">' + schuetze(e.kurz) + "</div>";
+  } else {
+    html += '<div class="kurz">noch nichts gewählt</div>';
+  }
+  html += "</div>";
+
+  html += '<div class="slot-knoepfe">' +
+          '<button class="knopf klein" type="button" data-tat="waehlen">' +
+          (e ? "Anderen wählen" : "Auswählen") + "</button>" +
+          '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
+  if (e) {
+    html += '<button class="knopf klein" type="button" data-tat="ansehen">Ansehen</button>' +
+            '<button class="knopf klein" type="button" data-tat="leeren">Entfernen</button>';
+  }
+  if (slot.mehrfach && plan.haupt.length > 1) {
+    html += '<button class="knopf klein" type="button" data-tat="weg">Platz löschen</button>';
+  }
+  html += "</div>";
+  knoten.innerHTML = html;
+
+  var knoepfe = knoten.querySelectorAll("button[data-tat]");
+  for (var k = 0; k < knoepfe.length; k++) {
+    knoepfe[k].addEventListener("click", function () {
+      slotAktion(this.getAttribute("data-tat"), slot, index);
+    });
+  }
+  return knoten;
+}
+
+function slotSetzen(schluessel, index, id) {
+  if (schluessel === "haupt") plan.haupt[index] = id;
+  else plan[schluessel] = id;
+  speicherePlan();
+  zeichnePlan();
+}
+
+function slotAktion(tat, slot, index) {
+  if (tat === "waehlen") { oeffneAuswahl(slot, index); return; }
+  if (tat === "leeren") { slotSetzen(slot.schluessel, index, null); return; }
+  if (tat === "ansehen") {
+    var e = planElement(slot.schluessel, index);
+    if (e) zeigeDetail(e);
+    return;
+  }
+  if (tat === "weg") {
+    plan.haupt.splice(index, 1);
+    if (!plan.haupt.length) plan.haupt.push(null);
+    speicherePlan(); zeichnePlan();
+    return;
+  }
+  if (tat === "zufall") {
+    var gewaehlt = wuerfleBaustein(slot, 0);
+    if (gewaehlt) slotSetzen(slot.schluessel, index, gewaehlt.id);
+  }
+}
+
+/** Mittlere Dauer eines Bausteins – Grundlage fürs Zeitbudget. */
+function mitteldauer(e) { return (e.dauer_min + e.dauer_max) / 2; }
+
+/**
+ * Zieht einen zufälligen Baustein für einen Platz.
+ * `hoechstdauer` = 0 heißt: egal wie lang. Sonst wird eine Zielspanne
+ * gesucht – nur eine Obergrenze würde den Abend zu kurz geraten lassen,
+ * weil dann ständig Fünf-Minuten-Spiele gezogen werden.
+ * Findet sich in der Spanne nichts, wird die Suche schrittweise gelockert.
+ */
+function wuerfleBaustein(slot, hoechstdauer) {
+  var moegliche = filtereListe(ALLE, filterWerte(), slot.passt);
+  if (!moegliche.length) moegliche = filtereListe(ALLE, leereFilter(), slot.passt);
+  if (!moegliche.length) return null;
+
+  var passend = moegliche;
+  if (hoechstdauer) {
+    var untergrenze = hoechstdauer * 0.55;
+    passend = moegliche.filter(function (e) {
+      var d = mitteldauer(e);
+      return d >= untergrenze && d <= hoechstdauer;
+    });
+    if (!passend.length) {
+      passend = moegliche.filter(function (e) { return mitteldauer(e) <= hoechstdauer; });
+    }
+    if (!passend.length) {
+      passend = moegliche.slice().sort(function (a, b) {
+        return mitteldauer(a) - mitteldauer(b);
+      }).slice(0, 20);
+    }
+  }
+  return passend[Math.floor(Math.random() * passend.length)];
+}
+
+/**
+ * Füllt alle leeren Plätze und hält dabei die Zielzeit im Auge:
+ * Einstieg und Abschluss bleiben kurz, der Rest der Zeit wird auf die
+ * Plätze im Hauptteil verteilt.
+ */
+function planWuerfeln() {
+  var KURZ = 15;                                   // Einstieg/Abschluss in Minuten
+  var rest = ZIEL_DAUER - KREIS_DAUER * 2;         // Zeit für die Bausteine
+
+  // Erst die kurzen Plätze am Rand
+  for (var s = 0; s < SLOTS.length; s++) {
+    var slot = SLOTS[s];
+    if (slot.mehrfach) continue;
+    var e = planElement(slot.schluessel, 0);
+    if (!e) {
+      e = wuerfleBaustein(slot, KURZ);
+      if (e) plan[slot.schluessel] = e.id;
+    }
+    if (e) rest -= mitteldauer(e);
+  }
+
+  // Dann den Hauptteil: die verbleibende Zeit auf die freien Plätze aufteilen
+  var hauptSlot = null;
+  for (var h = 0; h < SLOTS.length; h++) if (SLOTS[h].mehrfach) hauptSlot = SLOTS[h];
+  var offen = [];
+  for (var i = 0; i < plan.haupt.length; i++) {
+    var vorhanden = planElement("haupt", i);
+    if (vorhanden) rest -= mitteldauer(vorhanden);
+    else offen.push(i);
+  }
+  for (var o = 0; o < offen.length; o++) {
+    var uebrig = offen.length - o;
+    var anteil = Math.max(15, rest / uebrig);
+    var gewaehlt = wuerfleBaustein(hauptSlot, Math.round(anteil * 1.15));
+    if (gewaehlt) {
+      plan.haupt[offen[o]] = gewaehlt.id;
+      rest -= mitteldauer(gewaehlt);
+    }
+  }
+
+  speicherePlan();
+  zeichnePlan();
+}
+
+/* --------------------------------------------------------- Gesamtdauer */
+function planDauer() {
+  var min = KREIS_DAUER * 2, max = KREIS_DAUER * 2;
+  for (var s = 0; s < SLOTS.length; s++) {
+    var anzahl = SLOTS[s].mehrfach ? plan.haupt.length : 1;
+    for (var i = 0; i < anzahl; i++) {
+      var e = planElement(SLOTS[s].schluessel, i);
+      if (e) { min += e.dauer_min; max += e.dauer_max; }
+    }
+  }
+  return { min: min, max: max, mitte: Math.round((min + max) / 2) };
+}
+
+function aktualisiereSumme() {
+  var d = planDauer();
+  var text = d.min === d.max ? d.min + " Min" : d.min + "–" + d.max + " Min";
+  var knapp = d.mitte < 90 || d.mitte > 150;
+  $("summeWert").textContent = text + "  (Ziel ca. " + ZIEL_DAUER + ")";
+  $("summeWert").className = "summe-wert" + (knapp ? " knapp" : "");
+  var anteil = Math.max(3, Math.min(100, Math.round(d.mitte / ZIEL_DAUER * 100)));
+  $("summeBalken").style.width = anteil + "%";
+  $("summeBalken").className = knapp ? "knapp" : "";
+}
+
+/* ------------------------------------------------------- Plan als Text */
+function planAlsText() {
+  var zeilen = ["Heimabend-Plan", "=============="];
+  var nummer = 1;
+  var material = [];
+
+  zeilen.push(nummer++ + ". Eröffnungskreis (" + KREIS_DAUER + " Min)");
+
+  for (var s = 0; s < SLOTS.length; s++) {
+    var slot = SLOTS[s];
+    var anzahl = slot.mehrfach ? plan.haupt.length : 1;
+    for (var i = 0; i < anzahl; i++) {
+      var e = planElement(slot.schluessel, i);
+      var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (i + 1) : "");
+      if (!e) {
+        zeilen.push(nummer++ + ". " + name + ": — noch offen —");
+        continue;
+      }
+      zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
+      zeilen.push("   " + e.kurz);
+      zeilen.push("   Quelle: " + e.quelle.name + " · " + e.quelle.lizenz +
+                  (e.quelle.url ? " · " + e.quelle.url : ""));
+      for (var m = 0; m < (e.material || []).length; m++) {
+        if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
+      }
+    }
+  }
+
+  zeilen.push(nummer++ + ". Schlusskreis (" + KREIS_DAUER + " Min)");
+  var d = planDauer();
+  zeilen.push("");
+  zeilen.push("Gesamtdauer: " + (d.min === d.max ? d.min + " Min" : d.min + "–" + d.max + " Min") +
+              "  (Ziel ca. " + ZIEL_DAUER + " Min)");
+  zeilen.push("Material: " + (material.length ? material.join(", ") : "keines"));
+  zeilen.push("");
+  zeilen.push("Zusammengestellt mit dem Heimabend-Baukasten.");
+  return zeilen.join("\n");
+}
+
+function melde(text) {
+  $("planMeldung").textContent = text;
+  setTimeout(function () { $("planMeldung").textContent = ""; }, 2500);
+}
+
+function planTeilen() {
+  var text = planAlsText();
+  if (navigator.share) {
+    navigator.share({ title: "Heimabend-Plan", text: text })
+      .catch(function () { inZwischenablage(text); });
+    return;
+  }
+  inZwischenablage(text);
+}
+
+function inZwischenablage(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      function () { melde("Plan kopiert."); },
+      function () { markiereText(); }
+    );
+  } else {
+    markiereText();
+  }
+}
+
+function markiereText() {
+  var feld = $("planText");
+  feld.focus(); feld.select();
+  try {
+    document.execCommand("copy");
+    melde("Plan kopiert.");
+  } catch (fehler) {
+    melde("Text unten ist markiert – jetzt kopieren.");
+  }
+}
+
+/* ------------------------------------------------- Plan merken (lokal) */
+function speicherePlan() {
+  try { localStorage.setItem("heimabend-plan", JSON.stringify(plan)); } catch (fehler) { /* egal */ }
+}
+function ladePlan() {
+  try {
+    var roh = localStorage.getItem("heimabend-plan");
+    if (!roh) return;
+    var gespeichert = JSON.parse(roh);
+    if (gespeichert && Array.isArray(gespeichert.haupt)) plan = gespeichert;
+  } catch (fehler) { /* egal */ }
+}
+
+/* ------------------------------------------------- Auswahl für Slots */
+function oeffneAuswahl(slot, index) {
+  auswahlZiel = { slot: slot, index: index };
+  $("auswahlTitel").textContent = slot.name + " wählen";
+  $("auswahlSuche").value = "";
+  auswahlSichtbar = SEITENGROESSE;
+  zeichneAuswahl();
+  oeffneUeberlagerung($("auswahl"));
+}
+
+function zeichneAuswahl() {
+  if (!auswahlZiel) return;
+  var f = filterWerte();
+  f.suche = vereinfache($("auswahlSuche").value.trim());
+  auswahlListe = filtereListe(ALLE, f, auswahlZiel.slot.passt);
+
+  var behaelter = $("auswahlListe");
+  behaelter.innerHTML = "";
+  $("auswahlTreffer").textContent = auswahlListe.length === 1
+    ? "1 Baustein" : auswahlListe.length + " Bausteine";
+
+  if (!auswahlListe.length) {
+    behaelter.innerHTML = '<p class="leer">Nichts gefunden. Die Filter aus der ' +
+                          "Baustein-Ansicht gelten hier mit.</p>";
+    $("auswahlMehrZeile").hidden = true;
+    return;
+  }
+  var stapel = document.createDocumentFragment();
+  var bis = Math.min(auswahlSichtbar, auswahlListe.length);
+  for (var i = 0; i < bis; i++) {
+    stapel.appendChild(baueKarte(auswahlListe[i], function (e) {
+      slotSetzen(auswahlZiel.slot.schluessel, auswahlZiel.index, e.id);
+      schliesseUeberlagerung($("auswahl"));
+    }));
+  }
+  behaelter.appendChild(stapel);
+  $("auswahlMehrZeile").hidden = bis >= auswahlListe.length;
+  $("auswahlMehr").textContent = "Weitere anzeigen (" + (auswahlListe.length - bis) + ")";
+}
+
+/* ---------------------------------------------------------- Fußzeile */
+function zeichneFuss() {
+  var quellen = {};
+  for (var i = 0; i < ALLE.length; i++) {
+    var q = ALLE[i].quelle || {};
+    var schluessel = (q.name || "?") + " – " + (q.lizenz || "?");
+    quellen[schluessel] = (quellen[schluessel] || 0) + 1;
+  }
+  var namen = Object.keys(quellen).sort(function (a, b) { return quellen[b] - quellen[a]; });
+  var html = "<p><strong>" + ALLE.length + " Bausteine</strong> aus diesen Quellen:</p><p>";
+  for (var n = 0; n < namen.length; n++) {
+    html += schuetze(namen[n]) + " (" + quellen[namen[n]] + ")<br>";
+  }
+  html += "</p><p>Jeder Baustein steht unter der Lizenz seiner Quelle; sie wird in der " +
+          "Detailansicht genannt. Das Projekt ist nicht-kommerziell.</p>";
+  $("fuss").innerHTML = html;
+}
+
+/* ------------------------------------------------------------ Ansichten */
+function zeigeAnsicht(name) {
+  var bausteine = name === "bausteine";
+  $("ansichtBausteine").hidden = !bausteine;
+  $("ansichtPlanen").hidden = bausteine;
+  $("reiterBausteine").setAttribute("aria-selected", String(bausteine));
+  $("reiterPlanen").setAttribute("aria-selected", String(!bausteine));
+  window.scrollTo(0, 0);
+  if (!bausteine) zeichnePlan();
+}
+
+/* ------------------------------------------------------------ Start */
+function verdrahte() {
+  var entprellen = null;
+  $("suche").addEventListener("input", function () {
+    clearTimeout(entprellen);
+    entprellen = setTimeout(aktualisiere, 150);
+  });
+  var felder = ["fTyp", "fKategorie", "fStufe", "fDauer", "fOrt", "fVorbereitung", "fOhneMaterial"];
+  for (var i = 0; i < felder.length; i++) {
+    $(felder[i]).addEventListener("change", function () {
+      if (this.id === "fTyp") baueKategorieMenue();
+      aktualisiere();
+    });
+  }
+  $("filterZuruecksetzen").addEventListener("click", function () {
+    $("fTyp").value = ""; $("fStufe").value = ""; $("fDauer").value = "";
+    $("fOrt").value = ""; $("fVorbereitung").value = ""; $("fOhneMaterial").checked = false;
+    baueKategorieMenue();
+    aktualisiere();
+  });
+  $("mehrKnopf").addEventListener("click", function () {
+    sichtbar += SEITENGROESSE; zeichneListe();
+  });
+  $("zufallKnopf").addEventListener("click", function () {
+    if (!gefiltert.length) return;
+    zeigeDetail(gefiltert[Math.floor(Math.random() * gefiltert.length)]);
+  });
+
+  $("reiterBausteine").addEventListener("click", function () { zeigeAnsicht("bausteine"); });
+  $("reiterPlanen").addEventListener("click", function () { zeigeAnsicht("planen"); });
+
+  $("detailZurueck").addEventListener("click", function () { schliesseUeberlagerung($("detail")); });
+  $("auswahlZurueck").addEventListener("click", function () { schliesseUeberlagerung($("auswahl")); });
+  document.addEventListener("keydown", function (ereignis) {
+    if (ereignis.key !== "Escape") return;
+    if (!$("detail").hidden) schliesseUeberlagerung($("detail"));
+    else if (!$("auswahl").hidden) schliesseUeberlagerung($("auswahl"));
+  });
+
+  var auswahlEntprellen = null;
+  $("auswahlSuche").addEventListener("input", function () {
+    clearTimeout(auswahlEntprellen);
+    auswahlEntprellen = setTimeout(function () {
+      auswahlSichtbar = SEITENGROESSE; zeichneAuswahl();
+    }, 150);
+  });
+  $("auswahlMehr").addEventListener("click", function () {
+    auswahlSichtbar += SEITENGROESSE; zeichneAuswahl();
+  });
+
+  $("planWuerfeln").addEventListener("click", planWuerfeln);
+  $("planLeeren").addEventListener("click", function () {
+    plan = { einstieg: null, haupt: [null, null], abschluss: null };
+    speicherePlan(); zeichnePlan();
+  });
+  $("planKopieren").addEventListener("click", planTeilen);
+}
+
+function starte(elemente) {
+  ALLE = elemente;
+  for (var i = 0; i < ALLE.length; i++) {
+    var e = ALLE[i];
+    NACH_ID[e.id] = e;
+    // Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig
+    e._suchtext = vereinfache([
+      e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
+      KATEGORIE_TEXT[e.kategorie] || "", e.beschreibung
+    ].join(" "));
+  }
+  // Menü "Art" nach Häufigkeit füllen
+  var zaehler = {};
+  for (var t = 0; t < ALLE.length; t++) {
+    zaehler[ALLE[t].element_typ] = (zaehler[ALLE[t].element_typ] || 0) + 1;
+  }
+  var html = '<option value="">alle</option>';
+  var reihenfolge = ["spiel", "probe", "aktivitaet", "projekt"];
+  for (var r = 0; r < reihenfolge.length; r++) {
+    var typ = reihenfolge[r];
+    if (zaehler[typ]) {
+      html += '<option value="' + typ + '">' + TYP_TEXT[typ] + " (" + zaehler[typ] + ")</option>";
+    }
+  }
+  $("fTyp").innerHTML = html;
+
+  baueKategorieMenue();
+  ladePlan();
+  verdrahte();
+  aktualisiere();
+  zeichneFuss();
+}
+
+ladeDaten().then(starte).catch(function (fehler) {
+  $("treffer").textContent = "";
+  $("liste").innerHTML = '<p class="leer">Die Daten konnten nicht geladen werden.<br><br>' +
+    "Erwartet wird <code>../data/elemente.json</code> oder <code>elemente.js</code> " +
+    "neben dieser Datei.<br>Beides erzeugt <code>python3 scripts/build.py</code>." +
+    "<br><br><small>" + schuetze(fehler.message) + "</small></p>";
+});
+</script>
+</body>
+</html>
