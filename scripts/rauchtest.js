@@ -136,13 +136,73 @@
          vorher + " -> " + auswahlListe.length);
   schliesseUeberlagerung(document.getElementById("auswahl"));
 
-  // --- Zufall darf nicht aus einer alten Liste ziehen ---
+  // --- Zufall zieht aus dem, was gerade zu sehen ist ---
   zuruecksetzen();
   pfad = { typ: "spiel", kategorie: "kreis", unterkategorie: "singen" }; aktualisiere();
   var vorFilter = gefiltert.length;
   pfad = { typ: "", kategorie: "", unterkategorie: "" }; aktualisiere();
-  pruefe("Kachelseite leert die Trefferliste", gefiltert.length === 0,
+  pruefe("Zufallstopf folgt dem Pfad", gefiltert.length === ALLE.length,
          "vorher " + vorFilter + ", jetzt " + gefiltert.length);
+  pfad = { typ: "probe", kategorie: "", unterkategorie: "" }; aktualisiere();
+  pruefe("Zufallstopf auf Kachelseite passt zum Pfad",
+         gefiltert.length > 0 && gefiltert.every(function (e) { return e.element_typ === "probe"; }),
+         gefiltert.length);
+
+  // --- Dauerfilter meint die Obergrenze ---
+  zuruecksetzen();
+  document.getElementById("fDauer").value = "15";
+  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pruefe("'passt in 15 Min' liefert nur Bausteine bis 15 Min",
+         gefiltert.length > 0 && gefiltert.every(function (e) { return e.dauer_max <= 15; }),
+         gefiltert.length);
+
+  // --- Teilnehmerzahl ---
+  zuruecksetzen();
+  document.getElementById("fTeilnehmer").value = "4";
+  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pruefe("Teilnehmerfilter wirft zu große Spiele raus",
+         gefiltert.length > 0 && gefiltert.every(function (e) {
+           return !e.gruppe_min || e.gruppe_min <= 4;
+         }), gefiltert.length);
+
+  // --- Suche mit zwei Wörtern ---
+  zuruecksetzen();
+  document.getElementById("suche").value = "spiel gelaende"; aktualisiere();
+  var zweiWorte = gefiltert.length;
+  document.getElementById("suche").value = "gelände"; aktualisiere();
+  pruefe("Suche versteht zwei Wörter", zweiWorte > 0,
+         "'spiel gelaende' -> " + zweiWorte + ", 'gelände' -> " + gefiltert.length);
+  zuruecksetzen();
+
+  // --- Planer: Projekte nicht neben einem zweiten Hauptteil-Baustein ---
+  plan = { einstieg: null, haupt: [null, null], abschluss: null };
+  var hauptSlot = SLOTS.filter(function (s) { return s.mehrfach; })[0];
+  pruefe("Hauptteil mit zwei Plätzen lässt keine Projekte zu",
+         !ALLE.filter(hauptSlot.passt).some(function (e) { return e.element_typ === "projekt"; }));
+  plan = { einstieg: null, haupt: [null], abschluss: null };
+  pruefe("Hauptteil mit einem Platz lässt Projekte zu",
+         ALLE.filter(hauptSlot.passt).some(function (e) { return e.element_typ === "projekt"; }));
+
+  // --- Vorschläge auch bei vollem Plan ---
+  plan = { einstieg: null, haupt: [null, null], abschluss: null };
+  planWuerfeln();
+  plan.haupt.push(null); zeichnePlan();
+  oeffneAuswahl(hauptSlot, plan.haupt.length - 1, true);
+  pruefe("Vorschläge bleiben auch bei vollem Plan gefüllt", auswahlListe.length > 0,
+         auswahlListe.length + " bei " + Math.round(freieZeit(null)) + " Min frei");
+  schliesseUeberlagerung(document.getElementById("auswahl"), true);
+
+  // --- Weg von der Detailansicht in den Plan ---
+  plan = { einstieg: null, haupt: [null, null], abschluss: null }; zeichnePlan();
+  var einSpiel = ALLE.filter(function (e) { return SLOTS[0].passt(e); })[0];
+  zeigeDetail(einSpiel);
+  var planKnopf = document.querySelector('#detailInhalt .planzeile button[data-slot="einstieg"]');
+  pruefe("Detailansicht bietet 'In den Plan'", !!planKnopf);
+  if (planKnopf) {
+    planKnopf.click();
+    pruefe("Baustein landet im Einstiegsplatz", plan.einstieg === einSpiel.id, plan.einstieg);
+  }
+  zeigeAnsicht("bausteine");
 
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);
