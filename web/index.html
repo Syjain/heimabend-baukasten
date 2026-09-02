@@ -320,6 +320,15 @@ details.filter > summary span:last-child:not(:first-child) {
   text-decoration: underline; padding: 11px 4px; min-height: 44px;
 }
 .mehr { margin: var(--r3) 0; display: flex; justify-content: center; }
+/* Knopfzeile unter einer Karte im Auswahl-Dialog */
+.kartenfuss {
+  display: flex; gap: 6px; margin-top: -1px;
+  padding: var(--r2) var(--r4) var(--r3);
+  background: var(--karte); border: 1px solid var(--linie); border-top: 0;
+  border-radius: 0 0 var(--rund) var(--rund);
+}
+.kartenfuss .knopf { flex: 1; text-align: center; }
+li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 
 /* Ladezustand, bevor die Daten da sind */
 .laedt { display: grid; gap: var(--r2); grid-column: 1 / -1; }
@@ -869,7 +878,7 @@ var ALLE = [];
 // Object.create(null): sonst liefert NACH_ID["constructor"] ein Objekt der
 // Prototypkette und die Planansicht stürzt bei kaputtem Speicher ab.
 var NACH_ID = Object.create(null);
-var pfad = { typ: "", kategorie: "", unterkategorie: "" };
+var pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
 
@@ -903,6 +912,20 @@ function dauerText(e) {
     ? e.dauer_min + " Min" : e.dauer_min + "–" + e.dauer_max + " Min";
 }
 function mitteldauer(e) { return (e.dauer_min + e.dauer_max) / 2; }
+
+/**
+ * Stabile Streuzahl aus der ID. Passen viele Bausteine gleich gut, stünden
+ * sonst lauter Titel mit A oben; echtes Zufallsmischen wäre schlecht, weil
+ * man einen Vorschlag dann beim nächsten Öffnen nicht wiederfindet.
+ */
+function streuung(e) {
+  if (e._streu === undefined) {
+    var wert = 0;
+    for (var i = 0; i < e.id.length; i++) wert = (wert * 31 + e.id.charCodeAt(i)) % 100000;
+    e._streu = wert;
+  }
+  return e._streu;
+}
 function aufFuenf(zahl) { return Math.max(5, Math.round(zahl / 5) * 5); }
 
 function gruppenText(e) {
@@ -1066,6 +1089,7 @@ function passtZuFilter(e, f) {
 }
 
 function passtZuPfad(e, p) {
+  if (p.slot && !hat(e.slots, p.slot)) return false;
   if (p.typ && e.element_typ !== p.typ) return false;
   if (p.kategorie && e.kategorie !== p.kategorie) return false;
   if (p.unterkategorie && e.unterkategorie !== p.unterkategorie) return false;
@@ -1161,7 +1185,7 @@ function karteHtml(e, zielzeit, kontext) {
          '<div class="merkmale">' + merkmale + "</div>";
 }
 
-function baueKarte(e, beiKlick, zielzeit, kontext) {
+function baueKarte(e, beiKlick, zielzeit, kontext, zweitknopf) {
   var eintrag = document.createElement("li");
   var knopf = document.createElement("button");
   knopf.className = "karte";
@@ -1172,6 +1196,25 @@ function baueKarte(e, beiKlick, zielzeit, kontext) {
   knopf.innerHTML = karteHtml(e, zielzeit, kontext);
   knopf.addEventListener("click", function () { beiKlick(e); });
   eintrag.appendChild(knopf);
+  if (zweitknopf) {
+    // Im Auswahl-Dialog muss man die Regeln lesen können, bevor man
+    // einen Baustein in den Plan setzt.
+    var zeile = document.createElement("div");
+    zeile.className = "kartenfuss";
+    var lesen = document.createElement("button");
+    lesen.type = "button";
+    lesen.className = "knopf klein";
+    lesen.textContent = "Regeln lesen";
+    lesen.addEventListener("click", function () { zeigeDetail(e); });
+    var nehmen = document.createElement("button");
+    nehmen.type = "button";
+    nehmen.className = "knopf klein stark";
+    nehmen.textContent = zweitknopf;
+    nehmen.addEventListener("click", function () { beiKlick(e); });
+    zeile.appendChild(lesen);
+    zeile.appendChild(nehmen);
+    eintrag.appendChild(zeile);
+  }
   return eintrag;
 }
 
@@ -1207,18 +1250,26 @@ function baueKachel(name, anzahl, beiKlick, gross, zeichen) {
 
 function zeichnePfad() {
   var teile = [];
-  teile.push({ name: "Alle Bausteine", ziel: { typ: "", kategorie: "", unterkategorie: "" } });
+  teile.push({ name: "Alle Bausteine",
+               ziel: { typ: "", kategorie: "", unterkategorie: "", slot: "" } });
+  if (pfad.slot) {
+    teile.push({ name: pfad.slot === "einstieg" ? "Zum Einstieg" : "Zum Abschluss",
+                 ziel: { typ: "", kategorie: "", unterkategorie: "__alle__", slot: pfad.slot } });
+  }
   if (pfad.typ) {
     teile.push({ name: TYP_TEXT[pfad.typ],
-                 ziel: { typ: pfad.typ, kategorie: "", unterkategorie: "" } });
+                 ziel: { typ: pfad.typ, kategorie: "", unterkategorie: "", slot: pfad.slot } });
   }
   if (pfad.kategorie) {
     teile.push({ name: KATEGORIE_TEXT[pfad.kategorie] || pfad.kategorie,
-                 ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "" } });
+                 ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "",
+                         slot: pfad.slot } });
   }
   if (pfad.unterkategorie) {
-    teile.push({ name: pfad.unterkategorie === "__alle__"
-                       ? "Alle" : unterText(pfad.unterkategorie), ziel: null });
+    if (!(pfad.unterkategorie === "__alle__" && pfad.slot && !pfad.typ)) {
+      teile.push({ name: pfad.unterkategorie === "__alle__"
+                         ? "Alle" : unterText(pfad.unterkategorie), ziel: null });
+    }
   }
   var behaelter = $("pfad");
   behaelter.innerHTML = "";
@@ -1297,20 +1348,22 @@ function zeigeKacheln(behaelter, ebene, f) {
       var typ = TYP_REIHENFOLGE[t];
       if (nachTyp[typ]) {
         eintraege.push({ name: TYP_TEXT[typ], anzahl: nachTyp[typ], zeichen: ZEICHEN[typ],
-                         ziel: { typ: typ, kategorie: "", unterkategorie: "" } });
+                         ziel: { typ: typ, kategorie: "", unterkategorie: "",
+                                 slot: pfad.slot } });
       }
     }
   } else if (ebene === "kategorie") {
     var nachKat = zaehleNach("kategorie", f, pfad);
     eintraege = Object.keys(nachKat).map(function (k) {
       return { name: KATEGORIE_TEXT[k] || k, anzahl: nachKat[k],
-               ziel: { typ: pfad.typ, kategorie: k, unterkategorie: "" } };
+               ziel: { typ: pfad.typ, kategorie: k, unterkategorie: "", slot: pfad.slot } };
     });
   } else {
     var nachUnter = zaehleNach("unterkategorie", f, pfad);
     eintraege = Object.keys(nachUnter).map(function (u) {
       return { name: unterText(u), anzahl: nachUnter[u],
-               ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: u } };
+               ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: u,
+                       slot: pfad.slot } };
     });
   }
   eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
@@ -1331,11 +1384,33 @@ function zeigeKacheln(behaelter, ebene, f) {
       }, false, eintrag.zeichen));
     })(eintraege[i]);
   }
+  // Auf der obersten Ebene: Abkürzung nach dem Platz im Heimabend.
+  // Die Schema-Kategorie "abschluss" ist in keinem Element vergeben; ohne
+  // diese Kacheln gäbe es keinen Weg zu den Abschlussspielen.
+  if (ebene === "typ" && !pfad.slot) {
+    var abkuerzungen = [
+      { name: "Zum Einstieg", slot: "einstieg" },
+      { name: "Zum Abschluss", slot: "abschluss" }
+    ];
+    for (var a = 0; a < abkuerzungen.length; a++) {
+      (function (kurz) {
+        var menge = sammle(f, { typ: "", kategorie: "", unterkategorie: "", slot: kurz.slot });
+        if (!menge.length) return;
+        behaelter.appendChild(baueKachel(kurz.name, menge.length, function () {
+          pfad = { typ: "", kategorie: "", unterkategorie: "__alle__", slot: kurz.slot };
+          window.scrollTo(0, 0);
+          aktualisiere();
+        }, true));
+      })(abkuerzungen[a]);
+    }
+  }
+
   // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
   if (ebene !== "typ") {
     var alle = sammle(f, pfad);
     behaelter.appendChild(baueKachel("Alle anzeigen", alle.length, function () {
-      pfad = { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "__alle__" };
+      pfad = { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "__alle__",
+               slot: pfad.slot };
       window.scrollTo(0, 0);
       aktualisiere();
     }, true));
@@ -1344,7 +1419,7 @@ function zeigeKacheln(behaelter, ebene, f) {
 
 function zeigeListe(f) {
   var suchPfad = {
-    typ: pfad.typ, kategorie: pfad.kategorie,
+    typ: pfad.typ, kategorie: pfad.kategorie, slot: pfad.slot,
     unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
   };
   gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche, f.stufe);
@@ -1371,7 +1446,7 @@ function zeichneListe(f) {
     behaelter.innerHTML = text;
     if ($("ueberallSuchen")) {
       $("ueberallSuchen").addEventListener("click", function () {
-        pfad = { typ: "", kategorie: "", unterkategorie: "" };
+        pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
         aktualisiere();
       });
     }
@@ -1427,10 +1502,34 @@ function zeigeDetail(e) {
   html += "<dt>Material</dt><dd>" +
           (e.material && e.material.length ? schuetze(e.material.join(", ")) : "keines") + "</dd>";
   html += "<dt>Vorbereitung</dt><dd>" + schuetze(e.vorbereitung) + "</dd>";
-  if (e.themen && e.themen.length) {
-    html += "<dt>Themen</dt><dd>" + schuetze(e.themen.join(", ")) + "</dd>";
-  }
   html += "</dl>";
+
+  // Themen und Stichworte als Knöpfe: damit lässt sich ein Abend um ein Thema
+  // herum bauen ("Knoten"), was vorher nur über erneutes Tippen ging.
+  var stichworte = [];
+  var eigenerTitel = vereinfache(e.titel);
+  var quellen = [kategorieText(e)];
+  if (e.unterkategorie && e.unterkategorie !== "sonstiges") {
+    quellen.push(unterText(e.unterkategorie));
+  }
+  quellen = quellen.concat(e.themen || []).concat(e.tags || []);
+  quellen.forEach(function (wort) {
+    wort = String(wort || "").trim();
+    // Der eigene Titel taugt nicht als Stichwort, und Verwaltungsmarken
+    // wie "Probe 11" führen zu genau einem Treffer.
+    if (!wort || wort.length > 34) return;
+    if (vereinfache(wort) === eigenerTitel) return;
+    if (/^Probe \d+$/.test(wort)) return;
+    if (stichworte.indexOf(wort) === -1) stichworte.push(wort);
+  });
+  if (stichworte.length) {
+    html += '<div class="chipzeile"><div class="chiptitel">Mehr davon</div><div class="chips">';
+    for (var s2 = 0; s2 < Math.min(stichworte.length, 8); s2++) {
+      html += '<button type="button" class="chip" data-wort="' +
+              schuetze(stichworte[s2]) + '">' + schuetze(stichworte[s2]) + "</button>";
+    }
+    html += "</div></div>";
+  }
 
   html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
 
@@ -1465,6 +1564,18 @@ function zeigeDetail(e) {
 
   $("detailInhalt").innerHTML = html;
   $("detailInhalt").scrollTop = 0;
+
+  var wortKnoepfe = $("detailInhalt").querySelectorAll(".chip[data-wort]");
+  for (var wk = 0; wk < wortKnoepfe.length; wk++) {
+    wortKnoepfe[wk].addEventListener("click", function () {
+      var wort = this.getAttribute("data-wort");
+      schliesseUeberlagerung($("detail"));
+      zeigeAnsicht("bausteine");
+      pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+      $("suche").value = wort;
+      aktualisiere();
+    });
+  }
 
   var planKnoepfe = $("detailInhalt").querySelectorAll(".planzeile button[data-slot]");
   for (var pk = 0; pk < planKnoepfe.length; pk++) {
@@ -2102,7 +2213,7 @@ function zeichneAuswahl() {
     var ziel = auswahlZiel.ziel;
     auswahlListe.sort(function (a, b) {
       return Math.abs(mitteldauer(a) - ziel) - Math.abs(mitteldauer(b) - ziel) ||
-             nachTitel(a, b);
+             streuung(a) - streuung(b);
     });
   } else {
     sortiere(auswahlListe, "dauer", f.suche, rahmen.stufe);
@@ -2125,7 +2236,7 @@ function zeichneAuswahl() {
     stapel.appendChild(baueKarte(auswahlListe[i], function (e) {
       slotSetzen(auswahlZiel.slot.schluessel, auswahlZiel.index, e.id);
       schliesseUeberlagerung($("auswahl"));
-    }, nurPassend, auswahlPfad));
+    }, nurPassend, auswahlPfad, "In den Plan"));
   }
   behaelter.appendChild(stapel);
   $("auswahlMehrZeile").hidden = bis >= auswahlListe.length;
