@@ -16787,9 +16787,7 @@
    "dauer_min": 5,
    "dauer_max": 10,
    "ort": "beides",
-   "material": [
-    "keines (eventuell Gitarre)"
-   ],
+   "material": [],
    "vorbereitung": "gering",
    "kurz": "Don Alfonso ist ein Singspiel mit Geschichte. Es wird ein Lied gesungen, mehrere Schauspieler präsentieren diese Geschichte dabei nach den gesungenen Worten.",
    "beschreibung": "**Don Alfonso** ist ein Singspiel mit Geschichte. Es wird ein Lied gesungen, mehrere Schauspieler präsentieren diese Geschichte dabei nach den gesungenen Worten.\n\n## Material\nEs wird kein Material benötigt; die Schauspieler können jedoch zufällig vorhandenes Material in ihr Schauspiel einbauen.\n\nFür die musikalische Begleitung wäre eine Gitarre (und ein fähiger Gitarrist) ideal.\n\n## Ablauf\nEs werden mehrere freiwillige Schauspieler ausgewählt. Diesen werden die im Lied vorkommenden Rollen zugeteilt. Zumindest notwendig sind:\n- Don Alfonso\n- Donna\n- Ehemann\n- eventuell ein Pferd\n- eventuell mehrere Schauspieler für Schloss, Brunnen, etc.\n\nAnschließend wird von allen Mitspielern das Lied \"Don Alfonso hoch zu Roß\" gesungen (Liedertext siehe Weblinks). Immer, wenn im Lied eine relevante Handlung geschieht, führen die Schauspieler der relevanten Rollen diese auch möglichst effektvoll durch.",
@@ -20268,7 +20266,6 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "keines",
     "ev. Papier",
     "Stifte"
    ],
@@ -23953,7 +23950,6 @@
    "dauer_max": 40,
    "ort": "drinnen",
    "material": [
-    "Ohne Material",
     "optimal ein Tisch"
    ],
    "vorbereitung": "gering",
@@ -25129,9 +25125,7 @@
    "dauer_min": 10,
    "dauer_max": 20,
    "ort": "beides",
-   "material": [
-    "keines (eventuell Klebebänder oder Kreiden)"
-   ],
+   "material": [],
    "vorbereitung": "mittel",
    "kurz": "Die Landkarte ist ein Kennenlernspiel für neu zusammengekommene Gruppen. Es eignet sich, wenn die Teilnehmer über einen größeren Bereich verteilt wohnen/arbeiten/etc.",
    "beschreibung": "Die **Landkarte** ist ein Kennenlernspiel für neu zusammengekommene Gruppen. Es eignet sich, wenn die Teilnehmer über einen größeren Bereich verteilt wohnen/arbeiten/etc.\n\n## Material\nFür das Spiel wird nicht unbedingt Material benötigt. Etwas anschaulicher wird es jedoch, wenn die Umrisse der Region, aus der die Teilnehmer stammen (Staat, Bundesland, Stadt, etc.) per Kreide oder Klebeband am Boden dargestellt werden können.\n\n## Ablauf\nDie Teilnehmer stellen sich auf der Landkarte nach ihrem Herkunftsort (Geburtsort, Wohnort, Arbeitsort, etc.) auf. Dies visualisiert die Herkunftsorte der Teilnehmer besser, als würden diese mit Worten erklärt werden. Anschließend stellt sich jeder kurz vor und erklärt, wo er steht und warum.\n\nAuch andere Orte können auf diese Weise visualisiert werden, etwa das Traum-Reiseziel (auf einer Weltkarte).",
@@ -32571,9 +32565,7 @@
    "dauer_min": 10,
    "dauer_max": 30,
    "ort": "beides",
-   "material": [
-    "kein Material notwendig"
-   ],
+   "material": [],
    "vorbereitung": "gering",
    "kurz": "Erzählt Pfadfinder-Storys! Zwei echt, eine erfunden (oder umgekehrt). Wer errät, welche lügt?",
    "beschreibung": "Jeder von euch hat schon die verrücktesten Sachen bei den Pfadfindern erlebt, aber können sich alle noch daran erinnern? Testet eure Gruppe, vielleicht könnt ihr ihnen ja einen Bären aufbinden.\n\nIhr präsentiert eurer Gruppe drei Geschichten: eine davon ist wahr, die anderen beiden sind ausgedacht, oder anders herum: zwei Geschichten sind wahr und eine Seemannsgarn.\nNa wer hat den richtigen Riecher? Dann ist jemand anderes dran!",
@@ -37473,8 +37465,7 @@
    "dauer_max": 20,
    "ort": "drinnen",
    "material": [
-    "Spielkarten",
-    "zur Not ohne"
+    "Spielkarten"
    ],
    "vorbereitung": "gering",
    "kurz": "Wer ist der Mörder ist ein Geschicklichkeits- und Konzentrationsspiel. Ein Mörder muss von der Gruppe erkannt werden, der die Gruppe zu Tode blinzelt.",

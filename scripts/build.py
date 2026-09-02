@@ -866,6 +866,25 @@ def main():
     if bericht["unbekannt"]:
         print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(", ".join(bericht["unbekannt"])))
 
+    # Materialangaben, die "nichts" bedeuten, gehören nicht in die Liste -
+    # sonst fallen die Spiele aus dem Filter "nur ohne Material" heraus.
+    # Achtung: "Kein Plastik!" ist eine Regel und muss stehen bleiben.
+    nichts = re.compile(
+        r"^(kein|keine|keines|nichts|ohne)\b\s*(material\w*)?\s*"
+        r"(notwendig|n[oö]tig|erforderlich)?\s*(\(.*\))?[.!]*$", re.IGNORECASE)
+    bereinigt = []
+    for element in elemente:
+        vorher = list(element.get("material") or [])
+        nachher = [m for m in vorher
+                   if not nichts.match(m.strip()) and m.strip().lower() != "zur not ohne"]
+        if nachher != vorher:
+            element["material"] = nachher
+            bereinigt.append("{}: {} -> {}".format(element["id"], vorher, nachher))
+    if bereinigt:
+        print("\nMaterialangaben bereinigt ({}):".format(len(bereinigt)))
+        for zeile in bereinigt:
+            print("   {}".format(zeile))
+
     # Ein "Spiel" ist laut Schema 5-45 Minuten lang. Was mindestens eine Stunde
     # dauert (Highland Games, Kochduell, Chaos-Spiel), füllt den Abend und ist
     # ein Projekt - sonst würfelt der Planer es neben zwei weitere Bausteine.
