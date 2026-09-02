@@ -95,7 +95,8 @@
    "element_typ": "spiel",
    "kategorie": "kooperation",
    "slots": [
-    "einstieg"
+    "einstieg",
+    "hauptteil"
    ],
    "altersstufen": [
     "Wölflinge",
@@ -134,6 +135,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -436,6 +438,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -871,6 +874,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -1258,7 +1262,8 @@
    "element_typ": "spiel",
    "kategorie": "kooperation",
    "slots": [
-    "einstieg"
+    "einstieg",
+    "hauptteil"
    ],
    "altersstufen": [
     "Wölflinge",
@@ -1334,6 +1339,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -1373,6 +1379,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -1413,6 +1420,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -1642,6 +1650,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2070,6 +2079,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2188,6 +2198,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2303,6 +2314,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2773,6 +2785,7 @@
    "kategorie": "ruhig",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2811,6 +2824,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -2886,6 +2900,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3006,6 +3021,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3233,6 +3249,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3305,6 +3322,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3343,6 +3361,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3421,6 +3440,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3459,6 +3479,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3498,6 +3519,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3653,6 +3675,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3771,6 +3794,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -3848,6 +3872,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -4240,6 +4265,7 @@
    "kategorie": "ankommen",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -4278,7 +4304,8 @@
    "element_typ": "spiel",
    "kategorie": "kooperation",
    "slots": [
-    "einstieg"
+    "einstieg",
+    "hauptteil"
    ],
    "altersstufen": [
     "Wölflinge",
@@ -4398,6 +4425,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [
@@ -4437,6 +4465,7 @@
    "kategorie": "kreis",
    "slots": [
     "einstieg",
+    "hauptteil",
     "abschluss"
    ],
    "altersstufen": [

@@ -188,8 +188,7 @@ def map_slots(spielart, kategorie, dauer_min):
     slots = []
     if "Warm up" in spielart or "Kennenlernspiel" in spielart or dauer_min <= 10:
         slots.append("einstieg")
-    if dauer_min >= 10:
-        slots.append("hauptteil")
+    slots.append("hauptteil")  # jedes Spiel kann im Hauptteil vorkommen
     if dauer_min <= 15 and kategorie in ("kreis", "ruhig", "ankommen"):
         slots.append("abschluss")
     return slots or ["hauptteil"]
