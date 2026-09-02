@@ -101,21 +101,53 @@ details.filter[open] > summary::after { content: "▴"; }
 }
 @media (max-width: 400px) { .filter-raster { grid-template-columns: 1fr; } }
 .feld { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.feld label { font-size: .75rem; color: var(--leise); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.feld label { font-size: .75rem; color: var(--leise); font-weight: 600;
+  text-transform: uppercase; letter-spacing: .03em; }
 .feld select {
   padding: 9px 10px; border: 1px solid var(--linie); border-radius: 8px;
   background: var(--grund); width: 100%;
 }
 .schalter { display: flex; align-items: center; gap: 8px; grid-column: 1 / -1; }
 .schalter input { width: 18px; height: 18px; accent-color: var(--akzent); }
+.schalter label { text-transform: none; font-size: .9rem; color: var(--text);
+  font-weight: 400; letter-spacing: 0; }
 .filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
 
+/* ------------------------------------------------------------ Brotkrumen */
+.pfad { display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
+  margin: 12px 2px 10px; font-size: .85rem; }
+.pfad button { background: none; border: 0; padding: 4px 2px; color: var(--akzent);
+  font-weight: 600; font-size: .85rem; }
+.pfad .jetzt { color: var(--leise); font-weight: 600; padding: 4px 2px; }
+.pfad .pfeil { color: var(--linie); }
+
+/* --------------------------------------------------------------- Kacheln */
+.kacheln { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (min-width: 560px) { .kacheln { grid-template-columns: 1fr 1fr 1fr; } }
+.kachel {
+  text-align: left; background: var(--karte); border: 1px solid var(--linie);
+  border-radius: var(--rund); padding: 14px; box-shadow: var(--schatten);
+  display: flex; flex-direction: column; gap: 2px; min-height: 76px;
+  justify-content: center;
+}
+.kachel:active { transform: scale(.99); }
+.kachel .name { font-weight: 600; font-size: .98rem; }
+.kachel .zahl { font-size: .8rem; color: var(--leise); }
+.kachel.gross { grid-column: 1 / -1; flex-direction: row; align-items: center;
+  justify-content: space-between; min-height: 0; padding: 12px 14px; }
+.kachel.gross .name { font-size: .92rem; color: var(--akzent); }
+
+/* ---------------------------------------------------------- Trefferzeile */
 .trefferzeile {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
   margin: 14px 2px 8px; font-size: .85rem; color: var(--leise);
 }
+.trefferzeile select {
+  border: 1px solid var(--linie); border-radius: 8px; background: var(--karte);
+  padding: 6px 8px; font-size: .8rem; color: var(--text);
+}
 
-/* ---------------------------------------------------------- Karten */
+/* ---------------------------------------------------------------- Karten */
 .liste { display: flex; flex-direction: column; gap: 8px; }
 .karte {
   width: 100%; text-align: left;
@@ -132,13 +164,20 @@ details.filter[open] > summary::after { content: "▴"; }
   background: var(--grund); border: 1px solid var(--linie); color: var(--leise);
   white-space: nowrap;
 }
-.merkmal.typ { background: var(--akzent-leicht); border-color: transparent; color: var(--akzent); font-weight: 600; }
-@media (prefers-color-scheme: dark) { .merkmal.typ { color: var(--text); } }
+.merkmal.typ { background: var(--akzent-leicht); border-color: transparent;
+  color: var(--akzent); font-weight: 600; }
+.merkmal.zeit { background: var(--akzent-leicht); border-color: transparent;
+  color: var(--akzent); font-weight: 600; }
+@media (prefers-color-scheme: dark) {
+  .merkmal.typ, .merkmal.zeit { color: var(--text); }
+}
 
-.leer { text-align: center; color: var(--leise); padding: 40px 20px; }
+.leer { text-align: center; color: var(--leise); padding: 36px 20px; }
+.leer button { background: none; border: 0; color: var(--akzent); font-weight: 600;
+  text-decoration: underline; padding: 0; }
 .mehr { margin: 12px 0; display: flex; justify-content: center; }
 
-/* ---------------------------------------------------------- Detailansicht */
+/* ---------------------------------------------------------- Überlagerung */
 .ueberlagerung {
   position: fixed; inset: 0; z-index: 50;
   background: var(--grund);
@@ -147,13 +186,14 @@ details.filter[open] > summary::after { content: "▴"; }
 }
 .ueberlagerung[hidden] { display: none; }
 .ueber-kopf {
-  position: sticky; top: 0; background: var(--grund);
+  position: sticky; top: 0; z-index: 5; background: var(--grund);
   border-bottom: 1px solid var(--linie); padding-top: env(safe-area-inset-top);
   display: flex; align-items: center; gap: 8px; padding-inline: 8px;
 }
 .ueber-kopf .titel { font-weight: 600; flex: 1; min-width: 0; padding: 12px 0;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ueber-kopf button { background: none; border: 0; padding: 12px; font-size: 1rem; font-weight: 600; color: var(--akzent); }
+.ueber-kopf button { background: none; border: 0; padding: 12px; font-size: 1rem;
+  font-weight: 600; color: var(--akzent); }
 .ueber-inhalt { max-width: 720px; margin: 0 auto; padding: 16px 14px 60px; }
 .ueber-inhalt h2 { font-size: 1.3rem; }
 
@@ -179,8 +219,27 @@ details.filter[open] > summary::after { content: "▴"; }
 .kasten.dublette button { background: none; border: 0; padding: 0; color: inherit;
   text-decoration: underline; font-size: inherit; }
 
-/* ---------------------------------------------------------- Planer */
-.plan-hinweis { color: var(--leise); font-size: .875rem; margin: 14px 2px; }
+/* ------------------------------------------------------------ Chip-Reihen */
+.chipzeile { margin: 10px 0; }
+.chipzeile .chiptitel { font-size: .72rem; color: var(--leise); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 5px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 6px 11px; border-radius: 999px; border: 1px solid var(--linie);
+  background: var(--karte); font-size: .82rem; color: var(--leise);
+}
+.chip.aktiv { background: var(--akzent); border-color: var(--akzent);
+  color: var(--akzent-text); font-weight: 600; }
+
+/* ---------------------------------------------------------------- Planer */
+.rahmen {
+  background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
+  padding: 14px; margin: 14px 0 16px; box-shadow: var(--schatten);
+}
+.rahmen h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--leise); margin-bottom: 10px; }
+.rahmen .filter-raster { padding: 0; }
+
 .slot {
   background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
   padding: 12px 14px; margin-bottom: 8px; box-shadow: var(--schatten);
@@ -193,8 +252,10 @@ details.filter[open] > summary::after { content: "▴"; }
 .slot-inhalt .gewaehlt { font-weight: 600; }
 .slot-inhalt .kurz { font-size: .85rem; color: var(--leise); margin-top: 2px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.slot-inhalt .frei { font-size: .85rem; color: var(--leise); margin-top: 2px; }
 .slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .slot.fest { background: none; box-shadow: none; border-style: dashed; }
+.slot .quellzeile { font-size: .75rem; color: var(--leise); margin-top: 4px; }
 
 .summe {
   position: sticky; bottom: 0; z-index: 10;
@@ -202,21 +263,23 @@ details.filter[open] > summary::after { content: "▴"; }
   background: var(--karte); border-top: 1px solid var(--linie);
 }
 .summe-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.summe-wert { font-size: 1.15rem; font-weight: 700; }
+.summe-wert { font-size: 1.1rem; font-weight: 700; }
 .summe-wert.knapp { color: var(--warn); }
-.balken { height: 6px; border-radius: 3px; background: var(--linie); margin: 8px 0 10px; overflow: hidden; }
+.balken { height: 6px; border-radius: 3px; background: var(--linie); margin: 8px 0 10px;
+  overflow: hidden; }
 .balken i { display: block; height: 100%; background: var(--akzent); transition: width .2s; }
 .balken i.knapp { background: var(--warn); }
 .summe-knoepfe { display: flex; gap: 8px; }
 .summe-knoepfe .knopf { flex: 1; text-align: center; }
 
 .planausgabe {
-  width: 100%; min-height: 220px; margin-top: 12px; padding: 12px;
+  width: 100%; min-height: 200px; margin-top: 12px; padding: 12px;
   border: 1px solid var(--linie); border-radius: var(--rund);
   background: var(--karte); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .8rem; line-height: 1.45; white-space: pre; overflow-x: auto;
 }
-.meldung { text-align: center; font-size: .85rem; color: var(--akzent); min-height: 1.2em; margin-top: 8px; }
+.meldung { text-align: center; font-size: .85rem; color: var(--akzent);
+  min-height: 1.2em; margin-top: 8px; }
 
 .fuss { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--linie);
   font-size: .78rem; color: var(--leise); }
@@ -245,17 +308,11 @@ details.filter[open] > summary::after { content: "▴"; }
       <button class="knopf" id="zufallKnopf" title="Zufälliger Vorschlag">Zufall</button>
     </div>
 
+    <nav class="pfad" id="pfad" aria-label="Wo bin ich"></nav>
+
     <details class="filter" id="filterBox">
       <summary>Filter</summary>
       <div class="filter-raster">
-        <div class="feld">
-          <label for="fTyp">Art</label>
-          <select id="fTyp"><option value="">alle</option></select>
-        </div>
-        <div class="feld">
-          <label for="fKategorie">Kategorie</label>
-          <select id="fKategorie"><option value="">alle</option></select>
-        </div>
         <div class="feld">
           <label for="fStufe">Altersstufe</label>
           <select id="fStufe">
@@ -295,9 +352,7 @@ details.filter[open] > summary::after { content: "▴"; }
         </div>
         <div class="schalter">
           <input type="checkbox" id="fOhneMaterial">
-          <label for="fOhneMaterial" style="text-transform:none;font-size:.9rem;color:var(--text)">
-            nur ohne Material
-          </label>
+          <label for="fOhneMaterial">nur ohne Material</label>
         </div>
         <div class="filter-fuss">
           <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
@@ -305,8 +360,15 @@ details.filter[open] > summary::after { content: "▴"; }
       </div>
     </details>
 
-    <div class="trefferzeile">
-      <span id="treffer">lädt …</span>
+    <div id="kacheln" class="kacheln"></div>
+
+    <div class="trefferzeile" id="listenkopf" hidden>
+      <span id="treffer"></span>
+      <select id="sortierung" aria-label="Sortierung">
+        <option value="dauer">kürzeste zuerst</option>
+        <option value="dauer-ab">längste zuerst</option>
+        <option value="titel">A bis Z</option>
+      </select>
     </div>
 
     <div class="liste" id="liste"></div>
@@ -319,10 +381,50 @@ details.filter[open] > summary::after { content: "▴"; }
 
   <!-- ================================================ Ansicht: Planen -->
   <section id="ansichtPlanen" hidden>
-    <p class="plan-hinweis">
-      Stell dir deinen Heimabend zusammen. Eröffnungs- und Schlusskreis sind fest
-      eingeplant, den Rest füllst du selbst – oder lässt würfeln.
-    </p>
+    <div class="rahmen">
+      <h2>Rahmen des Abends</h2>
+      <div class="filter-raster">
+        <div class="feld">
+          <label for="rZielzeit">Gesamtzeit</label>
+          <select id="rZielzeit">
+            <option value="60">60 Minuten</option>
+            <option value="90">90 Minuten</option>
+            <option value="120" selected>120 Minuten</option>
+            <option value="150">150 Minuten</option>
+            <option value="180">180 Minuten</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="rStufe">Altersstufe</label>
+          <select id="rStufe">
+            <option value="">alle</option>
+            <option>Wölflinge</option>
+            <option>Pfadfinder</option>
+            <option>Ältere</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="rOrt">Ort</label>
+          <select id="rOrt">
+            <option value="">egal</option>
+            <option value="drinnen">drinnen</option>
+            <option value="draussen">draußen</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="rVorbereitung">Vorbereitung</label>
+          <select id="rVorbereitung">
+            <option value="">egal</option>
+            <option value="gering">höchstens gering</option>
+            <option value="mittel">höchstens mittel</option>
+          </select>
+        </div>
+        <div class="schalter">
+          <input type="checkbox" id="rOhneMaterial">
+          <label for="rOhneMaterial">nur Bausteine ohne Material</label>
+        </div>
+      </div>
+    </div>
 
     <div id="planSlots"></div>
 
@@ -355,7 +457,8 @@ details.filter[open] > summary::after { content: "▴"; }
 </div>
 
 <!-- ================================================ Auswahl für Slots -->
-<div class="ueberlagerung" id="auswahl" hidden role="dialog" aria-modal="true" aria-label="Baustein auswählen">
+<div class="ueberlagerung" id="auswahl" hidden role="dialog" aria-modal="true"
+     aria-label="Baustein auswählen">
   <div class="ueber-kopf">
     <button id="auswahlZurueck">‹ Zurück</button>
     <span class="titel" id="auswahlTitel"></span>
@@ -365,6 +468,11 @@ details.filter[open] > summary::after { content: "▴"; }
       <input type="search" id="auswahlSuche" placeholder="Suchen …" autocomplete="off"
              aria-label="Bausteine durchsuchen">
     </div>
+    <div class="schalter" style="margin:4px 2px 2px">
+      <input type="checkbox" id="auswahlZeit">
+      <label for="auswahlZeit" id="auswahlZeitText">nur was in die Zeit passt</label>
+    </div>
+    <div id="auswahlChips"></div>
     <div class="trefferzeile"><span id="auswahlTreffer"></span></div>
     <div class="liste" id="auswahlListe"></div>
     <div class="mehr" id="auswahlMehrZeile" hidden>
@@ -383,12 +491,17 @@ details.filter[open] > summary::after { content: "▴"; }
 
 /* ---------------------------------------------------- Beschriftungen */
 var TYP_TEXT = {
+  spiel: "Spiele", probe: "Proben", aktivitaet: "Aktivitäten", projekt: "Projekte"
+};
+var TYP_EINZAHL = {
   spiel: "Spiel", probe: "Probe", aktivitaet: "Aktivität", projekt: "Projekt"
 };
+var TYP_REIHENFOLGE = ["spiel", "probe", "aktivitaet", "projekt"];
+
 var KATEGORIE_TEXT = {
   // Spiele
   ankommen: "Ankommen & Kennenlernen", bewegung_drinnen: "Bewegung drinnen",
-  bewegung_draussen: "Bewegung draußen", gelaende: "Geländespiel", kreis: "Kreisspiel",
+  bewegung_draussen: "Bewegung draußen", gelaende: "Geländespiele", kreis: "Kreisspiele",
   ruhig: "Ruhig & Konzentration", kooperation: "Kooperation", abschluss: "Abschluss",
   // Proben
   knoten: "Knoten", karte_kompass: "Karte & Kompass", feuer: "Feuer",
@@ -396,9 +509,27 @@ var KATEGORIE_TEXT = {
   bundeskunde: "Bundeskunde", fahrtentechnik: "Fahrtentechnik", sonstiges: "Sonstiges",
   // Aktivitäten und Projekte
   draussen: "Draußen", kreativ: "Kreativ & Werken", kochen: "Kochen",
-  musisch: "Musisch", soziales: "Gruppe & Soziales", themenabend: "Themenabend",
-  wissen: "Wissen", entdecken: "Entdecken", spiel: "Großes Spiel", raetsel: "Rätsel"
+  musisch: "Musisch", soziales: "Gruppe & Soziales", themenabend: "Themenabende",
+  wissen: "Wissen", entdecken: "Entdecken", spiel: "Große Spiele", raetsel: "Rätsel"
 };
+
+var UNTER_TEXT = {
+  // Spiele
+  gelaende: "Geländespiel", verstecken: "Verstecken & Suchen",
+  namen: "Namen & Kennenlernen", vertrauen: "Vertrauen", team: "Zusammenarbeit",
+  reflexion: "Reflexion", merken: "Merken & Kim", denken: "Denken & Rätsel",
+  singen: "Singen & Tanzen", darstellen: "Darstellen", tisch: "Am Tisch",
+  ball: "Ballspiele", fangen: "Fangen & Laufen", kampf: "Kraft & Kampf",
+  wettkampf: "Wettkampf & Staffel", reaktion: "Reaktion", konzentration: "Konzentration",
+  geschick: "Geschicklichkeit", ruhig: "Ruhige Spiele", warmup: "Warm-up",
+  toben: "Toben", sonstiges: "Sonstiges",
+  // Projekte
+  pfaditechnik: "Pfadfindertechnik", kochen: "Kochen & Backen",
+  basteln: "Basteln & Werken", natur: "Natur", bund: "Bund & Geschichte",
+  nachhaltigkeit: "Nachhaltigkeit", gruppe: "Gruppe & Sippe", musisch: "Musisches",
+  spiel: "Spielerisches"
+};
+
 var ORT_TEXT = { drinnen: "drinnen", draussen: "draußen", beides: "drinnen & draußen" };
 
 /* Feste Bestandteile jedes Heimabends – Rituale, keine Bausteine. */
@@ -413,16 +544,22 @@ var SLOTS = [
   { schluessel: "abschluss", name: "Abschlussspiel",
     passt: function (e) { return e.element_typ === "spiel" && hat(e.slots, "abschluss"); } }
 ];
-var ZIEL_DAUER = 120;
-var SEITENGROESSE = 40;
+var SEITENGROESSE = 30;
+/* Ab so vielen Einträgen lohnt sich die dritte Ebene (Unterkategorien). */
+var UNTEREBENE_AB = 20;
 
 /* ------------------------------------------------------------ Zustand */
 var ALLE = [];
 var NACH_ID = {};
+var pfad = { typ: "", kategorie: "", unterkategorie: "" };
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
+
 var plan = { einstieg: null, haupt: [null, null], abschluss: null };
-var auswahlZiel = null;      // { schluessel, index } während der Slot-Auswahl
+var rahmen = { zielzeit: 120, stufe: "", ort: "", vorbereitung: "", ohneMaterial: false };
+
+var auswahlZiel = null;          // { slot, index, zielzeit }
+var auswahlPfad = { typ: "", kategorie: "", unterkategorie: "" };
 var auswahlListe = [];
 var auswahlSichtbar = SEITENGROESSE;
 
@@ -444,9 +581,10 @@ function vereinfache(text) {
 
 function dauerText(e) {
   return e.dauer_min === e.dauer_max
-    ? e.dauer_min + " Min"
-    : e.dauer_min + "–" + e.dauer_max + " Min";
+    ? e.dauer_min + " Min" : e.dauer_min + "–" + e.dauer_max + " Min";
 }
+function mitteldauer(e) { return (e.dauer_min + e.dauer_max) / 2; }
+function aufFuenf(zahl) { return Math.max(5, Math.round(zahl / 5) * 5); }
 
 function gruppenText(e) {
   if (e.gruppe_min && e.gruppe_max) return e.gruppe_min + "–" + e.gruppe_max + " Personen";
@@ -454,11 +592,11 @@ function gruppenText(e) {
   if (e.gruppe_max) return "bis " + e.gruppe_max + " Personen";
   return "";
 }
-
 function stufenText(e) {
-  return (e.altersstufen && e.altersstufen.length)
-    ? e.altersstufen.join(", ") : "alle Stufen";
+  return (e.altersstufen && e.altersstufen.length) ? e.altersstufen.join(", ") : "alle Stufen";
 }
+function kategorieText(e) { return KATEGORIE_TEXT[e.kategorie] || e.kategorie; }
+function unterText(schluessel) { return UNTER_TEXT[schluessel] || schluessel; }
 
 /**
  * Wandelt das leichte Markdown der Beschreibungen in HTML:
@@ -467,7 +605,6 @@ function stufenText(e) {
 function textZuHtml(roh) {
   var zeilen = String(roh || "").split("\n");
   var teile = [], absatz = [], liste = [];
-
   function absatzSchliessen() {
     if (absatz.length) { teile.push("<p>" + absatz.join(" ") + "</p>"); absatz = []; }
   }
@@ -509,7 +646,6 @@ function ladeDaten() {
     .then(function (inhalt) { return inhalt.elemente || inhalt; })
     .catch(ladeSkriptdaten);
 }
-
 function ladeSkriptdaten() {
   return new Promise(function (fertig, fehler) {
     if (window.ELEMENTE) { fertig(window.ELEMENTE); return; }
@@ -524,11 +660,14 @@ function ladeSkriptdaten() {
 }
 
 /* ------------------------------------------------------------ Filtern */
+function leereFilter() {
+  return { suche: "", stufe: "", dauer: 0, ort: "", vorbereitung: "", ohneMaterial: false };
+}
+
+/** Die Einstellungen aus dem Filter-Klappfeld der Baustein-Ansicht. */
 function filterWerte() {
   return {
     suche: vereinfache($("suche").value.trim()),
-    typ: $("fTyp").value,
-    kategorie: $("fKategorie").value,
     stufe: $("fStufe").value,
     dauer: $("fDauer").value ? parseInt($("fDauer").value, 10) : 0,
     ort: $("fOrt").value,
@@ -537,107 +676,286 @@ function filterWerte() {
   };
 }
 
-/** Filter, der nichts aussortiert. */
-function leereFilter() {
-  return { suche: "", typ: "", kategorie: "", stufe: "", dauer: 0,
-           ort: "", vorbereitung: "", ohneMaterial: false };
+/** Die Vorauswahl aus dem "Rahmen des Abends" im Planer. */
+function rahmenFilter() {
+  var f = leereFilter();
+  f.stufe = rahmen.stufe;
+  f.ort = rahmen.ort;
+  f.ohneMaterial = rahmen.ohneMaterial;
+  f.vorbereitungHoechstens = rahmen.vorbereitung;
+  return f;
 }
 
+var VORBEREITUNG_RANG = { gering: 1, mittel: 2, hoch: 3 };
+
 function passtZuFilter(e, f) {
-  if (f.typ && e.element_typ !== f.typ) return false;
-  if (f.kategorie && e.kategorie !== f.kategorie) return false;
   // Elemente ohne Altersangabe (z. B. Spielewiki) gelten für alle Stufen
   if (f.stufe && e.altersstufen && e.altersstufen.length && !hat(e.altersstufen, f.stufe)) return false;
   if (f.dauer && e.dauer_min > f.dauer) return false;
   if (f.ort && e.ort !== f.ort && e.ort !== "beides") return false;
   if (f.vorbereitung && e.vorbereitung !== f.vorbereitung) return false;
+  if (f.vorbereitungHoechstens &&
+      VORBEREITUNG_RANG[e.vorbereitung] > VORBEREITUNG_RANG[f.vorbereitungHoechstens]) return false;
   if (f.ohneMaterial && e.material && e.material.length) return false;
   if (f.suche && e._suchtext.indexOf(f.suche) === -1) return false;
   return true;
 }
 
-function filtereListe(quelle, f, zusatz) {
+function passtZuPfad(e, p) {
+  if (p.typ && e.element_typ !== p.typ) return false;
+  if (p.kategorie && e.kategorie !== p.kategorie) return false;
+  if (p.unterkategorie && e.unterkategorie !== p.unterkategorie) return false;
+  return true;
+}
+
+function sammle(f, p, zusatz) {
   var ergebnis = [];
-  for (var i = 0; i < quelle.length; i++) {
-    var e = quelle[i];
+  for (var i = 0; i < ALLE.length; i++) {
+    var e = ALLE[i];
+    if (p && !passtZuPfad(e, p)) continue;
     if (zusatz && !zusatz(e)) continue;
     if (passtZuFilter(e, f)) ergebnis.push(e);
   }
-  return sortiere(ergebnis, f.suche);
+  return ergebnis;
 }
 
-/**
- * Sortiert alphabetisch. Wird gesucht, kommen Titeltreffer zuerst –
- * bei "knoten" soll die Knoten-Olympiade oben stehen und nicht ein
- * Bastelabend, in dessen Beschreibung das Wort irgendwo vorkommt.
- */
-function sortiere(liste, suche) {
+/* --------------------------------------------------------- Sortieren */
+function nachTitel(a, b) {
+  return a.titel.localeCompare(b.titel, "de",
+         { ignorePunctuation: true, numeric: true, sensitivity: "base" });
+}
+
+function sortiere(liste, art, suche) {
   return liste.sort(function (a, b) {
+    // Wird gesucht, stehen Titeltreffer immer oben – bei "knoten" soll die
+    // Knoten-Olympiade kommen und nicht ein Bastelabend, in dem das Wort vorkommt.
     if (suche) {
       var rangA = vereinfache(a.titel).indexOf(suche) === -1 ? 1 : 0;
       var rangB = vereinfache(b.titel).indexOf(suche) === -1 ? 1 : 0;
       if (rangA !== rangB) return rangA - rangB;
     }
-    return a.titel.localeCompare(b.titel, "de",
-           { ignorePunctuation: true, numeric: true, sensitivity: "base" });
+    if (art === "dauer" && a.dauer_min !== b.dauer_min) return a.dauer_min - b.dauer_min;
+    if (art === "dauer-ab" && a.dauer_min !== b.dauer_min) return b.dauer_min - a.dauer_min;
+    return nachTitel(a, b);
   });
-}
-
-/* ------------------------------------------------------ Kategorienliste */
-/** Füllt das Kategorie-Menü passend zur gewählten Art. */
-function baueKategorieMenue() {
-  var typ = $("fTyp").value;
-  var vorher = $("fKategorie").value;
-  var zaehler = {};
-  for (var i = 0; i < ALLE.length; i++) {
-    var e = ALLE[i];
-    if (typ && e.element_typ !== typ) continue;
-    zaehler[e.kategorie] = (zaehler[e.kategorie] || 0) + 1;
-  }
-  var schluessel = Object.keys(zaehler).sort(function (a, b) {
-    return (KATEGORIE_TEXT[a] || a).localeCompare(KATEGORIE_TEXT[b] || b, "de");
-  });
-  var html = '<option value="">alle</option>';
-  for (var k = 0; k < schluessel.length; k++) {
-    var s = schluessel[k];
-    html += '<option value="' + schuetze(s) + '">' +
-            schuetze(KATEGORIE_TEXT[s] || s) + " (" + zaehler[s] + ")</option>";
-  }
-  $("fKategorie").innerHTML = html;
-  if (zaehler[vorher]) $("fKategorie").value = vorher;
 }
 
 /* ------------------------------------------------------------ Karten */
-function karteHtml(e) {
-  var merkmale = '<span class="merkmal typ">' + schuetze(TYP_TEXT[e.element_typ] || e.element_typ) + "</span>";
-  merkmale += '<span class="merkmal">' + schuetze(KATEGORIE_TEXT[e.kategorie] || e.kategorie) + "</span>";
-  merkmale += '<span class="merkmal">' + schuetze(dauerText(e)) + "</span>";
+function karteHtml(e, zielzeit) {
+  var merkmale = "";
+  if (zielzeit) {
+    merkmale += '<span class="merkmal zeit">' + schuetze(dauerText(e)) + "</span>";
+  } else {
+    merkmale += '<span class="merkmal typ">' + schuetze(TYP_EINZAHL[e.element_typ]) + "</span>";
+    merkmale += '<span class="merkmal">' + schuetze(dauerText(e)) + "</span>";
+  }
+  merkmale += '<span class="merkmal">' + schuetze(kategorieText(e)) + "</span>";
+  if (e.unterkategorie && e.unterkategorie !== "sonstiges") {
+    merkmale += '<span class="merkmal">' + schuetze(unterText(e.unterkategorie)) + "</span>";
+  }
   merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
   // Gibt es denselben Titel in einer anderen Quelle, hilft der Quellname beim Unterscheiden
   if (e.dubletten && e.dubletten.length) {
     merkmale += '<span class="merkmal">' + schuetze(e.quelle.name) + "</span>";
   }
-  return '<h3>' + schuetze(e.titel) + "</h3>" +
+  return "<h3>" + schuetze(e.titel) + "</h3>" +
          "<p>" + schuetze(e.kurz) + "</p>" +
          '<div class="merkmale">' + merkmale + "</div>";
 }
 
-function baueKarte(e, beiKlick) {
+function baueKarte(e, beiKlick, zielzeit) {
   var knopf = document.createElement("button");
   knopf.className = "karte";
   knopf.type = "button";
-  knopf.innerHTML = karteHtml(e);
+  knopf.innerHTML = karteHtml(e, zielzeit);
   knopf.addEventListener("click", function () { beiKlick(e); });
   return knopf;
 }
 
 /* ------------------------------------------------- Ansicht: Bausteine */
-function zeichneListe() {
+/** Zählt, wie viele Elemente unter einem Pfad liegen (mit Filtern). */
+function zaehleNach(feld, f, p) {
+  var zaehler = {};
+  for (var i = 0; i < ALLE.length; i++) {
+    var e = ALLE[i];
+    if (!passtZuPfad(e, p)) continue;
+    if (!passtZuFilter(e, f)) continue;
+    var wert = e[feld];
+    if (!wert) continue;
+    zaehler[wert] = (zaehler[wert] || 0) + 1;
+  }
+  return zaehler;
+}
+
+function baueKachel(name, anzahl, beiKlick, gross) {
+  var knopf = document.createElement("button");
+  knopf.type = "button";
+  knopf.className = "kachel" + (gross ? " gross" : "");
+  knopf.innerHTML = '<span class="name">' + schuetze(name) + "</span>" +
+                    '<span class="zahl">' + anzahl +
+                    (anzahl === 1 ? " Baustein" : " Bausteine") + "</span>";
+  knopf.addEventListener("click", beiKlick);
+  return knopf;
+}
+
+function zeichnePfad() {
+  var teile = [];
+  teile.push({ name: "Alle Bausteine", ziel: { typ: "", kategorie: "", unterkategorie: "" } });
+  if (pfad.typ) {
+    teile.push({ name: TYP_TEXT[pfad.typ],
+                 ziel: { typ: pfad.typ, kategorie: "", unterkategorie: "" } });
+  }
+  if (pfad.kategorie) {
+    teile.push({ name: KATEGORIE_TEXT[pfad.kategorie] || pfad.kategorie,
+                 ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "" } });
+  }
+  if (pfad.unterkategorie) {
+    teile.push({ name: pfad.unterkategorie === "__alle__"
+                       ? "Alle" : unterText(pfad.unterkategorie), ziel: null });
+  }
+  var behaelter = $("pfad");
+  behaelter.innerHTML = "";
+  for (var i = 0; i < teile.length; i++) {
+    if (i > 0) {
+      var pfeil = document.createElement("span");
+      pfeil.className = "pfeil"; pfeil.textContent = "›";
+      behaelter.appendChild(pfeil);
+    }
+    if (i === teile.length - 1) {
+      var jetzt = document.createElement("span");
+      jetzt.className = "jetzt"; jetzt.textContent = teile[i].name;
+      behaelter.appendChild(jetzt);
+    } else {
+      var knopf = document.createElement("button");
+      knopf.type = "button"; knopf.textContent = teile[i].name;
+      (function (ziel) {
+        knopf.addEventListener("click", function () { pfad = ziel; aktualisiere(); });
+      })(teile[i].ziel);
+      behaelter.appendChild(knopf);
+    }
+  }
+}
+
+/**
+ * Entscheidet, ob Kacheln oder die Liste gezeigt werden.
+ * Gesucht wird immer in der Liste – dann will man Treffer sehen, keine Kacheln.
+ */
+function aktualisiere() {
+  var f = filterWerte();
+  zeichnePfad();
+
+  var kacheln = $("kacheln");
+  kacheln.innerHTML = "";
+
+  // "__alle__" heißt: der Nutzer hat "Alle anzeigen" gedrückt und will die
+  // Liste sehen, egal auf welcher Ebene er gerade steht.
+  if (!f.suche && pfad.unterkategorie !== "__alle__") {
+    if (!pfad.typ) { zeigeKacheln(kacheln, "typ", f); return; }
+    if (!pfad.kategorie) { zeigeKacheln(kacheln, "kategorie", f); return; }
+    if (!pfad.unterkategorie) {
+      var unter = zaehleNach("unterkategorie", f, pfad);
+      var schluessel = Object.keys(unter);
+      var summe = sammle(f, pfad).length;
+      // Dritte Ebene nur, wenn sie wirklich hilft
+      if (schluessel.length > 1 && summe > UNTEREBENE_AB) {
+        zeigeKacheln(kacheln, "unterkategorie", f);
+        return;
+      }
+    }
+  }
+
+  zeigeListe(f);
+}
+
+function zeigeKacheln(behaelter, ebene, f) {
+  $("listenkopf").hidden = true;
+  $("liste").innerHTML = "";
+  $("mehrZeile").hidden = true;
+  // Wichtig: sonst zieht der Zufallsknopf aus einer Liste, die zu einer
+  // ganz anderen Kategorie gehörte.
+  gefiltert = [];
+
+  var eintraege = [];
+  if (ebene === "typ") {
+    var nachTyp = zaehleNach("element_typ", f, { typ: "", kategorie: "", unterkategorie: "" });
+    for (var t = 0; t < TYP_REIHENFOLGE.length; t++) {
+      var typ = TYP_REIHENFOLGE[t];
+      if (nachTyp[typ]) {
+        eintraege.push({ name: TYP_TEXT[typ], anzahl: nachTyp[typ],
+                         ziel: { typ: typ, kategorie: "", unterkategorie: "" } });
+      }
+    }
+  } else if (ebene === "kategorie") {
+    var nachKat = zaehleNach("kategorie", f, pfad);
+    eintraege = Object.keys(nachKat).map(function (k) {
+      return { name: KATEGORIE_TEXT[k] || k, anzahl: nachKat[k],
+               ziel: { typ: pfad.typ, kategorie: k, unterkategorie: "" } };
+    });
+  } else {
+    var nachUnter = zaehleNach("unterkategorie", f, pfad);
+    eintraege = Object.keys(nachUnter).map(function (u) {
+      return { name: unterText(u), anzahl: nachUnter[u],
+               ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: u } };
+    });
+  }
+  eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
+
+  if (!eintraege.length) {
+    behaelter.innerHTML = '<p class="leer" style="grid-column:1/-1">' +
+      "Mit diesen Filtern bleibt nichts übrig.</p>";
+    return;
+  }
+  for (var i = 0; i < eintraege.length; i++) {
+    (function (eintrag) {
+      behaelter.appendChild(baueKachel(eintrag.name, eintrag.anzahl, function () {
+        pfad = eintrag.ziel;
+        window.scrollTo(0, 0);
+        aktualisiere();
+      }));
+    })(eintraege[i]);
+  }
+  // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
+  if (ebene !== "typ") {
+    var alle = sammle(f, pfad);
+    behaelter.appendChild(baueKachel("Alle anzeigen", alle.length, function () {
+      pfad = { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "__alle__" };
+      window.scrollTo(0, 0);
+      aktualisiere();
+    }, true));
+  }
+}
+
+function zeigeListe(f) {
+  var suchPfad = {
+    typ: pfad.typ, kategorie: pfad.kategorie,
+    unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
+  };
+  gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche);
+  sichtbar = SEITENGROESSE;
+  $("listenkopf").hidden = false;
+  $("treffer").textContent = gefiltert.length === 1
+    ? "1 Baustein" : gefiltert.length + " Bausteine";
+  $("zufallKnopf").disabled = gefiltert.length === 0;
+  zeichneListe(f);
+}
+
+function zeichneListe(f) {
   var behaelter = $("liste");
   behaelter.innerHTML = "";
   if (!gefiltert.length) {
-    behaelter.innerHTML = '<p class="leer">Nichts gefunden. Versuch weniger Filter.</p>';
+    var text = '<p class="leer">Nichts gefunden.';
+    if (f && f.suche && (pfad.typ || pfad.kategorie)) {
+      text += '<br><button type="button" id="ueberallSuchen">Überall suchen</button>';
+    }
+    text += "</p>";
+    behaelter.innerHTML = text;
+    if ($("ueberallSuchen")) {
+      $("ueberallSuchen").addEventListener("click", function () {
+        pfad = { typ: "", kategorie: "", unterkategorie: "" };
+        aktualisiere();
+      });
+    }
     $("mehrZeile").hidden = true;
     return;
   }
@@ -649,15 +967,6 @@ function zeichneListe() {
   $("mehrKnopf").textContent = "Weitere anzeigen (" + (gefiltert.length - bis) + ")";
 }
 
-function aktualisiere() {
-  gefiltert = filtereListe(ALLE, filterWerte());
-  sichtbar = SEITENGROESSE;
-  $("treffer").textContent = gefiltert.length === 1
-    ? "1 Baustein" : gefiltert.length + " Bausteine";
-  $("zufallKnopf").disabled = gefiltert.length === 0;
-  zeichneListe();
-}
-
 /* ------------------------------------------------------ Detailansicht */
 function zeigeDetail(e) {
   $("detailTitel").textContent = e.titel;
@@ -666,8 +975,9 @@ function zeigeDetail(e) {
   html += '<p style="color:var(--leise);margin:0 0 4px">' + schuetze(e.kurz) + "</p>";
 
   html += '<dl class="datenblatt">';
-  html += "<dt>Art</dt><dd>" + schuetze(TYP_TEXT[e.element_typ] || e.element_typ) +
-          " · " + schuetze(KATEGORIE_TEXT[e.kategorie] || e.kategorie) + "</dd>";
+  html += "<dt>Art</dt><dd>" + schuetze(TYP_EINZAHL[e.element_typ]) +
+          " · " + schuetze(kategorieText(e)) +
+          (e.unterkategorie ? " · " + schuetze(unterText(e.unterkategorie)) : "") + "</dd>";
   html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
   html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
   html += "<dt>Alter</dt><dd>" + schuetze(stufenText(e)) +
@@ -716,7 +1026,6 @@ function zeigeDetail(e) {
   $("detailInhalt").innerHTML = html;
   $("detailInhalt").scrollTop = 0;
 
-  // Verweise auf Dubletten anklickbar machen
   var knoepfe = $("detailInhalt").querySelectorAll(".kasten.dublette button");
   for (var b = 0; b < knoepfe.length; b++) {
     knoepfe[b].addEventListener("click", function () {
@@ -724,7 +1033,6 @@ function zeigeDetail(e) {
       if (ziel) zeigeDetail(ziel);
     });
   }
-
   oeffneUeberlagerung($("detail"));
 }
 
@@ -745,6 +1053,38 @@ function planElement(schluessel, index) {
   return id ? NACH_ID[id] || null : null;
 }
 
+/** Alle Plätze als flache Liste – erleichtert das Rechnen. */
+function alleSlots() {
+  var liste = [];
+  for (var s = 0; s < SLOTS.length; s++) {
+    var anzahl = SLOTS[s].mehrfach ? plan.haupt.length : 1;
+    for (var i = 0; i < anzahl; i++) liste.push({ slot: SLOTS[s], index: i });
+  }
+  return liste;
+}
+
+/** Wie viele Minuten sind noch frei, wenn dieser Platz nicht mitzählt? */
+function freieZeit(ausser) {
+  var belegt = 0;
+  var slots = alleSlots();
+  for (var i = 0; i < slots.length; i++) {
+    if (ausser && slots[i].slot.schluessel === ausser.slot.schluessel &&
+        slots[i].index === ausser.index) continue;
+    var e = planElement(slots[i].slot.schluessel, slots[i].index);
+    if (e) belegt += mitteldauer(e);
+  }
+  return Math.max(0, rahmen.zielzeit - KREIS_DAUER * 2 - belegt);
+}
+
+/** Wie viele Plätze sind noch leer? */
+function leerePlaetze() {
+  var slots = alleSlots(), zahl = 0;
+  for (var i = 0; i < slots.length; i++) {
+    if (!planElement(slots[i].slot.schluessel, slots[i].index)) zahl++;
+  }
+  return zahl;
+}
+
 function zeichnePlan() {
   var behaelter = $("planSlots");
   behaelter.innerHTML = "";
@@ -755,9 +1095,7 @@ function zeichnePlan() {
   for (var s = 0; s < SLOTS.length; s++) {
     var slot = SLOTS[s];
     if (slot.mehrfach) {
-      for (var i = 0; i < plan.haupt.length; i++) {
-        behaelter.appendChild(slotKarte(slot, i));
-      }
+      for (var i = 0; i < plan.haupt.length; i++) behaelter.appendChild(slotKarte(slot, i));
       var hinzu = document.createElement("div");
       hinzu.className = "slot-knoepfe";
       hinzu.style.margin = "0 0 8px";
@@ -801,15 +1139,21 @@ function slotKarte(slot, index) {
   html += '<div class="slot-inhalt">';
   if (e) {
     html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
-            '<div class="kurz">' + schuetze(e.kurz) + "</div>";
+            '<div class="kurz">' + schuetze(e.kurz) + "</div>" +
+            '<div class="quellzeile">' + schuetze(kategorieText(e)) + " · " +
+            schuetze(e.quelle.name) + "</div>";
   } else {
-    html += '<div class="kurz">noch nichts gewählt</div>';
+    var frei = freieZeit({ slot: slot, index: index });
+    var vorschlag = aufFuenf(frei / Math.max(1, leerePlaetze()));
+    html += '<div class="frei">noch ' + Math.round(frei) + " Min frei · " +
+            "Vorschläge für ca. " + vorschlag + " Min</div>";
   }
   html += "</div>";
 
-  html += '<div class="slot-knoepfe">' +
-          '<button class="knopf klein" type="button" data-tat="waehlen">' +
-          (e ? "Anderen wählen" : "Auswählen") + "</button>" +
+  html += '<div class="slot-knoepfe">';
+  if (!e) html += '<button class="knopf klein stark" type="button" data-tat="vorschlag">Vorschläge</button>';
+  html += '<button class="knopf klein" type="button" data-tat="waehlen">' +
+          (e ? "Anderen wählen" : "Alle durchsuchen") + "</button>" +
           '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
   if (e) {
     html += '<button class="knopf klein" type="button" data-tat="ansehen">Ansehen</button>' +
@@ -838,7 +1182,8 @@ function slotSetzen(schluessel, index, id) {
 }
 
 function slotAktion(tat, slot, index) {
-  if (tat === "waehlen") { oeffneAuswahl(slot, index); return; }
+  if (tat === "vorschlag") { oeffneAuswahl(slot, index, true); return; }
+  if (tat === "waehlen") { oeffneAuswahl(slot, index, false); return; }
   if (tat === "leeren") { slotSetzen(slot.schluessel, index, null); return; }
   if (tat === "ansehen") {
     var e = planElement(slot.schluessel, index);
@@ -852,35 +1197,31 @@ function slotAktion(tat, slot, index) {
     return;
   }
   if (tat === "zufall") {
-    var gewaehlt = wuerfleBaustein(slot, 0);
+    var frei = freieZeit({ slot: slot, index: index });
+    var gewaehlt = wuerfleBaustein(slot, aufFuenf(frei / Math.max(1, leerePlaetze())));
     if (gewaehlt) slotSetzen(slot.schluessel, index, gewaehlt.id);
   }
 }
 
-/** Mittlere Dauer eines Bausteins – Grundlage fürs Zeitbudget. */
-function mitteldauer(e) { return (e.dauer_min + e.dauer_max) / 2; }
-
 /**
  * Zieht einen zufälligen Baustein für einen Platz.
- * `hoechstdauer` = 0 heißt: egal wie lang. Sonst wird eine Zielspanne
- * gesucht – nur eine Obergrenze würde den Abend zu kurz geraten lassen,
- * weil dann ständig Fünf-Minuten-Spiele gezogen werden.
- * Findet sich in der Spanne nichts, wird die Suche schrittweise gelockert.
+ * `zieldauer` = 0 heißt: egal wie lang. Sonst wird eine Zielspanne gesucht –
+ * nur eine Obergrenze würde den Abend zu kurz geraten lassen, weil dann
+ * ständig Fünf-Minuten-Spiele gezogen werden.
  */
-function wuerfleBaustein(slot, hoechstdauer) {
-  var moegliche = filtereListe(ALLE, filterWerte(), slot.passt);
-  if (!moegliche.length) moegliche = filtereListe(ALLE, leereFilter(), slot.passt);
+function wuerfleBaustein(slot, zieldauer) {
+  var moegliche = sammle(rahmenFilter(), null, slot.passt);
+  if (!moegliche.length) moegliche = sammle(leereFilter(), null, slot.passt);
   if (!moegliche.length) return null;
 
   var passend = moegliche;
-  if (hoechstdauer) {
-    var untergrenze = hoechstdauer * 0.55;
+  if (zieldauer) {
     passend = moegliche.filter(function (e) {
       var d = mitteldauer(e);
-      return d >= untergrenze && d <= hoechstdauer;
+      return d >= zieldauer * 0.55 && d <= zieldauer * 1.15;
     });
     if (!passend.length) {
-      passend = moegliche.filter(function (e) { return mitteldauer(e) <= hoechstdauer; });
+      passend = moegliche.filter(function (e) { return mitteldauer(e) <= zieldauer * 1.15; });
     }
     if (!passend.length) {
       passend = moegliche.slice().sort(function (a, b) {
@@ -891,46 +1232,30 @@ function wuerfleBaustein(slot, hoechstdauer) {
   return passend[Math.floor(Math.random() * passend.length)];
 }
 
-/**
- * Füllt alle leeren Plätze und hält dabei die Zielzeit im Auge:
- * Einstieg und Abschluss bleiben kurz, der Rest der Zeit wird auf die
- * Plätze im Hauptteil verteilt.
- */
+/** Füllt alle leeren Plätze und hält dabei die Zielzeit im Auge. */
 function planWuerfeln() {
-  var KURZ = 15;                                   // Einstieg/Abschluss in Minuten
-  var rest = ZIEL_DAUER - KREIS_DAUER * 2;         // Zeit für die Bausteine
-
-  // Erst die kurzen Plätze am Rand
+  var KURZ = 15;
+  // Erst Einstieg und Abschluss – die sollen kurz bleiben
   for (var s = 0; s < SLOTS.length; s++) {
-    var slot = SLOTS[s];
-    if (slot.mehrfach) continue;
-    var e = planElement(slot.schluessel, 0);
-    if (!e) {
-      e = wuerfleBaustein(slot, KURZ);
-      if (e) plan[slot.schluessel] = e.id;
+    if (SLOTS[s].mehrfach) continue;
+    if (!planElement(SLOTS[s].schluessel, 0)) {
+      var kurz = wuerfleBaustein(SLOTS[s], KURZ);
+      if (kurz) plan[SLOTS[s].schluessel] = kurz.id;
     }
-    if (e) rest -= mitteldauer(e);
   }
-
-  // Dann den Hauptteil: die verbleibende Zeit auf die freien Plätze aufteilen
+  // Dann den Hauptteil: die verbleibende Zeit auf die freien Plätze verteilen
   var hauptSlot = null;
   for (var h = 0; h < SLOTS.length; h++) if (SLOTS[h].mehrfach) hauptSlot = SLOTS[h];
   var offen = [];
   for (var i = 0; i < plan.haupt.length; i++) {
-    var vorhanden = planElement("haupt", i);
-    if (vorhanden) rest -= mitteldauer(vorhanden);
-    else offen.push(i);
+    if (!planElement("haupt", i)) offen.push(i);
   }
   for (var o = 0; o < offen.length; o++) {
     var uebrig = offen.length - o;
-    var anteil = Math.max(15, rest / uebrig);
-    var gewaehlt = wuerfleBaustein(hauptSlot, Math.round(anteil * 1.15));
-    if (gewaehlt) {
-      plan.haupt[offen[o]] = gewaehlt.id;
-      rest -= mitteldauer(gewaehlt);
-    }
+    var anteil = Math.max(15, freieZeit({ slot: hauptSlot, index: offen[o] }) / uebrig);
+    var gewaehlt = wuerfleBaustein(hauptSlot, Math.round(anteil));
+    if (gewaehlt) plan.haupt[offen[o]] = gewaehlt.id;
   }
-
   speicherePlan();
   zeichnePlan();
 }
@@ -938,12 +1263,10 @@ function planWuerfeln() {
 /* --------------------------------------------------------- Gesamtdauer */
 function planDauer() {
   var min = KREIS_DAUER * 2, max = KREIS_DAUER * 2;
-  for (var s = 0; s < SLOTS.length; s++) {
-    var anzahl = SLOTS[s].mehrfach ? plan.haupt.length : 1;
-    for (var i = 0; i < anzahl; i++) {
-      var e = planElement(SLOTS[s].schluessel, i);
-      if (e) { min += e.dauer_min; max += e.dauer_max; }
-    }
+  var slots = alleSlots();
+  for (var i = 0; i < slots.length; i++) {
+    var e = planElement(slots[i].slot.schluessel, slots[i].index);
+    if (e) { min += e.dauer_min; max += e.dauer_max; }
   }
   return { min: min, max: max, mitte: Math.round((min + max) / 2) };
 }
@@ -951,10 +1274,10 @@ function planDauer() {
 function aktualisiereSumme() {
   var d = planDauer();
   var text = d.min === d.max ? d.min + " Min" : d.min + "–" + d.max + " Min";
-  var knapp = d.mitte < 90 || d.mitte > 150;
-  $("summeWert").textContent = text + "  (Ziel ca. " + ZIEL_DAUER + ")";
+  var knapp = d.mitte < rahmen.zielzeit * 0.75 || d.mitte > rahmen.zielzeit * 1.25;
+  $("summeWert").textContent = text + "  (Ziel " + rahmen.zielzeit + ")";
   $("summeWert").className = "summe-wert" + (knapp ? " knapp" : "");
-  var anteil = Math.max(3, Math.min(100, Math.round(d.mitte / ZIEL_DAUER * 100)));
+  var anteil = Math.max(3, Math.min(100, Math.round(d.mitte / rahmen.zielzeit * 100)));
   $("summeBalken").style.width = anteil + "%";
   $("summeBalken").className = knapp ? "knapp" : "";
 }
@@ -964,34 +1287,28 @@ function planAlsText() {
   var zeilen = ["Heimabend-Plan", "=============="];
   var nummer = 1;
   var material = [];
-
   zeilen.push(nummer++ + ". Eröffnungskreis (" + KREIS_DAUER + " Min)");
 
-  for (var s = 0; s < SLOTS.length; s++) {
-    var slot = SLOTS[s];
-    var anzahl = slot.mehrfach ? plan.haupt.length : 1;
-    for (var i = 0; i < anzahl; i++) {
-      var e = planElement(slot.schluessel, i);
-      var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (i + 1) : "");
-      if (!e) {
-        zeilen.push(nummer++ + ". " + name + ": — noch offen —");
-        continue;
-      }
-      zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
-      zeilen.push("   " + e.kurz);
-      zeilen.push("   Quelle: " + e.quelle.name + " · " + e.quelle.lizenz +
-                  (e.quelle.url ? " · " + e.quelle.url : ""));
-      for (var m = 0; m < (e.material || []).length; m++) {
-        if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
-      }
+  var slots = alleSlots();
+  for (var i = 0; i < slots.length; i++) {
+    var slot = slots[i].slot, index = slots[i].index;
+    var e = planElement(slot.schluessel, index);
+    var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
+    if (!e) { zeilen.push(nummer++ + ". " + name + ": — noch offen —"); continue; }
+    zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
+    zeilen.push("   " + e.kurz);
+    zeilen.push("   Quelle: " + e.quelle.name + " · " + e.quelle.lizenz +
+                (e.quelle.url ? " · " + e.quelle.url : ""));
+    for (var m = 0; m < (e.material || []).length; m++) {
+      if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
     }
   }
-
   zeilen.push(nummer++ + ". Schlusskreis (" + KREIS_DAUER + " Min)");
+
   var d = planDauer();
   zeilen.push("");
   zeilen.push("Gesamtdauer: " + (d.min === d.max ? d.min + " Min" : d.min + "–" + d.max + " Min") +
-              "  (Ziel ca. " + ZIEL_DAUER + " Min)");
+              "  (Ziel " + rahmen.zielzeit + " Min)");
   zeilen.push("Material: " + (material.length ? material.join(", ") : "keines"));
   zeilen.push("");
   zeilen.push("Zusammengestellt mit dem Heimabend-Baukasten.");
@@ -1002,7 +1319,6 @@ function melde(text) {
   $("planMeldung").textContent = text;
   setTimeout(function () { $("planMeldung").textContent = ""; }, 2500);
 }
-
 function planTeilen() {
   var text = planAlsText();
   if (navigator.share) {
@@ -1012,57 +1328,158 @@ function planTeilen() {
   }
   inZwischenablage(text);
 }
-
 function inZwischenablage(text) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(
       function () { melde("Plan kopiert."); },
-      function () { markiereText(); }
-    );
-  } else {
-    markiereText();
-  }
+      function () { markiereText(); });
+  } else { markiereText(); }
 }
-
 function markiereText() {
   var feld = $("planText");
   feld.focus(); feld.select();
-  try {
-    document.execCommand("copy");
-    melde("Plan kopiert.");
-  } catch (fehler) {
-    melde("Text unten ist markiert – jetzt kopieren.");
-  }
+  try { document.execCommand("copy"); melde("Plan kopiert."); }
+  catch (fehler) { melde("Text unten ist markiert – jetzt kopieren."); }
 }
 
 /* ------------------------------------------------- Plan merken (lokal) */
 function speicherePlan() {
-  try { localStorage.setItem("heimabend-plan", JSON.stringify(plan)); } catch (fehler) { /* egal */ }
+  try {
+    localStorage.setItem("heimabend-plan", JSON.stringify({ plan: plan, rahmen: rahmen }));
+  } catch (fehler) { /* egal */ }
 }
 function ladePlan() {
   try {
     var roh = localStorage.getItem("heimabend-plan");
     if (!roh) return;
     var gespeichert = JSON.parse(roh);
-    if (gespeichert && Array.isArray(gespeichert.haupt)) plan = gespeichert;
+    if (gespeichert && gespeichert.plan && Array.isArray(gespeichert.plan.haupt)) {
+      plan = gespeichert.plan;
+    }
+    if (gespeichert && gespeichert.rahmen) {
+      rahmen = gespeichert.rahmen;
+      $("rZielzeit").value = String(rahmen.zielzeit);
+      $("rStufe").value = rahmen.stufe || "";
+      $("rOrt").value = rahmen.ort || "";
+      $("rVorbereitung").value = rahmen.vorbereitung || "";
+      $("rOhneMaterial").checked = !!rahmen.ohneMaterial;
+    }
   } catch (fehler) { /* egal */ }
 }
 
 /* ------------------------------------------------- Auswahl für Slots */
-function oeffneAuswahl(slot, index) {
-  auswahlZiel = { slot: slot, index: index };
-  $("auswahlTitel").textContent = slot.name + " wählen";
+function oeffneAuswahl(slot, index, nurPassend) {
+  var frei = freieZeit({ slot: slot, index: index });
+  auswahlZiel = { slot: slot, index: index, frei: frei,
+                  ziel: aufFuenf(frei / Math.max(1, leerePlaetze())) };
+  auswahlPfad = { typ: "", kategorie: "", unterkategorie: "" };
+  var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
+  $("auswahlTitel").textContent = name;
   $("auswahlSuche").value = "";
+  $("auswahlZeit").checked = !!nurPassend;
+  $("auswahlZeitText").textContent =
+    "nur was in die Zeit passt (noch " + Math.round(frei) + " Min frei)";
   auswahlSichtbar = SEITENGROESSE;
   zeichneAuswahl();
   oeffneUeberlagerung($("auswahl"));
 }
 
+/** Baut eine Reihe Auswahl-Chips (Art, Kategorie, Unterkategorie). */
+function chipReihe(titel, eintraege, aktiv, beiKlick) {
+  if (eintraege.length < 2) return "";
+  var html = '<div class="chipzeile"><div class="chiptitel">' + schuetze(titel) + "</div>";
+  html += '<div class="chips">';
+  html += '<button type="button" class="chip' + (aktiv ? "" : " aktiv") +
+          '" data-wert="">alle</button>';
+  for (var i = 0; i < eintraege.length; i++) {
+    html += '<button type="button" class="chip' +
+            (aktiv === eintraege[i].wert ? " aktiv" : "") +
+            '" data-wert="' + schuetze(eintraege[i].wert) + '">' +
+            schuetze(eintraege[i].name) + " " + eintraege[i].anzahl + "</button>";
+  }
+  return html + "</div></div>";
+}
+
 function zeichneAuswahl() {
   if (!auswahlZiel) return;
-  var f = filterWerte();
+  var f = rahmenFilter();
   f.suche = vereinfache($("auswahlSuche").value.trim());
-  auswahlListe = filtereListe(ALLE, f, auswahlZiel.slot.passt);
+  var nurPassend = $("auswahlZeit").checked;
+  var frei = auswahlZiel.frei;
+
+  var grundmenge = sammle(f, null, function (e) {
+    if (!auswahlZiel.slot.passt(e)) return false;
+    if (nurPassend && e.dauer_min > frei) return false;
+    return true;
+  });
+
+  // Chips aus der aktuellen Grundmenge aufbauen
+  function zaehleFeld(liste, feld) {
+    var zaehler = {};
+    for (var i = 0; i < liste.length; i++) {
+      var wert = liste[i][feld];
+      if (wert) zaehler[wert] = (zaehler[wert] || 0) + 1;
+    }
+    return zaehler;
+  }
+  function alsEintraege(zaehler, beschriftung) {
+    return Object.keys(zaehler).map(function (k) {
+      return { wert: k, name: beschriftung(k), anzahl: zaehler[k] };
+    }).sort(function (a, b) { return b.anzahl - a.anzahl; });
+  }
+
+  var nachTyp = alsEintraege(zaehleFeld(grundmenge, "element_typ"),
+                             function (k) { return TYP_TEXT[k] || k; });
+  var mitTyp = grundmenge.filter(function (e) {
+    return !auswahlPfad.typ || e.element_typ === auswahlPfad.typ;
+  });
+  var nachKategorie = alsEintraege(zaehleFeld(mitTyp, "kategorie"),
+                                   function (k) { return KATEGORIE_TEXT[k] || k; });
+  var mitKategorie = mitTyp.filter(function (e) {
+    return !auswahlPfad.kategorie || e.kategorie === auswahlPfad.kategorie;
+  });
+  var nachUnter = alsEintraege(zaehleFeld(mitKategorie, "unterkategorie"),
+                               unterText);
+
+  var chipHtml = chipReihe("Art", nachTyp, auswahlPfad.typ) +
+                 chipReihe("Kategorie", nachKategorie, auswahlPfad.kategorie) +
+                 chipReihe("Unterkategorie", nachUnter, auswahlPfad.unterkategorie);
+  $("auswahlChips").innerHTML = chipHtml;
+
+  var reihen = $("auswahlChips").querySelectorAll(".chipzeile");
+  var felder = [];
+  if (nachTyp.length > 1) felder.push("typ");
+  if (nachKategorie.length > 1) felder.push("kategorie");
+  if (nachUnter.length > 1) felder.push("unterkategorie");
+  for (var r = 0; r < reihen.length; r++) {
+    (function (feld) {
+      var knoepfe = reihen[r].querySelectorAll(".chip");
+      for (var c = 0; c < knoepfe.length; c++) {
+        knoepfe[c].addEventListener("click", function () {
+          auswahlPfad[feld] = this.getAttribute("data-wert");
+          // tiefere Ebenen zurücksetzen, sonst passt nichts mehr zusammen
+          if (feld === "typ") { auswahlPfad.kategorie = ""; auswahlPfad.unterkategorie = ""; }
+          if (feld === "kategorie") auswahlPfad.unterkategorie = "";
+          auswahlSichtbar = SEITENGROESSE;
+          zeichneAuswahl();
+        });
+      }
+    })(felder[r]);
+  }
+
+  auswahlListe = mitKategorie.filter(function (e) {
+    return !auswahlPfad.unterkategorie || e.unterkategorie === auswahlPfad.unterkategorie;
+  });
+  // Beim Vorschlagen zuerst das, was zeitlich am besten passt
+  if (nurPassend && !f.suche) {
+    var ziel = auswahlZiel.ziel;
+    auswahlListe.sort(function (a, b) {
+      return Math.abs(mitteldauer(a) - ziel) - Math.abs(mitteldauer(b) - ziel) ||
+             nachTitel(a, b);
+    });
+  } else {
+    sortiere(auswahlListe, "dauer", f.suche);
+  }
 
   var behaelter = $("auswahlListe");
   behaelter.innerHTML = "";
@@ -1070,8 +1487,8 @@ function zeichneAuswahl() {
     ? "1 Baustein" : auswahlListe.length + " Bausteine";
 
   if (!auswahlListe.length) {
-    behaelter.innerHTML = '<p class="leer">Nichts gefunden. Die Filter aus der ' +
-                          "Baustein-Ansicht gelten hier mit.</p>";
+    behaelter.innerHTML = '<p class="leer">Nichts gefunden. Nimm den Haken bei ' +
+      '„nur was in die Zeit passt“ heraus oder lockere den Rahmen des Abends.</p>';
     $("auswahlMehrZeile").hidden = true;
     return;
   }
@@ -1081,7 +1498,7 @@ function zeichneAuswahl() {
     stapel.appendChild(baueKarte(auswahlListe[i], function (e) {
       slotSetzen(auswahlZiel.slot.schluessel, auswahlZiel.index, e.id);
       schliesseUeberlagerung($("auswahl"));
-    }));
+    }, nurPassend));
   }
   behaelter.appendChild(stapel);
   $("auswahlMehrZeile").hidden = bis >= auswahlListe.length;
@@ -1118,38 +1535,49 @@ function zeigeAnsicht(name) {
 }
 
 /* ------------------------------------------------------------ Start */
+function liesRahmen() {
+  rahmen.zielzeit = parseInt($("rZielzeit").value, 10) || 120;
+  rahmen.stufe = $("rStufe").value;
+  rahmen.ort = $("rOrt").value;
+  rahmen.vorbereitung = $("rVorbereitung").value;
+  rahmen.ohneMaterial = $("rOhneMaterial").checked;
+  speicherePlan();
+  zeichnePlan();
+}
+
 function verdrahte() {
   var entprellen = null;
   $("suche").addEventListener("input", function () {
     clearTimeout(entprellen);
     entprellen = setTimeout(aktualisiere, 150);
   });
-  var felder = ["fTyp", "fKategorie", "fStufe", "fDauer", "fOrt", "fVorbereitung", "fOhneMaterial"];
+  var felder = ["fStufe", "fDauer", "fOrt", "fVorbereitung", "fOhneMaterial"];
   for (var i = 0; i < felder.length; i++) {
-    $(felder[i]).addEventListener("change", function () {
-      if (this.id === "fTyp") baueKategorieMenue();
-      aktualisiere();
-    });
+    $(felder[i]).addEventListener("change", aktualisiere);
   }
+  $("sortierung").addEventListener("change", aktualisiere);
   $("filterZuruecksetzen").addEventListener("click", function () {
-    $("fTyp").value = ""; $("fStufe").value = ""; $("fDauer").value = "";
-    $("fOrt").value = ""; $("fVorbereitung").value = ""; $("fOhneMaterial").checked = false;
-    baueKategorieMenue();
+    $("fStufe").value = ""; $("fDauer").value = ""; $("fOrt").value = "";
+    $("fVorbereitung").value = ""; $("fOhneMaterial").checked = false;
     aktualisiere();
   });
   $("mehrKnopf").addEventListener("click", function () {
-    sichtbar += SEITENGROESSE; zeichneListe();
+    sichtbar += SEITENGROESSE; zeichneListe(filterWerte());
   });
   $("zufallKnopf").addEventListener("click", function () {
-    if (!gefiltert.length) return;
-    zeigeDetail(gefiltert[Math.floor(Math.random() * gefiltert.length)]);
+    var menge = gefiltert.length ? gefiltert : sammle(filterWerte(), pfad);
+    if (menge.length) zeigeDetail(menge[Math.floor(Math.random() * menge.length)]);
   });
 
   $("reiterBausteine").addEventListener("click", function () { zeigeAnsicht("bausteine"); });
   $("reiterPlanen").addEventListener("click", function () { zeigeAnsicht("planen"); });
 
-  $("detailZurueck").addEventListener("click", function () { schliesseUeberlagerung($("detail")); });
-  $("auswahlZurueck").addEventListener("click", function () { schliesseUeberlagerung($("auswahl")); });
+  $("detailZurueck").addEventListener("click", function () {
+    schliesseUeberlagerung($("detail"));
+  });
+  $("auswahlZurueck").addEventListener("click", function () {
+    schliesseUeberlagerung($("auswahl"));
+  });
   document.addEventListener("keydown", function (ereignis) {
     if (ereignis.key !== "Escape") return;
     if (!$("detail").hidden) schliesseUeberlagerung($("detail"));
@@ -1163,10 +1591,17 @@ function verdrahte() {
       auswahlSichtbar = SEITENGROESSE; zeichneAuswahl();
     }, 150);
   });
+  $("auswahlZeit").addEventListener("change", function () {
+    auswahlSichtbar = SEITENGROESSE; zeichneAuswahl();
+  });
   $("auswahlMehr").addEventListener("click", function () {
     auswahlSichtbar += SEITENGROESSE; zeichneAuswahl();
   });
 
+  var rahmenFelder = ["rZielzeit", "rStufe", "rOrt", "rVorbereitung", "rOhneMaterial"];
+  for (var r = 0; r < rahmenFelder.length; r++) {
+    $(rahmenFelder[r]).addEventListener("change", liesRahmen);
+  }
   $("planWuerfeln").addEventListener("click", planWuerfeln);
   $("planLeeren").addEventListener("click", function () {
     plan = { einstieg: null, haupt: [null, null], abschluss: null };
@@ -1180,37 +1615,22 @@ function starte(elemente) {
   for (var i = 0; i < ALLE.length; i++) {
     var e = ALLE[i];
     NACH_ID[e.id] = e;
+    if (typeof e.unterkategorie !== "string") e.unterkategorie = "";
     // Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig
     e._suchtext = vereinfache([
       e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
-      KATEGORIE_TEXT[e.kategorie] || "", e.beschreibung
+      kategorieText(e), unterText(e.unterkategorie), e.beschreibung
     ].join(" "));
   }
-  // Menü "Art" nach Häufigkeit füllen
-  var zaehler = {};
-  for (var t = 0; t < ALLE.length; t++) {
-    zaehler[ALLE[t].element_typ] = (zaehler[ALLE[t].element_typ] || 0) + 1;
-  }
-  var html = '<option value="">alle</option>';
-  var reihenfolge = ["spiel", "probe", "aktivitaet", "projekt"];
-  for (var r = 0; r < reihenfolge.length; r++) {
-    var typ = reihenfolge[r];
-    if (zaehler[typ]) {
-      html += '<option value="' + typ + '">' + TYP_TEXT[typ] + " (" + zaehler[typ] + ")</option>";
-    }
-  }
-  $("fTyp").innerHTML = html;
-
-  baueKategorieMenue();
-  ladePlan();
   verdrahte();
+  ladePlan();
   aktualisiere();
   zeichneFuss();
 }
 
 ladeDaten().then(starte).catch(function (fehler) {
-  $("treffer").textContent = "";
-  $("liste").innerHTML = '<p class="leer">Die Daten konnten nicht geladen werden.<br><br>' +
+  $("kacheln").innerHTML = '<p class="leer" style="grid-column:1/-1">' +
+    "Die Daten konnten nicht geladen werden.<br><br>" +
     "Erwartet wird <code>../data/elemente.json</code> oder <code>elemente.js</code> " +
     "neben dieser Datei.<br>Beides erzeugt <code>python3 scripts/build.py</code>." +
     "<br><br><small>" + schuetze(fehler.message) + "</small></p>";
