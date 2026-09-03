@@ -385,5 +385,124 @@
       ],
       "grund": "Dasselbe Stuhlkreis-Grundspiel ('alle, die ... tauschen die Plätze')."
     }
+  ],
+  "bereiche": [
+    {
+      "id": "insp-brot-backen-ohne-ofen",
+      "bereich": "kochen",
+      "grund": "Es wird gebacken; das Feuer ist Mittel zum Zweck."
+    },
+    {
+      "id": "insp-haik-kueche-ueben",
+      "bereich": "kochen",
+      "grund": "Küche auf Fahrt, also Kochen."
+    },
+    {
+      "id": "insp-stockbrot-upgrade",
+      "bereich": "kochen",
+      "grund": "Backen am Feuer."
+    },
+    {
+      "id": "insp-wer-kocht-am-schnellsten",
+      "bereich": "kochen",
+      "grund": "Kochwettbewerb."
+    },
+    {
+      "id": "insp-tschai-alternativen-ausprobieren",
+      "bereich": "kochen",
+      "grund": "Getränke zubereiten."
+    },
+    {
+      "id": "insp-veganen-brotaufstrich-selber-machen",
+      "bereich": "kochen",
+      "grund": "Lebensmittel herstellen."
+    },
+    {
+      "id": "insp-bienenwachstuecher-selber-machen",
+      "bereich": "werken",
+      "grund": "Es entsteht ein Gegenstand, kein Essen - der Küchenbezug führt in die Irre."
+    },
+    {
+      "id": "insp-fahrradreifen-flicken",
+      "bereich": "werken",
+      "grund": "Handwerk am Rad, keine Pfadfindertechnik im engeren Sinn."
+    },
+    {
+      "id": "insp-halstuchknoten-selber-machen",
+      "bereich": "werken",
+      "grund": "Der Knoten wird geschnitzt, nicht geknüpft - es entsteht ein Gegenstand."
+    },
+    {
+      "id": "insp-makrame-ampel-knuepfen",
+      "bereich": "werken",
+      "grund": "Knüpfarbeit als Handwerk."
+    },
+    {
+      "id": "insp-namensschilder-einnaehen",
+      "bereich": "werken",
+      "grund": "Nähen."
+    },
+    {
+      "id": "insp-upcycling-reisespiele-basteln",
+      "bereich": "werken",
+      "grund": "Basteln."
+    },
+    {
+      "id": "insp-sonnenuhr-bauen",
+      "bereich": "werken",
+      "grund": "Gebaut wird ein Gegenstand; die Sternenkunde ist der Anlass."
+    },
+    {
+      "id": "insp-einen-trickfilm-drehen",
+      "bereich": "musisch",
+      "grund": "Film und Geschichte, nicht Handwerk."
+    },
+    {
+      "id": "insp-foto-love-story",
+      "bereich": "musisch",
+      "grund": "Bildergeschichte, kein Pfadfinderwissen."
+    },
+    {
+      "id": "insp-fensterbank-kraeuterbeet",
+      "bereich": "natur_draussen",
+      "grund": "Pflanzen ziehen."
+    },
+    {
+      "id": "insp-sternenhimmel-erkunden",
+      "bereich": "natur_draussen",
+      "grund": "Naturbeobachtung; die Orientierung ist Nebensache."
+    },
+    {
+      "id": "insp-wetter-beobachten",
+      "bereich": "natur_draussen",
+      "grund": "Naturbeobachtung."
+    },
+    {
+      "id": "insp-weisheiten-diskutieren-zitate",
+      "bereich": "gemeinschaft",
+      "grund": "Gespräch in der Gruppe."
+    },
+    {
+      "id": "insp-unser-lagerplatz-in-der-zukunft",
+      "bereich": "gemeinschaft",
+      "grund": "Zukunftswerkstatt, gemeinsam planen."
+    },
+    {
+      "id": "insp-rollenspielprojekt-ueber-mehrere-wochen",
+      "bereich": "gemeinschaft",
+      "grund": "Rollenspielprojekt der Gruppe."
+    },
+    {
+      "id": "insp-finde-die-entfuehrte-person",
+      "bereich": "spiel",
+      "kategorie": "gelaende",
+      "grund": "Such- und Geländespiel; die Automatik fand kein Thema."
+    },
+    {
+      "id": "insp-kim-gedaechtnisspiel",
+      "bereich": "spiel",
+      "kategorie": "ruhig",
+      "grund": "Kim-Spiel, also ein Spiel."
+    }
   ]
 }

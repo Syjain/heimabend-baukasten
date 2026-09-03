@@ -22,14 +22,26 @@
     // Die App-eigene Funktion benutzen, damit der Test nicht vergisst,
     // neue Filterfelder mitzuleeren.
     document.getElementById("suche").value = "";
-    pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+    pfad = leererPfad();
     setzeFilterZurueck();
   }
 
   // --- Daten ---
   pruefe("Daten geladen", ALLE.length > 900, ALLE.length + " Elemente");
-  pruefe("alle haben unterkategorie-Feld",
-         ALLE.every(function (e) { return typeof e.unterkategorie === "string"; }));
+  pruefe("alle haben Bereich und Umfang",
+         ALLE.every(function (e) {
+           return BEREICH_TEXT[e.bereich] &&
+                  (e.umfang === "baustein" || e.umfang === "ganzer_abend");
+         }));
+  pruefe("nur Spiele und Pfadfindertechnik haben eine Kategorie",
+         ALLE.every(function (e) {
+           return (e.bereich === "spiel" || e.bereich === "pfadfindertechnik")
+                  ? !!e.kategorie : e.kategorie === "";
+         }));
+  pruefe("Unterkategorien nur bei Spielen",
+         ALLE.every(function (e) {
+           return e.bereich === "spiel" || e.unterkategorie === "";
+         }));
   pruefe("alle haben Quelle mit Lizenz",
          ALLE.every(function (e) { return e.quelle && e.quelle.lizenz; }));
 
@@ -38,24 +50,27 @@
   pruefe("Start zeigt Kacheln, keine Liste",
          document.querySelectorAll("#kacheln .kachel").length >= 4 &&
          document.getElementById("listenkopf").hidden);
-  pfad = { typ: "spiel", kategorie: "", unterkategorie: "" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; aktualisiere();
   pruefe("Spiele zeigen Kategorie-Kacheln",
          document.querySelectorAll("#kacheln .kachel").length > 3);
-  pfad = { typ: "spiel", kategorie: "kreis", unterkategorie: "" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.kategorie = "kreis"; aktualisiere();
   pruefe("Kreisspiele zeigen Unterkategorien",
          document.querySelectorAll("#kacheln .kachel").length > 1 &&
          document.getElementById("listenkopf").hidden);
-  pfad = { typ: "probe", kategorie: "knoten", unterkategorie: "" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "pfadfindertechnik"; pfad.kategorie = "knoten";
+  aktualisiere();
   pruefe("kleine Kategorie springt direkt in die Liste",
          !document.getElementById("listenkopf").hidden);
-  pfad = { typ: "spiel", kategorie: "kreis", unterkategorie: "__alle__" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.kategorie = "kreis";
+  pfad.unterkategorie = "__alle__"; aktualisiere();
   pruefe("'Alle anzeigen' zeigt die ganze Kategorie",
          gefiltert.length > 50 && document.getElementById("pfad").textContent.indexOf("Alle") > -1,
          gefiltert.length);
 
   // --- Sortierung ---
   zuruecksetzen();
-  pfad = { typ: "spiel", kategorie: "gelaende", unterkategorie: "__alle__" };
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.kategorie = "gelaende";
+  pfad.unterkategorie = "__alle__";
   document.getElementById("sortierung").value = "dauer"; aktualisiere();
   pruefe("Kategorie-Liste ist wirklich sichtbar",
          !document.getElementById("listenkopf").hidden && gefiltert.length > 10,
@@ -82,7 +97,8 @@
   // --- Filter ---
   document.getElementById("fOhneMaterial").checked = true;
   document.getElementById("fDauer").value = "15"; aktualisiere();
-  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
   pruefe("'Alle anzeigen' auf Typ-Ebene zeigt die Liste",
          !document.getElementById("listenkopf").hidden, gefiltert.length);
   pruefe("Filter 'ohne Material' + 'bis 15 Min' greift",
@@ -91,7 +107,8 @@
          }), gefiltert.length);
   zuruecksetzen();
   document.getElementById("fStufe").value = "Wölflinge"; aktualisiere();
-  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
   pruefe("Stufenfilter lässt Elemente ohne Altersangabe drin",
          gefiltert.some(function (e) { return !e.altersstufen.length; }));
   zuruecksetzen();
@@ -136,20 +153,37 @@
 
   // --- Zufall zieht aus dem, was gerade zu sehen ist ---
   zuruecksetzen();
-  pfad = { typ: "spiel", kategorie: "kreis", unterkategorie: "singen" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.kategorie = "kreis";
+  pfad.unterkategorie = "singen"; aktualisiere();
   var vorFilter = gefiltert.length;
-  pfad = { typ: "", kategorie: "", unterkategorie: "" }; aktualisiere();
+  pfad = leererPfad(); aktualisiere();
   pruefe("Zufallstopf folgt dem Pfad", gefiltert.length === ALLE.length,
          "vorher " + vorFilter + ", jetzt " + gefiltert.length);
-  pfad = { typ: "probe", kategorie: "", unterkategorie: "" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "pfadfindertechnik"; aktualisiere();
   pruefe("Zufallstopf auf Kachelseite passt zum Pfad",
-         gefiltert.length > 0 && gefiltert.every(function (e) { return e.element_typ === "probe"; }),
-         gefiltert.length);
+         gefiltert.length > 0 && gefiltert.every(function (e) {
+           return e.bereich === "pfadfindertechnik";
+         }), gefiltert.length);
+
+  // --- Größe als zweite Ebene außerhalb der Spiele ---
+  zuruecksetzen();
+  pfad = leererPfad(); pfad.bereich = "werken"; aktualisiere();
+  var groessenKacheln = Array.prototype.map.call(
+    document.querySelectorAll("#kacheln .kachel"), function (k) { return k.textContent; });
+  pruefe("Werken zeigt Bausteine und ganze Abende als Kacheln",
+         groessenKacheln.some(function (x) { return /Ganze Abende/.test(x); }),
+         groessenKacheln.join(" | "));
+  pfad = leererPfad(); pfad.bereich = "werken"; pfad.umfang = "ganzer_abend"; aktualisiere();
+  pruefe("Größenauswahl filtert richtig",
+         gefiltert.length > 0 && gefiltert.every(function (e) {
+           return e.bereich === "werken" && e.umfang === "ganzer_abend";
+         }), gefiltert.length);
 
   // --- Dauerfilter meint die Obergrenze ---
   zuruecksetzen();
   document.getElementById("fDauer").value = "15";
-  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
   pruefe("'passt in 15 Min' liefert nur Bausteine bis 15 Min",
          gefiltert.length > 0 && gefiltert.every(function (e) { return e.dauer_max <= 15; }),
          gefiltert.length);
@@ -157,7 +191,8 @@
   // --- Teilnehmerzahl ---
   zuruecksetzen();
   document.getElementById("fTeilnehmer").value = "4";
-  pfad = { typ: "spiel", kategorie: "", unterkategorie: "__alle__" }; aktualisiere();
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
   pruefe("Teilnehmerfilter wirft zu große Spiele raus",
          gefiltert.length > 0 && gefiltert.every(function (e) {
            return !e.gruppe_min || e.gruppe_min <= 4;
@@ -175,11 +210,15 @@
   // --- Planer: Projekte nicht neben einem zweiten Hauptteil-Baustein ---
   plan = { einstieg: null, haupt: [null, null], abschluss: null };
   var hauptSlot = SLOTS.filter(function (s) { return s.mehrfach; })[0];
-  pruefe("Hauptteil mit zwei Plätzen lässt keine Projekte zu",
-         !ALLE.filter(hauptSlot.passt).some(function (e) { return e.element_typ === "projekt"; }));
+  pruefe("Hauptteil mit zwei Plätzen lässt nichts zu, was den Abend füllt",
+         !ALLE.filter(hauptSlot.passt).some(function (e) {
+           return e.umfang === "ganzer_abend";
+         }));
   plan = { einstieg: null, haupt: [null], abschluss: null };
-  pruefe("Hauptteil mit einem Platz lässt Projekte zu",
-         ALLE.filter(hauptSlot.passt).some(function (e) { return e.element_typ === "projekt"; }));
+  pruefe("Hauptteil mit einem Platz lässt ganze Abende zu",
+         ALLE.filter(hauptSlot.passt).some(function (e) {
+           return e.umfang === "ganzer_abend";
+         }));
 
   // --- Vorschläge auch bei vollem Plan ---
   plan = { einstieg: null, haupt: [null, null], abschluss: null };

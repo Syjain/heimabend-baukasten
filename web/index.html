@@ -245,7 +245,11 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 .kachel:hover { border-color: var(--linie-stark); box-shadow: var(--schatten-hoch); }
 .kachel:active { transform: scale(.99); }
-.kachel .name { font-weight: 650; font-size: .97rem; letter-spacing: -.01em; }
+.kachel .name {
+  font-weight: 650; font-size: .97rem; letter-spacing: -.01em;
+  /* Ohne Silbentrennung bricht "Pfadfindertechnik" mitten im Wort um */
+  hyphens: auto; -webkit-hyphens: auto;
+}
 .kachel .zahl { font-size: .78rem; color: var(--leise); }
 .kachel.gross {
   grid-column: 1 / -1; flex-direction: row; align-items: center;
@@ -788,13 +792,23 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
    ================================================================== */
 
 /* ---------------------------------------------------- Beschriftungen */
-var TYP_TEXT = {
-  spiel: "Spiele", probe: "Proben", aktivitaet: "Aktivitäten", projekt: "Projekte"
+/* Zwei Achsen: bereich = worum geht es, umfang = wie groß ist es.
+   Vorher steckte beides im element_typ, weshalb "Armbänder knüpfen" und
+   "Speckstein-Werkstatt" allein wegen 30 Minuten in verschiedenen Arten lagen. */
+var BEREICH_TEXT = {
+  spiel: "Spiele", pfadfindertechnik: "Pfadfindertechnik",
+  natur_draussen: "Natur & Draußen", werken: "Werken & Gestalten",
+  kochen: "Kochen & Backen", musisch: "Musisches", gemeinschaft: "Gruppe & Gesellschaft"
 };
-var TYP_EINZAHL = {
-  spiel: "Spiel", probe: "Probe", aktivitaet: "Aktivität", projekt: "Projekt"
+var BEREICH_EINZAHL = {
+  spiel: "Spiel", pfadfindertechnik: "Pfadfindertechnik",
+  natur_draussen: "Natur & Draußen", werken: "Werken", kochen: "Kochen",
+  musisch: "Musisches", gemeinschaft: "Gruppe"
 };
-var TYP_REIHENFOLGE = ["spiel", "probe", "aktivitaet", "projekt"];
+var BEREICH_REIHENFOLGE = ["spiel", "pfadfindertechnik", "werken", "natur_draussen",
+                           "kochen", "musisch", "gemeinschaft"];
+var UMFANG_TEXT = { baustein: "Baustein", ganzer_abend: "füllt den Abend" };
+var UMFANG_KACHEL = { baustein: "Einzelne Bausteine", ganzer_abend: "Ganze Abende" };
 
 var KATEGORIE_TEXT = {
   // Spiele
@@ -839,17 +853,31 @@ var ZEICHEN = {
     '<circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/>' +
     '<circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/>' +
     '<circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>',
-  probe: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+  pfadfindertechnik: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
     'stroke="currentColor" stroke-width="1.6" aria-hidden="true">' +
     '<circle cx="12" cy="12" r="8.5"/>' +
     '<path d="M15 9l-2.2 5.1L7.7 16l2.2-5.1z" stroke-linejoin="round"/></svg>',
-  aktivitaet: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+  natur_draussen: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
     'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M12 3.5l5 7h-3l4 6H6l4-6H7z"/><path d="M12 16.5v4"/></svg>',
-  projekt: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+  werken: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
     'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
-    '<path d="M12 3.5L3.5 19.5h17z"/><path d="M12 3.5v16"/>' +
-    '<path d="M9.2 19.5l2.8-5 2.8 5"/></svg>'
+    '<path d="M4 20l7.5-7.5"/><path d="M13 5.5l5.5 5.5"/>' +
+    '<path d="M10.5 8l3.5-3.5a3 3 0 014.2 4.2L14.7 12z"/></svg>',
+  kochen: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M4.5 10.5h15v4a5 5 0 01-5 5h-5a5 5 0 01-5-5z"/>' +
+    '<path d="M19.5 12h1.5a1.8 1.8 0 010 3.6h-1.5"/>' +
+    '<path d="M9 7.5c0-1.2 1-1.5 1-2.5M13 7.5c0-1.2 1-1.5 1-2.5"/></svg>',
+  musisch: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="7" cy="17.5" r="2.6"/><circle cx="17" cy="15.5" r="2.6"/>' +
+    '<path d="M9.6 17.5V6l10-1.8v11.3"/><path d="M9.6 9.4l10-1.8"/></svg>',
+  gemeinschaft: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="9" cy="8.5" r="3"/><circle cx="17" cy="10" r="2.3"/>' +
+    '<path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/>' +
+    '<path d="M15.5 14.6c2.6.2 5 1.9 5 4.9"/></svg>'
 };
 var ALTERSSTUFEN = ["Wölflinge", "Pfadfinder", "Ältere"];
 
@@ -859,17 +887,16 @@ var KREIS_DAUER = 5;
 /* Die Plätze, die gefüllt werden können. */
 var SLOTS = [
   { schluessel: "einstieg", name: "Einstiegsspiel", zieldauer: 15,
-    passt: function (e) { return e.element_typ === "spiel" && hat(e.slots, "einstieg"); } },
+    passt: function (e) { return e.bereich === "spiel" && hat(e.slots, "einstieg"); } },
   { schluessel: "haupt", name: "Hauptteil", mehrfach: true,
     passt: function (e) {
       if (!hat(e.slots, "hauptteil")) return false;
-      // Ein Projekt füllt einen ganzen Heimabend. Neben einem zweiten Baustein
-      // im Hauptteil ergibt das keinen Sinn – dann fällt es raus.
-      if (e.element_typ === "projekt" && plan.haupt.length > 1) return false;
+      // Was den ganzen Abend füllt, passt nicht neben einen zweiten Baustein.
+      if (e.umfang === "ganzer_abend" && plan.haupt.length > 1) return false;
       return true;
     } },
   { schluessel: "abschluss", name: "Abschlussspiel", zieldauer: 15,
-    passt: function (e) { return e.element_typ === "spiel" && hat(e.slots, "abschluss"); } }
+    passt: function (e) { return e.bereich === "spiel" && hat(e.slots, "abschluss"); } }
 ];
 var SEITENGROESSE = 30;
 /* Ab so vielen Einträgen lohnt sich die dritte Ebene (Unterkategorien). */
@@ -880,7 +907,7 @@ var ALLE = [];
 // Object.create(null): sonst liefert NACH_ID["constructor"] ein Objekt der
 // Prototypkette und die Planansicht stürzt bei kaputtem Speicher ab.
 var NACH_ID = Object.create(null);
-var pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+var pfad = { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "" };
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
 
@@ -889,7 +916,7 @@ var rahmen = { zielzeit: 120, stufe: "", teilnehmer: 0, ort: "", vorbereitung: "
                ohneMaterial: false };
 
 var auswahlZiel = null;          // { slot, index, zielzeit }
-var auswahlPfad = { typ: "", kategorie: "", unterkategorie: "" };
+var auswahlPfad = { bereich: "", kategorie: "", unterkategorie: "" };
 var auswahlListe = [];
 var auswahlSichtbar = SEITENGROESSE;
 
@@ -1096,7 +1123,8 @@ function passtZuFilter(e, f) {
 
 function passtZuPfad(e, p) {
   if (p.slot && !hat(e.slots, p.slot)) return false;
-  if (p.typ && e.element_typ !== p.typ) return false;
+  if (p.bereich && e.bereich !== p.bereich) return false;
+  if (p.umfang && e.umfang !== p.umfang) return false;
   if (p.kategorie && e.kategorie !== p.kategorie) return false;
   if (p.unterkategorie && e.unterkategorie !== p.unterkategorie) return false;
   return true;
@@ -1165,9 +1193,12 @@ function karteHtml(e, zielzeit, kontext) {
   // "Spiele > Kreisspiele > Singen & Tanzen" wären drei der Plaketten leer.
   var wo = kontext || {};
   var merkmale = "";
-  if (wo.typ !== e.element_typ) {
+  if (wo.bereich !== e.bereich) {
     merkmale += '<span class="merkmal typ">' +
-                schuetze(TYP_EINZAHL[e.element_typ]) + "</span>";
+                schuetze(BEREICH_EINZAHL[e.bereich] || e.bereich) + "</span>";
+  }
+  if (e.umfang === "ganzer_abend") {
+    merkmale += '<span class="merkmal">füllt den Abend</span>';
   }
   if (wo.kategorie !== e.kategorie) {
     merkmale += '<span class="merkmal">' + schuetze(kategorieText(e)) + "</span>";
@@ -1254,29 +1285,36 @@ function baueKachel(name, anzahl, beiKlick, gross, zeichen) {
   return knopf;
 }
 
+function leererPfad() {
+  return { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "" };
+}
+
 function zeichnePfad() {
-  var teile = [];
-  teile.push({ name: "Alle Bausteine",
-               ziel: { typ: "", kategorie: "", unterkategorie: "", slot: "" } });
-  if (pfad.slot) {
-    teile.push({ name: pfad.slot === "einstieg" ? "Zum Einstieg" : "Zum Abschluss",
-                 ziel: { typ: "", kategorie: "", unterkategorie: "__alle__", slot: pfad.slot } });
-  }
-  if (pfad.typ) {
-    teile.push({ name: TYP_TEXT[pfad.typ],
-                 ziel: { typ: pfad.typ, kategorie: "", unterkategorie: "", slot: pfad.slot } });
-  }
-  if (pfad.kategorie) {
-    teile.push({ name: KATEGORIE_TEXT[pfad.kategorie] || pfad.kategorie,
-                 ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "",
-                         slot: pfad.slot } });
-  }
-  if (pfad.unterkategorie) {
-    if (!(pfad.unterkategorie === "__alle__" && pfad.slot && !pfad.typ)) {
-      teile.push({ name: pfad.unterkategorie === "__alle__"
-                         ? "Alle" : unterText(pfad.unterkategorie), ziel: null });
+  var teile = [{ name: "Alle Bausteine", ziel: leererPfad() }];
+  function stufe(name, feld, wert) {
+    var ziel = leererPfad();
+    ziel.slot = pfad.slot;
+    if (feld !== "slot") {
+      ziel.bereich = pfad.bereich;
+      if (feld !== "bereich") ziel.umfang = pfad.umfang;
+      if (feld !== "bereich" && feld !== "umfang") ziel.kategorie = pfad.kategorie;
     }
+    ziel[feld] = wert;
+    teile.push({ name: name, ziel: ziel });
   }
+  if (pfad.slot) {
+    stufe(pfad.slot === "einstieg" ? "Zum Einstieg" : "Zum Abschluss", "slot", pfad.slot);
+    teile[teile.length - 1].ziel.unterkategorie = "__alle__";
+  }
+  if (pfad.bereich) stufe(BEREICH_TEXT[pfad.bereich] || pfad.bereich, "bereich", pfad.bereich);
+  if (pfad.umfang) stufe(UMFANG_KACHEL[pfad.umfang] || pfad.umfang, "umfang", pfad.umfang);
+  if (pfad.kategorie) {
+    stufe(KATEGORIE_TEXT[pfad.kategorie] || pfad.kategorie, "kategorie", pfad.kategorie);
+  }
+  if (pfad.unterkategorie && pfad.unterkategorie !== "__alle__") {
+    teile.push({ name: unterText(pfad.unterkategorie), ziel: null });
+  }
+
   var behaelter = $("pfad");
   behaelter.innerHTML = "";
   // Auf der obersten Ebene stünde dort nur "Alle Bausteine" – das sagt nichts.
@@ -1305,6 +1343,11 @@ function zeichnePfad() {
   }
 }
 
+/** Hat dieser Bereich eine zweite Ebene aus Kategorien? */
+function hatKategorien(bereich) {
+  return bereich === "spiel" || bereich === "pfadfindertechnik";
+}
+
 /**
  * Entscheidet, ob Kacheln oder die Liste gezeigt werden.
  * Gesucht wird immer in der Liste – dann will man Treffer sehen, keine Kacheln.
@@ -1318,23 +1361,28 @@ function aktualisiere() {
   var kacheln = $("kacheln");
   kacheln.innerHTML = "";
 
-  // "__alle__" heißt: der Nutzer hat "Alle anzeigen" gedrückt und will die
-  // Liste sehen, egal auf welcher Ebene er gerade steht.
+  // "__alle__" heißt: der Nutzer hat "Alle anzeigen" gedrückt und will die Liste.
   if (!f.suche && pfad.unterkategorie !== "__alle__") {
-    if (!pfad.typ) { zeigeKacheln(kacheln, "typ", f); return; }
-    if (!pfad.kategorie) { zeigeKacheln(kacheln, "kategorie", f); return; }
-    if (!pfad.unterkategorie) {
-      var unter = zaehleNach("unterkategorie", f, pfad);
-      var schluessel = Object.keys(unter);
-      var summe = sammle(f, pfad).length;
-      // Dritte Ebene nur, wenn sie wirklich hilft
-      if (schluessel.length > 1 && summe > UNTEREBENE_AB) {
-        zeigeKacheln(kacheln, "unterkategorie", f);
+    if (!pfad.bereich) { zeigeKacheln(kacheln, "bereich", f); return; }
+    if (hatKategorien(pfad.bereich)) {
+      if (!pfad.kategorie) { zeigeKacheln(kacheln, "kategorie", f); return; }
+      if (!pfad.unterkategorie) {
+        var unter = zaehleNach("unterkategorie", f, pfad);
+        if (Object.keys(unter).length > 1 && sammle(f, pfad).length > UNTEREBENE_AB) {
+          zeigeKacheln(kacheln, "unterkategorie", f);
+          return;
+        }
+      }
+    } else if (!pfad.umfang) {
+      // Außerhalb der Spiele ist der Bereich schon das Thema – die zweite
+      // Ebene ist dann die Größe: einzelner Baustein oder ganzer Abend.
+      var groessen = zaehleNach("umfang", f, pfad);
+      if (Object.keys(groessen).length > 1 && sammle(f, pfad).length > UNTEREBENE_AB) {
+        zeigeKacheln(kacheln, "umfang", f);
         return;
       }
     }
   }
-
   zeigeListe(f);
 }
 
@@ -1347,32 +1395,47 @@ function zeigeKacheln(behaelter, ebene, f) {
   gefiltert = sammle(f, pfad);
   $("zufallKnopf").disabled = gefiltert.length === 0;
 
+  function ziel(feld, wert) {
+    var z = { bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
+              unterkategorie: "", slot: pfad.slot };
+    if (feld === "bereich") { z.bereich = wert; z.umfang = ""; z.kategorie = ""; }
+    else if (feld === "umfang") z.umfang = wert;
+    else if (feld === "kategorie") z.kategorie = wert;
+    else z.unterkategorie = wert;
+    return z;
+  }
+
   var eintraege = [];
-  if (ebene === "typ") {
-    var nachTyp = zaehleNach("element_typ", f, { typ: "", kategorie: "", unterkategorie: "" });
-    for (var t = 0; t < TYP_REIHENFOLGE.length; t++) {
-      var typ = TYP_REIHENFOLGE[t];
-      if (nachTyp[typ]) {
-        eintraege.push({ name: TYP_TEXT[typ], anzahl: nachTyp[typ], zeichen: ZEICHEN[typ],
-                         ziel: { typ: typ, kategorie: "", unterkategorie: "",
-                                 slot: pfad.slot } });
+  if (ebene === "bereich") {
+    var nachBereich = zaehleNach("bereich", f, { slot: pfad.slot });
+    for (var b = 0; b < BEREICH_REIHENFOLGE.length; b++) {
+      var name = BEREICH_REIHENFOLGE[b];
+      if (nachBereich[name]) {
+        eintraege.push({ name: BEREICH_TEXT[name], anzahl: nachBereich[name],
+                         zeichen: ZEICHEN[name], ziel: ziel("bereich", name) });
       }
     }
+  } else if (ebene === "umfang") {
+    var nachUmfang = zaehleNach("umfang", f, pfad);
+    ["baustein", "ganzer_abend"].forEach(function (u) {
+      if (nachUmfang[u]) {
+        eintraege.push({ name: UMFANG_KACHEL[u], anzahl: nachUmfang[u],
+                         ziel: ziel("umfang", u) });
+      }
+    });
   } else if (ebene === "kategorie") {
     var nachKat = zaehleNach("kategorie", f, pfad);
     eintraege = Object.keys(nachKat).map(function (k) {
-      return { name: KATEGORIE_TEXT[k] || k, anzahl: nachKat[k],
-               ziel: { typ: pfad.typ, kategorie: k, unterkategorie: "", slot: pfad.slot } };
+      return { name: KATEGORIE_TEXT[k] || k, anzahl: nachKat[k], ziel: ziel("kategorie", k) };
     });
+    eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
   } else {
     var nachUnter = zaehleNach("unterkategorie", f, pfad);
     eintraege = Object.keys(nachUnter).map(function (u) {
-      return { name: unterText(u), anzahl: nachUnter[u],
-               ziel: { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: u,
-                       slot: pfad.slot } };
+      return { name: unterText(u), anzahl: nachUnter[u], ziel: ziel("unterkategorie", u) };
     });
+    eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
   }
-  eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
 
   if (!eintraege.length) {
     behaelter.innerHTML = '<p class="leer" style="grid-column:1/-1">' +
@@ -1390,33 +1453,30 @@ function zeigeKacheln(behaelter, ebene, f) {
       }, false, eintrag.zeichen));
     })(eintraege[i]);
   }
-  // Auf der obersten Ebene: Abkürzung nach dem Platz im Heimabend.
-  // Die Schema-Kategorie "abschluss" ist in keinem Element vergeben; ohne
-  // diese Kacheln gäbe es keinen Weg zu den Abschlussspielen.
-  if (ebene === "typ" && !pfad.slot) {
-    var abkuerzungen = [
-      { name: "Zum Einstieg", slot: "einstieg" },
-      { name: "Zum Abschluss", slot: "abschluss" }
-    ];
-    for (var a = 0; a < abkuerzungen.length; a++) {
-      (function (kurz) {
-        var menge = sammle(f, { typ: "", kategorie: "", unterkategorie: "", slot: kurz.slot });
-        if (!menge.length) return;
-        behaelter.appendChild(baueKachel(kurz.name, menge.length, function () {
-          pfad = { typ: "", kategorie: "", unterkategorie: "__alle__", slot: kurz.slot };
-          window.scrollTo(0, 0);
-          aktualisiere();
-        }, true));
-      })(abkuerzungen[a]);
-    }
-  }
 
+  // Auf der obersten Ebene: Abkürzung nach dem Platz im Heimabend.
+  if (ebene === "bereich" && !pfad.slot) {
+    [{ name: "Zum Einstieg", slot: "einstieg" },
+     { name: "Zum Abschluss", slot: "abschluss" }].forEach(function (kurz) {
+      var p = leererPfad(); p.slot = kurz.slot;
+      var menge = sammle(f, p);
+      if (!menge.length) return;
+      behaelter.appendChild(baueKachel(kurz.name, menge.length, function () {
+        pfad = leererPfad();
+        pfad.slot = kurz.slot;
+        pfad.unterkategorie = "__alle__";
+        window.scrollTo(0, 0);
+        aktualisiere();
+      }, true));
+    });
+  }
   // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
-  if (ebene !== "typ") {
+  if (ebene !== "bereich") {
     var alle = sammle(f, pfad);
     behaelter.appendChild(baueKachel("Alle anzeigen", alle.length, function () {
-      pfad = { typ: pfad.typ, kategorie: pfad.kategorie, unterkategorie: "__alle__",
-               slot: pfad.slot };
+      var z = { bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
+                unterkategorie: "__alle__", slot: pfad.slot };
+      pfad = z;
       window.scrollTo(0, 0);
       aktualisiere();
     }, true));
@@ -1425,7 +1485,8 @@ function zeigeKacheln(behaelter, ebene, f) {
 
 function zeigeListe(f) {
   var suchPfad = {
-    typ: pfad.typ, kategorie: pfad.kategorie, slot: pfad.slot,
+    bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
+    slot: pfad.slot,
     unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
   };
   gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche, f.stufe);
@@ -1445,14 +1506,14 @@ function zeichneListe(f) {
   behaelter.innerHTML = "";
   if (!gefiltert.length) {
     var text = '<li><p class="leer">Nichts gefunden.<br>';
-    if (f && f.suche && (pfad.typ || pfad.kategorie)) {
+    if (f && f.suche && (pfad.bereich || pfad.kategorie || pfad.slot)) {
       text += '<button type="button" id="ueberallSuchen">Überall suchen</button> · ';
     }
     text += '<button type="button" id="leerReset2">Filter zurücksetzen</button></p></li>';
     behaelter.innerHTML = text;
     if ($("ueberallSuchen")) {
       $("ueberallSuchen").addEventListener("click", function () {
-        pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+        pfad = leererPfad();
         aktualisiere();
       });
     }
@@ -1496,9 +1557,11 @@ function zeigeDetail(e) {
   }
 
   html += '<dl class="datenblatt">';
-  html += "<dt>Art</dt><dd>" + schuetze(TYP_EINZAHL[e.element_typ]) +
-          " · " + schuetze(kategorieText(e)) +
+  html += "<dt>Bereich</dt><dd>" + schuetze(BEREICH_TEXT[e.bereich] || e.bereich) +
+          (e.kategorie ? " · " + schuetze(kategorieText(e)) : "") +
           (e.unterkategorie ? " · " + schuetze(unterText(e.unterkategorie)) : "") + "</dd>";
+  html += "<dt>Umfang</dt><dd>" + (e.umfang === "ganzer_abend"
+          ? "füllt einen ganzen Heimabend" : "einzelner Baustein") + "</dd>";
   html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
   html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
   html += "<dt>Alter</dt><dd>" + schuetze(stufenText(e)) +
@@ -1514,7 +1577,7 @@ function zeigeDetail(e) {
   // herum bauen ("Knoten"), was vorher nur über erneutes Tippen ging.
   var stichworte = [];
   var eigenerTitel = vereinfache(e.titel);
-  var quellen = [kategorieText(e)];
+  var quellen = [BEREICH_TEXT[e.bereich] || "", kategorieText(e)];
   if (e.unterkategorie && e.unterkategorie !== "sonstiges") {
     quellen.push(unterText(e.unterkategorie));
   }
@@ -1577,7 +1640,7 @@ function zeigeDetail(e) {
       var wort = this.getAttribute("data-wort");
       schliesseUeberlagerung($("detail"));
       zeigeAnsicht("bausteine");
-      pfad = { typ: "", kategorie: "", unterkategorie: "", slot: "" };
+      pfad = leererPfad();
       $("suche").value = wort;
       aktualisiere();
     });
@@ -1606,7 +1669,7 @@ function zeigeDetail(e) {
  */
 function passtGrob(e, slot) {
   if (slot.schluessel === "haupt") return hat(e.slots, "hauptteil");
-  return e.element_typ === "spiel" && hat(e.slots, slot.schluessel);
+  return e.bereich === "spiel" && hat(e.slots, slot.schluessel);
 }
 
 /** Setzt einen Baustein auf den ersten freien passenden Platz. */
@@ -2066,8 +2129,8 @@ function oeffneAuswahl(slot, index, nurPassend) {
   var spielraum = frei > 0 ? frei : Math.max(20, ziel);
   auswahlZiel = { slot: slot, index: index, frei: frei,
                   spielraum: spielraum, ziel: Math.max(ziel, 10) };
-  auswahlPfad = { typ: "", kategorie: "", unterkategorie: "" };
-  chipsOffen = { typ: false, kategorie: false, unterkategorie: false };
+  auswahlPfad = { bereich: "", kategorie: "", unterkategorie: "" };
+  chipsOffen = { bereich: false, kategorie: false, unterkategorie: false };
   $("auswahlEingrenzen").open = false;
   var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
   $("auswahlTitel").textContent = name;
@@ -2082,7 +2145,7 @@ function oeffneAuswahl(slot, index, nurPassend) {
 }
 
 /* Merkt sich, welche Chip-Reihe ganz ausgeklappt ist. */
-var chipsOffen = { typ: false, kategorie: false, unterkategorie: false };
+var chipsOffen = { bereich: false, kategorie: false, unterkategorie: false };
 var CHIPS_SICHTBAR = 6;
 
 /**
@@ -2155,13 +2218,14 @@ function zeichneAuswahl() {
     }).sort(function (a, b) { return b.anzahl - a.anzahl; });
   }
 
-  var nachTyp = alsEintraege(zaehleFeld(grundmenge, "element_typ"),
-                             function (k) { return TYP_TEXT[k] || k; });
-  if (auswahlPfad.typ && !nachTyp.some(function (x) { return x.wert === auswahlPfad.typ; })) {
-    auswahlPfad.typ = "";
+  var nachTyp = alsEintraege(zaehleFeld(grundmenge, "bereich"),
+                             function (k) { return BEREICH_TEXT[k] || k; });
+  if (auswahlPfad.bereich &&
+      !nachTyp.some(function (x) { return x.wert === auswahlPfad.bereich; })) {
+    auswahlPfad.bereich = "";
   }
   var mitTyp = grundmenge.filter(function (e) {
-    return !auswahlPfad.typ || e.element_typ === auswahlPfad.typ;
+    return !auswahlPfad.bereich || e.bereich === auswahlPfad.bereich;
   });
   var nachKategorie = alsEintraege(zaehleFeld(mitTyp, "kategorie"),
                                    function (k) { return KATEGORIE_TEXT[k] || k; });
@@ -2180,7 +2244,7 @@ function zeichneAuswahl() {
   }
 
   var gewaehlt = [];
-  if (auswahlPfad.typ) gewaehlt.push(TYP_TEXT[auswahlPfad.typ] || auswahlPfad.typ);
+  if (auswahlPfad.bereich) gewaehlt.push(BEREICH_TEXT[auswahlPfad.bereich] || auswahlPfad.bereich);
   if (auswahlPfad.kategorie) {
     gewaehlt.push(KATEGORIE_TEXT[auswahlPfad.kategorie] || auswahlPfad.kategorie);
   }
@@ -2189,7 +2253,7 @@ function zeichneAuswahl() {
     ? gewaehlt.join(" · ") : "Art, Kategorie, Thema";
 
   $("auswahlChips").innerHTML =
-    chipReihe("Art", nachTyp, auswahlPfad.typ, "typ") +
+    chipReihe("Bereich", nachTyp, auswahlPfad.bereich, "bereich") +
     chipReihe("Kategorie", nachKategorie, auswahlPfad.kategorie, "kategorie") +
     chipReihe("Unterkategorie", nachUnter, auswahlPfad.unterkategorie, "unterkategorie");
 
@@ -2204,7 +2268,7 @@ function zeichneAuswahl() {
       }
       auswahlPfad[feld] = this.getAttribute("data-wert");
       // tiefere Ebenen zurücksetzen, sonst passt nichts mehr zusammen
-      if (feld === "typ") { auswahlPfad.kategorie = ""; auswahlPfad.unterkategorie = ""; }
+      if (feld === "bereich") { auswahlPfad.kategorie = ""; auswahlPfad.unterkategorie = ""; }
       if (feld === "kategorie") auswahlPfad.unterkategorie = "";
       auswahlSichtbar = SEITENGROESSE;
       zeichneAuswahl();
@@ -2384,11 +2448,13 @@ function starte(elemente) {
     // Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig
     e._titeltext = vereinfache(e.titel);
     e._kopftext = vereinfache([e.kurz, (e.tags || []).join(" "),
-                               (e.themen || []).join(" "), kategorieText(e),
+                               (e.themen || []).join(" "),
+                               BEREICH_TEXT[e.bereich] || "", kategorieText(e),
                                unterText(e.unterkategorie)].join(" "));
     e._suchtext = vereinfache([
       e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
-      kategorieText(e), unterText(e.unterkategorie), e.beschreibung
+      BEREICH_TEXT[e.bereich] || "", kategorieText(e),
+      unterText(e.unterkategorie), e.beschreibung
     ].join(" "));
   }
   verdrahte();

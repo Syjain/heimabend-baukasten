@@ -47,10 +47,10 @@ AUSGABE_JSON = WURZEL / "data" / "elemente.json"
 AUSGABE_JS = WURZEL / "web" / "elemente.js"
 
 # ---------------------------------------------------------------- Wertebereiche
-ELEMENT_TYPEN = {"spiel", "probe", "aktivitaet", "projekt"}
+UMFAENGE = {"baustein", "ganzer_abend"}
 ORTE = {"drinnen", "draussen", "beides"}
 VORBEREITUNGEN = {"gering", "mittel", "hoch"}
-SLOTS = {"eroeffnung", "einstieg", "hauptteil", "aktivitaet", "abschluss"}
+SLOTS = {"eroeffnung", "einstieg", "hauptteil", "abschluss"}
 ALTERSSTUFEN = {"Wölflinge", "Pfadfinder", "Ältere"}
 
 KATEGORIEN_SPIEL = {
@@ -61,22 +61,20 @@ KATEGORIEN_PROBE = {
     "knoten", "karte_kompass", "feuer", "erste_hilfe", "zelte_bauten",
     "natur", "bundeskunde", "fahrtentechnik", "sonstiges",
 }
-KATEGORIEN_AKTIVITAET = {"draussen", "kreativ", "kochen", "musisch", "soziales"}
-# Bei Projekten lässt das Schema die Kategorie frei ("Hauptthema"). Eine feste,
-# kleine Liste hält das Filtermenü der App brauchbar; die feinen Themen stehen
-# weiterhin im Feld "themen".
-KATEGORIEN_PROJEKT = {
-    "themenabend", "wissen", "entdecken", "spiel", "raetsel",
-    "draussen", "kreativ", "kochen", "musisch", "soziales",
-}
+# Nur "spiel" und "pfadfindertechnik" haben eine zweite Ebene. Bei den übrigen
+# Bereichen ist der Bereich selbst schon das Thema; dort bleibt die Kategorie
+# leer, und die Navigation geht über den Umfang weiter.
 KATEGORIEN = {
     "spiel": KATEGORIEN_SPIEL,
-    "probe": KATEGORIEN_PROBE,
-    "aktivitaet": KATEGORIEN_AKTIVITAET,
-    "projekt": KATEGORIEN_PROJEKT,
+    "pfadfindertechnik": KATEGORIEN_PROBE,
+    "natur_draussen": {""},
+    "werken": {""},
+    "kochen": {""},
+    "musisch": {""},
+    "gemeinschaft": {""},
 }
 PFLICHTFELDER = [
-    "id", "titel", "element_typ", "kategorie", "unterkategorie", "slots", "altersstufen",
+    "id", "titel", "bereich", "umfang", "kategorie", "unterkategorie", "slots", "altersstufen",
     "dauer_min", "dauer_max", "ort", "material", "vorbereitung",
     "kurz", "beschreibung", "tags", "themen", "quelle",
 ]
@@ -149,7 +147,7 @@ def normalisiere_stufen(stufen):
 
 
 # ---------------------------------------------------------------- eigene Ideen
-# Kategorie der eigenen Sammlung -> Kategorie für element_typ "aktivitaet"
+# Zweite Ebene innerhalb eines Bereichs, soweit vorhanden
 EIGENE_AKTIVITAET = {
     "Draußen & Natur": "draussen",
     "Kreativ & Werken": "kreativ",
@@ -275,19 +273,19 @@ def eigener_typ(idee):
     return "aktivitaet"
 
 
-def slots_fuer(element_typ, kategorie, dauer_min):
+def slots_fuer(bereich, umfang, kategorie, dauer_min):
     """Wo im Heimabend passt das Element?"""
-    if element_typ == "spiel":
-        slots = []
-        if kategorie == "ankommen" or dauer_min <= 10:
-            slots.append("einstieg")
-        slots.append("hauptteil")
-        if dauer_min <= 15 and kategorie in ("kreis", "ruhig", "ankommen"):
-            slots.append("abschluss")
-        return slots
-    if element_typ == "aktivitaet":
-        return ["hauptteil", "aktivitaet"]
-    return ["hauptteil"]  # probe und projekt
+    if umfang == "ganzer_abend":
+        return ["hauptteil"]          # füllt den Abend, kein Einstieg, kein Ausklang
+    if bereich != "spiel":
+        return ["hauptteil"]
+    slots = []
+    if kategorie == "ankommen" or dauer_min <= 10:
+        slots.append("einstieg")
+    slots.append("hauptteil")
+    if dauer_min <= 15 and kategorie in ("kreis", "ruhig", "ankommen"):
+        slots.append("abschluss")
+    return slots
 
 
 def lade_eigene(vergeben):
@@ -297,30 +295,30 @@ def lade_eigene(vergeben):
     lizenz = "CC BY-SA 4.0"
     elemente = []
     for idee in daten["ideen"]:
-        typ = eigener_typ(idee)
         ort = normalisiere_ort(idee.get("ort", "beides"))
-        if typ == "spiel":
-            kategorie = eigene_spielkategorie(idee, ort)
-        elif typ == "probe":
-            kategorie = probenthema(idee)
-        elif typ == "aktivitaet":
-            kategorie = EIGENE_AKTIVITAET.get(idee["kategorie"], "soziales")
-        elif ist_spielhaft(idee):
-            # langes Spiel als Projekt: "raetsel" für Denkaufgaben, sonst "spiel"
-            kategorie = "raetsel" if idee["kategorie"] == "Denken & Rätsel" else "spiel"
-        else:
-            kategorie = EIGENE_PROJEKT.get(idee["kategorie"], "themenabend")
         beschreibung = (idee.get("beschreibung") or "").strip()
         dauer_min = idee.get("dauer_min") or 30
+        dauer_max = idee.get("dauer_max") or dauer_min
+        # Die neun eigenen Kategorien lassen sich direkt einem Bereich zuordnen;
+        # nur "Themenabende" ist inhaltlich gemischt und läuft über die Stichworte.
+        bereich = EIGENE_BEREICH.get(idee["kategorie"])
+        umfang = "ganzer_abend" if (dauer_min >= 75 or dauer_max >= 120) else "baustein"
+        if bereich == "spiel":
+            kategorie = eigene_spielkategorie(idee, ort)
+        elif bereich == "pfadfindertechnik":
+            kategorie = probenthema(idee)
+        else:
+            kategorie = ""
         elemente.append({
             "id": mache_id("eig", idee["titel"], vergeben),
             "titel": idee["titel"],
-            "element_typ": typ,
+            "_bereich": bereich,
+            "umfang": umfang,
             "kategorie": kategorie,
-            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "slots": slots_fuer(bereich or "gemeinschaft", umfang, kategorie, dauer_min),
             "altersstufen": normalisiere_stufen(idee.get("altersstufen")),
             "dauer_min": dauer_min,
-            "dauer_max": idee.get("dauer_max") or dauer_min,
+            "dauer_max": dauer_max,
             "ort": ort,
             "material": [m for m in idee.get("material", []) if m],
             "vorbereitung": idee.get("vorbereitung", "gering"),
@@ -328,7 +326,7 @@ def lade_eigene(vergeben):
             "beschreibung": beschreibung,
             "tipps": (idee.get("tipps") or "").strip(),
             "tags": list(idee.get("tags", [])),
-            "themen": list(idee.get("tags", [])) if typ in ("probe", "projekt") else [],
+            "themen": list(idee.get("tags", [])),
             "quelle": {
                 "name": "Heimabend-Baukasten (eigene Sammlung)",
                 "url": "",
@@ -377,11 +375,11 @@ PROBENBUCH_ZUORDNUNG = {
     24: ("probe", "natur", "draussen", []),
     25: ("probe", "erste_hilfe", "beides", ["Verbandsmaterial"]),
     26: ("probe", "erste_hilfe", "beides", ["Verbandsmaterial", "Dreiecktücher"]),
-    # Die drei Geschichts-Kapitel sind zu umfangreich für eine Probe im Hauptteil
-    # und füllen einen ganzen Abend -> Projekt (Entscheidung vom 02.09.2026).
-    27: ("projekt", "wissen", "drinnen", []),
-    28: ("projekt", "wissen", "drinnen", []),
-    29: ("projekt", "wissen", "drinnen", []),
+    # Die drei Geschichts-Kapitel füllen einen ganzen Abend (umfang), gehören
+    # aber inhaltlich zur Bundeskunde.
+    27: ("projekt", "bundeskunde", "drinnen", []),
+    28: ("projekt", "bundeskunde", "drinnen", []),
+    29: ("projekt", "bundeskunde", "drinnen", []),
     30: ("probe", "bundeskunde", "drinnen", []),
 }
 # Proben, bei denen die Zeichnungen aus dem gedruckten Buch fehlen und deshalb
@@ -451,13 +449,15 @@ def lade_probenbuch(vergeben):
         else:
             dauer_min, dauer_max = 30, 60
             altersstufen = []  # gilt für alle Stufen
+        umfang = "ganzer_abend" if dauer_min >= 75 else "baustein"
 
         elemente.append({
             "id": mache_id("pb", probe["titel"], vergeben),
             "titel": probe["titel"],
-            "element_typ": typ,
+            "_bereich": "pfadfindertechnik",   # das ganze Probenbuch ist Pfadfinderwissen
+            "umfang": umfang,
             "kategorie": kategorie,
-            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "slots": slots_fuer("pfadfindertechnik", umfang, kategorie, dauer_min),
             "altersstufen": altersstufen,
             "dauer_min": dauer_min,
             "dauer_max": dauer_max,
@@ -515,17 +515,17 @@ def lade_inspirator(vergeben):
     for idee in daten["ideen"]:
         arten = idee.get("arten") or []
         dauer_min = idee.get("dauer_min") or 45
-        # Ausnahme laut SCHEMA.md: reine Spiele unter 30 Minuten sind ein "spiel"
-        typ = "spiel" if arten == ["Spiel"] and dauer_min < 30 else "projekt"
+        dauer_max = idee.get("dauer_max") or dauer_min
         ort = inspirator_ort(idee.get("orte"))
-        if typ == "spiel":
+        umfang = "ganzer_abend" if (dauer_min >= 75 or dauer_max >= 120) else "baustein"
+        # Reine Spiele bleiben Spiele; alles andere bekommt seinen Bereich
+        # später aus der Themen-Abstimmung (bestimme_bereich).
+        if arten == ["Spiel"]:
+            bereich = "spiel"
             kategorie = "bewegung_draussen" if ort == "draussen" else "bewegung_drinnen"
         else:
-            kategorie = "wissen"
-            for art, bucket in INSPIRATOR_PROJEKT:
-                if art in arten:
-                    kategorie = bucket
-                    break
+            bereich = None
+            kategorie = ""
         material = []
         for eintrag in idee.get("material") or []:
             name = (eintrag.get("name") or "").strip() if isinstance(eintrag, dict) else str(eintrag)
@@ -535,12 +535,13 @@ def lade_inspirator(vergeben):
         elemente.append({
             "id": mache_id("insp", idee["titel"], vergeben),
             "titel": idee["titel"],
-            "element_typ": typ,
+            "_bereich": bereich,
+            "umfang": umfang,
             "kategorie": kategorie,
-            "slots": slots_fuer(typ, kategorie, dauer_min),
+            "slots": slots_fuer(bereich or "gemeinschaft", umfang, kategorie, dauer_min),
             "altersstufen": normalisiere_stufen(idee.get("stufen")),
             "dauer_min": dauer_min,
-            "dauer_max": idee.get("dauer_max") or dauer_min,
+            "dauer_max": dauer_max,
             "ort": ort,
             "material": material,
             "vorbereitung": INSPIRATOR_VORBEREITUNG.get(idee.get("vorbereitung"), "gering"),
@@ -609,6 +610,15 @@ def wende_redaktion_an(elemente, redaktion):
         element["titel"] = eintrag["titel"]
         element["titel_geaendert"] = True
 
+    # Bereich, Umfang und Kategorie werden erst nach der Automatik gesetzt -
+    # sonst überschreibt die Automatik die redaktionelle Entscheidung wieder.
+    bericht["nachtraeglich"] = {}
+    for eintrag in redaktion.get("bereiche", []):
+        if eintrag["id"] in nach_id:
+            bericht["nachtraeglich"][eintrag["id"]] = eintrag
+        else:
+            bericht["unbekannt"].append(eintrag["id"])
+
     for eintrag in redaktion.get("korrekturen", []):
         element = nach_id.get(eintrag["id"])
         if not element:
@@ -627,6 +637,145 @@ def wende_redaktion_an(elemente, redaktion):
 
     elemente = [e for e in elemente if e["id"] not in gesperrt]
     return elemente, bericht
+
+
+# ------------------------------------------------------------- Bereiche
+# Die alte Einteilung mischte zwei Fragen: WAS ist es (Spiel, Wissen, etwas
+# herstellen) und WIE GROSS ist es (ein Baustein oder ein ganzer Abend).
+# Dadurch lagen "Armbänder knüpfen" (60-90 min) und "Speckstein-Werkstatt"
+# (90-120 min) in verschiedenen Arten, obwohl beides Basteln ist.
+#
+# Jetzt sind es zwei Achsen:
+#   bereich  – worum geht es (sieben Werte, siehe unten)
+#   umfang   – baustein (passt in einen Slot) oder ganzer_abend
+#
+# Die Bereiche folgen der eigenen Sammlung des Projekts und decken sich mit
+# der Gliederung der Pfaditechnik, wie sie im Pfadfinderwesen üblich ist
+# (Pioniertechnik, Orientierung, Natur, Sicherheit, Bundeskunde, unterwegs sein).
+BEREICHE = [
+    "spiel", "pfadfindertechnik", "natur_draussen", "werken",
+    "kochen", "musisch", "gemeinschaft",
+]
+# Bei Gleichstand entscheidet diese Rangfolge: das Speziellere gewinnt.
+BEREICH_RANG = ["pfadfindertechnik", "kochen", "werken", "musisch",
+                "natur_draussen", "gemeinschaft", "spiel"]
+
+# Das Themen-Vokabular des Inspirators ist geschlossen (30 Werte), deshalb
+# eine exakte Tabelle statt Stichwortsuche. Themen ohne Eintrag ("Bewegung",
+# "Kim-Spiel", "Detektiv") beschreiben die Spielform, nicht den Bereich,
+# und stimmen deshalb nicht mit ab.
+THEMA_BEREICH = {
+    "Basteln": "werken", "Handwerkliches": "werken", "Schnitzen": "werken",
+    "Küche": "kochen", "Backen": "kochen",
+    "Haik": "pfadfindertechnik", "Karte Kompass": "pfadfindertechnik",
+    "Knoten": "pfadfindertechnik", "Feuer machen": "pfadfindertechnik",
+    "Schwarzzelte": "pfadfindertechnik", "Symbolik": "pfadfindertechnik",
+    "Unser Bund": "pfadfindertechnik", "Versprechen": "pfadfindertechnik",
+    "Pfa. Geschichte": "pfadfindertechnik", "1. Hilfe": "pfadfindertechnik",
+    "Pflanzen": "natur_draussen", "Baum": "natur_draussen", "Tier": "natur_draussen",
+    "Wasser": "natur_draussen", "Sternenkunde": "natur_draussen",
+    "Nachhaltigkeit": "natur_draussen", "Unsere Erde": "natur_draussen",
+    "Geschichten": "musisch", "Musisches": "musisch",
+    "Gesellschaftliches": "gemeinschaft", "Unsere Sippe": "gemeinschaft",
+    "Prävention": "gemeinschaft",
+}
+# Die neun Kategorien der eigenen Sammlung lassen sich direkt zuordnen.
+EIGENE_BEREICH = {
+    "Pfadfindertechnik": "pfadfindertechnik",
+    "Draußen & Natur": "natur_draussen",
+    "Kreativ & Werken": "werken",
+    "Kochen & Essen": "kochen",
+    "Musisch": "musisch",
+    "Gruppe & Soziales": "gemeinschaft",
+    "Spiel & Action": "spiel",
+    "Denken & Rätsel": "spiel",
+    "Themenabende": None,          # inhaltlich verschieden, siehe Stichworte
+}
+# Nur noch Rückfallebene für die wenigen Elemente ohne verwertbares Thema.
+BEREICH_STICHWORTE = [
+    ("pfadfindertechnik", ["knoten", "kompass", "karte", "orientier", "feuer",
+                           "zelt", "kohte", "jurte", "lager", "erste hilfe",
+                           "biwak", "haik", "fahrt", "morse", "waldläuferzeichen",
+                           "bipi", "bund", "versprechen", "kluft", "lilie",
+                           "probenbuch", "pfadfinderwissen", "wimpel"]),
+    ("kochen", ["küche", "kochen", "backen", "rezept", "brot", "kuchen",
+                "grillen", "mahlzeit", "stockbrot"]),
+    ("werken", ["basteln", "werken", "schnitzen", "nähen", "knüpfen", "malen",
+                "gestalten", "upcycling", "speckstein", "holz", "foto"]),
+    ("musisch", ["lied", "singen", "musik", "gitarre", "theater", "impro",
+                 "sketch", "dichten", "geschichten", "erzählen"]),
+    ("natur_draussen", ["natur", "baum", "pflanze", "tier", "wald", "spuren",
+                        "stern", "umwelt", "nachhaltig", "müll", "wandern",
+                        "mikroabenteuer"]),
+    ("gemeinschaft", ["sippe", "gruppe", "gemeinschaft", "reflexion", "gespräch",
+                      "diskussion", "beteiligung", "regeln", "gute tat",
+                      "zukunft", "beruf", "länder", "kultur", "rückblick"]),
+]
+
+
+def bestimme_bereich(element):
+    """
+    Ermittelt den Bereich. Exakte Tabellen zuerst, Stichworte nur als Rückfall.
+    Der Quellschlüssel steht in "_bereich_quelle", falls das Element schon
+    beim Einlesen zugeordnet werden konnte.
+    """
+    if element.get("_bereich"):
+        return element["_bereich"]
+    # Die Import-Ausgaben von Spielewiki und pfadfinder-spiele.de enthalten
+    # ausschließlich Spiele und liefern das noch im alten Feld element_typ.
+    if element.get("element_typ") == "spiel":
+        return "spiel"
+
+    # Abstimmung über die Themen (geschlossenes Vokabular)
+    stimmen = Counter()
+    for thema in element.get("themen") or []:
+        ziel = THEMA_BEREICH.get(thema)
+        if ziel:
+            stimmen[ziel] += 1
+    if stimmen:
+        hoechste = max(stimmen.values())
+        gleichauf = [b for b, n in stimmen.items() if n == hoechste]
+        return sorted(gleichauf, key=BEREICH_RANG.index)[0]
+
+    heu = " " + " ".join(
+        [element["titel"]] + (element.get("tags") or []) + (element.get("themen") or [])
+    ).lower() + " "
+    for name, woerter in BEREICH_STICHWORTE:
+        for wort in woerter:
+            if wort in heu:
+                return name
+    return "gemeinschaft"
+
+
+# Themen des Inspirators -> Probenthema, für die zweite Ebene der Pfadfindertechnik
+THEMA_TECHNIK = {
+    "Knoten": "knoten", "Karte Kompass": "karte_kompass", "Feuer machen": "feuer",
+    "1. Hilfe": "erste_hilfe", "Schwarzzelte": "zelte_bauten", "Haik": "fahrtentechnik",
+    "Symbolik": "bundeskunde", "Unser Bund": "bundeskunde",
+    "Versprechen": "bundeskunde", "Pfa. Geschichte": "bundeskunde",
+    "Pflanzen": "natur", "Baum": "natur", "Tier": "natur", "Sternenkunde": "natur",
+}
+
+
+def technik_kategorie(element):
+    """Zweite Ebene innerhalb der Pfadfindertechnik (Knoten, Karte & Kompass, ...)."""
+    for thema in element.get("themen") or []:
+        if thema in THEMA_TECHNIK:
+            return THEMA_TECHNIK[thema]
+    heuhaufen = entschaerfe(
+        element["titel"] + " " + " ".join(element.get("tags") or [])
+    )
+    for stichwort, thema in PROBEN_THEMEN:
+        if entschaerfe(stichwort) in heuhaufen:
+            return thema
+    return "sonstiges"
+
+
+def bestimme_umfang(element):
+    """Passt es in einen Slot des Abends oder füllt es den Abend?"""
+    if element["dauer_min"] >= 75 or element["dauer_max"] >= 120:
+        return "ganzer_abend"
+    return "baustein"
 
 
 # ------------------------------------------------------- Unterkategorien
@@ -685,11 +834,11 @@ def bestimme_unterkategorie(element):
     Für Proben und Aktivitäten bleibt sie leer – dort sind es so wenige
     Einträge, dass die Kategorie allein reicht.
     """
-    if element["element_typ"] == "spiel":
+    if element["bereich"] == "spiel":
         tabelle, quelle = UNTERKATEGORIE_SPIEL, element.get("tags")
-    elif element["element_typ"] == "projekt":
-        tabelle, quelle = UNTERKATEGORIE_PROJEKT, (element.get("themen") or []) + (element.get("tags") or [])
     else:
+        # Außerhalb der Spiele ist der Bereich selbst schon das Thema;
+        # die feine Gliederung steht im Feld "themen".
         return ""
     vorhanden = set(entschaerfe(t) for t in (quelle or []))
     for schluessel, begriffe in tabelle:
@@ -767,12 +916,14 @@ def pruefe(elemente):
             fehler.append("{}: leerer Titel".format(kennung))
         if len((element.get("beschreibung") or "").strip()) < 20:
             fehler.append("{}: Beschreibung fehlt oder ist zu kurz".format(kennung))
-        typ = element.get("element_typ")
-        if typ not in ELEMENT_TYPEN:
-            fehler.append("{}: unbekannter element_typ '{}'".format(kennung, typ))
-        elif element.get("kategorie") not in KATEGORIEN[typ]:
-            fehler.append("{}: Kategorie '{}' passt nicht zu '{}'".format(
-                kennung, element.get("kategorie"), typ))
+        bereich = element.get("bereich")
+        if bereich not in KATEGORIEN:
+            fehler.append("{}: unbekannter Bereich '{}'".format(kennung, bereich))
+        elif element.get("kategorie") not in KATEGORIEN[bereich]:
+            fehler.append("{}: Kategorie '{}' passt nicht zum Bereich '{}'".format(
+                kennung, element.get("kategorie"), bereich))
+        if element.get("umfang") not in UMFAENGE:
+            fehler.append("{}: unbekannter Umfang '{}'".format(kennung, element.get("umfang")))
         if not isinstance(element.get("unterkategorie"), str):
             fehler.append("{}: unterkategorie ist kein Text".format(kennung))
         if element.get("ort") not in ORTE:
@@ -810,17 +961,20 @@ def statistik(elemente):
     print("\n" + "=" * 58)
     print("STATISTIK  –  {} Elemente insgesamt".format(len(elemente)))
     print("=" * 58)
-    zeige("nach Typ:", Counter(e["element_typ"] for e in elemente))
+    zeige("nach Bereich:", Counter(e["bereich"] for e in elemente))
+    zeige("nach Umfang:", Counter(e["umfang"] for e in elemente))
     zeige("nach Quelle:", Counter(e["quelle"]["name"] for e in elemente))
     zeige("nach Lizenz:", Counter(e["quelle"]["lizenz"] for e in elemente))
-    for typ in ("spiel", "probe", "aktivitaet", "projekt"):
-        teilmenge = [e for e in elemente if e["element_typ"] == typ]
-        if teilmenge:
-            zeige("Kategorien ({}, {} Stück):".format(typ, len(teilmenge)),
-                  Counter(e["kategorie"] for e in teilmenge))
-            unter = Counter(e["unterkategorie"] for e in teilmenge if e["unterkategorie"])
-            if unter:
-                zeige("Unterkategorien ({}):".format(typ), unter)
+    for bereich in BEREICHE:
+        teilmenge = [e for e in elemente if e["bereich"] == bereich]
+        if not teilmenge:
+            continue
+        kategorien = Counter(e["kategorie"] for e in teilmenge if e["kategorie"])
+        if kategorien:
+            zeige("Kategorien ({}, {} Stück):".format(bereich, len(teilmenge)), kategorien)
+        unter = Counter(e["unterkategorie"] for e in teilmenge if e["unterkategorie"])
+        if unter:
+            zeige("Unterkategorien ({}):".format(bereich), unter)
     zeige("nach Ort:", Counter(e["ort"] for e in elemente))
     zeige("nach Vorbereitung:", Counter(e["vorbereitung"] for e in elemente))
     zeige("nach Slot:", Counter(s for e in elemente for s in e["slots"]))
@@ -863,6 +1017,7 @@ def main():
     for zeile in bericht["umbenannt"]:
         print("     - {}".format(zeile))
     print("  korrigiert: {}".format(len(bericht["korrigiert"])))
+    print("  Bereich von Hand gesetzt: {}".format(len(bericht.get("nachtraeglich", {}))))
     if bericht["unbekannt"]:
         print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(", ".join(bericht["unbekannt"])))
 
@@ -904,22 +1059,42 @@ def main():
         print("\n{} Materialangaben des Inspirators als abgeschnitten markiert"
               .format(abgeschnitten))
 
-    # Ein "Spiel" ist laut Schema 5-45 Minuten lang. Was mindestens eine Stunde
-    # dauert (Highland Games, Kochduell, Chaos-Spiel), füllt den Abend und ist
-    # ein Projekt - sonst würfelt der Planer es neben zwei weitere Bausteine.
-    umgestuft = []
+    # Bereich und Umfang festlegen. Die Quellen, die ihren Bereich kennen,
+    # haben ihn schon in "_bereich" hinterlegt; für den Rest entscheidet
+    # die Themen-Abstimmung.
     for element in elemente:
-        if element["element_typ"] == "spiel" and element["dauer_min"] >= 60:
-            element["element_typ"] = "projekt"
-            element["kategorie"] = "spiel"
-            element["slots"] = ["hauptteil"]
-            umgestuft.append(element["titel"])
-    if umgestuft:
-        print("\nLange Spiele zu Projekten umgestuft ({}): {}".format(
-            len(umgestuft), ", ".join(sorted(umgestuft))))
-
-    for element in elemente:
+        element["bereich"] = bestimme_bereich(element)
+        element.pop("_bereich", None)
+        # Die Pfadfindertechnik hat eine zweite Ebene, die übrigen Bereiche nicht
+        if element["bereich"] == "pfadfindertechnik" and not element.get("kategorie"):
+            element["kategorie"] = technik_kategorie(element)
+        elif element["bereich"] not in ("spiel", "pfadfindertechnik"):
+            element["kategorie"] = ""
+        if not element.get("umfang"):
+            element["umfang"] = bestimme_umfang(element)
+        # Ein Baustein, der eine Stunde und länger dauert, füllt den Abend
+        if element["umfang"] == "baustein" and element["dauer_min"] >= 60:
+            element["umfang"] = "ganzer_abend"
+        element["slots"] = slots_fuer(element["bereich"], element["umfang"],
+                                      element["kategorie"], element["dauer_min"])
         element["unterkategorie"] = bestimme_unterkategorie(element)
+        # Redaktionelle Entscheidung schlägt die Automatik
+        eintrag = bericht["nachtraeglich"].get(element["id"])
+        if eintrag:
+            if eintrag.get("bereich"):
+                element["bereich"] = eintrag["bereich"]
+                if element["bereich"] == "pfadfindertechnik":
+                    element["kategorie"] = eintrag.get("kategorie") or technik_kategorie(element)
+                elif element["bereich"] == "spiel":
+                    element["kategorie"] = eintrag.get("kategorie") or "ruhig"
+                    element["unterkategorie"] = bestimme_unterkategorie(element)
+                else:
+                    element["kategorie"] = ""
+                element["slots"] = slots_fuer(element["bereich"], element["umfang"],
+                                              element["kategorie"], element["dauer_min"])
+            elif eintrag.get("kategorie"):
+                element["kategorie"] = eintrag["kategorie"]
+        element.pop("element_typ", None)   # ersetzt durch bereich + umfang
 
     gruppen, getrennt = markiere_dubletten(elemente, redaktion)
     betroffen = sum(1 for e in elemente if e.get("dubletten"))
@@ -938,7 +1113,7 @@ def main():
         return 1
     print("Prüfung: alle Pflichtfelder und Wertebereiche in Ordnung.")
 
-    elemente.sort(key=lambda e: (e["element_typ"], entschaerfe(e["titel"])))
+    elemente.sort(key=lambda e: (BEREICHE.index(e["bereich"]), entschaerfe(e["titel"])))
 
     AUSGABE_JSON.parent.mkdir(parents=True, exist_ok=True)
     inhalt = {
