@@ -1,5 +1,7 @@
 # Heimabend-Baukasten
 
+**App:** https://syjain.github.io/heimabend-baukasten/web/ · **Code:** https://github.com/Syjain/heimabend-baukasten
+
 Ein Werkzeug für junge Gruppenführer*innen bei den Pfadfindern: Bausteine (Spiele, Proben, Aktivitäten, Projekte),
 aus denen sich ein ca. zweistündiger Heimabend zusammenstellen lässt.
 
@@ -35,6 +37,12 @@ Die beiden Import-Skripte kennen `--offline` und arbeiten dann nur mit den berei
 geholten Rohdaten.
 
 ## Die App benutzen
+
+Online unter https://syjain.github.io/heimabend-baukasten/web/ – die Adresse kann man
+weitergeben, sie läuft am Handy ohne Installation. Nach jedem `git push` auf `main` baut
+GitHub Pages die Seite in etwa einer Minute neu.
+
+Lokal:
 
 `web/index.html` per Doppelklick öffnen – mehr braucht es nicht. Näher an GitHub Pages
 ist ein kleiner Webserver:
