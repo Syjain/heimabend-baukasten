@@ -13,6 +13,11 @@ mit denselben Feldern. Alle Quellen werden auf dieses Schema gemappt und in
   "kategorie": "kreis",                   // zweite Ebene, nur bei spiel und pfadfindertechnik
   "unterkategorie": "konzentration",      // dritte Ebene, nur bei spiel
   "slots": ["einstieg", "hauptteil"],     // wo im Heimabend: eroeffnung | einstieg | hauptteil | abschluss
+  "wirkung": ["ankommen", "konzentration"],   // nur Spiele: wozu setze ich es ein (mehrere)
+  "modus": "ohne_gewinner",               // nur Spiele: wettkampf | kooperation | ohne_gewinner
+  "sozialform": "kreis",                  // nur Spiele: kreis | paare | mannschaften | einer_gegen_alle | kleingruppen | frei
+  "spielgeraet": ["nichts"],              // nur Spiele, aus Material: ball | seil | tuch | stuehle | papier_stift | karten_wuerfel | musik | nichts | sonstiges
+  "anforderung": ["bewegung", "konzentration"],   // nur Spiele: bewegung | geschick | denken | merken | konzentration | sprache | rhythmus
   "altersstufen": ["Wölflinge", "Pfadfinder"],   // Wölflinge (ca. 7–11) | Pfadfinder (ca. 11–16) | Ältere (16+); leer = keine Angabe
   "alter_ab": 6,                          // optional, Mindestalter in Jahren
   "dauer_min": 10,
@@ -97,6 +102,27 @@ und `unterkategorie` (22 Werte, aus den Spielarten der Quellen abgeleitet):
 `bundeskunde` · `fahrtentechnik` · `sonstiges`
 
 Alle anderen Bereiche: `kategorie` und `unterkategorie` sind leer (`""`).
+
+## Fünf Achsen für Spiele (seit 04.09.2026)
+
+Die Spiel-`kategorie` (ankommen, kreis, ruhig, kooperation, bewegung_*, gelaende) mischt
+vier Fragen in einem Feld – deshalb war sie nicht trennscharf: 64 Spiele unter
+„ruhig/kreis/ankommen/kooperation", in denen gerannt wird. Sie **bleibt als Navigation**
+erhalten; daneben beantwortet jede der folgenden Achsen genau eine Frage:
+
+| Feld | Frage | Werte | Herkunft |
+|---|---|---|---|
+| `wirkung` (mehrere) | Wozu setze ich es ein? | ankommen, kennenlernen, austoben, beruhigen, konzentration, vertrauen, zusammenarbeit, abschluss | Tags der Quellen, dann Text |
+| `modus` | Gegeneinander oder miteinander? | wettkampf, kooperation, ohne_gewinner | Text (Gewinner/Punkte vs. Kooperationsaufgabe), Tags |
+| `sozialform` | Wie ist die Gruppe aufgestellt? | kreis, paare, mannschaften, einer_gegen_alle, kleingruppen, frei | Text, Tags |
+| `spielgeraet` (mehrere) | Was brauche ich in der Hand? | ball, seil, tuch, stuehle, papier_stift, karten_wuerfel, musik, nichts, sonstiges | Feld `material` |
+| `anforderung` (mehrere) | Was fordert es von den Kindern? | bewegung, geschick, denken, merken, konzentration, sprache, rhythmus | Tags, dann Text |
+
+Leere Listen bzw. `frei`/`ohne_gewinner` heißen: aus der Quelle nicht erkennbar – nicht
+„trifft nicht zu". Bei Nicht-Spielen sind die Felder leer. Die Ableitung wird bewusst
+**nicht** an die Planer-Slots gekoppelt (jedes kurze Spiel ist dort „einstieg"), das
+würde die Achse entwerten. Grenzfälle korrigiert `data/redaktion.json` unter `achsen`
+(`{"id": …, "felder": {"modus": "kooperation"}}`).
 
 ## Wie der Bereich bestimmt wird
 

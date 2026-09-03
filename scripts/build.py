@@ -75,6 +75,7 @@ KATEGORIEN = {
 }
 PFLICHTFELDER = [
     "id", "titel", "bereich", "umfang", "kategorie", "unterkategorie", "slots", "altersstufen",
+    "wirkung", "modus", "sozialform", "spielgeraet", "anforderung",
     "dauer_min", "dauer_max", "ort", "material", "vorbereitung",
     "kurz", "beschreibung", "tags", "themen", "quelle",
 ]
@@ -618,6 +619,12 @@ def wende_redaktion_an(elemente, redaktion):
             bericht["nachtraeglich"][eintrag["id"]] = eintrag
         else:
             bericht["unbekannt"].append(eintrag["id"])
+    bericht["achsen"] = {}
+    for eintrag in redaktion.get("achsen", []):
+        if eintrag["id"] in nach_id:
+            bericht["achsen"][eintrag["id"]] = eintrag.get("felder") or {}
+        else:
+            bericht["unbekannt"].append(eintrag["id"])
 
     for eintrag in redaktion.get("korrekturen", []):
         element = nach_id.get(eintrag["id"])
@@ -778,6 +785,158 @@ def bestimme_umfang(element):
     return "baustein"
 
 
+# ------------------------------------------------------------ Spiel-Achsen
+# Die Spiel-Kategorie (ankommen, kreis, ruhig, kooperation, bewegung_*) mischt
+# vier Fragen in einem Feld - deshalb ist sie nicht trennscharf. Sie bleibt als
+# Navigation erhalten; daneben bekommt jedes Spiel fünf eigenständige Achsen,
+# jede beantwortet genau eine Frage:
+#   wirkung      wozu setze ich es ein?          (mehrere Werte)
+#   modus        gegeneinander oder miteinander?  (ein Wert)
+#   sozialform   wie ist die Gruppe aufgestellt?  (ein Wert)
+#   spielgeraet  was brauche ich in der Hand?     (mehrere Werte, aus Material)
+#   anforderung  was fordert es von den Kindern?  (mehrere Werte)
+# Alles wird aus Tags, Material und Text abgeleitet; Grenzfälle korrigiert
+# data/redaktion.json ("achsen").
+
+WIRKUNGEN = ["ankommen", "kennenlernen", "austoben", "beruhigen", "konzentration",
+             "vertrauen", "zusammenarbeit", "abschluss"]
+MODI = ["wettkampf", "kooperation", "ohne_gewinner"]
+SOZIALFORMEN = ["kreis", "paare", "mannschaften", "einer_gegen_alle", "kleingruppen", "frei"]
+SPIELGERAETE = ["ball", "seil", "tuch", "stuehle", "papier_stift", "karten_wuerfel",
+                "musik", "nichts", "sonstiges"]
+ANFORDERUNGEN = ["bewegung", "geschick", "denken", "merken", "konzentration",
+                 "sprache", "rhythmus"]
+
+# Reihenfolge: zuerst Tags (verlässlich), dann der Text (Wortanfänge, \b)
+WIRKUNG_TAGS = {
+    "Warm up": "ankommen", "Warm-up": "ankommen", "warmup": "ankommen",
+    "Kennenlernspiel": "kennenlernen", "Namenslernspiel": "kennenlernen",
+    "Vertrauensspiel": "vertrauen", "Vertrauensübung": "vertrauen",
+    "Kooperationsspiel": "zusammenarbeit", "Gruppendynamisches Spiel": "zusammenarbeit",
+    "Kommunikationsspiel": "zusammenarbeit", "Konzentrationsspiel": "konzentration",
+    "Reflexionsmethode": "abschluss", "ruhiges Spiel": "beruhigen", "Ruhiges Spiel": "beruhigen",
+    "Fangspiel": "austoben", "Renn- & Fangenspiel": "austoben", "Laufspiel": "austoben",
+    "Bewegungsspiel": "austoben", "Kampfspiel": "austoben",
+}
+WIRKUNG_TEXT = [
+    ("kennenlernen", [r"\bkennenlern", r"\bnamen (lernen|merken|nennen)", r"\bnamensspiel"]),
+    ("vertrauen", [r"\bvertrauen", r"\bblind (geführt|führen)", r"\baugen verbunden"]),
+    ("zusammenarbeit", [r"\bkooperat", r"\bzusammenarbeit", r"\bgemeinsam(e|es|en)? (ziel|aufgabe|lösung)",
+                        r"\bals gruppe (eine|die) aufgabe"]),
+    ("konzentration", [r"\bkonzentr", r"\baufmerksam", r"\breaktion"]),
+    ("austoben", [r"\brenn", r"\blaufen\b", r"\btoben", r"\bfänger", r"\bfangspiel"]),
+    # "ruhig" als Adverb ("ruhig auch draußen") zählt nicht - nur als Spielcharakter
+    ("beruhigen", [r"\bruhiges spiel", r"\bzur ruhe", r"\bentspann", r"\bruhige[sr]? (runde|phase|abschluss)"]),
+]
+SOZIALFORM_TEXT = [
+    ("mannschaften", [r"\bmannschaft", r"\bteams?\b", r"\bzwei gruppen", r"\bgruppen gegeneinander",
+                      r"\bparteien\b"]),
+    ("paare", [r"\bpaar", r"\bzu zweit", r"\bpartner"]),
+    ("einer_gegen_alle", [r"\bder fänger", r"\bdie fängerin", r"\bein fänger", r"\bein spieler ist\b",
+                          r"\beine person ist\b", r"\bein\(e\) spieler", r"\bein[e]? mitspieler\w* (ist|wird|steht)"]),
+    ("kleingruppen", [r"\bkleingruppe", r"\bin gruppen von", r"\bin kleinen gruppen", r"\bdreiergruppe"]),
+    ("kreis", [r"\bim kreis", r"\bkreis\b", r"\bsitzkreis", r"\bstuhlkreis", r"\bstehkreis", r"\bsesselkreis"]),
+]
+WETTKAMPF_TEXT = [r"\bgewinn", r"\bgewonnen", r"\bverlier", r"\bpunkte?\b", r"\bsieger", r"\bwer zuerst",
+                  r"\bam schnellsten", r"\bwettkampf", r"\bwettlauf", r"\bwettbewerb", r"\bscheidet aus",
+                  r"\bausgeschieden", r"\bwer (als )?letzte"]
+# "gemeinsam" allein reicht nicht - sonst wird jedes Singspiel zur Kooperation
+KOOPERATION_TEXT = [r"\bkooperat", r"\bzusammenarbeit", r"\bgruppendynamisch",
+                    r"\bgemeinsam(e|es|en)? (ziel|aufgabe|lösung)", r"\bals gruppe (eine|die) aufgabe",
+                    r"\bdie gruppe muss", r"\balle müssen gemeinsam"]
+GERAET_MATERIAL = [
+    ("ball", r"\bb[äa]ll|frisbee|luftballon"),
+    ("seil", r"seil|schnur|reepschn|band\b|wolle|faden"),
+    ("tuch", r"\btuch|tücher|augenbinde|halstuch|decke"),
+    ("stuehle", r"stuhl|stühle|sessel|bank\b|bänke"),
+    ("papier_stift", r"papier|zettel|stift|flipchart|plakat|kärtchen|karteikarte"),
+    ("karten_wuerfel", r"spielkarten|kartenspiel|würfel|kartendeck|\bkarten\b"),
+    ("musik", r"musik|lied|gitarre|instrument|lautsprecher"),
+]
+ANFORDERUNG_TEXT = [
+    ("bewegung", [r"\brenn", r"\blaufen\b", r"\btoben", r"\bspringen", r"\bhüpf", r"\bkrabbel",
+                  r"\bstaffel", r"\bfänger"]),
+    ("geschick", [r"\bgeschick", r"\bbalanc", r"\bzielen", r"\bwerfen", r"\bfangen (den|einen|des) ball",
+                  r"\bjonglier", r"\bstapel"]),
+    ("denken", [r"\brätsel", r"\braten\b", r"\bdenken", r"\bknobel", r"\blösung", r"\bwissen\b",
+                r"\bquiz", r"\bstrategie", r"\büberlegen"]),
+    ("merken", [r"\bmerken", r"\bgedächtnis", r"\bkim\b", r"\berinner", r"\beinprägen"]),
+    ("konzentration", [r"\bkonzentr", r"\breaktion", r"\baufmerksam", r"\bschnell reagier"]),
+    ("sprache", [r"\bsprechen", r"\berzähl", r"\breden\b", r"\bdiskut", r"\bwörter", r"\bfragen stellen",
+                 r"\bpantomim", r"\bbegriff (erklär|erraten)", r"\bumschreib"]),
+    ("rhythmus", [r"\bsingen", r"\blied", r"\bklatsch", r"\brhythm", r"\btanz", r"\bmusik"]),
+]
+
+
+def _heu(element):
+    return (" ".join(element.get("tags") or []) + " " + (element.get("kurz") or "") + " " +
+            (element.get("beschreibung") or "")).lower()
+
+
+def _treffer(text, muster):
+    return any(re.search(m, text) for m in muster)
+
+
+def bestimme_spielachsen(element):
+    """Leitet die fünf Spiel-Achsen ab (nur für bereich == "spiel")."""
+    heu = _heu(element)
+    tags = set(element.get("tags") or [])
+
+    wirkung = []
+    for tag, w in WIRKUNG_TAGS.items():
+        if tag in tags and w not in wirkung:
+            wirkung.append(w)
+    for w, muster in WIRKUNG_TEXT:
+        if w not in wirkung and _treffer(heu, muster):
+            wirkung.append(w)
+    # Bewusst NICHT aus den Planer-Slots ableiten: die sind großzügige
+    # Heuristiken (jedes kurze Spiel ist "einstieg") und würden die Achse entwerten.
+    if "Bewegungsspiel" in tags and "austoben" not in wirkung:
+        wirkung.append("austoben")
+    if tags & {"Sitzkreis", "ruhiges Spiel", "Ruhiges Spiel", "Kimspiel"} and "beruhigen" not in wirkung:
+        wirkung.append("beruhigen")
+    wirkung.sort(key=WIRKUNGEN.index)
+
+    wett = _treffer(heu, WETTKAMPF_TEXT) or bool(tags & {"Mannschaftsspiel", "Staffelspiel", "Wettkampf"})
+    koop = _treffer(heu, KOOPERATION_TEXT) or bool(
+        tags & {"Kooperationsspiel", "Gruppendynamisches Spiel", "Vertrauensspiel"})
+    if koop and not wett:
+        modus = "kooperation"
+    elif wett:
+        modus = "wettkampf"
+    else:
+        modus = "ohne_gewinner"
+
+    sozialform = "frei"
+    for form, muster in SOZIALFORM_TEXT:
+        if _treffer(heu, muster) or (form == "kreis" and tags & {"Kreisspiel", "Sitzkreis"}) \
+                or (form == "mannschaften" and "Mannschaftsspiel" in tags):
+            sozialform = form
+            break
+
+    material = " ".join(element.get("material") or []).lower()
+    geraet = [name for name, rx in GERAET_MATERIAL if re.search(rx, material)]
+    if not element.get("material"):
+        geraet = ["nichts"]
+    elif not geraet:
+        geraet = ["sonstiges"]
+
+    anforderung = [name for name, muster in ANFORDERUNG_TEXT if _treffer(heu, muster)]
+    if tags & {"Bewegungsspiel", "Fangspiel", "Laufspiel", "Renn- & Fangenspiel", "Staffelspiel"} \
+            and "bewegung" not in anforderung:
+        anforderung.append("bewegung")
+    if tags & {"Singspiel", "Tanzspiel", "Klatschspiel", "Musikspiel"} and "rhythmus" not in anforderung:
+        anforderung.append("rhythmus")
+    if "Geschicklichkeitsspiel" in tags and "geschick" not in anforderung:
+        anforderung.append("geschick")
+    if tags & {"Denkspiel", "Rätsel", "Ratespiel", "Quiz"} and "denken" not in anforderung:
+        anforderung.append("denken")
+    anforderung.sort(key=ANFORDERUNGEN.index)
+
+    return {"wirkung": wirkung, "modus": modus, "sozialform": sozialform,
+            "spielgeraet": geraet, "anforderung": anforderung}
+
+
 # ------------------------------------------------------- Unterkategorien
 # Mit 766 Spielen ist die Kategorie allein zu grob: "bewegung_drinnen" hat über
 # 200 Einträge. Die Quellen liefern aber Spielarten (pfadfinder-spiele.de:
@@ -922,6 +1081,17 @@ def pruefe(elemente):
         elif element.get("kategorie") not in KATEGORIEN[bereich]:
             fehler.append("{}: Kategorie '{}' passt nicht zum Bereich '{}'".format(
                 kennung, element.get("kategorie"), bereich))
+        if element.get("bereich") == "spiel":
+            if set(element.get("wirkung") or []) - set(WIRKUNGEN):
+                fehler.append("{}: ungültige Wirkung {}".format(kennung, element.get("wirkung")))
+            if element.get("modus") not in MODI:
+                fehler.append("{}: ungültiger Modus '{}'".format(kennung, element.get("modus")))
+            if element.get("sozialform") not in SOZIALFORMEN:
+                fehler.append("{}: ungültige Sozialform '{}'".format(kennung, element.get("sozialform")))
+            if set(element.get("spielgeraet") or []) - set(SPIELGERAETE) or not element.get("spielgeraet"):
+                fehler.append("{}: ungültiges Spielgerät {}".format(kennung, element.get("spielgeraet")))
+            if set(element.get("anforderung") or []) - set(ANFORDERUNGEN):
+                fehler.append("{}: ungültige Anforderung {}".format(kennung, element.get("anforderung")))
         if element.get("umfang") not in UMFAENGE:
             fehler.append("{}: unbekannter Umfang '{}'".format(kennung, element.get("umfang")))
         if not isinstance(element.get("unterkategorie"), str):
@@ -975,6 +1145,14 @@ def statistik(elemente):
         unter = Counter(e["unterkategorie"] for e in teilmenge if e["unterkategorie"])
         if unter:
             zeige("Unterkategorien ({}):".format(bereich), unter)
+    spiele = [e for e in elemente if e["bereich"] == "spiel"]
+    zeige("Spiele nach Wirkung (mehrfach):", Counter(w for e in spiele for w in e["wirkung"]))
+    zeige("Spiele nach Modus:", Counter(e["modus"] for e in spiele))
+    zeige("Spiele nach Sozialform:", Counter(e["sozialform"] for e in spiele))
+    zeige("Spiele nach Spielgerät (mehrfach):", Counter(g for e in spiele for g in e["spielgeraet"]))
+    zeige("Spiele nach Anforderung (mehrfach):", Counter(a for e in spiele for a in e["anforderung"]))
+    print("\nSpiele ohne erkannte Wirkung: {}, ohne Anforderung: {}".format(
+        sum(1 for e in spiele if not e["wirkung"]), sum(1 for e in spiele if not e["anforderung"])))
     zeige("nach Ort:", Counter(e["ort"] for e in elemente))
     zeige("nach Vorbereitung:", Counter(e["vorbereitung"] for e in elemente))
     zeige("nach Slot:", Counter(s for e in elemente for s in e["slots"]))
@@ -1094,6 +1272,14 @@ def main():
                                               element["kategorie"], element["dauer_min"])
             elif eintrag.get("kategorie"):
                 element["kategorie"] = eintrag["kategorie"]
+        # Die Achsen erst jetzt - nachdem der Bereich endgültig feststeht
+        if element["bereich"] == "spiel":
+            element.update(bestimme_spielachsen(element))
+        else:
+            element.update({"wirkung": [], "modus": "", "sozialform": "",
+                            "spielgeraet": [], "anforderung": []})
+        for feld, wert in bericht.get("achsen", {}).get(element["id"], {}).items():
+            element[feld] = wert
         element.pop("element_typ", None)   # ersetzt durch bereich + umfang
 
     gruppen, getrennt = markiere_dubletten(elemente, redaktion)

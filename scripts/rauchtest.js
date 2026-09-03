@@ -38,6 +38,18 @@
            return (e.bereich === "spiel" || e.bereich === "pfadfindertechnik")
                   ? !!e.kategorie : e.kategorie === "";
          }));
+  pruefe("Spiele tragen die fünf Achsen",
+         ALLE.filter(function (e) { return e.bereich === "spiel"; }).every(function (e) {
+           return Array.isArray(e.wirkung) && Array.isArray(e.spielgeraet) &&
+                  Array.isArray(e.anforderung) && e.spielgeraet.length > 0 &&
+                  ["wettkampf", "kooperation", "ohne_gewinner"].indexOf(e.modus) > -1 &&
+                  ["kreis", "paare", "mannschaften", "einer_gegen_alle", "kleingruppen", "frei"]
+                    .indexOf(e.sozialform) > -1;
+         }));
+  pruefe("Nicht-Spiele haben leere Achsen",
+         ALLE.filter(function (e) { return e.bereich !== "spiel"; }).every(function (e) {
+           return e.modus === "" && e.sozialform === "" && e.wirkung.length === 0;
+         }));
   pruefe("Unterkategorien nur bei Spielen",
          ALLE.every(function (e) {
            return e.bereich === "spiel" || e.unterkategorie === "";
