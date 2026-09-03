@@ -321,7 +321,7 @@ details.filter > summary span:last-child:not(:first-child) {
   text-align: center; color: var(--leise); padding: var(--r6) var(--r5);
   background: var(--karte); border: 1px dashed var(--linie); border-radius: var(--rund);
 }
-.leer button {
+p.leer button {
   background: none; border: 0; color: var(--akzent); font-weight: 600;
   text-decoration: underline; padding: 11px 4px; min-height: 44px;
 }
@@ -812,8 +812,8 @@ var UMFANG_KACHEL = { baustein: "Einzelne Bausteine", ganzer_abend: "Ganze Abend
 
 var KATEGORIE_TEXT = {
   // Spiele
-  ankommen: "Ankommen & Kennenlernen", bewegung_drinnen: "Bewegung drinnen",
-  bewegung_draussen: "Bewegung draußen", gelaende: "Geländespiele", kreis: "Kreisspiele",
+  ankommen: "Ankommen & Kennenlernen", bewegung_drinnen: "Bewegung & Toben",
+  bewegung_draussen: "Nur draußen", gelaende: "Geländespiele", kreis: "Kreisspiele",
   ruhig: "Ruhig & Konzentration", kooperation: "Kooperation", abschluss: "Abschluss",
   // Proben
   knoten: "Knoten", karte_kompass: "Karte & Kompass", feuer: "Feuer",
@@ -901,6 +901,8 @@ var SLOTS = [
 var SEITENGROESSE = 30;
 /* Ab so vielen Einträgen lohnt sich die dritte Ebene (Unterkategorien). */
 var UNTEREBENE_AB = 20;
+/* Unterkategorie-Kacheln erst ab so vielen Einträgen; der Rest steckt in "Alle anzeigen". */
+var KACHEL_AB = 4;
 
 /* ------------------------------------------------------------ Zustand */
 var ALLE = [];
@@ -1368,7 +1370,10 @@ function aktualisiere() {
       if (!pfad.kategorie) { zeigeKacheln(kacheln, "kategorie", f); return; }
       if (!pfad.unterkategorie) {
         var unter = zaehleNach("unterkategorie", f, pfad);
-        if (Object.keys(unter).length > 1 && sammle(f, pfad).length > UNTEREBENE_AB) {
+        var grosse = Object.keys(unter).filter(function (u) {
+          return unter[u] >= KACHEL_AB && u !== "sonstiges";
+        });
+        if (grosse.length > 1 && sammle(f, pfad).length > UNTEREBENE_AB) {
           zeigeKacheln(kacheln, "unterkategorie", f);
           return;
         }
@@ -1431,7 +1436,9 @@ function zeigeKacheln(behaelter, ebene, f) {
     eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
   } else {
     var nachUnter = zaehleNach("unterkategorie", f, pfad);
-    eintraege = Object.keys(nachUnter).map(function (u) {
+    eintraege = Object.keys(nachUnter).filter(function (u) {
+      return nachUnter[u] >= KACHEL_AB && u !== "sonstiges";
+    }).map(function (u) {
       return { name: unterText(u), anzahl: nachUnter[u], ziel: ziel("unterkategorie", u) };
     });
     eintraege.sort(function (a, b) { return b.anzahl - a.anzahl; });
@@ -1573,6 +1580,13 @@ function zeigeDetail(e) {
   html += "<dt>Vorbereitung</dt><dd>" + schuetze(e.vorbereitung) + "</dd>";
   html += "</dl>";
 
+  html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
+
+  if (e.tipps) {
+    html += '<div class="kasten tipp"><h4>Hinweise für die Spielleitung</h4>' +
+            '<div class="text">' + textZuHtml(e.tipps) + "</div></div>";
+  }
+
   // Themen und Stichworte als Knöpfe: damit lässt sich ein Abend um ein Thema
   // herum bauen ("Knoten"), was vorher nur über erneutes Tippen ging.
   var stichworte = [];
@@ -1600,12 +1614,6 @@ function zeigeDetail(e) {
     html += "</div></div>";
   }
 
-  html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
-
-  if (e.tipps) {
-    html += '<div class="kasten tipp"><h4>Hinweise für die Spielleitung</h4>' +
-            '<div class="text">' + textZuHtml(e.tipps) + "</div></div>";
-  }
 
   if (e.dubletten && e.dubletten.length) {
     var verweise = [];
@@ -2126,8 +2134,11 @@ function oeffneAuswahl(slot, index, nurPassend) {
   // Ist der Plan schon voll, wäre "höchstens 0 Minuten" gleichbedeutend mit
   // "kein einziger Baustein"; dann wird ein brauchbares Fenster geöffnet und
   // die Beschriftung sagt, dass der Abend dadurch länger wird.
-  var spielraum = frei > 0 ? frei : Math.max(20, ziel);
-  auswahlZiel = { slot: slot, index: index, frei: frei,
+  // Unter zehn Minuten Rest passt kein einziger Baustein mehr hinein –
+  // dann gilt der Abend als voll, sonst wäre die Vorschlagsliste leer.
+  var voll = frei < 10;
+  var spielraum = voll ? Math.max(20, ziel) : frei;
+  auswahlZiel = { slot: slot, index: index, frei: frei, voll: voll,
                   spielraum: spielraum, ziel: Math.max(ziel, 10) };
   auswahlPfad = { bereich: "", kategorie: "", unterkategorie: "" };
   chipsOffen = { bereich: false, kategorie: false, unterkategorie: false };
@@ -2136,9 +2147,9 @@ function oeffneAuswahl(slot, index, nurPassend) {
   $("auswahlTitel").textContent = name;
   $("auswahlSuche").value = "";
   $("auswahlZeit").checked = !!nurPassend;
-  $("auswahlZeitText").textContent = frei > 0
-    ? "nur was in die Zeit passt (noch " + Math.round(frei) + " Min frei)"
-    : "nur bis " + spielraum + " Min (die Zielzeit ist schon voll)";
+  $("auswahlZeitText").textContent = voll
+    ? "nur bis " + spielraum + " Min (die Zielzeit ist schon voll)"
+    : "nur was in die Zeit passt (noch " + Math.round(frei) + " Min frei)";
   auswahlSichtbar = SEITENGROESSE;
   zeichneAuswahl();
   oeffneUeberlagerung($("auswahl"));
@@ -2158,7 +2169,7 @@ function chipReihe(titel, eintraege, aktiv, feld) {
   var offen = chipsOffen[feld];
   var zeigen = eintraege;
   var versteckt = 0;
-  if (!offen && eintraege.length > CHIPS_SICHTBAR) {
+  if (!offen && eintraege.length > CHIPS_SICHTBAR + 1) {
     zeigen = eintraege.slice(0, CHIPS_SICHTBAR);
     // Die gewählte Kategorie muss sichtbar bleiben, sonst wirkt sie verschwunden
     if (aktiv && !zeigen.some(function (x) { return x.wert === aktiv; })) {
@@ -2183,7 +2194,7 @@ function chipReihe(titel, eintraege, aktiv, feld) {
   if (versteckt) {
     html += '<button type="button" class="chip mehrchips" data-mehr="' +
             schuetze(feld) + '">+ ' + versteckt + " weitere</button>";
-  } else if (offen && eintraege.length > CHIPS_SICHTBAR) {
+  } else if (offen && eintraege.length > CHIPS_SICHTBAR + 1) {
     html += '<button type="button" class="chip mehrchips" data-mehr="' +
             schuetze(feld) + '">weniger</button>";'.slice(0, -1);
   }
