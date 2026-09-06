@@ -39,6 +39,9 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parent.parent
 EIGENE = WURZEL / "data" / "eigene" / "heimabend-ideen.json"
 PROBENBUCH = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb.json"
+# Redigierte Fassung (lesbarer Text + Heimabend-Zuschnitt). Ist sie da, gewinnt sie;
+# der Rohtext bleibt als Rückfall, damit der Build nie ohne Proben dasteht.
+PROBENBUCH_REDIGIERT = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb-redigiert.json"
 INSPIRATOR = WURZEL / "data" / "quellen" / "inspirator" / "inspirator-ideen.json"
 PFADFINDER_SPIELE = WURZEL / "data" / "quellen" / "pfadfinder-spiele" / "elemente.json"
 SPIELEWIKI = WURZEL / "data" / "quellen" / "spielewiki" / "elemente.json"
@@ -410,8 +413,71 @@ def probenbuch_absaetze(text):
     return "\n\n".join(absaetze)
 
 
+def lade_probenbuch_redigiert(vergeben):
+    """
+    Mappt data/quellen/probenbuch/proben-dpb-redigiert.json auf das Element-Schema.
+
+    Die redigierte Fassung bringt ihre Metadaten selbst mit (Kategorie, Umfang, Dauer,
+    Altersstufen, Ort, Material, Vorbereitung) – PROBENBUCH_ZUORDNUNG gilt nur noch
+    für den Rohtext-Rückfall. Die Beschreibung setzt sich aus drei Teilen zusammen:
+    dem Wissen aus dem Probenbuch, dem, was zum Ablegen gehört, und dem Vorschlag
+    für den Heimabend.
+    """
+    with open(PROBENBUCH_REDIGIERT, encoding="utf-8") as datei:
+        daten = json.load(datei)
+
+    elemente = []
+    for probe in daten.get("proben", []):
+        nummer = probe["nummer"]
+        teile = [probe["wissen"].strip()]
+        if probe.get("prueft"):
+            teile.append("## Was zur Probe gehört\n\n" + probe["prueft"].strip())
+        if probe.get("heimabend"):
+            teile.append("## So bringst du es in den Heimabend\n\n" + probe["heimabend"].strip())
+        beschreibung = "\n\n".join(teile)
+
+        hinweise = []
+        if probe.get("veraltet"):
+            hinweise.append(probe["veraltet"].strip())
+        if probe.get("tipps"):
+            hinweise.append(probe["tipps"].strip())
+
+        umfang = probe["umfang"]
+        kategorie = probe["kategorie"]
+        dauer_min = probe["dauer_min"]
+        tags = ["Probenbuch", "Pfadfinderwissen", "Probe {}".format(nummer)]
+        for tag in probe.get("tags", []):
+            if tag not in tags:
+                tags.append(tag)
+
+        elemente.append({
+            "id": mache_id("pb", probe["titel"], vergeben),
+            "titel": probe["titel"],
+            "_bereich": "pfadfindertechnik",
+            "umfang": umfang,
+            "kategorie": kategorie,
+            "slots": slots_fuer("pfadfindertechnik", umfang, kategorie, dauer_min),
+            "altersstufen": list(probe.get("altersstufen", [])),
+            "dauer_min": dauer_min,
+            "dauer_max": probe["dauer_max"],
+            "ort": probe["ort"],
+            "material": list(probe.get("material", [])),
+            "vorbereitung": probe["vorbereitung"],
+            "kurz": probe["kurz"].strip(),
+            "beschreibung": beschreibung,
+            "tipps": "\n\n".join(hinweise),
+            "tags": tags,
+            "themen": [probe["titel"]],
+            "quelle": dict(PROBENBUCH_QUELLE),
+        })
+    return elemente
+
+
 def lade_probenbuch(vergeben):
-    """Mappt data/quellen/probenbuch/proben-dpb.json auf das Element-Schema."""
+    """Mappt das Probenbuch auf das Element-Schema – redigierte Fassung, sonst Rohtext."""
+    if PROBENBUCH_REDIGIERT.exists():
+        return lade_probenbuch_redigiert(vergeben)
+    print("  Hinweis: {} fehlt – Rohtext-Fassung wird verwendet.".format(PROBENBUCH_REDIGIERT.name))
     if not PROBENBUCH.exists():
         print("  ACHTUNG: {} fehlt – Proben werden übersprungen.".format(PROBENBUCH))
         return []
