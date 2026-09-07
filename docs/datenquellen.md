@@ -1,4 +1,4 @@
-# Datenquellen (Recherche-Stand 02.09.2026)
+# Datenquellen (Recherche-Stand 07.09.2026)
 
 ## Import-Basis (Lizenz erlaubt Übernahme)
 
@@ -20,9 +20,13 @@
 - Scout-o-wiki https://www.scout-o-wiki.de/index.php/Kategorie:Spiel – 40 Spiele, keine Lizenz
 - Deutsche Wanderjugend, Spielesammlung (PDF, ~80 Spiele, 2019) – „alle Rechte vorbehalten“
 - Jugendverbände München, Spielesammlung von Jugendleitern (PDF, ~38 Spiele, 2016) – keine Lizenzangabe
+- anschuggerle.com (Paul Beck) – 125 Spiele/Methoden mit Ziel-Kategorien (Mut, Selbstvertrauen, Sensibilität …), WordPress-API offen, Impressum: „ohne ausdrückliche Zustimmung nicht gestattet“
+- jubla.netz Ideensammlung (Jungwacht Blauring CH, ehemals Spielkatapult) – Gruppenstunden- und Lagerideen mit Blockart/Tags, vom Arbeitsrechner nicht erreichbar, Lizenz ungeprüft
 
 ## Nur verlinken (Übernahme untersagt)
 Robert Aehnelt „Spielpädagogisches Inventar“ (CC BY-NC-**ND**, keine Bearbeitung erlaubt), EJW Spielebox, julei-app.de, Fun-for-Groups-App, Pfadiwiki/en.scoutwiki (GFDL, nicht CC-kompatibel), praxis-jugendarbeit.de, gruppenspiele-hits.de, jugendleiter-blog.de, labbe.de/spielotti, super-sozi.de, spielekartei.net, pfadispiele.ch, thepulse.org, groupsenz.org, spielefuerviele.de, jugendarbeit.online, ultimatecampresource.com, youthgroupgames.com.au, scouts.org.uk, playmeo.com
+
+Was wir von diesen Sammlungen trotzdem lernen dürfen – ihre Kategoriesysteme – steht in `docs/recherche-kategorien-anderer-sammlungen.md`.
 
 ## Lizenz-Konsequenzen
 - Pro Element `quelle.lizenz`, `quelle.url`, `quelle.autor` pflegen und in der App anzeigen.

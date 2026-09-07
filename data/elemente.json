@@ -2,7 +2,7 @@
  "meta": {
   "name": "Heimabend-Baukasten – Elemente",
   "beschreibung": "Zusammengeführte Bausteine für Heimabende. Jedes Element trägt die Lizenz seiner Quelle.",
-  "anzahl": 1038,
+  "anzahl": 1037,
   "quellen": [
    "DPB-Probenbuch (3. Auflage)",
    "Heimabend-Baukasten (eigene Sammlung)",
@@ -2992,7 +2992,7 @@
   {
    "id": "sw-bibliodrama",
    "titel": "Bibliodrama",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "kreis",
    "slots": [
     "hauptteil"
    ],
@@ -15897,47 +15897,6 @@
    ]
   },
   {
-   "id": "sw-kartenkuss",
-   "titel": "Kartenkuss",
-   "kategorie": "bewegung_drinnen",
-   "slots": [
-    "einstieg",
-    "hauptteil"
-   ],
-   "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 30,
-   "ort": "drinnen",
-   "material": [
-    "eine Spielkarte"
-   ],
-   "vorbereitung": "gering",
-   "kurz": "Kartenkuss ist ein Partyspiel im Kreis.",
-   "beschreibung": "**Kartenkuss** ist ein Partyspiel im Kreis.\n\n## Material\nEs wird eine Spielkarte (sinnigerweise die \"Herzdame\") oder eine ähnliche Papierkarte benötigt.\n\n## Aufgabe\nDie Spieler sitzen im Kreis, idealerweise immer Männer und Frauen abwechselnd. Ein Spieler beginnt, die Spielkarte nur mit Luftdruck an seinen Mund zu saugen. Er dreht sich zum nächsten Spieler (besser wäre natürlich eine Spielerin), die die Karte auf die gleiche Weise mit dem Mund entgegen nimmt. Die Karte sollte dabei nicht fallen gelassen werden, sonst könnte es zu Komplikationen kommen :-)\n\nZiel ist es, die Karte möglichst schnell im Kreis weiter zu geben.",
-   "tipps": "",
-   "tags": [
-    "Partyspiel"
-   ],
-   "themen": [],
-   "quelle": {
-    "name": "Spielewiki",
-    "url": "https://www.spielewiki.org/wiki/Kartenkuss",
-    "autor": "Spielewiki-Autor*innen",
-    "lizenz": "CC BY-SA 4.0"
-   },
-   "gruppe_min": 2,
-   "bereich": "spiel",
-   "umfang": "baustein",
-   "unterkategorie": "tisch",
-   "wirkung": [],
-   "modus": "ohne_gewinner",
-   "sozialform": "kreis",
-   "spielgeraet": [
-    "sonstiges"
-   ],
-   "anforderung": []
-  },
-  {
    "id": "sw-kartoffelduell",
    "titel": "Kartoffelduell",
    "kategorie": "bewegung_drinnen",
@@ -20036,10 +19995,11 @@
   {
    "id": "sw-maxchen",
    "titel": "Mäxchen",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -20229,10 +20189,11 @@
   {
    "id": "sw-massagekette",
    "titel": "Massagekette",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -22977,7 +22938,7 @@
   {
    "id": "sw-nein-spiel",
    "titel": "Nein-Spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "hauptteil"
    ],
@@ -27350,7 +27311,7 @@
   {
    "id": "sw-scharade",
    "titel": "Scharade",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "kreis",
    "slots": [
     "hauptteil"
    ],
@@ -35259,10 +35220,11 @@
   {
    "id": "sw-welle-entspannungsspiel",
    "titel": "Welle (Entspannungsspiel)",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,

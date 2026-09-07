@@ -29,6 +29,10 @@
     {
       "id": "sw-eselspiel",
       "grund": "Schlagen ist als reguläre Spielmechanik vorgesehen ('(sanft) Schlagen'). In der Jugendarbeit nicht vermittelbar."
+    },
+    {
+      "id": "sw-kartenkuss",
+      "grund": "Kussspiel (Partyspiel), gehört nicht in ein Werkzeug für Kinder- und Jugendgruppen."
     }
   ],
   "umbenannt": [

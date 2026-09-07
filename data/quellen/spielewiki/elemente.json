@@ -1696,7 +1696,7 @@
    "id": "sw-bibliodrama",
    "titel": "Bibliodrama",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "kreis",
    "slots": [
     "hauptteil"
    ],
@@ -11523,10 +11523,11 @@
    "id": "sw-massagekette",
    "titel": "Massagekette",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -12505,10 +12506,11 @@
    "id": "sw-maxchen",
    "titel": "Mäxchen",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,
@@ -13125,7 +13127,7 @@
    "id": "sw-nein-spiel",
    "titel": "Nein-Spiel",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "hauptteil"
    ],
@@ -15441,7 +15443,7 @@
    "id": "sw-scharade",
    "titel": "Scharade",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "kreis",
    "slots": [
     "hauptteil"
    ],
@@ -19575,10 +19577,11 @@
    "id": "sw-welle-entspannungsspiel",
    "titel": "Welle (Entspannungsspiel)",
    "element_typ": "spiel",
-   "kategorie": "bewegung_drinnen",
+   "kategorie": "ruhig",
    "slots": [
     "einstieg",
-    "hauptteil"
+    "hauptteil",
+    "abschluss"
    ],
    "altersstufen": [],
    "dauer_min": 10,

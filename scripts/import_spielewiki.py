@@ -104,6 +104,15 @@ KATEGORIE_REIHENFOLGE = [
     ("Kampfspiel", "bewegung"),
     ("Bewegungsspiel", "bewegung"),
     ("Geschicklichkeitsspiel", "bewegung"),
+    ("Koordinationsspiel", "bewegung"),
+    # Selten benutzte Vorlagen, die sonst in den Rückfall (bewegung_*) fielen.
+    ("Entspannungsspiel", "ruhig"),
+    ("Würfelspiel", "ruhig"),
+    ("Sprachspiel", "ruhig"),
+    ("Gruselspiel", "ruhig"),
+    ("Darstellungsspiel", "kreis"),
+    ("Diskussionsspiel", "kooperation"),
+    ("Fallspiel", "kooperation"),
 ]
 
 # Vorlagen, die ersatzlos aus dem Text verschwinden (Werbung, Navigation, Zählpixel).
