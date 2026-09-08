@@ -18,6 +18,10 @@ mit denselben Feldern. Alle Quellen werden auf dieses Schema gemappt und in
   "sozialform": "kreis",                  // nur Spiele: kreis | paare | mannschaften | einer_gegen_alle | kleingruppen | frei
   "spielgeraet": ["nichts"],              // nur Spiele, aus Material: ball | seil | tuch | stuehle | papier_stift | karten_wuerfel | musik | nichts | sonstiges
   "anforderung": ["bewegung", "konzentration"],   // nur Spiele: bewegung | geschick | denken | merken | konzentration | sprache | rhythmus
+  "platz": "zimmer",                      // nur Spiele: tisch | zimmer | saal_wiese | gelaende | ""
+  "hosensackspiel": true,                 // nur Spiele: ohne alles, jederzeit spielbar
+  "uebt": [],                             // nur Spiele: welche Probe das Spiel nebenbei übt
+  "naehe": "keine",                       // nur Spiele: keine | leicht | hoch
   "altersstufen": ["Wölflinge", "Pfadfinder"],   // Wölflinge (ca. 7–11) | Pfadfinder (ca. 11–16) | Ältere (16+); leer = keine Angabe
   "alter_ab": 6,                          // optional, Mindestalter in Jahren
   "dauer_min": 10,
@@ -33,6 +37,10 @@ mit denselben Feldern. Alle Quellen werden auf dieses Schema gemappt und in
   "tags": ["Konzentrationsspiel", "Kreisspiel", "ohne Material"],
   "themen": [],                           // feine Themen der Quelle
   "dubletten": ["sw-toasterspiel"],       // optional: dasselbe Spiel in einer anderen Quelle
+  "kern": true,                           // erste Reihe (true) oder zweite Reihe (false)
+  "varianten": [                          // von Hand zusammengelegte Fassungen desselben Spiels
+    {"titel": "Kotzendes Känguru", "id": "sw-kotzendes-kaenguru", "aenderung": ""}
+  ],
   "quelle": {
     "name": "pfadfinder-spiele.de",
     "url": "https://pfadfinder-spiele.de/kotzendes-kaenguru/",
@@ -118,11 +126,74 @@ erhalten; daneben beantwortet jede der folgenden Achsen genau eine Frage:
 | `spielgeraet` (mehrere) | Was brauche ich in der Hand? | ball, seil, tuch, stuehle, papier_stift, karten_wuerfel, musik, nichts, sonstiges | Feld `material` |
 | `anforderung` (mehrere) | Was fordert es von den Kindern? | bewegung, geschick, denken, merken, konzentration, sprache, rhythmus | Tags, dann Text |
 
+Seit dem 08.09.2026 kommen vier weitere Achsen dazu (`platz`, `hosensackspiel`, `uebt`,
+`naehe`) – siehe den nächsten Abschnitt.
+
 Leere Listen bzw. `frei`/`ohne_gewinner` heißen: aus der Quelle nicht erkennbar – nicht
 „trifft nicht zu". Bei Nicht-Spielen sind die Felder leer. Die Ableitung wird bewusst
 **nicht** an die Planer-Slots gekoppelt (jedes kurze Spiel ist dort „einstieg"), das
 würde die Achse entwerten. Grenzfälle korrigiert `data/redaktion.json` unter `achsen`
 (`{"id": …, "felder": {"modus": "kooperation"}}`).
+
+## Vier weitere Achsen für Spiele (seit 08.09.2026)
+
+Die Recherche `docs/recherche-kategorien-anderer-sammlungen.md` hat vier Fragen gefunden,
+die andere Sammlungen beantworten und wir bisher nicht. Sie werden wie die fünf Achsen
+oben abgeleitet: **Quellfeld → Tags → Text → `data/redaktion.json` unter `achsen`**.
+
+| Feld | Frage | Werte | Ableitungsregel | Stand |
+|---|---|---|---|---|
+| `platz` | Wieviel Platz braucht es? | `tisch` · `zimmer` · `saal_wiese` · `gelaende` · `""` | Zuerst das Spielewiki-Infoboxfeld **`Ort`** (632 Seiten; das ist kein drinnen/draußen, sondern der Platzbedarf: „am Tisch“, „kleine Spielfläche“, „Spielfeld“, „überall“). Danach `unterkategorie` `gelaende`/`tisch` bzw. der Tag „Geländespiel“. Zuletzt der Text (Wald, Turnhalle, Stuhlkreis, Gruppenraum). | 08.09.2026 |
+| `hosensackspiel` | Geht es aus der Hosentasche? | `true` · `false` | Kein Material **und** Vorbereitung `gering` **und** (`dauer_max` ≤ 10 **oder** die Spielewiki-Dauer sagt „pro Runde“/„beliebig“, ist also rundenweise dehnbar). Begriff von jubla.netz. | 08.09.2026 |
+| `uebt` | Welche Probe übt es nebenbei? | Liste aus `knoten` · `karte_kompass` · `feuer` · `erste_hilfe` · `zelte_bauten` · `natur` · `bundeskunde` · `fahrtentechnik` | Enge Wendungen in Titel, Tags, Themen, Beschreibung, Tipps und Material („Knoten knüpfen“, „Erste Hilfe“, „Waldläuferzeichen“). Wortlisten-Spiele (Tabu, Quiz, Memory, Montagsmaler) sind ganz ausgeschlossen, ebenso Zufallstreffer wie „Feuer, Wasser, Sturm“, „Gordischer Knoten“, Spielkarten und Zeltstangen. | 08.09.2026 |
+| `naehe` | Wieviel Körperkontakt und Vertrauen verlangt es? | `keine` · `leicht` · `hoch` · `""` | `hoch`: `wirkung: vertrauen` bzw. Tag Vertrauensspiel, verbundene Augen, huckepack/getragen werden, Massage, sich fallen lassen, allein vor der Gruppe. `leicht`: Hände halten, Namen rufen, sich vorstellen, unterhaken, Namens- und Kennenlernspiele. Sonst `keine`. | 08.09.2026 |
+
+Bei Nicht-Spielen sind alle vier leer (`""`, `[]`, `false`).
+
+**Warum die Muster so eng sind.** Die naheliegende Regex auf Berührungswörter (anfassen,
+umarmen, huckepack, tragen, Schoß) trifft rund 190 Spiele – weil in jedem Fangspiel steht
+„wer berührt wird, ist gefangen“ und „vorstellen“ meistens „sich etwas vorstellen“ heißt.
+Deshalb stehen in `naehe` nur ausformulierte Wendungen, keine einzelnen Wortstämme.
+Dasselbe bei `uebt`: die lose Suche nach Knoten/Kompass/Karte/Feuer/Zelt/Spur/Natur trifft
+97 Spiele, von denen fast keines wirklich eine Probe übt (Kartenspiele, „Feuer, Wasser,
+Sturm“, „Gordischer Knoten“, die Mordkarte bei Werwolf).
+
+**Bewusst offen:** Kimspiele üben Beobachten und Merken, aber keine der acht Proben. Sie
+bekommen deshalb kein `uebt`; eine eigene Achse „Wahrnehmung“ wäre ehrlicher, als sie
+unter `natur` zu verstecken.
+
+Grenzfälle korrigiert `data/redaktion.json` unter `achsen`, genau wie bei den fünf Achsen:
+`{"id": "sw-ha-ha-ha", "felder": {"naehe": "hoch"}, "grund": "…"}`.
+
+## Zwei Reihen statt Löschen: `kern`
+
+Mit 1037 Elementen ist die Sammlung vollständig, aber unübersichtlich – und in vielen
+Unterkategorien liegen dieselben drei Spielideen zehnmal. Trotzdem wird **nichts gelöscht**:
+
+| Feld | Werte | Ableitungsregel | Stand |
+|---|---|---|---|
+| `kern` | `true` (erste Reihe) · `false` (zweite Reihe) | Nicht-Spiele immer `true`. Spiele: Punktbewertung (eigene Sammlung, Länge der Beschreibung, Altersstufe, Tipps, Dauer, Material, Vorbereitung, Gruppengröße, Corona/Alkohol/Party-Abzug) und dann je `unterkategorie` eine Quote, Ziel 300 Kern-Spiele. Zusammengelegte Varianten und zweite Fassungen einer Dublette sind nie Kern. `data/redaktion.json` unter `kern` schlägt beides – in beide Richtungen. | 08.09.2026 |
+| `varianten` | Liste aus `{"titel", "id", "aenderung"}` | Aus `data/redaktion.json` unter `zusammengelegt`. Das Hauptelement bekommt die Liste, die Varianten bleiben als eigene Elemente erhalten und bekommen `kern: false`. | 08.09.2026 |
+
+**Warum das umkehrbar ist.** `kern: false` ist keine Löschung, sondern ein Filter: Das
+Element steht mit allen Feldern, seiner Quelle und seiner Lizenz weiter in
+`data/elemente.json`. Die App zeigt standardmäßig die erste Reihe und blendet die zweite
+auf Wunsch dazu. Wer eine Entscheidung anders sieht, schreibt eine Zeile mit Begründung in
+`data/redaktion.json` – der nächste `python3 scripts/build.py` dreht sie um. Ein gelöschtes
+Element wäre dagegen beim nächsten Importlauf entweder ganz weg oder unbemerkt wieder da,
+weil die Import-Skripte idempotent sind.
+
+Die Punkte und die Quotenrechnung stehen auf Modulebene in `scripts/build.py`
+(`kern_punkte`, `kern_quoten`) und sind aus `scripts/analyse.py`, Teil C, übernommen, damit
+Prüfung und Build dasselbe rechnen. Die Zuteilung ist stabil: sortiert wird nach
+(−Punkte, entschärfter Titel, id), die Unterkategorien in der Reihenfolge (−Anzahl, Name).
+Gleiche Eingabe, gleiches Ergebnis – kein Zufall.
+
+**Lizenzregel beim Zusammenlegen (wichtig!).** Stehen in einem Cluster CC BY-SA und
+CC BY-NC(-SA) nebeneinander, trägt der Redaktionseintrag `"lizenzen_unvertraeglich": true`.
+Dann stehen in `varianten` nur **Titel und id** der anderen Fassung, `aenderung` bleibt
+leer. Es wandert kein Text der anderen Quelle in das Element. Ein `aenderung`-Text ist
+immer ein selbst geschriebener Satz, nie ein Zitat.
 
 ## Wie der Bereich bestimmt wird
 
@@ -158,3 +229,18 @@ Bereich es zugeordnet wird (`bereiche`) und welche Dubletten zusammen- bzw. nich
 zusammengehören (`auch_dublette`, `keine_dublette`). Jeder Eintrag hat eine
 Begründung. Ohne diese Datei holt der nächste Importlauf alles wieder herein,
 weil die Import-Skripte idempotent sind.
+
+Die Schlüssel im Überblick:
+
+| Schlüssel | Wirkung |
+|---|---|
+| `gesperrt` | Element fällt ganz heraus |
+| `umbenannt` | neuer Titel |
+| `korrekturen` | einzelne Felder setzen, Hinweis in `tipps` voranstellen |
+| `bereiche` | Bereich/Kategorie von Hand, schlägt die Automatik |
+| `achsen` | einzelne Achsen von Hand: `{"id": …, "felder": {"platz": "zimmer"}, "grund": "…"}` – nimmt jeden Feldnamen, auch `hosensackspiel`, `uebt`, `naehe` |
+| `auch_dublette` / `keine_dublette` | Dublettengruppen verbinden bzw. wieder lösen |
+| `zusammengelegt` | `{"haupt": "sw-x", "varianten": ["ps-y"], "lizenzen_unvertraeglich": true, "aenderungen": {"ps-y": "eigener Satz"}, "grund": "…"}` – setzt `varianten` beim Hauptelement, `kern: false` bei den Varianten |
+| `kern` | `{"id": "sw-x", "kern": false, "grund": "…"}` – Handentscheidung, schlägt die Punkte in beide Richtungen |
+
+Alle Schlüssel sind freiwillig: Fehlt einer, läuft `scripts/build.py` sauber durch.

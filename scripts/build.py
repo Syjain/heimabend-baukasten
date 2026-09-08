@@ -33,11 +33,16 @@ import json
 import re
 import sys
 import unicodedata
+import urllib.parse
 from collections import Counter, defaultdict
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
 EIGENE = WURZEL / "data" / "eigene" / "heimabend-ideen.json"
+# Eigene Elemente, die schon im fertigen Schema stehen (Rituale für den
+# Eröffnungs- und Schlusskreis, Gruppeneinteilung, Auswertung). Sie bringen
+# ihre Slots selbst mit - nur hier kommt "eroeffnung" überhaupt vor.
+RAHMEN = WURZEL / "data" / "eigene" / "rahmen-und-methoden.json"
 PROBENBUCH = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb.json"
 # Redigierte Fassung (lesbarer Text + Heimabend-Zuschnitt). Ist sie da, gewinnt sie;
 # der Rohtext bleibt als Rückfall, damit der Build nie ohne Proben dasteht.
@@ -45,6 +50,12 @@ PROBENBUCH_REDIGIERT = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb-
 INSPIRATOR = WURZEL / "data" / "quellen" / "inspirator" / "inspirator-ideen.json"
 PFADFINDER_SPIELE = WURZEL / "data" / "quellen" / "pfadfinder-spiele" / "elemente.json"
 SPIELEWIKI = WURZEL / "data" / "quellen" / "spielewiki" / "elemente.json"
+# Rohdaten des Spielewiki-Imports. Sie liegen in .gitignore, sind also nicht
+# überall da. Wenn sie fehlen, wird "platz" nur aus dem Text abgeleitet und die
+# Statistik sagt das ausdrücklich. Gebraucht werden zwei Infobox-Felder, die der
+# Import nicht ins Schema übernimmt: "Ort" (= Platzbedarf) und "Dauer"
+# ("beliebig"/"pro Runde" = rundenweise dehnbar).
+SPIELEWIKI_ROH = WURZEL / "data" / "quellen" / "spielewiki" / "raw" / "seiten.json"
 REDAKTION = WURZEL / "data" / "redaktion.json"
 AUSGABE_JSON = WURZEL / "data" / "elemente.json"
 AUSGABE_JS = WURZEL / "web" / "elemente.js"
@@ -79,8 +90,10 @@ KATEGORIEN = {
 PFLICHTFELDER = [
     "id", "titel", "bereich", "umfang", "kategorie", "unterkategorie", "slots", "altersstufen",
     "wirkung", "modus", "sozialform", "spielgeraet", "anforderung",
+    "platz", "hosensackspiel", "uebt", "naehe",
     "dauer_min", "dauer_max", "ort", "material", "vorbereitung",
     "kurz", "beschreibung", "tags", "themen", "quelle",
+    "kern", "varianten",
 ]
 
 
@@ -338,6 +351,41 @@ def lade_eigene(vergeben):
                 "lizenz": lizenz,
             },
         })
+    return elemente
+
+
+def lade_rahmen(vergeben):
+    """
+    Mappt data/eigene/rahmen-und-methoden.json auf das Element-Schema.
+
+    Anders als heimabend-ideen.json steht diese Datei schon im fertigen Schema.
+    Zwei Dinge bleiben deshalb stehen, statt neu berechnet zu werden:
+    die Slots (slots_fuer() kann "eroeffnung" gar nicht vergeben) und der
+    Bereich. Fehlt die Datei, läuft der Build ohne sie weiter.
+    """
+    if not RAHMEN.exists():
+        print("  Hinweis: {} fehlt - Rahmen und Methoden fehlen.".format(RAHMEN.name))
+        return []
+    with open(RAHMEN, encoding="utf-8") as datei:
+        daten = json.load(datei)
+    elemente = []
+    for roh in daten.get("elemente", []):
+        element = dict(roh)
+        if element["id"] in vergeben:
+            element["id"] = mache_id("eig", element["titel"], vergeben)
+        else:
+            vergeben.add(element["id"])
+        element["_bereich"] = element.get("bereich") or "gemeinschaft"
+        element["_slots_fest"] = True
+        # Eine Quelle, eine Schreibweise: die 61 Ideen aus heimabend-ideen.json
+        # tragen denselben Namen, sonst stünden zwei "eigene" Quellen in der App.
+        element["quelle"] = {
+            "name": "Heimabend-Baukasten (eigene Sammlung)",
+            "url": "",
+            "autor": "Heimabend-Baukasten",
+            "lizenz": (element.get("quelle") or {}).get("lizenz") or "CC BY-SA 4.0",
+        }
+        elemente.append(element)
     return elemente
 
 
@@ -939,6 +987,15 @@ def _heu(element):
             (element.get("beschreibung") or "")).lower()
 
 
+def _heu_weit(element):
+    """Wie _heu, aber mit Titel, Themen, Tipps und Material - für die Achsen von 09/2026."""
+    teile = [" ".join(element.get("tags") or []), " ".join(element.get("themen") or []),
+             element.get("titel") or "", element.get("kurz") or "",
+             element.get("beschreibung") or "", element.get("tipps") or "",
+             " ".join(element.get("material") or [])]
+    return " ".join(teile).lower()
+
+
 def _treffer(text, muster):
     return any(re.search(m, text) for m in muster)
 
@@ -1001,6 +1058,280 @@ def bestimme_spielachsen(element):
 
     return {"wirkung": wirkung, "modus": modus, "sozialform": sozialform,
             "spielgeraet": geraet, "anforderung": anforderung}
+
+
+# --------------------------------------------- Vier weitere Spiel-Achsen (08.09.2026)
+# Die Recherche in docs/recherche-kategorien-anderer-sammlungen.md (Abschnitt 3)
+# hat vier Fragen gefunden, die andere Sammlungen beantworten und wir bisher nicht.
+# Sie laufen nach demselben Muster wie die fünf Achsen oben:
+#   Quellfeld (wenn vorhanden) -> Tags -> Text -> data/redaktion.json ("achsen").
+#
+#   platz           Wieviel Platz braucht es?     tisch | zimmer | saal_wiese | gelaende | ""
+#   hosensackspiel  Geht es aus der Hosentasche?  true | false
+#   uebt            Welche Probe übt es nebenbei? Liste der Pfadfindertechnik-Kategorien
+#   naehe           Wieviel Körperkontakt und Vertrauen? keine | leicht | hoch
+#
+# "" bzw. die leere Liste heißt immer: aus der Quelle nicht erkennbar - nie
+# "trifft nicht zu". Ausnahme ist "naehe": dort ist "keine" die bewusste Aussage
+# "kein Körperkontakt erkennbar"; "" gibt es nur über die Redaktion.
+
+PLAETZE = ["tisch", "zimmer", "saal_wiese", "gelaende"]
+NAEHE_WERTE = ["keine", "leicht", "hoch"]
+# Dieselben acht Werte wie die Kategorie bei bereich "pfadfindertechnik" -
+# ohne "sonstiges": eine Probe, die niemand benennen kann, übt auch kein Spiel.
+UEBT_WERTE = ["knoten", "karte_kompass", "feuer", "erste_hilfe", "zelte_bauten",
+              "natur", "bundeskunde", "fahrtentechnik"]
+
+
+# ---------------------------------------------------------------- platz
+# Das Spielewiki-Feld "Ort" ist kein drinnen/draußen, sondern der Platzbedarf
+# (632 Werte, 166 verschiedene Formulierungen). Die Reihenfolge der Muster ist
+# wichtig, das erste Muster gewinnt: "kleine Spielfläche" (33x) muss vor
+# "Spielfläche" stehen, sonst landet der halbe Gruppenraum auf der Wiese.
+PLATZ_ORT_MUSTER = [
+    ("gelaende", r"wald|gel[äa]nde|stadt|freie natur|gro[ßs]e[sn]? gebiet|zwischen b[äa]umen|"
+                 r"\bsee\b|fluss|nachtgel"),
+    ("tisch", r"tisch|sitzkreis|sesselkreis|stuhlkreis|sitzreihe|am boden|im sitzen"),
+    ("zimmer", r"kleine spielfl|kleine[rns]? (freie )?(fl[äa]che|raum)|kleine ?\"?tanzfl|"
+               r"gruppenraum|zimmer|innenraum|k[üu]che|zwei r[äa]ume|getrennte r[äa]ume"),
+    ("saal_wiese", r"spielfeld|spielfl[äa]che|laufstrecke|wegstrecke|turnhalle|turnsaal|\bsaal\b|"
+                   r"\bhalle\b|wiese|rasen|sportplatz|im freien|drau[ßs]en|au[ßs]en|garten|\bhof\b|"
+                   r"\bnetz\b|gro[ßs]e fl[äa]che|mauer"),
+    ("zimmer", r"[üu]berall|beliebig|egal|platz|stehkreis|\bkreis\b|boden|wand|innen|haus|drinnen|"
+               r"raum|fl[äa]che|untergrund"),
+]
+# Rückfall für alle Quellen ohne Ortsfeld (eigene, Inspirator, pfadfinder-spiele.de).
+# Das Feld "Umgebung" von pfadfinder-spiele.de sagt nur drinnen/draußen und trägt
+# zum Platzbedarf nichts bei - deshalb steht es hier nicht.
+PLATZ_TEXT_MUSTER = [
+    ("gelaende", [r"\bim wald\b", r"\bgel[äa]ndespiel", r"\bim gel[äa]nde", r"\bdurch den wald",
+                  r"\bin der stadt", r"\bwaldst[üu]ck", r"\bschnitzeljagd", r"\bnachtwanderung"]),
+    ("saal_wiese", [r"\bturnhalle", r"\bsporthalle", r"\bauf (der|eine[rn]) wiese", r"\bspielfeld",
+                    r"\bgro[ßs]er? (raum|saal|fl[äa]che)", r"\bstaffel", r"\blaufstrecke",
+                    r"\bviel platz", r"\bsportplatz"]),
+    ("tisch", [r"\bam tisch", r"\bum den tisch", r"\bstuhlkreis", r"\bsitzkreis", r"\bsesselkreis",
+               r"\bim sitzen", r"\bauf dem boden sitz"]),
+    ("zimmer", [r"\bgruppenraum", r"\bim zimmer", r"\bkleine[rn]? raum", r"\bim heim\b",
+                r"\bwenig platz"]),
+]
+
+
+def spielewiki_seitentitel(element):
+    """Holt den Wikiseiten-Titel aus quelle.url - der überlebt auch ein Umbenennen."""
+    url = (element.get("quelle") or {}).get("url") or ""
+    if "/wiki/" not in url:
+        return ""
+    return urllib.parse.unquote(url.rsplit("/", 1)[-1]).replace("_", " ")
+
+
+def lade_spielewiki_infobox():
+    """
+    Liest "Ort" und "Dauer" aus den Spielewiki-Rohdaten (Wikitext der Infobox).
+
+    Der Import wirft beide Felder weg: "Ort" wird auf drinnen/draussen/beides
+    eingedampft, "Dauer" auf Minuten. Für "platz" und "hosensackspiel" brauchen
+    wir aber den Originaltext. Fehlt die Rohdatei, kommt ein leeres Verzeichnis
+    zurück und die Ableitung läuft nur über den Text.
+    """
+    if not SPIELEWIKI_ROH.exists():
+        return {}
+    with open(SPIELEWIKI_ROH, encoding="utf-8") as datei:
+        seiten = json.load(datei)
+    infobox = {}
+    for eintrag in seiten.values():
+        try:
+            wikitext = eintrag["revisions"][0]["slots"]["main"]["*"]
+        except (KeyError, IndexError, TypeError):
+            continue
+        felder = {}
+        for feld in ("Ort", "Dauer"):
+            treffer = re.search(r"\|\s*" + feld + r"\s*=([^|}\n]*)", wikitext)
+            if treffer:
+                felder[feld.lower()] = treffer.group(1).strip()
+        if felder:
+            infobox[eintrag.get("title") or ""] = felder
+    return infobox
+
+
+def bestimme_platz(element, ort_roh):
+    """tisch | zimmer | saal_wiese | gelaende | "" - erst das Quellfeld, dann der Text."""
+    if ort_roh:
+        text = ort_roh.lower()
+        for name, muster in PLATZ_ORT_MUSTER:
+            if re.search(muster, text):
+                return name
+    if element.get("unterkategorie") == "gelaende" or "Geländespiel" in (element.get("tags") or []):
+        return "gelaende"
+    if element.get("unterkategorie") == "tisch":
+        return "tisch"
+    heu = _heu(element)
+    for name, muster in PLATZ_TEXT_MUSTER:
+        if _treffer(heu, muster):
+            return name
+    return ""
+
+
+# ------------------------------------------------------- hosensackspiel
+# Begriff von jubla.netz (Jungwacht Blauring): ein Spiel, das man "aus der
+# Hosentasche" zieht - kein Material, keine Vorbereitung, jederzeit und überall.
+# Die Recherche (3.4) nennt die Regel: kein Material UND Vorbereitung gering UND
+# (dauer_min <= 10 ODER die Quelle sagt "pro Runde"/"beliebig", also rundenweise
+# dehnbar). Rundenweise dehnbare Spiele sind Lückenfüller, auch wenn der Import
+# ihnen der Vorsicht halber 20 Minuten gegeben hat.
+DEHNBAR_MUSTER = re.compile(r"pro runde|beliebig", re.IGNORECASE)
+
+
+def bestimme_hosensackspiel(element, dauer_roh):
+    """
+    Abweichung von der Recherche, mit Absicht: dort steht "dauer_min <= 10",
+    die genannten 77 Spiele ergeben sich aber nur mit dauer_max <= 10. Mit
+    dauer_min wären es 267 von 794 - jedes dritte Spiel, damit taugt der Filter
+    "5 Minuten übrig" nichts mehr. Gemeint ist "in zehn Minuten durch", also die
+    Obergrenze. Wer es anders will, ändert diese eine Zeile.
+    """
+    if element.get("material"):
+        return False
+    if element.get("vorbereitung") != "gering":
+        return False
+    if 0 < (element.get("dauer_max") or 0) <= 10:
+        return True
+    return bool(dauer_roh and DEHNBAR_MUSTER.search(dauer_roh))
+
+
+# ------------------------------------------------------------------ uebt
+# "Welche Probe übt das Spiel nebenbei?" - die Pfadfinder-Achse (Recherche 3.1,
+# Scoutopedias "jeu de technique", Baden-Powell 1908). Bewusst streng: es zählt
+# nur, wo die Fertigkeit wirklich geübt wird.
+#
+# Deshalb ausgeschlossen:
+# - Wortlisten-Spiele (Tabu, Montagsmaler, Quiz, Memory, Stadt-Land-Fluss …).
+#   In ihren Begriffslisten steht irgendwann jedes Pfadfinderwort; "Digitales
+#   Tabu" traf so sechs von acht Proben, ohne eine einzige zu üben.
+# - "Feuer, Wasser, Sturm" und Verwandte: Kommandospiel, kein Feuer.
+# - "Gordischer Knoten" / "Menschenknoten": ein Knäuel aus Armen, kein Knoten.
+# - "Knoten am Seilende" als Beiwerk eines Wurfspiels.
+# - Spielkarten, Karteikarten, gelbe/rote Karte - das ist keine Landkarte.
+# - Zeltstangen als Bastelmaterial (Riesen-Mikado) - das ist kein Zeltbau.
+# - Erste-Hilfe-Kasten als Gegenstand in einer Rangliste (NASA-Spiel).
+# - Kimspiele: sie üben Beobachten und Merken, aber keine der acht Proben.
+#   Baden-Powell zählt sie zur Beobachtungsschulung; eine eigene Achse dafür
+#   wäre ehrlicher als sie unter "natur" zu verstecken. Bewusst offen gelassen.
+# - "Stationenlauf" als Tag: die Einzelspiele einer Olympiade (Dosenwerfen,
+#   Seilspringen) üben keine Orientierung, nur der Lauf als Ganzes.
+UEBT_WORTLISTE = re.compile(
+    r"\btabu\b|montagsmaler|pantomime|scharade|\bquiz\b|stadt[ -]land[ -]fluss|wer bin ich|"
+    r"teekesselchen|galgenm|begriffe? erraten|paare finden|p[äa]rchen finden|\bmemory\b|"
+    r"\bdalli\b|\bactivity\b|lexikonspiel")
+UEBT_AUSSCHLUSS = re.compile(
+    r"feuer,? ?wasser,? ?(sturm|blitz|sand|erde)|feuer frei|feuerwehr|lauffeuer|feuer und flamme|"
+    r"gordische[rn]? knoten|menschenknoten|knoten im (magen|taschentuch)|knoten am seil\w*|"
+    r"kartenspiel|spielkarten|karteikarte|gelbe karte|rote karte|zeltstange\w*|"
+    r"erste[- ]hilfe[- ](kasten|set|täschchen)|verbandskasten")
+UEBT_MUSTER = [
+    ("knoten", [r"\bknoten (kn[üu]pf|binden|machen|[üu]ben|lernen|schlagen)", r"\bknotenkunde",
+                r"\bknotenstaffel", r"\bknoten-olympiade", r"\bkreuzknoten", r"\bmastwurf",
+                r"\bzimmermannsschlag", r"\bpalstek", r"\bschotstek", r"\bwebeleinstek",
+                r"\bbrezelbund|kreuzbund|parallelbund|diagonalbund", r"\bbund (schlagen|binden)",
+                r"\bknotenkette"]),
+    ("karte_kompass", [r"\bkompass", r"\bhimmelsrichtung", r"\bkarte lesen", r"\bkarte und kompass",
+                       r"karte kompass", r"\borientierungslauf", r"\bazimut", r"\bpeilen\b",
+                       r"\bmarschzahl", r"\bmorse", r"\bwinkeralphabet", r"\bwaldl[äa]uferzeichen",
+                       r"\bgeheimschrift", r"\bkroki", r"\bschatzkarte", r"\bkarte zeichnen",
+                       r"\bschritte messen", r"\bentfernung sch[äa]tzen", r"\bschnitzeljagd",
+                       r"\bschatzsuche", r"\bfotorallye", r"\bgeocach", r"\bnachtwanderung",
+                       r"\blageplan"]),
+    ("feuer", [r"\bfeuer (machen|entz[üu]nden|anz[üu]nden|entfachen|sch[üu]ren|aufbauen)",
+               r"\blagerfeuer (bauen|entz[üu]nden|aufbauen)", r"\bfeuerstelle", r"\bzunder",
+               r"\bfeuerarten", r"\bpyramidenfeuer", r"\bpagodenfeuer", r"\bfunken schlagen",
+               r"\bfeuerbohrer"]),
+    ("erste_hilfe", [r"\berste[ -]hilfe(?!\w)", r"\bverband (anlegen|wickeln)", r"\bdruckverband",
+                     r"\bstabile seitenlage", r"\brettungsgriff", r"\bnotruf\b", r"\bwiederbelebung",
+                     r"\bdreiecktuch", r"\btrage (bauen|aus)", r"\bwundversorgung", r"\bsanit[äa]ts",
+                     r"\bverletzte[nr]? (versorgen|transportier)"]),
+    ("zelte_bauten", [r"\bzelt (aufbauen|aufstellen|bauen)", r"\bzeltbau", r"\bkohte", r"\bjurte",
+                      r"\bschwarzzelt", r"\bseilbr[üu]cke", r"\bpioniertechnik", r"\bspierbau",
+                      r"\bstangen und seile?", r"\bbiwak", r"\blagerbau"]),
+    ("natur", [r"\bbaumart", r"\bb[äa]ume (bestimmen|erkennen)",
+               r"\bbl[äa]tter (bestimmen|erkennen|zuordnen)", r"\btierspur",
+               r"\bspuren (lesen|deuten|verfolgen)", r"\bkr[äa]uter",
+               r"\bpflanzen (bestimmen|erkennen)", r"\bvogelstimme", r"\bsternbild",
+               r"\bessbare (pflanzen|beeren|kr[äa]uter)", r"\bnatur-?kim|\bbl[äa]tterkim|\bwaldkim",
+               r"\bpilze (bestimmen|erkennen)", r"\banschleich", r"\btarnen\b",
+               r"\bnaturmaterial\w* (bestimmen|erkennen|ertasten)"]),
+    ("bundeskunde", [r"\bpfadfindergesetz", r"\bwahlspruch", r"\bbaden-powell", r"\bbipi\b",
+                     r"\bpfadfindergru[ßs]", r"\bpfadfinderversprechen", r"\bbundesgeschichte",
+                     r"\bpfadfindergeschichte", r"\bgilwell", r"\bpfadfindersymbolik",
+                     r"pfa\. geschichte", r"unser bund"]),
+    ("fahrtentechnik", [r"\brucksack (packen|richtig)", r"\bfahrtenplanung", r"\bfahrtengep[äa]ck",
+                        r"\bpackliste", r"\bkochstelle", r"\bhaik\b", r"\bmesserf[üu]hrerschein",
+                        r"\bschnitzdiplom", r"\btrampen"]),
+]
+
+
+def bestimme_uebt(element):
+    """Liste der Proben, die das Spiel nebenbei übt. Streng - im Zweifel leer."""
+    kennzeichen = (element["titel"] + " " + " ".join(element.get("tags") or [])).lower()
+    if UEBT_WORTLISTE.search(kennzeichen):
+        return []
+    heu = UEBT_AUSSCHLUSS.sub(" ", _heu_weit(element))
+    return [name for name, muster in UEBT_MUSTER if _treffer(heu, muster)]
+
+
+# ----------------------------------------------------------------- naehe
+# "Kann ich das mit einer neuen Sippe spielen, oder muss die Gruppe sich kennen?"
+# (Gilsdorf/Kistner: Kennenlernen -> Warming-up -> Vertrauen -> Kooperation.)
+# Die Recherche warnt: die naheliegende Regex auf Berührungswörter (anfassen,
+# umarmen, huckepack, tragen, Schoß) trifft rund 190 Spiele - viel zu viele,
+# weil "berührt" in jedem Fangspiel steht ("wer berührt wird, ist gefangen") und
+# "vorstellen" meistens "sich etwas vorstellen" heißt. Deshalb hier nur enge,
+# ausformulierte Wendungen statt einzelner Wortstämme.
+# Kern von "hoch" ist die schon vorhandene wirkung "vertrauen".
+NAEHE_HOCH_MUSTER = [
+    r"\bverbundenen augen", r"\baugen (werden )?verbunden", r"\baugenbinde", r"\baugen zubinden",
+    r"\bblind (gef[üu]hrt|f[üu]hren|durch|[üu]ber|zu zweit)", r"\bblindenf[üu]hrung",
+    r"\bhuckepack", r"\bauf den r[üu]cken (nehmen|laden)",
+    r"\b(auf (den|dem) (arm|armen|r[üu]cken)|von der gruppe|von den anderen) getragen",
+    r"\bmassage|\bmassier", r"\bsich (nach hinten )?fallen (lassen|zu lassen)",
+    r"\bnach hinten fallen", r"\bauf dem scho[ßs]", r"\bauf den scho[ßs]", r"\bsich anvertrau",
+    r"\bpendeln lassen", r"\bvor der (ganzen )?gruppe (etwas )?(vorspiel|vortrag|vorsing|vorf[üu]hr)",
+    r"\beinzeln vor die gruppe",
+]
+NAEHE_LEICHT_MUSTER = [
+    r"\bh[äa]nde (halten|fassen|reichen|geben)", r"\bhand (halten|fassen|geben)",
+    r"\ban den h[äa]nden (fassen|halten|nehmen)", r"\bh[äa]ndekette", r"\ban der hand (f[üu]hren|nehmen)",
+    r"\bnamen (rufen|nennen|sagen|zurufen)", r"\bnamensrunde", r"\bvorstellungsrunde",
+    r"\bstellt sich (kurz )?(mit namen )?vor\b", r"\bunterhak|\buntergehakt", r"\barm in arm",
+    r"\ban den schultern (fassen|halten)", r"\bauf die schulter (legen|tippen)",
+    r"\bk[öo]rperkontakt", r"\bsich (gegenseitig )?ber[üu]hren", r"\bkette bilden",
+    r"\bhand auf", r"\br[üu]cken an r[üu]cken",
+]
+
+
+def bestimme_naehe(element):
+    """keine | leicht | hoch."""
+    tags = set(element.get("tags") or [])
+    if "vertrauen" in (element.get("wirkung") or []) or tags & {"Vertrauensspiel", "Vertrauensübung"}:
+        return "hoch"
+    heu = _heu(element)
+    if _treffer(heu, NAEHE_HOCH_MUSTER):
+        return "hoch"
+    # Namens- und Kennenlernspiele verlangen immer, sich der Gruppe zu zeigen
+    if tags & {"Namenslernspiel", "Kennenlernspiel"}:
+        return "leicht"
+    if _treffer(heu, NAEHE_LEICHT_MUSTER):
+        return "leicht"
+    return "keine"
+
+
+def bestimme_weitere_achsen(element, infobox):
+    """Die vier Achsen aus der Recherche vom 07.09.2026, nur für Spiele."""
+    felder = infobox.get(spielewiki_seitentitel(element)) or {}
+    return {
+        "platz": bestimme_platz(element, felder.get("ort") or ""),
+        "hosensackspiel": bestimme_hosensackspiel(element, felder.get("dauer") or ""),
+        "uebt": bestimme_uebt(element),
+        "naehe": bestimme_naehe(element),
+    }
 
 
 # ------------------------------------------------------- Unterkategorien
@@ -1124,11 +1455,289 @@ def markiere_dubletten(elemente, redaktion):
     return len(gruppen), getrennt // 2
 
 
+# ----------------------------------------------- Zusammengelegte Dubletten
+def wende_zusammenlegung_an(elemente, redaktion):
+    """
+    Wertet den Redaktions-Schlüssel "zusammengelegt" aus.
+
+    Format in data/redaktion.json:
+        {"haupt": "sw-x", "varianten": ["ps-y"], "lizenzen_unvertraeglich": true,
+         "grund": "…", "aenderungen": {"ps-y": "eigener Satz"}}
+
+    Wirkung: Das Hauptelement bekommt `varianten` (Liste aus titel, id, aenderung),
+    die Varianten bleiben in den Daten, werden aber nie Kern. Gelöscht wird nichts -
+    die zweite Reihe ist jederzeit wieder einblendbar.
+
+    LIZENZ: Stehen im Cluster CC BY-SA und CC BY-NC(-SA) nebeneinander
+    ("lizenzen_unvertraeglich": true), darf in `varianten` nur Titel und id der
+    anderen Fassung stehen. `aenderung` bleibt dann leer - es wandert kein Text
+    der anderen Quelle in das Element.
+
+    Fehlt der Schlüssel (der Redaktions-Agent arbeitet noch daran), passiert nichts.
+    Gibt (Anzahl Gruppen, Menge der Varianten-IDs, Liste unbekannter IDs) zurück.
+    """
+    nach_id = {e["id"]: e for e in elemente}
+    for element in elemente:
+        element.setdefault("varianten", [])
+
+    varianten_ids = set()
+    unbekannt = []
+    gruppen = 0
+    for eintrag in redaktion.get("zusammengelegt", []):
+        haupt = nach_id.get(eintrag.get("haupt"))
+        if not haupt:
+            unbekannt.append(eintrag.get("haupt"))
+            continue
+        gemischt = bool(eintrag.get("lizenzen_unvertraeglich"))
+        aenderungen = eintrag.get("aenderungen") or {}
+        liste = []
+        for kennung in eintrag.get("varianten") or []:
+            variante = nach_id.get(kennung)
+            if not variante:
+                unbekannt.append(kennung)
+                continue
+            varianten_ids.add(kennung)
+            liste.append({
+                "titel": variante["titel"],
+                "id": kennung,
+                # Bei unverträglichen Lizenzen bleibt das Feld leer.
+                "aenderung": "" if gemischt else (aenderungen.get(kennung)
+                                                  or eintrag.get("aenderung") or ""),
+            })
+        if liste:
+            # Stabil sortiert und ohne Doppelte, damit mehrfache Läufe dasselbe ergeben
+            vorhanden = {v["id"] for v in haupt["varianten"]}
+            haupt["varianten"].extend(v for v in liste if v["id"] not in vorhanden)
+            haupt["varianten"].sort(key=lambda v: v["id"])
+            gruppen += 1
+    return gruppen, varianten_ids, unbekannt
+
+
+# --------------------------------------------------------------- Kernsammlung
+# Zwei Reihen statt Löschen: Jedes Element trägt `kern`. Die erste Reihe (true)
+# ist die aufgeräumte Sammlung, mit der die App startet; die zweite Reihe (false)
+# bleibt vollständig in den Daten und ist über einen Filter erreichbar. Damit ist
+# jede Aussortierung umkehrbar - ein Eintrag in data/redaktion.json genügt.
+#
+# Die Punkte und die Quotenrechnung sind wörtlich aus scripts/analyse.py
+# übernommen (dort Teil C, Funktion `punkte` und die Quotenschleifen), damit die
+# Prüfung und der Build dasselbe rechnen. Sie stehen hier auf Modulebene, damit
+# analyse.py sie später importieren kann statt sie ein zweites Mal zu führen.
+ZIEL_KERN = 300          # Zielgröße der Kernsammlung (Prüfdokument Teil C.4)
+KERN_MINDESTZAHL = 4     # so viele Spiele behält jede Unterkategorie mindestens
+DUENN_ZEICHEN = 300      # Beschreibung kürzer -> "dünn beschrieben"
+LANG_SPIEL_MIN = 45      # Spiel dauert länger -> passt schlecht als Baustein
+
+KERN_CORONA = re.compile(r"corona|lockdown|pandemi|videokonferenz|\bzoom\b|\bonline\b", re.IGNORECASE)
+KERN_TRINKSPIEL = re.compile(r"trinkspiel|\balkohol|\bbier\b|schnaps|\bwodka\b|betrunken", re.IGNORECASE)
+KERN_PARTY = re.compile(r"kindergeburtstag|geburtstagsfeier|\bparty\b|silvester|fasching|karneval",
+                        re.IGNORECASE)
+
+
+def kern_volltext(element):
+    """Titel, Kurz, Beschreibung, Tipps, Tags, Themen, Material - wie in analyse.py."""
+    teile = [element.get("titel", ""), element.get("kurz", ""), element.get("beschreibung", ""),
+             element.get("tipps", "")]
+    for feld in ("tags", "themen", "material"):
+        wert = element.get(feld) or []
+        if isinstance(wert, list):
+            teile.extend(str(x) for x in wert)
+    return "\n".join(str(t) for t in teile if t)
+
+
+def kern_punkte(element, in_dublette):
+    """
+    Was spricht dafür, ein Spiel in die erste Reihe zu nehmen? (aus analyse.py)
+
+    Gibt (Punkte, Begründungen) zurück. Rein aus vorhandenen Feldern gerechnet -
+    kein Zufall, keine Reihenfolgeabhängigkeit.
+    """
+    punkte, warum = 0, []
+    kennung = element["id"]
+    text = kern_volltext(element)
+    if kennung.startswith("eig-"):
+        punkte += 3
+        warum.append("eigene Sammlung")
+    if kennung in in_dublette:
+        punkte -= 6
+        warum.append("Dublette")
+    laenge = len(element.get("beschreibung") or "")
+    if laenge >= 700:
+        punkte += 2
+        warum.append("ausführlich beschrieben")
+    elif laenge < DUENN_ZEICHEN:
+        punkte -= 2
+        warum.append("dünn beschrieben")
+    if element.get("altersstufen"):
+        punkte += 2
+        warum.append("Altersstufe da")
+    if (element.get("tipps") or "").strip():
+        punkte += 1
+        warum.append("Tipps da")
+    dauer = element.get("dauer_max") or element.get("dauer_min") or 0
+    if 0 < dauer <= 20:
+        punkte += 2
+        warum.append("kurz genug für einen Slot")
+    elif dauer >= LANG_SPIEL_MIN:
+        punkte -= 2
+        warum.append("zu lang für einen Baustein")
+    if not (element.get("material") or []):
+        punkte += 2
+        warum.append("kein Material")
+    elif len(element.get("material") or []) >= 4:
+        punkte -= 1
+        warum.append("viel Material")
+    if element.get("vorbereitung") == "gering":
+        punkte += 1
+    elif element.get("vorbereitung") == "hoch":
+        punkte -= 2
+        warum.append("viel Vorbereitung")
+    if (element.get("gruppe_min") or 0) >= 15:
+        punkte -= 2
+        warum.append("braucht große Gruppe")
+    if KERN_CORONA.search(text):
+        punkte -= 3
+        warum.append("Corona/Online")
+    if KERN_TRINKSPIEL.search(text) or KERN_PARTY.search(text):
+        punkte -= 4
+        warum.append("Anlass passt nicht")
+    if element.get("ort") == "beides":
+        punkte += 1
+    if len(element.get("wirkung") or []) >= 1:
+        punkte += 1
+    return punkte, warum
+
+
+def kern_quoten(ist, ziel=ZIEL_KERN):
+    """
+    Verteilt `ziel` Plätze proportional auf die Unterkategorien (aus analyse.py).
+
+    Jede Unterkategorie behält mindestens KERN_MINDESTZAHL Spiele, damit auch
+    kleine Spielarten (Reflexion, Verstecken) nicht ganz verschwinden. Danach wird
+    so lange feinjustiert, bis die Summe das Ziel trifft: weggenommen wird dort,
+    wo der Anteil am größten ist, dazugegeben dort, wo er am kleinsten ist.
+    `ist` muss ein Verzeichnis Unterkategorie -> Anzahl in stabiler Reihenfolge sein.
+    """
+    quote = dict((k, int(max(KERN_MINDESTZAHL, min(v, round(v * ziel / max(1, sum(ist.values())))))))
+                 for k, v in ist.items())
+    schutz = 0
+    while sum(quote.values()) > ziel and schutz < 10000:
+        schutz += 1
+        kandidat = [x for x in quote if quote[x] > KERN_MINDESTZAHL]
+        if not kandidat:
+            break
+        schluessel = max(kandidat, key=lambda x: (quote[x] / max(1, ist[x]), quote[x]))
+        quote[schluessel] -= 1
+    schutz = 0
+    while sum(quote.values()) < ziel and schutz < 10000:
+        schutz += 1
+        kandidat = [x for x in quote if quote[x] < ist[x]]
+        if not kandidat:
+            break
+        schluessel = min(kandidat, key=lambda x: (quote[x] / max(1, ist[x]), -ist[x]))
+        quote[schluessel] += 1
+    return quote
+
+
+def bestimme_kern(elemente, redaktion, varianten_ids):
+    """
+    Setzt `kern` für jedes Element.
+
+    - Nicht-Spiele sind immer Kern: davon gibt es so wenige, dass jede Aussortierung
+      ein Loch in den Heimabend reißt (Pfadfindertechnik: 77, Musisches: 12).
+    - Spiele: Punkte nach kern_punkte, dann je Unterkategorie die besten n laut
+      kern_quoten. Sortiert wird nach (-Punkte, entschärfter Titel, id) - bei
+      Punktgleichstand entscheidet also der Titel, nie der Zufall oder die
+      Lesereihenfolge der Quellen.
+    - Zusammengelegte Varianten sind nie Kern.
+    - data/redaktion.json ("kern") schlägt alles: {"id": …, "kern": false} nimmt
+      ein Spiel heraus, {"id": …, "kern": true} holt es herein, auch gegen die Punkte.
+
+    Gibt (Bericht, unbekannte IDs) zurück.
+    """
+    nach_id = {e["id"]: e for e in elemente}
+    von_hand = {}
+    unbekannt = []
+    for eintrag in redaktion.get("kern", []):
+        if eintrag.get("id") in nach_id:
+            von_hand[eintrag["id"]] = bool(eintrag.get("kern"))
+        else:
+            unbekannt.append(eintrag.get("id"))
+
+    spiele = [e for e in elemente if e["bereich"] == "spiel"]
+    # Auch titelgleiche Dubletten zählen als zweite Fassung: die erste Fassung ist
+    # die mit der ausführlicheren Beschreibung (eigene Sammlung zuerst).
+    in_dublette = set(varianten_ids)
+    for gruppe in sorted({tuple(sorted([e["id"]] + list(e.get("dubletten") or [])))
+                          for e in elemente if e.get("dubletten")}):
+        vorhanden = [i for i in gruppe if i in nach_id]
+
+        def rang(kennung):
+            element = nach_id[kennung]
+            return (0 if kennung.startswith("eig-") else 1,
+                    -len(element.get("beschreibung") or ""),
+                    0 if element.get("altersstufen") else 1,
+                    0 if (element.get("tipps") or "").strip() else 1,
+                    kennung)
+        for kennung in sorted(vorhanden, key=rang)[1:]:
+            in_dublette.add(kennung)
+
+    bewertet = {}
+    for element in spiele:
+        bewertet[element["id"]] = kern_punkte(element, in_dublette)[0]
+
+    # Stabile Reihenfolge der Unterkategorien: erst die größte, bei Gleichstand
+    # alphabetisch. Damit hängt die Quote nicht an der Lesereihenfolge der Quellen.
+    roh = Counter(e.get("unterkategorie") or "(leer)" for e in spiele)
+    ist = dict()
+    for schluessel in sorted(roh, key=lambda x: (-roh[x], x)):
+        ist[schluessel] = roh[schluessel]
+    quote = kern_quoten(ist)
+
+    nach_unterkategorie = defaultdict(list)
+    for element in spiele:
+        nach_unterkategorie[element.get("unterkategorie") or "(leer)"].append(element)
+
+    kern_ids = set()
+    for schluessel, liste in nach_unterkategorie.items():
+        liste.sort(key=lambda e: (-bewertet[e["id"]], entschaerfe(e["titel"]), e["id"]))
+        genommen = 0
+        for element in liste:
+            if element["id"] in in_dublette:
+                continue          # zweite Fassung desselben Spiels: nie Kern
+            if genommen >= quote.get(schluessel, 0):
+                break
+            kern_ids.add(element["id"])
+            genommen += 1
+
+    automatisch_spiele = len(kern_ids)
+    for element in elemente:
+        if element["bereich"] != "spiel":
+            element["kern"] = True
+        else:
+            element["kern"] = element["id"] in kern_ids
+        # Handentscheidung schlägt die Automatik - in beide Richtungen
+        if element["id"] in von_hand:
+            element["kern"] = von_hand[element["id"]]
+
+    bericht = {
+        "quote": quote,
+        "ist": ist,
+        "automatisch_spiele": automatisch_spiele,
+        "von_hand": len(von_hand),
+        "in_dublette": len(in_dublette),
+        "kern_spiele": sum(1 for e in elemente if e["bereich"] == "spiel" and e["kern"]),
+        "kern_gesamt": sum(1 for e in elemente if e["kern"]),
+    }
+    return bericht, unbekannt
+
+
 # ---------------------------------------------------------------- Prüfung
 def pruefe(elemente):
     """Prüft Pflichtfelder und Wertebereiche. Gibt die Liste der Fehler zurück."""
     fehler = []
     gesehen = set()
+    gesehen_alle = {e.get("id") for e in elemente}
     for element in elemente:
         kennung = element.get("id", "<ohne id>")
         for feld in PFLICHTFELDER:
@@ -1158,6 +1767,24 @@ def pruefe(elemente):
                 fehler.append("{}: ungültiges Spielgerät {}".format(kennung, element.get("spielgeraet")))
             if set(element.get("anforderung") or []) - set(ANFORDERUNGEN):
                 fehler.append("{}: ungültige Anforderung {}".format(kennung, element.get("anforderung")))
+            # Die vier Achsen von 09/2026. Leer heißt "nicht erkennbar" und ist erlaubt.
+            if element.get("platz") not in set(PLAETZE) | {""}:
+                fehler.append("{}: ungültiger Platz '{}'".format(kennung, element.get("platz")))
+            if not isinstance(element.get("hosensackspiel"), bool):
+                fehler.append("{}: hosensackspiel ist kein Ja/Nein".format(kennung))
+            if not isinstance(element.get("uebt"), list) or set(element.get("uebt") or []) - set(UEBT_WERTE):
+                fehler.append("{}: ungültiges uebt {}".format(kennung, element.get("uebt")))
+            if element.get("naehe") not in set(NAEHE_WERTE) | {""}:
+                fehler.append("{}: ungültige Nähe '{}'".format(kennung, element.get("naehe")))
+        else:
+            # Listenfelder und Achsen gibt es nur bei Spielen - sonst leer
+            for feld in ("platz", "naehe"):
+                if element.get(feld) != "":
+                    fehler.append("{}: '{}' ist nur bei Spielen gefüllt".format(kennung, feld))
+            if element.get("uebt"):
+                fehler.append("{}: 'uebt' ist nur bei Spielen gefüllt".format(kennung))
+            if element.get("hosensackspiel") is not False:
+                fehler.append("{}: 'hosensackspiel' ist nur bei Spielen wahr".format(kennung))
         if element.get("umfang") not in UMFAENGE:
             fehler.append("{}: unbekannter Umfang '{}'".format(kennung, element.get("umfang")))
         if not isinstance(element.get("unterkategorie"), str):
@@ -1176,6 +1803,18 @@ def pruefe(elemente):
             fehler.append("{}: Dauer ist keine ganze Zahl".format(kennung))
         elif dauer_min < 1 or dauer_max < dauer_min:
             fehler.append("{}: unplausible Dauer {}-{}".format(kennung, dauer_min, dauer_max))
+        if not isinstance(element.get("kern"), bool):
+            fehler.append("{}: kern ist kein Ja/Nein".format(kennung))
+        varianten = element.get("varianten")
+        if not isinstance(varianten, list):
+            fehler.append("{}: varianten ist keine Liste".format(kennung))
+        else:
+            for variante in varianten:
+                if not isinstance(variante, dict) or set(variante) != {"titel", "id", "aenderung"}:
+                    fehler.append("{}: Variante hat nicht genau titel/id/aenderung: {}".format(
+                        kennung, variante))
+                elif variante["id"] not in gesehen_alle:
+                    fehler.append("{}: Variante '{}' gibt es nicht".format(kennung, variante["id"]))
         quelle = element.get("quelle") or {}
         for feld in ("name", "autor", "lizenz"):
             if not (quelle.get(feld) or "").strip():
@@ -1186,7 +1825,7 @@ def pruefe(elemente):
 
 
 # ---------------------------------------------------------------- Ausgabe
-def statistik(elemente):
+def statistik(elemente, kern_bericht=None, zusammengelegt=0):
     """Gibt die Statistik auf der Konsole aus."""
     def zeige(titel, zaehler):
         print("\n{}".format(titel))
@@ -1217,6 +1856,17 @@ def statistik(elemente):
     zeige("Spiele nach Sozialform:", Counter(e["sozialform"] for e in spiele))
     zeige("Spiele nach Spielgerät (mehrfach):", Counter(g for e in spiele for g in e["spielgeraet"]))
     zeige("Spiele nach Anforderung (mehrfach):", Counter(a for e in spiele for a in e["anforderung"]))
+
+    # --- die vier Achsen von 09/2026
+    zeige("Spiele nach Platzbedarf:", Counter(
+        e["platz"] or "(nicht erkennbar)" for e in spiele))
+    zeige("Hosensackspiel (ohne alles, jederzeit):", Counter(
+        "ja" if e["hosensackspiel"] else "nein" for e in spiele))
+    zeige("Spiele nach geübter Probe (mehrfach):", Counter(
+        [u for e in spiele for u in e["uebt"]] or []))
+    print("  {:<14}  {:>4}".format("(keine)", sum(1 for e in spiele if not e["uebt"])))
+    zeige("Spiele nach Nähe/Körperkontakt:", Counter(
+        e["naehe"] or "(nicht erkennbar)" for e in spiele))
     print("\nSpiele ohne erkannte Wirkung: {}, ohne Anforderung: {}".format(
         sum(1 for e in spiele if not e["wirkung"]), sum(1 for e in spiele if not e["anforderung"])))
     zeige("nach Ort:", Counter(e["ort"] for e in elemente))
@@ -1226,6 +1876,24 @@ def statistik(elemente):
         s for e in elemente for s in (e["altersstufen"] or ["(alle / keine Angabe)"])))
     print("\nohne Material: {}".format(sum(1 for e in elemente if not e["material"])))
 
+    # --- Kernsammlung (erste Reihe) und zusammengelegte Varianten
+    kern = [e for e in elemente if e["kern"]]
+    print("\n" + "-" * 58)
+    print("KERNSAMMLUNG (erste Reihe)  –  {} von {} Elementen".format(len(kern), len(elemente)))
+    print("-" * 58)
+    zeige("Kern nach Bereich:", Counter(e["bereich"] for e in kern))
+    zeige("Kern-Spiele nach Unterkategorie:", Counter(
+        e["unterkategorie"] or "(leer)" for e in kern if e["bereich"] == "spiel"))
+    print("\nzweite Reihe (kern: false): {} Elemente – bleiben in den Daten"
+          .format(len(elemente) - len(kern)))
+    print("zusammengelegt: {} Gruppen, {} Varianten (bei {} Hauptelementen als 'varianten')".format(
+        zusammengelegt,
+        sum(len(e["varianten"]) for e in elemente),
+        sum(1 for e in elemente if e["varianten"])))
+    if kern_bericht:
+        print("davon von Hand entschieden (redaktion.json 'kern'): {}"
+              .format(kern_bericht.get("von_hand", 0)))
+
 
 def main():
     vergeben = set()
@@ -1233,6 +1901,9 @@ def main():
     elemente = []
     elemente += lade_eigene(vergeben)
     print("  eigene Ideen:        {}".format(len(elemente)))
+    vorher = len(elemente)
+    elemente += lade_rahmen(vergeben)
+    print("  Rahmen und Methoden: {}".format(len(elemente) - vorher))
     vorher = len(elemente)
     elemente += lade_probenbuch(vergeben)
     print("  DPB-Probenbuch:      {}".format(len(elemente) - vorher))
@@ -1303,6 +1974,16 @@ def main():
         print("\n{} Materialangaben des Inspirators als abgeschnitten markiert"
               .format(abgeschnitten))
 
+    # Zwei Infobox-Felder des Spielewikis, die der Import nicht ins Schema
+    # übernimmt ("Ort" = Platzbedarf, "Dauer" im Originalwortlaut). Fehlen die
+    # Rohdaten, bleibt das Verzeichnis leer und "platz" kommt nur aus dem Text.
+    infobox = lade_spielewiki_infobox()
+    if infobox:
+        print("\nSpielewiki-Infobox: Ort/Dauer von {} Seiten gelesen".format(len(infobox)))
+    else:
+        print("\nHinweis: {} fehlt – 'platz' und 'hosensackspiel' nur aus dem Text."
+              .format(SPIELEWIKI_ROH))
+
     # Bereich und Umfang festlegen. Die Quellen, die ihren Bereich kennen,
     # haben ihn schon in "_bereich" hinterlegt; für den Rest entscheidet
     # die Themen-Abstimmung.
@@ -1319,8 +2000,12 @@ def main():
         # Ein Baustein, der eine Stunde und länger dauert, füllt den Abend
         if element["umfang"] == "baustein" and element["dauer_min"] >= 60:
             element["umfang"] = "ganzer_abend"
-        element["slots"] = slots_fuer(element["bereich"], element["umfang"],
-                                      element["kategorie"], element["dauer_min"])
+        # Elemente, die ihre Slots selbst mitbringen (rahmen-und-methoden.json),
+        # behalten sie: nur dort steht der Slot "eroeffnung", den slots_fuer()
+        # nicht vergeben kann.
+        if not element.get("_slots_fest"):
+            element["slots"] = slots_fuer(element["bereich"], element["umfang"],
+                                          element["kategorie"], element["dauer_min"])
         element["unterkategorie"] = bestimme_unterkategorie(element)
         # Redaktionelle Entscheidung schlägt die Automatik
         eintrag = bericht["nachtraeglich"].get(element["id"])
@@ -1334,16 +2019,22 @@ def main():
                     element["unterkategorie"] = bestimme_unterkategorie(element)
                 else:
                     element["kategorie"] = ""
-                element["slots"] = slots_fuer(element["bereich"], element["umfang"],
-                                              element["kategorie"], element["dauer_min"])
+                if not element.get("_slots_fest"):
+                    element["slots"] = slots_fuer(element["bereich"], element["umfang"],
+                                                  element["kategorie"], element["dauer_min"])
             elif eintrag.get("kategorie"):
                 element["kategorie"] = eintrag["kategorie"]
         # Die Achsen erst jetzt - nachdem der Bereich endgültig feststeht
         if element["bereich"] == "spiel":
             element.update(bestimme_spielachsen(element))
+            element.update(bestimme_weitere_achsen(element, infobox))
         else:
             element.update({"wirkung": [], "modus": "", "sozialform": "",
-                            "spielgeraet": [], "anforderung": []})
+                            "spielgeraet": [], "anforderung": [],
+                            "platz": "", "hosensackspiel": False, "uebt": [], "naehe": ""})
+        # Redaktion schlägt die Automatik - auch bei den neuen Achsen. Der
+        # vorhandene Mechanismus ("achsen" mit "felder") kann das schon, weil er
+        # beliebige Feldnamen durchreicht; er muss nur nach ihnen laufen.
         for feld, wert in bericht.get("achsen", {}).get(element["id"], {}).items():
             element[feld] = wert
         element.pop("element_typ", None)   # ersetzt durch bereich + umfang
@@ -1354,6 +2045,24 @@ def main():
           .format(gruppen, betroffen))
     if getrennt:
         print("  {} falsche Verknüpfung(en) laut Redaktion wieder gelöst".format(getrennt))
+
+    # Von Hand zusammengelegte Fassungen: das Hauptelement bekommt "varianten",
+    # die Varianten bleiben erhalten, kommen aber nie in die erste Reihe.
+    gelegt, varianten_ids, unbekannt_zusammen = wende_zusammenlegung_an(elemente, redaktion)
+    print("Zusammengelegt (redaktion.json 'zusammengelegt'): {} Gruppen, {} Varianten"
+          .format(gelegt, len(varianten_ids)))
+    if unbekannt_zusammen:
+        print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(
+            ", ".join(str(i) for i in unbekannt_zusammen)))
+
+    # Erste und zweite Reihe festlegen
+    kern_bericht, unbekannt_kern = bestimme_kern(elemente, redaktion, varianten_ids)
+    print("Kernsammlung: {} Elemente (davon {} Spiele, Ziel {}); zweite Reihe: {}".format(
+        kern_bericht["kern_gesamt"], kern_bericht["kern_spiele"], ZIEL_KERN,
+        len(elemente) - kern_bericht["kern_gesamt"]))
+    if unbekannt_kern:
+        print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(
+            ", ".join(str(i) for i in unbekannt_kern)))
 
     fehler = pruefe(elemente)
     if fehler:
@@ -1368,6 +2077,10 @@ def main():
     elemente.sort(key=lambda e: (BEREICHE.index(e["bereich"]), entschaerfe(e["titel"])))
 
     AUSGABE_JSON.parent.mkdir(parents=True, exist_ok=True)
+    # Arbeitsfelder, die nur im Lauf gebraucht werden, gehören nicht in die Ausgabe.
+    for element in elemente:
+        element.pop("_slots_fest", None)
+
     inhalt = {
         "meta": {
             "name": "Heimabend-Baukasten – Elemente",
@@ -1395,7 +2108,7 @@ def main():
         json.dump(elemente, datei, ensure_ascii=False, separators=(",", ":"))
         datei.write(";\n")
 
-    statistik(elemente)
+    statistik(elemente, kern_bericht, gelegt)
     print("\nGeschrieben:")
     print("  {}".format(AUSGABE_JSON))
     print("  {}".format(AUSGABE_JS))
