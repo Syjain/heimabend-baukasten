@@ -1,6 +1,9 @@
 # Eigene Ideen in der App erfassen (Entwurf)
 
-Stand: 03.09.2026 · noch nicht gebaut, erst zur Entscheidung
+Stand: 03.09.2026 · **gebaut in der Nacht zum 09.09.2026** – beide Stufen stehen
+in der App. Was tatsächlich anders gebaut wurde als hier entworfen, steht unten
+unter „Was beim Bauen anders kam". Das Datenmodell hat sich seit dem Entwurf
+geändert (`element_typ` ist weg, dafür `bereich` und `umfang`).
 
 ## Das Problem
 
@@ -146,3 +149,27 @@ können? Mit dem Weg oben geht das über die gesicherten Dateien, die jemand
 einsammelt und ins Projekt legt. Bequemer wäre es mit einem kleinen Server –
 das wäre aber ein anderes Projekt und würde die Regel „eine statische Datei,
 kein Build-Schritt" aus `CLAUDE.md` brechen.
+
+
+---
+
+## Was beim Bauen anders kam (09.09.2026)
+
+- **„Art" gibt es nicht mehr.** Der Entwurf fragt Spiel/Probe/Aktivität/Projekt ab;
+  das Schema kennt seit dem 03.09. `bereich` (sieben Werte) und `umfang`. Das Feld
+  heißt jetzt „Worum geht es", und `umfang` wird gar nicht gefragt, sondern aus der
+  Dauer abgeleitet – genau wie `build.py` es rechnet (ab 60 Minuten: ganzer Abend).
+- **Die neun Spiel-Achsen fragt das Formular nicht ab.** Sie bleiben leer, was im
+  Schema „nicht erkennbar" heißt, und `build.py` leitet sie beim Einbauen aus dem
+  Text ab. `spielgeraet` und `hosensackspiel` rechnet die App schon selbst aus
+  Material, Vorbereitung und Dauer.
+- **Zu tippen sind zwei Zeilen:** Titel und Beschreibung. Dauer, Bereich und Ort
+  sind vorbelegt, alles Weitere steckt in „Mehr Angaben – alles freiwillig".
+- **Selbst erfasste Ideen sind immer `kern: true`** und verschwinden nie hinter dem
+  Schalter „geprüfte Auswahl".
+- **Beim Doppelklick auf `index.html` (`file://`)** lassen manche Browser den
+  Download nicht zu und sagen nichts dazu. Die App warnt dort von sich aus und
+  klappt das Textfeld zum Herauskopieren gleich auf.
+- **Beim Einlesen wird nichts stillschweigend überschrieben:** Der Dialog zeigt
+  vorher, wie viele Einträge neu sind, wie viele schon im Browser stehen und wie
+  viele `build.py` bereits eingebaut hat.

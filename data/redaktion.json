@@ -1928,5 +1928,14 @@
       "kern": false,
       "grund": "Die Quelle beschreibt ausdrücklich die Fassung für den Online-Call und verlangt von allen eine eingeschaltete Kamera. Im Heim spielt man einfach Schere Stein Papier."
     }
+  ],
+  "achsen": [
+    {
+      "id": "sw-ha-ha-ha",
+      "felder": {
+        "naehe": "hoch"
+      },
+      "grund": "Alle legen den Kopf auf den Bauch der nächsten Person. Die Textregel für 'naehe' greift hier nicht, weil kein Wort aus der Berührungsliste vorkommt - gefunden in der Stichprobe vom 08.09.2026."
+    }
   ]
 }

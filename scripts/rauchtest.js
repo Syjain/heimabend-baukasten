@@ -12,7 +12,9 @@
 
    Achtung: Der Test verstellt unterwegs Filter und würfelt den Plan neu.
    Am Ende setzt er alles zurück, aber ein gespeicherter Plan geht dabei verloren –
-   und ebenso die gemerkte Einstellung "geprüfte Auswahl / ganze Sammlung". */
+   und ebenso die gemerkte Einstellung "geprüfte Auswahl / ganze Sammlung".
+   Die eigenen Ideen bleiben unangetastet: Der Test legt zwar eine an, sichert
+   aber vorher den Speicherstand und stellt ihn am Ende wieder her. */
 (function () {
   var ergebnisse = [];
   function pruefe(name, bedingung, zusatz) {
@@ -530,6 +532,145 @@
   plan = leererPlan(); zeichnePlan();
   zeigeAnsicht("bausteine");
   zuruecksetzen();
+
+  // --- Eigene Ideen (Stufe 1 und 2) ---
+  // Der Test legt eine Idee an und räumt sie am Ende wieder weg: der
+  // Browserspeicher des Nutzers sieht hinterher aus wie vorher.
+  var gemerkteIdeen = null;
+  try { gemerkteIdeen = localStorage.getItem(EIGENE_SPEICHER); } catch (f) { /* egal */ }
+
+  zuruecksetzen();
+  var pruefTitel = "Rauchtest-Idee (wird wieder gelöscht)";
+  oeffneIdeenForm(null);
+  document.getElementById("iTitel").value = pruefTitel;
+  document.getElementById("iBeschreibung").value =
+    "Nur zum Prüfen der eigenen Ideen. Diese Idee legt der Rauchtest an und " +
+    "entfernt sie am Ende wieder.";
+  document.getElementById("iDauerVon").value = "10";
+  document.getElementById("iDauerBis").value = "15";
+  document.getElementById("iMaterial").value = "Seil";
+  document.getElementById("iAutor").value = "Rauchtest";
+  document.getElementById("iSpeichern").click();
+  var meine = EIGENE_IDEEN.filter(function (e) { return e.titel === pruefTitel; });
+  pruefe("eigene Idee lässt sich anlegen", meine.length === 1, EIGENE_IDEEN.length + " im Speicher");
+  var eigenId = meine.length ? meine[0].id : "";
+  pruefe("eigene Idee steht danach in der Liste",
+         gefiltert.some(function (e) { return e.id === eigenId; }), gefiltert.length);
+  pruefe("eigene Idee trägt die Plakette 'eigene Idee'",
+         document.getElementById("liste").innerHTML.indexOf(">eigene Idee<") > -1);
+  pruefe("eigene Idee trägt Quelle und Lizenz",
+         !!NACH_ID[eigenId] && NACH_ID[eigenId].quelle.lizenz === "CC BY-SA 4.0" &&
+         NACH_ID[eigenId].quelle.autor === "Rauchtest");
+  pruefe("Slots werden wie in build.py abgeleitet",
+         !!NACH_ID[eigenId] &&
+         NACH_ID[eigenId].slots.join(",") === "einstieg,hauptteil,abschluss",
+         NACH_ID[eigenId] ? NACH_ID[eigenId].slots.join(",") : "-");
+
+  zuruecksetzen();
+  document.getElementById("suche").value = "Rauchtest-Idee"; aktualisiere();
+  pruefe("eigene Idee wird von der Suche gefunden",
+         gefiltert.some(function (e) { return e.id === eigenId; }), gefiltert.length);
+  zuruecksetzen();
+
+  // Neuladen: genau das, was beim Start passiert – aus dem Speicher lesen
+  ladeEigeneIdeen(); setzeAlle(); aktualisiere();
+  pruefe("eigene Idee übersteht das Neuladen",
+         !!NACH_ID[eigenId] && NACH_ID[eigenId].titel === pruefTitel);
+
+  // Der Schalter darf eigene Ideen nie ausblenden
+  setzeSammlung(true);
+  pfad = leererPfad(); pfad.eigene = true; pfad.unterkategorie = "__alle__";
+  aktualisiere();
+  pruefe("eigene Ideen bleiben in der geprüften Auswahl sichtbar",
+         gefiltert.some(function (e) { return e.id === eigenId; }), gefiltert.length);
+  setzeSammlung(false);
+  zuruecksetzen();
+
+  // Bearbeiten
+  oeffneIdeenForm(NACH_ID[eigenId]);
+  document.getElementById("iDauerBis").value = "30";
+  document.getElementById("iTipps").value = "Nachher aufräumen nicht vergessen.";
+  document.getElementById("iSpeichern").click();
+  pruefe("Bearbeiten wirkt und behält die ID",
+         !!NACH_ID[eigenId] && NACH_ID[eigenId].dauer_max === 30 &&
+         NACH_ID[eigenId].tipps.length > 0,
+         NACH_ID[eigenId] ? NACH_ID[eigenId].dauer_max + " Min" : "weg");
+
+  // In den Plan legen – mit Quelle und Lizenz im Plan-Text
+  plan = leererPlan(); zeichnePlan();
+  inDenPlan(NACH_ID[eigenId], "haupt");
+  pruefe("eigene Idee lässt sich in den Plan legen", plan.haupt[0] === eigenId);
+  pruefe("eigene Idee steht mit Quelle und Lizenz im Plan-Text",
+         planAlsText().indexOf(pruefTitel) > -1 &&
+         planAlsText().indexOf("Quelle: eigene Idee · CC BY-SA 4.0") > -1);
+  plan = leererPlan(); zeichnePlan();
+  zeigeAnsicht("bausteine");
+
+  // Stufe 2: sichern und wieder einlesen
+  var gesichert = JSON.stringify(ideenAlsDatei());
+  pruefe("gesicherte Datei hat meta und elemente",
+         !!JSON.parse(gesichert).meta && Array.isArray(JSON.parse(gesichert).elemente));
+  loescheEigeneIdee(eigenId);
+  pruefe("Löschen entfernt die Idee",
+         !NACH_ID[eigenId] && !EIGENE_IDEEN.some(function (e) { return e.id === eigenId; }));
+  verarbeiteIdeenDatei("das ist kein JSON");
+  pruefe("kaputte Datei ändert nichts",
+         !NACH_ID[eigenId] && !document.getElementById("ideenDialog").hidden);
+  schliesseUeberlagerung(document.getElementById("ideenDialog"), true);
+  verarbeiteIdeenDatei(gesichert);
+  var uebernehmen = document.getElementById("einlesenUebernehmen");
+  pruefe("Einlesen fragt erst, bevor es etwas übernimmt",
+         !!uebernehmen &&
+         document.getElementById("ideenDialogInhalt").textContent.indexOf("kommen dazu") > -1);
+  if (uebernehmen) uebernehmen.click();
+  pruefe("gesicherte Datei lässt sich wieder einlesen",
+         !!NACH_ID[eigenId] && NACH_ID[eigenId].titel === pruefTitel);
+  pruefe("zweites Einlesen legt nichts doppelt an",
+         (function () {
+           var vorher = EIGENE_IDEEN.length;
+           verarbeiteIdeenDatei(gesichert);
+           var text = document.getElementById("ideenDialogInhalt").textContent;
+           var knopf = document.getElementById("einlesenUebernehmen");
+           if (knopf) knopf.click();
+           else schliesseUeberlagerung(document.getElementById("ideenDialog"), true);
+           return EIGENE_IDEEN.length === vorher && text.indexOf("0 kommen dazu") > -1;
+         })(), EIGENE_IDEEN.length + " eigene Ideen");
+  if (!document.getElementById("ideenDialog").hidden) {
+    schliesseUeberlagerung(document.getElementById("ideenDialog"), true);
+  }
+
+  // Was passiert, wenn der Browserspeicher nicht mitmacht (privates Fenster,
+  // voller Speicher)? Nichts darf stillschweigend verlorengehen.
+  var echtesSetzen = localStorage.setItem.bind(localStorage);
+  var vorherAnzahl = EIGENE_IDEEN.length;
+  localStorage.setItem = function () { throw new Error("Speicher voll (nur ein Test)"); };
+  oeffneIdeenForm(null);
+  document.getElementById("iTitel").value = "Rauchtest-Speicherfehler";
+  document.getElementById("iBeschreibung").value =
+    "Diese Idee soll absichtlich nicht gespeichert werden können.";
+  document.getElementById("iSpeichern").click();
+  pruefe("Speicherfehler wird gemeldet, das Formular bleibt stehen",
+         !document.getElementById("ideenForm").hidden &&
+         !document.getElementById("iFehler").hidden &&
+         document.getElementById("iTitel").value === "Rauchtest-Speicherfehler");
+  pruefe("bei Speicherfehler steht der Text zum Herauskopieren da",
+         !!document.getElementById("iRettung") &&
+         document.getElementById("iRettung").value.length > 100);
+  pruefe("bei Speicherfehler wird nichts halb übernommen",
+         EIGENE_IDEEN.length === vorherAnzahl, EIGENE_IDEEN.length);
+  localStorage.setItem = echtesSetzen;
+  schliesseUeberlagerung(document.getElementById("ideenForm"), true);
+
+  // Aufräumen: den Speicherstand des Nutzers wiederherstellen
+  try {
+    if (gemerkteIdeen === null) localStorage.removeItem(EIGENE_SPEICHER);
+    else localStorage.setItem(EIGENE_SPEICHER, gemerkteIdeen);
+  } catch (f) { /* egal */ }
+  ladeEigeneIdeen(); setzeAlle(); zeichneIdeenStand();
+  pruefe("der Rauchtest räumt seine eigene Idee wieder weg", !NACH_ID[eigenId],
+         EIGENE_IDEEN.length + " eigene Ideen übrig");
+  zuruecksetzen();
+  zeichneFuss();
 
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);

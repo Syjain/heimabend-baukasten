@@ -643,6 +643,55 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   min-height: 1.2em; margin-top: var(--r2); font-weight: 600;
 }
 
+/* ------------------------------------------------------- Eigene Ideen */
+/* Plakette auf der Karte: eine eigene Idee soll sofort als solche zu
+   erkennen sein, sonst weiß man beim Stöbern nicht, was aus der Sammlung
+   kommt und was man selbst eingetragen hat. Glut statt Tanne, damit sie
+   sich von der Bereichs-Plakette unterscheidet. */
+.merkmal.eigen {
+  background: var(--glut-leicht); border-color: transparent;
+  color: var(--glut); font-weight: 700;
+}
+/* Zwei Knöpfe nebeneinander (sichern/einlesen) – am Handy dürfen sie umbrechen */
+.werkzeuge { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
+.werkzeuge .knopf { flex: 1 1 auto; text-align: center; }
+.hinweis { font-size: .74rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4; }
+
+/* Das Formular. Mobil zuerst: eine Spalte, große Felder, und alles außer
+   den fünf Pflichtangaben steckt in einem zugeklappten Kasten. */
+.formular { display: grid; gap: var(--r4); }
+/* Nur die direkten Felder – die Haken in .hakenreihe bleiben klein */
+.formular .feld > input, .formular .feld > textarea, .formular .feld > select {
+  padding: 11px 12px; min-height: 46px; font-size: 16px; width: 100%;
+  border: 1px solid var(--linie-stark); border-radius: var(--rund-klein);
+  background: var(--karte); -webkit-appearance: none;
+}
+.formular .feld textarea { min-height: 150px; line-height: 1.5; resize: vertical; }
+.formular .feld .nebentext { font-size: .74rem; color: var(--leise);
+  font-family: var(--schrift); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.formular .zweispaltig { display: grid; grid-template-columns: 1fr 1fr; gap: var(--r3); }
+.formular details.filter { background: none; }
+.formular details.filter > summary { padding-inline: var(--r3); }
+.formular .filter-raster { grid-template-columns: minmax(0,1fr); padding-inline: var(--r3); }
+.hakenreihe { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.hakenreihe label {
+  display: flex; align-items: center; gap: 7px; min-height: 44px;
+  font-size: .9rem; font-family: var(--schrift); text-transform: none;
+  letter-spacing: 0; font-weight: 400; color: var(--text);
+}
+.hakenreihe input { width: 22px; height: 22px; flex: none; accent-color: var(--akzent); }
+.formknoepfe { display: flex; flex-wrap: wrap; gap: var(--r2); margin-top: var(--r2); }
+.formknoepfe .knopf { flex: 1 1 auto; text-align: center; }
+.kasten.warnung { border: 1px solid var(--warn); background: var(--warn-leicht); color: var(--text); }
+.kasten.warnung h4 { color: var(--warn); }
+/* Rückfall, wenn der Browser den Download nicht zulässt (kommt bei file:// vor) */
+.ausgabe {
+  width: 100%; min-height: 160px; padding: var(--r3); margin-top: var(--r2);
+  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  background: var(--grund); font-family: var(--schrift-daten);
+  font-size: 14px; line-height: 1.45; white-space: pre; overflow: auto;
+}
+
 /* ----------------------------------------------------------------- Fußzeile */
 .fuss {
   margin-top: var(--r6); padding-top: var(--r5);
@@ -672,6 +721,10 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
       <input type="search" id="suche" placeholder="Suchen …" autocomplete="off"
              aria-label="Bausteine durchsuchen">
       <button class="knopf" id="zufallKnopf">Zufall</button>
+      <!-- Kurze Beschriftung, weil am Handy neben Suchfeld und Zufall kaum
+           Platz ist; der volle Name steht im aria-label. -->
+      <button class="knopf" id="ideeNeu" aria-label="Eigene Idee erfassen"
+              title="Eigene Idee erfassen">+ Idee</button>
     </div>
 
     <!-- Umfang der Sammlung. Steht offen unter der Suche, weil er jede Zahl
@@ -770,6 +823,17 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
         <div class="filter-fuss">
           <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
         </div>
+        <!-- Sichern und Einlesen stehen hier, weil sie selten gebraucht werden
+             und nichts an der Ansicht ändern. Die Datei hat dasselbe Format wie
+             data/eigene/rahmen-und-methoden.json, damit build.py sie ohne
+             Umweg lesen kann. -->
+        <div class="abschnitt marke">Eigene Ideen</div>
+        <div class="werkzeuge">
+          <button class="knopf klein" id="ideenSichern">Meine Ideen sichern</button>
+          <button class="knopf klein" id="ideenEinlesen">Datei einlesen</button>
+          <input type="file" id="ideenDatei" accept="application/json,.json" hidden>
+        </div>
+        <p class="hinweis" id="ideenStand" style="grid-column:1/-1"></p>
       </div>
     </details>
 
@@ -928,6 +992,133 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   </div>
 </div>
 
+<!-- ============================================ Eigene Idee erfassen -->
+<div class="ueberlagerung" id="ideenForm" hidden role="dialog" aria-modal="true"
+     aria-labelledby="ideenFormTitel">
+  <div class="ueber-kopf">
+    <button id="ideenAbbrechen">‹ Zurück</button>
+    <span class="titel" id="ideenFormTitel">Eigene Idee</span>
+  </div>
+  <div class="ueber-inhalt">
+    <div class="kasten warnung" id="iFehler" hidden>
+      <h4>Bitte noch ergänzen</h4><div id="iFehlerText"></div>
+    </div>
+    <div class="formular">
+      <!-- Pflicht sind nur diese fünf Angaben; Art, Kategorie und Dauer sind
+           schon ausgefüllt. Alles Weitere steckt im Klappfeld darunter. -->
+      <div class="feld">
+        <label for="iTitel">Titel</label>
+        <input type="text" id="iTitel" autocomplete="off" maxlength="120">
+      </div>
+      <div class="feld">
+        <label for="iBereich">Worum geht es</label>
+        <select id="iBereich"></select>
+      </div>
+      <div class="feld" id="iKategorieFeld">
+        <label for="iKategorie">Kategorie</label>
+        <select id="iKategorie"></select>
+      </div>
+      <div class="zweispaltig">
+        <div class="feld">
+          <label for="iDauerVon">Dauer von <span class="nebentext">Min</span></label>
+          <input type="number" id="iDauerVon" inputmode="numeric" min="1" max="600" value="10">
+        </div>
+        <div class="feld">
+          <label for="iDauerBis">bis <span class="nebentext">Min</span></label>
+          <input type="number" id="iDauerBis" inputmode="numeric" min="1" max="600" value="20">
+        </div>
+      </div>
+      <div class="feld">
+        <label for="iBeschreibung">Beschreibung <span class="nebentext">Ablauf und Regeln</span></label>
+        <textarea id="iBeschreibung"></textarea>
+      </div>
+
+      <details class="filter" id="iMehr">
+        <summary><span>Mehr Angaben</span><span>alles freiwillig</span></summary>
+        <div class="filter-raster">
+          <div class="feld">
+            <label for="iKurz">Kurztext <span class="nebentext">leer = erster Satz</span></label>
+            <input type="text" id="iKurz" autocomplete="off" maxlength="240">
+          </div>
+          <div class="feld" id="iUnterFeld">
+            <label for="iUnter">Unterkategorie</label>
+            <select id="iUnter"></select>
+          </div>
+          <div class="feld">
+            <label>Altersstufen <span class="nebentext">leer = alle Stufen</span></label>
+            <div class="hakenreihe" id="iStufen"></div>
+          </div>
+          <div class="feld">
+            <label for="iOrt">Ort</label>
+            <select id="iOrt">
+              <option value="beides">drinnen &amp; draußen</option>
+              <option value="drinnen">drinnen</option>
+              <option value="draussen">draußen</option>
+            </select>
+          </div>
+          <div class="feld">
+            <label for="iMaterial">Material <span class="nebentext">mit Komma getrennt</span></label>
+            <input type="text" id="iMaterial" autocomplete="off">
+          </div>
+          <div class="feld">
+            <label for="iVorbereitung">Vorbereitung</label>
+            <select id="iVorbereitung">
+              <option value="gering">gering</option>
+              <option value="mittel">mittel</option>
+              <option value="hoch">hoch</option>
+            </select>
+          </div>
+          <div class="zweispaltig">
+            <div class="feld">
+              <label for="iGruppeVon">Gruppe ab <span class="nebentext">Personen</span></label>
+              <input type="number" id="iGruppeVon" inputmode="numeric" min="1" max="200">
+            </div>
+            <div class="feld">
+              <label for="iGruppeBis">bis <span class="nebentext">Personen</span></label>
+              <input type="number" id="iGruppeBis" inputmode="numeric" min="1" max="200">
+            </div>
+          </div>
+          <div class="feld">
+            <label for="iTipps">Tipps für die Spielleitung</label>
+            <textarea id="iTipps" style="min-height:100px"></textarea>
+          </div>
+          <div class="feld">
+            <label>Platz im Heimabend <span class="nebentext">wird aus Art und Dauer abgeleitet</span></label>
+            <div class="hakenreihe" id="iSlots"></div>
+          </div>
+          <div class="feld">
+            <label for="iAutor">Wer hat sie aufgeschrieben <span class="nebentext">freiwillig, erscheint als Quelle</span></label>
+            <input type="text" id="iAutor" autocomplete="off" maxlength="80">
+          </div>
+        </div>
+      </details>
+
+      <div class="formknoepfe">
+        <button class="knopf stark" id="iSpeichern">Speichern</button>
+        <button class="knopf" id="iVerwerfen">Abbrechen</button>
+      </div>
+
+      <div class="kasten quelle">
+        <h4>Quelle und Lizenz</h4>
+        Deine Idee wird als eigener Text unter <strong>CC BY-SA 4.0</strong> geführt.
+        Schreib sie deshalb mit eigenen Worten: Texte aus fremden Sammlungen
+        dürfen hier nicht hinein.
+        Gespeichert wird nur in diesem Browser – sichere sie regelmäßig als Datei.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================== Sichern und Einlesen (Rückmeldung) -->
+<div class="ueberlagerung" id="ideenDialog" hidden role="dialog" aria-modal="true"
+     aria-labelledby="ideenDialogTitel">
+  <div class="ueber-kopf">
+    <button id="ideenDialogZurueck">‹ Zurück</button>
+    <span class="titel" id="ideenDialogTitel">Eigene Ideen</span>
+  </div>
+  <div class="ueber-inhalt" id="ideenDialogInhalt"></div>
+</div>
+
 <script>
 "use strict";
 /* ==================================================================
@@ -1080,7 +1271,8 @@ var ALLE = [];
 // Object.create(null): sonst liefert NACH_ID["constructor"] ein Objekt der
 // Prototypkette und die Planansicht stürzt bei kaputtem Speicher ab.
 var NACH_ID = Object.create(null);
-var pfad = { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "" };
+var pfad = { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "",
+             eigene: false };
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
 
@@ -1380,6 +1572,9 @@ function passtZuFilter(e, f) {
 }
 
 function passtZuPfad(e, p) {
+  // Die Kachel "Eigene Ideen" ist eine Abkürzung wie "Zum Einstieg":
+  // derselbe Pfad, nur auf die selbst erfassten Bausteine eingeschränkt.
+  if (p.eigene && !e._eigen) return false;
   if (p.slot && !hat(e.slots, p.slot)) return false;
   if (p.bereich && e.bereich !== p.bereich) return false;
   if (p.umfang && e.umfang !== p.umfang) return false;
@@ -1465,6 +1660,9 @@ function karteHtml(e, zielzeit, kontext) {
       wo.unterkategorie !== e.unterkategorie) {
     merkmale += '<span class="merkmal">' + schuetze(unterText(e.unterkategorie)) + "</span>";
   }
+  // Selbst erfasst: das muss auf der Karte stehen, sonst sieht eine eigene
+  // Idee im Stöbern aus wie ein geprüfter Baustein aus einer Sammlung.
+  if (e._eigen) merkmale += '<span class="merkmal eigen">eigene Idee</span>';
   merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
   if (ohneAltersangabe(e)) merkmale += '<span class="merkmal offen">Alter offen</span>';
@@ -1544,7 +1742,8 @@ function baueKachel(name, anzahl, beiKlick, gross, zeichen) {
 }
 
 function leererPfad() {
-  return { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "" };
+  return { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "",
+           eigene: false };
 }
 
 function zeichnePfad() {
@@ -1559,6 +1758,12 @@ function zeichnePfad() {
     }
     ziel[feld] = wert;
     teile.push({ name: name, ziel: ziel });
+  }
+  if (pfad.eigene) {
+    var eigenZiel = leererPfad();
+    eigenZiel.eigene = true;
+    eigenZiel.unterkategorie = "__alle__";
+    teile.push({ name: "Eigene Ideen", ziel: eigenZiel });
   }
   if (pfad.slot) {
     stufe(pfad.slot === "einstieg" ? "Zum Einstieg" : "Zum Abschluss", "slot", pfad.slot);
@@ -1619,7 +1824,7 @@ function hatKategorien(bereich) {
 function zeichneSammlung(f) {
   var pfadJetzt = {
     bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
-    slot: pfad.slot,
+    slot: pfad.slot, eigene: pfad.eigene,
     unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
   };
   var nurErste = 0, insgesamt = 0;
@@ -1788,6 +1993,20 @@ function zeigeKacheln(behaelter, ebene, f) {
         }, true));
       }
     }
+    // Die eigenen Ideen liegen zwischen 1075 anderen Bausteinen – ohne diese
+    // Abkürzung findet man sie nur über die Suche nach dem eigenen Titel.
+    var eigenPfad = leererPfad();
+    eigenPfad.eigene = true;
+    var meine = sammle(f, eigenPfad);
+    if (meine.length) {
+      behaelter.appendChild(baueKachel("Eigene Ideen", meine.length, function () {
+        pfad = leererPfad();
+        pfad.eigene = true;
+        pfad.unterkategorie = "__alle__";
+        window.scrollTo(0, 0);
+        aktualisiere();
+      }, true));
+    }
   }
   // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
   if (ebene !== "bereich") {
@@ -1805,7 +2024,7 @@ function zeigeKacheln(behaelter, ebene, f) {
 function zeigeListe(f) {
   var suchPfad = {
     bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
-    slot: pfad.slot,
+    slot: pfad.slot, eigene: pfad.eigene,
     unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
   };
   gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche, f.stufe);
@@ -1861,6 +2080,16 @@ function zeigeDetail(e) {
   var kurzAnfang = (e.kurz || "").replace(/\s+/g, " ").slice(0, 60);
   if (kurzAnfang && kurzAnfang !== anfang) {
     html += '<p class="anriss">' + schuetze(e.kurz) + "</p>";
+  }
+
+  // Eigene Ideen lassen sich jederzeit ändern und entfernen. Beides steht
+  // ganz oben: wer die Idee öffnet, will meistens genau das.
+  if (e._eigen) {
+    html += '<div class="planzeile"><span class="chiptitel">Eigene Idee</span>' +
+            '<div class="chips">' +
+            '<button type="button" class="knopf klein" id="ideeBearbeiten">Bearbeiten</button>' +
+            '<button type="button" class="knopf klein" id="ideeLoeschen">Löschen</button>' +
+            "</div></div>";
   }
 
   // Ohne diese Zeile sind Stöbern und Planen zwei getrennte Apps: man findet
@@ -2015,6 +2244,32 @@ function zeigeDetail(e) {
   $("detailInhalt").innerHTML = html;
   $("detailInhalt").scrollTop = 0;
 
+  if (e._eigen) {
+    $("ideeBearbeiten").addEventListener("click", function () { oeffneIdeenForm(e); });
+    // Zwei Schritte statt eines Systemdialogs: der erste Druck fragt nach,
+    // der zweite löscht. Nach ein paar Sekunden fällt der Knopf zurück,
+    // damit nicht später aus Versehen der zweite Druck kommt.
+    var loeschKnopf = $("ideeLoeschen");
+    var gefragt = false, rueckfallUhr = null;
+    loeschKnopf.addEventListener("click", function () {
+      var knopf = this;
+      if (!gefragt) {
+        gefragt = true;
+        knopf.textContent = "Wirklich löschen?";
+        knopf.className = "knopf klein stark";
+        clearTimeout(rueckfallUhr);
+        rueckfallUhr = setTimeout(function () {
+          gefragt = false;
+          knopf.textContent = "Löschen";
+          knopf.className = "knopf klein";
+        }, 6000);
+        return;
+      }
+      clearTimeout(rueckfallUhr);
+      loescheEigeneIdee(e.id);
+    });
+  }
+
   var wortKnoepfe = $("detailInhalt").querySelectorAll(".chip[data-wort]");
   for (var wk = 0; wk < wortKnoepfe.length; wk++) {
     wortKnoepfe[wk].addEventListener("click", function () {
@@ -2101,6 +2356,13 @@ function inDenPlan(e, schluessel) {
 
 /* -------------------------------------------------- Überlagerungen */
 var letzterAusloeser = null;
+/* Welche Überlagerungen offen sind, in der Reihenfolge des Öffnens. Seit
+   es das Formular für eigene Ideen gibt, können zwei übereinander liegen
+   (Detailansicht -> Bearbeiten); die Zurück-Taste schließt dann die obere. */
+var stapelOffen = [];
+/* Merkt sich, dass wir selbst history.back() ausgelöst haben – sonst würde
+   der eigene Rücksprung im popstate gleich noch eine Überlagerung schließen. */
+var eigenerRuecksprung = false;
 
 function oeffneUeberlagerung(knoten) {
   var warOffen = !knoten.hidden;
@@ -2114,13 +2376,18 @@ function oeffneUeberlagerung(knoten) {
   var ersterKnopf = knoten.querySelector("button");
   if (ersterKnopf) ersterKnopf.focus();
   // Damit die Zurück-Taste am Handy die Überlagerung schließt und nicht die App
-  if (!warOffen) { try { history.pushState({ ueberlagerung: knoten.id }, ""); } catch (f) { /* egal */ } }
+  if (!warOffen) {
+    stapelOffen.push(knoten.id);
+    try { history.pushState({ ueberlagerung: knoten.id }, ""); } catch (f) { /* egal */ }
+  }
 }
 
 function schliesseUeberlagerung(knoten, ausDemVerlauf) {
   if (knoten.hidden) return;
   knoten.hidden = true;
-  if ($("detail").hidden && $("auswahl").hidden) {
+  var stelle = stapelOffen.indexOf(knoten.id);
+  if (stelle > -1) stapelOffen.splice(stelle, 1);
+  if (!stapelOffen.length) {
     document.body.style.overflow = "";
     document.querySelector("header.kopf").inert = false;
     document.querySelector("main.huelle").inert = false;
@@ -2128,12 +2395,16 @@ function schliesseUeberlagerung(knoten, ausDemVerlauf) {
   if (letzterAusloeser && letzterAusloeser.focus) {
     try { letzterAusloeser.focus(); } catch (f) { /* egal */ }
   }
-  if (!ausDemVerlauf) { try { history.back(); } catch (f) { /* egal */ } }
+  if (!ausDemVerlauf) {
+    eigenerRuecksprung = true;
+    try { history.back(); } catch (f) { eigenerRuecksprung = false; }
+  }
 }
 
 window.addEventListener("popstate", function () {
-  if (!$("detail").hidden) schliesseUeberlagerung($("detail"), true);
-  else if (!$("auswahl").hidden) schliesseUeberlagerung($("auswahl"), true);
+  if (eigenerRuecksprung) { eigenerRuecksprung = false; return; }
+  var oben = stapelOffen[stapelOffen.length - 1];
+  if (oben) schliesseUeberlagerung($(oben), true);
 });
 
 /* ------------------------------------------------------ Ansicht: Plan */
@@ -2787,6 +3058,782 @@ function zeichneAuswahl() {
   $("auswahlMehr").textContent = "Weitere anzeigen (" + (auswahlListe.length - bis) + ")";
 }
 
+/* ==================================================================
+   Eigene Ideen
+
+   Eine eigene Idee ist ein ganz normales Element nach data/SCHEMA.md –
+   deshalb erscheint sie ohne Sonderbehandlung in Suche, Kacheln, Filtern,
+   Zufall und Planer. Sie liegt im localStorage dieses Browsers, nicht auf
+   einem Server. Jeder Zugriff steht in try/catch: im privaten Fenster und
+   bei vollem Speicher wirft localStorage, und dann darf kein Text
+   stillschweigend verlorengehen.
+
+   Zwei Stufen, wie in docs/eigene-ideen-erfassen.md beschrieben:
+   1. erfassen und benutzen (hier im Browser)
+   2. sichern als Datei -> data/eigene/meine-ideen.json -> build.py
+   ================================================================== */
+var EIGENE_SPEICHER = "heimabend-eigene-ideen";
+var EIGENE_LIZENZ = "CC BY-SA 4.0";
+var EIGENE_QUELLNAME = "eigene Idee";
+var EIGENE_DATEINAME = "meine-ideen.json";
+
+/* Was aus data/elemente.json kommt, und was der Browser dazutut. */
+var DATEI_ELEMENTE = [];
+var DATEI_IDS = Object.create(null);
+var EIGENE_IDEEN = [];
+/* Zeitpunkte in Millisekunden: wann zuletzt etwas geändert und wann zuletzt
+   als Datei gesichert wurde. Daraus wird der Hinweis "noch nicht gesichert". */
+var eigeneStaende = { geaendert: 0, gesichert: 0 };
+
+var KATEGORIEN_JE_BEREICH = {
+  spiel: ["ankommen", "bewegung_drinnen", "bewegung_draussen", "gelaende",
+          "kreis", "ruhig", "kooperation", "abschluss"],
+  pfadfindertechnik: ["knoten", "karte_kompass", "feuer", "erste_hilfe",
+                      "zelte_bauten", "natur", "bundeskunde", "fahrtentechnik", "sonstiges"]
+};
+var UNTERKATEGORIEN = ["fangen", "ball", "geschick", "kampf", "wettkampf", "toben",
+  "verstecken", "gelaende", "reaktion", "konzentration", "denken", "merken", "namen",
+  "vertrauen", "team", "reflexion", "singen", "darstellen", "tisch", "ruhig",
+  "warmup", "sonstiges"];
+/* Der Eröffnungskreis fehlt hier mit Absicht: dort stehen Rituale, keine
+   selbst erfassten Spiele – und slots_fuer() in build.py vergibt ihn auch nicht. */
+var FORM_SLOTS = [["einstieg", "Einstieg"], ["hauptteil", "Hauptteil"],
+                  ["abschluss", "Abschluss"]];
+/* Aus dem Material auf das Spielgerät schließen – dieselben Wörter wie
+   GERAET_MATERIAL in scripts/build.py, damit App und Build gleich denken. */
+var GERAET_MATERIAL = [
+  ["ball", /b[äa]ll|frisbee|luftballon/],
+  ["seil", /seil|schnur|reepschn|band\b|wolle|faden/],
+  ["tuch", /tuch|tücher|augenbinde|halstuch|decke/],
+  ["stuehle", /stuhl|stühle|sessel|bank\b|bänke/],
+  ["papier_stift", /papier|zettel|stift|flipchart|plakat|kärtchen|karteikarte/],
+  ["karten_wuerfel", /spielkarten|kartenspiel|würfel|kartendeck|karten\b/],
+  ["musik", /musik|lied|gitarre|instrument|lautsprecher/]
+];
+var OHNE_MATERIAL = /^(kein(e|es)?|ohne material|nichts)$/i;
+
+/* ------------------------------------------------------------ Helfer */
+function heuteAlsText() {
+  var jetzt = new Date();
+  function zwei(zahl) { return (zahl < 10 ? "0" : "") + zahl; }
+  return jetzt.getFullYear() + "-" + zwei(jetzt.getMonth() + 1) + "-" + zwei(jetzt.getDate());
+}
+function alsDatum(wert) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(String(wert || "")) ? String(wert) : heuteAlsText();
+}
+function deutschesDatum(millisekunden) {
+  var d = new Date(millisekunden);
+  function zwei(zahl) { return (zahl < 10 ? "0" : "") + zahl; }
+  return zwei(d.getDate()) + "." + zwei(d.getMonth() + 1) + "." + d.getFullYear();
+}
+function ganzeZahl(wert, ersatz, klein, gross) {
+  var zahl = parseInt(wert, 10);
+  if (!(zahl >= klein && zahl <= gross)) return ersatz;
+  return zahl;
+}
+
+/**
+ * Wo im Heimabend passt die Idee? Wortgleich mit slots_fuer() in
+ * scripts/build.py – kurze Spiele in den Einstieg, alles in den Hauptteil,
+ * kurz und ruhig auch in den Abschluss.
+ */
+function slotsAbleiten(bereich, umfang, kategorie, dauerMin) {
+  if (umfang === "ganzer_abend") return ["hauptteil"];
+  if (bereich !== "spiel") return ["hauptteil"];
+  var slots = [];
+  if (kategorie === "ankommen" || dauerMin <= 10) slots.push("einstieg");
+  slots.push("hauptteil");
+  if (dauerMin <= 15 && (kategorie === "kreis" || kategorie === "ruhig" ||
+                         kategorie === "ankommen")) {
+    slots.push("abschluss");
+  }
+  return slots;
+}
+
+function spielgeraetAus(material) {
+  if (!material.length) return ["nichts"];
+  var text = material.join(" ").toLowerCase();
+  var geraet = [];
+  for (var i = 0; i < GERAET_MATERIAL.length; i++) {
+    if (GERAET_MATERIAL[i][1].test(text)) geraet.push(GERAET_MATERIAL[i][0]);
+  }
+  return geraet.length ? geraet : ["sonstiges"];
+}
+
+/** Erster Satz der Beschreibung – die Vorbelegung des Kurztextes. */
+function ersterSatz(text) {
+  var sauber = String(text || "").replace(/^#{1,4}\s*/gm, "").replace(/\*\*/g, "")
+    .replace(/^[-*>]\s*/gm, "").replace(/\s+/g, " ").trim();
+  var ende = sauber.search(/[.!?](\s|$)/);
+  var satz = ende > -1 ? sauber.slice(0, ende + 1) : sauber;
+  if (satz.length > 220) satz = satz.slice(0, 217).replace(/\s\S*$/, "") + " …";
+  return satz;
+}
+
+function macheEigeneId(titel) {
+  var kern = vereinfache(titel).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  if (!kern) kern = "idee";
+  return "mein-" + kern.slice(0, 40) + "-" + Date.now();
+}
+
+/** Kopie ohne die Hilfsfelder der App (_suchtext, _eigen …). */
+function ohneHilfsfelder(element) {
+  var sauber = {};
+  for (var name in element) {
+    if (Object.prototype.hasOwnProperty.call(element, name) && name.charAt(0) !== "_") {
+      sauber[name] = element[name];
+    }
+  }
+  return sauber;
+}
+
+/**
+ * Macht aus irgendetwas ein gültiges Element – oder null.
+ * Wird auf alles angewendet, was von außen kommt: aus dem Browserspeicher
+ * und aus einer eingelesenen Datei. Lieber einen Eintrag überspringen als
+ * die App mit kaputten Daten abstürzen lassen.
+ */
+function normalisiereIdee(roh) {
+  if (!roh || typeof roh !== "object") return null;
+  var id = String(roh.id || "").trim();
+  var titel = String(roh.titel || "").trim();
+  var beschreibung = String(roh.beschreibung || "").trim();
+  if (!id || !titel || beschreibung.length < 20) return null;
+
+  var bereich = BEREICH_TEXT[roh.bereich] ? roh.bereich : "gemeinschaft";
+  var kategorie = "";
+  if (KATEGORIEN_JE_BEREICH[bereich]) {
+    kategorie = KATEGORIEN_JE_BEREICH[bereich].indexOf(roh.kategorie) !== -1
+      ? roh.kategorie : KATEGORIEN_JE_BEREICH[bereich][0];
+  }
+  var dauerMin = ganzeZahl(roh.dauer_min, 10, 1, 600);
+  var dauerMax = Math.max(dauerMin, ganzeZahl(roh.dauer_max, dauerMin, 1, 600));
+  // Dieselbe Grenze wie in build.py: ab einer Stunde füllt es den Abend.
+  var umfang = (roh.umfang === "ganzer_abend" || dauerMin >= 60) ? "ganzer_abend" : "baustein";
+  var material = (Array.isArray(roh.material) ? roh.material : [])
+    .map(function (m) { return String(m).trim(); })
+    .filter(function (m) { return m && !OHNE_MATERIAL.test(m); });
+  var vorbereitung = ["gering", "mittel", "hoch"].indexOf(roh.vorbereitung) !== -1
+    ? roh.vorbereitung : "gering";
+  var slots = (Array.isArray(roh.slots) ? roh.slots : []).filter(function (s) {
+    return ["einstieg", "hauptteil", "abschluss"].indexOf(s) !== -1;
+  });
+  if (!slots.length) slots = slotsAbleiten(bereich, umfang, kategorie, dauerMin);
+  var istSpiel = bereich === "spiel";
+  var quelle = roh.quelle || {};
+
+  var element = {
+    id: id,
+    titel: titel,
+    bereich: bereich,
+    umfang: umfang,
+    kategorie: kategorie,
+    unterkategorie: (istSpiel && UNTERKATEGORIEN.indexOf(roh.unterkategorie) !== -1)
+      ? roh.unterkategorie : "",
+    slots: slots,
+    // Die Spiel-Achsen kann ein Formular nicht ehrlich beantworten. Leer bzw.
+    // "frei"/"ohne_gewinner" heißt im Schema "nicht erkennbar" – genau das
+    // trifft hier zu. build.py leitet sie beim Einbauen aus dem Text ab.
+    wirkung: [],
+    modus: istSpiel ? "ohne_gewinner" : "",
+    sozialform: istSpiel ? "frei" : "",
+    spielgeraet: istSpiel ? spielgeraetAus(material) : [],
+    anforderung: [],
+    platz: "",
+    hosensackspiel: istSpiel && !material.length && vorbereitung === "gering" && dauerMax <= 10,
+    uebt: [],
+    naehe: "",
+    altersstufen: (Array.isArray(roh.altersstufen) ? roh.altersstufen : [])
+      .filter(function (s) { return ALTERSSTUFEN.indexOf(s) !== -1; }),
+    dauer_min: dauerMin,
+    dauer_max: dauerMax,
+    ort: ORT_TEXT[roh.ort] ? roh.ort : "beides",
+    material: material,
+    vorbereitung: vorbereitung,
+    kurz: String(roh.kurz || "").trim() || ersterSatz(beschreibung),
+    beschreibung: beschreibung,
+    tipps: String(roh.tipps || "").trim(),
+    tags: ["eigene Idee"],
+    themen: [],
+    kern: true,          // eigene Ideen verschwinden nie hinter dem Schalter
+    varianten: [],
+    quelle: {
+      name: EIGENE_QUELLNAME,
+      url: "",
+      autor: String(quelle.autor || "").trim(),
+      lizenz: EIGENE_LIZENZ
+    },
+    erstellt: alsDatum(roh.erstellt),
+    geaendert: alsDatum(roh.geaendert)
+  };
+  var gruppeMin = ganzeZahl(roh.gruppe_min, 0, 1, 500);
+  var gruppeMax = ganzeZahl(roh.gruppe_max, 0, 1, 500);
+  if (gruppeMin) element.gruppe_min = gruppeMin;
+  if (gruppeMax && gruppeMax >= (gruppeMin || 1)) element.gruppe_max = gruppeMax;
+  return element;
+}
+
+/* ------------------------------------------------- Lesen und Speichern */
+function ladeEigeneIdeen() {
+  EIGENE_IDEEN = [];
+  eigeneStaende = { geaendert: 0, gesichert: 0 };
+  var roh = null;
+  try { roh = localStorage.getItem(EIGENE_SPEICHER); }
+  catch (fehler) { return; }        // privates Fenster: einfach ohne weitermachen
+  if (!roh) return;
+  try {
+    var daten = JSON.parse(roh);
+    var liste = (daten && Array.isArray(daten.elemente)) ? daten.elemente : [];
+    for (var i = 0; i < liste.length; i++) {
+      var element = normalisiereIdee(liste[i]);
+      if (element) EIGENE_IDEEN.push(element);   // Unbrauchbares überspringen
+    }
+    eigeneStaende.geaendert = Number(daten && daten.geaendert) || 0;
+    eigeneStaende.gesichert = Number(daten && daten.gesichert) || 0;
+  } catch (fehler) { /* kaputter Inhalt: lieber ohne als gar nicht starten */ }
+}
+
+/** Schreibt in den Browserspeicher. Gibt false zurück, wenn das nicht geht. */
+function speichereEigeneIdeen() {
+  try {
+    localStorage.setItem(EIGENE_SPEICHER, JSON.stringify({
+      version: 1,
+      geaendert: eigeneStaende.geaendert,
+      gesichert: eigeneStaende.gesichert,
+      elemente: EIGENE_IDEEN.map(ohneHilfsfelder)
+    }));
+    return true;
+  } catch (fehler) { return false; }
+}
+
+/** ALLE = was build.py geliefert hat + was im Browser liegt. */
+function setzeAlle() {
+  var meine = [];
+  for (var i = 0; i < EIGENE_IDEEN.length; i++) {
+    // Steckt dieselbe ID schon in der Datei, hat build.py die Idee eingebaut.
+    // Dann gewinnt die Datei, und die Kopie im Browser wird nicht angezeigt.
+    if (!DATEI_IDS[EIGENE_IDEEN[i].id]) {
+      EIGENE_IDEEN[i]._eigen = true;
+      meine.push(EIGENE_IDEEN[i]);
+    }
+  }
+  ALLE = DATEI_ELEMENTE.concat(meine);
+  NACH_ID = Object.create(null);
+  for (var k = 0; k < ALLE.length; k++) {
+    NACH_ID[ALLE[k].id] = ALLE[k];
+    bereiteVor(ALLE[k]);
+  }
+}
+
+/** Nach jeder Änderung an den eigenen Ideen: alles neu zeichnen. */
+function nachEigenenIdeen() {
+  setzeAlle();
+  zeichneIdeenStand();
+  aktualisiere();
+  zeichneFuss();
+  if (!$("ansichtPlanen").hidden) zeichnePlan();
+}
+
+/* --------------------------------------------------------- Das Formular */
+var ideeInArbeit = null;      // die Idee, die gerade bearbeitet wird (oder null)
+var slotsVonHand = false;     // hat jemand die Plätze selbst angehakt?
+
+function fuelleAuswahl(feld, werte, beschriftung) {
+  feld.innerHTML = "";
+  for (var i = 0; i < werte.length; i++) {
+    var eintrag = document.createElement("option");
+    eintrag.value = werte[i];
+    eintrag.textContent = beschriftung(werte[i]);
+    feld.appendChild(eintrag);
+  }
+}
+
+/** Die Kategorie hängt am Bereich – und die meisten Bereiche haben keine. */
+function fuelleKategorien(wert) {
+  var bereich = $("iBereich").value;
+  var werte = KATEGORIEN_JE_BEREICH[bereich];
+  $("iKategorieFeld").hidden = !werte;
+  $("iUnterFeld").hidden = bereich !== "spiel";
+  if (!werte) { $("iKategorie").innerHTML = ""; return; }
+  fuelleAuswahl($("iKategorie"), werte, function (k) { return KATEGORIE_TEXT[k] || k; });
+  $("iKategorie").value = werte.indexOf(wert) !== -1 ? wert : werte[0];
+}
+
+function formSlots() {
+  var haken = $("iSlots").querySelectorAll("input[data-slot]");
+  var slots = [];
+  for (var i = 0; i < haken.length; i++) {
+    if (haken[i].checked) slots.push(haken[i].getAttribute("data-slot"));
+  }
+  return slots;
+}
+function setzeFormSlots(slots) {
+  var haken = $("iSlots").querySelectorAll("input[data-slot]");
+  for (var i = 0; i < haken.length; i++) {
+    haken[i].checked = hat(slots, haken[i].getAttribute("data-slot"));
+  }
+}
+/** Solange niemand selbst angehakt hat, folgen die Plätze Art und Dauer. */
+function formSlotsAbleiten() {
+  if (slotsVonHand) return;
+  var dauerMin = ganzeZahl($("iDauerVon").value, 10, 1, 600);
+  var umfang = dauerMin >= 60 ? "ganzer_abend" : "baustein";
+  var bereich = $("iBereich").value;
+  var kategorie = KATEGORIEN_JE_BEREICH[bereich] ? $("iKategorie").value : "";
+  setzeFormSlots(slotsAbleiten(bereich, umfang, kategorie, dauerMin));
+}
+
+function formStufen() {
+  var haken = $("iStufen").querySelectorAll("input[data-stufe]");
+  var stufen = [];
+  for (var i = 0; i < haken.length; i++) {
+    if (haken[i].checked) stufen.push(haken[i].getAttribute("data-stufe"));
+  }
+  return stufen;
+}
+
+function oeffneIdeenForm(element) {
+  ideeInArbeit = element || null;
+  $("ideenFormTitel").textContent = element ? "Idee bearbeiten" : "Neue eigene Idee";
+  $("iSpeichern").textContent = element ? "Änderung speichern" : "Speichern";
+  $("iFehler").hidden = true;
+  $("iTitel").value = element ? element.titel : "";
+  $("iBereich").value = element ? element.bereich : "spiel";
+  fuelleKategorien(element ? element.kategorie : "");
+  $("iDauerVon").value = element ? element.dauer_min : 10;
+  $("iDauerBis").value = element ? element.dauer_max : 20;
+  $("iBeschreibung").value = element ? element.beschreibung : "";
+  $("iKurz").value = element ? element.kurz : "";
+  $("iUnter").value = element ? (element.unterkategorie || "") : "";
+  $("iOrt").value = element ? element.ort : "beides";
+  $("iMaterial").value = element ? (element.material || []).join(", ") : "";
+  $("iVorbereitung").value = element ? element.vorbereitung : "gering";
+  $("iGruppeVon").value = element && element.gruppe_min ? element.gruppe_min : "";
+  $("iGruppeBis").value = element && element.gruppe_max ? element.gruppe_max : "";
+  $("iTipps").value = element ? (element.tipps || "") : "";
+  $("iAutor").value = element ? ((element.quelle || {}).autor || "") : "";
+  var stufenHaken = $("iStufen").querySelectorAll("input[data-stufe]");
+  for (var i = 0; i < stufenHaken.length; i++) {
+    stufenHaken[i].checked = !!element &&
+      hat(element.altersstufen, stufenHaken[i].getAttribute("data-stufe"));
+  }
+  // Beim Bearbeiten stehen die Plätze schon fest; bei einer neuen Idee
+  // werden sie abgeleitet und folgen weiter der Dauer.
+  slotsVonHand = !!element;
+  if (element) setzeFormSlots(element.slots);
+  else formSlotsAbleiten();
+  $("iMehr").open = false;
+  oeffneUeberlagerung($("ideenForm"));
+}
+
+function zeigeFormfehler(zeilen, text) {
+  var html = "<ul>";
+  for (var i = 0; i < zeilen.length; i++) html += "<li>" + schuetze(zeilen[i]) + "</li>";
+  html += "</ul>";
+  if (text) {
+    html += "<textarea class=\"ausgabe\" readonly id=\"iRettung\"></textarea>";
+  }
+  $("iFehlerText").innerHTML = html;
+  if (text) $("iRettung").value = text;
+  $("iFehler").hidden = false;
+  $("ideenForm").scrollTop = 0;
+}
+
+/** Liest das Formular. Gibt { element } oder { fehler: [...] } zurück. */
+function formularLesen() {
+  var fehler = [];
+  var titel = $("iTitel").value.trim();
+  var beschreibung = $("iBeschreibung").value.trim();
+  var von = parseInt($("iDauerVon").value, 10);
+  var bis = parseInt($("iDauerBis").value, 10);
+  if (!titel) fehler.push("Der Titel fehlt.");
+  if (beschreibung.length < 20) {
+    fehler.push("Die Beschreibung fehlt oder ist zu kurz – schreib in ein paar " +
+                "Sätzen, wie es abläuft.");
+  }
+  if (!(von > 0 && von <= 600)) fehler.push("Die Dauer „von“ ist keine Zahl zwischen 1 und 600.");
+  if (!(bis > 0)) bis = von;
+  if (von > 0 && bis > 0 && bis < von) fehler.push("Die Dauer „bis“ ist kleiner als „von“.");
+  if (fehler.length) return { fehler: fehler };
+
+  var bereich = $("iBereich").value;
+  var element = normalisiereIdee({
+    id: ideeInArbeit ? ideeInArbeit.id : macheEigeneId(titel),
+    titel: titel,
+    bereich: bereich,
+    kategorie: KATEGORIEN_JE_BEREICH[bereich] ? $("iKategorie").value : "",
+    unterkategorie: bereich === "spiel" ? $("iUnter").value : "",
+    slots: formSlots(),
+    altersstufen: formStufen(),
+    dauer_min: von,
+    dauer_max: bis,
+    ort: $("iOrt").value,
+    material: $("iMaterial").value.split(","),
+    vorbereitung: $("iVorbereitung").value,
+    gruppe_min: $("iGruppeVon").value,
+    gruppe_max: $("iGruppeBis").value,
+    kurz: $("iKurz").value,
+    beschreibung: beschreibung,
+    tipps: $("iTipps").value,
+    quelle: { autor: $("iAutor").value },
+    erstellt: ideeInArbeit ? ideeInArbeit.erstellt : heuteAlsText(),
+    geaendert: heuteAlsText()
+  });
+  if (!element) return { fehler: ["Die Idee ließ sich nicht speichern. Bitte Titel, " +
+                                 "Dauer und Beschreibung prüfen."] };
+  return { element: element };
+}
+
+function speichereFormular() {
+  var ergebnis = formularLesen();
+  if (ergebnis.fehler) { zeigeFormfehler(ergebnis.fehler); return; }
+  var neu = ergebnis.element;
+  var vorher = EIGENE_IDEEN.slice();
+  var ersetzt = false;
+  for (var i = 0; i < EIGENE_IDEEN.length; i++) {
+    if (EIGENE_IDEEN[i].id === neu.id) { EIGENE_IDEEN[i] = neu; ersetzt = true; }
+  }
+  if (!ersetzt) EIGENE_IDEEN.push(neu);
+  eigeneStaende.geaendert = Date.now();
+  if (!speichereEigeneIdeen()) {
+    // Nichts verlorengehen lassen: der alte Stand wird wiederhergestellt,
+    // das Formular bleibt offen, und der Text steht zum Herauskopieren da.
+    EIGENE_IDEEN = vorher;
+    zeigeFormfehler(["Die Idee konnte nicht gespeichert werden. Das passiert im " +
+      "privaten Fenster und wenn der Browserspeicher voll ist. Kopier den Text " +
+      "unten heraus, damit nichts verlorengeht."], JSON.stringify(neu, null, 2));
+    return;
+  }
+  var warImDetail = !$("detail").hidden;
+  ideeInArbeit = null;
+  nachEigenenIdeen();
+  if (warImDetail) zeigeDetail(NACH_ID[neu.id] || neu);
+  schliesseUeberlagerung($("ideenForm"));
+  if (!warImDetail) {
+    // Beim Anlegen: gleich dorthin, wo die neue Idee steht.
+    zeigeAnsicht("bausteine");
+    $("suche").value = "";
+    pfad = leererPfad();
+    pfad.eigene = true;
+    pfad.unterkategorie = "__alle__";
+    aktualisiere();
+  }
+}
+
+function loescheEigeneIdee(id) {
+  var vorher = EIGENE_IDEEN.slice();
+  EIGENE_IDEEN = EIGENE_IDEEN.filter(function (e) { return e.id !== id; });
+  if (EIGENE_IDEEN.length === vorher.length) return;
+  eigeneStaende.geaendert = Date.now();
+  if (!speichereEigeneIdeen()) {
+    EIGENE_IDEEN = vorher;
+    zeigeIdeenDialog("Löschen", "<h2>Das ging nicht</h2><p class=\"anriss\">Der " +
+      "Browserspeicher ließ sich nicht beschreiben – die Idee steht deshalb " +
+      "weiterhin da.</p>");
+    return;
+  }
+  schliesseUeberlagerung($("detail"));
+  nachEigenenIdeen();
+}
+
+/* --------------------------------------------- Sichern und Einlesen */
+/** Das Dateiformat ist dasselbe wie data/eigene/rahmen-und-methoden.json. */
+function ideenAlsDatei() {
+  return {
+    meta: {
+      name: "Meine Heimabend-Ideen",
+      beschreibung: "Eigene Ideen, in der App erfasst und als Datei gesichert.",
+      version: "1.0",
+      stand: heuteAlsText(),
+      anzahl: EIGENE_IDEEN.length,
+      lizenz: EIGENE_LIZENZ,
+      hinweis: "Elemente im fertigen Element-Schema (data/SCHEMA.md). Diese Datei " +
+               "nach data/eigene/meine-ideen.json legen und python3 scripts/build.py " +
+               "laufen lassen."
+    },
+    elemente: EIGENE_IDEEN.map(ohneHilfsfelder)
+  };
+}
+
+function zeigeIdeenDialog(titel, html) {
+  $("ideenDialogTitel").textContent = titel;
+  $("ideenDialogInhalt").innerHTML = html;
+  $("ideenDialogInhalt").scrollTop = 0;
+  oeffneUeberlagerung($("ideenDialog"));
+  return $("ideenDialogInhalt");
+}
+
+/** Kopiert Text in die Zwischenablage und meldet es am Knopf selbst. */
+function kopiereAusFeld(feld, knopf) {
+  function fertig() { knopf.textContent = "Kopiert."; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(feld.value).then(fertig, function () {
+      feld.focus(); feld.select();
+      try { document.execCommand("copy"); fertig(); }
+      catch (f) { knopf.textContent = "Text ist markiert – jetzt kopieren."; }
+    });
+    return;
+  }
+  feld.focus(); feld.select();
+  try { document.execCommand("copy"); fertig(); }
+  catch (f) { knopf.textContent = "Text ist markiert – jetzt kopieren."; }
+}
+
+function sichereIdeen() {
+  if (!EIGENE_IDEEN.length) {
+    zeigeIdeenDialog("Meine Ideen sichern",
+      "<h2>Noch nichts zu sichern</h2><p class=\"anriss\">Es gibt noch keine eigene " +
+      "Idee. Mit „+ Idee“ oben neben der Suche legst du eine an.</p>");
+    return;
+  }
+  var text = JSON.stringify(ideenAlsDatei(), null, 2);
+  var geklappt = false;
+  var url = "";
+  try {
+    var blob = new Blob([text], { type: "application/json" });
+    url = URL.createObjectURL(blob);
+    var verweis = document.createElement("a");
+    verweis.href = url;
+    verweis.download = EIGENE_DATEINAME;
+    document.body.appendChild(verweis);
+    verweis.click();
+    document.body.removeChild(verweis);
+    setTimeout(function () { try { URL.revokeObjectURL(url); } catch (f) { /* egal */ } }, 20000);
+    geklappt = true;
+  } catch (fehler) { geklappt = false; }
+
+  eigeneStaende.gesichert = Date.now();
+  speichereEigeneIdeen();
+  zeichneIdeenStand();
+
+  // Ehrlich bleiben: beim Doppelklick-Betrieb (file://) blockieren manche
+  // Browser den Download stillschweigend. Dann muss der Text sichtbar sein.
+  var ausDatei = location.protocol === "file:";
+  var html = "<h2>Meine Ideen sichern</h2>" +
+    "<p class=\"anriss\">" + EIGENE_IDEEN.length +
+    (EIGENE_IDEEN.length === 1 ? " eigene Idee" : " eigene Ideen") + " als <strong>" +
+    EIGENE_DATEINAME + "</strong>.</p>";
+  if (!geklappt) {
+    html += "<div class=\"kasten warnung\"><h4>Der Download ging nicht</h4>" +
+      "Dieser Browser hat ihn abgelehnt. Kopier den Text unten heraus und " +
+      "speichere ihn selbst als " + EIGENE_DATEINAME + ".</div>";
+  } else if (ausDatei) {
+    html += "<div class=\"kasten warnung\"><h4>Diese Seite läuft aus dem Dateisystem</h4>" +
+      "Bei einem Doppelklick auf index.html (Adresse file://…) lassen manche " +
+      "Browser den Download nicht zu und sagen nichts dazu. Ist keine Datei " +
+      "angekommen, nimm den Text unten.</div>";
+  }
+  html += "<div class=\"kasten tipp\"><h4>So kommen sie dauerhaft ins Projekt</h4>" +
+    "<div class=\"text\"><ol>" +
+    "<li>Die Datei nach <strong>data/eigene/" + EIGENE_DATEINAME + "</strong> legen.</li>" +
+    "<li><strong>python3 scripts/build.py</strong> ausführen.</li>" +
+    "<li>Danach stehen die Ideen in <strong>data/elemente.json</strong> und sind " +
+    "auf jedem Gerät da – auch auf GitHub Pages.</li>" +
+    "</ol></div></div>" +
+    "<details class=\"filter\" id=\"sicherungKasten\"" + ((geklappt && !ausDatei) ? "" : " open") + ">" +
+    "<summary><span>Text zum Herauskopieren</span><span>Rückfall</span></summary>" +
+    "<div style=\"padding: 0 14px 14px\">" +
+    "<textarea class=\"ausgabe\" id=\"sicherungFeld\" readonly " +
+    "aria-label=\"Eigene Ideen als Text\"></textarea>" +
+    "<div class=\"formknoepfe\"><button class=\"knopf\" id=\"sicherungKopieren\">" +
+    "Text kopieren</button></div></div></details>";
+  var kasten = zeigeIdeenDialog("Meine Ideen sichern", html);
+  var feld = kasten.querySelector("#sicherungFeld");
+  feld.value = text;
+  kasten.querySelector("#sicherungKopieren").addEventListener("click", function () {
+    kopiereAusFeld(feld, this);
+  });
+}
+
+/** Liest eine gesicherte Datei ein – ohne irgendetwas zu überschreiben. */
+function lieseIdeenDatei(datei) {
+  var leser = new FileReader();
+  leser.onerror = function () {
+    zeigeIdeenDialog("Datei einlesen",
+      "<h2>Die Datei ließ sich nicht lesen</h2><p class=\"anriss\">Versuch es " +
+      "noch einmal oder wähle eine andere Datei.</p>");
+  };
+  leser.onload = function () { verarbeiteIdeenDatei(String(leser.result || "")); };
+  leser.readAsText(datei);
+}
+
+function verarbeiteIdeenDatei(text) {
+  var daten = null;
+  try { daten = JSON.parse(text); }
+  catch (fehler) {
+    zeigeIdeenDialog("Datei einlesen",
+      "<h2>Das ist keine gültige JSON-Datei</h2><p class=\"anriss\">" +
+      schuetze(fehler.message) + "</p>");
+    return;
+  }
+  var liste = (daten && Array.isArray(daten.elemente)) ? daten.elemente
+            : (Array.isArray(daten) ? daten : null);
+  if (!liste) {
+    zeigeIdeenDialog("Datei einlesen",
+      "<h2>Das sieht nicht nach einer Ideendatei aus</h2><p class=\"anriss\">" +
+      "Erwartet wird eine Datei mit <strong>meta</strong> und <strong>elemente</strong>, " +
+      "wie sie „Meine Ideen sichern“ schreibt.</p>");
+    return;
+  }
+  var vorhanden = Object.create(null);
+  for (var v = 0; v < EIGENE_IDEEN.length; v++) vorhanden[EIGENE_IDEEN[v].id] = true;
+  var neue = [], bekannte = [], inDerSammlung = [], unbrauchbar = 0;
+  for (var i = 0; i < liste.length; i++) {
+    var element = normalisiereIdee(liste[i]);
+    if (!element) { unbrauchbar++; continue; }
+    if (DATEI_IDS[element.id]) inDerSammlung.push(element);
+    else if (vorhanden[element.id]) bekannte.push(element);
+    else neue.push(element);
+  }
+  zeigeEinlesenDialog(neue, bekannte, inDerSammlung, unbrauchbar);
+}
+
+function titelliste(elemente) {
+  var html = "<ul>";
+  for (var i = 0; i < Math.min(elemente.length, 12); i++) {
+    html += "<li>" + schuetze(elemente[i].titel) + "</li>";
+  }
+  if (elemente.length > 12) html += "<li>… und " + (elemente.length - 12) + " weitere</li>";
+  return html + "</ul>";
+}
+
+function zeigeEinlesenDialog(neue, bekannte, inDerSammlung, unbrauchbar) {
+  var html = "<h2>Datei einlesen</h2>";
+  html += "<dl class=\"datenblatt\">";
+  html += "<dt>neu</dt><dd>" + neue.length + " kommen dazu</dd>";
+  html += "<dt>schon da</dt><dd>" + bekannte.length +
+          " stehen bereits im Browser (bleiben unverändert)</dd>";
+  if (inDerSammlung.length) {
+    html += "<dt>eingebaut</dt><dd>" + inDerSammlung.length +
+            " sind über build.py schon in der Sammlung</dd>";
+  }
+  if (unbrauchbar) {
+    html += "<dt>übersprungen</dt><dd>" + unbrauchbar +
+            " Einträge waren unvollständig</dd>";
+  }
+  html += "</dl>";
+  if (neue.length) {
+    html += "<div class=\"kasten verweis\"><h4>Das kommt dazu</h4>" +
+            "<div class=\"text\">" + titelliste(neue) + "</div></div>";
+  }
+  if (bekannte.length) {
+    html += "<div class=\"kasten verweis\"><h4>Das ist schon da</h4>" +
+            "<div class=\"text\">" + titelliste(bekannte) + "</div>" +
+            "<div class=\"schalter\"><input type=\"checkbox\" id=\"einlesenErsetzen\">" +
+            "<label for=\"einlesenErsetzen\">diese " + bekannte.length +
+            " durch die Fassung aus der Datei ersetzen</label></div></div>";
+  }
+  html += "<div class=\"formknoepfe\">" +
+    (neue.length || bekannte.length
+      ? "<button class=\"knopf stark\" id=\"einlesenUebernehmen\">Übernehmen</button>" : "") +
+    "<button class=\"knopf\" id=\"einlesenAbbrechen\">Abbrechen</button></div>";
+
+  var kasten = zeigeIdeenDialog("Datei einlesen", html);
+  kasten.querySelector("#einlesenAbbrechen").addEventListener("click", function () {
+    schliesseUeberlagerung($("ideenDialog"));
+  });
+  var uebernehmen = kasten.querySelector("#einlesenUebernehmen");
+  if (!uebernehmen) return;
+  uebernehmen.addEventListener("click", function () {
+    var ersetzen = kasten.querySelector("#einlesenErsetzen");
+    var vorher = EIGENE_IDEEN.slice();
+    var geaendert = neue.length;
+    EIGENE_IDEEN = EIGENE_IDEEN.concat(neue);
+    if (ersetzen && ersetzen.checked) {
+      for (var b = 0; b < bekannte.length; b++) {
+        for (var i = 0; i < EIGENE_IDEEN.length; i++) {
+          if (EIGENE_IDEEN[i].id === bekannte[b].id) { EIGENE_IDEEN[i] = bekannte[b]; geaendert++; }
+        }
+      }
+    }
+    eigeneStaende.geaendert = Date.now();
+    if (!speichereEigeneIdeen()) {
+      EIGENE_IDEEN = vorher;
+      zeigeIdeenDialog("Datei einlesen", "<h2>Das ging nicht</h2><p class=\"anriss\">" +
+        "Der Browserspeicher ließ sich nicht beschreiben (privates Fenster oder " +
+        "voller Speicher). Es wurde nichts geändert.</p>");
+      return;
+    }
+    schliesseUeberlagerung($("ideenDialog"));
+    nachEigenenIdeen();
+    zeigeAnsicht("bausteine");
+    pfad = leererPfad();
+    pfad.eigene = true;
+    pfad.unterkategorie = "__alle__";
+    aktualisiere();
+  });
+}
+
+/** Zeile unter den beiden Knöpfen: wie viele, und ob sie gesichert sind. */
+function zeichneIdeenStand() {
+  var anzahl = EIGENE_IDEEN.length;
+  var zeile = $("ideenStand");
+  $("ideenSichern").disabled = anzahl === 0;
+  if (!anzahl) {
+    zeile.textContent = "Noch keine eigenen Ideen. Mit „+ Idee“ oben legst du eine an.";
+    return;
+  }
+  var wort = anzahl === 1 ? "1 eigene Idee" : anzahl + " eigene Ideen";
+  if (eigeneStaende.gesichert && eigeneStaende.gesichert >= eigeneStaende.geaendert) {
+    zeile.textContent = wort + " · gesichert am " + deutschesDatum(eigeneStaende.gesichert) + ".";
+  } else if (anzahl > 3) {
+    zeile.textContent = wort + " sind nicht gesichert. Werden die Browserdaten " +
+                        "gelöscht, sind sie weg – jetzt sichern.";
+  } else {
+    zeile.textContent = wort + " · seit der letzten Änderung nicht gesichert.";
+  }
+}
+
+function verdrahteIdeen() {
+  fuelleAuswahl($("iBereich"), BEREICH_REIHENFOLGE, function (b) { return BEREICH_TEXT[b]; });
+  fuelleKategorien("");
+  fuelleAuswahl($("iUnter"), [""].concat(UNTERKATEGORIEN), function (u) {
+    return u ? unterText(u) : "ohne";
+  });
+  var stufenHtml = "";
+  for (var s = 0; s < ALTERSSTUFEN.length; s++) {
+    stufenHtml += "<label><input type=\"checkbox\" data-stufe=\"" +
+      schuetze(ALTERSSTUFEN[s]) + "\">" + schuetze(ALTERSSTUFEN[s]) + "</label>";
+  }
+  $("iStufen").innerHTML = stufenHtml;
+  var slotHtml = "";
+  for (var t = 0; t < FORM_SLOTS.length; t++) {
+    slotHtml += "<label><input type=\"checkbox\" data-slot=\"" + FORM_SLOTS[t][0] +
+      "\">" + FORM_SLOTS[t][1] + "</label>";
+  }
+  $("iSlots").innerHTML = slotHtml;
+  var slotHaken = $("iSlots").querySelectorAll("input[data-slot]");
+  for (var h = 0; h < slotHaken.length; h++) {
+    slotHaken[h].addEventListener("change", function () { slotsVonHand = true; });
+  }
+
+  $("ideeNeu").addEventListener("click", function () { oeffneIdeenForm(null); });
+  $("iBereich").addEventListener("change", function () {
+    fuelleKategorien("");
+    formSlotsAbleiten();
+  });
+  $("iKategorie").addEventListener("change", formSlotsAbleiten);
+  $("iDauerVon").addEventListener("change", formSlotsAbleiten);
+  $("iSpeichern").addEventListener("click", speichereFormular);
+  $("iVerwerfen").addEventListener("click", function () {
+    schliesseUeberlagerung($("ideenForm"));
+  });
+  $("ideenAbbrechen").addEventListener("click", function () {
+    schliesseUeberlagerung($("ideenForm"));
+  });
+  $("ideenDialogZurueck").addEventListener("click", function () {
+    schliesseUeberlagerung($("ideenDialog"));
+  });
+  $("ideenSichern").addEventListener("click", sichereIdeen);
+  $("ideenEinlesen").addEventListener("click", function () { $("ideenDatei").click(); });
+  $("ideenDatei").addEventListener("change", function () {
+    var datei = this.files && this.files[0];
+    // zurücksetzen, sonst löst dieselbe Datei beim zweiten Mal nichts aus
+    this.value = "";
+    if (datei) lieseIdeenDatei(datei);
+  });
+}
+
 /* ---------------------------------------------------------- Fußzeile */
 function zeichneFuss() {
   var quellen = {};
@@ -2886,8 +3933,10 @@ function verdrahte() {
   });
   document.addEventListener("keydown", function (ereignis) {
     if (ereignis.key !== "Escape") return;
-    if (!$("detail").hidden) schliesseUeberlagerung($("detail"));
-    else if (!$("auswahl").hidden) schliesseUeberlagerung($("auswahl"));
+    // Immer die oberste Überlagerung, sonst schließt Escape im Formular
+    // die Detailansicht darunter.
+    var oben = stapelOffen[stapelOffen.length - 1];
+    if (oben) schliesseUeberlagerung($(oben));
   });
 
   var auswahlEntprellen = null;
@@ -2922,25 +3971,30 @@ function verdrahte() {
   $("planKopieren").addEventListener("click", planTeilen);
 }
 
+/** Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig. */
+function bereiteVor(e) {
+  if (typeof e.unterkategorie !== "string") e.unterkategorie = "";
+  e._titeltext = vereinfache(e.titel);
+  e._kopftext = vereinfache([e.kurz, (e.tags || []).join(" "),
+                             (e.themen || []).join(" "),
+                             BEREICH_TEXT[e.bereich] || "", kategorieText(e),
+                             unterText(e.unterkategorie)].join(" "));
+  e._suchtext = vereinfache([
+    e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
+    BEREICH_TEXT[e.bereich] || "", kategorieText(e),
+    unterText(e.unterkategorie), e.beschreibung
+  ].join(" "));
+}
+
 function starte(elemente) {
-  ALLE = elemente;
-  for (var i = 0; i < ALLE.length; i++) {
-    var e = ALLE[i];
-    NACH_ID[e.id] = e;
-    if (typeof e.unterkategorie !== "string") e.unterkategorie = "";
-    // Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig
-    e._titeltext = vereinfache(e.titel);
-    e._kopftext = vereinfache([e.kurz, (e.tags || []).join(" "),
-                               (e.themen || []).join(" "),
-                               BEREICH_TEXT[e.bereich] || "", kategorieText(e),
-                               unterText(e.unterkategorie)].join(" "));
-    e._suchtext = vereinfache([
-      e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
-      BEREICH_TEXT[e.bereich] || "", kategorieText(e),
-      unterText(e.unterkategorie), e.beschreibung
-    ].join(" "));
-  }
+  DATEI_ELEMENTE = elemente;
+  DATEI_IDS = Object.create(null);
+  for (var i = 0; i < DATEI_ELEMENTE.length; i++) DATEI_IDS[DATEI_ELEMENTE[i].id] = true;
+  ladeEigeneIdeen();
+  setzeAlle();
   verdrahte();
+  verdrahteIdeen();
+  zeichneIdeenStand();
   ladeSammlung();
   $("rZweiteReihe").checked = !nurKern;
   ladePlan();

@@ -6,7 +6,7 @@ mit denselben Feldern. Alle Quellen werden auf dieses Schema gemappt und in
 
 ```jsonc
 {
-  "id": "ps-kotzendes-kaenguru",          // eindeutig, Präfix = Quelle: eig- (eigene), insp- (Inspirator), ps- (pfadfinder-spiele.de), sw- (Spielewiki), pb- (Probenbuch)
+  "id": "ps-kotzendes-kaenguru",          // eindeutig, Präfix = Quelle: eig- (eigene), mein- (in der App selbst erfasst), insp- (Inspirator), ps- (pfadfinder-spiele.de), sw- (Spielewiki), pb- (Probenbuch)
   "titel": "Kotzendes Känguru",
   "bereich": "spiel",                     // WORUM geht es – sieben Werte, siehe unten
   "umfang": "baustein",                   // WIE GROSS – baustein | ganzer_abend
@@ -220,6 +220,27 @@ in `data/redaktion.json` unter `bereiche` und schlagen die Automatik.
 - Sobald NC-Inhalte (Inspirator, pfadfinder-spiele.de) enthalten sind, bleibt das
   Tool **nicht-kommerziell** (kein Verkauf, keine Werbung).
 - Keine E-Mail-Adressen oder anderen personenbezogenen Daten aus Quellen übernehmen.
+
+## Selbst erfasste Ideen (seit 09.09.2026)
+
+Die App kann eigene Ideen aufnehmen (Knopf „+ Idee"). Sie liegen zunächst nur im
+Browser (`localStorage`), tragen den Präfix `mein-` und sind vollständige Elemente
+nach diesem Schema. „Meine Ideen sichern" schreibt sie als Datei im selben Aufbau
+wie `data/eigene/rahmen-und-methoden.json`; kommt die Datei nach
+`data/eigene/meine-ideen.json`, liest `build.py` sie beim nächsten Lauf mit ein.
+
+Zwei Besonderheiten:
+
+- Selbst erfasste Ideen sind **immer** `kern: true`. Wer eine Idee aufschreibt,
+  will sie wiederfinden und nicht hinter dem Schalter suchen; sie stammen auch aus
+  keiner Quelle, die man verdichten müsste.
+- Ihre `slots` bleiben stehen, statt neu berechnet zu werden – die App leitet sie
+  beim Erfassen mit derselben Regel ab wie `slots_fuer()` und lässt sie von Hand
+  ändern. Dasselbe gilt für `rahmen-und-methoden.json`.
+
+Die neun Spiel-Achsen fragt das Formular nicht ab: Ein Formular kann sie nicht
+ehrlich beantworten. Sie bleiben leer („nicht erkennbar") und werden beim
+nächsten `build.py`-Lauf aus dem Text abgeleitet wie bei jeder anderen Quelle.
 
 ## Redaktion
 

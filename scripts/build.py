@@ -7,6 +7,7 @@ Aufruf:
 
 Gelesen werden:
     data/eigene/heimabend-ideen.json                    (61 eigene Ideen)
+    data/eigene/meine-ideen.json                        (in der App erfasste Ideen, falls vorhanden)
     data/quellen/probenbuch/proben-dpb.json             (30 Proben aus dem DPB-Probenbuch)
     data/quellen/inspirator/inspirator-ideen.json       (211 Ideen, CC BY-NC 4.0)
     data/quellen/pfadfinder-spiele/elemente.json        (Ausgabe von import_pfadfinder_spiele.py)
@@ -43,6 +44,11 @@ EIGENE = WURZEL / "data" / "eigene" / "heimabend-ideen.json"
 # Eröffnungs- und Schlusskreis, Gruppeneinteilung, Auswertung). Sie bringen
 # ihre Slots selbst mit - nur hier kommt "eroeffnung" überhaupt vor.
 RAHMEN = WURZEL / "data" / "eigene" / "rahmen-und-methoden.json"
+# Eigene Ideen, die jemand in der Web-App erfasst und dort unter
+# "Meine Ideen sichern" als Datei heruntergeladen hat. Sie stehen schon im
+# fertigen Element-Schema. Die Datei fehlt im Normalfall - dann läuft der
+# Build unverändert weiter.
+MEINE_IDEEN = WURZEL / "data" / "eigene" / "meine-ideen.json"
 PROBENBUCH = WURZEL / "data" / "quellen" / "probenbuch" / "proben-dpb.json"
 # Redigierte Fassung (lesbarer Text + Heimabend-Zuschnitt). Ist sie da, gewinnt sie;
 # der Rohtext bleibt als Rückfall, damit der Build nie ohne Proben dasteht.
@@ -384,6 +390,48 @@ def lade_rahmen(vergeben):
             "url": "",
             "autor": "Heimabend-Baukasten",
             "lizenz": (element.get("quelle") or {}).get("lizenz") or "CC BY-SA 4.0",
+        }
+        elemente.append(element)
+    return elemente
+
+
+def lade_meine_ideen(vergeben):
+    """
+    Mappt data/eigene/meine-ideen.json auf das Element-Schema.
+
+    Das ist die Datei, die die Web-App unter "Meine Ideen sichern" schreibt
+    (Stufe 2 aus docs/eigene-ideen-erfassen.md). Sie hat denselben Aufbau wie
+    rahmen-und-methoden.json - meta + elemente im fertigen Schema - und wird
+    deshalb genauso behandelt: Slots und Bereich bleiben stehen, statt neu
+    berechnet zu werden, und die Quelle wird vereinheitlicht. Fehlt die Datei,
+    läuft der Build ohne sie weiter; das ist der Normalfall.
+    """
+    if not MEINE_IDEEN.exists():
+        return []
+    with open(MEINE_IDEEN, encoding="utf-8") as datei:
+        daten = json.load(datei)
+    elemente = []
+    for roh in daten.get("elemente", []):
+        element = dict(roh)
+        if element["id"] in vergeben:
+            element["id"] = mache_id("mein", element["titel"], vergeben)
+        else:
+            vergeben.add(element["id"])
+        element["_bereich"] = element.get("bereich") or "gemeinschaft"
+        # Nur die App weiß, wo eine Idee hingehört: sie leitet die Slots beim
+        # Erfassen mit derselben Regel ab wie slots_fuer() und lässt sie von
+        # Hand ändern. Diese Entscheidung wird hier nicht überschrieben.
+        element["_slots_fest"] = True
+        quelle = element.get("quelle") or {}
+        # Der Autor kommt aus dem Formular und darf leer bleiben (kein Zwang
+        # zum Namen). quelle.autor ist aber ein Pflichtfeld der Prüfung -
+        # dann steht dort schlicht "eigene Idee".
+        autor = str(quelle.get("autor") or "").strip()
+        element["quelle"] = {
+            "name": "eigene Idee",
+            "url": "",
+            "autor": autor or "eigene Idee",
+            "lizenz": quelle.get("lizenz") or "CC BY-SA 4.0",
         }
         elemente.append(element)
     return elemente
@@ -1666,6 +1714,7 @@ def bestimme_kern(elemente, redaktion, varianten_ids):
       Punktgleichstand entscheidet also der Titel, nie der Zufall oder die
       Lesereihenfolge der Quellen.
     - Zusammengelegte Varianten sind nie Kern.
+    - Selbst erfasste Ideen (Präfix "mein-") sind immer Kern.
     - data/redaktion.json ("kern") schlägt alles: {"id": …, "kern": false} nimmt
       ein Spiel heraus, {"id": …, "kern": true} holt es herein, auch gegen die Punkte.
 
@@ -1735,6 +1784,12 @@ def bestimme_kern(elemente, redaktion, varianten_ids):
     automatisch_spiele = len(kern_ids)
     for element in elemente:
         if element["bereich"] != "spiel":
+            element["kern"] = True
+        elif element["id"].startswith("mein-"):
+            # Selbst erfasste Ideen (aus der App, data/eigene/meine-ideen.json)
+            # stehen immer in der ersten Reihe. Sie stammen nicht aus einer
+            # Quelle, die man verdichten müsste - wer eine Idee aufschreibt,
+            # will sie wiederfinden und nicht hinter einem Schalter suchen.
             element["kern"] = True
         else:
             element["kern"] = element["id"] in kern_ids
@@ -1926,6 +1981,12 @@ def main():
     vorher = len(elemente)
     elemente += lade_rahmen(vergeben)
     print("  Rahmen und Methoden: {}".format(len(elemente) - vorher))
+    vorher = len(elemente)
+    elemente += lade_meine_ideen(vergeben)
+    # Die Zeile nur zeigen, wenn es die Datei gibt - sonst stünde bei jedem
+    # Lauf eine Null da, die niemanden interessiert.
+    if len(elemente) - vorher:
+        print("  Meine Ideen:         {}".format(len(elemente) - vorher))
     vorher = len(elemente)
     elemente += lade_probenbuch(vergeben)
     print("  DPB-Probenbuch:      {}".format(len(elemente) - vorher))

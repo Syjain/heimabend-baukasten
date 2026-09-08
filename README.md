@@ -11,21 +11,37 @@ aus denen sich ein ca. zweistündiger Heimabend zusammenstellen lässt.
 - Arbeitsanweisung für Claude Code: `PROMPT-fuer-claude-code.md` (Projektkontext in `CLAUDE.md`)
 
 ## Stand
-`data/elemente.json` enthält 1044 Bausteine aus fünf Quellen (erzeugt von `scripts/build.py`):
+`data/elemente.json` enthält 1075 Bausteine aus fünf Quellen (erzeugt von `scripts/build.py`):
 
 | Quelle | Anzahl | Lizenz |
 |---|---:|---|
-| Spielewiki (`scripts/import_spielewiki.py`) | 629 | CC BY-SA 4.0 |
+| Spielewiki (`scripts/import_spielewiki.py`) | 622 | CC BY-SA 4.0 |
 | DPBM-Heimabend-Inspirator (`data/quellen/inspirator/`) | 211 | CC BY-NC 4.0 |
 | pfadfinder-spiele.de (`scripts/import_pfadfinder_spiele.py`) | 115 | CC BY-NC-SA 4.0 |
-| eigene Ideen (`data/eigene/`) | 61 | CC BY-SA 4.0 |
-| DPB-Probenbuch (`data/quellen/probenbuch/`) | 28 | Rechte beim Projektinhaber |
+| eigene Sammlung (`data/eigene/`) | 99 | CC BY-SA 4.0 |
+| DPB-Probenbuch (`data/quellen/probenbuch/`) | 28 | Nutzung mit Erlaubnis des Rechteinhabers |
 
-Nach Typ: 753 Spiele, 232 Projekte, 35 Proben, 18 Aktivitäten.
+Nach Bereich: 794 Spiele, 77 Pfadfindertechnik, 72 Gemeinschaft, 67 Werken,
+30 Natur & Draußen, 23 Kochen, 12 Musisches.
+
+**Zwei Reihen statt löschen.** Seit dem 08.09.2026 trägt jedes Element ein Feld
+`kern`. 580 Elemente stehen in der ersten Reihe – das ist die geprüfte Auswahl,
+die die App beim Öffnen zeigt, darunter 299 Spiele nach Quoten je Unterkategorie.
+Die übrigen 495 (Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz) bleiben
+vollständig in den Daten und sind über einen Schalter erreichbar. Es wird nichts
+gelöscht, und jede Zuordnung lässt sich in `data/redaktion.json` unter `kern`
+von Hand umdrehen.
 
 `data/redaktion.json` hält fest, was aus den Quellen herausfällt, umbenannt oder
-korrigiert wird – mit Begründung je Eintrag. Ohne diese Datei holt der nächste
+korrigiert wird, welche Fassungen zusammengelegt werden und was in welche Reihe
+gehört – mit Begründung je Eintrag. Ohne diese Datei holt der nächste
 Importlauf alles wieder herein, weil die Import-Skripte idempotent sind.
+
+Der Befund, aus dem das alles folgt, steht in `docs/pruefung-2026-09/`
+(Prüfdokument mit 73 Fragen und vier Tabellen, erzeugt von `scripts/analyse.py`).
+Was davon in der Nacht zum 09.09.2026 eingearbeitet wurde und was noch zu
+entscheiden ist: `docs/nachtschicht-2026-09-09.md`. Die fünf offenen
+Sprachfragen: `docs/sprache.md`.
 
 Neu bauen:
 
@@ -53,10 +69,14 @@ Danach `http://localhost:8000/web/index.html` aufrufen. Was die App kann, steht 
 `web/README.md`.
 
 Nach Änderungen an der App: `scripts/rauchtest.js` in die Browser-Konsole
-kopieren, das prüft 46 Punkte auf einmal (Anleitung oben in der Datei).
+kopieren, das prüft 111 Punkte auf einmal (Anleitung oben in der Datei).
 
 ## Was noch offen ist
-- Eigene Ideen in der App erfassen – Entwurf in `docs/eigene-ideen-erfassen.md`
+- Fünf Sprachentscheidungen (Sippe oder Horte/Gilde, Spielleitung oder
+  Gruppenführer, Genderschreibweise, Tonfall, Umschreiben fremder Texte) –
+  Optionen mit Zahlen in `docs/sprache.md`
+- Gemeinsam sammeln über Supabase – Entscheidungspapier in
+  `docs/gemeinsam-sammeln.md`, wartet auf Zugangsdaten
 - Die Abbildungen des Probenbuchs (Knoten, Zeltbau, Karten) fehlen in der
   Textfassung; betroffene Proben tragen einen Hinweis
 
