@@ -1,0 +1,6177 @@
+{
+ "anzahl_gesamt": 1038,
+ "ziel": 300,
+ "anzahl_spiele": 795,
+ "A_bereich": [
+  [
+   "spiel",
+   795
+  ],
+  [
+   "pfadfindertechnik",
+   77
+  ],
+  [
+   "werken",
+   67
+  ],
+  [
+   "gemeinschaft",
+   34
+  ],
+  [
+   "natur_draussen",
+   30
+  ],
+  [
+   "kochen",
+   23
+  ],
+  [
+   "musisch",
+   12
+  ]
+ ],
+ "A_quelle": [
+  [
+   "Spielewiki",
+   623
+  ],
+  [
+   "Inspirator (DPBM)",
+   211
+  ],
+  [
+   "pfadfinder-spiele",
+   115
+  ],
+  [
+   "eigene",
+   61
+  ],
+  [
+   "Probenbuch",
+   28
+  ]
+ ],
+ "A_lizenz": [
+  [
+   "CC BY-SA 4.0",
+   684
+  ],
+  [
+   "CC BY-NC 4.0",
+   211
+  ],
+  [
+   "CC BY-NC-SA 4.0",
+   115
+  ],
+  [
+   "DPB-Probenbuch",
+   28
+  ]
+ ],
+ "A_umfang": [
+  [
+   "baustein",
+   921
+  ],
+  [
+   "ganzer_abend",
+   117
+  ]
+ ],
+ "A_kategorie_spiel": [
+  [
+   "bewegung_drinnen",
+   261
+  ],
+  [
+   "ruhig",
+   160
+  ],
+  [
+   "kooperation",
+   104
+  ],
+  [
+   "kreis",
+   98
+  ],
+  [
+   "ankommen",
+   98
+  ],
+  [
+   "bewegung_draussen",
+   44
+  ],
+  [
+   "gelaende",
+   30
+  ]
+ ],
+ "A_unterkategorie_spiel": [
+  [
+   "team",
+   103
+  ],
+  [
+   "namen",
+   72
+  ],
+  [
+   "fangen",
+   69
+  ],
+  [
+   "toben",
+   64
+  ],
+  [
+   "denken",
+   61
+  ],
+  [
+   "geschick",
+   52
+  ],
+  [
+   "singen",
+   42
+  ],
+  [
+   "ball",
+   41
+  ],
+  [
+   "sonstiges",
+   39
+  ],
+  [
+   "tisch",
+   38
+  ],
+  [
+   "wettkampf",
+   29
+  ],
+  [
+   "gelaende",
+   27
+  ],
+  [
+   "konzentration",
+   27
+  ],
+  [
+   "reaktion",
+   18
+  ],
+  [
+   "vertrauen",
+   18
+  ],
+  [
+   "warmup",
+   18
+  ],
+  [
+   "darstellen",
+   16
+  ],
+  [
+   "merken",
+   14
+  ],
+  [
+   "ruhig",
+   12
+  ],
+  [
+   "kampf",
+   12
+  ],
+  [
+   "verstecken",
+   12
+  ],
+  [
+   "reflexion",
+   11
+  ]
+ ],
+ "A_altersstufen": [
+  [
+   "(ohne Angabe)",
+   618
+  ],
+  [
+   "Pfadfinder",
+   409
+  ],
+  [
+   "Ältere",
+   317
+  ],
+  [
+   "Wölflinge",
+   285
+  ]
+ ],
+ "A_slots": [
+  [
+   "hauptteil",
+   1038
+  ],
+  [
+   "einstieg",
+   615
+  ],
+  [
+   "abschluss",
+   305
+  ]
+ ],
+ "A_ort": [
+  [
+   "beides",
+   662
+  ],
+  [
+   "drinnen",
+   225
+  ],
+  [
+   "draussen",
+   151
+  ]
+ ],
+ "A_vorbereitung": [
+  [
+   "gering",
+   785
+  ],
+  [
+   "mittel",
+   241
+  ],
+  [
+   "hoch",
+   12
+  ]
+ ],
+ "A_modus": [
+  [
+   "ohne_gewinner",
+   411
+  ],
+  [
+   "wettkampf",
+   311
+  ],
+  [
+   "kooperation",
+   73
+  ]
+ ],
+ "A_sozialform": [
+  [
+   "frei",
+   358
+  ],
+  [
+   "kreis",
+   167
+  ],
+  [
+   "mannschaften",
+   161
+  ],
+  [
+   "paare",
+   74
+  ],
+  [
+   "einer_gegen_alle",
+   28
+  ],
+  [
+   "kleingruppen",
+   7
+  ]
+ ],
+ "A_wirkung": [
+  [
+   "austoben",
+   270
+  ],
+  [
+   "(ohne Angabe)",
+   264
+  ],
+  [
+   "konzentration",
+   100
+  ],
+  [
+   "zusammenarbeit",
+   94
+  ],
+  [
+   "kennenlernen",
+   77
+  ],
+  [
+   "ankommen",
+   49
+  ],
+  [
+   "beruhigen",
+   47
+  ],
+  [
+   "vertrauen",
+   46
+  ],
+  [
+   "abschluss",
+   11
+  ]
+ ],
+ "A_quelle_bereich": {
+  "Inspirator (DPBM)": {
+   "spiel": 44,
+   "pfadfindertechnik": 36,
+   "natur_draussen": 20,
+   "werken": 60,
+   "kochen": 18,
+   "musisch": 8,
+   "gemeinschaft": 25
+  },
+  "Spielewiki": {
+   "spiel": 623
+  },
+  "pfadfinder-spiele": {
+   "spiel": 115
+  },
+  "eigene": {
+   "spiel": 13,
+   "pfadfindertechnik": 13,
+   "natur_draussen": 10,
+   "werken": 7,
+   "kochen": 5,
+   "musisch": 4,
+   "gemeinschaft": 9
+  },
+  "Probenbuch": {
+   "pfadfindertechnik": 28
+  }
+ },
+ "A_kategorie_quelle": {
+  "bewegung_drinnen": {
+   "Inspirator (DPBM)": 35,
+   "Spielewiki": 216,
+   "pfadfinder-spiele": 5,
+   "eigene": 5
+  },
+  "kreis": {
+   "Spielewiki": 68,
+   "pfadfinder-spiele": 30
+  },
+  "gelaende": {
+   "Spielewiki": 13,
+   "pfadfinder-spiele": 13,
+   "eigene": 3,
+   "Inspirator (DPBM)": 1
+  },
+  "ruhig": {
+   "Spielewiki": 140,
+   "pfadfinder-spiele": 16,
+   "eigene": 3,
+   "Inspirator (DPBM)": 1
+  },
+  "kooperation": {
+   "Spielewiki": 90,
+   "pfadfinder-spiele": 14
+  },
+  "bewegung_draussen": {
+   "Inspirator (DPBM)": 7,
+   "Spielewiki": 31,
+   "pfadfinder-spiele": 6
+  },
+  "ankommen": {
+   "Spielewiki": 65,
+   "pfadfinder-spiele": 31,
+   "eigene": 2
+  }
+ },
+ "A_luecken": {
+  "Beschreibung unter 200 Zeichen": 36,
+  "Beschreibung unter 300 Zeichen": 65,
+  "Beschreibung unter 600 Zeichen": 164,
+  "ohne Altersstufe": 618,
+  "ohne alter_ab": 923,
+  "ohne Dauer (dauer_min fehlt/0)": 0,
+  "ohne Gruppengröße (min)": 340,
+  "ohne Gruppengröße (max)": 662,
+  "ohne Material-Angabe (leere Liste)": 376,
+  "ohne Tipps": 912,
+  "ohne Tags": 0
+ },
+ "A_luecken_spiele": {
+  "Spiele mit Beschreibung unter 300 Zeichen": 15,
+  "Spiele ohne Altersstufe": 618,
+  "Spiele ohne Tipps": 745,
+  "Spiele ohne Wirkung": 264,
+  "Spiele ohne Gruppengröße (max)": 419
+ },
+ "A_laenge_je_quelle": {
+  "Inspirator (DPBM)": {
+   "anzahl": 211,
+   "median_zeichen": 827,
+   "unter_300": 2
+  },
+  "Probenbuch": {
+   "anzahl": 28,
+   "median_zeichen": 3651,
+   "unter_300": 0
+  },
+  "Spielewiki": {
+   "anzahl": 623,
+   "median_zeichen": 1075,
+   "unter_300": 0
+  },
+  "eigene": {
+   "anzahl": 61,
+   "median_zeichen": 197,
+   "unter_300": 61
+  },
+  "pfadfinder-spiele": {
+   "anzahl": 115,
+   "median_zeichen": 850,
+   "unter_300": 2
+  }
+ },
+ "B_cluster_anzahl": 78,
+ "B_betroffene_spiele": 177,
+ "B_einsparung": 99,
+ "B_cluster_gemischte_lizenz": 43,
+ "B_cluster": [
+  {
+   "cluster_id": "C001",
+   "haupt": "sw-drachenschwanzabschiessen",
+   "ids": [
+    "ps-drachenschwanzjagen",
+    "sw-drachenschwanzabschiessen",
+    "sw-drachenschwanzfangen-einzeln",
+    "sw-drachenschwanzfangen-gruppenweise"
+   ],
+   "titel": [
+    "Drachenschwanzjagen",
+    "Drachenschwanzabschießen",
+    "Drachenschwanzfangen (einzeln)",
+    "Drachenschwanzfangen (gruppenweise)"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-drachenschwanzjagen": 0.77,
+    "sw-drachenschwanzabschiessen": 1.0,
+    "sw-drachenschwanzfangen-einzeln": 0.76,
+    "sw-drachenschwanzfangen-gruppenweise": 0.76
+   },
+   "gruende": [
+    "Titel fast gleich",
+    "Titel ähnlich + Text ähnlich",
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C002",
+   "haupt": "eig-evolution",
+   "ids": [
+    "eig-evolution",
+    "ps-evolution",
+    "sw-evolution",
+    "sw-evolution-sprachspiel"
+   ],
+   "titel": [
+    "Evolution",
+    "Evolution",
+    "Evolution",
+    "Evolution (Sprachspiel)"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "eigene",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-evolution": 1.0,
+    "ps-evolution": 1.0,
+    "sw-evolution": 1.0,
+    "sw-evolution-sprachspiel": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C003",
+   "haupt": "sw-captain-hook-und-peter-pan",
+   "ids": [
+    "insp-versteinern",
+    "sw-captain-hook-und-peter-pan",
+    "sw-schlumpfe-versteinern",
+    "sw-versteinern"
+   ],
+   "titel": [
+    "Versteinern",
+    "Captain Hook und Peter Pan",
+    "Schlümpfe-Versteinern",
+    "Versteinern"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "insp-versteinern": 0.32,
+    "sw-captain-hook-und-peter-pan": 1.0,
+    "sw-schlumpfe-versteinern": 0.45,
+    "sw-versteinern": 0.71
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich",
+    "Titel ähnlich + Text ähnlich",
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C004",
+   "haupt": "sw-platztausch",
+   "ids": [
+    "insp-alle-die-obstsalat",
+    "ps-angesprochen",
+    "sw-platztausch"
+   ],
+   "titel": [
+    "Alle, die… (Obstsalat)",
+    "Angesprochen",
+    "Platztausch"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "insp-alle-die-obstsalat": 0.39,
+    "ps-angesprochen": 0.35,
+    "sw-platztausch": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C005",
+   "haupt": "sw-tastkim",
+   "ids": [
+    "sw-bilderkim",
+    "sw-merkkim",
+    "sw-tastkim"
+   ],
+   "titel": [
+    "Bilderkim",
+    "Merkkim",
+    "Tastkim"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-bilderkim": 0.42,
+    "sw-merkkim": 0.76,
+    "sw-tastkim": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C006",
+   "haupt": "sw-zielscheiben-reflexion",
+   "ids": [
+    "sw-blitzlicht-reflexion",
+    "sw-streichholz-reflexion",
+    "sw-zielscheiben-reflexion"
+   ],
+   "titel": [
+    "Blitzlicht-Reflexion",
+    "Streichholz-Reflexion",
+    "Zielscheiben-Reflexion"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-blitzlicht-reflexion": 0.67,
+    "sw-streichholz-reflexion": 0.6,
+    "sw-zielscheiben-reflexion": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C007",
+   "haupt": "sw-british-bulldog",
+   "ids": [
+    "ps-british-bulldog",
+    "sw-british-bulldog",
+    "sw-wer-hat-angst-vorm-schwarzen-mann"
+   ],
+   "titel": [
+    "British Bulldog",
+    "British Bulldog",
+    "Wer hat Angst vorm weißen Hai?"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-british-bulldog": 1.0,
+    "sw-british-bulldog": 1.0,
+    "sw-wer-hat-angst-vorm-schwarzen-mann": 0.63
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich",
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C008",
+   "haupt": "sw-frisbee-fussball",
+   "ids": [
+    "sw-frisbee-fussball",
+    "sw-frisbee-passen",
+    "sw-frisbeelauf"
+   ],
+   "titel": [
+    "Frisbee-Fußball",
+    "Frisbee-Passen",
+    "Frisbeelauf"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-frisbee-fussball": 1.0,
+    "sw-frisbee-passen": 0.67,
+    "sw-frisbeelauf": 0.59
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C009",
+   "haupt": "sw-ich-packe-in-meinen-rucksack",
+   "ids": [
+    "insp-ich-packe-meinen-koffer",
+    "ps-ich-packe-meinen-koffer",
+    "sw-ich-packe-in-meinen-rucksack"
+   ],
+   "titel": [
+    "Ich packe meinen Koffer ...",
+    "Ich packe meinen Koffer",
+    "Ich packe in meinen Rucksack"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "insp-ich-packe-meinen-koffer": 0.71,
+    "ps-ich-packe-meinen-koffer": 0.71,
+    "sw-ich-packe-in-meinen-rucksack": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C010",
+   "haupt": "sw-scrum",
+   "ids": [
+    "sw-kindersumo",
+    "sw-krebsgedrange",
+    "sw-scrum"
+   ],
+   "titel": [
+    "Kindersumo",
+    "Krebsgedränge",
+    "Scrum"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-kindersumo": 0.67,
+    "sw-krebsgedrange": 0.59,
+    "sw-scrum": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C011",
+   "haupt": "sw-komm-mit-lauf-weg",
+   "ids": [
+    "ps-komm-mit-lauf-weg",
+    "sw-komm-mit-lauf-weg",
+    "sw-lauf-weg"
+   ],
+   "titel": [
+    "Komm mit- lauf weg",
+    "Komm mit lauf weg",
+    "Lauf weg"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-komm-mit-lauf-weg": 1.0,
+    "sw-komm-mit-lauf-weg": 1.0,
+    "sw-lauf-weg": 0.71
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich",
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C012",
+   "haupt": "sw-krabben",
+   "ids": [
+    "sw-krabben",
+    "sw-krebs",
+    "sw-spiderman"
+   ],
+   "titel": [
+    "Krabben",
+    "Krebs",
+    "Spiderman"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-krabben": 1.0,
+    "sw-krebs": 0.58,
+    "sw-spiderman": 0.6
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C013",
+   "haupt": "sw-lieder-raten",
+   "ids": [
+    "sw-lied-gurgeln",
+    "sw-lieder-raten",
+    "sw-melodie-raten"
+   ],
+   "titel": [
+    "Lied gurgeln",
+    "Lieder raten",
+    "Melodie raten"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-lied-gurgeln": 0.67,
+    "sw-lieder-raten": 1.0,
+    "sw-melodie-raten": 0.72
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C014",
+   "haupt": "sw-reise-nach-jerusalem",
+   "ids": [
+    "ps-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem-extrem"
+   ],
+   "titel": [
+    "Reise nach Jerusalem",
+    "Reise nach Jerusalem",
+    "Reise nach Jerusalem extrem"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-reise-nach-jerusalem": 1.0,
+    "sw-reise-nach-jerusalem": 1.0,
+    "sw-reise-nach-jerusalem-extrem": 0.85
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich",
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C015",
+   "haupt": "eig-schokoladen-wettessen",
+   "ids": [
+    "eig-schokoladen-wettessen",
+    "ps-das-schokoladenspiel",
+    "sw-schokoladeschneiden"
+   ],
+   "titel": [
+    "Schokoladen-Wettessen",
+    "Das Schokoladenspiel",
+    "Schokoladeschneiden"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "eigene",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-schokoladen-wettessen": 1.0,
+    "ps-das-schokoladenspiel": 0.7,
+    "sw-schokoladeschneiden": 0.7
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C016",
+   "haupt": "sw-wer-bin-ich",
+   "ids": [
+    "ps-wer-bin-ich",
+    "sw-wer-bin-ich",
+    "sw-wer-bin-ich-verkehrt"
+   ],
+   "titel": [
+    "Wer bin ich?",
+    "Wer bin ich",
+    "Wer bin ich (verkehrt)"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-wer-bin-ich": 1.0,
+    "sw-wer-bin-ich": 1.0,
+    "sw-wer-bin-ich-verkehrt": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C017",
+   "haupt": "eig-waescheklammern-jagd",
+   "ids": [
+    "eig-waescheklammern-jagd",
+    "ps-waescheklammern-klauen",
+    "sw-wascheklammern-diebstahl"
+   ],
+   "titel": [
+    "Wäscheklammern-Jagd",
+    "Wäscheklammern klauen",
+    "Wäscheklammern-Diebstahl"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "eigene",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-waescheklammern-jagd": 1.0,
+    "ps-waescheklammern-klauen": 0.81,
+    "sw-wascheklammern-diebstahl": 0.76
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C018",
+   "haupt": "sw-zwinkern",
+   "ids": [
+    "ps-zuzwinckern-sterben",
+    "ps-zuzwinkern-hundehuette",
+    "sw-zwinkern"
+   ],
+   "titel": [
+    "Zuzwinckern (+sterben)",
+    "Zuzwinkern",
+    "Zwinkern"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-zuzwinckern-sterben": 0.84,
+    "ps-zuzwinkern-hundehuette": 0.89,
+    "sw-zwinkern": 1.0
+   },
+   "gruende": [
+    "Titel fast gleich",
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C019",
+   "haupt": "sw-wahlurnen-reflexion",
+   "ids": [
+    "sw-ampel-reflexion",
+    "sw-wahlurnen-reflexion"
+   ],
+   "titel": [
+    "Ampel-Reflexion",
+    "Wahlurnen-Reflexion"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-ampel-reflexion": 0.71,
+    "sw-wahlurnen-reflexion": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C020",
+   "haupt": "sw-bauernschnapsen",
+   "ids": [
+    "sw-bauernschnapsen",
+    "sw-dreierschnapsen"
+   ],
+   "titel": [
+    "Bauernschnapsen",
+    "Dreierschnapsen"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-bauernschnapsen": 1.0,
+    "sw-dreierschnapsen": 0.87
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C021",
+   "haupt": "sw-hugo",
+   "ids": [
+    "ps-bermudadreieck",
+    "sw-hugo"
+   ],
+   "titel": [
+    "Bermudadreieck",
+    "Hugo"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-bermudadreieck": 0.11,
+    "sw-hugo": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C022",
+   "haupt": "sw-black-stories",
+   "ids": [
+    "sw-black-stories",
+    "sw-lateral"
+   ],
+   "titel": [
+    "Black Stories",
+    "Lateral"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-black-stories": 1.0,
+    "sw-lateral": 0.57
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C023",
+   "haupt": "sw-brieftrager",
+   "ids": [
+    "sw-brieftrager",
+    "sw-namenschlagen"
+   ],
+   "titel": [
+    "Briefträger",
+    "Namenschlagen"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-brieftrager": 1.0,
+    "sw-namenschlagen": 0.74
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C024",
+   "haupt": "sw-capture-the-flag",
+   "ids": [
+    "ps-capture-the-flag",
+    "sw-capture-the-flag"
+   ],
+   "titel": [
+    "Capture the flag",
+    "Capture the Flag"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-capture-the-flag": 1.0,
+    "sw-capture-the-flag": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C025",
+   "haupt": "eig-casino-abend",
+   "ids": [
+    "eig-casino-abend",
+    "insp-casino-heimabend"
+   ],
+   "titel": [
+    "Casino-Abend",
+    "Casino-Heimabend"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "eigene"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-casino-abend": 1.0,
+    "insp-casino-heimabend": 0.86
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C026",
+   "haupt": "eig-chaosspiel",
+   "ids": [
+    "eig-chaosspiel",
+    "ps-chaos-spiel"
+   ],
+   "titel": [
+    "Chaosspiel",
+    "Chaos-Spiel"
+   ],
+   "quellen": [
+    "eigene",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-chaosspiel": 1.0,
+    "ps-chaos-spiel": 0.95
+   },
+   "gruende": [
+    "Titel fast gleich"
+   ]
+  },
+  {
+   "cluster_id": "C027",
+   "haupt": "sw-der-magier-liebt",
+   "ids": [
+    "sw-der-magier-liebt",
+    "sw-hannes-liebt"
+   ],
+   "titel": [
+    "Der Magier liebt",
+    "Hannes liebt"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-der-magier-liebt": 1.0,
+    "sw-hannes-liebt": 0.67
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C028",
+   "haupt": "sw-dirigent",
+   "ids": [
+    "ps-dirigent",
+    "sw-dirigent"
+   ],
+   "titel": [
+    "Dirigent",
+    "Dirigent"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-dirigent": 1.0,
+    "sw-dirigent": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C029",
+   "haupt": "sw-dracula",
+   "ids": [
+    "sw-dracula",
+    "sw-verstecken-im-dunkeln"
+   ],
+   "titel": [
+    "Dracula",
+    "Verstecken im Dunkeln"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-dracula": 1.0,
+    "sw-verstecken-im-dunkeln": 0.53
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C030",
+   "haupt": "sw-ei-am-berg",
+   "ids": [
+    "sw-ei-am-berg",
+    "sw-mehlschneiden"
+   ],
+   "titel": [
+    "Ei am Berg",
+    "Mehlschneiden"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-ei-am-berg": 1.0,
+    "sw-mehlschneiden": 0.53
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C031",
+   "haupt": "sw-eisbar-und-pinguin",
+   "ids": [
+    "ps-eisbaer-und-pinguin",
+    "sw-eisbar-und-pinguin"
+   ],
+   "titel": [
+    "Eisbär und Pinguin",
+    "Eisbär und Pinguin"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-eisbaer-und-pinguin": 1.0,
+    "sw-eisbar-und-pinguin": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C032",
+   "haupt": "sw-feuer-wasser-sturm",
+   "ids": [
+    "insp-feuer-wasser-sturm",
+    "sw-feuer-wasser-sturm"
+   ],
+   "titel": [
+    "Feuer, Wasser, Sturm",
+    "Feuer Wasser Sturm"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "insp-feuer-wasser-sturm": 1.0,
+    "sw-feuer-wasser-sturm": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C033",
+   "haupt": "sw-teppich-umdrehen",
+   "ids": [
+    "ps-fliegender-teppich",
+    "sw-teppich-umdrehen"
+   ],
+   "titel": [
+    "Fliegender Teppich",
+    "Teppich umdrehen"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-fliegender-teppich": 0.41,
+    "sw-teppich-umdrehen": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C034",
+   "haupt": "sw-funken",
+   "ids": [
+    "ps-funker-funker",
+    "sw-funken"
+   ],
+   "titel": [
+    "Funker Funker",
+    "Funken"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-funker-funker": 0.63,
+    "sw-funken": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C035",
+   "haupt": "sw-geschmackskim",
+   "ids": [
+    "sw-geruchskim",
+    "sw-geschmackskim"
+   ],
+   "titel": [
+    "Geruchskim",
+    "Geschmackskim"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-geruchskim": 0.7,
+    "sw-geschmackskim": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C036",
+   "haupt": "sw-goofy",
+   "ids": [
+    "ps-goofy",
+    "sw-goofy"
+   ],
+   "titel": [
+    "Goofy",
+    "Goofy"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-goofy": 1.0,
+    "sw-goofy": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C037",
+   "haupt": "sw-gordischer-knoten",
+   "ids": [
+    "ps-gordischer-knoten",
+    "sw-gordischer-knoten"
+   ],
+   "titel": [
+    "Gordischer Knoten",
+    "Gordischer Knoten"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-gordischer-knoten": 1.0,
+    "sw-gordischer-knoten": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C038",
+   "haupt": "ps-gruppennetz",
+   "ids": [
+    "ps-gruppennetz",
+    "sw-fadennetz"
+   ],
+   "titel": [
+    "Gruppennetz",
+    "Fadennetz"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-gruppennetz": 1.0,
+    "sw-fadennetz": 0.6
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C039",
+   "haupt": "sw-hi-my-name-is-joe",
+   "ids": [
+    "ps-hannes",
+    "sw-hi-my-name-is-joe"
+   ],
+   "titel": [
+    "Hannes",
+    "Hi my name is Joe"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-hannes": 0.36,
+    "sw-hi-my-name-is-joe": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C040",
+   "haupt": "sw-heuwagen-mistwagen",
+   "ids": [
+    "sw-heuwagen-mistwagen",
+    "sw-plus-minus-interessant"
+   ],
+   "titel": [
+    "Heuwagen-Mistwagen",
+    "Plus Minus Interessant"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-heuwagen-mistwagen": 1.0,
+    "sw-plus-minus-interessant": 0.74
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C041",
+   "haupt": "sw-huhnerspiel",
+   "ids": [
+    "sw-huhnerspiel",
+    "sw-klopfen"
+   ],
+   "titel": [
+    "Hühnerspiel",
+    "Klopfen"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-huhnerspiel": 1.0,
+    "sw-klopfen": 0.53
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C042",
+   "haupt": "sw-singing-in-the-rain",
+   "ids": [
+    "ps-im-singing-in-the-rain",
+    "sw-singing-in-the-rain"
+   ],
+   "titel": [
+    "I’m singing in the rain",
+    "Singing in the Rain"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-im-singing-in-the-rain": 0.9,
+    "sw-singing-in-the-rain": 1.0
+   },
+   "gruende": [
+    "Titel fast gleich"
+   ]
+  },
+  {
+   "cluster_id": "C043",
+   "haupt": "sw-krahe-krabbe-krote",
+   "ids": [
+    "sw-ja-nein-fangen",
+    "sw-krahe-krabbe-krote"
+   ],
+   "titel": [
+    "Ja-Nein-Fangen",
+    "Krähe Krabbe Kröte"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-ja-nein-fangen": 0.53,
+    "sw-krahe-krabbe-krote": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C044",
+   "haupt": "sw-jack-sass-in-der-kuche-mit-tina",
+   "ids": [
+    "ps-jack-sass-in-der-kueche-mit-tina",
+    "sw-jack-sass-in-der-kuche-mit-tina"
+   ],
+   "titel": [
+    "Jack saß in der Küche mit Tina",
+    "Jack saß in der Küche mit Tina"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-jack-sass-in-der-kueche-mit-tina": 1.0,
+    "sw-jack-sass-in-der-kuche-mit-tina": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C045",
+   "haupt": "sw-katze-und-maus-grossgruppenspiel",
+   "ids": [
+    "sw-katze-und-maus-grossgruppenspiel",
+    "sw-katze-und-maus-kreisspiel"
+   ],
+   "titel": [
+    "Katze und Maus (Großgruppenspiel)",
+    "Katze und Maus (Kreisspiel)"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-katze-und-maus-grossgruppenspiel": 1.0,
+    "sw-katze-und-maus-kreisspiel": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C046",
+   "haupt": "sw-kettenfangen",
+   "ids": [
+    "ps-kettenfangen",
+    "sw-kettenfangen"
+   ],
+   "titel": [
+    "Kettenfangen",
+    "Kettenfangen"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-kettenfangen": 1.0,
+    "sw-kettenfangen": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C047",
+   "haupt": "sw-killerball",
+   "ids": [
+    "sw-killerball",
+    "sw-rette-den-freund"
+   ],
+   "titel": [
+    "Killerball",
+    "Rette den Freund"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-killerball": 1.0,
+    "sw-rette-den-freund": 0.87
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C048",
+   "haupt": "sw-koffer-packen-auf-dem-trampolin",
+   "ids": [
+    "sw-koffer-packen-auf-dem-trampolin",
+    "sw-koffer-packen-auf-der-slackline"
+   ],
+   "titel": [
+    "Koffer Packen auf dem Trampolin",
+    "Koffer Packen auf der Slackline"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-koffer-packen-auf-dem-trampolin": 1.0,
+    "sw-koffer-packen-auf-der-slackline": 0.81
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C049",
+   "haupt": "sw-toasterspiel",
+   "ids": [
+    "ps-kotzendes-kaenguru",
+    "sw-toasterspiel"
+   ],
+   "titel": [
+    "Kotzendes Känguru",
+    "Toasterspiel"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-kotzendes-kaenguru": 0.4,
+    "sw-toasterspiel": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C050",
+   "haupt": "sw-laurentia",
+   "ids": [
+    "ps-laurentia",
+    "sw-laurentia"
+   ],
+   "titel": [
+    "Laurentia",
+    "Laurentia"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-laurentia": 1.0,
+    "sw-laurentia": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C051",
+   "haupt": "sw-stille-post",
+   "ids": [
+    "sw-laute-post",
+    "sw-stille-post"
+   ],
+   "titel": [
+    "Laute Post",
+    "Stille Post"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-laute-post": 0.67,
+    "sw-stille-post": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C052",
+   "haupt": "sw-luftballon-kennenlernspiel",
+   "ids": [
+    "sw-luftballon-kennenlernspiel",
+    "sw-names-luftballon"
+   ],
+   "titel": [
+    "Luftballon (Kennenlernspiel)",
+    "Names-Luftballon"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-luftballon-kennenlernspiel": 1.0,
+    "sw-names-luftballon": 0.77
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C053",
+   "haupt": "sw-partner-merkball",
+   "ids": [
+    "sw-merkball",
+    "sw-partner-merkball"
+   ],
+   "titel": [
+    "Merkball",
+    "Partner-Merkball"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-merkball": 0.79,
+    "sw-partner-merkball": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C054",
+   "haupt": "sw-montagsmaler",
+   "ids": [
+    "ps-montagsmaler",
+    "sw-montagsmaler"
+   ],
+   "titel": [
+    "Montagsmaler",
+    "Montagsmaler"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-montagsmaler": 1.0,
+    "sw-montagsmaler": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C055",
+   "haupt": "sw-murmelbahn-personen",
+   "ids": [
+    "sw-murmelbahn-konstruktion",
+    "sw-murmelbahn-personen"
+   ],
+   "titel": [
+    "Murmelbahn (Konstruktion)",
+    "Murmelbahn (Personen)"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-murmelbahn-konstruktion": 1.0,
+    "sw-murmelbahn-personen": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C056",
+   "haupt": "sw-karottenziehen",
+   "ids": [
+    "ps-moehren-ziehen",
+    "sw-karottenziehen"
+   ],
+   "titel": [
+    "Möhren ziehen",
+    "Karottenziehen"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-moehren-ziehen": 0.64,
+    "sw-karottenziehen": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C057",
+   "haupt": "sw-seenotspiel",
+   "ids": [
+    "sw-nasa-spiel",
+    "sw-seenotspiel"
+   ],
+   "titel": [
+    "NASA-Spiel",
+    "Seenotspiel"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-nasa-spiel": 0.58,
+    "sw-seenotspiel": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C058",
+   "haupt": "ps-namensjonglage",
+   "ids": [
+    "ps-namensjonglage",
+    "sw-namensjonglage"
+   ],
+   "titel": [
+    "Namensjonglage",
+    "Namensjonglage"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-namensjonglage": 1.0,
+    "sw-namensjonglage": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C059",
+   "haupt": "sw-ninja",
+   "ids": [
+    "ps-ninja",
+    "sw-ninja"
+   ],
+   "titel": [
+    "Ninja",
+    "Ninja"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-ninja": 1.0,
+    "sw-ninja": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C060",
+   "haupt": "sw-obstsalat",
+   "ids": [
+    "ps-obstsalat",
+    "sw-obstsalat"
+   ],
+   "titel": [
+    "Obstsalat",
+    "Obstsalat"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-obstsalat": 1.0,
+    "sw-obstsalat": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C061",
+   "haupt": "sw-paarfangen",
+   "ids": [
+    "ps-paarfangen",
+    "sw-paarfangen"
+   ],
+   "titel": [
+    "Paarfangen",
+    "Paarfangen"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-paarfangen": 1.0,
+    "sw-paarfangen": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C062",
+   "haupt": "sw-schlusselbund",
+   "ids": [
+    "sw-paarweise-vorstellen",
+    "sw-schlusselbund"
+   ],
+   "titel": [
+    "Paarweise Vorstellen",
+    "Schlüsselbund"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-paarweise-vorstellen": 0.66,
+    "sw-schlusselbund": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C063",
+   "haupt": "ps-pferderennen",
+   "ids": [
+    "ps-pferderennen",
+    "sw-pferderennen"
+   ],
+   "titel": [
+    "Pferderennen",
+    "Pferderennen"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-pferderennen": 1.0,
+    "sw-pferderennen": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C064",
+   "haupt": "sw-polsterbesetzen",
+   "ids": [
+    "sw-polsterbesetzen",
+    "sw-polsterspiel"
+   ],
+   "titel": [
+    "Polsterbesetzen",
+    "Polsterspiel"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-polsterbesetzen": 1.0,
+    "sw-polsterspiel": 0.67
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C065",
+   "haupt": "sw-psychiatercouch",
+   "ids": [
+    "sw-psychiatercouch",
+    "sw-sofaspiel"
+   ],
+   "titel": [
+    "Psychiatercouch",
+    "Sofaspiel"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-psychiatercouch": 1.0,
+    "sw-sofaspiel": 0.84
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C066",
+   "haupt": "insp-schmuggler-innen-spiel",
+   "ids": [
+    "insp-schmuggler-innen-spiel",
+    "ps-schmuggler"
+   ],
+   "titel": [
+    "Schmuggler*innen-Spiel",
+    "Schmuggler"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-NC-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "insp-schmuggler-innen-spiel": 1.0,
+    "ps-schmuggler": 0.62
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C067",
+   "haupt": "sw-schere-stein-papier",
+   "ids": [
+    "ps-schnick-schnack-schnuck",
+    "sw-schere-stein-papier"
+   ],
+   "titel": [
+    "Schnick-Schnack-Schnuck",
+    "Schere Stein Papier"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-schnick-schnack-schnuck": 0.47,
+    "sw-schere-stein-papier": 1.0
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C068",
+   "haupt": "sw-sitzfussball-im-kreis",
+   "ids": [
+    "sw-sitzfussball-bewegungsspiel",
+    "sw-sitzfussball-im-kreis"
+   ],
+   "titel": [
+    "Sitzfußball (Bewegungsspiel)",
+    "Sitzfußball im Kreis"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-sitzfussball-bewegungsspiel": 0.73,
+    "sw-sitzfussball-im-kreis": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C069",
+   "haupt": "ps-slurp",
+   "ids": [
+    "ps-slurp",
+    "sw-slurp"
+   ],
+   "titel": [
+    "Slurp",
+    "Slurp"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-slurp": 1.0,
+    "sw-slurp": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C070",
+   "haupt": "sw-stadt-land-fluss",
+   "ids": [
+    "insp-stadt-land-fluss",
+    "sw-stadt-land-fluss"
+   ],
+   "titel": [
+    "Stadt, Land, Fluss",
+    "Stadt-Land-Fluss"
+   ],
+   "quellen": [
+    "Inspirator (DPBM)",
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-NC 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "insp-stadt-land-fluss": 1.0,
+    "sw-stadt-land-fluss": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C071",
+   "haupt": "sw-stimmungs-matrix",
+   "ids": [
+    "sw-stimmungs-matrix",
+    "sw-stimmungsbarometer"
+   ],
+   "titel": [
+    "Stimmungs-Matrix",
+    "Stimmungsbarometer"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-stimmungs-matrix": 1.0,
+    "sw-stimmungsbarometer": 0.71
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C072",
+   "haupt": "sw-teelichter-bewachen",
+   "ids": [
+    "sw-teelichter-ausblasen",
+    "sw-teelichter-bewachen"
+   ],
+   "titel": [
+    "Teelichter-Ausblasen",
+    "Teelichter bewachen"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-teelichter-ausblasen": 0.77,
+    "sw-teelichter-bewachen": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C073",
+   "haupt": "sw-wachsgiessen",
+   "ids": [
+    "sw-teiggiessen",
+    "sw-wachsgiessen"
+   ],
+   "titel": [
+    "Teiggießen",
+    "Wachsgießen"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-teiggiessen": 0.66,
+    "sw-wachsgiessen": 1.0
+   },
+   "gruende": [
+    "Beschreibung sehr ähnlich"
+   ]
+  },
+  {
+   "cluster_id": "C074",
+   "haupt": "sw-vampir",
+   "ids": [
+    "ps-vampire",
+    "sw-vampir"
+   ],
+   "titel": [
+    "Vampire",
+    "Vampir"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-vampire": 0.92,
+    "sw-vampir": 1.0
+   },
+   "gruende": [
+    "Titel fast gleich"
+   ]
+  },
+  {
+   "cluster_id": "C075",
+   "haupt": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+   "ids": [
+    "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+    "sw-virus"
+   ],
+   "titel": [
+    "Virus",
+    "Virus"
+   ],
+   "quellen": [
+    "Spielewiki",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "ps-berg-zwerg-riese-versteinerte-hexe-virus": 1.0,
+    "sw-virus": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C076",
+   "haupt": "sw-welle-vertrauensspiel",
+   "ids": [
+    "sw-welle-entspannungsspiel",
+    "sw-welle-vertrauensspiel"
+   ],
+   "titel": [
+    "Welle (Entspannungsspiel)",
+    "Welle (Vertrauensspiel)"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-welle-entspannungsspiel": 1.0,
+    "sw-welle-vertrauensspiel": 1.0
+   },
+   "gruende": [
+    "gleicher Titel"
+   ]
+  },
+  {
+   "cluster_id": "C077",
+   "haupt": "eig-werwolf-abend",
+   "ids": [
+    "eig-werwolf-abend",
+    "ps-werwolf"
+   ],
+   "titel": [
+    "Werwolf-Abend",
+    "Werwolf"
+   ],
+   "quellen": [
+    "eigene",
+    "pfadfinder-spiele"
+   ],
+   "lizenzen": [
+    "CC BY-NC-SA 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": true,
+   "aehnlichkeit": {
+    "eig-werwolf-abend": 1.0,
+    "ps-werwolf": 0.7
+   },
+   "gruende": [
+    "in den Daten als Dublette markiert"
+   ]
+  },
+  {
+   "cluster_id": "C078",
+   "haupt": "sw-zipp-zapp-zopp",
+   "ids": [
+    "sw-zipp-zapp",
+    "sw-zipp-zapp-zopp"
+   ],
+   "titel": [
+    "Zipp Zapp",
+    "Zipp Zapp Zopp"
+   ],
+   "quellen": [
+    "Spielewiki"
+   ],
+   "lizenzen": [
+    "CC BY-SA 4.0"
+   ],
+   "lizenz_gemischt": false,
+   "aehnlichkeit": {
+    "sw-zipp-zapp": 0.78,
+    "sw-zipp-zapp-zopp": 1.0
+   },
+   "gruende": [
+    "Titel ähnlich + Text ähnlich"
+   ]
+  }
+ ],
+ "B_familien": [
+  {
+   "familie": "Ball- und Wurfspiele",
+   "anzahl": 77,
+   "anzahl_titel": 51,
+   "ids": [
+    "sw-alaska-baseball",
+    "sw-ball-im-kafig",
+    "sw-ball-uber-die-schnur",
+    "sw-ballbewegung",
+    "sw-ballgasse",
+    "ps-mischling",
+    "sw-ballweitergabe-mit-beinen",
+    "sw-ballwurfkette",
+    "sw-baumball",
+    "sw-blindenfussball",
+    "sw-bodyguard",
+    "ps-bosseln",
+    "sw-bruchenball",
+    "sw-der-magier-liebt",
+    "sw-donner-wetter-blitz",
+    "sw-dosenschiessen",
+    "sw-drachenschwanzabschiessen",
+    "sw-eierkran",
+    "sw-eiersuche",
+    "sw-esel-in-der-mitte",
+    "sw-fetzenfussball",
+    "sw-fitschigogerl",
+    "sw-foursquare",
+    "sw-frisbee-challenge",
+    "sw-frisbee-fussball",
+    "sw-frisbee-golf",
+    "sw-frisbee-passen",
+    "sw-frisbeelauf",
+    "sw-frisbeezielwurf",
+    "sw-hammerwerfen",
+    "sw-huftschwung",
+    "sw-jagerball",
+    "sw-kaiserball",
+    "sw-killerball",
+    "sw-kinderbaseball",
+    "sw-klatschball",
+    "sw-konigsball",
+    "sw-kubelball",
+    "sw-luftballon-kennenlernspiel",
+    "sw-luftballon-rasieren",
+    "insp-luftballonstaffel",
+    "sw-luftballontanz",
+    "sw-mehrfach-volleyball",
+    "sw-mehrfelderball",
+    "sw-merkball",
+    "ps-moerderball",
+    "sw-namensballchen",
+    "ps-namensjonglage",
+    "sw-namensjonglage",
+    "sw-names-luftballon",
+    "sw-partner-merkball",
+    "sw-pelele",
+    "ps-prinzball",
+    "sw-reboundball",
+    "sw-rette-den-freund",
+    "sw-rot-blau-tot",
+    "sw-rugby",
+    "sw-rugbyfangen",
+    "sw-sandschleuder",
+    "sw-sitzfussball-bewegungsspiel",
+    "sw-sitzfussball-im-kreis",
+    "sw-stori",
+    "sw-swoosh",
+    "sw-teebeutel-weitwurf",
+    "sw-tischfussball",
+    "sw-treibball",
+    "sw-verliebt-verlobt-verheiratet",
+    "sw-virusball",
+    "sw-volkerball",
+    "sw-volkerball-verkehrt",
+    "sw-wasserbomben-werfen",
+    "sw-wetttransport",
+    "insp-wutball-aus-alten-socken",
+    "sw-zahlball",
+    "ps-zauberball-sip-sop",
+    "sw-zehnerln",
+    "ps-zombieball"
+   ],
+   "ids_titel": [
+    "sw-alaska-baseball",
+    "sw-ball-im-kafig",
+    "sw-ball-uber-die-schnur",
+    "sw-ballbewegung",
+    "sw-ballgasse",
+    "ps-mischling",
+    "sw-ballweitergabe-mit-beinen",
+    "sw-ballwurfkette",
+    "sw-baumball",
+    "sw-blindenfussball",
+    "sw-bruchenball",
+    "sw-fetzenfussball",
+    "sw-frisbee-challenge",
+    "sw-frisbee-fussball",
+    "sw-frisbee-golf",
+    "sw-frisbee-passen",
+    "sw-frisbeelauf",
+    "sw-frisbeezielwurf",
+    "sw-hammerwerfen",
+    "sw-jagerball",
+    "sw-kaiserball",
+    "sw-killerball",
+    "sw-kinderbaseball",
+    "sw-klatschball",
+    "sw-konigsball",
+    "sw-kubelball",
+    "sw-luftballon-kennenlernspiel",
+    "sw-luftballon-rasieren",
+    "insp-luftballonstaffel",
+    "sw-luftballontanz",
+    "sw-mehrfach-volleyball",
+    "sw-mehrfelderball",
+    "sw-merkball",
+    "ps-moerderball",
+    "sw-names-luftballon",
+    "sw-partner-merkball",
+    "ps-prinzball",
+    "sw-reboundball",
+    "sw-sitzfussball-bewegungsspiel",
+    "sw-sitzfussball-im-kreis",
+    "sw-teebeutel-weitwurf",
+    "sw-tischfussball",
+    "sw-treibball",
+    "sw-virusball",
+    "sw-volkerball",
+    "sw-volkerball-verkehrt",
+    "sw-wasserbomben-werfen",
+    "insp-wutball-aus-alten-socken",
+    "sw-zahlball",
+    "ps-zauberball-sip-sop",
+    "ps-zombieball"
+   ],
+   "beispiele": [
+    [
+     "sw-alaska-baseball",
+     "Alaska-Baseball"
+    ],
+    [
+     "sw-ball-im-kafig",
+     "Ball im Käfig"
+    ],
+    [
+     "sw-ball-uber-die-schnur",
+     "Ball über die Schnur"
+    ],
+    [
+     "sw-ballbewegung",
+     "Ballbewegung"
+    ],
+    [
+     "sw-ballgasse",
+     "Ballgasse"
+    ],
+    [
+     "ps-mischling",
+     "Ballraub"
+    ],
+    [
+     "sw-ballweitergabe-mit-beinen",
+     "Ballweitergabe mit Beinen"
+    ],
+    [
+     "sw-ballwurfkette",
+     "Ballwurfkette"
+    ]
+   ],
+   "behalten_vorschlag": 8
+  },
+  {
+   "familie": "Fangen (alle Varianten)",
+   "anzahl": 102,
+   "anzahl_titel": 28,
+   "ids": [
+    "ps-arena",
+    "sw-baumchen-wechsle-dich",
+    "sw-ball-uber-die-schnur",
+    "sw-bodyguard",
+    "sw-brieftrager",
+    "ps-british-bulldog",
+    "sw-british-bulldog",
+    "sw-bruckenfangen",
+    "sw-captain-hook-und-peter-pan",
+    "ps-capture-the-flag",
+    "sw-chaosfangen",
+    "sw-chinesische-mauer",
+    "ps-detektiv",
+    "insp-doppeltes-e",
+    "sw-drachenschwanzfangen-einzeln",
+    "sw-drachenschwanzfangen-gruppenweise",
+    "ps-drachenschwanzjagen",
+    "sw-dracula",
+    "sw-dreibein-fangen",
+    "sw-ein-hase-lauft-uber-das-feld",
+    "ps-eisbaer-und-pinguin",
+    "sw-eisbar-und-pinguin",
+    "sw-eislocher-eisbaren-fische",
+    "ps-englischfangen",
+    "sw-farbenfangen",
+    "insp-finde-die-entfuehrte-person",
+    "ps-fledermaus-und-motte",
+    "sw-flohhupfen",
+    "sw-frisbee-challenge",
+    "insp-halstuchspiel",
+    "ps-hannes",
+    "sw-hase-und-wolf",
+    "ps-hilfe-die-katze-kommt",
+    "sw-himmel-auf-erden",
+    "sw-innenkreis-aussenkreis",
+    "sw-ja-nein-fangen",
+    "sw-jammerquaks",
+    "sw-kaferfangen",
+    "sw-kaiserball",
+    "sw-kalaha",
+    "sw-katze-und-maus-grossgruppenspiel",
+    "sw-katze-und-maus-kreisspiel",
+    "ps-kettenfangen",
+    "sw-kettenfangen",
+    "sw-kinderbaseball",
+    "sw-klapperschlangen",
+    "sw-klatschball",
+    "sw-konigsball",
+    "sw-komm-mit-lauf-weg",
+    "ps-komm-mit-lauf-weg",
+    "sw-krahe-krabbe-krote",
+    "sw-krebs",
+    "sw-langsamer-hase-und-jager",
+    "sw-lauf-weg",
+    "sw-linienfangen",
+    "sw-luftballon-kennenlernspiel",
+    "sw-mehrfach-volleyball",
+    "sw-memory-fangen",
+    "ps-milchproduktefangen",
+    "sw-mimi-klatsch-spiel",
+    "ps-mr-x",
+    "sw-mutprobe-und-vertrauen",
+    "sw-namensballchen",
+    "sw-namensjonglage",
+    "ps-paarfangen",
+    "sw-paarfangen",
+    "sw-pharao",
+    "ps-prinzball",
+    "ps-prinzessin-ritter-drache",
+    "sw-qualle-koralle",
+    "sw-rauber-und-kaufleute",
+    "sw-reboundball",
+    "sw-rot-blau-tot",
+    "ps-ruecken-malen",
+    "sw-rugbyfangen",
+    "sw-schlangen-im-gras",
+    "sw-schlumpfe-versteinern",
+    "ps-schmuggler",
+    "sw-schneckenfangen",
+    "sw-schwammspiel",
+    "sw-stehaufmannchen",
+    "sw-steinfanger-baumfanger-bruckenfanger",
+    "ps-steinsuche",
+    "sw-stori",
+    "sw-streitwagen-fangen",
+    "ps-stufenspiel",
+    "ps-stuhlfangen",
+    "sw-swoosh",
+    "sw-tischfangen",
+    "ps-tuchfangen",
+    "ps-versteck-fangen",
+    "sw-verstecken-im-dunkeln",
+    "insp-versteinern",
+    "sw-versteinern",
+    "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+    "sw-volkerball-verkehrt",
+    "ps-waescheklammern-klauen",
+    "sw-wer-hat-angst-vorm-schwarzen-mann",
+    "sw-zahlenfangen",
+    "sw-zahlensalat",
+    "sw-zehnerln",
+    "sw-zipp-zapp"
+   ],
+   "ids_titel": [
+    "sw-bruckenfangen",
+    "sw-chaosfangen",
+    "sw-drachenschwanzfangen-einzeln",
+    "sw-drachenschwanzfangen-gruppenweise",
+    "sw-dreibein-fangen",
+    "ps-englischfangen",
+    "sw-farbenfangen",
+    "sw-ja-nein-fangen",
+    "sw-kaferfangen",
+    "ps-kettenfangen",
+    "sw-kettenfangen",
+    "sw-linienfangen",
+    "sw-memory-fangen",
+    "ps-milchproduktefangen",
+    "ps-paarfangen",
+    "sw-paarfangen",
+    "sw-rugbyfangen",
+    "sw-schlumpfe-versteinern",
+    "sw-schneckenfangen",
+    "sw-steinfanger-baumfanger-bruckenfanger",
+    "sw-streitwagen-fangen",
+    "ps-stuhlfangen",
+    "sw-tischfangen",
+    "ps-tuchfangen",
+    "ps-versteck-fangen",
+    "insp-versteinern",
+    "sw-versteinern",
+    "sw-zahlenfangen"
+   ],
+   "beispiele": [
+    [
+     "sw-bruckenfangen",
+     "Brückenfangen"
+    ],
+    [
+     "sw-chaosfangen",
+     "Chaosfangen"
+    ],
+    [
+     "sw-drachenschwanzfangen-einzeln",
+     "Drachenschwanzfangen (einzeln)"
+    ],
+    [
+     "sw-drachenschwanzfangen-gruppenweise",
+     "Drachenschwanzfangen (gruppenweise)"
+    ],
+    [
+     "sw-dreibein-fangen",
+     "Dreibein-Fangen"
+    ],
+    [
+     "ps-englischfangen",
+     "Englischfangen"
+    ],
+    [
+     "sw-farbenfangen",
+     "Farbenfangen"
+    ],
+    [
+     "sw-ja-nein-fangen",
+     "Ja-Nein-Fangen"
+    ]
+   ],
+   "behalten_vorschlag": 6
+  },
+  {
+   "familie": "Staffel- und Wettlaufspiele",
+   "anzahl": 25,
+   "anzahl_titel": 24,
+   "ids": [
+    "sw-alphabet-staffel",
+    "sw-amobenwettlauf",
+    "sw-dosenlauf",
+    "sw-eierlauf",
+    "sw-eisenbahnstaffel",
+    "sw-elefantenrennen",
+    "sw-frisbeelauf",
+    "sw-handicap-parcours",
+    "sw-hindernisparcours",
+    "sw-komm-mit-lauf-weg",
+    "ps-komm-mit-lauf-weg",
+    "sw-lauf-weg",
+    "sw-laufdiktat",
+    "insp-luftballonstaffel",
+    "ps-pferderennen",
+    "sw-pferderennen",
+    "sw-romisches-wagenrennen",
+    "eig-schraege-olympiade",
+    "sw-schubkarrenrennen",
+    "sw-schwammstaffel",
+    "sw-stationenlauf",
+    "eig-stationenlauf-durchs-viertel",
+    "sw-t-shirt-staffel",
+    "sw-tausendfusserrennen",
+    "sw-uno-staffel"
+   ],
+   "ids_titel": [
+    "sw-alphabet-staffel",
+    "sw-amobenwettlauf",
+    "sw-dosenlauf",
+    "sw-eierlauf",
+    "sw-eisenbahnstaffel",
+    "sw-elefantenrennen",
+    "sw-frisbeelauf",
+    "sw-handicap-parcours",
+    "sw-hindernisparcours",
+    "sw-komm-mit-lauf-weg",
+    "ps-komm-mit-lauf-weg",
+    "sw-lauf-weg",
+    "sw-laufdiktat",
+    "insp-luftballonstaffel",
+    "ps-pferderennen",
+    "sw-pferderennen",
+    "sw-romisches-wagenrennen",
+    "sw-schubkarrenrennen",
+    "sw-schwammstaffel",
+    "sw-stationenlauf",
+    "eig-stationenlauf-durchs-viertel",
+    "sw-t-shirt-staffel",
+    "sw-tausendfusserrennen",
+    "sw-uno-staffel"
+   ],
+   "beispiele": [
+    [
+     "sw-alphabet-staffel",
+     "Alphabet-Staffel"
+    ],
+    [
+     "sw-amobenwettlauf",
+     "Amöbenwettlauf"
+    ],
+    [
+     "sw-dosenlauf",
+     "Dosenlauf"
+    ],
+    [
+     "sw-eierlauf",
+     "Eierlauf"
+    ],
+    [
+     "sw-eisenbahnstaffel",
+     "Eisenbahnstaffel"
+    ],
+    [
+     "sw-elefantenrennen",
+     "Elefantenrennen"
+    ],
+    [
+     "sw-frisbeelauf",
+     "Frisbeelauf"
+    ],
+    [
+     "sw-handicap-parcours",
+     "Handicap-Parcours"
+    ]
+   ],
+   "behalten_vorschlag": 6
+  },
+  {
+   "familie": "Namens- und Kennenlernspiele",
+   "anzahl": 77,
+   "anzahl_titel": 20,
+   "ids": [
+    "sw-acid-river",
+    "sw-ameisenspiel",
+    "ps-angesprochen",
+    "sw-anna",
+    "sw-atomspiel",
+    "sw-aufgabenchaos",
+    "sw-aufgabensammlung",
+    "sw-autogrammspiel",
+    "sw-ballwurfkette",
+    "sw-begrussung-international",
+    "sw-bermudadreieck",
+    "sw-besetzt",
+    "sw-brieftrager",
+    "sw-das-habe-ich-noch-nie-gemacht",
+    "sw-das-schnelle-namensspiel",
+    "ps-das-schnellste-namensspiel-der-welt",
+    "insp-decken-spiel-kennenlernen",
+    "sw-den-dritten-erfinden",
+    "sw-der-ruf-eilt-dir-voraus",
+    "sw-doppelganger",
+    "sw-drei-dinge",
+    "sw-fadennetz",
+    "sw-funken",
+    "ps-funker-funker",
+    "sw-gerausche-kim-fur-paare",
+    "sw-geruchtekuche",
+    "sw-gesucht-wird",
+    "sw-greif-zu",
+    "ps-gruppennetz",
+    "sw-halt-dich-fest",
+    "sw-hansi-pieps-einmal",
+    "sw-hi-my-name-is-joe",
+    "sw-hochstapeln",
+    "sw-ich-habe-schon-einmal",
+    "sw-ich-packe-in-meinen-rucksack",
+    "ps-ich-packe-meinen-koffer",
+    "sw-ich-sitze-im-grunen-und-liebe",
+    "ps-klopapier-namensspiel",
+    "sw-klopapierrolle",
+    "sw-koffer-packen-auf-dem-trampolin",
+    "sw-koffer-packen-auf-der-slackline",
+    "sw-komm-mit-lauf-weg",
+    "sw-kugellager",
+    "sw-landkarte",
+    "sw-lauf-weg",
+    "sw-locher-stopfen",
+    "sw-luftballon-kennenlernspiel",
+    "sw-name-und-bewegung",
+    "sw-namensalphabet",
+    "sw-namensballchen",
+    "sw-namenschlagen",
+    "sw-namenseigenschaften",
+    "ps-namensjonglage",
+    "sw-namensjonglage",
+    "sw-namensmaschine",
+    "sw-namensschreck",
+    "sw-namenstausch",
+    "sw-names-luftballon",
+    "sw-netzwerk",
+    "sw-paarweise-vorstellen",
+    "sw-pelele",
+    "sw-peng",
+    "sw-pferderennen",
+    "sw-picasso-challenge",
+    "ps-prinzball",
+    "sw-reihenbildung",
+    "sw-schlusselbund",
+    "sw-speeddating",
+    "sw-teamvorstellung",
+    "sw-vorstellung-mit-sussigkeiten",
+    "sw-was-ware-die-person",
+    "sw-wer-fehlt",
+    "sw-wer-hat-die-meisten",
+    "sw-whiskymixer-wachsmaske",
+    "sw-wotan-schuh",
+    "sw-zipp-zapp",
+    "sw-zweierzeichnung"
+   ],
+   "ids_titel": [
+    "sw-das-schnelle-namensspiel",
+    "ps-das-schnellste-namensspiel-der-welt",
+    "insp-decken-spiel-kennenlernen",
+    "sw-hi-my-name-is-joe",
+    "ps-klopapier-namensspiel",
+    "sw-luftballon-kennenlernspiel",
+    "sw-name-und-bewegung",
+    "sw-namensalphabet",
+    "sw-namensballchen",
+    "sw-namenschlagen",
+    "sw-namenseigenschaften",
+    "ps-namensjonglage",
+    "sw-namensjonglage",
+    "sw-namensmaschine",
+    "sw-namensschreck",
+    "sw-namenstausch",
+    "sw-names-luftballon",
+    "sw-paarweise-vorstellen",
+    "sw-teamvorstellung",
+    "sw-vorstellung-mit-sussigkeiten"
+   ],
+   "beispiele": [
+    [
+     "sw-das-schnelle-namensspiel",
+     "Das schnelle Namensspiel"
+    ],
+    [
+     "ps-das-schnellste-namensspiel-der-welt",
+     "Das schnellste Namensspiel der Welt"
+    ],
+    [
+     "insp-decken-spiel-kennenlernen",
+     "Decken-Spiel (Kennenlernen)"
+    ],
+    [
+     "sw-hi-my-name-is-joe",
+     "Hi my name is Joe"
+    ],
+    [
+     "ps-klopapier-namensspiel",
+     "Klopapier Namensspiel"
+    ],
+    [
+     "sw-luftballon-kennenlernspiel",
+     "Luftballon (Kennenlernspiel)"
+    ],
+    [
+     "sw-name-und-bewegung",
+     "Name und Bewegung"
+    ],
+    [
+     "sw-namensalphabet",
+     "Namensalphabet"
+    ]
+   ],
+   "behalten_vorschlag": 5
+  },
+  {
+   "familie": "Verstecken, Suchen, Schatzsuche",
+   "anzahl": 30,
+   "anzahl_titel": 18,
+   "ids": [
+    "sw-blinde-wegsuche",
+    "ps-capture-the-flag",
+    "sw-dracula",
+    "sw-eiersuche",
+    "sw-ein-hase-lauft-uber-das-feld",
+    "sw-fotorallye",
+    "sw-fuchs-suche",
+    "sw-geocaching",
+    "sw-kaiserball",
+    "ps-kontakto",
+    "sw-lowenjagd",
+    "sw-briefbomben",
+    "sw-murmelsuche",
+    "sw-piggly-wiggly",
+    "sw-ringsuche",
+    "sw-sardinli",
+    "sw-schatzsuche",
+    "sw-schmuggeln",
+    "sw-schnitzeljagd",
+    "insp-schnitzeljagd-mit-abstand",
+    "sw-stationenlauf",
+    "ps-steinsuche",
+    "sw-stratego",
+    "sw-uhrensuche",
+    "ps-versteck-fangen",
+    "sw-verstecken",
+    "sw-verstecken-im-dunkeln",
+    "sw-verstecken-in-gedanken",
+    "eig-waescheklammern-jagd",
+    "sw-wald-schatzsuche"
+   ],
+   "ids_titel": [
+    "sw-blinde-wegsuche",
+    "sw-eiersuche",
+    "sw-fuchs-suche",
+    "sw-lowenjagd",
+    "sw-briefbomben",
+    "sw-murmelsuche",
+    "sw-ringsuche",
+    "sw-schatzsuche",
+    "sw-schnitzeljagd",
+    "insp-schnitzeljagd-mit-abstand",
+    "ps-steinsuche",
+    "sw-uhrensuche",
+    "ps-versteck-fangen",
+    "sw-verstecken",
+    "sw-verstecken-im-dunkeln",
+    "sw-verstecken-in-gedanken",
+    "eig-waescheklammern-jagd",
+    "sw-wald-schatzsuche"
+   ],
+   "beispiele": [
+    [
+     "sw-blinde-wegsuche",
+     "Blinde Wegsuche"
+    ],
+    [
+     "sw-eiersuche",
+     "Eiersuche"
+    ],
+    [
+     "sw-fuchs-suche",
+     "Fuchs-Suche"
+    ],
+    [
+     "sw-lowenjagd",
+     "Löwenjagd"
+    ],
+    [
+     "sw-briefbomben",
+     "Minensucher"
+    ],
+    [
+     "sw-murmelsuche",
+     "Murmelsuche"
+    ],
+    [
+     "sw-ringsuche",
+     "Ringsuche"
+    ],
+    [
+     "sw-schatzsuche",
+     "Schatzsuche"
+    ]
+   ],
+   "behalten_vorschlag": 5
+  },
+  {
+   "familie": "Pantomime, Raten, Darstellen",
+   "anzahl": 22,
+   "anzahl_titel": 18,
+   "ids": [
+    "insp-digitaler-sippencontest",
+    "sw-bilder-raten",
+    "sw-blind-zeichnen",
+    "insp-digitales-tabu",
+    "sw-initialenraten",
+    "ps-kreativ-tabu",
+    "sw-larmwand",
+    "sw-lieder-raten",
+    "sw-melodie-raten",
+    "ps-montagsmaler",
+    "sw-montagsmaler",
+    "insp-online-spieleplattform",
+    "ps-pantomime-stille-post",
+    "sw-personen-raten",
+    "sw-piratenspiel",
+    "eig-quiz-abend-schlag-die-fuehrung",
+    "sw-scharade",
+    "sw-schreiben-und-zeichnen",
+    "insp-tiere-raten",
+    "sw-wer-bin-ich",
+    "sw-wer-bin-ich-verkehrt",
+    "ps-wer-bin-ich"
+   ],
+   "ids_titel": [
+    "sw-bilder-raten",
+    "sw-blind-zeichnen",
+    "insp-digitales-tabu",
+    "sw-initialenraten",
+    "ps-kreativ-tabu",
+    "sw-lieder-raten",
+    "sw-melodie-raten",
+    "ps-montagsmaler",
+    "sw-montagsmaler",
+    "ps-pantomime-stille-post",
+    "sw-personen-raten",
+    "sw-piratenspiel",
+    "sw-scharade",
+    "sw-schreiben-und-zeichnen",
+    "insp-tiere-raten",
+    "sw-wer-bin-ich",
+    "sw-wer-bin-ich-verkehrt",
+    "ps-wer-bin-ich"
+   ],
+   "beispiele": [
+    [
+     "sw-bilder-raten",
+     "Bilder raten"
+    ],
+    [
+     "sw-blind-zeichnen",
+     "Blind Zeichnen"
+    ],
+    [
+     "insp-digitales-tabu",
+     "Digitales Tabu"
+    ],
+    [
+     "sw-initialenraten",
+     "Initialenraten"
+    ],
+    [
+     "ps-kreativ-tabu",
+     "Kreativ Tabu"
+    ],
+    [
+     "sw-lieder-raten",
+     "Lieder raten"
+    ],
+    [
+     "sw-melodie-raten",
+     "Melodie raten"
+    ],
+    [
+     "ps-montagsmaler",
+     "Montagsmaler"
+    ]
+   ],
+   "behalten_vorschlag": 5
+  },
+  {
+   "familie": "Blind- und Vertrauensspiele",
+   "anzahl": 48,
+   "anzahl_titel": 14,
+   "ids": [
+    "insp-anschleichen-ueben",
+    "sw-blind-fuhren",
+    "sw-blind-zeichnen",
+    "sw-blinde-kuh",
+    "sw-blinde-wegsuche",
+    "sw-blindenfussball",
+    "sw-blinder-pirat",
+    "sw-blindes-finden",
+    "sw-blindes-quadrat",
+    "sw-blindes-schminken",
+    "sw-brot-backen",
+    "ps-der-hirte",
+    "ps-detektiv",
+    "sw-eselschwanz",
+    "ps-fledermaus-und-motte",
+    "sw-flohhupfen",
+    "sw-forderband",
+    "ps-formen-stellen",
+    "sw-fotograf",
+    "sw-geisterbahn",
+    "sw-geschenkeverpacken",
+    "sw-gesichter-ertasten",
+    "ps-goofy",
+    "sw-goofy",
+    "sw-hansi-pieps-einmal",
+    "sw-himmel-auf-erden",
+    "sw-hindernisparcours",
+    "sw-jurte",
+    "sw-klapperschlangen",
+    "sw-kreissitzen",
+    "sw-langsamer-hase-und-jager",
+    "sw-low-v",
+    "insp-marionette",
+    "sw-mutprobe-und-vertrauen",
+    "sw-posterkusse",
+    "sw-reihenbildung",
+    "sw-romeo-und-julia",
+    "ps-stargate",
+    "sw-stehaufmannchen",
+    "sw-t-shirt-staffel",
+    "sw-tastkim",
+    "sw-tischfangen",
+    "sw-topfschlagen",
+    "sw-waschstrasse",
+    "sw-welle-vertrauensspiel",
+    "sw-zahlensalat",
+    "sw-zeichnung-in-der-dunkelheit",
+    "sw-zeltbau-blind"
+   ],
+   "ids_titel": [
+    "sw-blind-fuhren",
+    "sw-blind-zeichnen",
+    "sw-blinde-kuh",
+    "sw-blinde-wegsuche",
+    "sw-blindenfussball",
+    "sw-blinder-pirat",
+    "sw-blindes-finden",
+    "sw-blindes-quadrat",
+    "sw-blindes-schminken",
+    "sw-gesichter-ertasten",
+    "sw-mutprobe-und-vertrauen",
+    "sw-tastkim",
+    "sw-welle-vertrauensspiel",
+    "sw-zeltbau-blind"
+   ],
+   "beispiele": [
+    [
+     "sw-blind-fuhren",
+     "Blind führen"
+    ],
+    [
+     "sw-blind-zeichnen",
+     "Blind Zeichnen"
+    ],
+    [
+     "sw-blinde-kuh",
+     "Blinde Kuh"
+    ],
+    [
+     "sw-blinde-wegsuche",
+     "Blinde Wegsuche"
+    ],
+    [
+     "sw-blindenfussball",
+     "Blindenfußball"
+    ],
+    [
+     "sw-blinder-pirat",
+     "Blinder Pirat"
+    ],
+    [
+     "sw-blindes-finden",
+     "Blindes Finden"
+    ],
+    [
+     "sw-blindes-quadrat",
+     "Blindes Quadrat"
+    ]
+   ],
+   "behalten_vorschlag": 5
+  },
+  {
+   "familie": "Stille Post und Weitergabespiele",
+   "anzahl": 16,
+   "anzahl_titel": 12,
+   "ids": [
+    "sw-ballweitergabe-mit-beinen",
+    "sw-ballwurfkette",
+    "sw-epidemie",
+    "sw-kette-durch-den-reifen",
+    "ps-kettenfangen",
+    "sw-kettenfangen",
+    "sw-laute-post",
+    "sw-massagekette",
+    "insp-online-spieleplattform",
+    "ps-pantomime-stille-post",
+    "sw-posterkusse",
+    "sw-schreiben-und-zeichnen",
+    "sw-stille-post",
+    "sw-stille-post-in-bildern",
+    "sw-telefax",
+    "sw-wortkette"
+   ],
+   "ids_titel": [
+    "sw-ballweitergabe-mit-beinen",
+    "sw-ballwurfkette",
+    "sw-kette-durch-den-reifen",
+    "ps-kettenfangen",
+    "sw-kettenfangen",
+    "sw-laute-post",
+    "sw-massagekette",
+    "ps-pantomime-stille-post",
+    "sw-posterkusse",
+    "sw-stille-post",
+    "sw-stille-post-in-bildern",
+    "sw-wortkette"
+   ],
+   "beispiele": [
+    [
+     "sw-ballweitergabe-mit-beinen",
+     "Ballweitergabe mit Beinen"
+    ],
+    [
+     "sw-ballwurfkette",
+     "Ballwurfkette"
+    ],
+    [
+     "sw-kette-durch-den-reifen",
+     "Kette durch den Reifen"
+    ],
+    [
+     "ps-kettenfangen",
+     "Kettenfangen"
+    ],
+    [
+     "sw-kettenfangen",
+     "Kettenfangen"
+    ],
+    [
+     "sw-laute-post",
+     "Laute Post"
+    ],
+    [
+     "sw-massagekette",
+     "Massagekette"
+    ],
+    [
+     "ps-pantomime-stille-post",
+     "Pantomime Stille Post"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Zeitungs- und Papierspiele",
+   "anzahl": 28,
+   "anzahl_titel": 11,
+   "ids": [
+    "sw-brieftrager",
+    "sw-bruckenbau",
+    "ps-busfahrer",
+    "ps-das-schokoladenspiel",
+    "ps-eierauffangmaschine",
+    "sw-es-fliegt-es-fliegt",
+    "insp-finde-die-entfuehrte-person",
+    "sw-geschenkeverpacken",
+    "sw-hindernisparcours",
+    "ps-klopapier-namensspiel",
+    "sw-klopapierrolle",
+    "sw-klopapierrollen-fischen",
+    "sw-merkkim",
+    "sw-mumie",
+    "sw-namenschlagen",
+    "ps-papierflieger-mit-herausforderung",
+    "sw-papierflieger-wettkampf",
+    "sw-papierknauel-reflexion",
+    "insp-pappteller-golf",
+    "ps-pferderennen",
+    "sw-schere-stein-papier",
+    "sw-schere-stein-papier-online",
+    "eig-schokoladen-wettessen",
+    "sw-schokoladeschneiden",
+    "sw-tastkim",
+    "sw-wanderndes-klopapier",
+    "sw-zeitungsreissen",
+    "sw-zeitungstanz"
+   ],
+   "ids_titel": [
+    "ps-klopapier-namensspiel",
+    "sw-klopapierrolle",
+    "sw-klopapierrollen-fischen",
+    "ps-papierflieger-mit-herausforderung",
+    "sw-papierflieger-wettkampf",
+    "sw-papierknauel-reflexion",
+    "sw-schere-stein-papier",
+    "sw-schere-stein-papier-online",
+    "sw-wanderndes-klopapier",
+    "sw-zeitungsreissen",
+    "sw-zeitungstanz"
+   ],
+   "beispiele": [
+    [
+     "ps-klopapier-namensspiel",
+     "Klopapier Namensspiel"
+    ],
+    [
+     "sw-klopapierrolle",
+     "Klopapierrolle"
+    ],
+    [
+     "sw-klopapierrollen-fischen",
+     "Klopapierrollen-Fischen"
+    ],
+    [
+     "ps-papierflieger-mit-herausforderung",
+     "Papierflieger mit Herausforderung"
+    ],
+    [
+     "sw-papierflieger-wettkampf",
+     "Papierflieger-Wettkampf"
+    ],
+    [
+     "sw-papierknauel-reflexion",
+     "Papierknäuel-Reflexion"
+    ],
+    [
+     "sw-schere-stein-papier",
+     "Schere Stein Papier"
+    ],
+    [
+     "sw-schere-stein-papier-online",
+     "Schere Stein Papier Online"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Kim-Spiele (Sinne und Merken)",
+   "anzahl": 24,
+   "anzahl_titel": 9,
+   "ids": [
+    "insp-anschleichen-ueben",
+    "sw-bilderkim",
+    "insp-digitales-tabu",
+    "sw-eine-minute",
+    "sw-gerausche-kim-fur-paare",
+    "sw-gerausche-kim-in-filmdose",
+    "sw-geruchs-kim-mit-parfum",
+    "sw-geruchskim",
+    "sw-geschmackskim",
+    "sw-gesichter-ertasten",
+    "sw-ich-packe-in-meinen-rucksack",
+    "insp-kim-gedaechtnisspiel",
+    "insp-kindermemorix",
+    "sw-memory-fangen",
+    "ps-menschenmemory",
+    "sw-merkkim",
+    "sw-mord-im-dunkeln",
+    "sw-munzen-kim",
+    "sw-paare-aufdecken",
+    "sw-safe",
+    "insp-schmuggler-innen-spiel",
+    "sw-stationenlauf",
+    "sw-tastkim",
+    "insp-woelflings-memory"
+   ],
+   "ids_titel": [
+    "sw-gerausche-kim-fur-paare",
+    "sw-gerausche-kim-in-filmdose",
+    "sw-geruchs-kim-mit-parfum",
+    "insp-kim-gedaechtnisspiel",
+    "insp-kindermemorix",
+    "sw-memory-fangen",
+    "ps-menschenmemory",
+    "sw-munzen-kim",
+    "insp-woelflings-memory"
+   ],
+   "beispiele": [
+    [
+     "sw-gerausche-kim-fur-paare",
+     "Geräusche-Kim für Paare"
+    ],
+    [
+     "sw-gerausche-kim-in-filmdose",
+     "Geräusche-Kim in Filmdose"
+    ],
+    [
+     "sw-geruchs-kim-mit-parfum",
+     "Geruchs-Kim mit Parfüm"
+    ],
+    [
+     "insp-kim-gedaechtnisspiel",
+     "Kim-Gedächtnisspiel"
+    ],
+    [
+     "insp-kindermemorix",
+     "Kindermemorix"
+    ],
+    [
+     "sw-memory-fangen",
+     "Memory-Fangen"
+    ],
+    [
+     "ps-menschenmemory",
+     "Menschenmemory"
+    ],
+    [
+     "sw-munzen-kim",
+     "Münzen-Kim"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Werwolf, Mafia, Mörderspiele",
+   "anzahl": 11,
+   "anzahl_titel": 9,
+   "ids": [
+    "ps-detektiv",
+    "sw-mafia",
+    "sw-morder-unter-uns",
+    "ps-moerderball",
+    "sw-mordern",
+    "sw-morderspiel",
+    "insp-online-spieleplattform",
+    "sw-wer-ist-der-morder",
+    "sw-werwolfe-vom-dusterwald",
+    "ps-werwolf",
+    "eig-werwolf-abend"
+   ],
+   "ids_titel": [
+    "ps-detektiv",
+    "sw-mafia",
+    "sw-morder-unter-uns",
+    "ps-moerderball",
+    "sw-mordern",
+    "sw-morderspiel",
+    "sw-wer-ist-der-morder",
+    "ps-werwolf",
+    "eig-werwolf-abend"
+   ],
+   "beispiele": [
+    [
+     "ps-detektiv",
+     "Detektiv"
+    ],
+    [
+     "sw-mafia",
+     "Mafia"
+    ],
+    [
+     "sw-morder-unter-uns",
+     "Mörder unter uns"
+    ],
+    [
+     "ps-moerderball",
+     "Mörderball"
+    ],
+    [
+     "sw-mordern",
+     "Mördern"
+    ],
+    [
+     "sw-morderspiel",
+     "Mörderspiel"
+    ],
+    [
+     "sw-wer-ist-der-morder",
+     "Wer ist der Mörder"
+    ],
+    [
+     "ps-werwolf",
+     "Werwolf"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …)",
+   "anzahl": 22,
+   "anzahl_titel": 9,
+   "ids": [
+    "insp-alle-die-obstsalat",
+    "insp-appel-und-n-ei-das-tauschspiel",
+    "sw-ballweitergabe-mit-beinen",
+    "sw-brieftrager",
+    "sw-das-habe-ich-noch-nie-gemacht",
+    "sw-dschungeltelefon",
+    "sw-kippstuhl",
+    "ps-kotzendes-kaenguru",
+    "sw-nimm",
+    "ps-obstsalat",
+    "sw-obstsalat",
+    "sw-platztausch",
+    "sw-polsterbesetzen",
+    "sw-psychiatercouch",
+    "ps-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem-extrem",
+    "sw-sofaspiel",
+    "ps-stuhlfangen",
+    "ps-stuhlrutschen-nach-kartenfarben",
+    "ps-tischklatschen",
+    "sw-zahlensalat"
+   ],
+   "ids_titel": [
+    "insp-alle-die-obstsalat",
+    "sw-kippstuhl",
+    "ps-obstsalat",
+    "sw-obstsalat",
+    "ps-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem",
+    "sw-reise-nach-jerusalem-extrem",
+    "ps-stuhlfangen",
+    "ps-stuhlrutschen-nach-kartenfarben"
+   ],
+   "beispiele": [
+    [
+     "insp-alle-die-obstsalat",
+     "Alle, die… (Obstsalat)"
+    ],
+    [
+     "sw-kippstuhl",
+     "Kippstuhl"
+    ],
+    [
+     "ps-obstsalat",
+     "Obstsalat"
+    ],
+    [
+     "sw-obstsalat",
+     "Obstsalat"
+    ],
+    [
+     "ps-reise-nach-jerusalem",
+     "Reise nach Jerusalem"
+    ],
+    [
+     "sw-reise-nach-jerusalem",
+     "Reise nach Jerusalem"
+    ],
+    [
+     "sw-reise-nach-jerusalem-extrem",
+     "Reise nach Jerusalem extrem"
+    ],
+    [
+     "ps-stuhlfangen",
+     "Stuhlfangen"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Klatsch-, Rhythmus- und Singspiele",
+   "anzahl": 41,
+   "anzahl_titel": 8,
+   "ids": [
+    "sw-10-kleine-fische",
+    "sw-a-ram-sam-sam",
+    "sw-auf-einem-berg-da-steht-ein-haus",
+    "sw-bada-bada-bada-ba",
+    "sw-becher-rhythmus",
+    "sw-bi-ba-butzemann",
+    "sw-boogaloo",
+    "sw-don-alfonso",
+    "sw-dornroschen",
+    "sw-drei-chinesen-mit-dem-kontrabass",
+    "sw-filis-balaba",
+    "sw-fli-fly",
+    "sw-ford-escort",
+    "sw-haslein-in-der-grube",
+    "sw-have-you-ever-seen-a-penguin-come-to-tea",
+    "sw-head-shoulders-knees-toes",
+    "sw-here-we-go-with-the-big-fat-pony",
+    "sw-hi-my-name-is-joe",
+    "sw-if-you-re-happy-and-you-know-it",
+    "ps-jack-sass-in-der-kueche-mit-tina",
+    "sw-jack-sass-in-der-kuche-mit-tina",
+    "sw-klatschball",
+    "sw-laurentia",
+    "sw-liebe-schwester-tanz-mit-mir",
+    "sw-lied-gurgeln",
+    "sw-lieder-raten",
+    "insp-liedtitel-in-emojis-verpacken",
+    "sw-mein-hut-der-hat-drei-ecken",
+    "sw-melodie-raten",
+    "sw-mimi-klatsch-spiel",
+    "sw-oh-bonnie-bonnie-bonnie",
+    "sw-once-an-austrian",
+    "sw-one-two-three-break-it-down",
+    "sw-rufallee",
+    "sw-s-kriecht-a-schneckli",
+    "sw-schaukelpferd",
+    "sw-singing-in-the-rain",
+    "ps-tischklatschen",
+    "sw-vater-abraham",
+    "sw-wir-sind-schimpansen",
+    "sw-wotan-schuh"
+   ],
+   "ids_titel": [
+    "sw-becher-rhythmus",
+    "sw-klatschball",
+    "sw-lied-gurgeln",
+    "sw-lieder-raten",
+    "insp-liedtitel-in-emojis-verpacken",
+    "sw-melodie-raten",
+    "sw-mimi-klatsch-spiel",
+    "ps-tischklatschen"
+   ],
+   "beispiele": [
+    [
+     "sw-becher-rhythmus",
+     "Becher-Rhythmus"
+    ],
+    [
+     "sw-klatschball",
+     "Klatschball"
+    ],
+    [
+     "sw-lied-gurgeln",
+     "Lied gurgeln"
+    ],
+    [
+     "sw-lieder-raten",
+     "Lieder raten"
+    ],
+    [
+     "insp-liedtitel-in-emojis-verpacken",
+     "Liedtitel in Emojis verpacken"
+    ],
+    [
+     "sw-melodie-raten",
+     "Melodie raten"
+    ],
+    [
+     "sw-mimi-klatsch-spiel",
+     "Mimi-Klatsch-Spiel"
+    ],
+    [
+     "ps-tischklatschen",
+     "Tischklatschen"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Kraft- und Kampfspiele",
+   "anzahl": 9,
+   "anzahl_titel": 8,
+   "ids": [
+    "sw-hahnenkampf",
+    "sw-highland-games",
+    "sw-liegestutz-kampf",
+    "sw-papierflieger-wettkampf",
+    "ps-prinzessin-ritter-drache",
+    "sw-schwertkampf",
+    "sw-seilspringen",
+    "ps-sockenkampf",
+    "sw-stierkampf-von-sevilla"
+   ],
+   "ids_titel": [
+    "sw-hahnenkampf",
+    "sw-liegestutz-kampf",
+    "sw-papierflieger-wettkampf",
+    "ps-prinzessin-ritter-drache",
+    "sw-schwertkampf",
+    "sw-seilspringen",
+    "ps-sockenkampf",
+    "sw-stierkampf-von-sevilla"
+   ],
+   "beispiele": [
+    [
+     "sw-hahnenkampf",
+     "Hahnenkampf"
+    ],
+    [
+     "sw-liegestutz-kampf",
+     "Liegestütz-Kampf"
+    ],
+    [
+     "sw-papierflieger-wettkampf",
+     "Papierflieger-Wettkampf"
+    ],
+    [
+     "ps-prinzessin-ritter-drache",
+     "Prinzessin, Ritter, Drache"
+    ],
+    [
+     "sw-schwertkampf",
+     "Schwertkampf"
+    ],
+    [
+     "sw-seilspringen",
+     "Seilspringen"
+    ],
+    [
+     "ps-sockenkampf",
+     "Sockenkampf"
+    ],
+    [
+     "sw-stierkampf-von-sevilla",
+     "Stierkampf von Sevilla"
+    ]
+   ],
+   "behalten_vorschlag": 4
+  },
+  {
+   "familie": "Seil-, Knoten- und Kooperationsaufgaben",
+   "anzahl": 10,
+   "anzahl_titel": 6,
+   "ids": [
+    "sw-die-mauer",
+    "ps-gordischer-knoten",
+    "sw-gordischer-knoten",
+    "ps-gruppennetz",
+    "sw-seilspringen",
+    "sw-seilziehen",
+    "sw-spinnennetz",
+    "sw-stationenlauf",
+    "ps-stromzaun-gefaengnisausbruch-spinnennetz",
+    "sw-turmbau"
+   ],
+   "ids_titel": [
+    "ps-gordischer-knoten",
+    "sw-gordischer-knoten",
+    "sw-seilspringen",
+    "sw-seilziehen",
+    "sw-spinnennetz",
+    "sw-turmbau"
+   ],
+   "beispiele": [
+    [
+     "ps-gordischer-knoten",
+     "Gordischer Knoten"
+    ],
+    [
+     "sw-gordischer-knoten",
+     "Gordischer Knoten"
+    ],
+    [
+     "sw-seilspringen",
+     "Seilspringen"
+    ],
+    [
+     "sw-seilziehen",
+     "Seilziehen"
+    ],
+    [
+     "sw-spinnennetz",
+     "Spinnennetz"
+    ],
+    [
+     "sw-turmbau",
+     "Turmbau"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  },
+  {
+   "familie": "Gelände- und Nachtspiele",
+   "anzahl": 33,
+   "anzahl_titel": 6,
+   "ids": [
+    "sw-1-100-spiel",
+    "sw-action-game",
+    "insp-agentenspiel",
+    "ps-mischling",
+    "ps-bosseln",
+    "ps-capture-the-flag",
+    "sw-capture-the-flag",
+    "eig-capture-the-flag-im-dunkeln",
+    "ps-chaos-spiel",
+    "insp-doppeltes-e",
+    "sw-fotorallye",
+    "sw-geisterbahn",
+    "sw-geocaching",
+    "ps-glockenklang",
+    "ps-grenze",
+    "ps-mr-x",
+    "ps-nummernspiel",
+    "sw-pfeiferlspiel",
+    "sw-piratenspiel",
+    "sw-rauber-und-kaufleute",
+    "ps-salzschmuggler",
+    "ps-sardine",
+    "sw-schatzsuche",
+    "sw-schmuggeln",
+    "ps-schmuggler",
+    "insp-schmuggler-innen-spiel",
+    "sw-schnitzeljagd",
+    "sw-stationenlauf",
+    "ps-steinsuche",
+    "sw-stratego",
+    "ps-stufenspiel",
+    "ps-vogeleltern",
+    "ps-wald-paare"
+   ],
+   "ids_titel": [
+    "ps-capture-the-flag",
+    "sw-capture-the-flag",
+    "eig-capture-the-flag-im-dunkeln",
+    "ps-grenze",
+    "sw-rauber-und-kaufleute",
+    "sw-schmuggeln"
+   ],
+   "beispiele": [
+    [
+     "ps-capture-the-flag",
+     "Capture the flag"
+    ],
+    [
+     "sw-capture-the-flag",
+     "Capture the Flag"
+    ],
+    [
+     "eig-capture-the-flag-im-dunkeln",
+     "Capture the Flag im Dunkeln"
+    ],
+    [
+     "ps-grenze",
+     "Grenze"
+    ],
+    [
+     "sw-rauber-und-kaufleute",
+     "Räuber und Kaufleute"
+    ],
+    [
+     "sw-schmuggeln",
+     "Schmuggeln"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  },
+  {
+   "familie": "Luftballon-Spiele",
+   "anzahl": 8,
+   "anzahl_titel": 5,
+   "ids": [
+    "ps-eierauffangmaschine",
+    "sw-luftballon-kennenlernspiel",
+    "sw-luftballon-rasieren",
+    "insp-luftballonstaffel",
+    "sw-luftballontanz",
+    "sw-names-luftballon",
+    "eig-schraege-olympiade",
+    "sw-sitzfussball-bewegungsspiel"
+   ],
+   "ids_titel": [
+    "sw-luftballon-kennenlernspiel",
+    "sw-luftballon-rasieren",
+    "insp-luftballonstaffel",
+    "sw-luftballontanz",
+    "sw-names-luftballon"
+   ],
+   "beispiele": [
+    [
+     "sw-luftballon-kennenlernspiel",
+     "Luftballon (Kennenlernspiel)"
+    ],
+    [
+     "sw-luftballon-rasieren",
+     "Luftballon rasieren"
+    ],
+    [
+     "insp-luftballonstaffel",
+     "Luftballonstaffel"
+    ],
+    [
+     "sw-luftballontanz",
+     "Luftballontanz"
+    ],
+    [
+     "sw-names-luftballon",
+     "Names-Luftballon"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  },
+  {
+   "familie": "Wäscheklammer-Spiele",
+   "anzahl": 9,
+   "anzahl_titel": 5,
+   "ids": [
+    "sw-nein-spiel",
+    "sw-schmuggeln",
+    "sw-schneckenfangen",
+    "ps-stromzaun-gefaengnisausbruch-spinnennetz",
+    "ps-waescheklammern-klauen",
+    "ps-waescheklammern-sortieren",
+    "sw-wascheklammern-diebstahl",
+    "eig-waescheklammern-jagd",
+    "sw-wascheklammernspiel"
+   ],
+   "ids_titel": [
+    "ps-waescheklammern-klauen",
+    "ps-waescheklammern-sortieren",
+    "sw-wascheklammern-diebstahl",
+    "eig-waescheklammern-jagd",
+    "sw-wascheklammernspiel"
+   ],
+   "beispiele": [
+    [
+     "ps-waescheklammern-klauen",
+     "Wäscheklammern klauen"
+    ],
+    [
+     "ps-waescheklammern-sortieren",
+     "Wäscheklammern sortieren"
+    ],
+    [
+     "sw-wascheklammern-diebstahl",
+     "Wäscheklammern-Diebstahl"
+    ],
+    [
+     "eig-waescheklammern-jagd",
+     "Wäscheklammern-Jagd"
+    ],
+    [
+     "sw-wascheklammernspiel",
+     "Wäscheklammernspiel"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  },
+  {
+   "familie": "Papier-und-Stift-Spiele (Stadt-Land-Fluss, Bingo …)",
+   "anzahl": 8,
+   "anzahl_titel": 4,
+   "ids": [
+    "sw-hangman",
+    "insp-online-spieleplattform",
+    "sw-stadt-land-fluss",
+    "sw-stationenlauf",
+    "sw-worter-geschichte",
+    "sw-wortbau",
+    "sw-wortdomino",
+    "sw-wortkette"
+   ],
+   "ids_titel": [
+    "sw-worter-geschichte",
+    "sw-wortbau",
+    "sw-wortdomino",
+    "sw-wortkette"
+   ],
+   "beispiele": [
+    [
+     "sw-worter-geschichte",
+     "Wörter-Geschichte"
+    ],
+    [
+     "sw-wortbau",
+     "Wortbau"
+    ],
+    [
+     "sw-wortdomino",
+     "Wortdomino"
+    ],
+    [
+     "sw-wortkette",
+     "Wortkette"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  },
+  {
+   "familie": "Quiz- und Wissensspiele",
+   "anzahl": 6,
+   "anzahl_titel": 3,
+   "ids": [
+    "sw-1-100-spiel",
+    "sw-backerquiz",
+    "sw-lexikonspiel",
+    "insp-online-spieleplattform",
+    "sw-pubquiz",
+    "eig-quiz-abend-schlag-die-fuehrung"
+   ],
+   "ids_titel": [
+    "sw-backerquiz",
+    "sw-pubquiz",
+    "eig-quiz-abend-schlag-die-fuehrung"
+   ],
+   "beispiele": [
+    [
+     "sw-backerquiz",
+     "Bäckerquiz"
+    ],
+    [
+     "sw-pubquiz",
+     "Pubquiz"
+    ],
+    [
+     "eig-quiz-abend-schlag-die-fuehrung",
+     "Quiz-Abend: Schlag die Führung"
+    ]
+   ],
+   "behalten_vorschlag": 3
+  }
+ ],
+ "B_familien_abdeckung": 239,
+ "C_kriterien": [
+  {
+   "kriterium": "Dubletten – zweite und weitere Fassung desselben Spiels",
+   "anzahl": 99,
+   "empfehlung": "zusammenlegen; nur das Hauptelement bleibt",
+   "beispiele": [
+    [
+     "insp-alle-die-obstsalat",
+     "Alle, die… (Obstsalat)"
+    ],
+    [
+     "insp-casino-heimabend",
+     "Casino-Heimabend"
+    ],
+    [
+     "insp-feuer-wasser-sturm",
+     "Feuer, Wasser, Sturm"
+    ],
+    [
+     "insp-ich-packe-meinen-koffer",
+     "Ich packe meinen Koffer ..."
+    ]
+   ]
+  },
+  {
+   "kriterium": "Spiel gehört zu einer großen Spielfamilie (Fangen, Ball, Kim …)",
+   "anzahl": 239,
+   "empfehlung": "Familie auf 3–8 Vertreter eindampfen, Rest als Variante anhängen",
+   "beispiele": [
+    [
+     "eig-capture-the-flag-im-dunkeln",
+     "Capture the Flag im Dunkeln"
+    ],
+    [
+     "eig-quiz-abend-schlag-die-fuehrung",
+     "Quiz-Abend: Schlag die Führung"
+    ],
+    [
+     "eig-stationenlauf-durchs-viertel",
+     "Stationenlauf durchs Viertel"
+    ],
+    [
+     "eig-waescheklammern-jagd",
+     "Wäscheklammern-Jagd"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Beschreibung unter 200 Zeichen",
+   "anzahl": 8,
+   "empfehlung": "nachschreiben oder streichen",
+   "beispiele": [
+    [
+     "eig-capture-the-flag-im-dunkeln",
+     "Capture the Flag im Dunkeln"
+    ],
+    [
+     "eig-casino-abend",
+     "Casino-Abend"
+    ],
+    [
+     "eig-planspiel-wir-planen-unsere-fahrt",
+     "Planspiel: Wir planen unsere Fahrt"
+    ],
+    [
+     "eig-quiz-abend-schlag-die-fuehrung",
+     "Quiz-Abend: Schlag die Führung"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Beschreibung unter 300 Zeichen",
+   "anzahl": 15,
+   "empfehlung": "prüfen",
+   "beispiele": [
+    [
+     "eig-capture-the-flag-im-dunkeln",
+     "Capture the Flag im Dunkeln"
+    ],
+    [
+     "eig-casino-abend",
+     "Casino-Abend"
+    ],
+    [
+     "eig-chaosspiel",
+     "Chaosspiel"
+    ],
+    [
+     "eig-escape-room-im-heim",
+     "Escape Room im Heim"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Spiel dauert 45 min oder länger / ganzer Abend",
+   "anzahl": 42,
+   "empfehlung": "nicht als Baustein führen, sondern als „ganzer Abend“",
+   "beispiele": [
+    [
+     "eig-capture-the-flag-im-dunkeln",
+     "Capture the Flag im Dunkeln"
+    ],
+    [
+     "eig-casino-abend",
+     "Casino-Abend"
+    ],
+    [
+     "eig-chaosspiel",
+     "Chaosspiel"
+    ],
+    [
+     "eig-escape-room-im-heim",
+     "Escape Room im Heim"
+    ]
+   ]
+  },
+  {
+   "kriterium": "keine Altersstufe hinterlegt",
+   "anzahl": 618,
+   "empfehlung": "nachtragen – sonst greift der Altersfilter nicht",
+   "beispiele": [
+    [
+     "sw-1-100-spiel",
+     "1-100-Spiel"
+    ],
+    [
+     "sw-1-2-3",
+     "1 2 3"
+    ],
+    [
+     "sw-10-kleine-fische",
+     "10 kleine Fische"
+    ],
+    [
+     "sw-1000-blank-white-cards",
+     "1000 blank white cards"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Vorbereitung „hoch“",
+   "anzahl": 6,
+   "empfehlung": "für den Wochen-Heimabend meist unrealistisch",
+   "beispiele": [
+    [
+     "eig-chaosspiel",
+     "Chaosspiel"
+    ],
+    [
+     "eig-escape-room-im-heim",
+     "Escape Room im Heim"
+    ],
+    [
+     "sw-1-100-spiel",
+     "1-100-Spiel"
+    ],
+    [
+     "sw-action-game",
+     "Action Game"
+    ]
+   ]
+  },
+  {
+   "kriterium": "vier oder mehr Materialien nötig",
+   "anzahl": 23,
+   "empfehlung": "prüfen: ist das im Heim da?",
+   "beispiele": [
+    [
+     "eig-casino-abend",
+     "Casino-Abend"
+    ],
+    [
+     "eig-chaosspiel",
+     "Chaosspiel"
+    ],
+    [
+     "eig-escape-room-im-heim",
+     "Escape Room im Heim"
+    ],
+    [
+     "eig-planspiel-wir-planen-unsere-fahrt",
+     "Planspiel: Wir planen unsere Fahrt"
+    ]
+   ]
+  },
+  {
+   "kriterium": "braucht 15 Personen oder mehr",
+   "anzahl": 40,
+   "empfehlung": "für eine Horte/Gilde (ab 5) meist zu groß",
+   "beispiele": [
+    [
+     "ps-amazonasueberquerung",
+     "Amazonasüberquerung"
+    ],
+    [
+     "ps-arena",
+     "Arena"
+    ],
+    [
+     "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+     "Virus"
+    ],
+    [
+     "ps-british-bulldog",
+     "British Bulldog"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Corona-/Online-Bezug",
+   "anzahl": 60,
+   "empfehlung": "streichen oder als Filter „geht auch digital“",
+   "beispiele": [
+    [
+     "insp-digitaler-pfadfinder-escape-room",
+     "Digitaler Pfadfinder-Escape Room"
+    ],
+    [
+     "insp-digitaler-sippencontest",
+     "(Digitaler-) Sippencontest"
+    ],
+    [
+     "insp-kindermemorix",
+     "Kindermemorix"
+    ],
+    [
+     "insp-online-spieleplattform",
+     "Online-Spieleplattform"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Alkohol / Trinkspiel",
+   "anzahl": 6,
+   "empfehlung": "streichen, passt nicht zu Kindern",
+   "beispiele": [
+    [
+     "insp-casino-heimabend",
+     "Casino-Heimabend"
+    ],
+    [
+     "sw-bauernschnapsen",
+     "Bauernschnapsen"
+    ],
+    [
+     "sw-dreierschnapsen",
+     "Dreierschnapsen"
+    ],
+    [
+     "sw-gradener-konigrufen",
+     "Gradener Königrufen"
+    ]
+   ]
+  },
+  {
+   "kriterium": "Kindergeburtstag / Party / Fasching",
+   "anzahl": 11,
+   "empfehlung": "Anlass umschreiben oder streichen",
+   "beispiele": [
+    [
+     "ps-das-schokoladenspiel",
+     "Das Schokoladenspiel"
+    ],
+    [
+     "sw-centstapel",
+     "Centstapel"
+    ],
+    [
+     "sw-eselschwanz",
+     "Eselschwanz"
+    ],
+    [
+     "sw-kartoffelduell",
+     "Kartoffelduell"
+    ]
+   ]
+  }
+ ],
+ "C_kern_anzahl": 300,
+ "C_quoten": [
+  {
+   "unterkategorie": "team",
+   "ist": 103,
+   "kern": 39,
+   "reserve": 64
+  },
+  {
+   "unterkategorie": "namen",
+   "ist": 72,
+   "kern": 27,
+   "reserve": 45
+  },
+  {
+   "unterkategorie": "fangen",
+   "ist": 69,
+   "kern": 26,
+   "reserve": 43
+  },
+  {
+   "unterkategorie": "toben",
+   "ist": 64,
+   "kern": 24,
+   "reserve": 40
+  },
+  {
+   "unterkategorie": "denken",
+   "ist": 61,
+   "kern": 23,
+   "reserve": 38
+  },
+  {
+   "unterkategorie": "geschick",
+   "ist": 52,
+   "kern": 20,
+   "reserve": 32
+  },
+  {
+   "unterkategorie": "singen",
+   "ist": 42,
+   "kern": 16,
+   "reserve": 26
+  },
+  {
+   "unterkategorie": "ball",
+   "ist": 41,
+   "kern": 15,
+   "reserve": 26
+  },
+  {
+   "unterkategorie": "sonstiges",
+   "ist": 39,
+   "kern": 15,
+   "reserve": 24
+  },
+  {
+   "unterkategorie": "tisch",
+   "ist": 38,
+   "kern": 14,
+   "reserve": 24
+  },
+  {
+   "unterkategorie": "wettkampf",
+   "ist": 29,
+   "kern": 11,
+   "reserve": 18
+  },
+  {
+   "unterkategorie": "gelaende",
+   "ist": 27,
+   "kern": 10,
+   "reserve": 17
+  },
+  {
+   "unterkategorie": "konzentration",
+   "ist": 27,
+   "kern": 10,
+   "reserve": 17
+  },
+  {
+   "unterkategorie": "reaktion",
+   "ist": 18,
+   "kern": 7,
+   "reserve": 11
+  },
+  {
+   "unterkategorie": "vertrauen",
+   "ist": 18,
+   "kern": 7,
+   "reserve": 11
+  },
+  {
+   "unterkategorie": "warmup",
+   "ist": 18,
+   "kern": 7,
+   "reserve": 11
+  },
+  {
+   "unterkategorie": "darstellen",
+   "ist": 16,
+   "kern": 6,
+   "reserve": 10
+  },
+  {
+   "unterkategorie": "merken",
+   "ist": 14,
+   "kern": 5,
+   "reserve": 9
+  },
+  {
+   "unterkategorie": "ruhig",
+   "ist": 12,
+   "kern": 4,
+   "reserve": 8
+  },
+  {
+   "unterkategorie": "kampf",
+   "ist": 12,
+   "kern": 5,
+   "reserve": 7
+  },
+  {
+   "unterkategorie": "verstecken",
+   "ist": 12,
+   "kern": 5,
+   "reserve": 7
+  },
+  {
+   "unterkategorie": "reflexion",
+   "ist": 11,
+   "kern": 4,
+   "reserve": 7
+  }
+ ],
+ "C_fahrplan": [
+  {
+   "schritt": "Dubletten zusammenlegen",
+   "entfernt": 99,
+   "verbleibend": 696
+  },
+  {
+   "schritt": "Alkohol-, Party- und Faschingsspiele streichen",
+   "entfernt": 12,
+   "verbleibend": 684
+  },
+  {
+   "schritt": "Corona-/Online-Spiele streichen oder umetikettieren",
+   "entfernt": 47,
+   "verbleibend": 637
+  },
+  {
+   "schritt": "Spiele ab 45 min als „ganzer Abend“ ausbuchen",
+   "entfernt": 32,
+   "verbleibend": 605
+  },
+  {
+   "schritt": "Vorbereitung „hoch“ aussortieren",
+   "entfernt": 2,
+   "verbleibend": 603
+  },
+  {
+   "schritt": "Spiele mit unter 300 Zeichen Beschreibung nachschreiben oder streichen",
+   "entfernt": 4,
+   "verbleibend": 599
+  },
+  {
+   "schritt": "Spiele, die 15 Personen und mehr brauchen, aussortieren",
+   "entfernt": 31,
+   "verbleibend": 568
+  },
+  {
+   "schritt": "Spielfamilien eindampfen, Quoten je Unterkategorie (Ziel 300)",
+   "entfernt": 268,
+   "verbleibend": 300
+  }
+ ],
+ "D_begriffe": [
+  {
+   "begriff": "Spielleiter / Spielleitung",
+   "elemente": 203,
+   "treffer": 328,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 167,
+    "pfadfinder-spiele": 28,
+    "Inspirator (DPBM)": 6,
+    "eigene": 2
+   },
+   "herkunft": "Spielesammlungen allgemein",
+   "vorschlag": "Neutral, aber der mit Abstand häufigste Rollenbegriff in den Daten.",
+   "frage": "„Spielleitung“ so lassen, oder überall „Gruppenführer“ – auch wenn ein Kind das Spiel leitet?",
+   "beispiele": [
+    {
+     "id": "sw-lexikonspiel",
+     "titel": "Lexikonspiel",
+     "stelle": "is, ideal um einen Tisch. In jeder Runde gibt es einen Spielleiter, diese Funktion wird nach jeder Runde an den nächsten"
+    },
+    {
+     "id": "sw-mafia",
+     "titel": "Mafia",
+     "stelle": "iert nur dann gut, wenn jeder fair spielt. Es wird ein Spielleiter benötigt, interessant wird das Spiel ab etwa 10 Mitspi"
+    },
+    {
+     "id": "ps-chaos-spiel",
+     "titel": "Chaos-Spiel",
+     "stelle": "ch das Codewort (Zettel hängen lassen!) und rennen zur Spielleitung zurück. Wenn die Gruppe vollständig bei der Spielleitu"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-lexikonspiel",
+    "sw-mafia",
+    "ps-chaos-spiel"
+   ]
+  },
+  {
+   "begriff": "Anrede: „ihr müsst/sollt/könnt“",
+   "elemente": 95,
+   "treffer": 116,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 88,
+    "Probenbuch": 5,
+    "Spielewiki": 2
+   },
+   "herkunft": "Inspirator (spricht die Gruppe direkt an)",
+   "vorschlag": "Der Inspirator redet die Gruppe an, Spielewiki beschreibt neutral – zwei Tonfälle in einer App.",
+   "frage": "Welchen Tonfall soll die App haben: neutrale Beschreibung oder Ansprache an den Gruppenführer?",
+   "beispiele": [
+    {
+     "id": "insp-kartoffelbatterie",
+     "titel": "Kartoffelbatterie",
+     "stelle": "tiere mit mehr Kartoffeln und teste, was Strom leitet! Ihr habt Lust nur mit einer Katoffel als Stromquelle eine Lampe"
+    },
+    {
+     "id": "insp-korken-piratenschiff",
+     "titel": "Korken Piratenschiff",
+     "stelle": "mmt es und sieht es cool aus? Dann auf zum Wettrennen! Ihr könnt aus Korken, Zahnstochern, Paketband und Papier ein kle"
+    },
+    {
+     "id": "insp-butter-schuetteln",
+     "titel": "Butter schütteln!",
+     "stelle": "chten mischen, Butter formen und kühl stellen. Lecker! Ihr könnt selber eine frische Butter herstellen und in der Meute"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-kartoffelbatterie",
+    "insp-korken-piratenschiff",
+    "insp-butter-schuetteln"
+   ]
+  },
+  {
+   "begriff": "Sippe / Sippling / Sippenführer",
+   "elemente": 88,
+   "treffer": 227,
+   "im_titel": 11,
+   "titel_beispiele": [
+    "25 Dinge - eure Sippen 'bucket list'",
+    "(Digitaler-) Sippencontest",
+    "Eigene Sippenchronik",
+    "Sippen-Packliste erstellen"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 79,
+    "eigene": 9
+   },
+   "herkunft": "DPBM (Inspirator), DPSG, VCP – und die eigene Sammlung",
+   "vorschlag": "Im DPB-Probenbuch heißt die kleinste Einheit „Horte“ (Jungen) bzw. „Gilde“ (Mädchen); „Sippe“ kommt dort nicht vor. ACHTUNG: die eigene Sammlung benutzt „Sippe“ trotzdem, auch in Titeln wie „Sippenwimpel gestalten“.",
+   "frage": "Heißt die kleine Gruppe bei euch Sippe oder Horte/Gilde? Einmal festlegen – davon hängen rund 90 Elemente und mehrere eigene Titel ab.",
+   "beispiele": [
+    {
+     "id": "insp-25-dinge-eure-sippen-bucket-list",
+     "titel": "25 Dinge - eure Sippen 'bucket list'",
+     "stelle": "25 Dinge - eure Sippen 'bucket list' Schreibt eure Sippen-Wunschliste! Was wo"
+    },
+    {
+     "id": "insp-digitaler-sippencontest",
+     "titel": "(Digitaler-) Sippencontest",
+     "stelle": "(Digitaler-) Sippencontest Sippen aufgepasst! Meistert Rätsel, findet Wörter, sam"
+    },
+    {
+     "id": "insp-eigene-sippenchronik",
+     "titel": "Eigene Sippenchronik",
+     "stelle": "Eigene Sippenchronik Schreibt eure Sippengeschichten auf! Malt, klebt Fotos"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-25-dinge-eure-sippen-bucket-list",
+    "insp-digitaler-sippencontest",
+    "insp-eigene-sippenchronik"
+   ]
+  },
+  {
+   "begriff": "Gender-Doppelpunkt (:in)",
+   "elemente": 77,
+   "treffer": 263,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "pfadfinder-spiele": 77
+   },
+   "herkunft": "pfadfinder-spiele.de",
+   "vorschlag": "Betrifft fast jeden Text dieser Quelle – wäre eine Massenänderung. CC BY-NC-SA erlaubt Bearbeitung, wenn sie gekennzeichnet wird.",
+   "frage": "Umschreiben (mit Änderungshinweis) oder als Zitat der Quelle so lassen?",
+   "beispiele": [
+    {
+     "id": "ps-steinsuche",
+     "titel": "Steinsuche",
+     "stelle": "Steinsuche Zwei Teams (Sucher:innen und Fänger:innen) suchen versteckte Steinsäckchen und"
+    },
+    {
+     "id": "ps-british-bulldog",
+     "titel": "British Bulldog",
+     "stelle": "British Bulldog Spieler:innen rennen von einer Linie zur anderen, während ein:e Fäng"
+    },
+    {
+     "id": "ps-dirigent",
+     "titel": "Dirigent",
+     "stelle": "Dirigent Ein:e Dirigent:in macht Bewegungen vor, die alle im Kreis nachmachen; ei"
+    }
+   ],
+   "beispiel_ids": [
+    "ps-steinsuche",
+    "ps-british-bulldog",
+    "ps-dirigent"
+   ]
+  },
+  {
+   "begriff": "Corona / online / digital",
+   "elemente": 73,
+   "treffer": 113,
+   "im_titel": 3,
+   "titel_beispiele": [
+    "Schere Stein Papier Online",
+    "Online Treffen (gather-town)",
+    "Online-Spieleplattform"
+   ],
+   "quellen": {
+    "Spielewiki": 46,
+    "Inspirator (DPBM)": 19,
+    "pfadfinder-spiele": 7,
+    "Probenbuch": 1
+   },
+   "herkunft": "Inspirator 2020/21, teils Spielewiki",
+   "vorschlag": "Zeitgebundene Inhalte aus der Pandemie.",
+   "frage": "Corona-/Online-Elemente streichen, oder als eigenen Filter „geht auch digital“ behalten?",
+   "beispiele": [
+    {
+     "id": "sw-schere-stein-papier-online",
+     "titel": "Schere Stein Papier Online",
+     "stelle": "Schere Stein Papier Online Schere Stein Papier Online ist eine Variante, wie das"
+    },
+    {
+     "id": "sw-pubquiz",
+     "titel": "Pubquiz",
+     "stelle": "ub bei Getränken gespielt, kann aber auch gut in einer Videokonferenz umgesetzt werden. Ein **Pubquiz** ist ein Unterhaltung"
+    },
+    {
+     "id": "insp-online-treffen-gather-town",
+     "titel": "Online Treffen (gather-town)",
+     "stelle": "Online Treffen (gather-town) Trefft euch online in Gather.tow"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-schere-stein-papier-online",
+    "sw-pubquiz",
+    "insp-online-treffen-gather-town"
+   ]
+  },
+  {
+   "begriff": "Stamm / Hag",
+   "elemente": 31,
+   "treffer": 53,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 19,
+    "eigene": 7,
+    "Probenbuch": 5
+   },
+   "herkunft": "DPB und andere Bünde",
+   "vorschlag": "„Stamm / Hag“ ist im DPB-Probenbuch belegt (ab 20 Mitglieder) – passt vermutlich.",
+   "frage": "So lassen? Oder die Fundstellen prüfen, wo „Stamm“ eine fremde Struktur meint?",
+   "beispiele": [
+    {
+     "id": "eig-bipi-und-unsere-geschichte",
+     "titel": "BiPi und unsere Geschichte",
+     "stelle": "ell, der Pfadfinderbewegung und des eigenen Bundes und Stammes — als Quiz, Stationenlauf oder mit alten Fotos und Fah"
+    },
+    {
+     "id": "pb-organisatorischer-aufbau",
+     "titel": "Organisatorischer Aufbau",
+     "stelle": "lde** – mindestens 5 2. **Trupp** – mindestens 10 3. **Stamm / Hag** – mindestens 20 4. **Jungenschaft / Mädelschaf"
+    },
+    {
+     "id": "insp-nachbarstamm-connection",
+     "titel": "Nachbarstamm Connection",
+     "stelle": "uscht Ideen aus! Ihr seid vermutlich nicht der einzige Stamm bei euch in der Gegend oder sogar in eurer Stadt. Scha"
+    }
+   ],
+   "beispiel_ids": [
+    "eig-bipi-und-unsere-geschichte",
+    "pb-organisatorischer-aufbau",
+    "insp-nachbarstamm-connection"
+   ]
+  },
+  {
+   "begriff": "Wölfling / Wö / Altwolf",
+   "elemente": 25,
+   "treffer": 75,
+   "im_titel": 2,
+   "titel_beispiele": [
+    "Wölflingsregeln besprechen",
+    "Wölflings-Memory"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 15,
+    "Probenbuch": 8,
+    "Spielewiki": 2
+   },
+   "herkunft": "alle Bünde, Wortgebrauch verschieden",
+   "vorschlag": "„Wölfling“ ist im DPB-Probenbuch belegt (8–11 Jahre) – passt vermutlich.",
+   "frage": "„Wölfling“ so lassen? Und gilt die Altersspanne 8–11 wie im Probenbuch?",
+   "beispiele": [
+    {
+     "id": "pb-das-pfadfindergesetz",
+     "titel": "Das Pfadfindergesetz",
+     "stelle": "Das Pfadfindergesetz Die zwei Wölflingsgesetze und die zehn Pfadfindergesetze – nicht auswendig einge"
+    },
+    {
+     "id": "pb-pfadfindergruss-und-pfadfinderversprechen",
+     "titel": "Pfadfindergruß und Pfadfinderversprechen",
+     "stelle": "indergruß und Pfadfinderversprechen Wie Pfadfinder und Wölflinge grüßen, was die Finger bedeuten – und die Versprechen"
+    },
+    {
+     "id": "insp-marionette",
+     "titel": "Marionette",
+     "stelle": "ld! Errate Seilfiguren! Führe Kommandos blind aus! Ein Wölfling bekommt die Augen verbunden. Ein zweiter Wölfling navi"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-das-pfadfindergesetz",
+    "pb-pfadfindergruss-und-pfadfinderversprechen",
+    "insp-marionette"
+   ]
+  },
+  {
+   "begriff": "Halstuch",
+   "elemente": 24,
+   "treffer": 45,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 10,
+    "Inspirator (DPBM)": 7,
+    "Probenbuch": 4,
+    "eigene": 2,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "alle Bünde",
+   "vorschlag": "Unproblematisch – nur prüfen, wo es reines Spielmaterial ist.",
+   "frage": "Als Spielmaterial „Halstuch“ schreiben oder neutral „Tuch“ (dann geht auch ein Geschirrtuch)?",
+   "beispiele": [
+    {
+     "id": "pb-unsere-kluft",
+     "titel": "Unsere Kluft",
+     "stelle": "ft tragen, woraus sie besteht und was jedes Teil – vom Halstuch bis zur Lederhose – bedeutet. ## Wozu die Kluft Der G"
+    },
+    {
+     "id": "insp-halstuchspiel",
+     "titel": "Halstuchspiel",
+     "stelle": "Halstuchspiel Schnappt euch ein Halstuch, teilt euch in Teams auf und erobert das gegnerische T"
+    },
+    {
+     "id": "sw-drachenschwanzfangen-einzeln",
+     "titel": "Drachenschwanzfangen (einzeln)",
+     "stelle": "herweise ein Kleidungsstück oder ähnliches: Pfadfinder-Halstuch, Schal, Haube, Handschuh, kurzes Seil, etc. ## Regeln"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-unsere-kluft",
+    "insp-halstuchspiel",
+    "sw-drachenschwanzfangen-einzeln"
+   ]
+  },
+  {
+   "begriff": "Gruppenstunde / Truppstunde / Stufenstunde",
+   "elemente": 19,
+   "treffer": 33,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Gruppenstunde als Talkshow"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 12,
+    "Spielewiki": 4,
+    "pfadfinder-spiele": 2,
+    "eigene": 1
+   },
+   "herkunft": "DPSG, VCP, DPBM",
+   "vorschlag": "Deine Sprache: „Heimabend“. Das Probenbuch benutzt durchgängig „Heimabend“.",
+   "frage": "Überall zu „Heimabend“ ändern – auch dort, wo es wörtliches Zitat der Quelle ist?",
+   "beispiele": [
+    {
+     "id": "insp-haiku-schreiben",
+     "titel": "Haiku schreiben",
+     "stelle": "rer Fantasie freien Lauf! Ihr könnt euch während eurer Gruppenstunde zusammen oder einzeln einen Haiku zu verschiedenen The"
+    },
+    {
+     "id": "insp-rollenspielprojekt-ueber-mehrere-wochen",
+     "titel": "Rollenspielprojekt über mehrere Wochen!",
+     "stelle": "legt und die Kinder diese vorbereiten lasst, um in der Gruppenstunde darüber zu reden und eine Geschichte zu entwickeln."
+    },
+    {
+     "id": "ps-chaos-spiel",
+     "titel": "Chaos-Spiel",
+     "stelle": "el ist der absolute Klassiker für Zeltlager oder lange Gruppenstunden. Es ist eine Mischung aus Brettspiel und Geländelauf."
+    }
+   ],
+   "beispiel_ids": [
+    "insp-haiku-schreiben",
+    "insp-rollenspielprojekt-ueber-mehrere-wochen",
+    "ps-chaos-spiel"
+   ]
+  },
+  {
+   "begriff": "Kohte / Jurte",
+   "elemente": 19,
+   "treffer": 112,
+   "im_titel": 5,
+   "titel_beispiele": [
+    "Kohten- und Jurtenbau-Training",
+    "Jurte",
+    "Kohte blind aufbauen",
+    "Lagerplanung: Das Jurtendorf entsteht"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 11,
+    "Probenbuch": 5,
+    "eigene": 2,
+    "Spielewiki": 1
+   },
+   "herkunft": "bündisch, auch DPB",
+   "vorschlag": "Passt zum DPB (Probenbuch: Probe „Zeltbau“).",
+   "frage": "Bleiben Kohte/Jurte so stehen? Passen die beschriebenen Bauweisen zu euren Planen?",
+   "beispiele": [
+    {
+     "id": "pb-zeltbau",
+     "titel": "Zeltbau",
+     "stelle": "Zeltbau Kohte und Jurte – woher sie kommen, warum wir sie nutzen, wi"
+    },
+    {
+     "id": "insp-neue-zeltkonstruktionen-testen",
+     "titel": "Neue Zeltkonstruktionen testen",
+     "stelle": "tkonstruktionen testen Baut mal neue Zelte! Testet mit Kohtenplanen, ob ihr neben Kohte, Lok und Jurte noch andere Formen"
+    },
+    {
+     "id": "pb-knoten-und-buende",
+     "titel": "Knoten und Bünde",
+     "stelle": "– vom Weberknoten bis zum Palstek – und die Bünde für Kohtenkreuz, Dreibock und Lagerbau. ## Warum der richtige Knoten"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-zeltbau",
+    "insp-neue-zeltkonstruktionen-testen",
+    "pb-knoten-und-buende"
+   ]
+  },
+  {
+   "begriff": "Kluft / Tracht / Uniform",
+   "elemente": 16,
+   "treffer": 48,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Unsere Kluft"
+   ],
+   "quellen": {
+    "Probenbuch": 9,
+    "Inspirator (DPBM)": 7
+   },
+   "herkunft": "DPB: „Kluft“",
+   "vorschlag": "Im Probenbuch heißt es „Kluft“ (Probe „Unsere Kluft“); „Tracht“ steht dort nur erklärend.",
+   "frage": "„Tracht“ und „Uniform“ überall zu „Kluft“ ändern?",
+   "beispiele": [
+    {
+     "id": "pb-unsere-kluft",
+     "titel": "Unsere Kluft",
+     "stelle": "Unsere Kluft Warum wir Kluft tragen, woraus sie besteht und was jed"
+    },
+    {
+     "id": "pb-geschichte-der-buendischen-jugend",
+     "titel": "Geschichte der Bündischen Jugend",
+     "stelle": "n ihre zusammengewürfelten Trachten gegen einheitliche Kluft und übernahmen stärker gegliederte Strukturen. Die Ide"
+    },
+    {
+     "id": "pb-die-lilie",
+     "titel": "Die Lilie",
+     "stelle": "ze:** Bundeszeichen des DPB ab 1921, nach Ablösung der Uniform durch die Kluft ## Lilien anderer Bünde - DPV – Deut"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-unsere-kluft",
+    "pb-geschichte-der-buendischen-jugend",
+    "pb-die-lilie"
+   ]
+  },
+  {
+   "begriff": "Gendersternchen (*in)",
+   "elemente": 16,
+   "treffer": 42,
+   "im_titel": 3,
+   "titel_beispiele": [
+    "Schmuggler*innen-Spiel",
+    "Pfadfinder*innen ohne Plastik?",
+    "Pfadfinder*innen-Memory"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 14,
+    "pfadfinder-spiele": 2
+   },
+   "herkunft": "DPBM (Inspirator), pfadfinder-spiele.de",
+   "vorschlag": "Deine Doku schreibt teils „Gruppenführer*innen“ (README), teils „Gruppenführer“ (Definition).",
+   "frage": "Welche Schreibweise gilt in der App: „Gruppenführer“, „Gruppenführer und -führerinnen“ oder „*innen“?",
+   "beispiele": [
+    {
+     "id": "insp-schmuggler-innen-spiel",
+     "titel": "Schmuggler*innen-Spiel",
+     "stelle": "Schmuggler*innen-Spiel Schmuggelt heimlich Dinge ins Versteck, ohne von"
+    },
+    {
+     "id": "insp-gruppenstunde-als-talkshow",
+     "titel": "Gruppenstunde als Talkshow",
+     "stelle": "light - Einsame*r, Gelangweilte*r - Tierpatenschaft, Exot*in - Contra Tier in irgendeiner Weise: - Tierschützer*i"
+    },
+    {
+     "id": "insp-der-kaiser-mag",
+     "titel": "Der Kaiser mag...",
+     "stelle": "en ein Rätsel zu lösen. Und zwar geht das so: Der/Die Spielleiter*in sagen am Anfang des Spiels diesen Satz: „Der Kaiser m"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-schmuggler-innen-spiel",
+    "insp-gruppenstunde-als-talkshow",
+    "insp-der-kaiser-mag"
+   ]
+  },
+  {
+   "begriff": "Kindergeburtstag / Party / Fasching",
+   "elemente": 16,
+   "treffer": 45,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Partyhochhaus"
+   ],
+   "quellen": {
+    "Spielewiki": 15,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "Spielewiki",
+   "vorschlag": "Der Anlass passt nicht zum Heimabend, das Spiel selbst oft schon.",
+   "frage": "Anlass-Erwähnungen streichen oder ganze Elemente aussortieren?",
+   "beispiele": [
+    {
+     "id": "sw-centstapel",
+     "titel": "Centstapel",
+     "stelle": "t werden und eignet sich etwa für die Auflockerung auf Partys, etwa bei Silvester-Feiern. Der **Centstapel** ist ein"
+    },
+    {
+     "id": "sw-partyhochhaus",
+     "titel": "Partyhochhaus",
+     "stelle": "Partyhochhaus Partyhochhaus ist ein Rätsel für das kein Material ben"
+    },
+    {
+     "id": "sw-reise-nach-jerusalem",
+     "titel": "Reise nach Jerusalem",
+     "stelle": "salem ist ein bekanntes Spiel mit Stühlen, das oft auf Kindergeburtstags-Feiern oder Faschingspartys gespielt wird. **Reise nac"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-centstapel",
+    "sw-partyhochhaus",
+    "sw-reise-nach-jerusalem"
+   ]
+  },
+  {
+   "begriff": "Gruppenleiter / Leiter:in / Teamer / Betreuer",
+   "elemente": 15,
+   "treffer": 37,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 12,
+    "Inspirator (DPBM)": 2,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "Jugendarbeit allgemein, DPSG",
+   "vorschlag": "Deine Sprache (docs/heimabend-definition.md): „Gruppenführer“; das Probenbuch sagt „Führer/Führerin“.",
+   "frage": "Alles auf „Gruppenführer“ ändern – oder je nach Stelle „Führung“?",
+   "beispiele": [
+    {
+     "id": "sw-sesselriechen",
+     "titel": "Sesselriechen",
+     "stelle": "iebig großen Gruppen gespielt werden, zwei eingeweihte Betreuer müssen zur Verfügung stellen. **Sesselrichen** ist ein"
+    },
+    {
+     "id": "sw-stationenlauf",
+     "titel": "Stationenlauf",
+     "stelle": "estaltet sein - mit Spielgeschichte, Verkleidungen der Betreuer und Teilnehmer, zum Thema passenden Stations-Aufgaben,"
+    },
+    {
+     "id": "sw-teamvorstellung",
+     "titel": "Teamvorstellung",
+     "stelle": "l. Es geht dabei vor allem darum, dass die Spieler das Betreuerteam kennen lernen. Je nach Phantasie der Spieler können da"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-sesselriechen",
+    "sw-stationenlauf",
+    "sw-teamvorstellung"
+   ]
+  },
+  {
+   "begriff": "Schule / Klasse / Unterricht",
+   "elemente": 15,
+   "treffer": 23,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 7,
+    "Probenbuch": 4,
+    "Inspirator (DPBM)": 2,
+    "eigene": 1,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "Spielewiki (Schul- und Jugendarbeitskontext)",
+   "vorschlag": "Formulierungen aus der Schule wirken im Heim fremd.",
+   "frage": "Diese Stellen auf Heimabend-Sprache umschreiben?",
+   "beispiele": [
+    {
+     "id": "pb-geschichte-der-buendischen-jugend",
+     "titel": "Geschichte der Bündischen Jugend",
+     "stelle": "Er forderte, die Erwachsenen und vor allem die vielen Lehrer aus dem Gruppenleben auszuschließen. Der „Wandervogel"
+    },
+    {
+     "id": "sw-grashupfer",
+     "titel": "Grashüpfer",
+     "stelle": "ei Anfängern oder beim paarweisen Spiel ## Ablauf Die Schüler sind in Hockposition und hüpfen aufeinander zu. Sind"
+    },
+    {
+     "id": "sw-hannes-liebt",
+     "titel": "Hannes liebt",
+     "stelle": "mag aber den **Winter** gar nicht. Hannes liebt den **Unterricht**, obwohl er die **Schule** nicht mag. Hannes liebt **"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-geschichte-der-buendischen-jugend",
+    "sw-grashupfer",
+    "sw-hannes-liebt"
+   ]
+  },
+  {
+   "begriff": "Versprechen / Gelöbnis / Aufnahme",
+   "elemente": 14,
+   "treffer": 37,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 8,
+    "Probenbuch": 6
+   },
+   "herkunft": "verschieden",
+   "vorschlag": "Probenbuch: „Pfadfinderversprechen“ und „Aufnahme“ (Wildling/Neuling).",
+   "frage": "Einheitlich „Versprechen“ und „Aufnahme“ schreiben?",
+   "beispiele": [
+    {
+     "id": "pb-pfadfindergruss-und-pfadfinderversprechen",
+     "titel": "Pfadfindergruß und Pfadfinderversprechen",
+     "stelle": "nd Wölflinge grüßen, was die Finger bedeuten – und die Versprechen und Gelöbnisse vom Neuling bis zum Späher. ## Der Pfad"
+    },
+    {
+     "id": "pb-der-deutsche-pfadfinderbund",
+     "titel": "Der Deutsche Pfadfinderbund",
+     "stelle": "uso verpflichtet wie der Bündischen Jugend. Gesetz und Versprechen der Pfadfinder sind für uns ebenso wichtig wie die Aut"
+    },
+    {
+     "id": "insp-pfadfindersymbolik-vergleichen",
+     "titel": "Pfadfindersymbolik vergleichen",
+     "stelle": "unterschiedlichen Symbolen auseinander. Ihr könnt: - Versprechen - Regeln - Wahlspruch - Lilie/Kleeblatt - Kluft -"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-pfadfindergruss-und-pfadfinderversprechen",
+    "pb-der-deutsche-pfadfinderbund",
+    "insp-pfadfindersymbolik-vergleichen"
+   ]
+  },
+  {
+   "begriff": "Lagerfeuer / Singerunde / Singewettstreit",
+   "elemente": 13,
+   "treffer": 20,
+   "im_titel": 3,
+   "titel_beispiele": [
+    "Bratäpfel vom Lagerfeuer",
+    "Stockbrot und Lagerfeuer",
+    "Gitarren-Crashkurs: Lagerfeuerakkorde"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 4,
+    "eigene": 3,
+    "Probenbuch": 3,
+    "Spielewiki": 2,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "bündisch, Wortgebrauch verschieden",
+   "vorschlag": "Im Probenbuch nicht als fester Begriff belegt.",
+   "frage": "Welchen Begriff benutzt ihr fürs Singen am Feuer – Singerunde, Feuerrunde, etwas anderes?",
+   "beispiele": [
+    {
+     "id": "insp-brataepfel-vom-lagerfeuer",
+     "titel": "Bratäpfel vom Lagerfeuer",
+     "stelle": "Bratäpfel vom Lagerfeuer Bratäpfel am Lagerfeuer! Äpfel aushöhlen, füllen (Nüss"
+    },
+    {
+     "id": "eig-stockbrot-und-lagerfeuer",
+     "titel": "Stockbrot und Lagerfeuer",
+     "stelle": "Stockbrot und Lagerfeuer Der Gemütlichkeits-Klassiker: Feuer machen, Teig um de"
+    },
+    {
+     "id": "eig-feuer-machen-wie-die-profis",
+     "titel": "Feuer machen wie die Profis",
+     "stelle": "lären (Genehmigung!), Löschmittel bereitstellen. Feuer Lagerfeuer Survival Feuer Lagerfeuer Survival Feuerstahl Zunder H"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-brataepfel-vom-lagerfeuer",
+    "eig-stockbrot-und-lagerfeuer",
+    "eig-feuer-machen-wie-die-profis"
+   ]
+  },
+  {
+   "begriff": "Meute",
+   "elemente": 10,
+   "treffer": 11,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 9,
+    "eigene": 1
+   },
+   "herkunft": "DPSG/DPBM (Wölflingsstufe)",
+   "vorschlag": "Im Probenbuch kommt „Meute“ als Einheit nicht vor.",
+   "frage": "Wie heißt bei euch die Wölflingsgruppe? Ersetzen durch Horte/Gilde – oder streichen?",
+   "beispiele": [
+    {
+     "id": "eig-kochduell-im-hordentopf",
+     "titel": "Kochduell im Hordentopf",
+     "stelle": "hen um die Wette ein Fahrtenessen. Eine Jury (oder die Meute) verkostet blind. Nebenbei wird genau das geübt, was a"
+    },
+    {
+     "id": "insp-digitaler-sippencontest",
+     "titel": "(Digitaler-) Sippencontest",
+     "stelle": "teck, wilde Spiele und Planen knüpfen gemeinsam? – Die Meute! Ok, das war einfach - aber findet ihr auch die Gemein"
+    },
+    {
+     "id": "insp-finde-die-entfuehrte-person",
+     "titel": "Finde die entführte Person!",
+     "stelle": "n Hinweisen und rettet sie! Eine Person (z.B. ein/eine Meutenhelfer*in) wird vermisst. Die Wölflinge sollen nach Beweisen"
+    }
+   ],
+   "beispiel_ids": [
+    "eig-kochduell-im-hordentopf",
+    "insp-digitaler-sippencontest",
+    "insp-finde-die-entfuehrte-person"
+   ]
+  },
+  {
+   "begriff": "Horte / Gilde",
+   "elemente": 9,
+   "treffer": 24,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Probenbuch": 8,
+    "Spielewiki": 1
+   },
+   "herkunft": "DPB",
+   "vorschlag": "Beides im Probenbuch belegt (Horte = Jungen, Gilde = Mädchen, je ab 5 Mitglieder).",
+   "frage": "Bestätigen: benutzt ihr im Alltag wirklich Horte/Gilde – und schreiben wir das in alle Texte?",
+   "beispiele": [
+    {
+     "id": "pb-organisatorischer-aufbau",
+     "titel": "Organisatorischer Aufbau",
+     "stelle": "Organisatorischer Aufbau Wie der Bund von der Horte bis zur Bundesebene aufgebaut ist – und wie die eigene"
+    },
+    {
+     "id": "pb-geschichte-der-pfadfinder",
+     "titel": "Geschichte der Pfadfinder",
+     "stelle": "so berichtete Bi Pi, „wurde aufgeteilt in Patrouillen (Horten) zu fünf Mann. Der Älteste wurde Patrouillenführer. Je"
+    },
+    {
+     "id": "pb-staendeaufbau-des-dpb",
+     "titel": "Ständeaufbau des DPB",
+     "stelle": "hen** – ab 15 Jahre – Bundeslilie und rote Kordel 4. **Gildin** – ab 17 Jahre – Bundeslilie und graue Kordel 5. Dana"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-organisatorischer-aufbau",
+    "pb-geschichte-der-pfadfinder",
+    "pb-staendeaufbau-des-dpb"
+   ]
+  },
+  {
+   "begriff": "Fremde Bünde (DPSG, VCP, BdP, DPBM …)",
+   "elemente": 8,
+   "treffer": 26,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Probenbuch": 3,
+    "Inspirator (DPBM)": 3,
+    "Spielewiki": 1,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "fremde Bünde",
+   "vorschlag": "Als geschichtliche Information in Ordnung, als „bei uns“ falsch. Achtung: „Orden St. Georg“ ist DPB-eigen und darf bleiben.",
+   "frage": "Nennungen stehen lassen (Geschichte) oder auf den DPB umschreiben?",
+   "beispiele": [
+    {
+     "id": "pb-die-lilie",
+     "titel": "Die Lilie",
+     "stelle": "eutschland ein Pfadfinderbund ins Leben gerufen wurde (BDP, Bund Deutscher Pfadfinder), übernahm dieser die vom D"
+    },
+    {
+     "id": "pb-geschichte-des-dpb",
+     "titel": "Geschichte des DPB",
+     "stelle": "nden die drei großen Bünde: Bund Deutscher Pfadfinder (BDP, unkonfessionell), Deutsche Pfadfinderschaft St. Georg"
+    },
+    {
+     "id": "sw-hugo",
+     "titel": "Hugo",
+     "stelle": "2), Giftpilz , Gulliziehen, Heißer Stuhl, Hexenkessel (BdP; Untergruppenbach), Hocker umwerfen (Wien 20), Hocker"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-die-lilie",
+    "pb-geschichte-des-dpb",
+    "sw-hugo"
+   ]
+  },
+  {
+   "begriff": "Alkohol / Trinkspiel",
+   "elemente": 8,
+   "treffer": 38,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Schnapsen"
+   ],
+   "quellen": {
+    "Spielewiki": 4,
+    "Inspirator (DPBM)": 3,
+    "Probenbuch": 1
+   },
+   "herkunft": "Spielewiki",
+   "vorschlag": "Geht bei Kindern und Jugendlichen gar nicht.",
+   "frage": "Diese Elemente ersatzlos streichen (in redaktion.json unter „gesperrt“)?",
+   "beispiele": [
+    {
+     "id": "sw-dreierschnapsen",
+     "titel": "Dreierschnapsen",
+     "stelle": "schnapsen Dreierschnapsen ist eine Variante des Spiels Schnapsen für drei Spieler. Es basiert auf den gleichen Regeln,"
+    },
+    {
+     "id": "sw-schnapsen",
+     "titel": "Schnapsen",
+     "stelle": "Schnapsen Schnapsen ist ein Kartenspiel für zwei Spieler. Es wir"
+    },
+    {
+     "id": "sw-bauernschnapsen",
+     "titel": "Bauernschnapsen",
+     "stelle": "psen oder Viererschnapsen ist eine Variante des Spiels Schnapsen für vier Spieler. Es basiert auf den gleichen Regeln,"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-dreierschnapsen",
+    "sw-schnapsen",
+    "sw-bauernschnapsen"
+   ]
+  },
+  {
+   "begriff": "Rover / Ranger / Caravelle",
+   "elemente": 6,
+   "treffer": 11,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "[Nur für Rover] Feuerfestigkeit testen"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 4,
+    "Probenbuch": 1,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "DPSG, VCP, BdP",
+   "vorschlag": "Im DPB heißen die Älteren „Knappe/Späher“ (Jungen) bzw. „Gildenmädchen/Gildin“ (Mädchen).",
+   "frage": "Womit ersetzen – „Ältere“, „Knappen/Späher“, oder Stelle streichen?",
+   "beispiele": [
+    {
+     "id": "insp-nur-fuer-rover-feuerfestigkeit-testen",
+     "titel": "[Nur für Rover] Feuerfestigkeit testen",
+     "stelle": "[Nur für Rover] Feuerfestigkeit testen Rover: Testet, wie feuerfest e"
+    },
+    {
+     "id": "pb-geschichte-der-pfadfinder",
+     "titel": "Geschichte der Pfadfinder",
+     "stelle": "rnahm 1916 die Führung der Girl Guides. ## Wölflinge, Rover, Gilwell, Jamboree Im selben Jahr kam Bi Pi zu der Üb"
+    },
+    {
+     "id": "insp-digitaler-sippencontest",
+     "titel": "(Digitaler-) Sippencontest",
+     "stelle": "Fragen gegeneinander an: 1. Der_Die Sippenführer_in / Roversprecher_in ( 5 Punkte) Wählt eine_n Sippenfüher_in /Roversprecher"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-nur-fuer-rover-feuerfestigkeit-testen",
+    "pb-geschichte-der-pfadfinder",
+    "insp-digitaler-sippencontest"
+   ]
+  },
+  {
+   "begriff": "Trupp / Truppstunde",
+   "elemente": 6,
+   "treffer": 14,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 2,
+    "Probenbuch": 2,
+    "Inspirator (DPBM)": 2
+   },
+   "herkunft": "DPB (Einheit ab 10) und DPSG (Stufe)",
+   "vorschlag": "„Trupp“ ist im DPB eine Einheit – „Truppstunde“ dagegen DPSG-Sprache.",
+   "frage": "„Trupp“ behalten und „Truppstunde“ zu „Heimabend“ ändern?",
+   "beispiele": [
+    {
+     "id": "sw-krieg",
+     "titel": "Krieg",
+     "stelle": "o Spieler) ### Vorbereitung Als erstes malt man seine Truppen: - Drei Soldaten (Kreis in einem Kästchen). Sie könne"
+    },
+    {
+     "id": "pb-geschichte-der-pfadfinder",
+     "titel": "Geschichte der Pfadfinder",
+     "stelle": "sen Attrappen von Geschützen aufbaute. Die bewaffneten Truppen ließ er blitzschnell die Stellung wechseln, so dass di"
+    },
+    {
+     "id": "pb-organisatorischer-aufbau",
+     "titel": "Organisatorischer Aufbau",
+     "stelle": "zw. Mädchen: 1. **Horte / Gilde** – mindestens 5 2. **Trupp** – mindestens 10 3. **Stamm / Hag** – mindestens 20 4"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-krieg",
+    "pb-geschichte-der-pfadfinder",
+    "pb-organisatorischer-aufbau"
+   ]
+  },
+  {
+   "begriff": "Pfadi",
+   "elemente": 5,
+   "treffer": 9,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Pfadi-Stories"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 3,
+    "Spielewiki": 1,
+    "pfadfinder-spiele": 1
+   },
+   "herkunft": "Schweiz, DPSG-Umgangssprache",
+   "vorschlag": "Umgangssprache, im Probenbuch nicht belegt.",
+   "frage": "„Pfadi“ ersetzen durch „Pfadfinder“?",
+   "beispiele": [
+    {
+     "id": "insp-pfadi-stories",
+     "titel": "Pfadi-Stories",
+     "stelle": "Pfadi-Stories Rätsel-Spaß wie Black Stories, nur mit Pfadfin"
+    },
+    {
+     "id": "sw-hugo",
+     "titel": "Hugo",
+     "stelle": "0, Wien 23), Blachärissä (Wolfensberg, CH), Blacheziä (Pfadi Heidegg, CH), Böimli schriise/Baum ziehen , Brennender"
+    },
+    {
+     "id": "insp-digitaler-pfadfinder-escape-room",
+     "titel": "Digitaler Pfadfinder-Escape Room",
+     "stelle": "Digitaler Pfadfinder-Escape Room Rettet die Pfadis! Entkommt dem Pfadiheim im Online Escape Room! 60 Minu"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-pfadi-stories",
+    "sw-hugo",
+    "insp-digitaler-pfadfinder-escape-room"
+   ]
+  },
+  {
+   "begriff": "Jungenschaft / Mädelschaft vs. Jungschar",
+   "elemente": 5,
+   "treffer": 26,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Probenbuch": 5
+   },
+   "herkunft": "DPB („Jungenschaft/Mädelschaft“) vs. kath./ev. „Jungschar“",
+   "vorschlag": "„Jungenschaft/Mädelschaft“ ist DPB (ab 40). „Jungschar“ ist fremd.",
+   "frage": "„Jungschar“ ersetzen – wodurch?",
+   "beispiele": [
+    {
+     "id": "pb-geschichte-der-buendischen-jugend",
+     "titel": "Geschichte der Bündischen Jugend",
+     "stelle": "des nicht mehr zu passen schienen. ## 4. Die autonome Jungenschaft Kaum hatte sich der bündische Stil ausgebreitet, bega"
+    },
+    {
+     "id": "pb-unsere-kluft",
+     "titel": "Unsere Kluft",
+     "stelle": "ppel, graue Socken. **Mädchen – Winter:** dunkelblaue Jungenschaftsjacke (Juja), dunkelblaues Hemd, grau-rotes Halstuch mit DPB"
+    },
+    {
+     "id": "pb-organisatorischer-aufbau",
+     "titel": "Organisatorischer Aufbau",
+     "stelle": "mindestens 10 3. **Stamm / Hag** – mindestens 20 4. **Jungenschaft / Mädelschaft** – mindestens 40 5. **Pfadfinderring**"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-geschichte-der-buendischen-jugend",
+    "pb-unsere-kluft",
+    "pb-organisatorischer-aufbau"
+   ]
+  },
+  {
+   "begriff": "Gender-Unterstrich (_in)",
+   "elemente": 5,
+   "treffer": 8,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 5
+   },
+   "herkunft": "DPBM (Inspirator)",
+   "vorschlag": "Uneinheitlich zum Rest der Sammlung.",
+   "frage": "Vereinheitlichen – auf welche Form?",
+   "beispiele": [
+    {
+     "id": "insp-digitaler-sippencontest",
+     "titel": "(Digitaler-) Sippencontest",
+     "stelle": "in verschiedenen Fragen gegeneinander an: 1. Der_Die Sippenführer_in / Roversprecher_in ( 5 Punkte) Wählt eine_n Sippenfühe"
+    },
+    {
+     "id": "insp-was-gehoert-wem",
+     "titel": "Was gehört wem?",
+     "stelle": "auch mit Klufthemden ohne den üblicherweise tragenden Pfadfinder_innen spannend sein - wem gehört welche Kluft? Wem gehört we"
+    },
+    {
+     "id": "insp-welche-pfadfinder-regel-ist-unwichtig",
+     "titel": "Welche Pfadfinder-Regel ist unwichtig?",
+     "stelle": "r andere eintreten. - Ich will zur Freundschaft aller Pfadfinder_innen und zum guten Miteinander aller Menschen beitragen. -"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-digitaler-sippencontest",
+    "insp-was-gehoert-wem",
+    "insp-welche-pfadfinder-regel-ist-unwichtig"
+   ]
+  },
+  {
+   "begriff": "Horde (statt Horte)",
+   "elemente": 4,
+   "treffer": 5,
+   "im_titel": 1,
+   "titel_beispiele": [
+    "Kochduell im Hordentopf"
+   ],
+   "quellen": {
+    "Inspirator (DPBM)": 2,
+    "eigene": 1,
+    "Probenbuch": 1
+   },
+   "herkunft": "Schreibfehler / anderes Wort",
+   "vorschlag": "„Hordentopf“ ist Kochgeschirr und richtig; „Horde“ als Gruppe wäre falsch.",
+   "frage": "Fundstellen durchsehen: überall „Hordentopf“ gemeint, oder irgendwo „Horte“?",
+   "beispiele": [
+    {
+     "id": "eig-kochduell-im-hordentopf",
+     "titel": "Kochduell im Hordentopf",
+     "stelle": "Kochduell im Hordentopf Zwei Teams bekommen den gleichen Zutatenkorb und koche"
+    },
+    {
+     "id": "pb-kochen",
+     "titel": "Kochen",
+     "stelle": "küche Rezepte Lager Fahrt Kochen Kochgeschirr, Pfanne, Hordentopf Kocher oder Feuerstelle Zutaten nach Rezept Brettchen,"
+    },
+    {
+     "id": "insp-brot-backen-ohne-ofen",
+     "titel": "Brot backen - ohne Ofen!",
+     "stelle": "euer machen Küche Haik Mehl Wasser Backpulver Alufolie Hordentopf Steine Stöcke Brennholz Streichhölzer"
+    }
+   ],
+   "beispiel_ids": [
+    "eig-kochduell-im-hordentopf",
+    "pb-kochen",
+    "insp-brot-backen-ohne-ofen"
+   ]
+  },
+  {
+   "begriff": "Fremde Stufenbezeichnungen (Wichtel, Biber …)",
+   "elemente": 3,
+   "treffer": 10,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Spielewiki": 2,
+    "Inspirator (DPBM)": 1
+   },
+   "herkunft": "DPSG, VCP, BdP",
+   "vorschlag": "Kommen in euren Ständen nicht vor (Wildling, Neuling, Wölfling, Jungwolf, Knappe, Späher, Gildenmädchen, Gildin).",
+   "frage": "Auf eure Stände umschreiben oder Stufenangabe ganz weglassen?",
+   "beispiele": [
+    {
+     "id": "sw-engerl-und-bengerl",
+     "titel": "Engerl und Bengerl",
+     "stelle": "ilt, das es beschenkt. **Engerl und Bengerl** (auch: **Wichteln**) ist ein Spiel, das in etablierten Gruppen über eine"
+    },
+    {
+     "id": "sw-schrottwichteln",
+     "titel": "Schrottwichteln",
+     "stelle": "Schrottwichteln Schrottwichteln ist eine Variante des Wichteln-Spieles (\"Engerl und Bengerl\"). Es werden dabei aber e"
+    },
+    {
+     "id": "insp-welche-pfadfinder-regel-ist-unwichtig",
+     "titel": "Welche Pfadfinder-Regel ist unwichtig?",
+     "stelle": "nach Wichtigkeit und sprecht darüber! Es gibt für die Pfadfinderstufe 10 Pfadfinderregeln (von Baden Powell wurden sie noch"
+    }
+   ],
+   "beispiel_ids": [
+    "sw-engerl-und-bengerl",
+    "sw-schrottwichteln",
+    "insp-welche-pfadfinder-regel-ist-unwichtig"
+   ]
+  },
+  {
+   "begriff": "Kornett",
+   "elemente": 1,
+   "treffer": 3,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Probenbuch": 1
+   },
+   "herkunft": "DPB (Amt in der Gruppe)",
+   "vorschlag": "Im Probenbuch als Amt genannt – passt.",
+   "frage": "Kornett in der App kurz erklären, damit junge Gruppenführer es verstehen?",
+   "beispiele": [
+    {
+     "id": "pb-aufgaben-in-der-gruppe",
+     "titel": "Aufgaben in der Gruppe",
+     "stelle": "gaben in der Gruppe Ein Amt in der Gruppe übernehmen – Kornett, Kassenwart, Materialwart oder Führung einer Gruppe –"
+    }
+   ],
+   "beispiel_ids": [
+    "pb-aufgaben-in-der-gruppe"
+   ]
+  },
+  {
+   "begriff": "Gut Pfad",
+   "elemente": 1,
+   "treffer": 2,
+   "im_titel": 0,
+   "titel_beispiele": [],
+   "quellen": {
+    "Inspirator (DPBM)": 1
+   },
+   "herkunft": "DPSG, VCP, BdP",
+   "vorschlag": "Euer Gruß laut heimabend-definition.md und Probenbuch: „Allzeit bereit“.",
+   "frage": "Ersetzen durch „Allzeit bereit“?",
+   "beispiele": [
+    {
+     "id": "insp-digitales-tabu",
+     "titel": "Digitales Tabu",
+     "stelle": "Mullbinde links Immer Versprechen Banner geschnitten Gut Pfad Gruß Übergabe Dackeln Blut drei Gruppenstunde Her"
+    }
+   ],
+   "beispiel_ids": [
+    "insp-digitales-tabu"
+   ]
+  }
+ ],
+ "E_passung": {
+  "Elemente mit fremder Bundesstruktur im Text": 100,
+  "Elemente, die Lieder/Gitarre erwähnen (Liedgut prüfen)": 51,
+  "als „baustein“ geführt, dauern aber 75 min oder mehr": 96,
+  "Spiele, die als „ganzer Abend“ geführt werden": 18,
+  "Elemente für den Slot „Eröffnungskreis“": 0,
+  "Elemente für den Slot „Einstieg“": 615,
+  "Elemente für den Slot „Abschluss“": 305,
+  "Elemente nur für den Hauptteil": 410,
+  "Elemente ohne Altersstufe": 618,
+  "Bausteine für Gemeinschaftsaktivität (natur_draussen + gemeinschaft)": 33
+ },
+ "E_beispiele": {
+  "fremde_struktur": [
+   [
+    "insp-digitaler-sippencontest",
+    "(Digitaler-) Sippencontest",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-anschleichen-ueben",
+    "Anschleichen üben",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-digitales-tabu",
+    "Digitales Tabu",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-doppeltes-e",
+    "Doppeltes E",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-draussen-sein-und-gutes-tun",
+    "Draußen sein und Gutes tun",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-eine-virtuelle-bombe-entschaerfen",
+    "Eine (virtuelle) Bombe entschärfen",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "insp-finde-die-entfuehrte-person",
+    "Finde die entführte Person!",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "ps-grenze",
+    "Grenze",
+    "pfadfinder-spiele"
+   ],
+   [
+    "insp-halstuchspiel",
+    "Halstuchspiel",
+    "Inspirator (DPBM)"
+   ],
+   [
+    "sw-hugo",
+    "Hugo",
+    "Spielewiki"
+   ]
+  ],
+  "projekte_getarnt": [
+   [
+    "insp-agentenspiel",
+    "Agentenspiel",
+    75
+   ],
+   [
+    "sw-ameisenkonig",
+    "Ameisenkönig",
+    90
+   ],
+   [
+    "insp-appel-und-n-ei-das-tauschspiel",
+    "Appel und´n Ei - das Tauschspiel",
+    75
+   ],
+   [
+    "sw-arche-noah",
+    "Arche Noah",
+    90
+   ],
+   [
+    "ps-bosseln",
+    "Boßeln",
+    80
+   ],
+   [
+    "insp-das-duell-um-die-geld",
+    "Das Duell um die Geld",
+    75
+   ],
+   [
+    "sw-daumenkonig",
+    "Daumenkönig",
+    90
+   ],
+   [
+    "ps-eierauffangmaschine",
+    "Eierauffangmaschine",
+    80
+   ],
+   [
+    "insp-eine-virtuelle-bombe-entschaerfen",
+    "Eine (virtuelle) Bombe entschärfen",
+    75
+   ],
+   [
+    "sw-eislocher-eisbaren-fische",
+    "Eislöcher Eisbären Fische",
+    90
+   ]
+  ],
+  "ganzer_abend_spiel": [
+   [
+    "sw-action-game",
+    "Action Game"
+   ],
+   [
+    "eig-capture-the-flag-im-dunkeln",
+    "Capture the Flag im Dunkeln"
+   ],
+   [
+    "eig-casino-abend",
+    "Casino-Abend"
+   ],
+   [
+    "insp-casino-heimabend",
+    "Casino-Heimabend"
+   ],
+   [
+    "ps-chaos-spiel",
+    "Chaos-Spiel"
+   ],
+   [
+    "eig-chaosspiel",
+    "Chaosspiel"
+   ],
+   [
+    "insp-digitaler-pfadfinder-escape-room",
+    "Digitaler Pfadfinder-Escape Room"
+   ],
+   [
+    "eig-escape-room-im-heim",
+    "Escape Room im Heim"
+   ],
+   [
+    "sw-fotorallye",
+    "Fotorallye"
+   ],
+   [
+    "sw-highland-games",
+    "Highland Games"
+   ]
+  ],
+  "lieder": [
+   [
+    "sw-10-kleine-fische",
+    "10 kleine Fische",
+    "Spielewiki"
+   ],
+   [
+    "sw-a-ram-sam-sam",
+    "A Ram Sam Sam",
+    "Spielewiki"
+   ],
+   [
+    "sw-alle-meine-entlein",
+    "Alle meine Entlein",
+    "Spielewiki"
+   ],
+   [
+    "sw-auf-einem-berg-da-steht-ein-haus",
+    "Auf einem Berg da steht ein Haus",
+    "Spielewiki"
+   ],
+   [
+    "sw-aufgabensammlung",
+    "Aufgabensammlung",
+    "Spielewiki"
+   ],
+   [
+    "sw-becher-rhythmus",
+    "Becher-Rhythmus",
+    "Spielewiki"
+   ],
+   [
+    "sw-bi-ba-butzemann",
+    "Bi-Ba-Butzemann",
+    "Spielewiki"
+   ],
+   [
+    "ps-chaos-spiel",
+    "Chaos-Spiel",
+    "pfadfinder-spiele"
+   ],
+   [
+    "sw-der-plumpsack-geht-um",
+    "Der Plumpsack geht um",
+    "Spielewiki"
+   ],
+   [
+    "insp-digitales-tabu",
+    "Digitales Tabu",
+    "Inspirator (DPBM)"
+   ]
+  ]
+ },
+ "E_alter_je_quelle": {
+  "Inspirator (DPBM)": {
+   "gesamt": 211,
+   "ohne_altersstufe": 0
+  },
+  "Probenbuch": {
+   "gesamt": 28,
+   "ohne_altersstufe": 0
+  },
+  "Spielewiki": {
+   "gesamt": 623,
+   "ohne_altersstufe": 618
+  },
+  "eigene": {
+   "gesamt": 61,
+   "ohne_altersstufe": 0
+  },
+  "pfadfinder-spiele": {
+   "gesamt": 115,
+   "ohne_altersstufe": 0
+  }
+ },
+ "E_bereich_umfang": {
+  "gemeinschaft": {
+   "baustein": 22,
+   "ganzer_abend": 12
+  },
+  "kochen": {
+   "ganzer_abend": 10,
+   "baustein": 13
+  },
+  "musisch": {
+   "baustein": 7,
+   "ganzer_abend": 5
+  },
+  "natur_draussen": {
+   "ganzer_abend": 19,
+   "baustein": 11
+  },
+  "pfadfindertechnik": {
+   "baustein": 49,
+   "ganzer_abend": 28
+  },
+  "spiel": {
+   "baustein": 777,
+   "ganzer_abend": 18
+  },
+  "werken": {
+   "baustein": 42,
+   "ganzer_abend": 25
+  }
+ }
+}

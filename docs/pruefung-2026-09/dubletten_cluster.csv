@@ -1,0 +1,178 @@
+cluster_id;id;titel;quelle;lizenz;aehnlichkeit;vorschlag
+C001;ps-drachenschwanzjagen;Drachenschwanzjagen;pfadfinder-spiele;CC BY-NC-SA 4.0;0.77;als Variante verweisen (Lizenz nicht mischen!)
+C001;sw-drachenschwanzabschiessen;Drachenschwanzabschießen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C001;sw-drachenschwanzfangen-einzeln;Drachenschwanzfangen (einzeln);Spielewiki;CC BY-SA 4.0;0.76;als Variante zusammenlegen
+C001;sw-drachenschwanzfangen-gruppenweise;Drachenschwanzfangen (gruppenweise);Spielewiki;CC BY-SA 4.0;0.76;als Variante zusammenlegen
+C002;eig-evolution;Evolution;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C002;ps-evolution;Evolution;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C002;sw-evolution;Evolution;Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C002;sw-evolution-sprachspiel;Evolution (Sprachspiel);Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C003;insp-versteinern;Versteinern;Inspirator (DPBM);CC BY-NC 4.0;0.32;als Variante verweisen (Lizenz nicht mischen!)
+C003;sw-captain-hook-und-peter-pan;Captain Hook und Peter Pan;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C003;sw-schlumpfe-versteinern;Schlümpfe-Versteinern;Spielewiki;CC BY-SA 4.0;0.45;als Variante zusammenlegen
+C003;sw-versteinern;Versteinern;Spielewiki;CC BY-SA 4.0;0.71;als Variante zusammenlegen
+C004;insp-alle-die-obstsalat;Alle, die… (Obstsalat);Inspirator (DPBM);CC BY-NC 4.0;0.39;als Variante verweisen (Lizenz nicht mischen!)
+C004;ps-angesprochen;Angesprochen;pfadfinder-spiele;CC BY-NC-SA 4.0;0.35;als Variante verweisen (Lizenz nicht mischen!)
+C004;sw-platztausch;Platztausch;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C005;sw-bilderkim;Bilderkim;Spielewiki;CC BY-SA 4.0;0.42;als Variante zusammenlegen
+C005;sw-merkkim;Merkkim;Spielewiki;CC BY-SA 4.0;0.76;als Variante zusammenlegen
+C005;sw-tastkim;Tastkim;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C006;sw-blitzlicht-reflexion;Blitzlicht-Reflexion;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C006;sw-streichholz-reflexion;Streichholz-Reflexion;Spielewiki;CC BY-SA 4.0;0.6;als Variante zusammenlegen
+C006;sw-zielscheiben-reflexion;Zielscheiben-Reflexion;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C007;ps-british-bulldog;British Bulldog;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C007;sw-british-bulldog;British Bulldog;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C007;sw-wer-hat-angst-vorm-schwarzen-mann;Wer hat Angst vorm weißen Hai?;Spielewiki;CC BY-SA 4.0;0.63;als Variante zusammenlegen
+C008;sw-frisbee-fussball;Frisbee-Fußball;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C008;sw-frisbee-passen;Frisbee-Passen;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C008;sw-frisbeelauf;Frisbeelauf;Spielewiki;CC BY-SA 4.0;0.59;als Variante zusammenlegen
+C009;insp-ich-packe-meinen-koffer;Ich packe meinen Koffer ...;Inspirator (DPBM);CC BY-NC 4.0;0.71;als Variante verweisen (Lizenz nicht mischen!)
+C009;ps-ich-packe-meinen-koffer;Ich packe meinen Koffer;pfadfinder-spiele;CC BY-NC-SA 4.0;0.71;als Variante verweisen (Lizenz nicht mischen!)
+C009;sw-ich-packe-in-meinen-rucksack;Ich packe in meinen Rucksack;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C010;sw-kindersumo;Kindersumo;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C010;sw-krebsgedrange;Krebsgedränge;Spielewiki;CC BY-SA 4.0;0.59;als Variante zusammenlegen
+C010;sw-scrum;Scrum;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C011;ps-komm-mit-lauf-weg;Komm mit- lauf weg;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C011;sw-komm-mit-lauf-weg;Komm mit lauf weg;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C011;sw-lauf-weg;Lauf weg;Spielewiki;CC BY-SA 4.0;0.71;als Variante zusammenlegen
+C012;sw-krabben;Krabben;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C012;sw-krebs;Krebs;Spielewiki;CC BY-SA 4.0;0.58;als Variante zusammenlegen
+C012;sw-spiderman;Spiderman;Spielewiki;CC BY-SA 4.0;0.6;als Variante zusammenlegen
+C013;sw-lied-gurgeln;Lied gurgeln;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C013;sw-lieder-raten;Lieder raten;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C013;sw-melodie-raten;Melodie raten;Spielewiki;CC BY-SA 4.0;0.72;als Variante zusammenlegen
+C014;ps-reise-nach-jerusalem;Reise nach Jerusalem;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C014;sw-reise-nach-jerusalem;Reise nach Jerusalem;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C014;sw-reise-nach-jerusalem-extrem;Reise nach Jerusalem extrem;Spielewiki;CC BY-SA 4.0;0.85;streichen (praktisch identisch)
+C015;eig-schokoladen-wettessen;Schokoladen-Wettessen;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C015;ps-das-schokoladenspiel;Das Schokoladenspiel;pfadfinder-spiele;CC BY-NC-SA 4.0;0.7;als Variante verweisen (Lizenz nicht mischen!)
+C015;sw-schokoladeschneiden;Schokoladeschneiden;Spielewiki;CC BY-SA 4.0;0.7;als Variante zusammenlegen
+C016;ps-wer-bin-ich;Wer bin ich?;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C016;sw-wer-bin-ich;Wer bin ich;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C016;sw-wer-bin-ich-verkehrt;Wer bin ich (verkehrt);Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C017;eig-waescheklammern-jagd;Wäscheklammern-Jagd;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C017;ps-waescheklammern-klauen;Wäscheklammern klauen;pfadfinder-spiele;CC BY-NC-SA 4.0;0.81;als Variante verweisen (Lizenz nicht mischen!)
+C017;sw-wascheklammern-diebstahl;Wäscheklammern-Diebstahl;Spielewiki;CC BY-SA 4.0;0.76;als Variante zusammenlegen
+C018;ps-zuzwinckern-sterben;Zuzwinckern (+sterben);pfadfinder-spiele;CC BY-NC-SA 4.0;0.84;als Variante verweisen (Lizenz nicht mischen!)
+C018;ps-zuzwinkern-hundehuette;Zuzwinkern;pfadfinder-spiele;CC BY-NC-SA 4.0;0.89;als Variante verweisen (Lizenz nicht mischen!)
+C018;sw-zwinkern;Zwinkern;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C019;sw-ampel-reflexion;Ampel-Reflexion;Spielewiki;CC BY-SA 4.0;0.71;als Variante zusammenlegen
+C019;sw-wahlurnen-reflexion;Wahlurnen-Reflexion;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C020;sw-bauernschnapsen;Bauernschnapsen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C020;sw-dreierschnapsen;Dreierschnapsen;Spielewiki;CC BY-SA 4.0;0.87;streichen (praktisch identisch)
+C021;ps-bermudadreieck;Bermudadreieck;pfadfinder-spiele;CC BY-NC-SA 4.0;0.11;als Variante verweisen (Lizenz nicht mischen!)
+C021;sw-hugo;Hugo;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C022;sw-black-stories;Black Stories;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C022;sw-lateral;Lateral;Spielewiki;CC BY-SA 4.0;0.57;als Variante zusammenlegen
+C023;sw-brieftrager;Briefträger;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C023;sw-namenschlagen;Namenschlagen;Spielewiki;CC BY-SA 4.0;0.74;als Variante zusammenlegen
+C024;ps-capture-the-flag;Capture the flag;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C024;sw-capture-the-flag;Capture the Flag;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C025;eig-casino-abend;Casino-Abend;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C025;insp-casino-heimabend;Casino-Heimabend;Inspirator (DPBM);CC BY-NC 4.0;0.86;als Variante verweisen (Lizenz nicht mischen!)
+C026;eig-chaosspiel;Chaosspiel;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C026;ps-chaos-spiel;Chaos-Spiel;pfadfinder-spiele;CC BY-NC-SA 4.0;0.95;als Variante verweisen (Lizenz nicht mischen!)
+C027;sw-der-magier-liebt;Der Magier liebt;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C027;sw-hannes-liebt;Hannes liebt;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C028;ps-dirigent;Dirigent;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C028;sw-dirigent;Dirigent;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C029;sw-dracula;Dracula;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C029;sw-verstecken-im-dunkeln;Verstecken im Dunkeln;Spielewiki;CC BY-SA 4.0;0.53;als Variante zusammenlegen
+C030;sw-ei-am-berg;Ei am Berg;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C030;sw-mehlschneiden;Mehlschneiden;Spielewiki;CC BY-SA 4.0;0.53;als Variante zusammenlegen
+C031;ps-eisbaer-und-pinguin;Eisbär und Pinguin;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C031;sw-eisbar-und-pinguin;Eisbär und Pinguin;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C032;insp-feuer-wasser-sturm;Feuer, Wasser, Sturm;Inspirator (DPBM);CC BY-NC 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C032;sw-feuer-wasser-sturm;Feuer Wasser Sturm;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C033;ps-fliegender-teppich;Fliegender Teppich;pfadfinder-spiele;CC BY-NC-SA 4.0;0.41;als Variante verweisen (Lizenz nicht mischen!)
+C033;sw-teppich-umdrehen;Teppich umdrehen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C034;ps-funker-funker;Funker Funker;pfadfinder-spiele;CC BY-NC-SA 4.0;0.63;als Variante verweisen (Lizenz nicht mischen!)
+C034;sw-funken;Funken;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C035;sw-geruchskim;Geruchskim;Spielewiki;CC BY-SA 4.0;0.7;als Variante zusammenlegen
+C035;sw-geschmackskim;Geschmackskim;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C036;ps-goofy;Goofy;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C036;sw-goofy;Goofy;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C037;ps-gordischer-knoten;Gordischer Knoten;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C037;sw-gordischer-knoten;Gordischer Knoten;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C038;ps-gruppennetz;Gruppennetz;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;behalten (Hauptelement)
+C038;sw-fadennetz;Fadennetz;Spielewiki;CC BY-SA 4.0;0.6;als Variante verweisen (Lizenz nicht mischen!)
+C039;ps-hannes;Hannes;pfadfinder-spiele;CC BY-NC-SA 4.0;0.36;als Variante verweisen (Lizenz nicht mischen!)
+C039;sw-hi-my-name-is-joe;Hi my name is Joe;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C040;sw-heuwagen-mistwagen;Heuwagen-Mistwagen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C040;sw-plus-minus-interessant;Plus Minus Interessant;Spielewiki;CC BY-SA 4.0;0.74;als Variante zusammenlegen
+C041;sw-huhnerspiel;Hühnerspiel;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C041;sw-klopfen;Klopfen;Spielewiki;CC BY-SA 4.0;0.53;als Variante zusammenlegen
+C042;ps-im-singing-in-the-rain;I’m singing in the rain;pfadfinder-spiele;CC BY-NC-SA 4.0;0.9;als Variante verweisen (Lizenz nicht mischen!)
+C042;sw-singing-in-the-rain;Singing in the Rain;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C043;sw-ja-nein-fangen;Ja-Nein-Fangen;Spielewiki;CC BY-SA 4.0;0.53;als Variante zusammenlegen
+C043;sw-krahe-krabbe-krote;Krähe Krabbe Kröte;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C044;ps-jack-sass-in-der-kueche-mit-tina;Jack saß in der Küche mit Tina;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C044;sw-jack-sass-in-der-kuche-mit-tina;Jack saß in der Küche mit Tina;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C045;sw-katze-und-maus-grossgruppenspiel;Katze und Maus (Großgruppenspiel);Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C045;sw-katze-und-maus-kreisspiel;Katze und Maus (Kreisspiel);Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C046;ps-kettenfangen;Kettenfangen;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C046;sw-kettenfangen;Kettenfangen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C047;sw-killerball;Killerball;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C047;sw-rette-den-freund;Rette den Freund;Spielewiki;CC BY-SA 4.0;0.87;streichen (praktisch identisch)
+C048;sw-koffer-packen-auf-dem-trampolin;Koffer Packen auf dem Trampolin;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C048;sw-koffer-packen-auf-der-slackline;Koffer Packen auf der Slackline;Spielewiki;CC BY-SA 4.0;0.81;als Variante zusammenlegen
+C049;ps-kotzendes-kaenguru;Kotzendes Känguru;pfadfinder-spiele;CC BY-NC-SA 4.0;0.4;als Variante verweisen (Lizenz nicht mischen!)
+C049;sw-toasterspiel;Toasterspiel;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C050;ps-laurentia;Laurentia;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C050;sw-laurentia;Laurentia;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C051;sw-laute-post;Laute Post;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C051;sw-stille-post;Stille Post;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C052;sw-luftballon-kennenlernspiel;Luftballon (Kennenlernspiel);Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C052;sw-names-luftballon;Names-Luftballon;Spielewiki;CC BY-SA 4.0;0.77;als Variante zusammenlegen
+C053;sw-merkball;Merkball;Spielewiki;CC BY-SA 4.0;0.79;als Variante zusammenlegen
+C053;sw-partner-merkball;Partner-Merkball;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C054;ps-montagsmaler;Montagsmaler;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C054;sw-montagsmaler;Montagsmaler;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C055;sw-murmelbahn-konstruktion;Murmelbahn (Konstruktion);Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C055;sw-murmelbahn-personen;Murmelbahn (Personen);Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C056;ps-moehren-ziehen;Möhren ziehen;pfadfinder-spiele;CC BY-NC-SA 4.0;0.64;als Variante verweisen (Lizenz nicht mischen!)
+C056;sw-karottenziehen;Karottenziehen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C057;sw-nasa-spiel;NASA-Spiel;Spielewiki;CC BY-SA 4.0;0.58;als Variante zusammenlegen
+C057;sw-seenotspiel;Seenotspiel;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C058;ps-namensjonglage;Namensjonglage;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;behalten (Hauptelement)
+C058;sw-namensjonglage;Namensjonglage;Spielewiki;CC BY-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C059;ps-ninja;Ninja;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C059;sw-ninja;Ninja;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C060;ps-obstsalat;Obstsalat;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C060;sw-obstsalat;Obstsalat;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C061;ps-paarfangen;Paarfangen;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C061;sw-paarfangen;Paarfangen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C062;sw-paarweise-vorstellen;Paarweise Vorstellen;Spielewiki;CC BY-SA 4.0;0.66;als Variante zusammenlegen
+C062;sw-schlusselbund;Schlüsselbund;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C063;ps-pferderennen;Pferderennen;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;behalten (Hauptelement)
+C063;sw-pferderennen;Pferderennen;Spielewiki;CC BY-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C064;sw-polsterbesetzen;Polsterbesetzen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C064;sw-polsterspiel;Polsterspiel;Spielewiki;CC BY-SA 4.0;0.67;als Variante zusammenlegen
+C065;sw-psychiatercouch;Psychiatercouch;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C065;sw-sofaspiel;Sofaspiel;Spielewiki;CC BY-SA 4.0;0.84;als Variante zusammenlegen
+C066;insp-schmuggler-innen-spiel;Schmuggler*innen-Spiel;Inspirator (DPBM);CC BY-NC 4.0;1.0;behalten (Hauptelement)
+C066;ps-schmuggler;Schmuggler;pfadfinder-spiele;CC BY-NC-SA 4.0;0.62;als Variante zusammenlegen
+C067;ps-schnick-schnack-schnuck;Schnick-Schnack-Schnuck;pfadfinder-spiele;CC BY-NC-SA 4.0;0.47;als Variante verweisen (Lizenz nicht mischen!)
+C067;sw-schere-stein-papier;Schere Stein Papier;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C068;sw-sitzfussball-bewegungsspiel;Sitzfußball (Bewegungsspiel);Spielewiki;CC BY-SA 4.0;0.73;als Variante zusammenlegen
+C068;sw-sitzfussball-im-kreis;Sitzfußball im Kreis;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C069;ps-slurp;Slurp;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;behalten (Hauptelement)
+C069;sw-slurp;Slurp;Spielewiki;CC BY-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C070;insp-stadt-land-fluss;Stadt, Land, Fluss;Inspirator (DPBM);CC BY-NC 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C070;sw-stadt-land-fluss;Stadt-Land-Fluss;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C071;sw-stimmungs-matrix;Stimmungs-Matrix;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C071;sw-stimmungsbarometer;Stimmungsbarometer;Spielewiki;CC BY-SA 4.0;0.71;als Variante zusammenlegen
+C072;sw-teelichter-ausblasen;Teelichter-Ausblasen;Spielewiki;CC BY-SA 4.0;0.77;als Variante zusammenlegen
+C072;sw-teelichter-bewachen;Teelichter bewachen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C073;sw-teiggiessen;Teiggießen;Spielewiki;CC BY-SA 4.0;0.66;als Variante zusammenlegen
+C073;sw-wachsgiessen;Wachsgießen;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C074;ps-vampire;Vampire;pfadfinder-spiele;CC BY-NC-SA 4.0;0.92;als Variante verweisen (Lizenz nicht mischen!)
+C074;sw-vampir;Vampir;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C075;ps-berg-zwerg-riese-versteinerte-hexe-virus;Virus;pfadfinder-spiele;CC BY-NC-SA 4.0;1.0;behalten (Hauptelement)
+C075;sw-virus;Virus;Spielewiki;CC BY-SA 4.0;1.0;als Variante verweisen (Lizenz nicht mischen!)
+C076;sw-welle-entspannungsspiel;Welle (Entspannungsspiel);Spielewiki;CC BY-SA 4.0;1.0;streichen (praktisch identisch)
+C076;sw-welle-vertrauensspiel;Welle (Vertrauensspiel);Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C077;eig-werwolf-abend;Werwolf-Abend;eigene;CC BY-SA 4.0;1.0;behalten (Hauptelement)
+C077;ps-werwolf;Werwolf;pfadfinder-spiele;CC BY-NC-SA 4.0;0.7;als Variante verweisen (Lizenz nicht mischen!)
+C078;sw-zipp-zapp;Zipp Zapp;Spielewiki;CC BY-SA 4.0;0.78;als Variante zusammenlegen
+C078;sw-zipp-zapp-zopp;Zipp Zapp Zopp;Spielewiki;CC BY-SA 4.0;1.0;behalten (Hauptelement)

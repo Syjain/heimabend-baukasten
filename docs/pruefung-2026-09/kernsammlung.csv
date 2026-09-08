@@ -1,0 +1,796 @@
+id;titel;quelle;kategorie;unterkategorie;punkte;rang_in_unterkategorie;empfehlung;warum
+sw-alaska-baseball;Alaska-Baseball;Spielewiki;bewegung_drinnen;ball;7;1;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-baumball;Baumball;Spielewiki;bewegung_drinnen;ball;7;2;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-klatschball;Klatschball;Spielewiki;kreis;ball;7;3;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-ballbewegung;Ballbewegung;Spielewiki;kreis;ball;6;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bruchenball;Bruchenball;Spielewiki;bewegung_drinnen;ball;6;5;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-frisbee-challenge;Frisbee-Challenge;Spielewiki;bewegung_draussen;ball;6;6;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-kaiserball;Kaiserball;Spielewiki;bewegung_drinnen;ball;6;7;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-konigsball;Königsball;Spielewiki;bewegung_drinnen;ball;6;8;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-rot-blau-tot;Rot blau tot;Spielewiki;bewegung_drinnen;ball;6;9;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-verliebt-verlobt-verheiratet;Verliebt Verlobt Verheiratet;Spielewiki;bewegung_drinnen;ball;6;10;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-virusball;Virusball;Spielewiki;bewegung_drinnen;ball;6;11;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-zehnerln;Zehnerln;Spielewiki;bewegung_drinnen;ball;6;12;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-ballgasse;Ballgasse;Spielewiki;bewegung_drinnen;ball;5;13;Kern;ausführlich beschrieben, kurz genug für einen Slot, braucht große Gruppe
+sw-der-kleine-in-der-mitte;Der Kleine in der Mitte;Spielewiki;bewegung_drinnen;ball;5;14;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-drachenschwanzabschiessen;Drachenschwanzabschießen;Spielewiki;bewegung_drinnen;ball;5;15;Kern;ausführlich beschrieben
+sw-frisbee-fussball;Frisbee-Fußball;Spielewiki;bewegung_drinnen;ball;5;16;Reserve (zweite Reihe);ausführlich beschrieben
+sw-frisbee-golf;Frisbee-Golf;Spielewiki;bewegung_draussen;ball;5;17;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-jagerball;Jägerball;Spielewiki;bewegung_drinnen;ball;5;18;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-rugby;Rugby;Spielewiki;bewegung_drinnen;ball;5;19;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-sitzfussball-im-kreis;Sitzfußball im Kreis;Spielewiki;bewegung_drinnen;ball;5;20;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-zahlball;Zählball;Spielewiki;bewegung_drinnen;ball;5;21;Reserve (zweite Reihe);ausführlich beschrieben
+sw-bodyguard;Bodyguard;Spielewiki;bewegung_drinnen;ball;4;22;Reserve (zweite Reihe);ausführlich beschrieben
+sw-esel-in-der-mitte;Esel in der Mitte;Spielewiki;bewegung_drinnen;ball;4;23;Reserve (zweite Reihe);ausführlich beschrieben
+sw-frisbeezielwurf;Frisbeezielwurf;Spielewiki;bewegung_drinnen;ball;4;24;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-killerball;Killerball;Spielewiki;bewegung_drinnen;ball;4;25;Reserve (zweite Reihe);ausführlich beschrieben
+sw-kinderbaseball;Kinderbaseball;Spielewiki;bewegung_drinnen;ball;4;26;Reserve (zweite Reihe);ausführlich beschrieben
+sw-reboundball;Reboundball;Spielewiki;bewegung_drinnen;ball;4;27;Reserve (zweite Reihe);ausführlich beschrieben
+sw-treibball;Treibball;Spielewiki;bewegung_drinnen;ball;4;28;Reserve (zweite Reihe);ausführlich beschrieben
+sw-volkerball;Völkerball;Spielewiki;bewegung_drinnen;ball;4;29;Reserve (zweite Reihe);ausführlich beschrieben
+sw-foursquare;Foursquare;Spielewiki;bewegung_drinnen;ball;3;30;Reserve (zweite Reihe);ausführlich beschrieben
+sw-kubelball;Kübelball;Spielewiki;bewegung_drinnen;ball;3;31;Reserve (zweite Reihe);ausführlich beschrieben
+sw-mehrfach-volleyball;Mehrfach-Volleyball;Spielewiki;bewegung_drinnen;ball;3;32;Reserve (zweite Reihe);ausführlich beschrieben
+sw-mehrfelderball;Mehrfelderball;Spielewiki;bewegung_drinnen;ball;3;33;Reserve (zweite Reihe);ausführlich beschrieben
+sw-partner-merkball;Partner-Merkball;Spielewiki;bewegung_drinnen;ball;3;34;Reserve (zweite Reihe);ausführlich beschrieben, braucht große Gruppe
+sw-rugbyfangen;Rugbyfangen;Spielewiki;bewegung_drinnen;ball;3;35;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-volkerball-verkehrt;Völkerball verkehrt;Spielewiki;bewegung_drinnen;ball;3;36;Reserve (zweite Reihe);ausführlich beschrieben
+sw-ball-uber-die-schnur;Ball über die Schnur;Spielewiki;bewegung_drinnen;ball;2;37;Reserve (zweite Reihe);ausführlich beschrieben, viel Material
+sw-merkball;Merkball;Spielewiki;bewegung_drinnen;ball;-1;38;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+sw-frisbee-passen;Frisbee-Passen;Spielewiki;bewegung_drinnen;ball;-2;39;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+sw-rette-den-freund;Rette den Freund;Spielewiki;bewegung_drinnen;ball;-2;40;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+sw-frisbeelauf;Frisbeelauf;Spielewiki;bewegung_draussen;ball;-4;41;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+sw-bildhauer;Bildhauer;Spielewiki;ruhig;darstellen;8;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-gruppengeschichte;Gruppengeschichte;Spielewiki;ruhig;darstellen;8;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-eisenbahn;Eisenbahn;Spielewiki;kreis;darstellen;7;3;Kern;ausführlich beschrieben, kein Material
+sw-blindes-schminken;Blindes Schminken;Spielewiki;ruhig;darstellen;6;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, viel Material
+sw-kreisportrat;Kreisporträt;Spielewiki;ruhig;darstellen;6;5;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-streichholz-feuerwerk;Streichholz-Feuerwerk;Spielewiki;ruhig;darstellen;6;6;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bibliodrama;Bibliodrama;Spielewiki;bewegung_drinnen;darstellen;5;7;Reserve (zweite Reihe);ausführlich beschrieben
+sw-lustige-figuren;Lustige Figuren;Spielewiki;ruhig;darstellen;5;8;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-zeichnung-in-der-dunkelheit;Zeichnung in der Dunkelheit;Spielewiki;ruhig;darstellen;5;9;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-schreiben-und-zeichnen;Schreiben und Zeichnen;Spielewiki;bewegung_drinnen;darstellen;4;10;Reserve (zweite Reihe);ausführlich beschrieben
+sw-stille-post-in-bildern;Stille Post in Bildern;Spielewiki;ruhig;darstellen;4;11;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-picasso-fur-arme;Picasso für Arme;Spielewiki;ruhig;darstellen;2;12;Reserve (zweite Reihe);ausführlich beschrieben
+sw-eierversuch;Eierversuch;Spielewiki;ruhig;darstellen;1;13;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-kochduell;Kochduell;Spielewiki;ruhig;darstellen;1;14;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-talentshow;Talentshow;Spielewiki;ruhig;darstellen;1;15;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-scharade;Scharade;Spielewiki;bewegung_drinnen;darstellen;0;16;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, kein Material, Corona/Online
+sw-eine-ente;Eine Ente;Spielewiki;ruhig;denken;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-minutenweg;Minutenweg;Spielewiki;ruhig;denken;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-was-ware-die-person;Was wäre die Person;Spielewiki;ruhig;denken;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-backerquiz;Bäckerquiz;Spielewiki;ruhig;denken;8;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-rapunzel;Rapunzel;Spielewiki;ruhig;denken;8;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-telegramm;Telegramm;Spielewiki;ruhig;denken;7;6;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-tier-vogel-fisch;Tier Vogel Fisch;Spielewiki;ruhig;denken;7;7;Kern;ausführlich beschrieben, kein Material
+sw-alphabet-staffel;Alphabet-Staffel;Spielewiki;ruhig;denken;6;8;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bilder-raten;Bilder raten;Spielewiki;ruhig;denken;6;9;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-dreieck;Dreieck;Spielewiki;ruhig;denken;6;10;Kern;ausführlich beschrieben, kein Material
+sw-einkaufszentrum;Einkaufszentrum;Spielewiki;ruhig;denken;6;11;Kern;ausführlich beschrieben, kein Material
+sw-initialenraten;Initialenraten;Spielewiki;ruhig;denken;6;12;Kern;kurz genug für einen Slot, kein Material
+sw-kleiner-gruner-zauberer;Kleiner Grüner Zauberer;Spielewiki;ruhig;denken;6;13;Kern;ausführlich beschrieben, kein Material
+sw-kasekastchen;Käsekästchen;Spielewiki;ruhig;denken;6;14;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-montagsmaler;Montagsmaler;Spielewiki;ruhig;denken;6;15;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-offen-oder-geschlossen-weitergeben;Offen oder geschlossen Weitergeben;Spielewiki;ruhig;denken;6;16;Kern;ausführlich beschrieben, kein Material
+sw-teiler-7;Teiler 7;Spielewiki;ruhig;denken;6;17;Kern;ausführlich beschrieben, kein Material
+sw-tic-tac-toe-mit-menschen;Tic Tac Toe mit Menschen;Spielewiki;ruhig;denken;6;18;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-wortbau;Wortbau;Spielewiki;ruhig;denken;6;19;Kern;ausführlich beschrieben, kein Material
+sw-zahlensumme;Zahlensumme;Spielewiki;ruhig;denken;6;20;Kern;ausführlich beschrieben, kein Material
+sw-beruhmte-paare;Berühmte Paare;Spielewiki;ruhig;denken;5;21;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-black-stories;Black Stories;Spielewiki;ruhig;denken;5;22;Kern;ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot, Corona/Online
+sw-der-mond-ist-rund;Der Mond ist rund;Spielewiki;ruhig;denken;5;23;Kern;ausführlich beschrieben
+sw-lirum-larum-loffelstiel;Lirum Larum Löffelstiel;Spielewiki;ruhig;denken;5;24;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-schwarze-magie;Schwarze Magie;Spielewiki;ruhig;denken;5;25;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-sesselriechen;Sesselriechen;Spielewiki;ruhig;denken;5;26;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-affe-affe-elefant;Affe-Affe-Elefant;Spielewiki;ruhig;denken;4;27;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-alphabet-ruckwarts;Alphabet rückwärts;Spielewiki;ruhig;denken;4;28;Reserve (zweite Reihe);kein Material
+sw-i-can-see-the-moon-in-the-spoon;I can see the moon in the spoon;Spielewiki;ruhig;denken;4;29;Reserve (zweite Reihe);ausführlich beschrieben
+sw-kreuzapotheke;Kreuzapotheke;Spielewiki;ruhig;denken;4;30;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, kein Material
+sw-modenschau;Modenschau;Spielewiki;ruhig;denken;4;31;Reserve (zweite Reihe);ausführlich beschrieben
+sw-nachste-entfernungsangabe;Nächste Entfernungsangabe;Spielewiki;ruhig;denken;4;32;Reserve (zweite Reihe);ausführlich beschrieben
+sw-ruckwarts-buchstabieren;Rückwärts Buchstabieren;Spielewiki;ruhig;denken;4;33;Reserve (zweite Reihe);kein Material
+sw-tic-tac-toe;Tic Tac Toe;Spielewiki;ruhig;denken;4;34;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-der-magier-liebt;Der Magier liebt;Spielewiki;ruhig;denken;3;35;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-doppeldeutig;Doppeldeutig;Spielewiki;ruhig;denken;3;36;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-hangman;Hangman;Spielewiki;ruhig;denken;3;37;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-lieder-raten;Lieder raten;Spielewiki;ruhig;denken;3;38;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-piggly-wiggly;Piggly-Wiggly;Spielewiki;ruhig;denken;3;39;Reserve (zweite Reihe);ausführlich beschrieben
+eig-schwarze-geschichten-bei-kerzenschein;Schwarze Geschichten bei Kerzenschein;eigene;ruhig;denken;3;40;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-tetris;Tetris;Spielewiki;ruhig;denken;3;41;Reserve (zweite Reihe);ausführlich beschrieben
+sw-wenn-das-zwei-ist;Wenn das zwei ist;Spielewiki;ruhig;denken;3;42;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-irrenhaus;Irrenhaus;Spielewiki;ruhig;denken;2;43;Reserve (zweite Reihe);ausführlich beschrieben, Tipps da, zu lang für einen Baustein, kein Material, Corona/Online
+sw-ja-nein-fangen;Ja-Nein-Fangen;Spielewiki;ruhig;denken;2;44;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+eig-quiz-abend-schlag-die-fuehrung;Quiz-Abend: Schlag die Führung;eigene;ruhig;denken;2;45;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-wer-bin-ich;Wer bin ich;Spielewiki;ruhig;denken;2;46;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-arche-noah;Arche Noah;Spielewiki;ruhig;denken;1;47;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, kein Material, Corona/Online
+sw-ich-sehe-was-was-du-nicht-siehst;Ich sehe was, was du nicht siehst;Spielewiki;ruhig;denken;1;48;Reserve (zweite Reihe);kein Material, Corona/Online
+sw-lateral;Lateral;Spielewiki;ruhig;denken;1;49;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material, Corona/Online
+sw-stadt-land-fluss;Stadt-Land-Fluss;Spielewiki;ruhig;denken;1;50;Reserve (zweite Reihe);ausführlich beschrieben, Corona/Online
+sw-torwachter;Torwächter;Spielewiki;ruhig;denken;1;51;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, kein Material, Corona/Online
+sw-vier-gewinnt;Vier Gewinnt;Spielewiki;ruhig;denken;1;52;Reserve (zweite Reihe);ausführlich beschrieben, braucht große Gruppe
+sw-lied-gurgeln;Lied gurgeln;Spielewiki;ruhig;denken;0;53;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+sw-eislocher-eisbaren-fische;Eislöcher Eisbären Fische;Spielewiki;ruhig;denken;-1;54;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, Corona/Online
+eig-escape-room-im-heim;Escape Room im Heim;eigene;ruhig;denken;-1;55;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein, viel Material, viel Vorbereitung
+sw-hannes-liebt;Hannes liebt;Spielewiki;ruhig;denken;-1;56;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-pubquiz;Pubquiz;Spielewiki;ruhig;denken;-1;57;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Vorbereitung, Corona/Online
+sw-wer-bin-ich-verkehrt;Wer bin ich (verkehrt);Spielewiki;ruhig;denken;-1;58;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-drudel;Drudel;Spielewiki;ruhig;denken;-2;59;Reserve (zweite Reihe);Corona/Online
+sw-melodie-raten;Melodie raten;Spielewiki;ruhig;denken;-2;60;Reserve (zweite Reihe);Dublette, kein Material
+sw-sofaspiel;Sofaspiel;Spielewiki;ruhig;denken;-2;61;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+ps-kontakto;Kontakto;pfadfinder-spiele;bewegung_draussen;fangen;10;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-milchproduktefangen;Milchproduktefangen;pfadfinder-spiele;ankommen;fangen;10;2;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-versteck-fangen;Versteck-fangen;pfadfinder-spiele;ankommen;fangen;10;3;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-chaosfangen;Chaosfangen;Spielewiki;bewegung_drinnen;fangen;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-chinesische-mauer;Chinesische Mauer;Spielewiki;bewegung_drinnen;fangen;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-farbenfangen;Farbenfangen;Spielewiki;bewegung_drinnen;fangen;9;6;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-goofy;Goofy;Spielewiki;bewegung_drinnen;fangen;9;7;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-kettenfangen;Kettenfangen;Spielewiki;bewegung_drinnen;fangen;9;8;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-krahe-krabbe-krote;Krähe Krabbe Kröte;Spielewiki;bewegung_drinnen;fangen;9;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-qualle-koralle;Qualle Koralle;Spielewiki;bewegung_drinnen;fangen;9;10;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-zombieball;Zombieball;pfadfinder-spiele;ankommen;fangen;9;11;Kern;ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot
+sw-british-bulldog;British Bulldog;Spielewiki;bewegung_draussen;fangen;8;12;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-englischfangen;Englischfangen;pfadfinder-spiele;ankommen;fangen;8;13;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+sw-hase-und-igel;Hase und Igel;Spielewiki;bewegung_draussen;fangen;8;14;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-koenigsspiel;Königsspiel;pfadfinder-spiele;bewegung_drinnen;fangen;8;15;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-tuchfangen;Tuchfangen;pfadfinder-spiele;ankommen;fangen;8;16;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-berg-zwerg-riese-versteinerte-hexe-virus;Virus;pfadfinder-spiele;bewegung_draussen;fangen;8;17;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-bruckenfangen;Brückenfangen;Spielewiki;bewegung_drinnen;fangen;7;18;Kern;ausführlich beschrieben, kein Material
+sw-captain-hook-und-peter-pan;Captain Hook und Peter Pan;Spielewiki;bewegung_drinnen;fangen;7;19;Kern;ausführlich beschrieben, kein Material
+sw-der-kaiser-schickt-soldaten-aus;Der Kaiser schickt Soldaten aus;Spielewiki;bewegung_drinnen;fangen;7;20;Kern;ausführlich beschrieben, kein Material
+sw-der-plumpsack-geht-um;Der Plumpsack geht um;Spielewiki;bewegung_drinnen;fangen;7;21;Kern;ausführlich beschrieben, kein Material
+sw-eichhornchenspiel;Eichhörnchenspiel;Spielewiki;bewegung_drinnen;fangen;7;22;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-eisbar-und-pinguin;Eisbär und Pinguin;Spielewiki;bewegung_drinnen;fangen;7;23;Kern;ausführlich beschrieben, kein Material
+sw-hase-und-wolf;Hase und Wolf;Spielewiki;bewegung_drinnen;fangen;7;24;Kern;ausführlich beschrieben, kein Material
+sw-innenkreis-aussenkreis;Innenkreis Außenkreis;Spielewiki;bewegung_drinnen;fangen;7;25;Kern;ausführlich beschrieben, kein Material
+sw-katze-und-maus-grossgruppenspiel;Katze und Maus (Großgruppenspiel);Spielewiki;bewegung_drinnen;fangen;7;26;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-keksstafette;Keksstafette;Spielewiki;bewegung_drinnen;fangen;7;27;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-langsamer-hase-und-jager;Langsamer Hase und Jäger;Spielewiki;ruhig;fangen;7;28;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-linienfangen;Linienfangen;Spielewiki;bewegung_drinnen;fangen;7;29;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-paarfangen;Paarfangen;Spielewiki;bewegung_drinnen;fangen;7;30;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-flohhupfen;Flohhüpfen;Spielewiki;ruhig;fangen;6;31;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+ps-hilfe-die-katze-kommt;Hilfe die Katze kommt;pfadfinder-spiele;ankommen;fangen;6;32;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, kein Material, braucht große Gruppe
+sw-krabben;Krabben;Spielewiki;bewegung_drinnen;fangen;6;33;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-moonbase;Moonbase;Spielewiki;bewegung_draussen;fangen;6;34;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+ps-prinzessin-ritter-drache;Prinzessin, Ritter, Drache;pfadfinder-spiele;ankommen;fangen;6;35;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, kein Material, braucht große Gruppe
+sw-schlangen-im-gras;Schlangen im Gras;Spielewiki;bewegung_drinnen;fangen;6;36;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-schneckenfangen;Schneckenfangen;Spielewiki;ruhig;fangen;6;37;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-vampir;Vampir;Spielewiki;bewegung_drinnen;fangen;6;38;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+eig-waescheklammern-jagd;Wäscheklammern-Jagd;eigene;ankommen;fangen;6;39;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da
+ps-mischling;Ballraub;pfadfinder-spiele;bewegung_draussen;fangen;5;40;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-dreibein-fangen;Dreibein-Fangen;Spielewiki;bewegung_drinnen;fangen;5;41;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-eisenbahnstaffel;Eisenbahnstaffel;Spielewiki;bewegung_draussen;fangen;5;42;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-elefantenrennen;Elefantenrennen;Spielewiki;bewegung_draussen;fangen;5;43;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-kaferfangen;Käferfangen;Spielewiki;bewegung_drinnen;fangen;5;44;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, braucht große Gruppe
+sw-schwammspiel;Schwammspiel;Spielewiki;bewegung_drinnen;fangen;5;45;Reserve (zweite Reihe);ausführlich beschrieben
+sw-steinfanger-baumfanger-bruckenfanger;Steinfänger Baumfänger Brückenfänger;Spielewiki;bewegung_drinnen;fangen;5;46;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, braucht große Gruppe
+sw-streitwagen-fangen;Streitwagen-Fangen;Spielewiki;bewegung_drinnen;fangen;5;47;Reserve (zweite Reihe);ausführlich beschrieben
+sw-wetttransport;Wetttransport;Spielewiki;bewegung_draussen;fangen;5;48;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-baumchen-wechsle-dich;Bäumchen wechsle dich;Spielewiki;bewegung_draussen;fangen;4;49;Reserve (zweite Reihe);ausführlich beschrieben
+sw-ganoven-im-gefangnis;Ganoven im Gefängnis;Spielewiki;bewegung_drinnen;fangen;4;50;Reserve (zweite Reihe);ausführlich beschrieben
+ps-komm-mit-lauf-weg;Komm mit- lauf weg;pfadfinder-spiele;kreis;fangen;4;51;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-zahlenfangen;Zahlenfangen;Spielewiki;bewegung_drinnen;fangen;4;52;Reserve (zweite Reihe);ausführlich beschrieben
+ps-drachenschwanzjagen;Drachenschwanzjagen;pfadfinder-spiele;ankommen;fangen;3;53;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-katze-und-maus-kreisspiel;Katze und Maus (Kreisspiel);Spielewiki;kreis;fangen;3;54;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-tischfangen;Tischfangen;Spielewiki;bewegung_drinnen;fangen;3;55;Reserve (zweite Reihe);
+sw-wer-hat-angst-vorm-schwarzen-mann;Wer hat Angst vorm weißen Hai?;Spielewiki;bewegung_draussen;fangen;3;56;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Tipps da, kurz genug für einen Slot, kein Material
+ps-bermudadreieck;Bermudadreieck;pfadfinder-spiele;bewegung_drinnen;fangen;2;57;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-eisbaer-und-pinguin;Eisbär und Pinguin;pfadfinder-spiele;ankommen;fangen;2;58;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-schlumpfe-versteinern;Schlümpfe-Versteinern;Spielewiki;bewegung_drinnen;fangen;1;59;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+sw-versteinern;Versteinern;Spielewiki;bewegung_drinnen;fangen;1;60;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+ps-waescheklammern-klauen;Wäscheklammern klauen;pfadfinder-spiele;ankommen;fangen;1;61;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-kettenfangen;Kettenfangen;pfadfinder-spiele;ankommen;fangen;0;62;Reserve (zweite Reihe);Dublette, Altersstufe da, kein Material
+ps-paarfangen;Paarfangen;pfadfinder-spiele;ankommen;fangen;0;63;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material, braucht große Gruppe
+ps-british-bulldog;British Bulldog;pfadfinder-spiele;bewegung_draussen;fangen;-1;64;Reserve (zweite Reihe);Dublette, Altersstufe da, Tipps da, kein Material, braucht große Gruppe
+sw-drachenschwanzfangen-einzeln;Drachenschwanzfangen (einzeln);Spielewiki;bewegung_drinnen;fangen;-1;65;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+sw-krebs;Krebs;Spielewiki;bewegung_drinnen;fangen;-2;66;Reserve (zweite Reihe);Dublette, kein Material
+sw-spiderman;Spiderman;Spielewiki;bewegung_drinnen;fangen;-2;67;Reserve (zweite Reihe);Dublette, kein Material
+sw-virus;Virus;Spielewiki;bewegung_drinnen;fangen;-2;68;Reserve (zweite Reihe);Dublette, kein Material
+sw-drachenschwanzfangen-gruppenweise;Drachenschwanzfangen (gruppenweise);Spielewiki;bewegung_drinnen;fangen;-3;69;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, braucht große Gruppe
+ps-glockenklang;Glockenklang;pfadfinder-spiele;gelaende;gelaende;8;1;Kern;ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot
+ps-stufenspiel;Stufenspiel;pfadfinder-spiele;gelaende;gelaende;8;2;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-wald-paare;Wald-Paare;pfadfinder-spiele;gelaende;gelaende;8;3;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+ps-sardine;Sardine;pfadfinder-spiele;gelaende;gelaende;7;4;Kern;Altersstufe da, kein Material
+ps-vogeleltern;Vogeleltern;pfadfinder-spiele;gelaende;gelaende;5;5;Kern;ausführlich beschrieben, Altersstufe da
+eig-capture-the-flag-im-dunkeln;Capture the Flag im Dunkeln;eigene;gelaende;gelaende;4;6;Kern;eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-schmuggeln;Schmuggeln;Spielewiki;gelaende;gelaende;4;7;Kern;ausführlich beschrieben
+ps-bosseln;Boßeln;pfadfinder-spiele;gelaende;gelaende;3;8;Kern;ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+ps-mr-x;Mr. X;pfadfinder-spiele;gelaende;gelaende;3;9;Kern;ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+sw-geocaching;Geocaching;Spielewiki;gelaende;gelaende;2;10;Kern;ausführlich beschrieben
+sw-geisterbahn;Geisterbahn;Spielewiki;gelaende;gelaende;1;11;Reserve (zweite Reihe);ausführlich beschrieben, viel Vorbereitung
+ps-nummernspiel;Nummernspiel;pfadfinder-spiele;gelaende;gelaende;1;12;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, braucht große Gruppe
+ps-salzschmuggler;Salzschmuggler;pfadfinder-spiele;gelaende;gelaende;1;13;Reserve (zweite Reihe);Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-schnitzeljagd;Schnitzeljagd;Spielewiki;gelaende;gelaende;1;14;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+ps-steinsuche;Steinsuche;pfadfinder-spiele;gelaende;gelaende;1;15;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, braucht große Gruppe
+sw-stratego;Stratego;Spielewiki;gelaende;gelaende;1;16;Reserve (zweite Reihe);ausführlich beschrieben, Tipps da, braucht große Gruppe
+sw-capture-the-flag;Capture the Flag;Spielewiki;gelaende;gelaende;0;17;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-fotorallye;Fotorallye;Spielewiki;gelaende;gelaende;0;18;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-pfeiferlspiel;Pfeiferlspiel;Spielewiki;gelaende;gelaende;0;19;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-piratenspiel;Piratenspiel;Spielewiki;gelaende;gelaende;0;20;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, braucht große Gruppe
+sw-schatzsuche;Schatzsuche;Spielewiki;gelaende;gelaende;0;21;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-stationenlauf;Stationenlauf;Spielewiki;gelaende;gelaende;0;22;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-1-100-spiel;1-100-Spiel;Spielewiki;gelaende;gelaende;-2;23;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, viel Material, viel Vorbereitung
+sw-action-game;Action Game;Spielewiki;gelaende;gelaende;-2;24;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, viel Vorbereitung
+ps-chaos-spiel;Chaos-Spiel;pfadfinder-spiele;gelaende;gelaende;-2;25;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+ps-capture-the-flag;Capture the flag;pfadfinder-spiele;gelaende;gelaende;-5;26;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, braucht große Gruppe
+ps-schmuggler;Schmuggler;pfadfinder-spiele;gelaende;gelaende;-5;27;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, braucht große Gruppe
+sw-sockenraub;Sockenraub;Spielewiki;bewegung_drinnen;geschick;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-sternzerreissen;Sternzerreißen;Spielewiki;bewegung_drinnen;geschick;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-achterbahn;Achterbahn;Spielewiki;bewegung_drinnen;geschick;8;3;Kern;Tipps da, kurz genug für einen Slot, kein Material
+sw-abc-spiel;ABC-Spiel;Spielewiki;bewegung_drinnen;geschick;7;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-ei-am-berg;Ei am Berg;Spielewiki;bewegung_drinnen;geschick;7;5;Kern;ausführlich beschrieben, Tipps da, kurz genug für einen Slot
+sw-gletscherspalte;Gletscherspalte;Spielewiki;bewegung_drinnen;geschick;7;6;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-hugo;Hugo;Spielewiki;bewegung_drinnen;geschick;7;7;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-nageln;Nageln;Spielewiki;bewegung_drinnen;geschick;7;8;Kern;Altersstufe da, Tipps da, kurz genug für einen Slot
+sw-pflockeln;Pflöckeln;Spielewiki;bewegung_draussen;geschick;7;9;Kern;ausführlich beschrieben, Altersstufe da, Tipps da
+sw-wachterspiel;Wächterspiel;Spielewiki;ruhig;geschick;7;10;Kern;ausführlich beschrieben, kein Material
+sw-ball-im-kafig;Ball im Käfig;Spielewiki;bewegung_drinnen;geschick;6;11;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-donner-wetter-blitz;Donner Wetter Blitz;Spielewiki;bewegung_drinnen;geschick;6;12;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-geschenkeverpacken;Geschenkeverpacken;Spielewiki;bewegung_drinnen;geschick;6;13;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-hase-und-jager-mit-den-fingern;Hase und Jäger mit den Fingern;Spielewiki;bewegung_drinnen;geschick;6;14;Kern;ausführlich beschrieben, kein Material
+sw-himmel-auf-erden;Himmel auf Erden;Spielewiki;bewegung_draussen;geschick;6;15;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-liegestutz-viereck;Liegestütz-Viereck;Spielewiki;bewegung_drinnen;geschick;6;16;Kern;kurz genug für einen Slot, kein Material
+sw-mumie;Mumie;Spielewiki;bewegung_drinnen;geschick;6;17;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-streichholzschachtel-marathon;Streichholzschachtel-Marathon;Spielewiki;bewegung_drinnen;geschick;6;18;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-teelichter-bewachen;Teelichter bewachen;Spielewiki;bewegung_drinnen;geschick;6;19;Kern;ausführlich beschrieben, Tipps da
+sw-wascheklammernspiel;Wäscheklammernspiel;Spielewiki;ruhig;geschick;6;20;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-ballweitergabe-mit-beinen;Ballweitergabe mit Beinen;Spielewiki;bewegung_drinnen;geschick;5;21;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-der-bart-des-weihnachtsmannes;Der Bart des Weihnachtsmannes;Spielewiki;bewegung_drinnen;geschick;5;22;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-huftschwung;Hüftschwung;Spielewiki;bewegung_drinnen;geschick;5;23;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-keks-im-gesicht;Keks im Gesicht;Spielewiki;bewegung_drinnen;geschick;5;24;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-murmelbahn-personen;Murmelbahn (Personen);Spielewiki;bewegung_draussen;geschick;5;25;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-stierkampf-von-sevilla;Stierkampf von Sevilla;Spielewiki;bewegung_drinnen;geschick;5;26;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, braucht große Gruppe
+sw-toastbrot-wettessen;Toastbrot-Wettessen;Spielewiki;bewegung_drinnen;geschick;5;27;Reserve (zweite Reihe);Tipps da, kurz genug für einen Slot
+sw-topfschlagen;Topfschlagen;Spielewiki;bewegung_drinnen;geschick;5;28;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Material
+sw-wildschwein;Wildschwein;Spielewiki;bewegung_drinnen;geschick;5;29;Reserve (zweite Reihe);ausführlich beschrieben
+sw-apfelfischen;Apfelfischen;Spielewiki;bewegung_drinnen;geschick;4;30;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-holzscheit;Holzscheit;Spielewiki;bewegung_drinnen;geschick;4;31;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-kreise-im-dunkeln;Kreise im Dunkeln;Spielewiki;bewegung_drinnen;geschick;4;32;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-luftballon-rasieren;Luftballon rasieren;Spielewiki;bewegung_drinnen;geschick;4;33;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-molkky;Mölkky;Spielewiki;bewegung_drinnen;geschick;4;34;Reserve (zweite Reihe);ausführlich beschrieben
+sw-polsterbesetzen;Polsterbesetzen;Spielewiki;bewegung_drinnen;geschick;4;35;Reserve (zweite Reihe);ausführlich beschrieben
+sw-strohhalmrallye;Strohhalmrallye;Spielewiki;bewegung_drinnen;geschick;4;36;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-tellerdrehen;Tellerdrehen;Spielewiki;bewegung_drinnen;geschick;4;37;Reserve (zweite Reihe);ausführlich beschrieben
+sw-wasserbomben-werfen;Wasserbomben-Werfen;Spielewiki;bewegung_drinnen;geschick;4;38;Reserve (zweite Reihe);ausführlich beschrieben
+sw-affenschaukel;Affenschaukel;Spielewiki;bewegung_drinnen;geschick;3;39;Reserve (zweite Reihe);ausführlich beschrieben
+sw-klopapierrollen-fischen;Klopapierrollen-Fischen;Spielewiki;bewegung_drinnen;geschick;3;40;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-kubb;Kubb;Spielewiki;bewegung_drinnen;geschick;3;41;Reserve (zweite Reihe);ausführlich beschrieben
+sw-mikado;Mikado;Spielewiki;bewegung_drinnen;geschick;3;42;Reserve (zweite Reihe);ausführlich beschrieben
+sw-sandschleuder;Sandschleuder;Spielewiki;bewegung_drinnen;geschick;3;43;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-tempelhupfen;Tempelhüpfen;Spielewiki;bewegung_draussen;geschick;3;44;Reserve (zweite Reihe);ausführlich beschrieben
+sw-bierdeckel-zielschiessen;Bierdeckel-Zielschießen;Spielewiki;bewegung_drinnen;geschick;2;45;Reserve (zweite Reihe);
+sw-highland-games;Highland Games;Spielewiki;bewegung_draussen;geschick;1;46;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-sportolympiade;Sportolympiade;Spielewiki;bewegung_draussen;geschick;1;47;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-posterkusse;Posterküsse;Spielewiki;bewegung_drinnen;geschick;0;48;Reserve (zweite Reihe);kurz genug für einen Slot, Anlass passt nicht
+sw-mehlschneiden;Mehlschneiden;Spielewiki;bewegung_drinnen;geschick;-1;49;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-teelichter-ausblasen;Teelichter-Ausblasen;Spielewiki;bewegung_drinnen;geschick;-2;50;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-polsterspiel;Polsterspiel;Spielewiki;bewegung_drinnen;geschick;-3;51;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+sw-sitzfussball-bewegungsspiel;Sitzfußball (Bewegungsspiel);Spielewiki;bewegung_drinnen;geschick;-4;52;Reserve (zweite Reihe);Dublette
+sw-burgensturm;Burgensturm;Spielewiki;bewegung_drinnen;kampf;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-knieboxen;Knieboxen;Spielewiki;bewegung_drinnen;kampf;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-liegestutz-kampf;Liegestütz-Kampf;Spielewiki;bewegung_drinnen;kampf;9;3;Kern;ausführlich beschrieben, Tipps da, kurz genug für einen Slot, kein Material
+sw-moskito;Moskito;Spielewiki;bewegung_drinnen;kampf;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-po-gegen-po;Po gegen Po;Spielewiki;bewegung_drinnen;kampf;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-schwertkampf;Schwertkampf;Spielewiki;bewegung_drinnen;kampf;9;6;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-ninja;Ninja;Spielewiki;bewegung_drinnen;kampf;8;7;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-hahnenkampf;Hahnenkampf;Spielewiki;bewegung_drinnen;kampf;7;8;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-grashupfer;Grashüpfer;Spielewiki;bewegung_drinnen;kampf;6;9;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-scrum;Scrum;Spielewiki;bewegung_drinnen;kampf;6;10;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-krebsgedrange;Krebsgedränge;Spielewiki;bewegung_drinnen;kampf;0;11;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-kindersumo;Kindersumo;Spielewiki;bewegung_drinnen;kampf;-2;12;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+ps-batollo;Batollo;pfadfinder-spiele;kreis;konzentration;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-pantomime-stille-post;Pantomime Stille Post;pfadfinder-spiele;ruhig;konzentration;11;2;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-samurai;Samurai;pfadfinder-spiele;kreis;konzentration;11;3;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-tischklatschen;Tischklatschen;pfadfinder-spiele;kreis;konzentration;10;4;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-nippon-ha;Nippon Ha;Spielewiki;ruhig;konzentration;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-zauberball-sip-sop;Zauberball;pfadfinder-spiele;kreis;konzentration;9;6;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+ps-der-verrueckte-professor;Der verrückte Professor;pfadfinder-spiele;ruhig;konzentration;8;7;Kern;ausführlich beschrieben, Altersstufe da, kein Material
+ps-kontakt-3-2-1;Kontakt 3 2 1;pfadfinder-spiele;ruhig;konzentration;8;8;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material, Corona/Online
+sw-mordern;Mördern;Spielewiki;ruhig;konzentration;8;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-arme-im-takt;Arme im Takt;Spielewiki;ruhig;konzentration;7;10;Kern;ausführlich beschrieben, kein Material
+ps-improtheater;Improtheater;pfadfinder-spiele;ruhig;konzentration;7;11;Reserve (zweite Reihe);Altersstufe da, kein Material
+ps-kreativ-tabu;Kreativ Tabu;pfadfinder-spiele;ruhig;konzentration;7;12;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da
+ps-crazy-mother-fucker;Zwei Plätze weiter;pfadfinder-spiele;ruhig;konzentration;7;13;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein, kein Material
+ps-detektiv;Detektiv;pfadfinder-spiele;kreis;konzentration;6;14;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-kotzendes-kaenguru;Kotzendes Känguru;pfadfinder-spiele;kreis;konzentration;6;15;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material
+ps-loeffelkoenig;Löffelkönig;pfadfinder-spiele;kreis;konzentration;6;16;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-menschenmemory;Menschenmemory;pfadfinder-spiele;ruhig;konzentration;6;17;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, kein Material, Corona/Online
+ps-jack-sass-in-der-kueche-mit-tina;Jack saß in der Küche mit Tina;pfadfinder-spiele;kreis;konzentration;5;18;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-mord-in-der-disko;Mord in der Disko;pfadfinder-spiele;ruhig;konzentration;5;19;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+ps-huhn-spiel;Huhn-Spiel;pfadfinder-spiele;kreis;konzentration;4;20;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, braucht große Gruppe
+ps-personen-malen;Personen malen;pfadfinder-spiele;ruhig;konzentration;4;21;Reserve (zweite Reihe);Altersstufe da, Tipps da
+ps-zuzwinkern-hundehuette;Zuzwinkern;pfadfinder-spiele;kreis;konzentration;4;22;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-dirigent;Dirigent;pfadfinder-spiele;kreis;konzentration;3;23;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-zuzwinckern-sterben;Zuzwinckern (+sterben);pfadfinder-spiele;kreis;konzentration;3;24;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-goofy;Goofy;pfadfinder-spiele;ruhig;konzentration;-1;25;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da
+ps-reise-nach-jerusalem;Reise nach Jerusalem;pfadfinder-spiele;ruhig;konzentration;-1;26;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot
+ps-wer-bin-ich;Wer bin ich?;pfadfinder-spiele;ruhig;konzentration;-5;27;Reserve (zweite Reihe);Dublette, Altersstufe da, Corona/Online
+sw-gesichter-ertasten;Gesichter ertasten;Spielewiki;ruhig;merken;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-eine-minute;Eine Minute;Spielewiki;ruhig;merken;7;2;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-geschmackskim;Geschmackskim;Spielewiki;ruhig;merken;7;3;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-klapperschlangen;Klapperschlangen;Spielewiki;ruhig;merken;7;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-memory-fangen;Memory-Fangen;Spielewiki;ruhig;merken;7;5;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-tastkim;Tastkim;Spielewiki;ruhig;merken;7;6;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-bello-dein-knochen-ist-weg;Bello, dein Knochen ist weg;Spielewiki;ruhig;merken;6;7;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-munzen-kim;Münzen-Kim;Spielewiki;ruhig;merken;6;8;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-gewichte-sortieren;Gewichte sortieren;Spielewiki;ruhig;merken;5;9;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Material
+sw-gerausche-kim-in-filmdose;Geräusche-Kim in Filmdose;Spielewiki;ruhig;merken;4;10;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-paare-aufdecken;Paare aufdecken;Spielewiki;ruhig;merken;3;11;Reserve (zweite Reihe);ausführlich beschrieben
+sw-bilderkim;Bilderkim;Spielewiki;ruhig;merken;1;12;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-geruchskim;Geruchskim;Spielewiki;ruhig;merken;-1;13;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+sw-merkkim;Merkkim;Spielewiki;ruhig;merken;-2;14;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-anna;Anna;Spielewiki;ankommen;namen;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-namensalphabet;Namensalphabet;Spielewiki;ankommen;namen;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-namensmaschine;Namensmaschine;Spielewiki;ankommen;namen;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-wotan-schuh;Wotan Schuh;Spielewiki;ankommen;namen;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-das-habe-ich-noch-nie-gemacht;Das habe ich noch nie gemacht;Spielewiki;ankommen;namen;8;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-gruppennetz;Gruppennetz;pfadfinder-spiele;ankommen;namen;8;6;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-klopapier-namensspiel;Klopapier Namensspiel;pfadfinder-spiele;ankommen;namen;8;7;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+sw-landkarte;Landkarte;Spielewiki;ankommen;namen;8;8;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-locher-stopfen;Löcher stopfen;Spielewiki;ankommen;namen;8;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-namensjonglage;Namensjonglage;pfadfinder-spiele;ankommen;namen;8;10;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+sw-ameisenspiel;Ameisenspiel;Spielewiki;ankommen;namen;7;11;Kern;ausführlich beschrieben, kein Material
+sw-atomspiel;Atomspiel;Spielewiki;ankommen;namen;7;12;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-aufgabenchaos;Aufgabenchaos;Spielewiki;ankommen;namen;7;13;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-begrussung-international;Begrüßung international;Spielewiki;ankommen;namen;7;14;Kern;ausführlich beschrieben, Tipps da, kurz genug für einen Slot
+sw-geruchtekuche;Gerüchteküche;Spielewiki;ankommen;namen;7;15;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-halt-dich-fest;Halt dich fest;Spielewiki;ankommen;namen;7;16;Kern;ausführlich beschrieben, kein Material
+sw-kugellager;Kugellager;Spielewiki;ankommen;namen;7;17;Kern;ausführlich beschrieben, kein Material
+sw-luftballon-kennenlernspiel;Luftballon (Kennenlernspiel);Spielewiki;ankommen;namen;7;18;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-namenstausch;Namenstausch;Spielewiki;ankommen;namen;7;19;Kern;ausführlich beschrieben, kein Material
+sw-pelele;Pelele;Spielewiki;ankommen;namen;7;20;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-peng;Peng;Spielewiki;ankommen;namen;7;21;Kern;ausführlich beschrieben, kein Material
+ps-prinzball;Prinzball;pfadfinder-spiele;ankommen;namen;7;22;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+sw-vorstellung-mit-sussigkeiten;Vorstellung mit Süßigkeiten;Spielewiki;ankommen;namen;7;23;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-whiskymixer-wachsmaske;Whiskymixer Wachsmaske;Spielewiki;ankommen;namen;7;24;Kern;ausführlich beschrieben, kein Material
+sw-autogrammspiel;Autogrammspiel;Spielewiki;ankommen;namen;6;25;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bermudadreieck;Bermudadreieck;Spielewiki;ankommen;namen;6;26;Kern;ausführlich beschrieben, kein Material
+sw-das-schnelle-namensspiel;Das schnelle Namensspiel;Spielewiki;ankommen;namen;6;27;Kern;ausführlich beschrieben, kurz genug für einen Slot
+ps-das-schnellste-namensspiel-der-welt;Das schnellste Namensspiel der Welt;pfadfinder-spiele;ankommen;namen;6;28;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+sw-der-ruf-eilt-dir-voraus;Der Ruf eilt dir voraus;Spielewiki;ankommen;namen;6;29;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-funken;Funken;Spielewiki;ankommen;namen;6;30;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-gerausche-kim-fur-paare;Geräusche-Kim für Paare;Spielewiki;ankommen;namen;6;31;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-gesucht-wird;Gesucht wird;Spielewiki;ankommen;namen;6;32;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-koffer-packen-auf-dem-trampolin;Koffer Packen auf dem Trampolin;Spielewiki;ankommen;namen;6;33;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-picasso-challenge;Picasso-Challenge;Spielewiki;ankommen;namen;6;34;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-wer-hat-die-meisten;Wer hat die meisten;Spielewiki;ankommen;namen;6;35;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-zweierzeichnung;Zweierzeichnung;Spielewiki;ankommen;namen;6;36;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-ballwurfkette;Ballwurfkette;Spielewiki;ankommen;namen;5;37;Reserve (zweite Reihe);ausführlich beschrieben
+sw-klopapierrolle;Klopapierrolle;Spielewiki;ankommen;namen;5;38;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-namensschreck;Namensschreck;Spielewiki;ankommen;namen;5;39;Reserve (zweite Reihe);ausführlich beschrieben
+sw-netzwerk;Netzwerk;Spielewiki;ankommen;namen;5;40;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-reihenbildung;Reihenbildung;Spielewiki;ankommen;namen;5;41;Reserve (zweite Reihe);ausführlich beschrieben
+sw-stori;Störi;Spielewiki;ankommen;namen;5;42;Reserve (zweite Reihe);ausführlich beschrieben
+sw-aufgabensammlung;Aufgabensammlung;Spielewiki;ankommen;namen;4;43;Reserve (zweite Reihe);ausführlich beschrieben
+sw-besetzt;Besetzt;Spielewiki;ankommen;namen;4;44;Reserve (zweite Reihe);ausführlich beschrieben
+sw-brieftrager;Briefträger;Spielewiki;ankommen;namen;4;45;Reserve (zweite Reihe);ausführlich beschrieben
+sw-den-dritten-erfinden;Den Dritten erfinden;Spielewiki;ankommen;namen;4;46;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material, Corona/Online
+sw-doppelganger;Doppelgänger;Spielewiki;ankommen;namen;4;47;Reserve (zweite Reihe);ausführlich beschrieben
+sw-drei-dinge;Drei Dinge;Spielewiki;ankommen;namen;4;48;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material, Corona/Online
+sw-greif-zu;Greif zu;Spielewiki;ankommen;namen;4;49;Reserve (zweite Reihe);ausführlich beschrieben
+sw-hansi-pieps-einmal;Hansi pieps einmal;Spielewiki;ankommen;namen;4;50;Reserve (zweite Reihe);ausführlich beschrieben
+sw-ich-habe-schon-einmal;Ich habe schon einmal;Spielewiki;ankommen;namen;4;51;Reserve (zweite Reihe);ausführlich beschrieben
+sw-ich-packe-in-meinen-rucksack;Ich packe in meinen Rucksack;Spielewiki;ruhig;namen;4;52;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-ich-sitze-im-grunen-und-liebe;Ich sitze im Grünen und liebe;Spielewiki;ankommen;namen;4;53;Reserve (zweite Reihe);ausführlich beschrieben
+sw-name-und-bewegung;Name und Bewegung;Spielewiki;ankommen;namen;4;54;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material, Corona/Online
+sw-schlusselbund;Schlüsselbund;Spielewiki;ankommen;namen;4;55;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-speeddating;Speeddating;Spielewiki;ankommen;namen;4;56;Reserve (zweite Reihe);ausführlich beschrieben
+ps-funker-funker;Funker Funker;pfadfinder-spiele;ankommen;namen;3;57;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-namensballchen;Namensbällchen;Spielewiki;ankommen;namen;3;58;Reserve (zweite Reihe);
+sw-hochstapeln;Hochstapeln;Spielewiki;ankommen;namen;2;59;Reserve (zweite Reihe);
+sw-teamvorstellung;Teamvorstellung;Spielewiki;ankommen;namen;2;60;Reserve (zweite Reihe);ausführlich beschrieben, Corona/Online
+sw-wer-fehlt;Wer fehlt;Spielewiki;ankommen;namen;2;61;Reserve (zweite Reihe);
+sw-lauf-weg;Lauf weg;Spielewiki;ankommen;namen;1;62;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+sw-fadennetz;Fadennetz;Spielewiki;ankommen;namen;0;63;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+ps-ich-packe-meinen-koffer;Ich packe meinen Koffer;pfadfinder-spiele;ankommen;namen;0;64;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material, Corona/Online
+sw-koffer-packen-auf-der-slackline;Koffer Packen auf der Slackline;Spielewiki;ankommen;namen;0;65;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-namenschlagen;Namenschlagen;Spielewiki;ankommen;namen;0;66;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+sw-namensjonglage;Namensjonglage;Spielewiki;ankommen;namen;0;67;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-names-luftballon;Names-Luftballon;Spielewiki;ankommen;namen;0;68;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-paarweise-vorstellen;Paarweise Vorstellen;Spielewiki;ankommen;namen;0;69;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-pferderennen;Pferderennen;Spielewiki;ankommen;namen;0;70;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-zipp-zapp;Zipp Zapp;Spielewiki;ankommen;namen;-2;71;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+ps-angesprochen;Angesprochen;pfadfinder-spiele;ankommen;namen;-3;72;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, Corona/Online
+sw-1-2-3;1 2 3;Spielewiki;kreis;reaktion;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-ha-ha-ha;Ha Ha Ha;Spielewiki;kreis;reaktion;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-zipp-zapp-zopp;Zipp Zapp Zopp;Spielewiki;kreis;reaktion;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-concentration;Concentration;Spielewiki;kreis;reaktion;8;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-bippety-bop;Bippety Bop;Spielewiki;kreis;reaktion;7;5;Kern;ausführlich beschrieben, kein Material
+sw-dirigent;Dirigent;Spielewiki;kreis;reaktion;7;6;Kern;ausführlich beschrieben, kein Material
+sw-ernst-auf-ernst;Ernst auf Ernst;Spielewiki;kreis;reaktion;7;7;Kern;kurz genug für einen Slot, kein Material
+sw-es-fliegt-es-fliegt;Es fliegt es fliegt;Spielewiki;kreis;reaktion;7;8;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-grossknecht;Großknecht;Spielewiki;kreis;reaktion;7;9;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-kopieren;Kopieren;Spielewiki;kreis;reaktion;7;10;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-ringsuche;Ringsuche;Spielewiki;kreis;reaktion;7;11;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-simon-says;Simon Says;Spielewiki;kreis;reaktion;7;12;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-toasterspiel;Toasterspiel;Spielewiki;kreis;reaktion;7;13;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-armer-schwarzer-kater;Armer schwarzer Kater;Spielewiki;kreis;reaktion;6;14;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-huhnerspiel;Hühnerspiel;Spielewiki;kreis;reaktion;6;15;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-dschungeltelefon;Dschungeltelefon;Spielewiki;kreis;reaktion;5;16;Reserve (zweite Reihe);ausführlich beschrieben
+sw-daumenkonig;Daumenkönig;Spielewiki;kreis;reaktion;4;17;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, kein Material
+sw-bushaltestelle;Bushaltestelle;Spielewiki;kreis;reaktion;3;18;Reserve (zweite Reihe);
+sw-heuwagen-mistwagen;Heuwagen-Mistwagen;Spielewiki;ruhig;reflexion;7;1;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-papierknauel-reflexion;Papierknäuel-Reflexion;Spielewiki;ruhig;reflexion;7;2;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-perlenmosaik;Perlenmosaik;Spielewiki;ruhig;reflexion;7;3;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-stimmungs-matrix;Stimmungs-Matrix;Spielewiki;ruhig;reflexion;7;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-zielscheiben-reflexion;Zielscheiben-Reflexion;Spielewiki;ruhig;reflexion;6;5;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-wahlurnen-reflexion;Wahlurnen-Reflexion;Spielewiki;ruhig;reflexion;4;6;Reserve (zweite Reihe);ausführlich beschrieben, viel Material
+sw-streichholz-reflexion;Streichholz-Reflexion;Spielewiki;ruhig;reflexion;2;7;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Tipps da, kurz genug für einen Slot
+sw-blitzlicht-reflexion;Blitzlicht-Reflexion;Spielewiki;ruhig;reflexion;1;8;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot, kein Material
+sw-plus-minus-interessant;Plus Minus Interessant;Spielewiki;ruhig;reflexion;1;9;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-stimmungsbarometer;Stimmungsbarometer;Spielewiki;ruhig;reflexion;1;10;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot
+sw-ampel-reflexion;Ampel-Reflexion;Spielewiki;ruhig;reflexion;-2;11;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, viel Material
+sw-blinder-pirat;Blinder Pirat;Spielewiki;ruhig;ruhig;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-leuchtturm;Leuchtturm;Spielewiki;ruhig;ruhig;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-ecken-begrussen;Ecken begrüßen;Spielewiki;ruhig;ruhig;6;3;Kern;ausführlich beschrieben, kein Material
+sw-fahrbahnen;Fahrbahnen;Spielewiki;ruhig;ruhig;6;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-mein-linker-platz-ist-frei;Mein linker Platz ist frei;Spielewiki;kreis;ruhig;6;5;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-ozeanwelle;Ozeanwelle;Spielewiki;kreis;ruhig;5;6;Reserve (zweite Reihe);ausführlich beschrieben
+sw-blinde-wegsuche;Blinde Wegsuche;Spielewiki;ruhig;ruhig;4;7;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-lowenjagd;Löwenjagd;Spielewiki;ruhig;ruhig;4;8;Reserve (zweite Reihe);kein Material
+sw-obstsalat;Obstsalat;Spielewiki;kreis;ruhig;4;9;Reserve (zweite Reihe);ausführlich beschrieben
+sw-platztausch;Platztausch;Spielewiki;kreis;ruhig;4;10;Reserve (zweite Reihe);ausführlich beschrieben
+sw-zahlensalat;Zahlensalat;Spielewiki;kreis;ruhig;4;11;Reserve (zweite Reihe);ausführlich beschrieben
+sw-zwinkern;Zwinkern;Spielewiki;kreis;ruhig;4;12;Reserve (zweite Reihe);ausführlich beschrieben
+sw-have-you-ever-seen-a-penguin-come-to-tea;Have you ever seen a penguin come to tea;Spielewiki;kreis;singen;9;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-here-we-go-with-the-big-fat-pony;Here we go with the big fat pony;Spielewiki;kreis;singen;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-laurentia;Laurentia;Spielewiki;kreis;singen;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-mimi-klatsch-spiel;Mimi-Klatsch-Spiel;Spielewiki;kreis;singen;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-wir-sind-schimpansen;Wir sind Schimpansen;Spielewiki;kreis;singen;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-10-kleine-fische;10 kleine Fische;Spielewiki;kreis;singen;8;6;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-auf-einem-berg-da-steht-ein-haus;Auf einem Berg da steht ein Haus;Spielewiki;kreis;singen;8;7;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-boogaloo;Boogaloo;Spielewiki;kreis;singen;8;8;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-don-alfonso;Don Alfonso;Spielewiki;kreis;singen;8;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-dornroschen;Dornröschen;Spielewiki;kreis;singen;8;10;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-drei-chinesen-mit-dem-kontrabass;Drei Chinesen mit dem Kontrabass;Spielewiki;kreis;singen;8;11;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-head-shoulders-knees-toes;Head Shoulders Knees Toes;Spielewiki;kreis;singen;8;12;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-hi-my-name-is-joe;Hi my name is Joe;Spielewiki;kreis;singen;8;13;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-if-you-re-happy-and-you-know-it;If you're happy and you know it;Spielewiki;kreis;singen;8;14;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-liebe-schwester-tanz-mit-mir;Liebe Schwester tanz mit mir;Spielewiki;kreis;singen;8;15;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-oh-bonnie-bonnie-bonnie;Oh Bonnie Bonnie Bonnie;Spielewiki;kreis;singen;8;16;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-once-an-austrian;Once an Austrian;Spielewiki;kreis;singen;8;17;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-one-two-three-break-it-down;One Two Three Break It Down;Spielewiki;kreis;singen;8;18;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-singing-in-the-rain;Singing in the Rain;Spielewiki;kreis;singen;8;19;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-vater-abraham;Vater Abraham;Spielewiki;kreis;singen;8;20;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-a-ram-sam-sam;A Ram Sam Sam;Spielewiki;kreis;singen;7;21;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-filis-balaba;Filis Balaba;Spielewiki;kreis;singen;7;22;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-ford-escort;Ford Escort;Spielewiki;kreis;singen;7;23;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-haslein-in-der-grube;Häslein in der Grube;Spielewiki;kreis;singen;7;24;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-massagekette;Massagekette;Spielewiki;bewegung_drinnen;singen;7;25;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-mein-hut-der-hat-drei-ecken;Mein Hut der hat drei Ecken;Spielewiki;kreis;singen;7;26;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-nimm;Nimm;Spielewiki;bewegung_drinnen;singen;7;27;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-bada-bada-bada-ba;Bada Bada Bada Ba;Spielewiki;kreis;singen;6;28;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-fast-food-spiel;Fast-Food-Spiel;Spielewiki;bewegung_drinnen;singen;6;29;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-fli-fly;Fli Fly;Spielewiki;kreis;singen;6;30;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-jack-sass-in-der-kuche-mit-tina;Jack saß in der Küche mit Tina;Spielewiki;kreis;singen;6;31;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-jukebox;Jukebox;Spielewiki;kreis;singen;6;32;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-luftballontanz;Luftballontanz;Spielewiki;bewegung_drinnen;singen;6;33;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-schaukelpferd;Schaukelpferd;Spielewiki;kreis;singen;6;34;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-up-schubidu;Up-Schubidu;Spielewiki;kreis;singen;6;35;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-bi-ba-butzemann;Bi-Ba-Butzemann;Spielewiki;kreis;singen;5;36;Reserve (zweite Reihe);ausführlich beschrieben
+sw-rette-mich-wer-kann;Rette mich wer kann;Spielewiki;bewegung_drinnen;singen;5;37;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, braucht große Gruppe
+sw-rufallee;Rufallee;Spielewiki;kreis;singen;5;38;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-zeitungstanz;Zeitungstanz;Spielewiki;bewegung_drinnen;singen;5;39;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-becher-rhythmus;Becher-Rhythmus;Spielewiki;kreis;singen;2;40;Reserve (zweite Reihe);ausführlich beschrieben
+sw-reise-nach-jerusalem;Reise nach Jerusalem;Spielewiki;bewegung_drinnen;singen;2;41;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-reise-nach-jerusalem-extrem;Reise nach Jerusalem extrem;Spielewiki;bewegung_drinnen;singen;1;42;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-aufstehen;Aufstehen;Spielewiki;kooperation;sonstiges;8;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-taler-taler-du-musst-wandern;Taler Taler du musst wandern;Spielewiki;bewegung_drinnen;sonstiges;8;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+insp-decken-spiel-kennenlernen;Decken-Spiel (Kennenlernen);Inspirator (DPBM);bewegung_drinnen;sonstiges;7;3;Kern;ausführlich beschrieben, Altersstufe da
+sw-oxford-cambridge;Oxford Cambridge;Spielewiki;bewegung_drinnen;sonstiges;7;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+insp-das-duell-um-die-geld;Das Duell um die Geld;Inspirator (DPBM);bewegung_drinnen;sonstiges;6;5;Kern;ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material
+insp-der-kaiser-mag;Der Kaiser mag...;Inspirator (DPBM);bewegung_drinnen;sonstiges;6;6;Kern;ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material
+insp-digitales-tabu;Digitales Tabu;Inspirator (DPBM);bewegung_drinnen;sonstiges;6;7;Kern;ausführlich beschrieben, Altersstufe da
+sw-jammerquaks;Jammerquaks;Spielewiki;kreis;sonstiges;6;8;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-schreikreis;Schreikreis;Spielewiki;kreis;sonstiges;6;9;Kern;kurz genug für einen Slot, kein Material
+insp-seemannsgarn-pfadfinder-geschichten;Seemannsgarn (Pfadfinder-Geschichten);Inspirator (DPBM);bewegung_drinnen;sonstiges;6;10;Kern;Altersstufe da, kein Material
+sw-umzug-neubau-erdbeben;Umzug Neubau Erdbeben;Spielewiki;bewegung_drinnen;sonstiges;6;11;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-wie-viele-schritte-darf-ich-gehen;Wie viele Schritte darf ich gehen;Spielewiki;bewegung_drinnen;sonstiges;6;12;Kern;ausführlich beschrieben, kein Material
+sw-ameisenkonig;Ameisenkönig;Spielewiki;bewegung_drinnen;sonstiges;5;13;Kern;ausführlich beschrieben, Tipps da, zu lang für einen Baustein, kein Material
+sw-kalaha;Kalaha;Spielewiki;bewegung_drinnen;sonstiges;5;14;Kern;ausführlich beschrieben, kurz genug für einen Slot, viel Material
+insp-schmuggler-innen-spiel;Schmuggler*innen-Spiel;Inspirator (DPBM);bewegung_drinnen;sonstiges;5;15;Kern;ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+ps-stuhlrutschen-nach-kartenfarben;Stuhlrutschen (nach Kartenfarben);pfadfinder-spiele;kreis;sonstiges;5;16;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da
+sw-krieg;Krieg;Spielewiki;bewegung_drinnen;sonstiges;4;17;Reserve (zweite Reihe);ausführlich beschrieben
+insp-liedtitel-in-emojis-verpacken;Liedtitel in Emojis verpacken;Inspirator (DPBM);bewegung_drinnen;sonstiges;4;18;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material
+insp-tiere-raten;Tiere raten;Inspirator (DPBM);bewegung_drinnen;sonstiges;4;19;Reserve (zweite Reihe);Altersstufe da
+insp-was-gehoert-wem;Was gehört wem?;Inspirator (DPBM);bewegung_drinnen;sonstiges;4;20;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material
+insp-wutball-aus-alten-socken;Wutball aus alten Socken;Inspirator (DPBM);bewegung_drinnen;sonstiges;4;21;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material
+insp-digitaler-sippencontest;(Digitaler-) Sippencontest;Inspirator (DPBM);bewegung_drinnen;sonstiges;3;22;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material, Corona/Online
+insp-eine-virtuelle-bombe-entschaerfen;Eine (virtuelle) Bombe entschärfen;Inspirator (DPBM);bewegung_drinnen;sonstiges;3;23;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material
+eig-schraege-olympiade;Schräge Olympiade;eigene;bewegung_drinnen;sonstiges;3;24;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+eig-werwolf-abend;Werwolf-Abend;eigene;bewegung_drinnen;sonstiges;3;25;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-blinde-kuh;Blinde Kuh;Spielewiki;bewegung_drinnen;sonstiges;2;26;Reserve (zweite Reihe);
+insp-ich-male-ein-bild;Ich male ein Bild;Inspirator (DPBM);bewegung_drinnen;sonstiges;2;27;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein
+insp-kim-gedaechtnisspiel;Kim-Gedächtnisspiel;Inspirator (DPBM);ruhig;sonstiges;2;28;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein
+insp-online-treffen-gather-town;Online Treffen (gather-town);Inspirator (DPBM);bewegung_drinnen;sonstiges;2;29;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material, Corona/Online
+eig-stationenlauf-durchs-viertel;Stationenlauf durchs Viertel;eigene;gelaende;sonstiges;2;30;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-welle-entspannungsspiel;Welle (Entspannungsspiel);Spielewiki;bewegung_drinnen;sonstiges;2;31;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+eig-casino-abend;Casino-Abend;eigene;bewegung_drinnen;sonstiges;1;32;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein, viel Material
+eig-planspiel-wir-planen-unsere-fahrt;Planspiel: Wir planen unsere Fahrt;eigene;bewegung_drinnen;sonstiges;1;33;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein, viel Material
+eig-schokoladen-wettessen;Schokoladen-Wettessen;eigene;bewegung_drinnen;sonstiges;1;34;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, zu lang für einen Baustein, viel Material
+eig-chaosspiel;Chaosspiel;eigene;gelaende;sonstiges;0;35;Reserve (zweite Reihe);eigene Sammlung, dünn beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein, viel Material, viel Vorbereitung
+insp-ich-packe-meinen-koffer;Ich packe meinen Koffer ...;Inspirator (DPBM);bewegung_drinnen;sonstiges;0;36;Reserve (zweite Reihe);Dublette, Altersstufe da, kein Material
+insp-online-spieleplattform;Online-Spieleplattform;Inspirator (DPBM);bewegung_drinnen;sonstiges;0;37;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material, Corona/Online
+insp-stadt-land-fluss;Stadt, Land, Fluss;Inspirator (DPBM);bewegung_drinnen;sonstiges;-3;38;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material, Corona/Online
+insp-casino-heimabend;Casino-Heimabend;Inspirator (DPBM);bewegung_drinnen;sonstiges;-10;39;Reserve (zweite Reihe);Dublette, Altersstufe da, zu lang für einen Baustein, viel Material, Anlass passt nicht
+ps-pferderennen;Pferderennen;pfadfinder-spiele;kreis;team;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-burgspiel;Burgspiel;Spielewiki;kooperation;team;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-chinesisch-knobeln;Chinesisch Knobeln;Spielewiki;kooperation;team;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-gemeinsam-aufstehen;Gemeinsam Aufstehen;Spielewiki;kooperation;team;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-gordischer-knoten;Gordischer Knoten;Spielewiki;kooperation;team;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-korperteil-twister;Körperteil-Twister;Spielewiki;kooperation;team;9;6;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-liebst-du-mich;Liebst du mich;Spielewiki;kooperation;team;9;7;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-larmwand;Lärmwand;Spielewiki;kooperation;team;9;8;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-mord-im-dunkeln;Mord im Dunkeln;Spielewiki;kooperation;team;9;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-stille-post;Stille Post;Spielewiki;kooperation;team;9;10;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-telefax;Telefax;Spielewiki;kooperation;team;9;11;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-waschmaschine;Waschmaschine;Spielewiki;kooperation;team;9;12;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-gebarden-paare;Gebärden-Paare;Spielewiki;kooperation;team;8;13;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-kooperatives-armdrucken;Kooperatives Armdrücken;Spielewiki;kooperation;team;8;14;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-worter-geschichte;Wörter-Geschichte;Spielewiki;kooperation;team;8;15;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-alle-meine-entlein;Alle meine Entlein;Spielewiki;kooperation;team;7;16;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bierbank-balance;Bierbank-Balance;Spielewiki;kooperation;team;7;17;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-blindes-quadrat;Blindes Quadrat;Spielewiki;kooperation;team;7;18;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-carrot-in-the-box;Carrot in the Box;Spielewiki;kooperation;team;7;19;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-epidemie;Epidemie;Spielewiki;kooperation;team;7;20;Kern;kurz genug für einen Slot, kein Material
+sw-haschen-spiel;Häschen-Spiel;Spielewiki;kooperation;team;7;21;Kern;ausführlich beschrieben, kein Material
+sw-kette-durch-den-reifen;Kette durch den Reifen;Spielewiki;kooperation;team;7;22;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-namenseigenschaften;Namenseigenschaften;Spielewiki;kooperation;team;7;23;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-papierflieger-wettkampf;Papierflieger-Wettkampf;Spielewiki;kooperation;team;7;24;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-ruppel-tuppel;Rüppel Tüppel;Spielewiki;kooperation;team;7;25;Kern;ausführlich beschrieben, kein Material
+sw-schwebende-stange;Schwebende Stange;Spielewiki;kooperation;team;7;26;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-systemisches-kreisen;Systemisches Kreisen;Spielewiki;kooperation;team;7;27;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-wortdomino;Wortdomino;Spielewiki;kooperation;team;7;28;Kern;ausführlich beschrieben, kein Material
+sw-wortkette;Wortkette;Spielewiki;kooperation;team;7;29;Kern;ausführlich beschrieben, kein Material
+sw-zwei-funfecke;Zwei Fünfecke;Spielewiki;kooperation;team;7;30;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-blindes-finden;Blindes Finden;Spielewiki;kooperation;team;6;31;Kern;ausführlich beschrieben, Tipps da
+sw-die-wand;Die Wand;Spielewiki;kooperation;team;6;32;Kern;ausführlich beschrieben, kein Material
+sw-drangelei;Drängelei;Spielewiki;kooperation;team;6;33;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-durchzahlen;Durchzählen;Spielewiki;kooperation;team;6;34;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-flaschenhals;Flaschenhals;Spielewiki;kooperation;team;6;35;Kern;ausführlich beschrieben, kurz genug für einen Slot
+ps-formen-stellen;Formen stellen;pfadfinder-spiele;kooperation;team;6;36;Kern;ausführlich beschrieben, Altersstufe da
+sw-ja-nein-schwarz-weiss;Ja Nein Schwarz Weiß;Spielewiki;kooperation;team;6;37;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-kippstuhl;Kippstuhl;Spielewiki;kooperation;team;6;38;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-mafia;Mafia;Spielewiki;ruhig;team;6;39;Kern;ausführlich beschrieben, kein Material
+sw-schiebepuzzle;Schiebepuzzle;Spielewiki;kooperation;team;6;40;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-schleissenscheit;Schleißenscheit;Spielewiki;kooperation;team;6;41;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-schrottwichteln;Schrottwichteln;Spielewiki;kooperation;team;6;42;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-spinnennetz;Spinnennetz;Spielewiki;kooperation;team;6;43;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-stoascheisser-koarl;Stoascheißer Koarl;Spielewiki;kooperation;team;6;44;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material, Corona/Online
+sw-teppich-umdrehen;Teppich umdrehen;Spielewiki;kooperation;team;6;45;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-turmbau;Turmbau;Spielewiki;kooperation;team;6;46;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-verbotene-zone;Verbotene Zone;Spielewiki;kooperation;team;6;47;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-wandelnder-pflock;Wandelnder Pflock;Spielewiki;kooperation;team;6;48;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-wer-ist-der-morder;Wer ist der Mörder;Spielewiki;bewegung_drinnen;team;6;49;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+ps-waescheklammern-sortieren;Wäscheklammern sortieren;pfadfinder-spiele;kooperation;team;6;50;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+sw-zwei-euro;Zwei Euro;Spielewiki;kooperation;team;6;51;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-bruckenbau;Brückenbau;Spielewiki;kooperation;team;5;52;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Material
+ps-der-hirte;Der Hirte;pfadfinder-spiele;kooperation;team;5;53;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-familie-meier;Familie Meier;Spielewiki;ankommen;team;5;54;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-geruchs-kim-mit-parfum;Geruchs-Kim mit Parfüm;Spielewiki;ankommen;team;5;55;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-murmelsuche;Murmelsuche;Spielewiki;kooperation;team;5;56;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-partyhochhaus;Partyhochhaus;Spielewiki;kooperation;team;5;57;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-schafherde;Schafherde;Spielewiki;kooperation;team;5;58;Reserve (zweite Reihe);ausführlich beschrieben
+ps-stuhlfangen;Stuhlfangen;pfadfinder-spiele;kreis;team;5;59;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-wer-hat-die-anja-geklaut;Wo ist mein Huhn?;pfadfinder-spiele;kooperation;team;5;60;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-zeltbau-blind;Zeltbau blind;Spielewiki;kooperation;team;5;61;Reserve (zweite Reihe);ausführlich beschrieben
+sw-acid-river;Acid River;Spielewiki;kooperation;team;4;62;Reserve (zweite Reihe);ausführlich beschrieben
+sw-bierkistenbrucke;Bierkistenbrücke;Spielewiki;kooperation;team;4;63;Reserve (zweite Reihe);ausführlich beschrieben
+sw-die-mauer;Die Mauer;Spielewiki;kooperation;team;4;64;Reserve (zweite Reihe);kurz genug für einen Slot
+ps-eierauffangmaschine;Eierauffangmaschine;pfadfinder-spiele;kooperation;team;4;65;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+sw-eierkran;Eierkran;Spielewiki;kooperation;team;4;66;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Material
+sw-gemeinsam-schreiben;Gemeinsam Schreiben;Spielewiki;kooperation;team;4;67;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, viel Material
+sw-leonardo-da-vinci-brucke;Leonardo-da-Vinci-Brücke;Spielewiki;kooperation;team;4;68;Reserve (zweite Reihe);ausführlich beschrieben
+sw-menebtekle;Menebtekle;Spielewiki;kooperation;team;4;69;Reserve (zweite Reihe);ausführlich beschrieben, kein Material, Corona/Online
+sw-minenfeld;Minenfeld;Spielewiki;kooperation;team;4;70;Reserve (zweite Reihe);ausführlich beschrieben
+sw-minenfeld-gruppendynamisch;Minenfeld gruppendynamisch;Spielewiki;kooperation;team;4;71;Reserve (zweite Reihe);ausführlich beschrieben
+sw-spyfall;Spyfall;Spielewiki;ruhig;team;4;72;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+ps-stromzaun-gefaengnisausbruch-spinnennetz;Stromzaun;pfadfinder-spiele;kooperation;team;4;73;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da, zu lang für einen Baustein
+ps-arena;Arena;pfadfinder-spiele;kooperation;team;3;74;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot, braucht große Gruppe
+sw-blind-zeichnen;Blind Zeichnen;Spielewiki;kooperation;team;3;75;Reserve (zweite Reihe);ausführlich beschrieben
+sw-fadenbundel;Fadenbündel;Spielewiki;bewegung_drinnen;team;3;76;Reserve (zweite Reihe);kurz genug für einen Slot
+ps-giftteich;Giftteich;pfadfinder-spiele;kooperation;team;3;77;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+sw-laute-post;Laute Post;Spielewiki;kooperation;team;3;78;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-morder-unter-uns;Mörder unter uns;Spielewiki;kooperation;team;3;79;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-personen-raten;Personen raten;Spielewiki;ruhig;team;3;80;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-powerpoint-karaoke;Powerpoint-Karaoke;Spielewiki;kooperation;team;3;81;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Corona/Online
+sw-safe;Safe;Spielewiki;kooperation;team;3;82;Reserve (zweite Reihe);ausführlich beschrieben
+ps-stargate;Stargate;pfadfinder-spiele;kooperation;team;3;83;Reserve (zweite Reihe);Altersstufe da
+sw-wanderndes-klopapier;Wanderndes Klopapier;Spielewiki;kooperation;team;3;84;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-engerl-und-bengerl;Engerl und Bengerl;Spielewiki;kooperation;team;2;85;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-briefbomben;Minensucher;Spielewiki;kooperation;team;2;86;Reserve (zweite Reihe);ausführlich beschrieben
+sw-minutenreferat;Minutenreferat;Spielewiki;kooperation;team;2;87;Reserve (zweite Reihe);kurz genug für einen Slot, Corona/Online
+sw-morderspiel;Mörderspiel;Spielewiki;kooperation;team;2;88;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-psychiatercouch;Psychiatercouch;Spielewiki;kooperation;team;2;89;Reserve (zweite Reihe);ausführlich beschrieben, Tipps da, zu lang für einen Baustein
+sw-rettungsaktion-in-der-subarktis;Rettungsaktion in der Subarktis;Spielewiki;ruhig;team;2;90;Reserve (zweite Reihe);ausführlich beschrieben, Corona/Online
+sw-wustenspiel;Wüstenspiel;Spielewiki;ruhig;team;2;91;Reserve (zweite Reihe);ausführlich beschrieben, Corona/Online
+ps-amazonasueberquerung;Amazonasüberquerung;pfadfinder-spiele;kooperation;team;1;92;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, braucht große Gruppe
+sw-kulturrallye;KulturRallye;Spielewiki;kooperation;team;1;93;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+sw-seenotspiel;Seenotspiel;Spielewiki;ruhig;team;0;94;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, Corona/Online
+sw-werwolfe-vom-dusterwald;Werwölfe vom Düsterwald;Spielewiki;ruhig;team;0;95;Reserve (zweite Reihe);ausführlich beschrieben, Corona/Online
+sw-evolution-sprachspiel;Evolution (Sprachspiel);Spielewiki;kooperation;team;-1;96;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kein Material
+sw-lexikonspiel;Lexikonspiel;Spielewiki;kooperation;team;-1;97;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, Corona/Online
+sw-zitate-nebenbei;Zitate nebenbei;Spielewiki;kooperation;team;-1;98;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, Corona/Online
+sw-nein-spiel;Nein-Spiel;Spielewiki;bewegung_drinnen;team;-2;99;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein, Anlass passt nicht
+ps-fliegender-teppich;Fliegender Teppich;pfadfinder-spiele;kooperation;team;-3;100;Reserve (zweite Reihe);Dublette, dünn beschrieben, Altersstufe da, Tipps da
+sw-murmelbahn-konstruktion;Murmelbahn (Konstruktion);Spielewiki;kooperation;team;-3;101;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, viel Material
+ps-werwolf;Werwolf;pfadfinder-spiele;kreis;team;-3;102;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Corona/Online
+sw-nasa-spiel;NASA-Spiel;Spielewiki;ruhig;team;-6;103;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, zu lang für einen Baustein, Corona/Online
+sw-schere-stein-papier;Schere Stein Papier;Spielewiki;ruhig;tisch;8;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-55;55;Spielewiki;ruhig;tisch;6;2;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-daumensumme;Daumensumme;Spielewiki;ruhig;tisch;6;3;Kern;ausführlich beschrieben, kein Material
+sw-don;Don;Spielewiki;ruhig;tisch;6;4;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-elektrisches-gummibarchen;Elektrisches Gummibärchen;Spielewiki;ruhig;tisch;6;5;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-kommando-pimperle;Kommando Pimperle;Spielewiki;kreis;tisch;6;6;Kern;ausführlich beschrieben, kein Material
+sw-maxchen;Mäxchen;Spielewiki;bewegung_drinnen;tisch;6;7;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-rollende-munze;Rollende Münze;Spielewiki;bewegung_drinnen;tisch;6;8;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-schere-stein-papier-online;Schere Stein Papier Online;Spielewiki;ruhig;tisch;6;9;Kern;ausführlich beschrieben, Tipps da, kurz genug für einen Slot, kein Material, Corona/Online
+sw-weihnachtskrippe;Weihnachtskrippe;Spielewiki;bewegung_drinnen;tisch;6;10;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-bolker-trumpf;Bolker-Trumpf;Spielewiki;ruhig;tisch;5;11;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-deck-zu;Deck Zu;Spielewiki;ruhig;tisch;5;12;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-streichholznest;Streichholznest;Spielewiki;bewegung_drinnen;tisch;5;13;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-uno-staffel;UNO-Staffel;Spielewiki;ruhig;tisch;5;14;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-watteblasen;Watteblasen;Spielewiki;bewegung_drinnen;tisch;5;15;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-1000-blank-white-cards;1000 blank white cards;Spielewiki;ruhig;tisch;4;16;Reserve (zweite Reihe);ausführlich beschrieben
+sw-duell;Duell;Spielewiki;ruhig;tisch;4;17;Reserve (zweite Reihe);ausführlich beschrieben
+sw-fitschigogerl;Fitschigogerl;Spielewiki;bewegung_drinnen;tisch;4;18;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-fuchsen;Fuchsen;Spielewiki;bewegung_drinnen;tisch;4;19;Reserve (zweite Reihe);ausführlich beschrieben
+sw-hochwasser;Hochwasser;Spielewiki;bewegung_drinnen;tisch;4;20;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-pharao;Pharao;Spielewiki;bewegung_drinnen;tisch;4;21;Reserve (zweite Reihe);ausführlich beschrieben
+sw-kartoffelduell;Kartoffelduell;Spielewiki;bewegung_drinnen;tisch;3;22;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-tischfussball;Tischfußball;Spielewiki;bewegung_drinnen;tisch;3;23;Reserve (zweite Reihe);ausführlich beschrieben
+sw-centstapel;Centstapel;Spielewiki;ruhig;tisch;2;24;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-dubel;Dübel;Spielewiki;ruhig;tisch;2;25;Reserve (zweite Reihe);ausführlich beschrieben
+sw-evolution;Evolution;Spielewiki;bewegung_drinnen;tisch;2;26;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-orangentanz;Orangentanz;Spielewiki;bewegung_drinnen;tisch;2;27;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-gradener-konigrufen;Gradener Königrufen;Spielewiki;ruhig;tisch;1;28;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-kartenkuss;Kartenkuss;Spielewiki;bewegung_drinnen;tisch;1;29;Reserve (zweite Reihe);
+sw-wachsgiessen;Wachsgießen;Spielewiki;ruhig;tisch;1;30;Reserve (zweite Reihe);ausführlich beschrieben, Tipps da, kurz genug für einen Slot, viel Material, Anlass passt nicht
+sw-bauernschnapsen;Bauernschnapsen;Spielewiki;ruhig;tisch;-1;31;Reserve (zweite Reihe);ausführlich beschrieben, Anlass passt nicht
+sw-mau-mau;Mau Mau;Spielewiki;ruhig;tisch;-1;32;Reserve (zweite Reihe);ausführlich beschrieben, Anlass passt nicht
+sw-schnapsen;Schnapsen;Spielewiki;ruhig;tisch;-1;33;Reserve (zweite Reihe);ausführlich beschrieben, Anlass passt nicht
+sw-klopfen;Klopfen;Spielewiki;kreis;tisch;-2;34;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+sw-slurp;Slurp;Spielewiki;bewegung_drinnen;tisch;-3;35;Reserve (zweite Reihe);Dublette, kurz genug für einen Slot
+sw-teiggiessen;Teiggießen;Spielewiki;ruhig;tisch;-5;36;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, viel Material, Anlass passt nicht
+sw-dreierschnapsen;Dreierschnapsen;Spielewiki;ruhig;tisch;-7;37;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Anlass passt nicht
+sw-schokoladeschneiden;Schokoladeschneiden;Spielewiki;ruhig;tisch;-7;38;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, viel Material, Anlass passt nicht
+ps-funky-chicken;Funky Chicken;pfadfinder-spiele;kreis;toben;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-au-ja;Au Ja!;Spielewiki;bewegung_drinnen;toben;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-ein-hase-lauft-uber-das-feld;Ein Hase läuft über das Feld;Spielewiki;bewegung_drinnen;toben;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-rauber-und-kaufleute;Räuber und Kaufleute;Spielewiki;bewegung_drinnen;toben;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+insp-spiel-reuse;Spiel: Reuse;Inspirator (DPBM);bewegung_drinnen;toben;9;5;Kern;ausführlich beschrieben, Altersstufe da, kein Material
+sw-wolf-und-schafchen;Wolf und Schäfchen;Spielewiki;bewegung_drinnen;toben;9;6;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+eig-evolution;Evolution;eigene;ankommen;toben;8;7;Kern;eigene Sammlung, dünn beschrieben, Altersstufe da, kein Material
+insp-halstuchspiel;Halstuchspiel;Inspirator (DPBM);bewegung_drinnen;toben;8;8;Kern;ausführlich beschrieben, Altersstufe da, kein Material
+sw-karottenziehen;Karottenziehen;Spielewiki;bewegung_drinnen;toben;8;9;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-pferdebandiger;Pferdebändiger;Spielewiki;bewegung_draussen;toben;8;10;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-burgherr;Burgherr;Spielewiki;bewegung_draussen;toben;7;11;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-bosewicht-und-schild;Bösewicht und Schild;Spielewiki;bewegung_drinnen;toben;7;12;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-das-schiff-geht-unter;Das Schiff geht unter;Spielewiki;bewegung_drinnen;toben;7;13;Kern;ausführlich beschrieben, kein Material
+sw-dick-und-doof;Dick und doof;Spielewiki;bewegung_drinnen;toben;7;14;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-fetzenfussball;Fetzenfußball;Spielewiki;bewegung_drinnen;toben;7;15;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-fliegender-hollander;Fliegender Holländer;Spielewiki;kreis;toben;7;16;Kern;ausführlich beschrieben, kein Material
+sw-fuchs-habicht-paarungszeit;Fuchs Habicht Paarungszeit;Spielewiki;bewegung_drinnen;toben;7;17;Kern;ausführlich beschrieben, kein Material
+sw-fuchs-und-gans;Fuchs und Gans;Spielewiki;bewegung_drinnen;toben;7;18;Kern;kurz genug für einen Slot, kein Material
+sw-gleichstrom-wechselstrom;Gleichstrom Wechselstrom;Spielewiki;bewegung_drinnen;toben;7;19;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-guru-guru;Guru Guru;Spielewiki;bewegung_drinnen;toben;7;20;Kern;ausführlich beschrieben, kein Material
+sw-kissenraub;Kissenraub;Spielewiki;bewegung_drinnen;toben;7;21;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-komm-mit-lauf-weg;Komm mit lauf weg;Spielewiki;bewegung_drinnen;toben;7;22;Kern;ausführlich beschrieben, kein Material
+sw-kontinentespiel;Kontinentespiel;Spielewiki;bewegung_drinnen;toben;7;23;Kern;ausführlich beschrieben, Tipps da, kurz genug für einen Slot
+insp-marionette;Marionette;Inspirator (DPBM);bewegung_drinnen;toben;7;24;Kern;Altersstufe da, kein Material
+sw-roboter;Roboter;Spielewiki;bewegung_drinnen;toben;7;25;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-romisches-wagenrennen;Römisches Wagenrennen;Spielewiki;bewegung_draussen;toben;7;26;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-sisyphos;Sisyphos;Spielewiki;bewegung_drinnen;toben;7;27;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-swoosh;Swoosh;Spielewiki;bewegung_drinnen;toben;7;28;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-umrunden;Umrunden;Spielewiki;bewegung_drinnen;toben;7;29;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+insp-anschleichen-ueben;Anschleichen üben;Inspirator (DPBM);bewegung_drinnen;toben;6;30;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material
+sw-bissiger-hund;Bissiger Hund;Spielewiki;bewegung_draussen;toben;6;31;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+insp-die-verwandlung;Die Verwandlung;Inspirator (DPBM);bewegung_drinnen;toben;6;32;Reserve (zweite Reihe);Altersstufe da, kein Material
+insp-spiel-peng;Spiel: Peng!;Inspirator (DPBM);bewegung_drinnen;toben;6;33;Reserve (zweite Reihe);Altersstufe da, kein Material
+sw-tausendfusserrennen;Tausendfüßerrennen;Spielewiki;bewegung_draussen;toben;6;34;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+insp-waldlaeufer-allzeit-bereit-das-spiel;Waldläufer allzeit bereit – das Spiel;Inspirator (DPBM);bewegung_drinnen;toben;6;35;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-bierblatteln;Bierblatteln;Spielewiki;bewegung_drinnen;toben;5;36;Reserve (zweite Reihe);ausführlich beschrieben
+insp-doppeltes-e;Doppeltes E;Inspirator (DPBM);bewegung_drinnen;toben;5;37;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+insp-draussen-sein-und-gutes-tun;Draußen sein und Gutes tun;Inspirator (DPBM);bewegung_draussen;toben;5;38;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, kein Material
+sw-krieger-entfuhren;Krieger entführen;Spielewiki;bewegung_drinnen;toben;5;39;Reserve (zweite Reihe);kein Material
+sw-menschenfresser;Menschenfresser;Spielewiki;bewegung_drinnen;toben;5;40;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-romeo-und-julia;Romeo und Julia;Spielewiki;bewegung_drinnen;toben;5;41;Reserve (zweite Reihe);ausführlich beschrieben
+sw-seilziehen;Seilziehen;Spielewiki;bewegung_drinnen;toben;5;42;Reserve (zweite Reihe);kurz genug für einen Slot
+insp-stockspiel-aurinko-version;Stockspiel - Aurinko-Version;Inspirator (DPBM);bewegung_draussen;toben;5;43;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-zombie;Zombie;Spielewiki;bewegung_drinnen;toben;5;44;Reserve (zweite Reihe);ausführlich beschrieben
+insp-finde-die-entfuehrte-person;Finde die entführte Person!;Inspirator (DPBM);gelaende;toben;4;45;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein, viel Material
+insp-pappteller-golf;Pappteller-Golf;Inspirator (DPBM);bewegung_drinnen;toben;4;46;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+insp-riesen-mikado;Riesen-Mikado;Inspirator (DPBM);bewegung_draussen;toben;4;47;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, viel Material
+insp-woelflings-memory;Wölflings-Memory;Inspirator (DPBM);bewegung_drinnen;toben;4;48;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, kein Material
+sw-zonenspiel;Zonenspiel;Spielewiki;bewegung_drinnen;toben;4;49;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, braucht große Gruppe
+insp-agentenspiel;Agentenspiel;Inspirator (DPBM);bewegung_draussen;toben;3;50;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+sw-feuer-wasser-sturm;Feuer Wasser Sturm;Spielewiki;bewegung_drinnen;toben;3;51;Reserve (zweite Reihe);ausführlich beschrieben
+insp-kindermemorix;Kindermemorix;Inspirator (DPBM);bewegung_drinnen;toben;3;52;Reserve (zweite Reihe);Altersstufe da, kein Material, Corona/Online
+insp-luftballonstaffel;Luftballonstaffel;Inspirator (DPBM);bewegung_draussen;toben;3;53;Reserve (zweite Reihe);Altersstufe da
+insp-schnitzeljagd-mit-abstand;Schnitzeljagd mit Abstand;Inspirator (DPBM);bewegung_draussen;toben;3;54;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+sw-zugspiel;Zugspiel;Spielewiki;bewegung_drinnen;toben;3;55;Reserve (zweite Reihe);ausführlich beschrieben, braucht große Gruppe
+insp-appel-und-n-ei-das-tauschspiel;Appel und´n Ei - das Tauschspiel;Inspirator (DPBM);bewegung_draussen;toben;2;56;Reserve (zweite Reihe);Altersstufe da, Tipps da, zu lang für einen Baustein
+insp-sockengolf;Sockengolf;Inspirator (DPBM);bewegung_drinnen;toben;2;57;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein
+insp-wer-findet-den-gegenstand-zuerst;Wer findet den Gegenstand zuerst?;Inspirator (DPBM);bewegung_drinnen;toben;2;58;Reserve (zweite Reihe);Altersstufe da, kein Material, Corona/Online
+insp-alle-die-obstsalat;Alle, die… (Obstsalat);Inspirator (DPBM);bewegung_drinnen;toben;1;59;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da
+insp-feuer-wasser-sturm;Feuer, Wasser, Sturm;Inspirator (DPBM);bewegung_drinnen;toben;0;60;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da
+insp-versteinern;Versteinern;Inspirator (DPBM);bewegung_drinnen;toben;0;61;Reserve (zweite Reihe);Dublette, Altersstufe da, kein Material
+sw-wascheklammern-diebstahl;Wäscheklammern-Diebstahl;Spielewiki;bewegung_drinnen;toben;-1;62;Reserve (zweite Reihe);Dublette, ausführlich beschrieben
+insp-digitaler-pfadfinder-escape-room;Digitaler Pfadfinder-Escape Room;Inspirator (DPBM);bewegung_drinnen;toben;-2;63;Reserve (zweite Reihe);Altersstufe da, zu lang für einen Baustein, Corona/Online
+ps-obstsalat;Obstsalat;pfadfinder-spiele;kreis;toben;-3;64;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, braucht große Gruppe
+sw-dracula;Dracula;Spielewiki;bewegung_drinnen;verstecken;8;1;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-eiersuche;Eiersuche;Spielewiki;bewegung_drinnen;verstecken;8;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-heiss-kalt;Heiß Kalt;Spielewiki;bewegung_drinnen;verstecken;8;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-sardinli;Sardinli;Spielewiki;bewegung_drinnen;verstecken;8;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-verstecken;Verstecken;Spielewiki;bewegung_drinnen;verstecken;7;5;Kern;ausführlich beschrieben, kein Material
+sw-verstecken-in-gedanken;Verstecken in Gedanken;Spielewiki;bewegung_drinnen;verstecken;6;6;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+sw-s-kriecht-a-schneckli;S' kriecht a Schneckli;Spielewiki;kreis;verstecken;5;7;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-wo-ist-es;Wo ist es;Spielewiki;bewegung_drinnen;verstecken;5;8;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-fuchs-suche;Fuchs-Suche;Spielewiki;bewegung_draussen;verstecken;3;9;Reserve (zweite Reihe);ausführlich beschrieben
+sw-uhrensuche;Uhrensuche;Spielewiki;ruhig;verstecken;3;10;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-verstecken-im-dunkeln;Verstecken im Dunkeln;Spielewiki;bewegung_drinnen;verstecken;2;11;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-wald-schatzsuche;Wald-Schatzsuche;Spielewiki;bewegung_draussen;verstecken;2;12;Reserve (zweite Reihe);ausführlich beschrieben
+ps-slurp;Slurp;pfadfinder-spiele;kreis;vertrauen;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-brot-backen;Brot backen;Spielewiki;kooperation;vertrauen;9;2;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-jurte;Jurte;Spielewiki;kooperation;vertrauen;9;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-mutprobe-und-vertrauen;Mutprobe und Vertrauen;Spielewiki;kooperation;vertrauen;9;4;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-waschstrasse;Waschstraße;Spielewiki;kooperation;vertrauen;9;5;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-fotograf;Fotograf;Spielewiki;kooperation;vertrauen;8;6;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-forderband;Förderband;Spielewiki;kooperation;vertrauen;8;7;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-welle-vertrauensspiel;Welle (Vertrauensspiel);Spielewiki;kooperation;vertrauen;8;8;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, kein Material
+sw-kreissitzen;Kreissitzen;Spielewiki;kooperation;vertrauen;7;9;Reserve (zweite Reihe);kurz genug für einen Slot, kein Material
+sw-low-v;Low V;Spielewiki;kooperation;vertrauen;7;10;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, Tipps da
+sw-stehaufmannchen;Stehaufmännchen;Spielewiki;kooperation;vertrauen;7;11;Reserve (zweite Reihe);ausführlich beschrieben, kein Material
+ps-fledermaus-und-motte;Fledermaus und Motte;pfadfinder-spiele;kreis;vertrauen;6;12;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-busfahrer;Busfahrer;pfadfinder-spiele;kooperation;vertrauen;5;13;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-blind-fuhren;Blind führen;Spielewiki;kooperation;vertrauen;4;14;Reserve (zweite Reihe);ausführlich beschrieben
+sw-blindenfussball;Blindenfußball;Spielewiki;kooperation;vertrauen;4;15;Reserve (zweite Reihe);ausführlich beschrieben
+ps-gordischer-knoten;Gordischer Knoten;pfadfinder-spiele;kooperation;vertrauen;4;16;Reserve (zweite Reihe);Dublette, Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material
+sw-hindernisparcours;Hindernisparcours;Spielewiki;kooperation;vertrauen;3;17;Reserve (zweite Reihe);ausführlich beschrieben
+ps-vampire;Vampire;pfadfinder-spiele;kooperation;vertrauen;0;18;Reserve (zweite Reihe);Dublette, Altersstufe da, kurz genug für einen Slot, kein Material, braucht große Gruppe
+ps-lulale;Lulale;pfadfinder-spiele;kreis;warmup;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-schreiwurm;Schreiwurm;pfadfinder-spiele;kreis;warmup;11;2;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-krabben-catchen;Krabben catchen;pfadfinder-spiele;ankommen;warmup;9;3;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+ps-mais;Mais;pfadfinder-spiele;ankommen;warmup;9;4;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+ps-schuettelspiel;Schüttelspiel;pfadfinder-spiele;kreis;warmup;9;5;Kern;Altersstufe da, kurz genug für einen Slot, kein Material
+ps-sockenkampf;Sockenkampf;pfadfinder-spiele;ankommen;warmup;8;6;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot
+ps-satellit;Satellit;pfadfinder-spiele;ankommen;warmup;7;7;Kern;dünn beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-gruppe-finden;Gruppe finden;pfadfinder-spiele;ankommen;warmup;6;8;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-ninja;Ninja;pfadfinder-spiele;kreis;warmup;6;9;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material
+ps-papierflieger-mit-herausforderung;Papierflieger mit Herausforderung;pfadfinder-spiele;ankommen;warmup;6;10;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-paerchen-finden;Pärchen finden;pfadfinder-spiele;ankommen;warmup;6;11;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, braucht große Gruppe
+ps-stiftgemetzel;Stiftgemetzel;pfadfinder-spiele;ankommen;warmup;6;12;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot
+ps-hannes;Hannes;pfadfinder-spiele;kreis;warmup;5;13;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-im-singing-in-the-rain;I’m singing in the rain;pfadfinder-spiele;kreis;warmup;5;14;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-laurentia;Laurentia;pfadfinder-spiele;kreis;warmup;5;15;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-schnick-schnack-schnuck;Schnick-Schnack-Schnuck;pfadfinder-spiele;ankommen;warmup;5;16;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-evolution;Evolution;pfadfinder-spiele;ankommen;warmup;3;17;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, kein Material
+ps-das-schokoladenspiel;Das Schokoladenspiel;pfadfinder-spiele;kreis;warmup;-5;18;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Anlass passt nicht
+ps-der-tisch-des-hauses;Der Tisch des Hauses;pfadfinder-spiele;bewegung_drinnen;wettkampf;11;1;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+ps-das-schreispiel;Das Schreispiel;pfadfinder-spiele;ankommen;wettkampf;10;2;Kern;ausführlich beschrieben, Altersstufe da, kurz genug für einen Slot, kein Material
+sw-schubkarrenrennen;Schubkarrenrennen;Spielewiki;bewegung_draussen;wettkampf;8;3;Kern;ausführlich beschrieben, kurz genug für einen Slot, kein Material
+ps-keili;Keili;pfadfinder-spiele;bewegung_drinnen;wettkampf;7;4;Kern;Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material, braucht große Gruppe
+sw-seilspringen;Seilspringen;Spielewiki;bewegung_drinnen;wettkampf;7;5;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-52-einsammeln;52 Einsammeln;Spielewiki;bewegung_drinnen;wettkampf;6;6;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-amobenwettlauf;Amöbenwettlauf;Spielewiki;bewegung_draussen;wettkampf;6;7;Kern;ausführlich beschrieben, kein Material
+sw-dosenschiessen;Dosenschießen;Spielewiki;bewegung_drinnen;wettkampf;6;8;Kern;ausführlich beschrieben, kurz genug für einen Slot
+ps-messer-gabel-loeffel;Messer Gabel Löffel;pfadfinder-spiele;ruhig;wettkampf;6;9;Kern;ausführlich beschrieben, Altersstufe da
+sw-t-shirt-staffel;T-Shirt-Staffel;Spielewiki;bewegung_drinnen;wettkampf;6;10;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-teebeutel-weitwurf;Teebeutel-Weitwurf;Spielewiki;bewegung_drinnen;wettkampf;6;11;Kern;ausführlich beschrieben, kurz genug für einen Slot
+sw-angeln;Angeln;Spielewiki;bewegung_drinnen;wettkampf;5;12;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-gruppenski;Gruppenski;Spielewiki;bewegung_drinnen;wettkampf;5;13;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-laufdiktat;Laufdiktat;Spielewiki;bewegung_draussen;wettkampf;5;14;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+ps-moehren-ziehen;Möhren ziehen;pfadfinder-spiele;kreis;wettkampf;5;15;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Tipps da, kurz genug für einen Slot, kein Material
+ps-ruecken-malen;Rücken malen;pfadfinder-spiele;ruhig;wettkampf;5;16;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+ps-schrubberhockey;Schrubberhockey;pfadfinder-spiele;bewegung_drinnen;wettkampf;5;17;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da
+sw-schwammstaffel;Schwammstaffel;Spielewiki;bewegung_draussen;wettkampf;5;18;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-dosenlauf;Dosenlauf;Spielewiki;bewegung_draussen;wettkampf;4;19;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-eierlauf;Eierlauf;Spielewiki;bewegung_drinnen;wettkampf;4;20;Reserve (zweite Reihe);ausführlich beschrieben
+ps-sofa;Sofa;pfadfinder-spiele;ruhig;wettkampf;4;21;Reserve (zweite Reihe);ausführlich beschrieben, Altersstufe da, zu lang für einen Baustein
+sw-wassertransport;Wassertransport;Spielewiki;bewegung_draussen;wettkampf;4;22;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot
+sw-zeitungsreissen;Zeitungsreißen;Spielewiki;bewegung_drinnen;wettkampf;4;23;Reserve (zweite Reihe);kurz genug für einen Slot
+sw-hammerwerfen;Hammerwerfen;Spielewiki;bewegung_draussen;wettkampf;3;24;Reserve (zweite Reihe);ausführlich beschrieben
+ps-moerderball;Mörderball;pfadfinder-spiele;bewegung_draussen;wettkampf;3;25;Reserve (zweite Reihe);Altersstufe da, kurz genug für einen Slot, braucht große Gruppe
+sw-eselschwanz;Eselschwanz;Spielewiki;bewegung_drinnen;wettkampf;1;26;Reserve (zweite Reihe);ausführlich beschrieben, kurz genug für einen Slot, Anlass passt nicht
+sw-handicap-parcours;Handicap-Parcours;Spielewiki;bewegung_drinnen;wettkampf;1;27;Reserve (zweite Reihe);ausführlich beschrieben, zu lang für einen Baustein
+ps-grenze;Grenze;pfadfinder-spiele;bewegung_draussen;wettkampf;0;28;Reserve (zweite Reihe);Altersstufe da, Tipps da, zu lang für einen Baustein, braucht große Gruppe
+ps-montagsmaler;Montagsmaler;pfadfinder-spiele;ruhig;wettkampf;-4;29;Reserve (zweite Reihe);Dublette, ausführlich beschrieben, Altersstufe da, Corona/Online

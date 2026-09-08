@@ -1,0 +1,269 @@
+familie;id;titel;quelle;kategorie;unterkategorie;dauer_min;dauer_max;vorschlag
+Ball- und Wurfspiele;sw-alaska-baseball;Alaska-Baseball;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ball-im-kafig;Ball im Käfig;Spielewiki;bewegung_drinnen;geschick;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ball-uber-die-schnur;Ball über die Schnur;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ballbewegung;Ballbewegung;Spielewiki;kreis;ball;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ballgasse;Ballgasse;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;ps-mischling;Ballraub;pfadfinder-spiele;bewegung_draussen;fangen;15;35;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ballweitergabe-mit-beinen;Ballweitergabe mit Beinen;Spielewiki;bewegung_drinnen;geschick;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-ballwurfkette;Ballwurfkette;Spielewiki;ankommen;namen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-baumball;Baumball;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-blindenfussball;Blindenfußball;Spielewiki;kooperation;vertrauen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-bruchenball;Bruchenball;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-fetzenfussball;Fetzenfußball;Spielewiki;bewegung_drinnen;toben;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-frisbee-challenge;Frisbee-Challenge;Spielewiki;bewegung_draussen;ball;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-frisbee-fussball;Frisbee-Fußball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-frisbee-golf;Frisbee-Golf;Spielewiki;bewegung_draussen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-frisbee-passen;Frisbee-Passen;Spielewiki;bewegung_drinnen;ball;5;10;Dublette – siehe dubletten_cluster.csv
+Ball- und Wurfspiele;sw-frisbeelauf;Frisbeelauf;Spielewiki;bewegung_draussen;ball;5;10;Dublette – siehe dubletten_cluster.csv
+Ball- und Wurfspiele;sw-frisbeezielwurf;Frisbeezielwurf;Spielewiki;bewegung_drinnen;ball;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-hammerwerfen;Hammerwerfen;Spielewiki;bewegung_draussen;wettkampf;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-jagerball;Jägerball;Spielewiki;bewegung_drinnen;ball;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-kaiserball;Kaiserball;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-killerball;Killerball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-kinderbaseball;Kinderbaseball;Spielewiki;bewegung_drinnen;ball;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-klatschball;Klatschball;Spielewiki;kreis;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-konigsball;Königsball;Spielewiki;bewegung_drinnen;ball;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-kubelball;Kübelball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-luftballon-kennenlernspiel;Luftballon (Kennenlernspiel);Spielewiki;ankommen;namen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-luftballon-rasieren;Luftballon rasieren;Spielewiki;bewegung_drinnen;geschick;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;insp-luftballonstaffel;Luftballonstaffel;Inspirator (DPBM);bewegung_draussen;toben;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-luftballontanz;Luftballontanz;Spielewiki;bewegung_drinnen;singen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-mehrfach-volleyball;Mehrfach-Volleyball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-mehrfelderball;Mehrfelderball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-merkball;Merkball;Spielewiki;bewegung_drinnen;ball;10;30;Dublette – siehe dubletten_cluster.csv
+Ball- und Wurfspiele;ps-moerderball;Mörderball;pfadfinder-spiele;bewegung_draussen;wettkampf;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-names-luftballon;Names-Luftballon;Spielewiki;ankommen;namen;5;10;Dublette – siehe dubletten_cluster.csv
+Ball- und Wurfspiele;sw-partner-merkball;Partner-Merkball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;ps-prinzball;Prinzball;pfadfinder-spiele;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-reboundball;Reboundball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-sitzfussball-bewegungsspiel;Sitzfußball (Bewegungsspiel);Spielewiki;bewegung_drinnen;geschick;10;30;Dublette – siehe dubletten_cluster.csv
+Ball- und Wurfspiele;sw-sitzfussball-im-kreis;Sitzfußball im Kreis;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-teebeutel-weitwurf;Teebeutel-Weitwurf;Spielewiki;bewegung_drinnen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-tischfussball;Tischfußball;Spielewiki;bewegung_drinnen;tisch;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-treibball;Treibball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-virusball;Virusball;Spielewiki;bewegung_drinnen;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-volkerball;Völkerball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-volkerball-verkehrt;Völkerball verkehrt;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-wasserbomben-werfen;Wasserbomben-Werfen;Spielewiki;bewegung_drinnen;geschick;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;insp-wutball-aus-alten-socken;Wutball aus alten Socken;Inspirator (DPBM);bewegung_drinnen;sonstiges;30;45;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;sw-zahlball;Zählball;Spielewiki;bewegung_drinnen;ball;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;ps-zauberball-sip-sop;Zauberball;pfadfinder-spiele;kreis;konzentration;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Ball- und Wurfspiele;ps-zombieball;Zombieball;pfadfinder-spiele;ankommen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-bruckenfangen;Brückenfangen;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-chaosfangen;Chaosfangen;Spielewiki;bewegung_drinnen;fangen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-drachenschwanzfangen-einzeln;Drachenschwanzfangen (einzeln);Spielewiki;bewegung_drinnen;fangen;10;30;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-drachenschwanzfangen-gruppenweise;Drachenschwanzfangen (gruppenweise);Spielewiki;bewegung_drinnen;fangen;10;30;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-dreibein-fangen;Dreibein-Fangen;Spielewiki;bewegung_drinnen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-englischfangen;Englischfangen;pfadfinder-spiele;ankommen;fangen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-farbenfangen;Farbenfangen;Spielewiki;bewegung_drinnen;fangen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-ja-nein-fangen;Ja-Nein-Fangen;Spielewiki;ruhig;denken;10;20;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-kaferfangen;Käferfangen;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-kettenfangen;Kettenfangen;pfadfinder-spiele;ankommen;fangen;15;25;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-kettenfangen;Kettenfangen;Spielewiki;bewegung_drinnen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-linienfangen;Linienfangen;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-memory-fangen;Memory-Fangen;Spielewiki;ruhig;merken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-milchproduktefangen;Milchproduktefangen;pfadfinder-spiele;ankommen;fangen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-paarfangen;Paarfangen;pfadfinder-spiele;ankommen;fangen;10;20;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-paarfangen;Paarfangen;Spielewiki;bewegung_drinnen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-rugbyfangen;Rugbyfangen;Spielewiki;bewegung_drinnen;ball;20;45;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-schlumpfe-versteinern;Schlümpfe-Versteinern;Spielewiki;bewegung_drinnen;fangen;20;40;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-schneckenfangen;Schneckenfangen;Spielewiki;ruhig;fangen;10;15;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-steinfanger-baumfanger-bruckenfanger;Steinfänger Baumfänger Brückenfänger;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-streitwagen-fangen;Streitwagen-Fangen;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-stuhlfangen;Stuhlfangen;pfadfinder-spiele;kreis;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);sw-tischfangen;Tischfangen;Spielewiki;bewegung_drinnen;fangen;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-tuchfangen;Tuchfangen;pfadfinder-spiele;ankommen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);ps-versteck-fangen;Versteck-fangen;pfadfinder-spiele;ankommen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Fangen (alle Varianten);insp-versteinern;Versteinern;Inspirator (DPBM);bewegung_drinnen;toben;10;30;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-versteinern;Versteinern;Spielewiki;bewegung_drinnen;fangen;20;40;Dublette – siehe dubletten_cluster.csv
+Fangen (alle Varianten);sw-zahlenfangen;Zahlenfangen;Spielewiki;bewegung_drinnen;fangen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-alphabet-staffel;Alphabet-Staffel;Spielewiki;ruhig;denken;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-amobenwettlauf;Amöbenwettlauf;Spielewiki;bewegung_draussen;wettkampf;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-dosenlauf;Dosenlauf;Spielewiki;bewegung_draussen;wettkampf;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-eierlauf;Eierlauf;Spielewiki;bewegung_drinnen;wettkampf;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-eisenbahnstaffel;Eisenbahnstaffel;Spielewiki;bewegung_draussen;fangen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-elefantenrennen;Elefantenrennen;Spielewiki;bewegung_draussen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-frisbeelauf;Frisbeelauf;Spielewiki;bewegung_draussen;ball;5;10;Dublette – siehe dubletten_cluster.csv
+Staffel- und Wettlaufspiele;sw-handicap-parcours;Handicap-Parcours;Spielewiki;bewegung_drinnen;wettkampf;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-hindernisparcours;Hindernisparcours;Spielewiki;kooperation;vertrauen;20;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-komm-mit-lauf-weg;Komm mit lauf weg;Spielewiki;bewegung_drinnen;toben;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;ps-komm-mit-lauf-weg;Komm mit- lauf weg;pfadfinder-spiele;kreis;fangen;10;20;Dublette – siehe dubletten_cluster.csv
+Staffel- und Wettlaufspiele;sw-lauf-weg;Lauf weg;Spielewiki;ankommen;namen;10;30;Dublette – siehe dubletten_cluster.csv
+Staffel- und Wettlaufspiele;sw-laufdiktat;Laufdiktat;Spielewiki;bewegung_draussen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;insp-luftballonstaffel;Luftballonstaffel;Inspirator (DPBM);bewegung_draussen;toben;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;ps-pferderennen;Pferderennen;pfadfinder-spiele;kreis;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-pferderennen;Pferderennen;Spielewiki;ankommen;namen;5;10;Dublette – siehe dubletten_cluster.csv
+Staffel- und Wettlaufspiele;sw-romisches-wagenrennen;Römisches Wagenrennen;Spielewiki;bewegung_draussen;toben;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-schubkarrenrennen;Schubkarrenrennen;Spielewiki;bewegung_draussen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-schwammstaffel;Schwammstaffel;Spielewiki;bewegung_draussen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-stationenlauf;Stationenlauf;Spielewiki;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;eig-stationenlauf-durchs-viertel;Stationenlauf durchs Viertel;eigene;gelaende;sonstiges;60;90;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-t-shirt-staffel;T-Shirt-Staffel;Spielewiki;bewegung_drinnen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-tausendfusserrennen;Tausendfüßerrennen;Spielewiki;bewegung_draussen;toben;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Staffel- und Wettlaufspiele;sw-uno-staffel;UNO-Staffel;Spielewiki;ruhig;tisch;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-das-schnelle-namensspiel;Das schnelle Namensspiel;Spielewiki;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;ps-das-schnellste-namensspiel-der-welt;Das schnellste Namensspiel der Welt;pfadfinder-spiele;ankommen;namen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;insp-decken-spiel-kennenlernen;Decken-Spiel (Kennenlernen);Inspirator (DPBM);bewegung_drinnen;sonstiges;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-hi-my-name-is-joe;Hi my name is Joe;Spielewiki;kreis;singen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;ps-klopapier-namensspiel;Klopapier Namensspiel;pfadfinder-spiele;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-luftballon-kennenlernspiel;Luftballon (Kennenlernspiel);Spielewiki;ankommen;namen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-name-und-bewegung;Name und Bewegung;Spielewiki;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namensalphabet;Namensalphabet;Spielewiki;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namensballchen;Namensbällchen;Spielewiki;ankommen;namen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namenschlagen;Namenschlagen;Spielewiki;ankommen;namen;10;30;Dublette – siehe dubletten_cluster.csv
+Namens- und Kennenlernspiele;sw-namenseigenschaften;Namenseigenschaften;Spielewiki;kooperation;team;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;ps-namensjonglage;Namensjonglage;pfadfinder-spiele;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namensjonglage;Namensjonglage;Spielewiki;ankommen;namen;10;20;Dublette – siehe dubletten_cluster.csv
+Namens- und Kennenlernspiele;sw-namensmaschine;Namensmaschine;Spielewiki;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namensschreck;Namensschreck;Spielewiki;ankommen;namen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-namenstausch;Namenstausch;Spielewiki;ankommen;namen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-names-luftballon;Names-Luftballon;Spielewiki;ankommen;namen;5;10;Dublette – siehe dubletten_cluster.csv
+Namens- und Kennenlernspiele;sw-paarweise-vorstellen;Paarweise Vorstellen;Spielewiki;ankommen;namen;5;10;Dublette – siehe dubletten_cluster.csv
+Namens- und Kennenlernspiele;sw-teamvorstellung;Teamvorstellung;Spielewiki;ankommen;namen;20;30;Familie durchsehen: behalten oder als Variante anhängen
+Namens- und Kennenlernspiele;sw-vorstellung-mit-sussigkeiten;Vorstellung mit Süßigkeiten;Spielewiki;ankommen;namen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-blinde-wegsuche;Blinde Wegsuche;Spielewiki;ruhig;ruhig;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-eiersuche;Eiersuche;Spielewiki;bewegung_drinnen;verstecken;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-fuchs-suche;Fuchs-Suche;Spielewiki;bewegung_draussen;verstecken;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-lowenjagd;Löwenjagd;Spielewiki;ruhig;ruhig;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-briefbomben;Minensucher;Spielewiki;kooperation;team;15;25;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-murmelsuche;Murmelsuche;Spielewiki;kooperation;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-ringsuche;Ringsuche;Spielewiki;kreis;reaktion;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-schatzsuche;Schatzsuche;Spielewiki;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-schnitzeljagd;Schnitzeljagd;Spielewiki;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;insp-schnitzeljagd-mit-abstand;Schnitzeljagd mit Abstand;Inspirator (DPBM);bewegung_draussen;toben;45;75;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;ps-steinsuche;Steinsuche;pfadfinder-spiele;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-uhrensuche;Uhrensuche;Spielewiki;ruhig;verstecken;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;ps-versteck-fangen;Versteck-fangen;pfadfinder-spiele;ankommen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-verstecken;Verstecken;Spielewiki;bewegung_drinnen;verstecken;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-verstecken-im-dunkeln;Verstecken im Dunkeln;Spielewiki;bewegung_drinnen;verstecken;5;15;Dublette – siehe dubletten_cluster.csv
+Verstecken, Suchen, Schatzsuche;sw-verstecken-in-gedanken;Verstecken in Gedanken;Spielewiki;bewegung_drinnen;verstecken;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;eig-waescheklammern-jagd;Wäscheklammern-Jagd;eigene;ankommen;fangen;15;30;Familie durchsehen: behalten oder als Variante anhängen
+Verstecken, Suchen, Schatzsuche;sw-wald-schatzsuche;Wald-Schatzsuche;Spielewiki;bewegung_draussen;verstecken;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-bilder-raten;Bilder raten;Spielewiki;ruhig;denken;15;20;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-blind-zeichnen;Blind Zeichnen;Spielewiki;kooperation;team;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;insp-digitales-tabu;Digitales Tabu;Inspirator (DPBM);bewegung_drinnen;sonstiges;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-initialenraten;Initialenraten;Spielewiki;ruhig;denken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;ps-kreativ-tabu;Kreativ Tabu;pfadfinder-spiele;ruhig;konzentration;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-lieder-raten;Lieder raten;Spielewiki;ruhig;denken;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-melodie-raten;Melodie raten;Spielewiki;ruhig;denken;10;30;Dublette – siehe dubletten_cluster.csv
+Pantomime, Raten, Darstellen;ps-montagsmaler;Montagsmaler;pfadfinder-spiele;ruhig;wettkampf;15;25;Dublette – siehe dubletten_cluster.csv
+Pantomime, Raten, Darstellen;sw-montagsmaler;Montagsmaler;Spielewiki;ruhig;denken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;ps-pantomime-stille-post;Pantomime Stille Post;pfadfinder-spiele;ruhig;konzentration;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-personen-raten;Personen raten;Spielewiki;ruhig;team;15;20;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-piratenspiel;Piratenspiel;Spielewiki;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-scharade;Scharade;Spielewiki;bewegung_drinnen;darstellen;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-schreiben-und-zeichnen;Schreiben und Zeichnen;Spielewiki;bewegung_drinnen;darstellen;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;insp-tiere-raten;Tiere raten;Inspirator (DPBM);bewegung_drinnen;sonstiges;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-wer-bin-ich;Wer bin ich;Spielewiki;ruhig;denken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Pantomime, Raten, Darstellen;sw-wer-bin-ich-verkehrt;Wer bin ich (verkehrt);Spielewiki;ruhig;denken;10;20;Dublette – siehe dubletten_cluster.csv
+Pantomime, Raten, Darstellen;ps-wer-bin-ich;Wer bin ich?;pfadfinder-spiele;ruhig;konzentration;20;40;Dublette – siehe dubletten_cluster.csv
+Blind- und Vertrauensspiele;sw-blind-fuhren;Blind führen;Spielewiki;kooperation;vertrauen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blind-zeichnen;Blind Zeichnen;Spielewiki;kooperation;team;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blinde-kuh;Blinde Kuh;Spielewiki;bewegung_drinnen;sonstiges;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blinde-wegsuche;Blinde Wegsuche;Spielewiki;ruhig;ruhig;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blindenfussball;Blindenfußball;Spielewiki;kooperation;vertrauen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blinder-pirat;Blinder Pirat;Spielewiki;ruhig;ruhig;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blindes-finden;Blindes Finden;Spielewiki;kooperation;team;20;30;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blindes-quadrat;Blindes Quadrat;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-blindes-schminken;Blindes Schminken;Spielewiki;ruhig;darstellen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-gesichter-ertasten;Gesichter ertasten;Spielewiki;ruhig;merken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-mutprobe-und-vertrauen;Mutprobe und Vertrauen;Spielewiki;kooperation;vertrauen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-tastkim;Tastkim;Spielewiki;ruhig;merken;15;20;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-welle-vertrauensspiel;Welle (Vertrauensspiel);Spielewiki;kooperation;vertrauen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Blind- und Vertrauensspiele;sw-zeltbau-blind;Zeltbau blind;Spielewiki;kooperation;team;15;25;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-ballweitergabe-mit-beinen;Ballweitergabe mit Beinen;Spielewiki;bewegung_drinnen;geschick;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-ballwurfkette;Ballwurfkette;Spielewiki;ankommen;namen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-kette-durch-den-reifen;Kette durch den Reifen;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;ps-kettenfangen;Kettenfangen;pfadfinder-spiele;ankommen;fangen;15;25;Dublette – siehe dubletten_cluster.csv
+Stille Post und Weitergabespiele;sw-kettenfangen;Kettenfangen;Spielewiki;bewegung_drinnen;fangen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-laute-post;Laute Post;Spielewiki;kooperation;team;5;10;Dublette – siehe dubletten_cluster.csv
+Stille Post und Weitergabespiele;sw-massagekette;Massagekette;Spielewiki;bewegung_drinnen;singen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;ps-pantomime-stille-post;Pantomime Stille Post;pfadfinder-spiele;ruhig;konzentration;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-posterkusse;Posterküsse;Spielewiki;bewegung_drinnen;geschick;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-stille-post;Stille Post;Spielewiki;kooperation;team;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-stille-post-in-bildern;Stille Post in Bildern;Spielewiki;ruhig;darstellen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Stille Post und Weitergabespiele;sw-wortkette;Wortkette;Spielewiki;kooperation;team;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;ps-klopapier-namensspiel;Klopapier Namensspiel;pfadfinder-spiele;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-klopapierrolle;Klopapierrolle;Spielewiki;ankommen;namen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-klopapierrollen-fischen;Klopapierrollen-Fischen;Spielewiki;bewegung_drinnen;geschick;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;ps-papierflieger-mit-herausforderung;Papierflieger mit Herausforderung;pfadfinder-spiele;ankommen;warmup;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-papierflieger-wettkampf;Papierflieger-Wettkampf;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-papierknauel-reflexion;Papierknäuel-Reflexion;Spielewiki;ruhig;reflexion;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-schere-stein-papier;Schere Stein Papier;Spielewiki;ruhig;tisch;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-schere-stein-papier-online;Schere Stein Papier Online;Spielewiki;ruhig;tisch;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-wanderndes-klopapier;Wanderndes Klopapier;Spielewiki;kooperation;team;45;90;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-zeitungsreissen;Zeitungsreißen;Spielewiki;bewegung_drinnen;wettkampf;10;15;Familie durchsehen: behalten oder als Variante anhängen
+Zeitungs- und Papierspiele;sw-zeitungstanz;Zeitungstanz;Spielewiki;bewegung_drinnen;singen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);sw-gerausche-kim-fur-paare;Geräusche-Kim für Paare;Spielewiki;ankommen;namen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);sw-gerausche-kim-in-filmdose;Geräusche-Kim in Filmdose;Spielewiki;ruhig;merken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);sw-geruchs-kim-mit-parfum;Geruchs-Kim mit Parfüm;Spielewiki;ankommen;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);insp-kim-gedaechtnisspiel;Kim-Gedächtnisspiel;Inspirator (DPBM);ruhig;sonstiges;30;45;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);insp-kindermemorix;Kindermemorix;Inspirator (DPBM);bewegung_drinnen;toben;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);sw-memory-fangen;Memory-Fangen;Spielewiki;ruhig;merken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);ps-menschenmemory;Menschenmemory;pfadfinder-spiele;ruhig;konzentration;15;25;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);sw-munzen-kim;Münzen-Kim;Spielewiki;ruhig;merken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kim-Spiele (Sinne und Merken);insp-woelflings-memory;Wölflings-Memory;Inspirator (DPBM);bewegung_drinnen;toben;30;45;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;ps-detektiv;Detektiv;pfadfinder-spiele;kreis;konzentration;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;sw-mafia;Mafia;Spielewiki;ruhig;team;20;30;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;sw-morder-unter-uns;Mörder unter uns;Spielewiki;kooperation;team;45;90;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;ps-moerderball;Mörderball;pfadfinder-spiele;bewegung_draussen;wettkampf;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;sw-mordern;Mördern;Spielewiki;ruhig;konzentration;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;sw-morderspiel;Mörderspiel;Spielewiki;kooperation;team;45;90;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;sw-wer-ist-der-morder;Wer ist der Mörder;Spielewiki;bewegung_drinnen;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Werwolf, Mafia, Mörderspiele;ps-werwolf;Werwolf;pfadfinder-spiele;kreis;team;20;40;Dublette – siehe dubletten_cluster.csv
+Werwolf, Mafia, Mörderspiele;eig-werwolf-abend;Werwolf-Abend;eigene;bewegung_drinnen;sonstiges;60;120;Familie durchsehen: behalten oder als Variante anhängen
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);insp-alle-die-obstsalat;Alle, die… (Obstsalat);Inspirator (DPBM);bewegung_drinnen;toben;10;30;Dublette – siehe dubletten_cluster.csv
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);sw-kippstuhl;Kippstuhl;Spielewiki;kooperation;team;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);ps-obstsalat;Obstsalat;pfadfinder-spiele;kreis;toben;15;25;Dublette – siehe dubletten_cluster.csv
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);sw-obstsalat;Obstsalat;Spielewiki;kreis;ruhig;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);ps-reise-nach-jerusalem;Reise nach Jerusalem;pfadfinder-spiele;ruhig;konzentration;10;20;Dublette – siehe dubletten_cluster.csv
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);sw-reise-nach-jerusalem;Reise nach Jerusalem;Spielewiki;bewegung_drinnen;singen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);sw-reise-nach-jerusalem-extrem;Reise nach Jerusalem extrem;Spielewiki;bewegung_drinnen;singen;10;20;Dublette – siehe dubletten_cluster.csv
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);ps-stuhlfangen;Stuhlfangen;pfadfinder-spiele;kreis;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Stuhlkreis-Spiele (Reise nach Jerusalem, Obstsalat …);ps-stuhlrutschen-nach-kartenfarben;Stuhlrutschen (nach Kartenfarben);pfadfinder-spiele;kreis;sonstiges;15;35;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;sw-becher-rhythmus;Becher-Rhythmus;Spielewiki;kreis;singen;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;sw-klatschball;Klatschball;Spielewiki;kreis;ball;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;sw-lied-gurgeln;Lied gurgeln;Spielewiki;ruhig;denken;10;30;Dublette – siehe dubletten_cluster.csv
+Klatsch-, Rhythmus- und Singspiele;sw-lieder-raten;Lieder raten;Spielewiki;ruhig;denken;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;insp-liedtitel-in-emojis-verpacken;Liedtitel in Emojis verpacken;Inspirator (DPBM);bewegung_drinnen;sonstiges;30;45;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;sw-melodie-raten;Melodie raten;Spielewiki;ruhig;denken;10;30;Dublette – siehe dubletten_cluster.csv
+Klatsch-, Rhythmus- und Singspiele;sw-mimi-klatsch-spiel;Mimi-Klatsch-Spiel;Spielewiki;kreis;singen;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Klatsch-, Rhythmus- und Singspiele;ps-tischklatschen;Tischklatschen;pfadfinder-spiele;kreis;konzentration;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-hahnenkampf;Hahnenkampf;Spielewiki;bewegung_drinnen;kampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-liegestutz-kampf;Liegestütz-Kampf;Spielewiki;bewegung_drinnen;kampf;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-papierflieger-wettkampf;Papierflieger-Wettkampf;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;ps-prinzessin-ritter-drache;Prinzessin, Ritter, Drache;pfadfinder-spiele;ankommen;fangen;15;25;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-schwertkampf;Schwertkampf;Spielewiki;bewegung_drinnen;kampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-seilspringen;Seilspringen;Spielewiki;bewegung_drinnen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;ps-sockenkampf;Sockenkampf;pfadfinder-spiele;ankommen;warmup;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Kraft- und Kampfspiele;sw-stierkampf-von-sevilla;Stierkampf von Sevilla;Spielewiki;bewegung_drinnen;geschick;10;15;Familie durchsehen: behalten oder als Variante anhängen
+Seil-, Knoten- und Kooperationsaufgaben;ps-gordischer-knoten;Gordischer Knoten;pfadfinder-spiele;kooperation;vertrauen;5;15;Dublette – siehe dubletten_cluster.csv
+Seil-, Knoten- und Kooperationsaufgaben;sw-gordischer-knoten;Gordischer Knoten;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Seil-, Knoten- und Kooperationsaufgaben;sw-seilspringen;Seilspringen;Spielewiki;bewegung_drinnen;wettkampf;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Seil-, Knoten- und Kooperationsaufgaben;sw-seilziehen;Seilziehen;Spielewiki;bewegung_drinnen;toben;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Seil-, Knoten- und Kooperationsaufgaben;sw-spinnennetz;Spinnennetz;Spielewiki;kooperation;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Seil-, Knoten- und Kooperationsaufgaben;sw-turmbau;Turmbau;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Gelände- und Nachtspiele;ps-capture-the-flag;Capture the flag;pfadfinder-spiele;gelaende;gelaende;30;60;Dublette – siehe dubletten_cluster.csv
+Gelände- und Nachtspiele;sw-capture-the-flag;Capture the Flag;Spielewiki;gelaende;gelaende;30;60;Familie durchsehen: behalten oder als Variante anhängen
+Gelände- und Nachtspiele;eig-capture-the-flag-im-dunkeln;Capture the Flag im Dunkeln;eigene;gelaende;gelaende;60;90;Familie durchsehen: behalten oder als Variante anhängen
+Gelände- und Nachtspiele;ps-grenze;Grenze;pfadfinder-spiele;bewegung_draussen;wettkampf;45;95;Familie durchsehen: behalten oder als Variante anhängen
+Gelände- und Nachtspiele;sw-rauber-und-kaufleute;Räuber und Kaufleute;Spielewiki;bewegung_drinnen;toben;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Gelände- und Nachtspiele;sw-schmuggeln;Schmuggeln;Spielewiki;gelaende;gelaende;20;40;Familie durchsehen: behalten oder als Variante anhängen
+Luftballon-Spiele;sw-luftballon-kennenlernspiel;Luftballon (Kennenlernspiel);Spielewiki;ankommen;namen;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Luftballon-Spiele;sw-luftballon-rasieren;Luftballon rasieren;Spielewiki;bewegung_drinnen;geschick;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Luftballon-Spiele;insp-luftballonstaffel;Luftballonstaffel;Inspirator (DPBM);bewegung_draussen;toben;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Luftballon-Spiele;sw-luftballontanz;Luftballontanz;Spielewiki;bewegung_drinnen;singen;5;10;Familie durchsehen: behalten oder als Variante anhängen
+Luftballon-Spiele;sw-names-luftballon;Names-Luftballon;Spielewiki;ankommen;namen;5;10;Dublette – siehe dubletten_cluster.csv
+Wäscheklammer-Spiele;ps-waescheklammern-klauen;Wäscheklammern klauen;pfadfinder-spiele;ankommen;fangen;5;15;Dublette – siehe dubletten_cluster.csv
+Wäscheklammer-Spiele;ps-waescheklammern-sortieren;Wäscheklammern sortieren;pfadfinder-spiele;kooperation;team;5;15;Familie durchsehen: behalten oder als Variante anhängen
+Wäscheklammer-Spiele;sw-wascheklammern-diebstahl;Wäscheklammern-Diebstahl;Spielewiki;bewegung_drinnen;toben;10;30;Dublette – siehe dubletten_cluster.csv
+Wäscheklammer-Spiele;eig-waescheklammern-jagd;Wäscheklammern-Jagd;eigene;ankommen;fangen;15;30;Familie durchsehen: behalten oder als Variante anhängen
+Wäscheklammer-Spiele;sw-wascheklammernspiel;Wäscheklammernspiel;Spielewiki;ruhig;geschick;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Papier-und-Stift-Spiele (Stadt-Land-Fluss, Bingo …);sw-worter-geschichte;Wörter-Geschichte;Spielewiki;kooperation;team;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Papier-und-Stift-Spiele (Stadt-Land-Fluss, Bingo …);sw-wortbau;Wortbau;Spielewiki;ruhig;denken;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Papier-und-Stift-Spiele (Stadt-Land-Fluss, Bingo …);sw-wortdomino;Wortdomino;Spielewiki;kooperation;team;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Papier-und-Stift-Spiele (Stadt-Land-Fluss, Bingo …);sw-wortkette;Wortkette;Spielewiki;kooperation;team;10;30;Familie durchsehen: behalten oder als Variante anhängen
+Quiz- und Wissensspiele;sw-backerquiz;Bäckerquiz;Spielewiki;ruhig;denken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Quiz- und Wissensspiele;sw-pubquiz;Pubquiz;Spielewiki;ruhig;denken;10;20;Familie durchsehen: behalten oder als Variante anhängen
+Quiz- und Wissensspiele;eig-quiz-abend-schlag-die-fuehrung;Quiz-Abend: Schlag die Führung;eigene;ruhig;denken;60;90;Familie durchsehen: behalten oder als Variante anhängen
