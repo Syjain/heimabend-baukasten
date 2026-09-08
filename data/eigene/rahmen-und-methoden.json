@@ -1,0 +1,1841 @@
+{
+  "meta": {
+    "name": "Rahmen und Methoden (eigene Elemente)",
+    "beschreibung": "Rituale für Eröffnungs- und Schlusskreis, Methoden zur Gruppeneinteilung und Verfahren zur Auswertung und Reflexion. Diese Bausteine füllen die Stellen des Heimabends, für die der Baukasten bisher kaum Programm hatte.",
+    "version": "1.0",
+    "stand": "2026-09-08",
+    "anzahl": 38,
+    "lizenz": "CC BY-SA 4.0",
+    "herkunft": "Alle Methoden sind Allgemeingut der Jugend- und Pfadfinderarbeit – abzählen, Blitzlicht, Stimmungsbarometer und die Kreisrituale werden seit Jahrzehnten in vielen Gruppen so gemacht; die Texte dieser Datei sind dafür eigens und vollständig neu geschrieben, es wurde nichts aus fremden Sammlungen übernommen.",
+    "hinweis": "Eigene Elemente im fertigen Element-Schema (data/SCHEMA.md), nicht im Ideen-Format. id-Präfix eig-, quelle.name \"eigene\"."
+  },
+  "elemente": [
+    {
+      "id": "eig-kreis-schliessen-und-gruss",
+      "titel": "Kreis schließen und Gruß des Bundes",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Das Grundritual am Anfang: Kreis bilden, Lücken schließen, kurz etwas sagen, mit dem Gruß des Bundes eröffnen.",
+      "beschreibung": "## Ablauf\n\n- Du rufst laut **\"Kreis!\"** – alle stellen sich in einem Kreis auf, Schulter an Schulter, Lücken werden geschlossen.\n- Warte, bis es still ist. Rede nicht in die Unruhe hinein, schau nur ruhig in die Runde. Das Warten gehört zum Ritual.\n- Sag zwei bis drei Sätze zum Abend: was heute ansteht, wer neu dabei ist, was seit dem letzten Mal wichtig war.\n- Dann eröffnest du den Heimabend mit dem Gruß deines Bundes. Alle antworten gemeinsam; wer schon aufgenommen ist, grüßt dazu mit dem Pfadfindergruß.\n- Nach dem Gruß bleibt der Kreis noch einen Atemzug stehen, dann geht es in das erste Spiel.\n\n## Warum das so gemacht wird\n\nDer Kreis hat keinen Anfang und kein Ende, alle sehen einander und alle stehen gleich weit vorn. Er trennt den Heimabend vom Rest der Woche: draußen Schule und Streit, drinnen Gruppe.",
+      "tipps": "Lass es jedes Mal gleich ablaufen – ein Ritual wirkt durch Wiederholung, nicht durch Abwechslung. Wenn zwei Kinder albern werden, warte einfach; anreden verlängert die Störung nur. Neuen erklärst du den Gruß vorher unter vier Augen, damit sie im Kreis nicht auffallen. Halte den Teil unter fünf Minuten, sonst wird aus dem Kreis eine Ansprache und das Ritual kippt in Pflichtprogramm.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-wochenrueckblick-in-einem-satz",
+      "titel": "Wochenrückblick in einem Satz",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 4,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 20,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Kurze Runde im Eröffnungskreis: Jede und jeder sagt in einem einzigen Satz, was in der Woche gut oder blöd war.",
+      "beschreibung": "## Ablauf\n\n- Im Eröffnungskreis stellst du immer dieselbe Frage: **\"Was war diese Woche gut oder blöd? Ein Satz.\"**\n- Du fängst selbst an und machst vor, wie kurz das sein darf: \"Mathearbeit verhauen, dafür mein Fahrrad repariert.\"\n- Dann geht es reihum im Kreis weiter, immer in dieselbe Richtung.\n- Wer nichts sagen möchte, sagt **\"weiter\"**. Das ist erlaubt und wird nicht kommentiert.\n- Es wird nicht nachgefragt, nicht gelacht, nicht bewertet. Danach ist die nächste Person dran.\n- Nach der Runde geht es ohne weiteren Kommentar in den Abend.\n\n## Zeit\n\nRechne mit etwa 15 Sekunden je Person – bei zwölf Kindern sind das drei Minuten.",
+      "tipps": "Der Satz ist die ganze Regel: Sobald du eine Nachfrage stellst, wird aus der Runde ein Gespräch und die Letzten verlieren die Lust. Wenn dir etwas auffällt, das dich beunruhigt, sprich die Person nach dem Heimabend allein an. Sag \"weiter\" beim ersten Mal selbst einmal vor, sonst traut sich niemand. Bei mehr als zwanzig Kindern lieber nur eine Hälfte des Kreises fragen und beim nächsten Mal die andere.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Gespräch",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-gute-tat-der-woche",
+      "titel": "Gute Tat der Woche",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 4,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 20,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Reihum erzählt jede und jeder eine gute Tat aus der vergangenen Woche – ganz klein darf sie sein.",
+      "beschreibung": "## Ablauf\n\n- Frage im Eröffnungskreis: **\"Was hast du diese Woche für jemand anderen getan?\"**\n- Reihum antwortet jede und jeder mit einem Satz. Ganz kleine Dinge zählen ausdrücklich: den Tisch abgeräumt, einem Kind in der Pause geholfen, für die Nachbarin die Post geholt.\n- Du bestätigst jede Antwort mit einem kurzen Nicken oder **\"gut\"** – mehr Lob nicht, sonst entsteht ein Wettbewerb.\n- Wer nichts findet, sagt \"nichts\" und ist damit durch. Kein Nachhaken, kein schlechtes Gewissen.\n- Zum Schluss nennst du selbst eine gute Tat, die du dir für die kommende Woche vornimmst.\n\n## Warum\n\nDie tägliche gute Tat gehört zu den ältesten Gewohnheiten der Pfadfinder. Sie wird hier nicht abgefragt, sondern erzählt – dadurch fällt sie den Kindern in der Woche überhaupt erst auf.",
+      "tipps": "Kippgefahr: Wenn du nur die spektakulären Taten lobst, erfinden die Kinder ab der dritten Woche Geschichten. Bleib bewusst ruhig und nimm die kleinste Antwort genauso an wie die größte. Mach die Runde nicht jede Woche, sondern etwa jeden zweiten Heimabend, sonst nutzt sie sich ab. Bei sehr jungen Kindern hilft ein Beispiel aus deiner eigenen Woche als Start.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "gute Tat",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-stimmungsrunde-mit-der-hand",
+      "titel": "Stimmungsrunde mit der Hand",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Ohne Worte: Alle zeigen auf ein Kommando gleichzeitig Daumen hoch, quer oder runter – du siehst in drei Sekunden, wie die Gruppe drauf ist.",
+      "beschreibung": "## Ablauf\n\n- Erkläre die drei Zeichen: **Daumen hoch** heißt \"mir geht es gut\", **Daumen quer** heißt \"geht so\", **Daumen runter** heißt \"heute ist ein schlechter Tag\".\n- Alle machen die Faust vor die Brust. Auf dein **\"Drei, zwei, eins – zeigen!\"** strecken alle gleichzeitig den Daumen aus.\n- Schau einmal reihum. Sag laut, was du siehst: \"Viele hoch, drei quer, einer runter. Gut, dann wissen wir das.\"\n- Frage niemanden vor der Gruppe, warum der Daumen unten ist. Das Zeichen genügt.\n- Danach geht es direkt weiter in den Abend.\n\n## Warum gleichzeitig\n\nWer reihum antwortet, richtet sich nach den anderen. Gleichzeitig zeigen alle das, was sie wirklich denken.",
+      "tipps": "Geh nach dem Kreis unauffällig zu dem Kind mit dem Daumen unten und frag beim Aufbau nebenbei nach – nicht vor allen. Wenn plötzlich die halbe Gruppe den Daumen unten hat, ändere den Abend: erst austoben, dann der ruhige Teil. Das Ritual verliert seinen Sinn, sobald du anfängst, über die Daumen zu diskutieren.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Stimmung",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-abendplan-in-drei-saetzen",
+      "titel": "Der Abendplan in drei Sätzen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Du sagst im Kreis in drei Sätzen, was heute passiert – und was die Gruppe dafür braucht. Danach fragt keiner mehr alle fünf Minuten nach.",
+      "beschreibung": "## Ablauf\n\n- Sag im Eröffnungskreis in genau drei Sätzen, was ansteht:\n  1. **Was** heute gemacht wird (\"Heute lernen wir den Palstek und spielen danach draußen.\").\n  2. **Wo** und **womit** (\"Wir bleiben bis zur Pause im Heim, danach gehen wir auf die Wiese – Jacken bereitlegen.\").\n  3. **Wann Schluss** ist (\"Um acht sind wir fertig, Schlusskreis wie immer draußen.\").\n- Frage einmal: **\"Alles klar?\"** und warte kurz auf Rückfragen.\n- Verrate Überraschungen nicht: \"Nach der Pause gibt es etwas, das ich noch nicht sage\" reicht völlig.\n- Wenn der Plan im Abend kippt, sagst du das kurz an, statt ihn heimlich zu ändern.\n\n## Warum\n\nKinder, die den Rahmen kennen, fragen nicht dauernd nach und wehren sich weniger gegen Übergänge.",
+      "tipps": "Drei Sätze heißt drei Sätze – wer den ganzen Ablauf erzählt, verliert die Gruppe schon im Kreis. Schreib dir die drei Sätze vorher auf einen Zettel in die Hosentasche, das dauert eine Minute und rettet den Anfang. Nenne das Ende immer mit Uhrzeit, das ist der Satz, den sich alle merken.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Ansage",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-wanderstab-im-eroeffnungskreis",
+      "titel": "Wanderstab oder Fahne im Eröffnungskreis",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 4,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [
+        "Wanderstab oder Gruppenfahne"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Ein Gegenstand macht den Kreis sichtbar: Stab oder Fahne kommen in die Mitte, wer sie hält, hat das Wort.",
+      "beschreibung": "## Ablauf\n\n- Ein festes Ding der Gruppe – ein Wanderstab, die Gruppenfahne, ein Wimpel – wird zu Beginn in die Mitte des Kreises gestellt oder gehalten.\n- Ein Kind holt es zum Anfang und stellt es auf; das wechselt jede Woche und wird vorher festgelegt, damit es keinen Streit gibt.\n- Solange das Ding steht, gilt: Wir sind im Kreis, es redet einer.\n- Für Wortmeldungen kann der Stab herumgegeben werden: **Wer ihn in der Hand hat, spricht, alle anderen hören zu.**\n- Am Ende des Heimabends wird er im Schlusskreis wieder weggeräumt – von demselben Kind.\n\n## Warum\n\nJüngere Kinder halten sich viel leichter an eine Regel, die sie sehen können, als an eine, die nur gesagt wird.",
+      "tipps": "Nimm etwas, das der Gruppe gehört und das etwas aushält – kein zerbrechliches Erinnerungsstück. Die Reihenfolge, wer den Stab holen darf, schreibst du dir auf, sonst holst du immer dieselben drei. Wenn der Stab zum Spielzeug wird, stell ihn kommentarlos zurück in die Mitte, statt zu schimpfen. Bei Älteren wirkt der Redestab schnell kindisch, dort reicht die Fahne in der Mitte.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Fahne",
+        "Redestab"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-anwesenheit-als-ritual",
+      "titel": "Anwesenheit als Ritual",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 6,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 25,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Statt eine Liste abzuhaken: Namen werden im Kreis aufgerufen und beantwortet – und es wird gesagt, wer fehlt und warum.",
+      "beschreibung": "## Ablauf\n\n- Ruf im Eröffnungskreis die Namen auf. Wer da ist, antwortet mit einem festen Wort der Gruppe – zum Beispiel **\"hier\"** oder dem Gruß des Bundes – und macht dabei einen kleinen Schritt nach vorn in den Kreis.\n- Bei einem Namen, auf den niemand antwortet, fragst du kurz: **\"Weiß jemand, wo sie ist?\"**\n- Sag laut, was du weißt: \"Krank\", \"auf Klassenfahrt\", \"keine Ahnung – ich rufe morgen an.\"\n- Nach der Runde nennst du die Zahl: \"Wir sind heute elf.\"\n- Die Liste füllst du erst nach dem Heimabend aus, nicht im Kreis.\n\n## Warum\n\nSo merkt jedes Kind, dass sein Fehlen auffällt. Genau das ist der Unterschied zwischen einer Gruppe und einem Kurs.",
+      "tipps": "Nie mit dem Handy in der Hand aufrufen – dann ist es wieder eine Liste. Lern die Namen so schnell wie möglich auswendig, das ist die halbe Wirkung. Wenn ein Kind zweimal hintereinander fehlt, ruf zu Hause an und sag im nächsten Kreis nur \"wir haben telefoniert, alles gut\" – Einzelheiten gehören nicht in den Kreis.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Anwesenheit",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-spruch-zum-anfang",
+      "titel": "Spruch zum Anfang",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "eroeffnung"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 6,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Ein kurzer Satz, ein Wort oder eine Frage zum Anfang – von dir oder reihum von einem Kind mitgebracht.",
+      "beschreibung": "## Ablauf\n\n- Im Eröffnungskreis wird ein kurzer Gedanke gesagt: ein Satz, ein Sprichwort, eine Frage zum Mitnehmen.\n- **Möglichkeit A:** Du sagst ihn. Ein Satz, danach zwei Sekunden Stille, dann der Gruß. Kein Vortrag, keine Erklärung.\n- **Möglichkeit B:** Reihum bringt jede Woche ein Kind etwas mit – einen Satz, den es gut findet. Wer dran ist, weiß das seit dem letzten Heimabend.\n- Der Satz wird nicht besprochen. Wer will, kommt nachher von selbst darauf zu sprechen.\n- Passt der Satz zum Thema des Abends, umso besser; er muss es aber nicht.\n\n## Woher der Satz kommt\n\nAus einem Buch, einem Lied, aus dem Gesetz eures Bundes oder aus dem eigenen Kopf. Sag dazu, woher er stammt.",
+      "tipps": "Der häufigste Fehler ist, den Satz zu erklären – damit macht man aus dem Ritual Unterricht. Bei Möglichkeit B unbedingt daran erinnern, sonst steht das Kind blank da; frag am Ende des vorherigen Heimabends nach. Hab immer einen eigenen Satz in der Hinterhand, wenn jemand ihn vergessen hat. Wenn die Gruppe anfängt zu stöhnen, lass den Spruch ein paar Wochen weg.",
+      "tags": [
+        "Ritual",
+        "Eröffnungskreis",
+        "Gedanke",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-schlusskreis-mit-handschlag",
+      "titel": "Schlusskreis mit Handschlag",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 6,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Der Kreis wird noch einmal geschlossen, die Hände fassen sich, ein Händedruck läuft einmal herum – dann ist der Heimabend zu Ende.",
+      "beschreibung": "## Ablauf\n\n- Nach dem letzten Spiel rufst du **\"Kreis!\"**. Alle stellen sich auf und fassen sich an den Händen – in vielen Bünden mit der linken Hand.\n- Warte, bis alle stehen und still sind. Erst dann geht es weiter.\n- Sag zwei Sätze zum Abend: was gut war, was ansteht, ein Dank an die, die aufgeräumt haben.\n- Dann gibst du deiner Nachbarin oder deinem Nachbarn einen kurzen Händedruck. Der wird weitergegeben und läuft einmal um den ganzen Kreis, bis er wieder bei dir ankommt.\n- Kommt er an, sagst du den Schlussgruß eures Bundes. Alle antworten, der Kreis geht auseinander.\n\n## Warum\n\nDer Händedruck braucht keine Worte und schließt trotzdem alle ein – auch die, die an dem Abend Streit hatten.",
+      "tipps": "Der Händedruck geht schneller kaputt als jedes andere Ritual: Wenn Kinder anfangen zu quetschen, halte den Kreis an und starte noch einmal von vorn, ohne zu schimpfen. Nutze den Kreis nicht für Ermahnungen – wer zum Schluss Ärger bekommt, geht mit einem schlechten Abend nach Hause. Kritik gehört vor den Schlusskreis oder in ein Gespräch unter vier Augen.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Abschied",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-ein-wort-zum-abend",
+      "titel": "Ein Wort zum Abend",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 25,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Reihum sagt jede und jeder ein einziges Wort zum heutigen Heimabend – nicht mehr. In zwei Minuten weißt du, wie der Abend gelaufen ist.",
+      "beschreibung": "## Ablauf\n\n- Im Schlusskreis stellst du die Frage: **\"Ein Wort zum heutigen Abend. Nur eines.\"**\n- Reihum sagt jede und jeder ein Wort: \"nass\", \"anstrengend\", \"Knoten\", \"lustig\", \"hungrig\".\n- Es wird nichts erklärt und nichts kommentiert – weder von dir noch von den anderen. Auch \"langweilig\" bleibt unwidersprochen stehen.\n- Wer nichts sagen will, sagt **\"weiter\"**.\n- Du bist als Letzte oder Letzter dran und sagst auch nur ein Wort.\n- Danach folgt direkt der Schlussgruß.\n\n## Was du davon hast\n\nDie Wörter sind eine ehrliche Rückmeldung, weil niemand eine Rede halten muss. Merk dir zwei davon und denk auf dem Heimweg darüber nach.",
+      "tipps": "Halte die Stille aus, wenn jemand überlegt – zähl innerlich bis fünf, bevor du hilfst. Reagiere nicht auf \"langweilig\", auch wenn es wehtut; sobald du dich rechtfertigst, sagt beim nächsten Mal niemand mehr etwas Ehrliches. Wenn dieselben Wörter jede Woche wiederkommen, wechsle die Frage: \"ein Wort, das heute neu war\".",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Rückmeldung",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-ausblick-auf-den-naechsten-heimabend",
+      "titel": "Ausblick auf den nächsten Heimabend",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Feste Stelle im Schlusskreis für alles Organisatorische: nächster Termin, was mitzubringen ist, wer was übernimmt.",
+      "beschreibung": "## Ablauf\n\n- Im Schlusskreis, kurz vor dem Gruß, sagst du in dieser Reihenfolge:\n  1. **Wann** der nächste Heimabend ist – mit Datum und Uhrzeit, auch wenn es immer derselbe Tag ist.\n  2. **Was** mitzubringen ist (feste Schuhe, Regenjacke, Geld, Zettel von den Eltern).\n  3. **Wer** etwas übernommen hat (\"Jonas bringt das Seil mit\").\n  4. Ein Satz zum Ausblick: \"Nächste Woche gehen wir raus, egal wie das Wetter ist.\"\n- Lass die Ansagen von einem Kind wiederholen: **\"Was bringt ihr nächste Woche mit?\"**\n- Termine, die weiter weg sind (Fahrt, Lager), gehören zusätzlich als Zettel oder Nachricht an die Eltern – im Kreis nur die Erinnerung.\n\n## Warum am Schluss\n\nWas als Letztes gesagt wird, bleibt hängen. Und die Eltern warten schon draußen.",
+      "tipps": "Nicht mehr als drei Ansagen, sonst merkt sich niemand etwas. Das Wiederholenlassen ist der wichtigste Schritt – ohne das hast du in Wahrheit nur mit dir selbst geredet. Alles, was Geld oder eine Unterschrift braucht, immer zusätzlich schriftlich an die Eltern geben.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Ansage",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-aufraeum-ritual",
+      "titel": "Aufräum-Ritual vor dem Schlusskreis",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 5,
+      "dauer_max": 10,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Aufräumen wird zum festen Teil des Abends statt zum Streit: klare Aufgaben, feste Zeit, gemeinsamer Abschluss.",
+      "beschreibung": "## Ablauf\n\n- Zehn Minuten vor Schluss rufst du das Ritual mit einem festen Satz auf: **\"Heim in Ordnung!\"**\n- Es gibt feste Aufgaben, die jede Woche gleich sind und an denen sich alle abwechseln:\n  - Stühle und Tische an ihren Platz\n  - Boden kehren\n  - Material zurück in Kiste und Schrank\n  - Fenster zu, Licht aus, Müll raus\n- Die Aufgaben hängen an der Wand oder liegen als Kärtchen bereit; wer zuerst da ist, zieht eine Karte.\n- Fertig ist erst, wenn **alle** Aufgaben fertig sind – nicht die eigene. Wer fertig ist, hilft weiter.\n- Zum Schluss gehst du einmal mit der Gruppe durch den Raum und schaust nach. Dann erst wird der Kreis gerufen.\n\n## Warum\n\nDas Heim gehört der Gruppe. Wer es selbst in Ordnung bringt, geht anders damit um.",
+      "tipps": "Der Satz \"ich hatte damit nichts zu tun\" ist die Stelle, an der das Ritual steht oder fällt – deshalb die Regel, dass erst alle fertig sind. Räum nicht selbst schnell die Hälfte weg, weil es dir zu lange dauert; dann wartet die Gruppe beim nächsten Mal darauf. Mit Musik geht es schneller. Nach draußen gehört dasselbe Ritual: Feuerstelle kalt, kein Müll, nichts liegen lassen.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Aufräumen",
+        "Verantwortung"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-fahne-einholen",
+      "titel": "Fahne einholen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 6,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [
+        "Gruppenfahne oder Wimpel"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Die Fahne, die zu Beginn stand, wird im Schlusskreis eingeholt und weggeräumt – ein sichtbares Zeichen, dass der Heimabend zu Ende ist.",
+      "beschreibung": "## Ablauf\n\n- Im Schlusskreis holt dasselbe Kind, das die Fahne oder den Wimpel zu Beginn aufgestellt hat, sie wieder ein.\n- Alle stehen dabei still im Kreis. Es wird nicht geredet, während die Fahne genommen wird.\n- Die Fahne wird ordentlich zusammengelegt oder eingerollt – nicht geknüllt, nicht über den Boden gezogen.\n- Danach kommt der Schlussgruß eures Bundes. Erst wenn die Fahne weggeräumt ist, geht der Kreis auseinander.\n- An ihren festen Platz gehört sie am Ende auch wirklich: Kiste, Schrank oder Halterung.\n\n## Wenn ihr draußen seid\n\nAuf Fahrt und im Lager wird die Fahne meist morgens gesetzt und abends eingeholt. Im Heimabend genügt Anfang und Ende des Abends.",
+      "tipps": "Zeig einmal in Ruhe, wie Fahne oder Wimpel zusammengelegt werden, sonst macht es jede Woche jemand anders. Sprich vorher ab, wer dran ist – im Kreis darum zu streiten ruiniert das Ritual. Wenn eure Gruppe keine Fahne hat, geht es genauso mit einem Wimpel, einem Halstuch am Stab oder einer Laterne. Sei sparsam mit Feierlichkeit: eine Minute Stille reicht, fünf werden peinlich.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Fahne"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-gemeinsames-lied-als-rahmen",
+      "titel": "Gemeinsames Lied als Rahmen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Ein einziges Lied, das eure Gruppe zum Schluss immer singt – welches, entscheidet ihr; nach ein paar Wochen kann es jeder auswendig.",
+      "beschreibung": "## Ablauf\n\n- Sucht euch **ein** Lied aus, das euer Abschlusslied wird. Es muss kurz sein, ohne Instrument gehen und einen Ton haben, den auch Kinderstimmen treffen. Fragt ältere Mitglieder eures Bundes, was bei euch üblich ist.\n- Im Schlusskreis stehen alle, fassen sich an oder legen die Arme auf die Schultern der Nachbarn.\n- Einer stimmt an – dieselbe Person über mehrere Wochen, bis der Ton sitzt; später kann das wechseln.\n- Gesungen wird eine Strophe, höchstens zwei. Lieber kurz und jede Woche als lang und selten.\n- Danach direkt der Schlussgruß, ohne Applaus und ohne Kommentar.\n\n## Wenn niemand singen mag\n\nFangt mit Summen an oder mit einem Lied, das nur aus zwei Zeilen besteht. Nach vier, fünf Wochen singen fast alle mit, weil das Lied vertraut ist.",
+      "tipps": "Ein neues Lied nie im Schlusskreis einführen – das übt ihr im Hauptteil und macht es erst dann zum Ritual. Die Auswahl liegt bei eurer Gruppe und eurem Bund; hier steht bewusst kein Titel, denn viele Liedtexte sind urheberrechtlich geschützt und dürfen nicht einfach abgedruckt werden. Wenn du selbst unsicher singst, sag das offen und lass ein Kind anstimmen, das sich traut.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Singen",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-danke-an-eine-person",
+      "titel": "Danke an eine Person",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 8,
+      "dauer_min": 3,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 5,
+      "gruppe_max": 20,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Im Schlusskreis darf sich bedanken, wer möchte – bei einer Person aus der Gruppe, für etwas Konkretes an diesem Abend.",
+      "beschreibung": "## Ablauf\n\n- Du eröffnest im Schlusskreis: **\"Wer möchte sich bei jemandem bedanken? Sagt wofür.\"**\n- Wer mag, sagt einen Satz: \"Danke, Lena, dass du mir beim Knoten geholfen hast.\"\n- Es ist keine Reihum-Runde. Wer nichts sagt, fällt nicht auf.\n- Die Person, der gedankt wurde, antwortet nicht – ein Nicken genügt.\n- Nach drei, vier Sätzen beendest du die Runde selbst, auch wenn noch jemand wollte. Lieber zu kurz aufhören als auslaufen lassen.\n- Bedank dich zum Schluss selbst bei einer Person, und zwar bei einer anderen als letzte Woche.\n\n## Warum ohne Reihenfolge\n\nEin Dank, den man sagen muss, ist keiner. Freiwillig gesagt merken sich beide, wer gedankt hat und wem.",
+      "tipps": "Achte über die Wochen darauf, wem nie gedankt wird, und bedank dich selbst bei genau diesem Kind – aber für etwas Echtes, nicht aus Mitleid. Wenn niemand etwas sagt, halte die Stille fünf Sekunden aus und mach dann selbst den Anfang. Ironische Dankeschöns unterbrichst du sofort einmal deutlich, sonst ist die Runde beim nächsten Mal ein Witz.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Wertschätzung",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-schlussgruss",
+      "titel": "Schlussgruß",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Der letzte, immer gleiche Satz des Abends: Gruß des Bundes, gemeinsame Antwort, Kreis auf – und alle gehen ihrer Wege.",
+      "beschreibung": "## Ablauf\n\n- Der Schlussgruß ist das letzte, was im Heimabend passiert. Danach kommt nichts mehr – keine Ansage, keine Ermahnung, kein \"ach, und noch etwas\".\n- Alle stehen im geschlossenen Kreis und sind still. Warte darauf, auch wenn es zwanzig Sekunden dauert.\n- Du sprichst den Gruß eures Bundes, alle antworten gemeinsam. Wer aufgenommen ist, grüßt dazu mit dem Pfadfindergruß.\n- Danach löst du den Kreis mit einem festen Wort auf, zum Beispiel **\"Gut Pfad – bis nächste Woche!\"**\n- Erst dann gehen alle auseinander.\n\n## Warum das Ende so hart sein soll\n\nEin klarer Schlusspunkt ist die Zwillingsschwester des Eröffnungskreises: Er markiert, dass die Zeit der Gruppe zu Ende ist – und alle wissen genau, wann sie gehen dürfen.",
+      "tipps": "Der klassische Fehler: Nach dem Gruß fällt dir noch etwas ein. Sammle solche Sachen im Ausblick davor. Wenn Kinder schon vorher zur Tür schielen, weil die Eltern warten, mach den Kreis fünf Minuten früher – nicht kürzer. Verwende die Formel eures Bundes, nicht die aus dem Internet: Es ist eure Gruppe, und die Kinder merken den Unterschied.",
+      "tags": [
+        "Ritual",
+        "Schlusskreis",
+        "Abschied",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-durch-abzaehlen",
+      "titel": "Einteilen durch Abzählen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 2,
+      "dauer_max": 4,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 40,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Die schnellste Art, zwei oder mehr Mannschaften zu bilden: reihum durchzählen, gleiche Zahlen gehören zusammen.",
+      "beschreibung": "## Ablauf\n\n- Alle stellen sich in einen Kreis oder in eine Reihe.\n- Überlege vorher, **wie viele Gruppen** du brauchst – nicht, wie groß sie sein sollen. Für vier Gruppen wird bis vier gezählt.\n- Reihum zählt jede und jeder laut die nächste Zahl: eins, zwei, drei, vier, eins, zwei, drei, vier …\n- Alle Einsen sind eine Gruppe, alle Zweien die nächste und so weiter. Sag laut, wo sich welche Zahl sammelt: **\"Einsen zu mir, Zweien an die Tür.\"**\n- Bei ungerader Zahl ist eine Gruppe größer – das ist in Ordnung; bei einem Wettkampf gleicht ihr es mit einer Aufgabe aus.\n\n## Wenn Freunde zusammen bleiben wollen\n\nGenau deshalb wird abgezählt: Der Zufall entscheidet, nicht die Freundschaft. Sag das so, bevor gezählt wird, dann diskutiert danach kaum noch jemand.",
+      "tipps": "Häufigster Fehler: Du zählst bis zur gewünschten Gruppengröße statt bis zur Gruppenzahl – aus \"bis fünf\" bei zwanzig Kindern werden fünf Gruppen zu vier, nicht vier Gruppen zu fünf. Kinder, die sich absichtlich umstellen, um bei der Freundin zu landen, siehst du sofort; zähl in dem Fall einmal neu, ohne Vorwurf. Zum Tauschen nach dem Abzählen konsequent Nein sagen, sonst ist die Methode beim nächsten Mal wertlos.",
+      "tags": [
+        "Gruppeneinteilung",
+        "ohne Material",
+        "schnell"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-nach-geburtsmonat",
+      "titel": "Einteilen nach Geburtsmonat",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Einteilen und nebenbei etwas übereinander erfahren: Alle sortieren sich nach ihrem Geburtsmonat, daraus werden die Gruppen.",
+      "beschreibung": "## Ablauf\n\n- Ruf auf: **\"Sortiert euch nach Geburtsmonat – Januar hier, Dezember dort!\"** Zeig die beiden Enden der Reihe.\n- Die Gruppe sortiert sich selbst. Du sagst nichts mehr, das Sortieren gehört dazu.\n- Wenn die Reihe steht, geh sie einmal ab und lass jede Person ihren Monat sagen – so wird auch geprüft, ob es stimmt.\n- Jetzt teilst du die Reihe:\n  - **Vier Gruppen:** Winter, Frühling, Sommer, Herbst (Dezember bis Februar, März bis Mai …).\n  - **Zwei Gruppen:** erstes Halbjahr gegen zweites Halbjahr.\n  - **Ungleiche Reihe:** schneid sie einfach nach Länge in gleich große Stücke.\n\n## Schwierige Fassung\n\nSortieren ohne zu sprechen – nur mit Fingern und Zeichen. Das dauert länger und ist selbst schon ein kleines Spiel.",
+      "tipps": "Die Monate verteilen sich nie gleichmäßig, plane also ein, dass du die Reihe am Ende nach Augenmaß schneidest. Bei sehr jungen Kindern hilft es, die Monate laut in der richtigen Reihenfolge vorzusagen. Wer seinen Geburtstag nicht sagen möchte, stellt sich zu einer Freundin oder einem Freund – frag nicht nach.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Kennenlernen",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-nach-kleidungsfarbe",
+      "titel": "Einteilen nach Kleidungsfarbe",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 2,
+      "dauer_max": 4,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Wer etwas Blaues anhat, kommt hierhin: Einteilen über die Farben, die alle sowieso schon tragen.",
+      "beschreibung": "## Ablauf\n\n- Schau die Gruppe kurz an und such dir zwei bis vier Farben, die ungefähr gleich oft vorkommen.\n- Ruf auf: **\"Wer etwas Blaues anhat, zu mir. Wer etwas Rotes anhat, an die Wand.\"**\n- Wer mehrere der Farben trägt, entscheidet selbst – aber sofort und ohne Diskussion.\n- Wer keine der Farben trägt, wird von dir zugeteilt, damit die Gruppen gleich groß werden.\n- Zähl am Ende laut durch und gleich Unterschiede aus, indem du jemanden herüberschickst.\n\n## Schnelle Abwandlung\n\nStatt Farben gehen auch andere sichtbare Dinge: Schuhe mit oder ohne Schnürsenkel, lange oder kurze Ärmel, Halstuch oder kein Halstuch.",
+      "tipps": "Diese Methode wirkt nur zufällig, ist es aber nicht – du entscheidest über die Auswahl der Farben mit. Nutze das ruhig bewusst, um zwei Kinder zu trennen, die sich gegenseitig hochschaukeln. Achte darauf, dass die Einteilung nicht auf teure oder besondere Kleidung hinausläuft; niemand soll wegen seiner Sachen auffallen. Bei einheitlicher Kluft funktioniert sie nicht – dann lieber abzählen.",
+      "tags": [
+        "Gruppeneinteilung",
+        "ohne Material",
+        "schnell"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-nach-silben-im-vornamen",
+      "titel": "Einteilen nach Silben im Vornamen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Jede und jeder klatscht den eigenen Vornamen in Silben – nach der Zahl der Silben bilden sich die Gruppen.",
+      "beschreibung": "## Ablauf\n\n- Mach es einmal vor: Sprich deinen Vornamen und klatsch dabei jede Silbe. **Jo-han-na** sind drei, **Tim** ist eine.\n- Alle klatschen ihren eigenen Namen gleichzeitig – das ist laut und lustig und dauert zehn Sekunden.\n- Dann rufst du auf: **\"Eine Silbe hierhin, zwei Silben dorthin, drei und mehr dahinten.\"**\n- Die Gruppen werden fast nie gleich groß. Gleich das aus, indem du aus der größten Gruppe jemanden zur kleinsten schickst – am besten durch Losen, nicht durch Aussuchen.\n- Bei Streit über die Silbenzahl entscheidest du und zwar sofort.\n\n## Nebenbei\n\nDie Namen werden dabei einmal laut gesagt und gehört. Für neue Gruppen ist das mehr wert als die Einteilung selbst.",
+      "tipps": "Zweisilbige Namen sind fast immer in der Überzahl – rechne damit und plane das Ausgleichen ein. Bei Kindern, deren Namen anders betont werden als im Deutschen üblich, entscheidet das Kind selbst, wie viele Silben es hat. Wenn ihr Spitznamen benutzt, sag vorher, ob der richtige Vorname oder der Spitzname gilt.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Namen",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-mit-karten-oder-bonbons",
+      "titel": "Einteilen mit Karten oder Bonbons",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 2,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [
+        "Spielkarten oder Bonbons in mehreren Sorten",
+        "Beutel oder Mütze"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Jede und jeder zieht blind eine Karte oder ein Bonbon aus dem Beutel – gleiche Farbe oder gleiche Sorte bildet eine Gruppe.",
+      "beschreibung": "## Vorbereitung\n\n- Leg so viele Karten bereit, wie Kinder da sind: bei vier Gruppen vier Farben, bei zwei Gruppen rot und schwarz. Genauso gehen Bonbons in verschiedenen Sorten, Muggelsteine, Wollfäden in zwei Farben oder Zettel mit Punkten.\n- Alles kommt in einen Beutel oder eine Mütze, sodass man nicht hineinsehen kann.\n\n## Ablauf\n\n- Jede und jeder zieht **blind** ein Stück und schaut es sich erst an, wenn alle gezogen haben.\n- Auf dein Zeichen wird gleichzeitig aufgedeckt.\n- Alle mit derselben Farbe oder Sorte suchen sich und stellen sich zusammen.\n- Getauscht wird nicht. Sag das vor dem Ziehen, nicht danach.\n- Bonbons dürfen nach der Einteilung gegessen werden – vorher nicht, sonst weiß niemand mehr, wer wozu gehört.\n\n## Warum das gut ankommt\n\nZiehen fühlt sich nach Glück an, nicht nach Zuteilung. Deshalb wird hier weniger diskutiert als bei jeder anderen Methode.",
+      "tipps": "Zähl die Karten vorher genau ab, sonst bleibt am Ende eine Gruppe zu groß. Wenn du Bonbons nimmst, denk an Kinder mit Allergien oder Unverträglichkeiten und frag vorher – oder nimm gleich etwas, das man nicht isst. Ein Beutel mit Karten liegt am besten dauerhaft in der Materialkiste, dann ist er immer da, wenn du ihn brauchst.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Losen",
+        "Karten"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-mit-puzzleteilen",
+      "titel": "Einteilen mit Puzzleteilen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [
+        "zerschnittene Postkarten oder Bilder"
+      ],
+      "vorbereitung": "mittel",
+      "kurz": "Jede und jeder bekommt ein Stück eines zerschnittenen Bildes – wer sein Bild zusammensetzen kann, ist eine Gruppe.",
+      "beschreibung": "## Vorbereitung\n\n- Nimm so viele Postkarten oder ausgedruckte Bilder, wie du Gruppen brauchst. Sie müssen deutlich verschieden aussehen.\n- Zerschneide jedes Bild in so viele Teile, wie die Gruppe groß werden soll – fünf Teile für Fünfergruppen.\n- Misch alle Teile.\n\n## Ablauf\n\n- Jede und jeder zieht ein Teil.\n- Auf dein Zeichen suchen alle die Kinder, deren Teile zum eigenen passen. Es wird geredet, verglichen, angelegt.\n- Wer sein Bild vollständig hat, setzt sich damit auf den Boden – das zeigt dir sofort, wer fertig ist.\n- Die Bilder sind gleich die Gruppennamen: \"Ihr seid die Leuchtturm-Gruppe.\"\n\n## Wiederverwenden\n\nBewahr die Teile in einem Umschlag je Bild auf, dann ist die Vorbereitung nur einmal nötig.",
+      "tipps": "Zerschneide die Bilder in unregelmäßige Formen, dann passen die Teile nicht versehentlich zu einem anderen Bild. Bilder mit ähnlichen Farben verwirren – nimm lieber sehr unterschiedliche Motive. Rechne damit, dass ein Teil verloren geht: Leg ein Ersatzbild dazu. Für Ältere ist die Methode etwas albern, dort reichen Karten aus dem Beutel.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Puzzle",
+        "Vorbereitung nötig"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-nach-schuhgroesse",
+      "titel": "Einteilen nach Schuhgröße",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Alle stellen sich der Schuhgröße nach in eine Reihe – die Reihe wird dann in gleich große Stücke geteilt.",
+      "beschreibung": "## Ablauf\n\n- Ruf auf: **\"Reihe bilden – kleinste Schuhgröße hier vorn, größte hinten!\"**\n- Die Gruppe sortiert sich selbst; das dauert eine Minute und ist schon der halbe Spaß.\n- Geh die Reihe ab und lass die Größen ansagen, damit klar ist, dass es stimmt.\n- Jetzt teilst du:\n  - **Zwei Gruppen:** in der Mitte durchschneiden – dann spielen die Kleinen gegen die Großen (bei Kraftspielen ungünstig).\n  - **Gemischte Gruppen:** die Reihe durchzählen und die Einsen, Zweien, Dreien zusammenlegen – so ist in jeder Gruppe alles vertreten.\n\n## Ohne zu sprechen\n\nDie Reihe stumm bilden zu lassen, macht aus der Einteilung ein kleines Kooperationsspiel.",
+      "tipps": "Schuhgröße ist bei Jugendlichen ein empfindliches Thema, gerade an den beiden Enden der Reihe. Kommentiere die Größen nicht und lass auch keine Sprüche stehen. Wenn jemand seine Größe nicht weiß, stellt er sich einfach an die Stelle, wo die Schuhe ungefähr gleich aussehen. Bei Streit ums Zentimeterrechnen einfach selbst entscheiden und weitermachen.",
+      "tags": [
+        "Gruppeneinteilung",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-mit-tierlauten",
+      "titel": "Einteilen mit Tierlauten",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 6,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 8,
+      "gruppe_max": 30,
+      "material": [
+        "Zettel mit Tiernamen"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Jede und jeder zieht heimlich ein Tier und sucht mit geschlossenen Augen die eigene Art – nur über den Laut.",
+      "beschreibung": "## Vorbereitung\n\n- Schreib Tiernamen auf kleine Zettel: so viele verschiedene Tiere, wie du Gruppen brauchst, jedes Tier so oft, wie die Gruppe groß werden soll. Nimm Tiere mit klarem Laut: Kuh, Hund, Katze, Frosch, Schaf, Ente.\n\n## Ablauf\n\n- Jede und jeder zieht einen Zettel, schaut heimlich hin und steckt ihn ein. Es wird nicht verraten, welches Tier man ist.\n- Auf dein Zeichen fangen alle gleichzeitig an, **ihren Tierlaut** zu machen – und nur diesen. Kein Sprechen, keine Namen rufen.\n- Alle suchen die anderen Tiere ihrer Art und halten sich an den Händen, wenn sie sich gefunden haben.\n- Fertig ist die Gruppe, wenn ihre Zahl vollständig ist. Sag vorher, wie viele es je Tier sind.\n- Zur Steigerung mit geschlossenen Augen – dann brauchst du eine freie Fläche und zwei Aufpasser am Rand.\n\n## Warum es gut funktioniert\n\nDie Einteilung ist selbst schon ein Spiel und wärmt die Gruppe auf.",
+      "tipps": "Mit geschlossenen Augen ist es laut und die Kinder rennen: Räum Tische und Stühle weg und stell zwei Leute an den Rand, die auffangen. Bei Älteren fühlt sich das Muhen schnell peinlich an – dort lieber ohne geschlossene Augen oder eine andere Methode. Halte die Zettel klein, sonst schaut die halbe Gruppe beim Nachbarn mit.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Bewegung",
+        "lustig"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-durch-waehlen-lassen",
+      "titel": "Wählen lassen – und warum es weh tut",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 11,
+      "dauer_min": 3,
+      "dauer_max": 5,
+      "ort": "beides",
+      "gruppe_min": 8,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Zwei Kapitäne wählen abwechselnd ihre Mannschaft. Die bekannteste Methode – und die, die du meistens besser bleiben lässt.",
+      "beschreibung": "## Ablauf\n\n- Zwei Freiwillige stellen sich vorn hin. Sie wählen abwechselnd, wer in ihre Mannschaft kommt, bis niemand mehr übrig ist.\n\n## Warum das oft schadet\n\n- Die Reihenfolge ist eine öffentliche Rangliste. Wer immer zuletzt übrig bleibt, weiß danach sehr genau, was die Gruppe von ihm hält – und alle anderen wissen es auch.\n- Es trifft jede Woche dieselben Kinder: die Jüngsten, die Neuen, die weniger Sportlichen.\n- Der Schaden hält länger als das Spiel, das danach kommt.\n\n## Wann es trotzdem geht\n\n- Wenn **rückwärts** gewählt wird: Der zuletzt Gewählte der letzten Runde wählt beim nächsten Mal zuerst.\n- Wenn **verdeckt** gewählt wird: Die beiden Kapitäne gehen kurz vor die Tür und teilen die Namensliste dort auf.\n- Wenn es um etwas geht, das nichts mit Können zu tun hat.\n\n## Besser\n\nAbzählen, Losen mit Karten oder Streichhölzern, Einteilen nach Geburtsmonat – der Zufall verletzt niemanden.",
+      "tipps": "Wenn du es doch machst, wähle nie selbst mit und lass nie zwei Kinder wählen, die ohnehin die Wortführer sind. Achte auf das Gesicht der letzten drei – wenn du dort Erleichterung statt Freude siehst, war es die falsche Methode. Ein einziger Satz von dir hilft mehr als jede Erklärung hinterher: \"Wir losen, damit niemand übrig bleibt.\"",
+      "tags": [
+        "Gruppeneinteilung",
+        "Vorsicht",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-einteilen-mit-streichhoelzern",
+      "titel": "Losen mit Streichhölzern",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "einstieg",
+        "hauptteil"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 2,
+      "dauer_max": 4,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 25,
+      "material": [
+        "Streichhölzer oder Halme"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Der klassische Losentscheid: Streichhölzer oder Grashalme in der Faust, jede und jeder zieht eines – die kurzen bilden eine Gruppe.",
+      "beschreibung": "## Ablauf\n\n- Nimm so viele Streichhölzer, wie Kinder da sind. Für zwei Gruppen kürzt du die Hälfte davon deutlich ab.\n- Halte alle in der Faust, sodass oben nur gleich lange Enden herausschauen.\n- Reihum zieht jede und jeder eines und behält es verdeckt in der Hand.\n- Wenn alle gezogen haben, wird auf dein Zeichen gleichzeitig geöffnet: **kurze Hölzer nach links, lange nach rechts.**\n- Für mehr Gruppen nimmst du drei oder vier Längen oder färbst die Köpfe mit Stift an.\n\n## Auch gut für\n\nEinzelne Entscheidungen: wer anfängt, wer den Abwasch übernimmt, wer als Fänger startet. Das kürzeste Holz zieht.\n\n## Draußen\n\nGrashalme, Zweige oder Strohhalme tun genau dasselbe und liegen überall herum.",
+      "tipps": "Die Streichhölzer nur zum Losen benutzen, nicht zum Anzünden herumliegen lassen – bei jüngeren Kindern lieber gleich Grashalme oder Zahnstocher nehmen. Halte die Faust so, dass niemand die Länge sieht; sonst ist es kein Los mehr. Wenn zwei Kinder sich beim Ziehen einig sind, dass sie tauschen – Nein sagen, konsequent, das ist der ganze Sinn der Sache.",
+      "tags": [
+        "Gruppeneinteilung",
+        "Losen",
+        "schnell"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-stimmungsbarometer-im-raum",
+      "titel": "Stimmungsbarometer im Raum",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 5,
+      "dauer_max": 10,
+      "ort": "beides",
+      "gruppe_min": 5,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Eine gedachte Linie durch den Raum, von \"super\" bis \"mies\": Alle stellen sich dorthin, wo ihr Abend war – man sieht die Antwort, statt sie zu hören.",
+      "beschreibung": "## Ablauf\n\n- Zieh eine gedachte Linie quer durch den Raum. Zeig die Enden: **\"Hier ist super, dort ist mies, dazwischen ist alles möglich.\"**\n- Stell die Frage: \"Wie war der Heimabend heute für dich?\"\n- Alle stellen sich gleichzeitig auf die Linie. Nicht nacheinander – sonst richten sich alle nach den Ersten.\n- Schau dir das Bild an und beschreib es laut, ohne zu werten: \"Die meisten stehen in der Mitte, drei ganz vorn, zwei am anderen Ende.\"\n- Frag höchstens drei Kinder: **\"Warum stehst du da?\"** – eines von jedem Ende und eines aus der Mitte. Antworten sind freiwillig.\n- Danach löst du die Linie auf und der Schlusskreis geht weiter.\n\n## Andere Fragen für dieselbe Linie\n\n\"Wie anstrengend war das?\", \"Wie gut kennst du den Knoten jetzt?\", \"Würdest du das noch einmal machen?\"",
+      "tipps": "Die Linie funktioniert nur, wenn alle gleichzeitig gehen – sag das ausdrücklich dazu. Wenn sich alle in der Mitte sammeln, ist das meistens Vorsicht und keine Meinung; frag dann beim nächsten Mal mit einer schärferen Frage nach. Kommentiere niemals eine Position (\"och, so schlecht war es doch nicht\") – damit ist das Barometer ein für alle Mal kaputt.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Bewegung",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-blitzlicht-runde",
+      "titel": "Blitzlicht-Runde",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 10,
+      "dauer_min": 5,
+      "dauer_max": 12,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 20,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Reihum sagt jede und jeder ein paar Sätze zum Abend – ohne dass jemand antwortet oder darüber diskutiert wird.",
+      "beschreibung": "## Ablauf\n\n- Erklär die Regeln, bevor die Runde losgeht:\n  1. Jede und jeder sagt **zwei bis drei Sätze**, nicht mehr.\n  2. Es wird von sich gesprochen: \"Ich fand …\", nicht \"man fand …\".\n  3. **Niemand antwortet**, niemand widerspricht, niemand rechtfertigt sich – auch du nicht.\n  4. Wer nichts sagen will, sagt \"weiter\".\n- Stell eine klare Frage: \"Wie ging es dir heute im Heimabend?\"\n- Reihum kommt jede Person einmal dran. Du bist zuletzt dran.\n- Nach der Runde bedankst du dich in einem Satz. Antworten auf das Gehörte gibst du erst im nächsten Heimabend, wenn du etwas ändern konntest.\n\n## Warum ohne Antwort\n\nSobald geantwortet wird, sagen die Späteren nur noch das, was gut ankommt. Die Regel ist der ganze Trick.",
+      "tipps": "Die Regel \"keiner antwortet\" brichst du selbst am leichtesten – halt dich zurück, auch wenn Kritik kommt, die du erklären könntest. Halte Stille aus: Bis zu zehn Sekunden Nachdenken sind normal. Bei mehr als fünfzehn Kindern wird die Runde zu lang; dann nur die Hälfte reden lassen oder ein kürzeres Verfahren wählen. Notier dir nach dem Abend zwei Sätze, sonst ist das Gehörte in einer Woche weg.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Gespräch",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-wetterkarte-zum-abend",
+      "titel": "Wetterkarte zum Abend",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 7,
+      "dauer_min": 5,
+      "dauer_max": 10,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 25,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Jede und jeder beschreibt den Abend als Wetter: Sonne, Wolken, Nebel, Gewitter – Kinder sagen im Bild, was ihnen direkt schwerfällt.",
+      "beschreibung": "## Ablauf\n\n- Erklär die Wetterlagen kurz:\n  - **Sonne** – heute war alles gut\n  - **Wolken** – ganz okay, aber nicht toll\n  - **Nebel** – ich habe nicht verstanden, worum es ging\n  - **Regen** – es war langweilig oder blöd\n  - **Gewitter** – es gab Streit oder Ärger\n- Reihum sagt jede und jeder ein Wetter und einen halben Satz dazu: \"Wolken, weil das Spiel zu lang war.\"\n- Du fragst nicht nach und diskutierst nicht. Nur bei **Gewitter** sagst du: \"Danke, darüber reden wir zu zweit\" – und tust es dann auch nach dem Kreis.\n- Zum Schluss sagst du selbst dein Wetter.\n\n## Ohne Worte\n\nStatt zu sprechen können alle das Wetter mit den Händen zeigen: Arme hoch für Sonne, Finger als Regen, Klatschen als Donner. Das geht schneller und ist für Jüngere leichter.",
+      "tipps": "Das Bild vom Wetter macht es leichter, etwas Unangenehmes zu sagen – zerstör das nicht, indem du das Bild auflöst (\"du meinst also, es war schlecht?\"). Nebel ist die wichtigste Antwort für dich: Sie sagt, dass deine Erklärung nicht angekommen ist. Wenn dieselben Kinder jede Woche Gewitter sagen, ist das kein Reflexionsproblem, sondern eines, das ein Gespräch braucht.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Bild",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-daumenprobe",
+      "titel": "Daumenprobe",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 6,
+      "dauer_min": 5,
+      "dauer_max": 8,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Die kürzeste Auswertung überhaupt: Auf jede Frage antworten alle gleichzeitig mit dem Daumen – hoch, quer oder runter.",
+      "beschreibung": "## Ablauf\n\n- Alle stehen oder sitzen im Kreis und machen eine Faust vor die Brust.\n- Du stellst drei bis vier Fragen, auf die man mit dem Daumen antworten kann:\n  - \"War der Heimabend heute gut?\"\n  - \"Hast du verstanden, was wir gemacht haben?\"\n  - \"Hast du dich wohlgefühlt?\"\n  - \"Willst du so etwas noch einmal machen?\"\n- Nach jeder Frage zählst du **\"drei, zwei, eins\"** – dann zeigen alle gleichzeitig: Daumen hoch, quer oder runter.\n- Sag laut, was du siehst, und geh zur nächsten Frage. Nicht diskutieren.\n- Bei der letzten Frage darf, wer will, einen Satz dazu sagen.\n\n## Warum nur diese drei Antworten\n\nWeil sie schnell sind und keine Wörter brauchen. Auch schüchterne Kinder und die, die noch nicht gut Deutsch sprechen, antworten hier ehrlich.",
+      "tipps": "Die Fragen vorher überlegen – aus dem Stegreif fragt man immer nur \"war es schön?\", und darauf gibt es nur eine höfliche Antwort. Stell mindestens eine Frage, auf die ein Daumen runter nützlich für dich ist. Beobachte, wer sich beim Zeigen umschaut: Das Gleichzeitige durchsetzen, sonst misst du nur, was die Wortführer denken.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "schnell",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-fuenf-finger-rueckblick",
+      "titel": "Fünf-Finger-Rückblick",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 10,
+      "dauer_min": 8,
+      "dauer_max": 15,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 20,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Die eigene Hand ist der Fragebogen: Jeder Finger steht für eine Frage zum Abend – vom Daumen bis zum kleinen Finger.",
+      "beschreibung": "## Ablauf\n\n- Alle halten eine Hand hoch. Geh die Finger einzeln durch und erklär, wofür jeder steht:\n  - **Daumen** – das war richtig gut\n  - **Zeigefinger** – darauf möchte ich hinweisen, das ist mir aufgefallen\n  - **Mittelfinger** – das hat mir nicht gefallen\n  - **Ringfinger** – das nehme ich mit, das war mir wichtig\n  - **kleiner Finger** – das kam heute zu kurz\n- Gib eine Minute Zeit zum Nachdenken. Alle können dabei die Finger einzeln antippen.\n- Dann reihum: Jede und jeder sucht sich **zwei Finger** aus und sagt einen Satz dazu. Nicht alle fünf, sonst dauert es zu lang.\n- Du bist zuletzt dran und nimmst auch nur zwei.\n\n## Für Jüngere\n\nNur Daumen und Mittelfinger benutzen: was gut war, was blöd war. Das genügt völlig.",
+      "tipps": "Der Mittelfinger sorgt garantiert für Gekicher – nimm es einmal locker vorweg (\"ja, der auch\") und geh weiter, dann ist es erledigt. Die Auswahl von zwei Fingern ist wichtig, sonst dauert die Runde bei zwölf Kindern eine halbe Stunde. Wenn niemand den Mittelfinger nimmt, hat die Gruppe noch kein Vertrauen darin, dass Kritik folgenlos bleibt – das änderst du nur, indem du sie mehrfach ohne Rechtfertigung stehen lässt.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Gespräch",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-zielscheibe-auf-dem-boden",
+      "titel": "Zielscheibe auf dem Boden",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 10,
+      "dauer_min": 8,
+      "dauer_max": 15,
+      "ort": "drinnen",
+      "gruppe_min": 5,
+      "gruppe_max": 25,
+      "material": [
+        "großes Papier oder Kreide",
+        "Klebepunkte oder Stifte"
+      ],
+      "vorbereitung": "mittel",
+      "kurz": "Eine Zielscheibe mit vier Vierteln: Jede und jeder setzt vier Punkte – je näher an der Mitte, desto besser die Bewertung.",
+      "beschreibung": "## Vorbereitung\n\n- Mal auf ein großes Papier (oder mit Kreide auf den Boden) drei Ringe und teile die Scheibe in vier Viertel.\n- Beschrifte jedes Viertel mit einer Frage, zum Beispiel: **Programm**, **Stimmung in der Gruppe**, **wie gut habe ich verstanden**, **Führung**.\n\n## Ablauf\n\n- Erklär die Regel: **Mitte heißt sehr gut, Rand heißt schlecht.**\n- Jede und jeder bekommt vier Klebepunkte oder darf vier Kreuze machen – einen pro Viertel.\n- Alle setzen ihre Punkte, am besten nacheinander in kleinen Grüppchen, damit man sich nicht gegenseitig abschaut.\n- Danach schaut ihr das Bild gemeinsam an. Du beschreibst, was du siehst: \"Beim Programm sind alle nah an der Mitte, bei der Stimmung ist es weit auseinander.\"\n- Frag nur zu dem Viertel nach, das am weitesten außen liegt: **\"Was müsste passieren, damit die Punkte nächstes Mal weiter innen sind?\"**\n\n## Aufheben\n\nHeb die Scheibe auf und häng sie beim nächsten Mal daneben – so sieht die Gruppe, ob sich etwas verändert hat.",
+      "tipps": "Vier Fragen sind das Maximum, sonst wird die Scheibe unübersichtlich. Klebepunkte sind besser als Stifte, weil man sie nicht an der Schrift erkennt. Rechne damit, dass das Viertel \"Führung\" dich betrifft: Bereite dich innerlich darauf vor, dass du dazu nichts erklärst, sondern nur zuhörst. Für den einmaligen Einsatz reicht Kreide auf dem Hof.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Vorbereitung nötig"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-koffer-und-muelleimer",
+      "titel": "Koffer und Mülleimer",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 10,
+      "dauer_min": 8,
+      "dauer_max": 15,
+      "ort": "beides",
+      "gruppe_min": 5,
+      "gruppe_max": 25,
+      "material": [
+        "Zettel",
+        "Stifte",
+        "zwei Plakate oder Kisten"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Zwei Behälter, eine Frage: Was nehme ich mit (Koffer), was lasse ich hier (Mülleimer)? Antworten kommen als Zettel hinein.",
+      "beschreibung": "## Vorbereitung\n\n- Stell zwei Kisten hin oder häng zwei Plakate auf: eines mit einem gemalten **Koffer**, eines mit einem **Mülleimer**.\n- Leg Zettel und Stifte bereit.\n\n## Ablauf\n\n- Erklär die beiden Fragen:\n  - **Koffer:** Was war heute gut und soll wiederkommen? Was nehme ich mit?\n  - **Mülleimer:** Was war heute überflüssig, blöd oder nervig? Was soll wegbleiben?\n- Jede und jeder schreibt mindestens einen Zettel, gern für jeden Behälter einen. Namen kommen nicht darauf.\n- Alle werfen ihre Zettel ein oder kleben sie auf.\n- Du liest **alle** Zettel laut vor, ohne einen zu überspringen und ohne dich zu rechtfertigen. Danke am Ende einmal für alles.\n- Aus dem Koffer nimmst du dir für den nächsten Heimabend eine Sache vor und sagst laut, welche.\n\n## Für Gruppen, die nicht gern schreiben\n\nDieselben zwei Fragen gehen auch mündlich reihum – dann aber ohne Anonymität.",
+      "tipps": "Anonym heißt anonym: Rate nicht laut, von wem ein Zettel stammt, auch nicht scherzhaft. Beim Vorlesen ist die Versuchung groß, den ersten kritischen Zettel zu erklären – das ist der Moment, in dem die Methode kippt und beim nächsten Mal nur noch Nettes im Mülleimer landet. Heb die Zettel auf; nach vier Wochen siehst du, was sich wiederholt.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "anonym",
+        "Papier"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-ampel-runde",
+      "titel": "Ampel-Runde",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 8,
+      "dauer_min": 5,
+      "dauer_max": 10,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Drei Farben, drei Fragen: Was soll weitergehen (grün), was ist grenzwertig (gelb), was muss aufhören (rot)?",
+      "beschreibung": "## Ablauf\n\n- Erklär die drei Farben:\n  - **Grün** – das lief gut, das machen wir wieder so\n  - **Gelb** – das war grenzwertig, daran müssen wir arbeiten\n  - **Rot** – das muss aufhören\n- Reihum nennt jede und jeder **eine** Sache und die passende Farbe: \"Rot: dass wir eine Viertelstunde diskutiert haben, wer anfängt.\"\n- Es wird nicht geantwortet und nicht diskutiert, auch wenn zwei Kinder Gegenteiliges sagen.\n- Du merkst dir das häufigste Rot und die häufigste grüne Nennung.\n- Zum Schluss sagst du eine Sache, die du selbst auf Rot setzt – und was du daran ändern willst.\n\n## Auch für die Gruppe selbst\n\nDie drei Farben eignen sich genauso gut für das Verhalten in der Gruppe: Was tut uns gut, was ist grenzwertig, was geht gar nicht?",
+      "tipps": "Rot darf sich nie gegen eine Person richten – sag vorher: \"Wir reden über Sachen, nicht über Leute.\" Wenn doch ein Name fällt, unterbrichst du freundlich und formulierst es um (\"also: dass mitten im Spiel diskutiert wird\"). Wichtig ist, dass beim nächsten Heimabend etwas sichtbar anders ist; sonst ist die Ampel ab dem dritten Mal nur noch eine Pflichtübung.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Regeln",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-standbild-zum-abend",
+      "titel": "Standbild zum Abend",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder"
+      ],
+      "alter_ab": 8,
+      "dauer_min": 10,
+      "dauer_max": 15,
+      "ort": "beides",
+      "gruppe_min": 6,
+      "gruppe_max": 25,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Statt zu reden wird gestellt: Kleingruppen bauen aus sich selbst ein eingefrorenes Bild vom heutigen Abend.",
+      "beschreibung": "## Ablauf\n\n- Teil die Gruppe in Kleingruppen von drei bis fünf.\n- Aufgabe: **\"Baut ein Standbild vom heutigen Heimabend. Ihr friert ein wie ein Foto – keine Bewegung, kein Ton.\"** Zwei Minuten Zeit.\n- Eine Kleingruppe nach der anderen stellt ihr Bild vor. Die anderen schauen es schweigend an.\n- Dann fragst du die Zuschauenden: **\"Was seht ihr?\"** Zwei, drei Antworten reichen.\n- Erst danach löst die Kleingruppe auf und sagt in einem Satz, was sie zeigen wollte.\n- Nach dem letzten Bild eine Runde Applaus für alle zusammen, nicht für einzelne Bilder.\n\n## Andere Aufträge\n\n\"Der Moment, der euch am besten gefallen hat\", \"wie es sich anfühlt, wenn alle durcheinanderreden\", \"wie unsere Gruppe von außen aussieht\".",
+      "tipps": "Der wichtigste Teil ist die Frage an die Zuschauenden – ohne sie ist es nur Theater. Kein Kind muss mitspielen: Wer nicht mag, wird Zuschauer oder Regie und stellt die anderen auf. Achte darauf, dass in den Bildern niemand lächerlich gemacht wird; das beendest du sofort. Draußen im Halbdunkel wirken Standbilder besonders gut.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Darstellen",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-ein-satz-auf-ein-kaertchen",
+      "titel": "Ein Satz auf ein Kärtchen",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 9,
+      "dauer_min": 5,
+      "dauer_max": 12,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 30,
+      "material": [
+        "Karteikarten oder Zettel",
+        "Stifte"
+      ],
+      "vorbereitung": "gering",
+      "kurz": "Jede und jeder schreibt einen anonymen Satz zum Abend auf ein Kärtchen – du liest alle vor, ohne dich zu rechtfertigen.",
+      "beschreibung": "## Ablauf\n\n- Jede und jeder bekommt ein Kärtchen und einen Stift.\n- Stell **eine** klare Frage. Nur eine, sonst wird nichts geschrieben:\n  - \"Was war heute für dich das Wichtigste?\"\n  - \"Was hättest du gern anders gehabt?\"\n  - \"Was soll ich als Gruppenführer nächste Woche anders machen?\"\n- Alle schreiben einen Satz, ohne Namen. Zwei Minuten Zeit, mehr nicht.\n- Die Kärtchen werden gefaltet und in eine Mütze geworfen. Misch sie einmal durch.\n- Du ziehst und liest **alle** laut vor, ohne zu kommentieren. Nach dem letzten sagst du: **\"Danke, ich denke darüber nach.\"**\n- Antworten gibst du beim nächsten Heimabend – dann aber wirklich.\n\n## Abwandlung\n\nZieht reihum je ein Kärtchen und lest gegenseitig vor. Dann ist es noch anonymer, weil auch die Handschrift durch die Runde geht.",
+      "tipps": "Zwei Fragen auf einmal machen die Antworten unbrauchbar – entscheide dich vorher für eine. Kein Kärtchen überspringen, auch nicht das unangenehme; sonst weiß die Gruppe beim nächsten Mal, dass Kritik unter den Tisch fällt. Wer nicht schreiben mag, malt oder gibt das Kärtchen leer ab – das ist kein Problem. Bewahr die Kärtchen auf, sie sind später ein ehrliches Bild deines Jahres.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "anonym",
+        "Papier"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-kritik-runde-mit-drei-regeln",
+      "titel": "Kritik-Runde mit drei Regeln",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 12,
+      "dauer_min": 10,
+      "dauer_max": 15,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 16,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Wenn in der Gruppe etwas schiefläuft: eine geordnete Runde mit drei Regeln, die verhindern, dass daraus ein Streit wird.",
+      "beschreibung": "## Die drei Regeln\n\n1. **Ich rede von mir.** \"Mich hat gestört, dass …\" – nicht \"du bist immer …\".\n2. **Es geht um eine Sache, nicht um eine Person.** Namen fallen nur, wenn sie unvermeidlich sind, und nie mit einem Urteil.\n3. **Wer Kritik bekommt, hört zu und antwortet erst am Ende** – in einem einzigen Satz oder gar nicht.\n\n## Ablauf\n\n- Sag vorher, worum es geht, und nenne die drei Regeln laut. Häng sie sichtbar auf, wenn ihr das öfter macht.\n- Reihum bekommt jede und jeder Zeit für zwei bis drei Sätze. Wer nichts sagen will, sagt \"weiter\".\n- Du greifst nur ein, wenn eine Regel gebrochen wird, und dann sofort: **\"Noch einmal, ohne Namen.\"**\n- Am Ende fasst du zusammen, was du gehört hast – ohne Partei zu ergreifen – und benennst genau eine Sache, die sich ändern soll.\n- Wer selbst kritisiert wurde, darf jetzt seinen einen Satz sagen.\n\n## Wann nicht\n\nNicht bei frischem Streit und nicht als Ersatz für ein Vier-Augen-Gespräch. Erst wenn sich alle beruhigt haben.",
+      "tipps": "Diese Runde braucht mehr Ruhe als jede andere – plan sie ein, statt sie spontan zu machen, wenn dir etwas den Abend verdorben hat. Wenn du selbst kritisiert wirst, ist Schweigen die stärkste Antwort; die Erklärung kommt beim nächsten Mal. Kippt es doch in Streit, brichst du ab und sagst das offen: \"Wir hören auf, das führt gerade zu nichts.\" Das ist kein Scheitern, sondern die richtige Entscheidung. Für Wölflinge ist die Methode zu hart, dort reichen Daumen oder Wetterkarte.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Konflikt",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "eig-was-nehme-ich-mit",
+      "titel": "Was nehme ich mit",
+      "bereich": "gemeinschaft",
+      "umfang": "baustein",
+      "kategorie": "",
+      "unterkategorie": "",
+      "slots": [
+        "abschluss"
+      ],
+      "wirkung": [],
+      "modus": "",
+      "sozialform": "",
+      "spielgeraet": [],
+      "anforderung": [],
+      "altersstufen": [
+        "Wölflinge",
+        "Pfadfinder",
+        "Ältere"
+      ],
+      "alter_ab": 8,
+      "dauer_min": 5,
+      "dauer_max": 10,
+      "ort": "beides",
+      "gruppe_min": 4,
+      "gruppe_max": 25,
+      "material": [],
+      "vorbereitung": "gering",
+      "kurz": "Der Abschluss nach einer Probe oder einer Aktion: Jede und jeder sagt in einem Satz, was von heute hängen bleibt.",
+      "beschreibung": "## Ablauf\n\n- Stell die Frage klar und immer gleich: **\"Was nimmst du vom heutigen Abend mit?\"**\n- Gib eine halbe Minute Stille zum Nachdenken, bevor die Erste anfängt. Diese Stille ist der wichtigste Teil.\n- Reihum sagt jede und jeder einen Satz. Es darf alles sein: etwas Gelerntes, ein Moment, ein Gefühl, ein Vorsatz.\n- Doppelte Antworten sind erlaubt – dass drei Kinder dasselbe mitnehmen, sagt dir etwas.\n- Du sagst als Letzte oder Letzter, was **du** mitnimmst. Sag etwas Echtes, keine Zusammenfassung des Abends.\n\n## Besonders passend nach\n\neiner Probe, einer guten Tat, einem Geländespiel, das schiefgegangen ist, oder dem letzten Heimabend vor einer Fahrt.\n\n## Schriftliche Fassung\n\nAlle schreiben ihren Satz auf einen Zettel und stecken ihn ein. Beim nächsten Heimabend wird gefragt, wer seinen Zettel noch hat.",
+      "tipps": "Wenn niemand anfangen will, zähl innerlich bis zehn, bevor du hilfst – die Stille ist unangenehm, aber sie bringt die besseren Antworten. Antworten wie \"nichts\" nimmst du kommentarlos an; wer das dreimal sagt, meint meistens etwas anderes und braucht ein Gespräch, keine Runde. Nach einem sehr lustigen Abend wirkt die Frage schwer; dann lieber \"was war dein bester Moment?\" fragen.",
+      "tags": [
+        "Reflexion",
+        "Auswertung",
+        "Abschluss",
+        "ohne Material"
+      ],
+      "themen": [],
+      "dubletten": [],
+      "kern": true,
+      "varianten": [],
+      "quelle": {
+        "name": "eigene",
+        "url": "",
+        "autor": "Heimabend-Baukasten",
+        "lizenz": "CC BY-SA 4.0"
+      }
+    }
+  ]
+}

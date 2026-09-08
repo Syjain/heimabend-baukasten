@@ -2,7 +2,7 @@
   "meta": {
     "name": "Redaktionelle Entscheidungen",
     "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
-    "stand": "2026-09-03",
+    "stand": "2026-09-08",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
   "gesperrt": [
@@ -104,9 +104,10 @@
         "altersstufen": [
           "Pfadfinder",
           "Ältere"
-        ]
+        ],
+        "umfang": "ganzer_abend"
       },
-      "grund": "Gleiche Gattung wie oben: Rätsel um Todesfälle."
+      "grund": "Gleiche Gattung wie oben: Rätsel um Todesfälle. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
     },
     {
       "id": "sw-toastbrot-wettessen",
@@ -137,7 +138,10 @@
     {
       "id": "sw-ameisenkonig",
       "hinweis": "Im Spiel huldigen Mitspielende einem 'König' durch Niederknien und bekommen bei Ungehorsam Strafen und Arbeitsdienste. Wenn ihr es spielt, dann kurz, freiwillig und mit wechselnder Rolle - sonst entsteht eine echte Rangordnung in der Gruppe.",
-      "grund": "Unterwerfungsritual über mehrere Tage angelegt."
+      "grund": "Unterwerfungsritual über mehrere Tage angelegt. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein.",
+      "felder": {
+        "umfang": "ganzer_abend"
+      }
     },
     {
       "id": "sw-wer-hat-angst-vorm-schwarzen-mann",
@@ -153,7 +157,10 @@
     {
       "id": "sw-irrenhaus",
       "hinweis": "Die Quelle spricht von 'Irren' und 'Schwachsinn'. Nennt das Spiel in der Gruppe anders und lasst die Zuschreibungen weg.",
-      "grund": "Abwertende Begriffe für psychisch kranke Menschen."
+      "grund": "Abwertende Begriffe für psychisch kranke Menschen. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein.",
+      "felder": {
+        "umfang": "ganzer_abend"
+      }
     },
     {
       "id": "sw-psychiatercouch",
@@ -166,10 +173,11 @@
         "altersstufen": [
           "Pfadfinder",
           "Ältere"
-        ]
+        ],
+        "umfang": "ganzer_abend"
       },
       "hinweis": "Beim Tauschen an fremden Haustüren klingeln Kinder bei Unbekannten. Nur in Begleitung, in bekannter Umgebung und ohne Feuerzeug als Tauschobjekt.",
-      "grund": "Kindeswohl: unbeaufsichtigter Kontakt zu Fremden an Privatwohnungen."
+      "grund": "Kindeswohl: unbeaufsichtigter Kontakt zu Fremden an Privatwohnungen. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
     },
     {
       "id": "ps-giftteich",
@@ -229,9 +237,10 @@
     {
       "id": "insp-unser-lagerplatz-in-der-zukunft",
       "felder": {
-        "ort": "drinnen"
+        "ort": "drinnen",
+        "umfang": "ganzer_abend"
       },
-      "grund": "Gearbeitet wird an einem Bildschirm bzw. auf Papier, nicht draußen."
+      "grund": "Gearbeitet wird an einem Bildschirm bzw. auf Papier, nicht draußen. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
     },
     {
       "id": "sw-teelichter-bewachen",
@@ -240,8 +249,695 @@
     },
     {
       "id": "sw-wachsgiessen",
-      "hinweis": "Die Quelle weist selbst auf offenes Feuer und flüssiges Wachs hin. Nur mit Aufsicht, und kaltes Wasser für Verbrennungen bereithalten.",
+      "hinweis": "Die Quelle weist selbst auf offenes Feuer und flüssiges Wachs hin. Nur mit Aufsicht, und kaltes Wasser für Verbrennungen bereithalten. Die Quelle bindet das Gießen außerdem an Silvester; statt Jahreswechsel könnt ihr die Figuren genauso am Ende eines Heimabends deuten.",
       "grund": "Selbstwarnung der Quelle stand nur im Fließtext."
+    },
+    {
+      "id": "sw-apfelfischen",
+      "hinweis": "Die Quelle verortet das Spiel auf Geburtstagspartys. Es braucht keinen Anlass: als nasser Spaß im Sommer oder als Abschluss eines Heimabends funktioniert es genauso.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-centstapel",
+      "hinweis": "Die Quelle denkt an Partys und Silvester. Im Heimabend läuft es genauso nebenher, etwa während einer längeren Bastelrunde.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-eselschwanz",
+      "hinweis": "Die Quelle nennt Geburtstagsfeiern als Anlass. Statt Geburtstag: passt als kurzer Einstieg oder als Station in einem Stationenlauf.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-geschenkeverpacken",
+      "hinweis": "Die Quelle bindet das Spiel an Weihnachten und Geburtstagsfeiern. Es geht auch ohne Anlass, zum Beispiel als Geschicklichkeitsstation im Heimabend.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-kartoffelduell",
+      "hinweis": "Die Quelle nennt Geburtstagsfeiern und Kinderpartys. Statt Kindergeburtstag: gut als Wettkampf-Baustein im Hauptteil oder beim Sommerfest der Gruppe.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-orangentanz",
+      "hinweis": "Die Quelle kennt das Spiel vor allem von Kindergeburtstagen. Statt Kindergeburtstag: passt genauso als Paar-Wettkampf im Heimabend.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-posterkusse",
+      "hinweis": "Die Quelle beschreibt das Spiel als Geburtstagsspiel 'typischerweise von Mädchen' mit dem Poster eines männlichen Stars. Lasst beides weg: Ein selbst gemaltes Ziel und eine gemischte Gruppe tun es auch, und der Anlass kann jeder Heimabend sein.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-reise-nach-jerusalem",
+      "hinweis": "Die Quelle nennt Kindergeburtstage und Faschingspartys. Statt Party: der Klassiker füllt genauso einen Einstieg im Heimabend, wenn Musik und Stühle da sind.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-teiggiessen",
+      "hinweis": "Die Quelle bindet das Gießen an Silvester. Statt Jahreswechsel könnt ihr die Figuren am Ende eines Heimabends deuten oder daraus einfach Pfannkuchen machen.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "sw-topfschlagen",
+      "hinweis": "Die Regel ist auf ein Geburtstagskind und seine Geschenke geschrieben. Statt Geburtstag: versteckt eine gemeinsame Belohnung für die ganze Gruppe, dann passt es in jeden Heimabend.",
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+    },
+    {
+      "id": "insp-agentenspiel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-arche-noah",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-bosseln",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-daumenkonig",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-eierauffangmaschine",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-eine-virtuelle-bombe-entschaerfen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-eislocher-eisbaren-fische",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-engerl-und-bengerl",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-finde-die-entfuehrte-person",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-grenze",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-kreuzapotheke",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-morder-unter-uns",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-morderspiel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-mr-x",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-nein-spiel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-nummernspiel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-online-treffen-gather-town",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-schmuggler",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-schnitzeljagd-mit-abstand",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-talentshow",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-torwachter",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-wanderndes-klopapier",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "sw-zitate-nebenbei",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-nur-fuer-rover-feuerfestigkeit-testen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-alternativen-zum-entfachen-eines-feuers",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "pb-baeume-und-getreide",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-bundes-mobile",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-die-kompass-deklination",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-digitale-karten",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-geraeusch-landkarte",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "pb-knoten-und-buende",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kohte-blind-aufbauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kroeten-ohne-hilfsmitttel-aufbauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "pb-lagerbau",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-neue-zeltkonstruktionen-testen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pfadfinder-innen-memory",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pfadfinder-innengeschichte-timeline",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pfadfindersymbolik-vergleichen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-rauch-und-geraeuschlos-feuer-machen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-rucksack-richtig-packen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-schatzsuche-mit-waldlaeuferzeichen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "pb-tierkunde",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-trage-aus-naturmaterialien-bauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-wegskizzen-montagsmaler",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-welche-pfadfinder-regel-ist-unwichtig",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-fensterbank-kraeuterbeet",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-insektenhotel-in-der-dose",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-naturbingo",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-action-painting",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-augenklappe-basteln",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-behelfs-schutzmasken-naehen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-bienenwachstuecher-selber-machen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-die-wasserlupe",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-dino-kerzen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-dna-isolieren",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-durststrecke",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-eigenes-holzbrettchen-erstellen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-girlande-jurtenschmuck",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-graffiti-selber-spruehen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-gruppenmosaik",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-holz-osterhasen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-jonglierbaelle-selber-machen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kerzendrehen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kerzenwachs-recyceln",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-kokosnussbecher-schalen-basteln",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-makrame-ampel-knuepfen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-milchkarton-portmonnaie",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-muehle-to-go",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-murmeln-aber-in-geil",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-namensschilder-einnaehen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-papierturm-bauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pfeil-und-bogen-bauen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-rettet-das-fallende-ei",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-sternenbilder",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-tierspur-kartoffelstempel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-brataepfel-vom-lagerfeuer",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-butter-schuetteln",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-eigenes-gruppen-kochbuch-erstellen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-haik-kekse-backen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-lilien-kekse",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-rotkohl-farborgel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-tschai-alternativen-ausprobieren",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-eigenes-hoerspiel-aufnehmen",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-gruppenstunde-als-talkshow",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-pfadfinderisches-wuselspiel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "insp-traumkapsel",
+      "felder": {
+        "umfang": "ganzer_abend"
+      },
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
     }
   ],
   "keine_dublette": [
@@ -258,6 +954,170 @@
         "ps-ich-packe-meinen-koffer"
       ],
       "grund": "Gleicher Titel, verschiedene Spiele: beim Inspirator das Gegenstands-Merkspiel, bei pfadfinder-spiele.de ein Namensspiel mit Adjektiven."
+    },
+    {
+      "ids": [
+        "ps-drachenschwanzjagen",
+        "sw-drachenschwanzabschiessen",
+        "sw-drachenschwanzfangen-gruppenweise"
+      ],
+      "grund": "Drei verschiedene Spiele mit ähnlichem Namen: Bei Drachenschwanzjagen jagt eine einzige Schlange den eigenen Schwanz, beim Drachenschwanzabschießen wird mit einem Ball geworfen, beim Drachenschwanzfangen wird ein Tuch aus dem Gürtel geschnappt."
+    },
+    {
+      "ids": [
+        "eig-evolution",
+        "sw-evolution-sprachspiel"
+      ],
+      "grund": "Gleicher Titel, verschiedene Spiele: Evolution ist ein Aufstiegsspiel über Schere-Stein-Papier-Duelle, das Sprachspiel ein Konzentrationsspiel im Sitzkreis, bei dem Tiernamen in einer Rangfolge weitergegeben werden."
+    },
+    {
+      "ids": [
+        "insp-versteinern",
+        "sw-versteinern"
+      ],
+      "grund": "Gleicher Titel, verschiedene Spiele: Beim Inspirator friert die Gruppe auf ein Kommando oder bei Musikstopp ein (Stopptanz), im Spielewiki ist es ein Fangspiel mit Versteinern und Erlösen."
+    },
+    {
+      "ids": [
+        "sw-tastkim",
+        "sw-merkkim"
+      ],
+      "grund": "Verschiedene Kim-Spiele: Beim Merkkim werden gesehene Gegenstände erinnert, beim Tastkim mit verbundenen Augen ertastet. Das ist ein anderer Sinn und ein anderer Ablauf."
+    },
+    {
+      "ids": [
+        "sw-blitzlicht-reflexion",
+        "sw-streichholz-reflexion",
+        "sw-zielscheiben-reflexion"
+      ],
+      "grund": "Drei verschiedene Reflexionsmethoden: Beim Blitzlicht antwortet jede und jeder kurz, bei der Streichholz-Reflexion begrenzt das brennende Streichholz die Redezeit, bei der Zielscheibe wird ohne Worte ein Gegenstand auf eine Zielscheibe gelegt."
+    },
+    {
+      "ids": [
+        "sw-british-bulldog",
+        "sw-wer-hat-angst-vorm-schwarzen-mann"
+      ],
+      "grund": "Verschiedene Spiele: British Bulldog fängt durch Festhalten und Auszählen, 'Wer hat Angst vorm weißen Hai' durch bloßes Berühren nach einem festen Sprechvers."
+    },
+    {
+      "ids": [
+        "sw-frisbee-fussball",
+        "sw-frisbee-passen",
+        "sw-frisbeelauf"
+      ],
+      "grund": "Drei verschiedene Spiele mit demselben Gerät: Mannschaftsspiel auf ein Ziel, Zuwerfen auf Zeit im Paar, und ein Hindernisparcours mit der Scheibe auf dem Kopf."
+    },
+    {
+      "ids": [
+        "ps-ich-packe-meinen-koffer",
+        "sw-ich-packe-in-meinen-rucksack"
+      ],
+      "grund": "Gleiches Prinzip, verschiedene Spiele: bei pfadfinder-spiele.de ein Namensspiel mit Adjektiven, im Spielewiki das Gegenstands-Merkspiel."
+    },
+    {
+      "ids": [
+        "sw-scrum",
+        "sw-krebsgedrange"
+      ],
+      "grund": "Verschiedene Spiele: Scrum ist ein Gedränge zweier Mannschaften nach Art des Rugby, Krebsgedränge ein Zweikampf um das Hinausdrängen aus der Kampffläche."
+    },
+    {
+      "ids": [
+        "sw-krabben",
+        "sw-krebs"
+      ],
+      "grund": "Verschiedene Spiele: Krebs ist ein Fangspiel, bei dem Gefangene selbst zu Fängern werden; Krabben ist ein Kampfspiel aller gegen alle, bei dem man sich gegenseitig die Hände und Füße wegzieht."
+    },
+    {
+      "ids": [
+        "ps-zuzwinckern-sterben",
+        "sw-zwinkern"
+      ],
+      "grund": "Gleiches Stichwort, verschiedene Spiele: Bei 'Zuzwinckern (+sterben)' scheidet aus, wer sich mit einer anderen Person gegenseitig anschaut; bei Zwinkern lockt eine Person Mitspielende aus den Paaren zu sich."
+    },
+    {
+      "ids": [
+        "sw-ampel-reflexion",
+        "sw-wahlurnen-reflexion"
+      ],
+      "grund": "Verschiedene Methoden mit demselben Material: Bei der Ampel wird die Farbe offen hochgehalten, bei der Wahlurne anonym eingeworfen. Genau die Anonymität ist der Zweck der zweiten Methode."
+    },
+    {
+      "ids": [
+        "sw-bauernschnapsen",
+        "sw-dreierschnapsen"
+      ],
+      "grund": "Zwei verschiedene Kartenspiele: Bauernschnapsen wird zu viert in zwei Paaren gespielt, Dreierschnapsen zu dritt jeder gegen jeden, mit eigenen Ansagen und eigener Punktewertung."
+    },
+    {
+      "ids": [
+        "sw-geruchskim",
+        "sw-geschmackskim"
+      ],
+      "grund": "Verschiedene Kim-Spiele: einmal wird gerochen, einmal gekostet. Material, Vorbereitung und die nötige Vorsicht bei Allergien unterscheiden sich."
+    },
+    {
+      "ids": [
+        "sw-katze-und-maus-grossgruppenspiel",
+        "sw-katze-und-maus-kreisspiel"
+      ],
+      "grund": "Gleicher Titel, verschiedene Spiele: einmal ein Gassenspiel im Raster, bei dem die Reihen auf Kommando drehen, einmal ein Kreisspiel mit Sprechvers."
+    },
+    {
+      "ids": [
+        "sw-murmelbahn-konstruktion",
+        "sw-murmelbahn-personen"
+      ],
+      "grund": "Verschiedene Spiele: einmal wird eine Murmelbahn aus Papier und Karton gebaut, einmal bilden die Mitspielenden die Bahn mit Kartonrollen in den Händen."
+    },
+    {
+      "ids": [
+        "sw-polsterbesetzen",
+        "sw-polsterspiel"
+      ],
+      "grund": "Verschiedene Spiele: Beim Polsterbesetzen will eine Person in der Mitte sich auf das wandernde Kissen setzen, beim Polsterspiel wetteifern zwei Mannschaften mit je einem Kissen um die Runde."
+    },
+    {
+      "ids": [
+        "sw-sitzfussball-bewegungsspiel",
+        "sw-sitzfussball-im-kreis"
+      ],
+      "grund": "Die Quelle grenzt sie selbst ab: Beim Sitzfußball rutschen die Mannschaften auf Tore zu, im Kreis bleiben alle auf ihrem Platz und wehren den Ball ab."
+    },
+    {
+      "ids": [
+        "sw-teelichter-ausblasen",
+        "sw-teelichter-bewachen"
+      ],
+      "grund": "Verschiedene Spiele mit demselben Material: einmal möglichst viele Teelichter mit einem Atemzug ausblasen, einmal die eigenen Lichter gegen die andere Mannschaft verteidigen."
+    },
+    {
+      "ids": [
+        "sw-teiggiessen",
+        "sw-wachsgiessen"
+      ],
+      "grund": "Verschiedene Spiele: Teiggießen ist Backen in der Pfanne, Wachsgießen ein Gießen über offener Flamme ins Wasser. Beide sind in der Sammlung ausdrücklich als die harmlosen Nachfolger des gesperrten Bleigießens vorgesehen."
+    },
+    {
+      "ids": [
+        "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+        "sw-virus"
+      ],
+      "grund": "Gleicher Titel, verschiedene Spiele: bei pfadfinder-spiele.de ein Fangspiel mit Einfrieren und Befreien durch zwei Mitspielende, im Spielewiki ein Blinde-Kuh-Fangspiel mit geschlossenen Augen."
+    },
+    {
+      "ids": [
+        "sw-welle-entspannungsspiel",
+        "sw-welle-vertrauensspiel"
+      ],
+      "grund": "Gleicher Titel, verschiedene Spiele: einmal eine Rückenmassage auf einer 'Bank' aus Knienden, einmal ein Vertrauenslauf durch eine Gasse aus ausgestreckten Armen."
+    },
+    {
+      "ids": [
+        "sw-zipp-zapp",
+        "sw-zipp-zapp-zopp"
+      ],
+      "grund": "Verschiedene Spiele: Zipp Zapp ist ein Namensspiel mit einer Person in der Kreismitte, Zipp Zapp Zopp ein Reaktionsspiel, bei dem im Stehen geklatscht und weitergezeigt wird."
     }
   ],
   "auch_dublette": [
@@ -507,6 +1367,566 @@
       "bereich": "spiel",
       "kategorie": "ruhig",
       "grund": "Kim-Spiel, also ein Spiel."
+    }
+  ],
+  "zusammengelegt": [
+    {
+      "haupt": "sw-drachenschwanzfangen-gruppenweise",
+      "varianten": [
+        "sw-drachenschwanzfangen-einzeln"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dasselbe Spiel in zwei Aufstellungen: Der Drachenschwanz wird einmal von Gruppen, einmal von einzelnen Spielenden geschnappt. Die Quelle führt beide Artikel selbst als Varianten voneinander."
+    },
+    {
+      "haupt": "eig-evolution",
+      "varianten": [
+        "ps-evolution",
+        "sw-evolution"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dieselbe Aufstiegsleiter über Schere-Stein-Papier-Duelle, nur die Tierstufen heißen anders (Amöbe/Ei am Anfang)."
+    },
+    {
+      "haupt": "sw-versteinern",
+      "varianten": [
+        "sw-captain-hook-und-peter-pan",
+        "sw-schlumpfe-versteinern"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Fangspiel mit Versteinern und Erlösen; die beiden anderen Artikel nennen sich selbst 'eine Variante des Spiels Versteinern' und unterscheiden sich nur in der Erlösungsart. Hauptelement ist deshalb ausnahmsweise nicht der längste Text, sondern das Grundspiel."
+    },
+    {
+      "haupt": "sw-platztausch",
+      "varianten": [
+        "insp-alle-die-obstsalat",
+        "ps-angesprochen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Stuhlkreis-Grundspiel: Wer in der Mitte steht, nennt eine Eigenschaft, und alle, auf die sie zutrifft, tauschen die Plätze."
+    },
+    {
+      "haupt": "sw-merkkim",
+      "varianten": [
+        "sw-bilderkim"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Merkspiel, einmal mit Gegenständen unter der Decke, einmal mit einem Bild. Die Quelle nennt Bilderkim selbst 'eine Variante des Merkkim'."
+    },
+    {
+      "haupt": "sw-british-bulldog",
+      "varianten": [
+        "ps-british-bulldog"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Durchbrechspiel: Gefangen ist erst, wer festgehalten und ausgezählt wurde."
+    },
+    {
+      "haupt": "sw-ich-packe-in-meinen-rucksack",
+      "varianten": [
+        "insp-ich-packe-meinen-koffer"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Merkspiel: Reihum wird ein Gegenstand ergänzt und die ganze Kette wiederholt. Die Quelle führt 'Ich packe in meinen Koffer' selbst als Zweitnamen."
+    },
+    {
+      "haupt": "sw-krebsgedrange",
+      "varianten": [
+        "sw-kindersumo"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleicher Schiebekampf auf der Matte, nur die Haltung unterscheidet sich (an den Knöcheln festhalten statt Arme hinter dem Rücken). Regeltext und Verbote sind sonst wortgleich."
+    },
+    {
+      "haupt": "sw-komm-mit-lauf-weg",
+      "varianten": [
+        "ps-komm-mit-lauf-weg",
+        "sw-lauf-weg"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Kreisspiel; 'Lauf weg' ist laut Quelle die Fassung ohne das zweite Kommando."
+    },
+    {
+      "haupt": "sw-krebs",
+      "varianten": [
+        "sw-spiderman"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Fangspiel am Boden, bei dem Gefangene selbst zu Fängern werden; nur die Fortbewegungsart heißt anders."
+    },
+    {
+      "haupt": "sw-lieder-raten",
+      "varianten": [
+        "sw-melodie-raten",
+        "sw-lied-gurgeln"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Ratespiel, nur die Art des Vortrags wechselt (singen, summen, gurgeln). Die Quelle nennt Lied gurgeln selbst eine Variante der beiden anderen."
+    },
+    {
+      "haupt": "sw-reise-nach-jerusalem",
+      "varianten": [
+        "ps-reise-nach-jerusalem",
+        "sw-reise-nach-jerusalem-extrem"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel um einen Platz zu wenig; die 'extreme' Fassung ersetzt laut Quelle nur die Stühle durch Mitspielende."
+    },
+    {
+      "haupt": "eig-schokoladen-wettessen",
+      "varianten": [
+        "ps-das-schokoladenspiel",
+        "sw-schokoladeschneiden"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Würfelspiel mit Mütze, Schal, Handschuhen und eingepackter Schokolade."
+    },
+    {
+      "haupt": "sw-wer-bin-ich",
+      "varianten": [
+        "ps-wer-bin-ich",
+        "sw-wer-bin-ich-verkehrt"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Ratespiel mit Ja-Nein-Fragen; die 'verkehrte' Fassung dreht laut Quelle nur um, wer den Begriff kennt."
+    },
+    {
+      "haupt": "eig-waescheklammern-jagd",
+      "varianten": [
+        "ps-waescheklammern-klauen",
+        "sw-wascheklammern-diebstahl"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel, nur die Klammerzahl und die Endwertung unterscheiden sich."
+    },
+    {
+      "haupt": "sw-zwinkern",
+      "varianten": [
+        "ps-zuzwinkern-hundehuette"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Paar-Kreisspiel; die Quelle führt Hundehütte selbst als Zweitnamen."
+    },
+    {
+      "haupt": "sw-hugo",
+      "varianten": [
+        "ps-bermudadreieck"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Zieh- und Schiebespiel im Kreis unter anderem Namen."
+    },
+    {
+      "haupt": "sw-lateral",
+      "varianten": [
+        "sw-black-stories"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dieselbe Rätselgeschichte mit Ja-Nein-Fragen; Black Stories ist laut Quelle 'eine kommerzielle Variante der Laterale'. Hauptelement ist ausnahmsweise die freie Fassung, weil sie ohne gekauftes Kartenset auskommt."
+    },
+    {
+      "haupt": "sw-brieftrager",
+      "varianten": [
+        "sw-namenschlagen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Namensspiel mit der zusammengerollten Zeitung; die Quelle nennt den Briefträger selbst 'eine Variante des Namenschlagen-Spieles'."
+    },
+    {
+      "haupt": "sw-capture-the-flag",
+      "varianten": [
+        "ps-capture-the-flag"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Geländespiel: Fahne der Gegenseite finden und in die eigene Hälfte bringen, Gefangene warten im Gefängnis."
+    },
+    {
+      "haupt": "eig-casino-abend",
+      "varianten": [
+        "insp-casino-heimabend"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Derselbe Abend: Stationen mit Karten- und Würfelspielen, gespielt wird mit Spielgeld oder Bohnen."
+    },
+    {
+      "haupt": "eig-chaosspiel",
+      "varianten": [
+        "ps-chaos-spiel"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel aus Brettspiel und Geländelauf: erwürfelte Nummer, passendes Kärtchen suchen, Aufgabe lösen."
+    },
+    {
+      "haupt": "sw-der-magier-liebt",
+      "varianten": [
+        "sw-hannes-liebt"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dasselbe Rätselspiel: Die Gruppe muss das verborgene System hinter den genannten Begriffen erkennen; nur der Name der Figur und die Frageform unterscheiden sich."
+    },
+    {
+      "haupt": "sw-dirigent",
+      "varianten": [
+        "ps-dirigent"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: Der Kreis macht die Bewegungen des heimlichen Dirigenten nach, eine Person soll ihn erkennen."
+    },
+    {
+      "haupt": "sw-dracula",
+      "varianten": [
+        "sw-verstecken-im-dunkeln"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Versteckspiel im abgedunkelten Raum; die Quelle nennt Dracula selbst die actionreichere Version davon."
+    },
+    {
+      "haupt": "sw-ei-am-berg",
+      "varianten": [
+        "sw-mehlschneiden"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Geschicklichkeitsspiel: Vom Mehlhaufen wird reihum abgeschnitten, wer den Gegenstand zum Fallen bringt, muss ihn mit dem Mund holen."
+    },
+    {
+      "haupt": "sw-eisbar-und-pinguin",
+      "varianten": [
+        "ps-eisbaer-und-pinguin"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Fangspiel; der Verfolgte rettet sich, indem er sich bei einem Paar einhakt."
+    },
+    {
+      "haupt": "sw-feuer-wasser-sturm",
+      "varianten": [
+        "insp-feuer-wasser-sturm"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Kommandospiel; die Befehlsliste unterscheidet sich nur in einzelnen Zusätzen."
+    },
+    {
+      "haupt": "sw-teppich-umdrehen",
+      "varianten": [
+        "ps-fliegender-teppich"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Teppich beziehungsweise Plane wenden, ohne den Boden daneben zu berühren."
+    },
+    {
+      "haupt": "sw-funken",
+      "varianten": [
+        "ps-funker-funker"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Namensspiel mit den Antennen an den Ohren; bei pfadfinder-spiele.de scheidet aus, wer das Mitfunken vergisst, im Spielewiki fängt eine Person in der Mitte ab."
+    },
+    {
+      "haupt": "sw-goofy",
+      "varianten": [
+        "ps-goofy"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: Alle suchen mit verbundenen Augen den schweigenden Goofy und hängen sich an ihn an."
+    },
+    {
+      "haupt": "sw-gordischer-knoten",
+      "varianten": [
+        "ps-gordischer-knoten"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: im Kreis blind zwei Hände greifen und sich anschließend entknoten."
+    },
+    {
+      "haupt": "ps-gruppennetz",
+      "varianten": [
+        "sw-fadennetz"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Wollknäuel-Netz im Kreis mit Vorstellungsrunde."
+    },
+    {
+      "haupt": "sw-hi-my-name-is-joe",
+      "varianten": [
+        "ps-hannes"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Die Quelle nennt die Übersetzung selbst: 'zu deutsch: Hallo, ich bin der Hannes'."
+    },
+    {
+      "haupt": "sw-heuwagen-mistwagen",
+      "varianten": [
+        "sw-plus-minus-interessant"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiche Reflexionsmethode: Auf einem vorbereiteten Bogen wird Positives und Negatives getrennt notiert; nur die Beschriftung der Felder unterscheidet sich."
+    },
+    {
+      "haupt": "sw-huhnerspiel",
+      "varianten": [
+        "sw-klopfen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Reaktionsspiel mit derselben Mechanik: reihum weitergeben, Richtungswechsel, Aussetzen, und wer sich vertut, verliert eine Hand. Nur die Geste unterscheidet sich (Gegacker statt Klopfen). Hauptelement ist die Fassung ohne Tisch."
+    },
+    {
+      "haupt": "sw-singing-in-the-rain",
+      "varianten": [
+        "ps-im-singing-in-the-rain"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Lied- und Bewegungsspiel."
+    },
+    {
+      "haupt": "sw-krahe-krabbe-krote",
+      "varianten": [
+        "sw-ja-nein-fangen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Fangspiel zweier Reihen; die Quelle nennt Ja-Nein-Fangen selbst 'eine etwas komplexere Variante', bei der statt eines Tiernamens eine Frage das Signal gibt."
+    },
+    {
+      "haupt": "sw-jack-sass-in-der-kuche-mit-tina",
+      "varianten": [
+        "ps-jack-sass-in-der-kueche-mit-tina"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Singspiel mit denselben Bewegungen."
+    },
+    {
+      "haupt": "sw-kettenfangen",
+      "varianten": [
+        "ps-kettenfangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Fangspiel: Gefangene hängen sich an die Kette, fangen dürfen nur die äußeren Enden."
+    },
+    {
+      "haupt": "sw-killerball",
+      "varianten": [
+        "sw-rette-den-freund"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Abschießspiel zweier Mannschaften; es unterscheidet sich nur die Regel, wodurch Abgeschossene zurückkommen."
+    },
+    {
+      "haupt": "sw-koffer-packen-auf-dem-trampolin",
+      "varianten": [
+        "sw-koffer-packen-auf-der-slackline"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Kofferpacken mit Bewegungen statt Begriffen, nur das Gerät wechselt."
+    },
+    {
+      "haupt": "sw-toasterspiel",
+      "varianten": [
+        "ps-kotzendes-kaenguru"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Kreisspiel mit denselben Figuren (Elefant, Mixer, Toaster)."
+    },
+    {
+      "haupt": "sw-laurentia",
+      "varianten": [
+        "ps-laurentia"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Singspiel mit Kniebeugen bei jedem Wochentag."
+    },
+    {
+      "haupt": "sw-stille-post",
+      "varianten": [
+        "sw-laute-post"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Weitersagespiel; die Quelle nennt Laute Post selbst 'eine Variante des bekannten Spieles Stille Post'."
+    },
+    {
+      "haupt": "sw-luftballon-kennenlernspiel",
+      "varianten": [
+        "sw-names-luftballon"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Kennenlernspiel: Namen auf den Ballon schreiben, fremden Ballon fangen, die Person dazu suchen."
+    },
+    {
+      "haupt": "sw-merkball",
+      "varianten": [
+        "sw-partner-merkball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Abschießspiel mit Merken des Treffers; die Quelle nennt Partner-Merkball selbst eine Variante davon. Hauptelement ist ausnahmsweise das Grundspiel, weil die Partnervariante erst ab 20 Mitspielenden funktioniert."
+    },
+    {
+      "haupt": "sw-montagsmaler",
+      "varianten": [
+        "ps-montagsmaler"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Zeichen- und Ratespiel zweier Mannschaften."
+    },
+    {
+      "haupt": "sw-karottenziehen",
+      "varianten": [
+        "ps-moehren-ziehen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Die Quelle führt Möhrenziehen selbst als Zweitnamen."
+    },
+    {
+      "haupt": "sw-seenotspiel",
+      "varianten": [
+        "sw-nasa-spiel"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Diskussionsspiel in drei Stufen (allein, Kleingruppe, Plenum) mit Rangliste und Expertenauflösung; nur die Rahmengeschichte und die Gegenstandsliste unterscheiden sich."
+    },
+    {
+      "haupt": "ps-namensjonglage",
+      "varianten": [
+        "sw-namensjonglage"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Namensspiel: Ball im Kreis werfen, Namen nennen, Reihenfolge merken und beschleunigen."
+    },
+    {
+      "haupt": "sw-ninja",
+      "varianten": [
+        "ps-ninja"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: aus der Ninja-Pose mit einer Bewegung die Hand der Nachbarin abschlagen."
+    },
+    {
+      "haupt": "sw-obstsalat",
+      "varianten": [
+        "ps-obstsalat"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Kreisspiel mit Obstsorten und einem Stuhl zu wenig."
+    },
+    {
+      "haupt": "sw-paarfangen",
+      "varianten": [
+        "ps-paarfangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Fangspiel: Die Fängerkette teilt sich, sobald sie zu viert ist."
+    },
+    {
+      "haupt": "sw-paarweise-vorstellen",
+      "varianten": [
+        "sw-schlusselbund"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Kennenlernspiel, bei dem nicht sich selbst, sondern die Partnerin vorgestellt wird; die Quelle nennt Schlüsselbund selbst 'eine etwas modifizierte Variante von Paarweise Vorstellen'. Hauptelement ist ausnahmsweise die Fassung ohne Material, weil nicht jedes Kind einen Schlüsselbund dabei hat."
+    },
+    {
+      "haupt": "ps-pferderennen",
+      "varianten": [
+        "sw-pferderennen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe moderierte Pferderennen mit Klopfen, Klatschen und Kurvenlage."
+    },
+    {
+      "haupt": "sw-sofaspiel",
+      "varianten": [
+        "sw-psychiatercouch"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Nahezu wortgleiche Artikel; einziger Unterschied ist der Name der Sitzgruppe. Hauptelement ist ausnahmsweise das Sofaspiel, weil der andere Titel psychisch kranke Menschen zur Pointe macht (siehe Korrektur zu sw-psychiatercouch)."
+    },
+    {
+      "haupt": "insp-schmuggler-innen-spiel",
+      "varianten": [
+        "ps-schmuggler"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Geländespiel, nur die Fängerrolle heißt anders."
+    },
+    {
+      "haupt": "sw-schere-stein-papier",
+      "varianten": [
+        "ps-schnick-schnack-schnuck"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Die Quelle nennt Schnick Schnack Schnuck als Zweitnamen."
+    },
+    {
+      "haupt": "ps-slurp",
+      "varianten": [
+        "sw-slurp"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: Reihum wird ein Körperteil an die Nachbarin geheftet und muss dort bleiben; im Spielewiki bestimmt ein Würfel das Körperteil, bei pfadfinder-spiele.de wählt man es selbst."
+    },
+    {
+      "haupt": "sw-stadt-land-fluss",
+      "varianten": [
+        "insp-stadt-land-fluss"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Zettelspiel; der Inspirator beschreibt zusätzlich eine Webseite dafür."
+    },
+    {
+      "haupt": "sw-stimmungs-matrix",
+      "varianten": [
+        "sw-stimmungsbarometer"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiche Reflexionsmethode: Auf einem großen Bogen wird die Stimmung nach jeder Einheit eingetragen; nur die Darstellung (Punkte oder Kurve) unterscheidet sich."
+    },
+    {
+      "haupt": "sw-vampir",
+      "varianten": [
+        "ps-vampire"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Fangspiel mit geschlossenen Augen, bei dem Gebissene selbst zu Vampiren werden; pfadfinder-spiele.de startet mit mehreren Vampiren und erlaubt die Rückverwandlung."
+    },
+    {
+      "haupt": "eig-werwolf-abend",
+      "varianten": [
+        "ps-werwolf"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel. Der ausführliche Regeltext mit allen Rollen steht bei pfadfinder-spiele.de; die eigene Fassung führt es als ganzen Abend."
+    }
+  ],
+  "kern": [
+    {
+      "id": "insp-digitaler-sippencontest",
+      "kern": false,
+      "grund": "Der Wettbewerb ist ganz auf die Corona-Zeit geschrieben (Klopapierduell, 'Positives an Corona') und darauf, dass alle zu Hause vor der Kamera sitzen. Bleibt über die zweite Reihe erreichbar."
+    },
+    {
+      "id": "insp-digitaler-pfadfinder-escape-room",
+      "kern": false,
+      "grund": "Der Abend besteht aus einem Link zu einem fremden Online-Escape-Room. Ohne Endgeräte und Internet bleibt nichts übrig."
+    },
+    {
+      "id": "insp-kindermemorix",
+      "kern": false,
+      "grund": "Die Regel setzt voraus, dass zwei Kinder aus der Videokonferenz geschickt werden. Vor Ort ist es Menschenmemory, das in der Sammlung schon steht."
+    },
+    {
+      "id": "insp-online-treffen-gather-town",
+      "kern": false,
+      "grund": "Beschrieben wird eine Videokonferenz-Plattform, kein Heimabend-Inhalt. Ohne Online-Treffen gibt es nichts zu tun."
+    },
+    {
+      "id": "insp-online-spieleplattform",
+      "kern": false,
+      "grund": "Eine Linkliste zu Spieleseiten im Netz. Ohne Endgeräte und Internet bleibt nichts übrig."
+    },
+    {
+      "id": "insp-wer-findet-den-gegenstand-zuerst",
+      "kern": false,
+      "grund": "Die Quelle nennt die Videokonferenz ausdrücklich als Voraussetzung: Alle suchen zu Hause und halten den Gegenstand in die eigene Kamera."
+    },
+    {
+      "id": "sw-schere-stein-papier-online",
+      "kern": false,
+      "grund": "Die Quelle beschreibt ausdrücklich die Fassung für den Online-Call und verlangt von allen eine eingeschaltete Kamera. Im Heim spielt man einfach Schere Stein Papier."
     }
   ]
 }
