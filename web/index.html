@@ -261,6 +261,26 @@ details.filter > summary span:last-child:not(:first-child) {
 .schalter label { text-transform: none; font-size: .9rem; color: var(--text);
   font-weight: 400; letter-spacing: 0; padding: 11px 0; font-family: var(--schrift); }
 .filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
+/* Zwischenüberschrift im Filterkasten: die Spiel-Achsen (Platz, Nähe,
+   Hosensackspiel) gelten nur für Spiele – ohne diese Zeile wirkte die
+   Leiste wie ein einziger langer Haufen Auswahlfelder. */
+.filter-raster .abschnitt {
+  grid-column: 1 / -1; margin-top: 2px;
+  padding-top: var(--r3); border-top: 1px solid var(--linie);
+}
+
+/* ------------------------------------------------- Umfang der Sammlung */
+/* Der Schalter steht offen unter der Suche, nicht im Filterkasten: er
+   verändert jede Zahl auf dem Bildschirm, das darf nicht versteckt sein. */
+.sammlung { margin: var(--r2) 0 var(--r3); }
+.sammlung .chip { padding: 11px 12px; font-size: .8rem; }
+.sammlung .hinweis {
+  font-size: .74rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4;
+}
+.sammlung .chip .zahl {
+  font-family: var(--schrift-daten); font-variant-numeric: tabular-nums;
+  font-size: .76rem; opacity: .85; margin-left: 5px;
+}
 
 /* -------------------------------------------------------------- Brotkrumen */
 .pfad {
@@ -454,16 +474,27 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   font-size: .78rem;
 }
 .kasten.quelle a { color: inherit; overflow-wrap: anywhere; }
-.kasten.dublette { border: 1px dashed var(--linie-stark); background: none; color: var(--leise); }
+.kasten.dublette, .kasten.verweis {
+  border: 1px dashed var(--linie-stark); background: none; color: var(--leise);
+}
 .kasten h4 { margin: 0 0 var(--r2); font-size: .68rem; text-transform: uppercase;
   letter-spacing: .08em; color: var(--leise); font-weight: 700; font-family: var(--schrift-daten); }
 .kasten.tipp h4 { color: var(--akzent); }
 @media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--akzent-hell); } }
 .kasten.tipp .text { font-size: .92rem; line-height: 1.55; }
-.kasten.dublette button {
+.kasten.dublette button, .kasten.verweis button:not(.chip) {
   background: none; border: 0; padding: 11px 4px; min-height: 44px;
   color: inherit; text-decoration: underline; font-size: inherit;
+  text-align: left;
 }
+/* Die übenden Spiele stehen als Chips da – wie die Stichworte darüber. */
+.kasten.verweis .chip { color: var(--text); font-size: .8rem; padding: 11px 12px; }
+/* Varianten: Titel und – falls vorhanden – ein eigener Satz dazu.
+   Aus der fremden Fassung steht hier nie ein Text, nur ihr Name. */
+.kasten.verweis ul { list-style: none; margin: 0; padding: 0; }
+.kasten.verweis li { margin: 0; }
+.kasten.verweis .aenderung { display: block; margin: -6px 4px 4px; font-size: .76rem; }
+.kasten.verweis .lizenzhinweis { display: block; margin-top: var(--r2); font-size: .72rem; opacity: .85; }
 
 /* -------------------------------------------------------------- Chipreihen */
 .chipzeile { margin: var(--r3) 0; }
@@ -643,6 +674,17 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
       <button class="knopf" id="zufallKnopf">Zufall</button>
     </div>
 
+    <!-- Umfang der Sammlung. Steht offen unter der Suche, weil er jede Zahl
+         auf dem Bildschirm verändert. Ohne eigene Überschrift: die beiden
+         Knöpfe sagen selbst, was sie tun, und die Zeile bleibt kurz. -->
+    <div class="chipzeile sammlung" id="sammlungZeile">
+      <div class="chips" role="group" aria-label="Umfang der Sammlung">
+        <button type="button" class="chip" id="sammlungKern">geprüfte Auswahl</button>
+        <button type="button" class="chip" id="sammlungAlle">ganze Sammlung</button>
+      </div>
+      <p class="hinweis" id="sammlungHinweis"></p>
+    </div>
+
     <details class="filter" id="filterBox">
       <summary><span>Filter</span><span id="filterZahl"></span></summary>
       <div class="filter-raster">
@@ -705,6 +747,25 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
         <div class="schalter">
           <input type="checkbox" id="fMitAlter">
           <label for="fMitAlter">nur mit geprüfter Altersangabe</label>
+        </div>
+        <div class="abschnitt marke">Bei Spielen zusätzlich</div>
+        <div class="feld">
+          <label for="fPlatz">Platz</label>
+          <select id="fPlatz">
+            <option value="">egal</option>
+            <option value="tisch">nur ein Tisch</option>
+            <option value="zimmer">ein Zimmer</option>
+            <option value="saal_wiese">Saal oder Wiese</option>
+            <option value="gelaende">Gelände</option>
+          </select>
+        </div>
+        <div class="schalter">
+          <input type="checkbox" id="fHosensack">
+          <label for="fHosensack">5 Minuten übrig – ohne alles</label>
+        </div>
+        <div class="schalter">
+          <input type="checkbox" id="fOhneKontakt">
+          <label for="fOhneKontakt">ohne Körperkontakt</label>
         </div>
         <div class="filter-fuss">
           <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
@@ -793,6 +854,12 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
         <div class="schalter">
           <input type="checkbox" id="rOhneMaterial">
           <label for="rOhneMaterial">nur Bausteine ohne Material</label>
+        </div>
+        <!-- Derselbe Schalter wie unter der Suche: der Planer schlägt sonst
+             etwas vor, das in der Baustein-Ansicht gar nicht zu sehen ist. -->
+        <div class="schalter">
+          <input type="checkbox" id="rZweiteReihe">
+          <label for="rZweiteReihe">auch die zweite Reihe der Sammlung</label>
         </div>
       </div>
     </details>
@@ -922,6 +989,20 @@ var UNTER_TEXT = {
 
 var ORT_TEXT = { drinnen: "drinnen", draussen: "draußen", beides: "drinnen & draußen" };
 
+/* Wieviel Platz braucht das Spiel? Die Reihenfolge ist auch die Rangfolge:
+   Was an den Tisch passt, passt auch ins Zimmer – deshalb filtert "ein Zimmer"
+   als Obergrenze und nicht als genaue Übereinstimmung. */
+var PLATZ_TEXT = { tisch: "am Tisch", zimmer: "im Zimmer",
+                   saal_wiese: "Saal oder Wiese", gelaende: "im Gelände" };
+var PLATZ_RANG = { tisch: 1, zimmer: 2, saal_wiese: 3, gelaende: 4 };
+var NAEHE_TEXT = { keine: "ohne Körperkontakt", leicht: "etwas Körperkontakt",
+                   hoch: "viel Nähe und Vertrauen" };
+/* Welche Probe übt ein Spiel nebenbei? Beschriftung wie in KATEGORIE_TEXT. */
+var UEBT_TEXT = { knoten: "Knoten", karte_kompass: "Karte & Kompass", feuer: "Feuer",
+                  erste_hilfe: "Erste Hilfe", zelte_bauten: "Zelte & Bauten",
+                  natur: "Natur", bundeskunde: "Bundeskunde",
+                  fahrtentechnik: "Fahrtentechnik" };
+
 /* Vier schlichte Strichzeichnungen, damit die oberste Ebene nicht nur aus
    Text besteht. Kein Bild von außen, alles im Dokument. */
 var ZEICHEN = {
@@ -959,8 +1040,20 @@ var ZEICHEN = {
 };
 var ALTERSSTUFEN = ["Wölflinge", "Pfadfinder", "Ältere"];
 
-/* Feste Bestandteile jedes Heimabends – Rituale, keine Bausteine. */
+/* Eröffnungs- und Schlusskreis rahmen jeden Heimabend ein. Sie bleiben als
+   Rahmen stehen, auch wenn nichts gewählt ist – dann werden sie mit dieser
+   Dauer gerechnet. Wer will, legt einen Baustein hinein (Rituale, Auswertung). */
 var KREIS_DAUER = 5;
+var KREISE = [
+  { schluessel: "eroeffnung", name: "Eröffnungskreis", zieldauer: KREIS_DAUER,
+    rahmen: "Kreis schließen, kurz etwas sagen, mit dem Bundesgruß eröffnen.",
+    passt: function (e) { return hat(e.slots, "eroeffnung"); } },
+  { schluessel: "schluss", name: "Schlusskreis", zieldauer: KREIS_DAUER,
+    rahmen: "Kreis noch einmal schließen, dann gehen alle ihrer Wege.",
+    // Spiele gehören ins Abschlussspiel, in den Schlusskreis gehören
+    // Rituale und Auswertung – sonst steht dort ein Fangspiel.
+    passt: function (e) { return e.bereich !== "spiel" && hat(e.slots, "abschluss"); } }
+];
 
 /* Die Plätze, die gefüllt werden können. */
 var SLOTS = [
@@ -991,9 +1084,15 @@ var pfad = { bereich: "", umfang: "", kategorie: "", unterkategorie: "", slot: "
 var gefiltert = [];
 var sichtbar = SEITENGROESSE;
 
-var plan = { einstieg: null, haupt: [null, null], abschluss: null };
+var plan = leererPlan();
 var rahmen = { zielzeit: 120, stufe: "", teilnehmer: 0, ort: "", vorbereitung: "",
                ohneMaterial: false };
+
+/* Umfang der Sammlung: true = nur die erste Reihe (Feld kern), false = alles.
+   Der Standard ist die geprüfte Auswahl; die Wahl überlebt das Schließen. */
+var SAMMLUNG_STANDARD = true;
+var SAMMLUNG_SPEICHER = "heimabend-sammlung";
+var nurKern = SAMMLUNG_STANDARD;
 
 var auswahlZiel = null;          // { slot, index, zielzeit }
 var auswahlPfad = { bereich: "", kategorie: "", unterkategorie: "" };
@@ -1003,6 +1102,41 @@ var auswahlSichtbar = SEITENGROESSE;
 /* ------------------------------------------------------------ Helfer */
 function $(id) { return document.getElementById(id); }
 function hat(liste, wert) { return !!liste && liste.indexOf(wert) !== -1; }
+
+/** Ein leerer Plan: die beiden Kreise sind Plätze, die leer bleiben dürfen. */
+function leererPlan() {
+  return { eroeffnung: null, einstieg: null, haupt: [null, null],
+           abschluss: null, schluss: null };
+}
+
+/* ------------------------------------------- Umfang der Sammlung merken */
+/* Alles in try/catch: im privaten Fenster wirft localStorage, und dann darf
+   die App nicht stehenbleiben, sondern nimmt einfach den Standard. */
+function ladeSammlung() {
+  nurKern = SAMMLUNG_STANDARD;
+  try {
+    var gemerkt = localStorage.getItem(SAMMLUNG_SPEICHER);
+    if (gemerkt === "alle") nurKern = false;
+    else if (gemerkt === "kern") nurKern = true;
+  } catch (fehler) { /* egal */ }
+  return nurKern;
+}
+function speichereSammlung() {
+  try { localStorage.setItem(SAMMLUNG_SPEICHER, nurKern ? "kern" : "alle"); }
+  catch (fehler) { /* egal */ }
+}
+/** Schaltet um und zeichnet alles neu, was von der Sammlung abhängt. */
+function setzeSammlung(nurErsteReihe) {
+  nurKern = !!nurErsteReihe;
+  speichereSammlung();
+  if ($("rZweiteReihe")) $("rZweiteReihe").checked = !nurKern;
+  aktualisiere();
+  if (!$("ansichtPlanen").hidden) {
+    $("rahmenKurz").textContent = rahmenKurzfassung();
+    zeichnePlan();
+  }
+  if (!$("auswahl").hidden) { auswahlSichtbar = SEITENGROESSE; zeichneAuswahl(); }
+}
 
 function schuetze(text) {
   return String(text == null ? "" : text)
@@ -1133,7 +1267,17 @@ function ladeSkriptdaten() {
 /* ------------------------------------------------------------ Filtern */
 function leereFilter() {
   return { suche: "", stufe: "", dauer: 0, teilnehmer: 0, ort: "",
-           vorbereitung: "", ohneMaterial: false, mitAlter: false };
+           vorbereitung: "", ohneMaterial: false, mitAlter: false,
+           platz: "", hosensack: false, ohneKontakt: false,
+           // Der Umfang der Sammlung ist kein Filter im Kasten, sondern eine
+           // Grundeinstellung – deshalb steht er auch im "leeren" Filter.
+           nurKern: nurKern };
+}
+/** Wirklich alles, auch die zweite Reihe – letzte Rettung beim Würfeln. */
+function ganzeSammlungFilter() {
+  var f = leereFilter();
+  f.nurKern = false;
+  return f;
 }
 
 /** Die Einstellungen aus dem Filter-Klappfeld der Baustein-Ansicht. */
@@ -1146,27 +1290,37 @@ function filterWerte() {
     ort: $("fOrt").value,
     vorbereitung: $("fVorbereitung").value,
     ohneMaterial: $("fOhneMaterial").checked,
-    mitAlter: $("fMitAlter").checked
+    mitAlter: $("fMitAlter").checked,
+    platz: $("fPlatz").value,
+    hosensack: $("fHosensack").checked,
+    ohneKontakt: $("fOhneKontakt").checked,
+    nurKern: nurKern
   };
 }
 
 /** Zählt die gesetzten Filter – der zugeklappte Kasten verriet das bisher nicht. */
 function aktiveFilter() {
   var f = filterWerte(), zahl = 0;
-  ["stufe", "dauer", "teilnehmer", "ort", "vorbereitung"].forEach(function (name) {
+  ["stufe", "dauer", "teilnehmer", "ort", "vorbereitung", "platz"].forEach(function (name) {
     if (f[name]) zahl++;
   });
   if (f.ohneMaterial) zahl++;
   if (f.mitAlter) zahl++;
+  if (f.hosensack) zahl++;
+  if (f.ohneKontakt) zahl++;
   return zahl;
 }
 
+/* Der Umfang der Sammlung wird hier absichtlich nicht zurückgesetzt: er ist
+   keine Einstellung des Filterkastens, sondern die Grundeinstellung der App. */
 function setzeFilterZurueck() {
-  ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung"].forEach(function (id) {
+  ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung", "fPlatz"].forEach(function (id) {
     $(id).value = "";
   });
   $("fOhneMaterial").checked = false;
   $("fMitAlter").checked = false;
+  $("fHosensack").checked = false;
+  $("fOhneKontakt").checked = false;
   aktualisiere();
 }
 
@@ -1184,6 +1338,10 @@ function rahmenFilter() {
 var VORBEREITUNG_RANG = { gering: 1, mittel: 2, hoch: 3 };
 
 function passtZuFilter(e, f) {
+  // Zweite Reihe: Dubletten, sehr lange, sehr große und Online-Elemente.
+  // Nur ein ausdrückliches kern === false blendet aus – fehlt das Feld,
+  // bleibt das Element sichtbar, statt stillschweigend zu verschwinden.
+  if (f.nurKern && e.kern === false) return false;
   // Elemente ohne Altersangabe (z. B. Spielewiki) gelten für alle Stufen
   if (f.stufe && e.altersstufen && e.altersstufen.length && !hat(e.altersstufen, f.stufe)) return false;
   // Nach der Obergrenze filtern, nicht nach der Untergrenze: wer "passt in
@@ -1201,6 +1359,16 @@ function passtZuFilter(e, f) {
       VORBEREITUNG_RANG[e.vorbereitung] > VORBEREITUNG_RANG[f.vorbereitungHoechstens]) return false;
   if (f.ohneMaterial && e.material && e.material.length) return false;
   if (f.mitAlter && ohneAltersangabe(e)) return false;
+  // Platz: Obergrenze, nicht genaue Übereinstimmung – wer nur ein Zimmer hat,
+  // kann auch am Tisch spielen. Leerer Platz heißt "nicht bekannt" und bleibt
+  // drin, genau wie beim Stufenfilter.
+  if (f.platz && e.platz && PLATZ_RANG[e.platz] > PLATZ_RANG[f.platz]) return false;
+  // Körperkontakt: nur was ausdrücklich Nähe verlangt, fällt weg.
+  // "" (nicht bekannt) bleibt drin.
+  if (f.ohneKontakt && (e.naehe === "leicht" || e.naehe === "hoch")) return false;
+  // "5 Minuten übrig": hier ist false kein Grenzfall, sondern die Antwort –
+  // gesucht ist ausdrücklich das, was ohne alles sofort losgeht.
+  if (f.hosensack && !e.hosensackspiel) return false;
   if (f.suche) {
     // Mehrere Wörter werden einzeln geprüft, sonst findet "Gelände spiel" nichts.
     var woerter = f.suche.split(/\s+/);
@@ -1442,10 +1610,49 @@ function hatKategorien(bereich) {
  * Entscheidet, ob Kacheln oder die Liste gezeigt werden.
  * Gesucht wird immer in der Liste – dann will man Treffer sehen, keine Kacheln.
  */
+/**
+ * Zeichnet den Schalter für den Umfang der Sammlung.
+ * Die Zahlen auf den beiden Knöpfen gelten für das, was gerade eingestellt
+ * ist (Pfad, Suche, Filter) – sonst stünde dort immer 580 und 1075, egal
+ * wo man ist, und der Schalter erklärte nichts.
+ */
+function zeichneSammlung(f) {
+  var pfadJetzt = {
+    bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
+    slot: pfad.slot,
+    unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
+  };
+  var nurErste = 0, insgesamt = 0;
+  for (var i = 0; i < ALLE.length; i++) {
+    var e = ALLE[i];
+    if (!passtZuPfad(e, pfadJetzt)) continue;
+    if (!passtZuFilter(e, { suche: f.suche, stufe: f.stufe, dauer: f.dauer,
+        teilnehmer: f.teilnehmer, ort: f.ort, vorbereitung: f.vorbereitung,
+        ohneMaterial: f.ohneMaterial, mitAlter: f.mitAlter, platz: f.platz,
+        hosensack: f.hosensack, ohneKontakt: f.ohneKontakt, nurKern: false })) continue;
+    insgesamt++;
+    if (e.kern !== false) nurErste++;
+  }
+  function beschrifte(id, text, anzahl, aktiv) {
+    var knopf = $(id);
+    knopf.innerHTML = schuetze(text) + '<span class="zahl">' + anzahl + "</span>";
+    knopf.className = "chip" + (aktiv ? " aktiv" : "");
+    knopf.setAttribute("aria-pressed", aktiv ? "true" : "false");
+  }
+  beschrifte("sammlungKern", "geprüfte Auswahl", nurErste, nurKern);
+  beschrifte("sammlungAlle", "ganze Sammlung", insgesamt, !nurKern);
+  // Der Hinweis sagt, was in der zweiten Reihe liegt – nichts Schlechtes,
+  // sondern Doppeltes, Überlanges, Übergroßes und Ideen fürs Netz.
+  $("sammlungHinweis").textContent = nurKern
+    ? "Zweite Reihe ausgeblendet: Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz."
+    : "Mit zweiter Reihe: Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz.";
+}
+
 function aktualisiere() {
   var f = filterWerte();
   var zahl = aktiveFilter();
   $("filterZahl").textContent = zahl ? zahl + " aktiv" : "";
+  zeichneSammlung(f);
   zeichnePfad();
 
   var kacheln = $("kacheln");
@@ -1564,6 +1771,23 @@ function zeigeKacheln(behaelter, ebene, f) {
         aktualisiere();
       }, true));
     });
+    // Die Abkürzung für den häufigsten Notfall im Gruppenheim: fünf Minuten
+    // überbrücken, ohne Material, ohne Vorbereitung, ohne Nachdenken.
+    if (!$("fHosensack").checked) {
+      var hosen = leereFilter();
+      hosen.hosensack = true;
+      var sofort = sammle(hosen, leererPfad());
+      if (sofort.length) {
+        behaelter.appendChild(baueKachel("5 Minuten übrig", sofort.length, function () {
+          setzeFilterZurueck();
+          $("fHosensack").checked = true;
+          pfad = leererPfad();
+          pfad.unterkategorie = "__alle__";
+          window.scrollTo(0, 0);
+          aktualisiere();
+        }, true));
+      }
+    }
   }
   // Auf den unteren Ebenen: alles der Ebene auf einmal ansehen
   if (ebene !== "bereich") {
@@ -1641,7 +1865,7 @@ function zeigeDetail(e) {
 
   // Ohne diese Zeile sind Stöbern und Planen zwei getrennte Apps: man findet
   // etwas, muss den Reiter wechseln und den Titel erneut suchen.
-  var moegliche = SLOTS.filter(function (s) { return passtGrob(e, s); });
+  var moegliche = KREISE.concat(SLOTS).filter(function (s) { return passtGrob(e, s); });
   if (moegliche.length) {
     html += '<div class="planzeile"><span class="chiptitel">In den Plan</span><div class="chips">';
     for (var s = 0; s < moegliche.length; s++) {
@@ -1659,6 +1883,22 @@ function zeigeDetail(e) {
           ? "füllt einen ganzen Heimabend" : "einzelner Baustein") + "</dd>";
   html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
   html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
+  // Die neuen Spiel-Achsen nur zeigen, wenn die Quelle etwas hergibt –
+  // eine Zeile "Platz: nicht bekannt" hilft niemandem.
+  if (PLATZ_TEXT[e.platz]) {
+    html += "<dt>Platz</dt><dd>" + schuetze(PLATZ_TEXT[e.platz]) +
+            (e.hosensackspiel ? " · geht sofort, ohne alles" : "") + "</dd>";
+  } else if (e.hosensackspiel) {
+    html += "<dt>Platz</dt><dd>geht sofort, ohne alles</dd>";
+  }
+  if (NAEHE_TEXT[e.naehe]) {
+    html += "<dt>Nähe</dt><dd>" + schuetze(NAEHE_TEXT[e.naehe]) + "</dd>";
+  }
+  if (e.uebt && e.uebt.length) {
+    html += "<dt>Übt nebenbei</dt><dd>" + schuetze(e.uebt.map(function (u) {
+      return UEBT_TEXT[u] || u;
+    }).join(", ")) + "</dd>";
+  }
   html += "<dt>Alter</dt><dd>" + schuetze(stufenText(e)) +
           (e.alter_ab ? " · ab " + schuetze(e.alter_ab) + " Jahren" : "") + "</dd>";
   var gruppe = gruppenText(e);
@@ -1702,6 +1942,51 @@ function zeigeDetail(e) {
     html += "</div></div>";
   }
 
+
+  /* Varianten: dasselbe Spiel unter anderem Namen, von Hand zusammengelegt.
+     Hier steht ausdrücklich KEIN Text der anderen Fassung – nur ihr Titel und
+     ein Satz, den wir selbst geschrieben haben. Wer die vollständige Fassung
+     lesen will, springt hinüber und sieht dort deren eigene Lizenz. */
+  if (e.varianten && e.varianten.length) {
+    var reihen = [];
+    for (var v = 0; v < e.varianten.length; v++) {
+      var variante = e.varianten[v] || {};
+      var titel = String(variante.titel || "");
+      if (!titel) continue;
+      var gibtEs = variante.id && NACH_ID[variante.id];
+      var zeile = "<li>" + (gibtEs
+        ? '<button type="button" data-variante="' + schuetze(variante.id) + '">' +
+          schuetze(titel) + "</button>"
+        : "<span>" + schuetze(titel) + "</span>");
+      if (variante.aenderung) {
+        zeile += '<span class="aenderung">' + schuetze(variante.aenderung) + "</span>";
+      }
+      reihen.push(zeile + "</li>");
+    }
+    if (reihen.length) {
+      html += '<div class="kasten verweis"><h4>Auch bekannt als</h4><ul>' +
+              reihen.join("") + "</ul>" +
+              '<span class="lizenzhinweis">Jede Fassung steht bei ihrer eigenen ' +
+              "Quelle mit ihrer eigenen Lizenz – antippen zum Nachlesen.</span></div>";
+    }
+  }
+
+  /* "Spiele, die das üben" – die Frage, die eine reine Spielesammlung nicht
+     beantworten kann: zu einer Probe die Spiele, die sie nebenbei üben. */
+  if (e.bereich === "pfadfindertechnik" && e.kategorie && UEBT_TEXT[e.kategorie]) {
+    var uebende = [];
+    for (var ue = 0; ue < ALLE.length && uebende.length < 8; ue++) {
+      if (hat(ALLE[ue].uebt, e.kategorie)) uebende.push(ALLE[ue]);
+    }
+    if (uebende.length) {
+      html += '<div class="kasten verweis"><h4>Spiele, die das üben</h4><div class="chips">';
+      for (var u2 = 0; u2 < uebende.length; u2++) {
+        html += '<button type="button" class="chip" data-variante="' +
+                schuetze(uebende[u2].id) + '">' + schuetze(uebende[u2].titel) + "</button>";
+      }
+      html += "</div></div>";
+    }
+  }
 
   if (e.dubletten && e.dubletten.length) {
     var verweise = [];
@@ -1756,6 +2041,16 @@ function zeigeDetail(e) {
       if (ziel) zeigeDetail(ziel);
     });
   }
+
+  // Varianten und übende Spiele führen zum anderen Element – mit dessen
+  // eigener Quelle und Lizenz. Auch dann, wenn es in der zweiten Reihe liegt.
+  var sprungKnoepfe = $("detailInhalt").querySelectorAll("button[data-variante]");
+  for (var sk = 0; sk < sprungKnoepfe.length; sk++) {
+    sprungKnoepfe[sk].addEventListener("click", function () {
+      var ziel = NACH_ID[this.getAttribute("data-variante")];
+      if (ziel) zeigeDetail(ziel);
+    });
+  }
   oeffneUeberlagerung($("detail"));
 }
 
@@ -1765,7 +2060,25 @@ function zeigeDetail(e) {
  */
 function passtGrob(e, slot) {
   if (slot.schluessel === "haupt") return hat(e.slots, "hauptteil");
+  // Die beiden Kreise prüfen selbst: dort gehören Rituale und Auswertung hin.
+  if (slot.rahmen) return slot.passt(e);
   return e.bereich === "spiel" && hat(e.slots, slot.schluessel);
+}
+
+/** Der Baustein in einem der beiden Kreise – oder null, wenn der Rahmen steht. */
+function kreisElement(schluessel) {
+  var id = plan[schluessel];
+  if (!id || typeof id !== "string") return null;
+  return NACH_ID[id] || null;
+}
+/** Wieviel Zeit die beiden Kreise zusammen kosten (Rahmen: je 5 Minuten). */
+function kreisDauerMitte() {
+  var summe = 0;
+  for (var i = 0; i < KREISE.length; i++) {
+    var e = kreisElement(KREISE[i].schluessel);
+    summe += e ? mitteldauer(e) : KREIS_DAUER;
+  }
+  return summe;
 }
 
 /** Setzt einen Baustein auf den ersten freien passenden Platz. */
@@ -1850,7 +2163,7 @@ function freieZeit(ausser) {
     var e = planElement(slots[i].slot.schluessel, slots[i].index);
     if (e) belegt += mitteldauer(e);
   }
-  return Math.max(0, rahmen.zielzeit - KREIS_DAUER * 2 - belegt);
+  return Math.max(0, rahmen.zielzeit - kreisDauerMitte() - belegt);
 }
 
 /**
@@ -1887,8 +2200,7 @@ function zeichnePlan() {
   var behaelter = $("planSlots");
   behaelter.innerHTML = "";
 
-  behaelter.appendChild(festerSlot("Eröffnungskreis",
-    "Kreis schließen, kurz etwas sagen, mit dem Bundesgruß eröffnen."));
+  behaelter.appendChild(kreisKarte(KREISE[0]));
 
   for (var s = 0; s < SLOTS.length; s++) {
     var slot = SLOTS[s];
@@ -1908,20 +2220,50 @@ function zeichnePlan() {
     }
   }
 
-  behaelter.appendChild(festerSlot("Schlusskreis",
-    "Kreis noch einmal schließen, dann gehen alle ihrer Wege."));
+  behaelter.appendChild(kreisKarte(KREISE[1]));
 
   aktualisiereSumme();
   $("planText").value = planAlsText();
 }
 
-function festerSlot(name, beschreibung) {
+/**
+ * Eröffnungs- und Schlusskreis: ein Platz, den man füllen KANN.
+ * Bleibt er leer, steht der Rahmen trotzdem da (gestrichelt, kleiner Knoten)
+ * und wird mit fünf Minuten gerechnet – der Kreis fällt nie aus.
+ */
+function kreisKarte(kreis) {
+  var e = kreisElement(kreis.schluessel);
   var knoten = document.createElement("div");
-  knoten.className = "slot fest";
-  knoten.innerHTML =
-    '<div class="slot-kopf"><span class="slot-name">' + schuetze(name) + "</span>" +
-    '<span class="slot-dauer">' + KREIS_DAUER + " Min</span></div>" +
-    '<div class="slot-inhalt"><div class="kurz">' + schuetze(beschreibung) + "</div></div>";
+  knoten.className = "slot" + (e ? "" : " fest");
+
+  var html = '<div class="slot-kopf"><span class="slot-name">' + schuetze(kreis.name) +
+             "</span>" + '<span class="slot-dauer">' +
+             (e ? schuetze(dauerText(e)) : KREIS_DAUER + " Min") + "</span></div>";
+  html += e ? '<button type="button" class="slot-inhalt slot-oeffnen" data-tat="ansehen">'
+            : '<div class="slot-inhalt">';
+  if (e) {
+    html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
+            '<div class="kurz">' + schuetze(e.kurz) + "</div>" +
+            '<div class="quellzeile">' + schuetze((e.quelle || {}).name || "") + "</div>";
+  } else {
+    html += '<div class="kurz">' + schuetze(kreis.rahmen) + "</div>";
+  }
+  html += e ? "</button>" : "</div>";
+
+  html += '<div class="slot-knoepfe">';
+  html += '<button class="knopf klein" type="button" data-tat="waehlen">' +
+          (e ? "Tauschen" : "Ritual wählen") + "</button>" +
+          '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
+  if (e) html += '<button class="knopf klein" type="button" data-tat="leeren">Entfernen</button>';
+  html += "</div>";
+  knoten.innerHTML = html;
+
+  var knoepfe = knoten.querySelectorAll("button[data-tat]");
+  for (var k = 0; k < knoepfe.length; k++) {
+    knoepfe[k].addEventListener("click", function () {
+      slotAktion(this.getAttribute("data-tat"), kreis, 0);
+    });
+  }
   return knoten;
 }
 
@@ -1999,7 +2341,9 @@ function slotAktion(tat, slot, index) {
     return;
   }
   if (tat === "zufall") {
-    var gewaehlt = wuerfleBaustein(slot, zieldauerFuer(slot, index));
+    // Für die Kreise ist die Dauer egal: es gibt nur eine Handvoll Rituale,
+    // eine Zeitvorgabe würde die Hälfte davon aussperren.
+    var gewaehlt = wuerfleBaustein(slot, slot.rahmen ? 0 : zieldauerFuer(slot, index));
     if (gewaehlt) slotSetzen(slot.schluessel, index, gewaehlt.id);
   }
 }
@@ -2020,6 +2364,10 @@ function bereitsImPlan() {
     var e = planElement(slots[i].slot.schluessel, slots[i].index);
     if (e) ids[e.id] = true;
   }
+  for (var k = 0; k < KREISE.length; k++) {
+    var kreis = kreisElement(KREISE[k].schluessel);
+    if (kreis) ids[kreis.id] = true;
+  }
   return ids;
 }
 
@@ -2036,6 +2384,9 @@ function wuerfleBaustein(slot, zieldauer) {
       return slot.passt(e) && !schonDa[e.id];
     });
     if (!moegliche.length) moegliche = sammle(leereFilter(), null, slot.passt);
+    // Ganz zum Schluss auch die zweite Reihe – lieber ein Vorschlag aus der
+    // zweiten Reihe als ein leerer Platz.
+    if (!moegliche.length) moegliche = sammle(ganzeSammlungFilter(), null, slot.passt);
   }
   if (!moegliche.length) return null;
 
@@ -2085,7 +2436,14 @@ function planWuerfeln() {
 
 /* --------------------------------------------------------- Gesamtdauer */
 function planDauer() {
-  var min = KREIS_DAUER * 2, max = KREIS_DAUER * 2;
+  var min = 0, max = 0;
+  // Die Kreise zählen mit: leer mit ihren fünf Minuten Rahmen, gefüllt mit
+  // der Dauer des gewählten Bausteins.
+  for (var k = 0; k < KREISE.length; k++) {
+    var kreis = kreisElement(KREISE[k].schluessel);
+    min += kreis ? kreis.dauer_min : KREIS_DAUER;
+    max += kreis ? kreis.dauer_max : KREIS_DAUER;
+  }
   var slots = alleSlots();
   for (var i = 0; i < slots.length; i++) {
     var e = planElement(slots[i].slot.schluessel, slots[i].index);
@@ -2110,14 +2468,11 @@ function planAlsText() {
   var zeilen = ["Heimabend-Plan", "=============="];
   var nummer = 1;
   var material = [];
-  zeilen.push(nummer++ + ". Eröffnungskreis (" + KREIS_DAUER + " Min)");
 
-  var slots = alleSlots();
-  for (var i = 0; i < slots.length; i++) {
-    var slot = slots[i].slot, index = slots[i].index;
-    var e = planElement(slot.schluessel, index);
-    var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
-    if (!e) { zeilen.push(nummer++ + ". " + name + ": — noch offen —"); continue; }
+  /* Ein Platz im Text: Titel, Dauer, Kurztext, Quelle und Lizenz.
+     Die Lizenz steht bei jedem Baustein, auch bei den beiden Kreisen –
+     wer den Plan weitergibt, gibt die Quellenangabe mit weiter. */
+  function schreibe(name, e) {
     zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
     zeilen.push("   " + e.kurz);
     var q = e.quelle || {};
@@ -2127,7 +2482,24 @@ function planAlsText() {
       if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
     }
   }
-  zeilen.push(nummer++ + ". Schlusskreis (" + KREIS_DAUER + " Min)");
+  function schreibeKreis(kreis) {
+    var e = kreisElement(kreis.schluessel);
+    if (e) { schreibe(kreis.name, e); return; }
+    zeilen.push(nummer++ + ". " + kreis.name + " (" + KREIS_DAUER + " Min)");
+    zeilen.push("   " + kreis.rahmen);
+  }
+
+  schreibeKreis(KREISE[0]);
+
+  var slots = alleSlots();
+  for (var i = 0; i < slots.length; i++) {
+    var slot = slots[i].slot, index = slots[i].index;
+    var e = planElement(slot.schluessel, index);
+    var name = slot.name + (slot.mehrfach && plan.haupt.length > 1 ? " " + (index + 1) : "");
+    if (!e) { zeilen.push(nummer++ + ". " + name + ": — noch offen —"); continue; }
+    schreibe(name, e);
+  }
+  schreibeKreis(KREISE[1]);
 
   var d = planDauer();
   zeilen.push("");
@@ -2181,8 +2553,11 @@ function ladePlan() {
     var gespeichert = JSON.parse(roh);
     if (gespeichert && gespeichert.plan && Array.isArray(gespeichert.plan.haupt)) {
       plan = {
+        eroeffnung: typeof gespeichert.plan.eroeffnung === "string"
+                    ? gespeichert.plan.eroeffnung : null,
         einstieg: typeof gespeichert.plan.einstieg === "string" ? gespeichert.plan.einstieg : null,
         abschluss: typeof gespeichert.plan.abschluss === "string" ? gespeichert.plan.abschluss : null,
+        schluss: typeof gespeichert.plan.schluss === "string" ? gespeichert.plan.schluss : null,
         haupt: gespeichert.plan.haupt.map(function (id) {
           return typeof id === "string" ? id : null;
         })
@@ -2421,7 +2796,10 @@ function zeichneFuss() {
     quellen[schluessel] = (quellen[schluessel] || 0) + 1;
   }
   var namen = Object.keys(quellen).sort(function (a, b) { return quellen[b] - quellen[a]; });
-  var html = "<p><strong>" + ALLE.length + " Bausteine</strong> aus diesen Quellen:</p>" +
+  var ersteReihe = 0;
+  for (var r = 0; r < ALLE.length; r++) if (ALLE[r].kern !== false) ersteReihe++;
+  var html = "<p><strong>" + ALLE.length + " Bausteine</strong> aus diesen Quellen, " +
+             "davon " + ersteReihe + " in der geprüften Auswahl:</p>" +
              '<p class="quellenliste">';
   for (var n = 0; n < namen.length; n++) {
     html += "<span>" + schuetze(namen[n]) + " · " + quellen[namen[n]] + "</span>";
@@ -2460,6 +2838,7 @@ function rahmenKurzfassung() {
   if (rahmen.ort) teile.push(ORT_TEXT[rahmen.ort]);
   if (rahmen.vorbereitung) teile.push("Vorb. " + rahmen.vorbereitung);
   if (rahmen.ohneMaterial) teile.push("ohne Material");
+  if (!nurKern) teile.push("mit zweiter Reihe");
   return teile.join(" · ");
 }
 
@@ -2482,7 +2861,7 @@ function verdrahte() {
     entprellen = setTimeout(aktualisiere, 150);
   });
   var felder = ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung",
-                "fOhneMaterial", "fMitAlter"];
+                "fOhneMaterial", "fMitAlter", "fPlatz", "fHosensack", "fOhneKontakt"];
   for (var i = 0; i < felder.length; i++) {
     $(felder[i]).addEventListener("change", aktualisiere);
   }
@@ -2530,11 +2909,16 @@ function verdrahte() {
   for (var r = 0; r < rahmenFelder.length; r++) {
     $(rahmenFelder[r]).addEventListener("change", liesRahmen);
   }
+  $("rZweiteReihe").addEventListener("change", function () {
+    setzeSammlung(!this.checked);
+  });
   $("planWuerfeln").addEventListener("click", planWuerfeln);
   $("planLeeren").addEventListener("click", function () {
-    plan = { einstieg: null, haupt: [null, null], abschluss: null };
+    plan = leererPlan();
     speicherePlan(); zeichnePlan();
   });
+  $("sammlungKern").addEventListener("click", function () { setzeSammlung(true); });
+  $("sammlungAlle").addEventListener("click", function () { setzeSammlung(false); });
   $("planKopieren").addEventListener("click", planTeilen);
 }
 
@@ -2557,6 +2941,8 @@ function starte(elemente) {
     ].join(" "));
   }
   verdrahte();
+  ladeSammlung();
+  $("rZweiteReihe").checked = !nurKern;
   ladePlan();
   aktualisiere();
   zeichneFuss();

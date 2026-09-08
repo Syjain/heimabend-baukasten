@@ -1529,6 +1529,14 @@ DUENN_ZEICHEN = 300      # Beschreibung kürzer -> "dünn beschrieben"
 LANG_SPIEL_MIN = 45      # Spiel dauert länger -> passt schlecht als Baustein
 
 KERN_CORONA = re.compile(r"corona|lockdown|pandemi|videokonferenz|\bzoom\b|\bonline\b", re.IGNORECASE)
+# Gegenprobe zum Abzug oben: Viele Klassiker nennen online nur als ZUSATZ
+# ("Variante: Online", "kann auch online gespielt werden"). Das Spiel selbst
+# braucht kein Netz - Montagsmaler, Scharade und Wer bin ich sind so um drei
+# Punkte gebracht worden. Wer wirklich nur online funktioniert, steht von Hand
+# in redaktion.json unter "kern".
+KERN_ONLINE_NUR_VARIANTE = re.compile(
+    r"variante:?\s*online|auch\s+online|online\s*[-–]?\s*variante"
+    r"|kann.{0,30}online\s+gespielt|geht auch digital|auch digital", re.IGNORECASE)
 KERN_TRINKSPIEL = re.compile(r"trinkspiel|\balkohol|\bbier\b|schnaps|\bwodka\b|betrunken", re.IGNORECASE)
 KERN_PARTY = re.compile(r"kindergeburtstag|geburtstagsfeier|\bparty\b|silvester|fasching|karneval",
                         re.IGNORECASE)
@@ -1561,6 +1569,14 @@ def kern_punkte(element, in_dublette):
     if kennung in in_dublette:
         punkte -= 6
         warum.append("Dublette")
+    # Ein Spiel, das mehrere Sammlungen unabhängig voneinander führen, ist ein
+    # Klassiker - und genau das sagt die Zahl der zusammengelegten Varianten.
+    # Ohne diesen Bonus misst die Punktzahl nur, wie vollständig die Quelle ihre
+    # Felder ausgefüllt hat, und "Wer bin ich" landet auf Rang 46 von 55.
+    anzahl_varianten = len(element.get("varianten") or [])
+    if anzahl_varianten:
+        punkte += min(2 + anzahl_varianten - 1, 4)
+        warum.append("in {} weiteren Sammlung(en)".format(anzahl_varianten))
     laenge = len(element.get("beschreibung") or "")
     if laenge >= 700:
         punkte += 2
@@ -1595,7 +1611,7 @@ def kern_punkte(element, in_dublette):
     if (element.get("gruppe_min") or 0) >= 15:
         punkte -= 2
         warum.append("braucht große Gruppe")
-    if KERN_CORONA.search(text):
+    if KERN_CORONA.search(text) and not KERN_ONLINE_NUR_VARIANTE.search(text):
         punkte -= 3
         warum.append("Corona/Online")
     if KERN_TRINKSPIEL.search(text) or KERN_PARTY.search(text):
@@ -1681,6 +1697,12 @@ def bestimme_kern(elemente, redaktion, varianten_ids):
                     kennung)
         for kennung in sorted(vorhanden, key=rang)[1:]:
             in_dublette.add(kennung)
+    # Die Handentscheidung schlaegt die Automatik: Was in redaktion.json unter
+    # "zusammengelegt" als "haupt" steht, ist die erste Fassung - auch wenn die
+    # Rangfolge oben ein anderes Element vorgezogen haette. Ohne diese Zeile
+    # faellt das Hauptelement zusammen mit seinen Varianten aus dem Kern.
+    in_dublette -= {eintrag.get("haupt") for eintrag
+                    in redaktion.get("zusammengelegt", [])}
 
     bewertet = {}
     for element in spiele:

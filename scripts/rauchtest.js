@@ -11,7 +11,8 @@
    web/index.html noch einmal laufen lassen.
 
    Achtung: Der Test verstellt unterwegs Filter und würfelt den Plan neu.
-   Am Ende setzt er alles zurück, aber ein gespeicherter Plan geht dabei verloren. */
+   Am Ende setzt er alles zurück, aber ein gespeicherter Plan geht dabei verloren –
+   und ebenso die gemerkte Einstellung "geprüfte Auswahl / ganze Sammlung". */
 (function () {
   var ergebnisse = [];
   function pruefe(name, bedingung, zusatz) {
@@ -24,10 +25,64 @@
     document.getElementById("suche").value = "";
     pfad = leererPfad();
     setzeFilterZurueck();
+    // Der Umfang der Sammlung ist kein Filter und wird von
+    // setzeFilterZurueck() bewusst nicht angefasst. Alle Prüfungen mit festen
+    // Zahlen rechnen mit der ganzen Sammlung, deshalb hier ausdrücklich
+    // umschalten; die eigenen Prüfungen zum Schalter stellen selbst um.
+    setzeSammlung(false);
   }
+
+  // --- Umfang der Sammlung: erst prüfen, danach wird umgeschaltet ---
+  pruefe("Standard ist die geprüfte Auswahl (ohne gemerkte Wahl)",
+         (function () {
+           try { localStorage.removeItem(SAMMLUNG_SPEICHER); } catch (f) { /* egal */ }
+           return ladeSammlung() === true && SAMMLUNG_STANDARD === true;
+         })());
+  setzeSammlung(true);
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
+  var mitKern = gefiltert.length;
+  var kernSauber = gefiltert.every(function (e) { return e.kern !== false; });
+  setzeSammlung(false);
+  aktualisiere();
+  var ohneKern = gefiltert.length;
+  pruefe("Schalter verändert die Zahlen", ohneKern > mitKern && mitKern > 0,
+         mitKern + " -> " + ohneKern);
+  pruefe("geprüfte Auswahl enthält nichts aus der zweiten Reihe", kernSauber);
+  setzeSammlung(true);
+  pfad = leererPfad(); aktualisiere();
+  var kachelKern = document.getElementById("sammlungKern").textContent;
+  var kachelSpiele = document.querySelectorAll("#kacheln .kachel")[0].textContent;
+  setzeSammlung(false);
+  aktualisiere();
+  pruefe("Schalter verändert auch die Zahlen auf den Kacheln",
+         kachelSpiele !== document.querySelectorAll("#kacheln .kachel")[0].textContent,
+         kachelSpiele + " -> " + document.querySelectorAll("#kacheln .kachel")[0].textContent);
+  pruefe("Schalter zeigt beide Zahlen an",
+         /\d/.test(kachelKern) &&
+         /\d/.test(document.getElementById("sammlungAlle").textContent),
+         kachelKern + " / " + document.getElementById("sammlungAlle").textContent);
+  setzeSammlung(true);
+  pruefe("Planer-Vorschläge folgen dem Schalter",
+         sammle(rahmenFilter(), null, SLOTS[1].passt).every(function (e) {
+           return e.kern !== false;
+         }));
+  pruefe("Schalter merkt sich die Wahl",
+         (function () {
+           setzeSammlung(false);
+           var gemerkt = ladeSammlung();
+           setzeSammlung(true);
+           return gemerkt === false && ladeSammlung() === true;
+         })());
+  setzeSammlung(false);
 
   // --- Daten ---
   pruefe("Daten geladen", ALLE.length > 900, ALLE.length + " Elemente");
+  pruefe("alle tragen kern und varianten",
+         ALLE.every(function (e) {
+           return typeof e.kern === "boolean" && Array.isArray(e.varianten);
+         }),
+         ALLE.filter(function (e) { return e.kern; }).length + " in der ersten Reihe");
   pruefe("alle haben Bereich und Umfang",
          ALLE.every(function (e) {
            return BEREICH_TEXT[e.bereich] &&
@@ -321,6 +376,161 @@
          probe.querySelector("a") &&
          probe.querySelector("a").getAttribute("href").indexOf("https://example.org") === 0);
 
+  // --- Varianten in der Detailansicht ---
+  zuruecksetzen();
+  var mitVarianten = ALLE.filter(function (e) {
+    return e.varianten && e.varianten.length && NACH_ID[e.varianten[0].id];
+  })[0];
+  pruefe("es gibt zusammengelegte Elemente mit Varianten", !!mitVarianten,
+         ALLE.filter(function (e) { return e.varianten.length; }).length + " Stück");
+  if (mitVarianten) {
+    zeigeDetail(mitVarianten);
+    var kasten = document.querySelector("#detailInhalt .kasten.verweis");
+    pruefe("Varianten werden angezeigt",
+           !!kasten && kasten.textContent.indexOf("Auch bekannt als") > -1);
+    pruefe("Variantenkasten zeigt den Titel der anderen Fassung",
+           !!kasten && kasten.textContent.indexOf(mitVarianten.varianten[0].titel) > -1,
+           mitVarianten.varianten[0].titel);
+    // Punkt 72: die Lizenz des Hauptelements steht weiterhin da …
+    pruefe("Lizenz steht auch bei einem Element mit Varianten noch da",
+           document.getElementById("detailInhalt").textContent
+             .indexOf(mitVarianten.quelle.lizenz) > -1,
+           mitVarianten.quelle.lizenz);
+    var variantenKnopf = document.querySelector("#detailInhalt button[data-variante]");
+    pruefe("Variante ist anklickbar", !!variantenKnopf);
+    if (variantenKnopf) {
+      var andere = NACH_ID[variantenKnopf.getAttribute("data-variante")];
+      variantenKnopf.click();
+      // … und drüben steht die eigene Lizenz der anderen Fassung.
+      pruefe("Variante führt zum anderen Element",
+             document.getElementById("detailTitel").textContent === andere.titel,
+             andere.titel);
+      pruefe("die andere Fassung zeigt ihre eigene Quelle und Lizenz",
+             document.getElementById("detailInhalt").textContent
+               .indexOf(andere.quelle.lizenz) > -1,
+             andere.quelle.lizenz);
+    }
+    schliesseUeberlagerung(document.getElementById("detail"), true);
+  }
+
+  // --- Spiele, die eine Probe üben ---
+  var mitUebt = ALLE.filter(function (e) { return e.uebt && e.uebt.length; })[0];
+  if (mitUebt) {
+    var probeDazu = ALLE.filter(function (e) {
+      return e.bereich === "pfadfindertechnik" && e.kategorie === mitUebt.uebt[0];
+    })[0];
+    pruefe("es gibt eine Probe zu den übenden Spielen", !!probeDazu, mitUebt.uebt[0]);
+    if (probeDazu) {
+      zeigeDetail(probeDazu);
+      var uebtKasten = Array.prototype.filter.call(
+        document.querySelectorAll("#detailInhalt .kasten.verweis"),
+        function (k) { return k.textContent.indexOf("Spiele, die das üben") === 0; })[0];
+      pruefe("Probe zeigt 'Spiele, die das üben'", !!uebtKasten,
+             uebtKasten ? uebtKasten.querySelectorAll("button").length + " Spiele" : "keiner");
+      schliesseUeberlagerung(document.getElementById("detail"), true);
+    }
+  }
+
+  // --- Neue Filter: Platz, Körperkontakt, Hosensackspiel ---
+  function filterProbe(vorbereiten) {
+    zuruecksetzen();
+    vorbereiten();
+    pfad = leererPfad(); pfad.unterkategorie = "__alle__";
+    aktualisiere();
+    return gefiltert;
+  }
+  var imZimmer = filterProbe(function () {
+    document.getElementById("fPlatz").value = "zimmer";
+  });
+  pruefe("Platzfilter 'ein Zimmer' wirft zu große Spiele raus",
+         imZimmer.length > 0 && imZimmer.every(function (e) {
+           return !e.platz || PLATZ_RANG[e.platz] <= 2;
+         }), imZimmer.length);
+  pruefe("Platzfilter behält Elemente ohne Platzangabe",
+         imZimmer.some(function (e) { return !e.platz; }),
+         imZimmer.filter(function (e) { return !e.platz; }).length + " ohne Angabe");
+  pruefe("Platzfilter lässt Tischspiele im Zimmer zu",
+         imZimmer.some(function (e) { return e.platz === "tisch"; }));
+
+  var ohneKontakt = filterProbe(function () {
+    document.getElementById("fOhneKontakt").checked = true;
+  });
+  pruefe("Filter 'ohne Körperkontakt' greift",
+         ohneKontakt.length > 0 && ohneKontakt.every(function (e) {
+           return e.naehe !== "leicht" && e.naehe !== "hoch";
+         }), ohneKontakt.length);
+  pruefe("Filter 'ohne Körperkontakt' behält Elemente ohne Angabe",
+         ohneKontakt.some(function (e) { return e.naehe === ""; }),
+         ohneKontakt.filter(function (e) { return e.naehe === ""; }).length + " ohne Angabe");
+
+  var sofort = filterProbe(function () {
+    document.getElementById("fHosensack").checked = true;
+  });
+  pruefe("'5 Minuten übrig' liefert nur Bausteine ohne Material",
+         sofort.length > 0 && sofort.every(function (e) {
+           return e.hosensackspiel === true && (!e.material || !e.material.length);
+         }), sofort.length);
+  pruefe("'5 Minuten übrig' verlangt auch geringe Vorbereitung",
+         sofort.every(function (e) { return e.vorbereitung === "gering"; }));
+  zuruecksetzen();
+  var sofortKachel = Array.prototype.filter.call(
+    document.querySelectorAll("#kacheln .kachel"),
+    function (k) { return /5 Minuten übrig/.test(k.textContent); })[0];
+  pruefe("Startseite bietet '5 Minuten übrig'", !!sofortKachel);
+  if (sofortKachel) {
+    sofortKachel.click();
+    pruefe("'5 Minuten übrig' zeigt sofort die Liste",
+           !document.getElementById("listenkopf").hidden && gefiltert.length > 0 &&
+           gefiltert.every(function (e) { return e.hosensackspiel === true; }),
+           gefiltert.length);
+  }
+  zuruecksetzen();
+
+  // --- Eröffnungs- und Schlusskreis im Planer ---
+  plan = leererPlan(); zeichnePlan();
+  pruefe("leerer Eröffnungskreis bleibt als Rahmen stehen",
+         planAlsText().indexOf("1. Eröffnungskreis (5 Min)") > -1 &&
+         planAlsText().indexOf("Schlusskreis (5 Min)") > -1);
+  var eroeffnungsBausteine = ALLE.filter(KREISE[0].passt);
+  pruefe("es gibt Bausteine für den Eröffnungskreis", eroeffnungsBausteine.length > 0,
+         eroeffnungsBausteine.length);
+  var ritual = eroeffnungsBausteine[0];
+  slotSetzen("eroeffnung", 0, ritual.id);
+  pruefe("Eröffnungsplatz lässt sich füllen",
+         kreisElement("eroeffnung") === ritual, ritual.titel);
+  var planZeilen = planAlsText().split("\n");
+  var stelle = -1;
+  for (var pz = 0; pz < planZeilen.length; pz++) {
+    if (planZeilen[pz].indexOf("Eröffnungskreis: " + ritual.titel) > -1) stelle = pz;
+  }
+  pruefe("gewählter Eröffnungsbaustein steht im Plan-Text", stelle > -1);
+  pruefe("Eröffnungsbaustein steht mit Quelle und Lizenz im Plan-Text",
+         stelle > -1 && planZeilen.slice(stelle, stelle + 3).join(" ")
+           .indexOf("Quelle: " + ritual.quelle.name + " · " + ritual.quelle.lizenz) > -1,
+         ritual.quelle.lizenz);
+  pruefe("gefüllter Eröffnungskreis zählt mit seiner eigenen Dauer",
+         planDauer().min === ritual.dauer_min + 5,
+         planDauer().min + " Min statt " + (5 + 5));
+  var schlussBausteine = ALLE.filter(KREISE[1].passt);
+  pruefe("der Schlusskreis lässt sich ebenfalls füllen",
+         schlussBausteine.length > 0 &&
+         schlussBausteine.every(function (e) { return e.bereich !== "spiel"; }),
+         schlussBausteine.length + " Rituale");
+  slotAktion("leeren", KREISE[0], 0);
+  pruefe("geleerter Eröffnungskreis fällt auf den Rahmen zurück",
+         !kreisElement("eroeffnung") && planDauer().mitte === 10, planDauer().mitte);
+  zeigeDetail(ritual);
+  var kreisKnopf = document.querySelector(
+    '#detailInhalt .planzeile button[data-slot="eroeffnung"]');
+  pruefe("Detailansicht bietet den Eröffnungskreis an", !!kreisKnopf);
+  if (kreisKnopf) {
+    kreisKnopf.click();
+    pruefe("Ritual landet im Eröffnungskreis", plan.eroeffnung === ritual.id);
+  }
+  plan = leererPlan(); zeichnePlan();
+  zeigeAnsicht("bausteine");
+  zuruecksetzen();
+
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);
   pruefe("Detailansicht öffnet", !document.getElementById("detail").hidden);
@@ -329,6 +539,8 @@
   schliesseUeberlagerung(document.getElementById("detail"));
   zuruecksetzen();
   zeigeAnsicht("bausteine");
+  // Die App so zurücklassen, wie sie sich beim ersten Öffnen zeigt.
+  setzeSammlung(true);
 
   return ergebnisse.join("\n") + "\n\n" +
          ergebnisse.filter(function (z) { return z.indexOf("FEHLER") === 0; }).length +

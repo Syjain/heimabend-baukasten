@@ -2244,7 +2244,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-bada-bada-bada-ba",
@@ -3209,7 +3209,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-beruhmte-paare",
@@ -3259,7 +3259,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-besetzt",
@@ -3832,7 +3832,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-bissiger-hund",
@@ -5550,7 +5550,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "eig-capture-the-flag-im-dunkeln",
@@ -6391,7 +6391,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-das-schnellste-namensspiel-der-welt",
@@ -7042,7 +7042,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-der-kleine-in-der-mitte",
@@ -7094,7 +7094,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-der-magier-liebt",
@@ -7206,7 +7206,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-der-plumpsack-geht-um",
@@ -7257,7 +7257,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-der-ruf-eilt-dir-voraus",
@@ -8448,7 +8448,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-drachenschwanzfangen-einzeln",
@@ -9460,7 +9460,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-eierauffangmaschine",
@@ -10585,7 +10585,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-es-fliegt-es-fliegt",
@@ -12905,7 +12905,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-funker-funker",
@@ -13335,7 +13335,7 @@
    ],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-gerausche-kim-fur-paare",
@@ -15695,7 +15695,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-have-you-ever-seen-a-penguin-come-to-tea",
@@ -16500,7 +16500,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-hugo",
@@ -16891,7 +16891,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "insp-ich-packe-meinen-koffer",
@@ -17603,7 +17603,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-jagerball",
@@ -18007,7 +18007,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-karottenziehen",
@@ -18614,7 +18614,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "insp-kim-gedaechtnisspiel",
@@ -19631,7 +19631,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-koffer-packen-auf-der-slackline",
@@ -21766,7 +21766,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-liebst-du-mich",
@@ -21933,7 +21933,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "insp-liedtitel-in-emojis-verpacken",
@@ -22865,7 +22865,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-mais",
@@ -23337,7 +23337,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-melodie-raten",
@@ -23604,7 +23604,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-merkball",
@@ -23661,7 +23661,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-merkkim",
@@ -24531,7 +24531,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-morderspiel",
@@ -24927,7 +24927,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-mr-x",
@@ -26376,7 +26376,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-nippon-ha",
@@ -26714,7 +26714,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-once-an-austrian",
@@ -27254,7 +27254,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-paarweise-vorstellen",
@@ -27310,7 +27310,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-paerchen-finden",
@@ -27594,7 +27594,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "insp-pappteller-golf",
@@ -28699,7 +28699,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-plus-minus-interessant",
@@ -31764,7 +31764,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-schnapsen",
@@ -33368,7 +33368,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-sisyphos",
@@ -33946,7 +33946,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-speeddating",
@@ -35104,7 +35104,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-stimmungsbarometer",
@@ -36858,7 +36858,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-tetris",
@@ -37410,7 +37410,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-topfschlagen",
@@ -37994,7 +37994,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-vampire",
@@ -38527,7 +38527,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-vier-gewinnt",
@@ -39294,7 +39294,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-wascheklammernspiel",
@@ -40305,7 +40305,7 @@
      "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-wer-bin-ich-verkehrt",
@@ -40968,7 +40968,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-wie-viele-schritte-darf-ich-gehen",
@@ -41905,7 +41905,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-zauberball-sip-sop",
