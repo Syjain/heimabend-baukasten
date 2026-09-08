@@ -4,3 +4,9 @@ __pycache__/
 .venv/
 node_modules/
 data/quellen/*/raw/
+
+# Arbeitskopien und Ablagen, die nicht ins öffentliche Repo gehören
+Claude outputs/
+_to_delete_archiv.tgz
+# Das Probenbuch als PDF: Rechtefrage vor einer Veröffentlichung klären
+docs/Probenbuch-fuer-den-Heimabend.pdf

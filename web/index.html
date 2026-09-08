@@ -13,48 +13,86 @@
    Mobile zuerst: alles ist auf ein Handy im Gruppenheim ausgelegt,
    oft einhändig bedient und bei schlechtem Licht gelesen.
    Kein Framework, keine Schriften oder Bilder von fremden Servern.
+
+   Gestaltung: Die Bilder kommen aus der Pfadfinderwelt selbst.
+   - Zeltbahn: der dunkle Kopf oben, wie die schwarze Kohte.
+   - Seil: der Ablauf des Abends hängt als Seil mit Knoten an den Plätzen.
+   - Glut: alles, was Zeit misst (Dauer, Gesamtdauer), leuchtet wie Glut.
+   Schriften: Systemschrift für Text, Systemmonospace für Zahlen und
+   Kennzeichen – so lesen sich Dauer, Anzahl und Lizenz sofort als Daten.
    ------------------------------------------------------------------ */
 
 /* ------------------------------------------------------- Farben & Maße */
 :root {
   color-scheme: light;
-  --grund: #f4f2ec;           /* warmes Papier */
-  --grund-tief: #eae6dc;      /* für abgesetzte Flächen */
-  --karte: #fffefb;
-  --text: #1e1d19;
-  --leise: #67635a;
-  --linie: #d8d2c4;
-  --linie-stark: #b9b1a0;
-  --akzent: #2b5c39;          /* Pfadfindergrün */
-  --akzent-hell: #3d7a4e;
+  --grund: #e7eae3;            /* Morgennebel: kühles, helles Graugrün */
+  --grund-tief: #dde1d8;       /* für abgesetzte Flächen */
+  --karte: #f8f9f5;
+  --text: #1c1a17;
+  --leise: #5e6159;
+  --linie: #c8cdc1;
+  --linie-stark: #98a092;
+
+  --zeltbahn: #1c1a17;         /* dunkle Kohte: Kopf, starke Knöpfe */
+  --zeltbahn-text: #f1eee6;
+  --zeltbahn-leise: #a9a69c;
+  --zeltbahn-linie: #35322d;
+
+  --akzent: #2c5a3b;           /* Tanne: Wege, Auswahl, Bereiche */
+  --akzent-hell: #3b7250;
   --akzent-text: #ffffff;
-  --akzent-leicht: #e4eee6;
-  --warn: #9c4a15;
-  --warn-leicht: #f7ead9;
+  --akzent-leicht: #dbe6dc;
 
-  --schatten: 0 1px 1px rgba(30,29,25,.04), 0 2px 8px rgba(30,29,25,.05);
-  --schatten-hoch: 0 2px 4px rgba(30,29,25,.06), 0 8px 24px rgba(30,29,25,.08);
+  --glut: #a83f0c;             /* Glut: Zeit (5,9:1 auf Karte, 5,1:1 auf Grund) */
+  --glut-hell: #e8832f;
+  --glut-leicht: #f6e2d3;
+  --warn: #a33a10;
+  --warn-leicht: #f4ddd1;
 
-  --rund: 14px;
-  --rund-klein: 9px;
+  --seil: #a67c4f;             /* Hanfseil im Plan */
+  --seil-dunkel: #6f5233;
+
+  --schatten: 0 1px 1px rgba(28,26,23,.04), 0 2px 6px rgba(28,26,23,.05);
+  --schatten-hoch: 0 2px 4px rgba(28,26,23,.06), 0 8px 24px rgba(28,26,23,.09);
+
+  --rund: 8px;
+  --rund-klein: 6px;
   --r1: 4px;  --r2: 8px;  --r3: 12px;  --r4: 16px;  --r5: 24px;  --r6: 32px;
+
+  --schrift: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --schrift-titel: "Avenir Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --schrift-daten: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --grund: #15171a;
-    --grund-tief: #101215;
-    --karte: #1f2226;
-    --text: #ebe8e2;
-    --leise: #a5a19a;
-    --linie: #383d43;
-    --linie-stark: #565d65;
-    --akzent: #86c095;
-    --akzent-hell: #9dd0aa;
+    --grund: #141517;
+    --grund-tief: #0f1012;
+    --karte: #1d1f22;
+    --text: #ece9e1;
+    --leise: #a3a39b;
+    --linie: #34373b;
+    --linie-stark: #565b60;
+
+    --zeltbahn: #0c0d0e;
+    --zeltbahn-text: #ece9e1;
+    --zeltbahn-leise: #8f8f88;
+    --zeltbahn-linie: #26282b;
+
+    --akzent: #8fc79c;
+    --akzent-hell: #a6d6b1;
     --akzent-text: #0e2117;
-    --akzent-leicht: #223129;
-    --warn: #e2a771;
-    --warn-leicht: #33251a;
+    --akzent-leicht: #21302a;
+
+    --glut: #e8873f;
+    --glut-hell: #f5a760;
+    --glut-leicht: #3a2416;
+    --warn: #e57a4c;
+    --warn-leicht: #3b2117;
+
+    --seil: #a8865c;
+    --seil-dunkel: #5d4630;
+
     --schatten: 0 1px 2px rgba(0,0,0,.45);
     --schatten-hoch: 0 4px 16px rgba(0,0,0,.55);
   }
@@ -70,22 +108,32 @@ body {
   margin: 0;
   background: var(--grund);
   color: var(--text);
-  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.55 var(--schrift);
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .4em; font-weight: 650; }
+h1, h2, h3, h4 {
+  line-height: 1.2; margin: 0 0 .4em; font-weight: 700;
+  font-family: var(--schrift-titel); letter-spacing: -.02em;
+}
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 
+/* Zahlen und Kennzeichen in Monospace – Dauer, Anzahl, Lizenz lesen sich als Daten */
+.daten, .kachel .zahl, .kartenzeit, .slot-dauer, .summe-wert, .datenblatt dt,
+.trefferzeile > span, .slot .quellzeile {
+  font-family: var(--schrift-daten); font-variant-numeric: tabular-nums;
+}
+
 /* Ohne diese Regel ist beim Bedienen mit der Tastatur nicht zu erkennen,
-   wo man gerade steht – auf dem grünen Knopf war der Standardring kaum sichtbar. */
+   wo man gerade steht – auf dem dunklen Knopf war der Standardring kaum sichtbar. */
 :focus-visible {
   outline: 3px solid var(--akzent);
   outline-offset: 2px;
   border-radius: var(--r1);
 }
-.knopf.stark:focus-visible, .chip.aktiv:focus-visible { outline-color: var(--text); }
+.knopf.stark:focus-visible, .chip.aktiv:focus-visible { outline-color: var(--glut); }
+.kopf :focus-visible, .ueber-kopf :focus-visible { outline-color: var(--glut-hell); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
@@ -95,80 +143,87 @@ button { cursor: pointer; }
 
 /* Kleine Überschrift über einer Gruppe – an vielen Stellen wiederverwendet */
 .marke {
-  font-size: .7rem; font-weight: 700; letter-spacing: .06em;
+  font-family: var(--schrift-daten);
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
   text-transform: uppercase; color: var(--leise);
 }
 
 /* ----------------------------------------------------------- Grundgerüst */
 .huelle { max-width: 720px; margin: 0 auto; padding: 0 var(--r3) 96px; }
 
+/* Der Kopf ist die Zeltbahn: dunkel in beiden Farbschemata */
 header.kopf {
   position: sticky; top: 0; z-index: 20;
-  background: color-mix(in srgb, var(--grund) 92%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--linie);
+  background: var(--zeltbahn);
+  color: var(--zeltbahn-text);
   padding-top: env(safe-area-inset-top);
 }
-@supports not (backdrop-filter: blur(1px)) { header.kopf { background: var(--grund); } }
-.kopf-innen { max-width: 720px; margin: 0 auto; padding: var(--r3) var(--r3) 0; }
+.kopf-innen { max-width: 720px; margin: 0 auto; padding: 14px var(--r3) 0; }
 .kopf h1 {
-  font-size: 1.06rem; margin: 0 0 var(--r3); letter-spacing: -.015em;
-  display: flex; align-items: baseline; gap: var(--r2);
+  font-size: 1.25rem; margin: 0 0 6px; letter-spacing: -.025em;
+  display: flex; align-items: baseline; gap: var(--r2); font-weight: 700;
 }
 .kopf h1 span {
-  color: var(--leise); font-weight: 400; font-size: .78rem; letter-spacing: 0;
+  color: var(--zeltbahn-leise); font-weight: 400; font-size: .8rem; letter-spacing: 0;
+  font-family: var(--schrift);
 }
 @media (max-width: 400px) { .kopf h1 span { display: none; } }
 
-/* Reiter als abgesetzte Leiste statt Unterstrich */
+/* Reiter als Textreiter auf der Zeltbahn; der aktive trägt eine Glutlinie */
 .reiter {
-  display: flex; gap: var(--r1); padding: var(--r1);
-  background: var(--grund-tief); border-radius: var(--rund);
-  margin-bottom: var(--r3);
+  display: flex; gap: var(--r4); margin: 0 -2px;
 }
 .reiter button {
-  flex: 1; padding: 10px 8px; min-height: 44px; border: 0; border-radius: var(--rund-klein);
-  background: none; color: var(--leise); font-weight: 600; font-size: .92rem;
-  transition: background .15s, color .15s;
+  padding: 10px 2px 11px; min-height: 44px; border: 0;
+  background: none; color: var(--zeltbahn-leise); font-weight: 600; font-size: .95rem;
+  border-bottom: 3px solid transparent; border-radius: 0;
+  transition: color .15s, border-color .15s;
 }
+.reiter button:hover { color: var(--zeltbahn-text); }
 .reiter button[aria-current="page"] {
-  color: var(--text); background: var(--karte); box-shadow: var(--schatten);
+  color: var(--zeltbahn-text); border-bottom-color: var(--glut-hell);
 }
 /* Im Querformat fraßen Kopf und Summe zusammen 79 % der Höhe. */
 @media (max-height: 560px) {
-  .kopf h1 { font-size: .98rem; margin-bottom: var(--r2); }
+  .kopf h1 { font-size: 1.05rem; margin-bottom: 2px; }
   .kopf h1 span { display: none; }
   .kopf-innen { padding-top: var(--r2); }
-  .reiter { margin-bottom: var(--r2); }
+  .reiter button { padding-top: 6px; padding-bottom: 7px; min-height: 38px; }
 }
 
 /* ---------------------------------------------------------- Suche/Filter */
 .suchzeile { display: flex; gap: var(--r2); margin: var(--r4) 0 var(--r2); }
 .suchzeile input[type="search"] {
   flex: 1; min-width: 0; padding: 12px 14px; min-height: 46px;
-  border: 1px solid var(--linie); border-radius: var(--rund);
+  border: 1px solid var(--linie-stark); border-radius: var(--rund);
   background: var(--karte); -webkit-appearance: none;
-  transition: border-color .15s;
+  transition: border-color .15s, box-shadow .15s;
 }
-.suchzeile input[type="search"]:focus { border-color: var(--akzent); }
+.suchzeile input[type="search"]:focus {
+  border-color: var(--text); outline: 0; box-shadow: 0 0 0 3px var(--akzent-leicht);
+}
 
 .knopf {
   padding: 12px 16px; min-height: 46px;
-  border: 1px solid var(--linie); border-radius: var(--rund);
+  border: 1px solid var(--linie-stark); border-radius: var(--rund);
   background: var(--karte); font-weight: 600; white-space: nowrap;
   transition: background .15s, border-color .15s;
 }
-.knopf:hover { border-color: var(--linie-stark); }
+.knopf:hover { border-color: var(--text); }
 .knopf.stark {
-  background: var(--akzent); color: var(--akzent-text); border-color: var(--akzent);
+  background: var(--zeltbahn); color: var(--zeltbahn-text); border-color: var(--zeltbahn);
 }
-.knopf.stark:hover { background: var(--akzent-hell); border-color: var(--akzent-hell); }
+.knopf.stark:hover { background: #2c2925; border-color: #2c2925; }
+@media (prefers-color-scheme: dark) {
+  .knopf.stark { background: var(--zeltbahn-text); color: var(--zeltbahn); border-color: var(--zeltbahn-text); }
+  .knopf.stark:hover { background: #ffffff; border-color: #ffffff; }
+}
 .knopf.klein { padding: 11px 13px; min-height: 44px; font-size: .85rem; font-weight: 550; }
 .knopf:disabled { opacity: .4; cursor: default; }
 
 details.filter {
   border: 1px solid var(--linie); border-radius: var(--rund);
-  background: var(--karte); box-shadow: var(--schatten);
+  background: var(--karte);
 }
 details.filter > summary {
   padding: 13px var(--r4); min-height: 46px; cursor: pointer;
@@ -183,7 +238,7 @@ details.filter > summary::after {
 }
 details.filter[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
 details.filter > summary span:last-child:not(:first-child) {
-  font-size: .78rem; font-weight: 600; color: var(--akzent);
+  font-family: var(--schrift-daten); font-size: .78rem; font-weight: 600; color: var(--glut);
 }
 .filter-raster {
   padding: 0 var(--r4) var(--r4);
@@ -191,11 +246,11 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 @media (max-width: 359px) { .filter-raster { grid-template-columns: minmax(0,1fr); } }
 .feld { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-.feld label { font-size: .7rem; color: var(--leise); font-weight: 700;
-  text-transform: uppercase; letter-spacing: .05em; }
+.feld label { font-family: var(--schrift-daten); font-size: .68rem; color: var(--leise);
+  font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .feld select {
   padding: 10px 12px; min-height: 44px; font-size: 16px;
-  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  border: 1px solid var(--linie-stark); border-radius: var(--rund-klein);
   background: var(--grund); width: 100%;
 }
 .schalter {
@@ -204,7 +259,7 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 .schalter input { width: 22px; height: 22px; flex: none; accent-color: var(--akzent); }
 .schalter label { text-transform: none; font-size: .9rem; color: var(--text);
-  font-weight: 400; letter-spacing: 0; padding: 11px 0; }
+  font-weight: 400; letter-spacing: 0; padding: 11px 0; font-family: var(--schrift); }
 .filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
 
 /* -------------------------------------------------------------- Brotkrumen */
@@ -232,50 +287,44 @@ details.filter > summary span:last-child:not(:first-child) {
   position: relative; overflow: hidden;
   text-align: left; background: var(--karte);
   border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: var(--r4) var(--r4) var(--r4) var(--r5);
-  box-shadow: var(--schatten);
+  padding: var(--r4);
   display: flex; flex-direction: column; gap: 3px; min-height: 84px;
   justify-content: center;
-  transition: border-color .15s, box-shadow .15s, transform .1s;
+  transition: border-color .15s, background .15s, transform .1s;
 }
-/* schmaler Streifen als ruhiger Farbakzent */
-.kachel::before {
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-  background: var(--akzent); opacity: .5;
-}
-.kachel:hover { border-color: var(--linie-stark); box-shadow: var(--schatten-hoch); }
+.kachel:hover { border-color: var(--text); }
 .kachel:active { transform: scale(.99); }
 .kachel .name {
-  font-weight: 650; font-size: .97rem; letter-spacing: -.01em;
+  font-family: var(--schrift-titel);
+  font-weight: 700; font-size: 1rem; letter-spacing: -.015em; line-height: 1.2;
   /* Ohne Silbentrennung bricht "Pfadfindertechnik" mitten im Wort um */
   hyphens: auto; -webkit-hyphens: auto;
 }
-.kachel .zahl { font-size: .78rem; color: var(--leise); }
+.kachel .zahl { font-size: .74rem; color: var(--leise); margin-top: 2px; }
 .kachel.gross {
   grid-column: 1 / -1; flex-direction: row; align-items: center;
   justify-content: space-between; min-height: 0; padding: 13px var(--r4);
-  background: none; box-shadow: none; border-style: dashed;
+  background: none; border-style: dashed; border-color: var(--linie-stark);
 }
-.kachel.gross::before { display: none; }
-.kachel.gross .name { font-size: .9rem; color: var(--akzent); }
+.kachel.gross .name { font-size: .9rem; color: var(--akzent); font-family: var(--schrift); }
 
-/* Symbol für die vier Bausteinarten (nur auf der obersten Ebene) */
-.kachel.mitzeichen { padding-left: var(--r4); flex-direction: row; align-items: center;
-  gap: var(--r3); min-height: 92px; }
-.kachel.mitzeichen .zeichen { flex: none; color: var(--akzent); opacity: .9; }
+/* Symbol für die Bereiche (nur auf der obersten Ebene) */
+.kachel.mitzeichen { flex-direction: row; align-items: center; gap: var(--r3); min-height: 92px; }
+.kachel.mitzeichen .zeichen { flex: none; color: var(--akzent); }
 .kachel.mitzeichen .beschriftung { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 
 /* ------------------------------------------------------------ Trefferzeile */
 .trefferzeile {
   display: flex; justify-content: space-between; align-items: center; gap: var(--r3);
-  margin: var(--r3) 2px var(--r2); font-size: .84rem; color: var(--leise);
+  margin: var(--r3) 2px var(--r2); font-size: .8rem; color: var(--leise);
 }
 /* Kacheln haben nach der Brotkrume etwas mehr Luft nötig als die Liste */
 .kacheln:not(:empty) { margin-top: var(--r3); }
 .trefferzeile select {
-  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  border: 1px solid var(--linie-stark); border-radius: var(--rund-klein);
   background: var(--karte); padding: 8px 10px; min-height: 44px;
   font-size: 16px; color: var(--text); flex: none; max-width: 55%;
+  font-family: var(--schrift);
 }
 
 /* ------------------------------------------------------------------ Karten */
@@ -286,18 +335,17 @@ details.filter > summary span:last-child:not(:first-child) {
 .karte {
   width: 100%; text-align: left;
   background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: var(--r4); box-shadow: var(--schatten);
-  transition: border-color .15s, box-shadow .15s, transform .1s;
+  padding: var(--r4);
+  transition: border-color .15s, transform .1s;
 }
-.karte:hover { border-color: var(--linie-stark); box-shadow: var(--schatten-hoch); }
+.karte:hover { border-color: var(--text); }
 .karte:active { transform: scale(.995); }
 .kartenkopf { display: flex; align-items: baseline; gap: var(--r3); }
 .karte h3 {
-  font-size: 1rem; margin: 0 0 var(--r1); flex: 1; min-width: 0;
-  letter-spacing: -.01em;
+  font-size: 1.02rem; margin: 0 0 var(--r1); flex: 1; min-width: 0;
 }
 .kartenzeit {
-  flex: none; font-size: .78rem; font-weight: 650; color: var(--akzent);
+  flex: none; font-size: .76rem; font-weight: 600; color: var(--glut);
   white-space: nowrap; padding-top: 1px;
 }
 .karte p {
@@ -306,20 +354,21 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 .merkmale { display: flex; flex-wrap: wrap; gap: 5px; margin-top: var(--r3); }
 .merkmal {
-  font-size: .71rem; padding: 3px 9px; border-radius: 999px;
+  font-family: var(--schrift-daten);
+  font-size: .68rem; padding: 3px 8px; border-radius: var(--r1);
   border: 1px solid var(--linie); color: var(--leise);
   white-space: normal; max-width: 100%;
 }
 .merkmal.typ {
   background: var(--akzent-leicht); border-color: transparent;
-  color: var(--akzent); font-weight: 650;
+  color: var(--akzent); font-weight: 700;
 }
 .merkmal.offen { border-style: dashed; }
 @media (prefers-color-scheme: dark) { .merkmal.typ { color: var(--text); } }
 
 .leer {
   text-align: center; color: var(--leise); padding: var(--r6) var(--r5);
-  background: var(--karte); border: 1px dashed var(--linie); border-radius: var(--rund);
+  background: none; border: 1px dashed var(--linie-stark); border-radius: var(--rund);
 }
 p.leer button {
   background: none; border: 0; color: var(--akzent); font-weight: 600;
@@ -359,23 +408,22 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .ueberlagerung[hidden] { display: none; }
 .ueber-kopf {
   position: sticky; top: 0; z-index: 5;
-  background: color-mix(in srgb, var(--grund) 92%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--linie); padding-top: env(safe-area-inset-top);
+  background: var(--zeltbahn); color: var(--zeltbahn-text);
+  padding-top: env(safe-area-inset-top);
   display: flex; align-items: center; gap: var(--r2); padding-inline: var(--r2);
 }
-@supports not (backdrop-filter: blur(1px)) { .ueber-kopf { background: var(--grund); } }
 .ueber-kopf .titel {
-  font-weight: 650; flex: 1; min-width: 0; padding: 13px 0;
+  font-weight: 600; flex: 1; min-width: 0; padding: 13px 0;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .ueber-kopf button {
   background: none; border: 0; padding: 13px var(--r3); min-height: 46px;
-  font-size: .95rem; font-weight: 650; color: var(--akzent); border-radius: var(--r2);
+  font-size: .95rem; font-weight: 600; color: var(--zeltbahn-text); border-radius: var(--r2);
 }
+.ueber-kopf button:hover { color: var(--glut-hell); }
 .ueber-inhalt { max-width: 680px; margin: 0 auto; padding: var(--r5) var(--r4) 72px; }
-.ueber-inhalt h2 { font-size: 1.35rem; letter-spacing: -.02em; }
-.ueber-inhalt .anriss { color: var(--leise); margin: 0 0 var(--r2); font-size: .95rem; }
+.ueber-inhalt h2 { font-size: 1.6rem; letter-spacing: -.03em; line-height: 1.12; }
+.ueber-inhalt .anriss { color: var(--leise); margin: 0 0 var(--r2); font-size: .98rem; }
 
 .datenblatt {
   display: grid; grid-template-columns: auto minmax(0,1fr); gap: 7px var(--r4);
@@ -383,14 +431,17 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   padding: var(--r4); background: var(--karte);
   border: 1px solid var(--linie); border-radius: var(--rund);
 }
-.datenblatt dt { color: var(--leise); }
+.datenblatt dt { color: var(--leise); font-size: .78rem; padding-top: 2px; }
 .datenblatt dd { margin: 0; overflow-wrap: anywhere; }
 
 .text { font-size: 1rem; line-height: 1.65; }
-.text h4 { margin: 1.4em 0 .35em; font-size: 1rem; color: var(--akzent); }
-@media (prefers-color-scheme: dark) { .text h4 { color: var(--akzent-hell); } }
+.text h4 {
+  margin: 1.4em 0 .35em; font-size: .72rem; color: var(--leise);
+  font-family: var(--schrift-daten); text-transform: uppercase; letter-spacing: .08em;
+}
 .text p { margin: 0 0 .85em; }
-.text ul { margin: 0 0 .85em; padding-left: 1.25em; }
+.text ul, .text ol { margin: 0 0 .85em; padding-left: 1.25em; }
+.text blockquote { margin: 0 0 .85em; padding-left: .9em; border-left: 3px solid currentColor; opacity: .85; font-style: italic; }
 .text li { margin-bottom: .3em; }
 .text strong { font-weight: 650; }
 
@@ -399,13 +450,13 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 }
 .kasten.tipp { background: var(--akzent-leicht); }
 .kasten.quelle {
-  border: 1px solid var(--linie); background: var(--karte); color: var(--leise);
-  font-size: .84rem;
+  border: 1px solid var(--linie); background: none; color: var(--leise);
+  font-size: .78rem;
 }
 .kasten.quelle a { color: inherit; overflow-wrap: anywhere; }
-.kasten.dublette { border: 1px dashed var(--linie); background: none; color: var(--leise); }
-.kasten h4 { margin: 0 0 var(--r2); font-size: .7rem; text-transform: uppercase;
-  letter-spacing: .06em; color: var(--leise); font-weight: 700; }
+.kasten.dublette { border: 1px dashed var(--linie-stark); background: none; color: var(--leise); }
+.kasten h4 { margin: 0 0 var(--r2); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--leise); font-weight: 700; font-family: var(--schrift-daten); }
 .kasten.tipp h4 { color: var(--akzent); }
 @media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--akzent-hell); } }
 .kasten.tipp .text { font-size: .92rem; line-height: 1.55; }
@@ -418,17 +469,18 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .chipzeile { margin: var(--r3) 0; }
 .planzeile { margin: var(--r4) 0 var(--r2); }
 .chipzeile .chiptitel, .planzeile .chiptitel {
-  font-size: .7rem; color: var(--leise); font-weight: 700;
-  text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; display: block;
+  font-family: var(--schrift-daten);
+  font-size: .68rem; color: var(--leise); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; display: block;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
   padding: 11px 14px; min-height: 44px; border-radius: 999px;
-  border: 1px solid var(--linie); background: var(--karte);
-  font-size: .82rem; color: var(--leise);
+  border: 1px solid var(--linie-stark); background: var(--karte);
+  font-size: .82rem; color: var(--text);
   transition: border-color .15s, background .15s;
 }
-.chip:hover { border-color: var(--linie-stark); }
+.chip:hover { border-color: var(--text); }
 .chip.aktiv {
   background: var(--akzent); border-color: var(--akzent);
   color: var(--akzent-text); font-weight: 650;
@@ -449,37 +501,55 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 55%;
 }
 
-/* Ablauf als Zeitstrahl: die Reihenfolge ist der Kern des Heimabends */
-.plan-ablauf { position: relative; padding-left: 26px; }
+/* Ablauf als Seil: die Reihenfolge ist der Kern des Heimabends.
+   Ein gedrehtes Hanfseil läuft links durch, jeder Platz hängt als Knoten daran:
+   fest verknotet, wenn ein Baustein drin ist – offene Schlaufe, solange er leer ist. */
+.plan-ablauf { position: relative; padding-left: 30px; }
 .plan-ablauf::before {
-  content: ""; position: absolute; left: 8px; top: 22px; bottom: 22px;
-  width: 2px; background: var(--linie); border-radius: 1px;
+  content: ""; position: absolute; left: 7px; top: 18px; bottom: 30px;
+  width: 6px; border-radius: 3px;
+  background: repeating-linear-gradient(
+    -55deg, var(--seil) 0 5px, var(--seil-dunkel) 5px 8px);
 }
 .slot {
   position: relative;
   background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
-  padding: var(--r4); margin-bottom: var(--r2); box-shadow: var(--schatten);
+  padding: var(--r4); margin-bottom: var(--r2);
 }
 .slot::before {
-  content: ""; position: absolute; left: -23px; top: 20px;
-  width: 11px; height: 11px; border-radius: 50%;
-  background: var(--akzent); box-shadow: 0 0 0 4px var(--grund);
+  content: ""; position: absolute; left: -29px; top: 15px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--seil);
+  border: 3px solid var(--seil-dunkel);
+  box-shadow: 0 0 0 3px var(--grund);
+  transition: transform .2s, background .2s, border-color .2s;
 }
+/* Ein frisch gefüllter Platz zieht den Knoten zu */
+@media (prefers-reduced-motion: no-preference) {
+  .slot:not(.leer):not(.fest)::before { animation: zuziehen .35s ease-out; }
+}
+@keyframes zuziehen { 0% { transform: scale(1.35); } 100% { transform: scale(1); } }
 .slot.fest {
-  background: none; box-shadow: none; border-style: dashed;
+  background: none; border-style: dashed; border-color: var(--linie-stark);
 }
-.slot.fest::before { background: var(--grund); border: 2px solid var(--linie-stark); }
+.slot.fest::before {
+  width: 12px; height: 12px; left: -26px; top: 18px;
+  background: var(--seil-dunkel); border-color: var(--seil-dunkel);
+}
 /* Der feste Slot lässt sich nicht öffnen – hier darf nichts abgeschnitten werden. */
 .slot.fest .kurz { display: block; overflow: visible; }
-.slot.leer { border-style: dashed; }
-.slot.leer::before { background: var(--linie-stark); }
+.slot.leer { border-style: dashed; border-color: var(--linie-stark); }
+.slot.leer::before {
+  background: var(--grund); border-color: var(--seil); border-style: dashed;
+}
 
 .slot-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: var(--r2); }
 .slot-name {
-  font-size: .7rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .06em; color: var(--leise);
+  font-family: var(--schrift-daten);
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--leise);
 }
-.slot-dauer { font-size: .8rem; color: var(--akzent); font-weight: 650; white-space: nowrap; }
+.slot-dauer { font-size: .78rem; color: var(--glut); font-weight: 600; white-space: nowrap; }
 .slot.fest .slot-dauer, .slot.leer .slot-dauer { color: var(--leise); font-weight: 400; }
 .slot-inhalt { margin-top: 6px; }
 /* Der gewählte Baustein ist eine Schaltfläche, soll aber wie Text aussehen */
@@ -489,14 +559,16 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   border-radius: var(--r2);
 }
 .slot-oeffnen:hover .gewaehlt { text-decoration: underline; }
-.slot-inhalt .gewaehlt { font-weight: 650; font-size: 1rem; letter-spacing: -.01em; }
+.slot-inhalt .gewaehlt {
+  font-family: var(--schrift-titel); font-weight: 700; font-size: 1.08rem; letter-spacing: -.02em;
+}
 .slot-inhalt .kurz {
   font-size: .86rem; color: var(--leise); margin-top: 3px; line-height: 1.5;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .slot-inhalt .frei { font-size: .86rem; color: var(--leise); margin-top: 3px; }
 .slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--r3); }
-.slot .quellzeile { font-size: .75rem; color: var(--leise); margin-top: 5px; }
+.slot .quellzeile { font-size: .7rem; color: var(--leise); margin-top: 6px; }
 
 .summe {
   position: sticky; bottom: 0; z-index: 10;
@@ -504,19 +576,25 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   padding: var(--r3) var(--r3) calc(var(--r3) + env(safe-area-inset-bottom));
   background: color-mix(in srgb, var(--karte) 94%, transparent);
   backdrop-filter: blur(10px);
-  border-top: 1px solid var(--linie);
+  border-top: 1px solid var(--linie-stark);
 }
 @supports not (backdrop-filter: blur(1px)) { .summe { background: var(--karte); } }
 .summe-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: var(--r3); }
-.summe-wert { font-size: 1.1rem; font-weight: 700; letter-spacing: -.01em; }
+.summe-wert { font-size: 1rem; font-weight: 700; color: var(--glut); }
 .summe-wert.knapp { color: var(--warn); }
+/* Die Gesamtdauer ist Glut: was schon verplant ist, glüht – der Rest ist Asche */
 .balken {
-  height: 6px; border-radius: 3px; background: var(--linie);
+  height: 8px; border-radius: 4px; background: var(--grund-tief);
   margin: var(--r2) 0 var(--r3); overflow: hidden;
-  box-shadow: inset 0 0 0 1px var(--linie-stark);
+  box-shadow: inset 0 0 0 1px var(--linie);
 }
-.balken i { display: block; height: 100%; background: var(--akzent); transition: width .25s; }
-.balken i.knapp { background: var(--warn); }
+.balken i {
+  display: block; height: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, var(--glut) 0%, var(--glut-hell) 100%);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--glut-hell) 60%, transparent);
+  transition: width .25s;
+}
+.balken i.knapp { background: var(--warn); box-shadow: none; }
 /* Bei 320 px brauchten drei Knöpfe nebeneinander 309 von 296 px. */
 .summe-knoepfe { display: flex; flex-wrap: wrap; gap: var(--r2); }
 .summe-knoepfe .knopf { flex: 1 1 auto; min-width: 0; text-align: center; }
@@ -526,7 +604,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   width: 100%; min-height: 200px; padding: var(--r3);
   border: 1px solid var(--linie); border-radius: var(--rund-klein);
   background: var(--grund);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--schrift-daten);
   font-size: 16px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere;
 }
 .meldung {
@@ -537,7 +615,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 /* ----------------------------------------------------------------- Fußzeile */
 .fuss {
   margin-top: var(--r6); padding-top: var(--r5);
-  border-top: 1px solid var(--linie); font-size: .78rem; color: var(--leise);
+  border-top: 1px solid var(--linie-stark); font-size: .74rem; color: var(--leise);
 }
 .fuss p { margin: 0 0 .6em; }
 .fuss .quellenliste { display: grid; gap: 3px; }
@@ -983,12 +1061,14 @@ function unterText(schluessel) { return UNTER_TEXT[schluessel] || schluessel; }
  */
 function textZuHtml(roh) {
   var zeilen = String(roh || "").split("\n");
-  var teile = [], absatz = [], liste = [];
+  var teile = [], absatz = [], liste = [], nummern = [], zitat = [];
   function absatzSchliessen() {
     if (absatz.length) { teile.push("<p>" + absatz.join(" ") + "</p>"); absatz = []; }
   }
   function listeSchliessen() {
     if (liste.length) { teile.push("<ul>" + liste.join("") + "</ul>"); liste = []; }
+    if (nummern.length) { teile.push("<ol>" + nummern.join("") + "</ol>"); nummern = []; }
+    if (zitat.length) { teile.push("<blockquote>" + zitat.join(" ") + "</blockquote>"); zitat = []; }
   }
   for (var i = 0; i < zeilen.length; i++) {
     var zeile = zeilen[i].trim();
@@ -1005,6 +1085,14 @@ function textZuHtml(roh) {
     } else if (zeile.indexOf("- ") === 0) {
       absatzSchliessen();
       liste.push("<li>" + inhalt.slice(2) + "</li>");
+    } else if (/^\d+\.\s/.test(zeile)) {
+      // Nummerierte Liste ("1. Schritt") – etwa die Ablaufvorschläge der Proben.
+      absatzSchliessen();
+      nummern.push("<li>" + inhalt.replace(/^\d+\.\s+/, "") + "</li>");
+    } else if (zeile.indexOf("> ") === 0) {
+      // Zitat ("> Bi Pi sagte …").
+      absatzSchliessen();
+      zitat.push(inhalt.slice(5)); // "&gt; " ist nach schuetze() 5 Zeichen lang
     } else {
       listeSchliessen();
       absatz.push(inhalt);
