@@ -450,6 +450,11 @@ def main() -> None:
     ap.add_argument("--out", default=".")
     ap.add_argument("--ziel", type=int, default=ZIEL_STANDARD,
                     help="Zielgröße der Kernsammlung an Spielen (Standard 300)")
+    ap.add_argument("--nur-kern", action="store_true",
+                    help="Nur die erste Reihe untersuchen (Elemente mit kern: true). "
+                         "So beantwortet die Analyse die Frage, ob sich die Sammlung "
+                         "nach dem Aufräumen wirklich beruhigt hat - ohne den Schalter "
+                         "misst sie weiter den Rohbestand, in dem nichts gelöscht wird.")
     args = ap.parse_args()
 
     pfad = Path(args.daten)
@@ -457,6 +462,11 @@ def main() -> None:
         sys.exit(f"Nicht gefunden: {pfad} – bitte im Repo-Ordner ausführen oder --daten setzen.")
     roh = json.loads(pfad.read_text(encoding="utf-8"))
     alle: list[dict] = roh["elemente"]
+    if args.nur_kern:
+        vorher = len(alle)
+        # "kern" gibt es erst seit dem 08.09.2026; fehlt das Feld, zählt alles mit.
+        alle = [e for e in alle if e.get("kern", True)]
+        print(f"Nur die erste Reihe: {len(alle)} von {vorher} Elementen")
     byid = {e["id"]: e for e in alle}
 
     red = {}

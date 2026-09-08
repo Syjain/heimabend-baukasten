@@ -97,6 +97,28 @@ Trotzdem gilt, was schon im Prüfdokument steht: **die Reihenfolge ist ein
 Vorschlag, kein Urteil.** Dein Bauchgefühl für ein Spiel, das im Heim immer
 funktioniert, schlägt jede Punktzahl – und es umzudrehen kostet eine Zeile.
 
+### Hat sich die Sammlung wirklich beruhigt? (Frage 73)
+
+`scripts/analyse.py` kennt jetzt den Schalter `--nur-kern` und untersucht damit
+die erste Reihe statt des Rohbestands. Ohne den Schalter misst sie weiter alles –
+und das muss so sein, weil nichts gelöscht wird.
+
+    python3 scripts/analyse.py --nur-kern --out /tmp/pruefung
+
+| Befund | ganze Sammlung (07.09.) | erste Reihe (09.09.) |
+|---|---:|---:|
+| Dubletten-Cluster | 78 | **2** |
+| Spiele in großen Spielfamilien | 239 | 82 |
+| Alkohol-, Party- und Faschingsspiele | 15 | **0** |
+| Corona-/Online-Spiele | 49 | 9 |
+| Spiele ab 45 Minuten | 36 | 5 |
+| Spiele mit Vorbereitung „hoch" | 2 | **0** |
+| Spiele, die 15 Personen brauchen | 30 | 9 |
+
+Die zwei verbliebenen Cluster sind Absicht: Blitzlicht- und
+Streichholz-Reflexion sowie Kettenfangen und Paarfangen wurden bewusst getrennt
+gelassen, weil es verschiedene Methoden bzw. verschiedene Spiele sind.
+
 ---
 
 ## 2. Was du entscheiden musst
