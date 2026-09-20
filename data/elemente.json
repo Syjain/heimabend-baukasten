@@ -856,7 +856,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Kinderbaseball",
+     "id": "sw-kinderbaseball",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -1080,7 +1086,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Laufdiktat",
+     "id": "sw-laufdiktat",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -1294,7 +1306,23 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Eisenbahnstaffel",
+     "id": "sw-eisenbahnstaffel",
+     "aenderung": ""
+    },
+    {
+     "titel": "Römisches Wagenrennen",
+     "id": "sw-romisches-wagenrennen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Tausendfüßerrennen",
+     "id": "sw-tausendfusserrennen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -2499,7 +2527,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Mehrfach-Volleyball",
+     "id": "sw-mehrfach-volleyball",
+     "aenderung": ""
+    }
+   ],
    "kern": false
   },
   {
@@ -2554,7 +2588,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-ballgasse",
@@ -2608,7 +2642,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-mischling",
@@ -3992,8 +4026,24 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "hoch",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Blinde Wegsuche",
+     "id": "sw-blinde-wegsuche",
+     "aenderung": ""
+    },
+    {
+     "titel": "Blindenfußball",
+     "id": "sw-blindenfussball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Hindernisparcours",
+     "id": "sw-hindernisparcours",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-blind-zeichnen",
@@ -4098,7 +4148,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "hoch",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Tischfangen",
+     "id": "sw-tischfangen",
+     "aenderung": ""
+    }
+   ],
    "kern": false
   },
   {
@@ -4361,7 +4417,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "hoch",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Blind Zeichnen",
+     "id": "sw-blind-zeichnen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Zeltbau blind",
+     "id": "sw-zeltbau-blind",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -5120,7 +5187,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-burgensturm",
@@ -5547,6 +5614,11 @@
     {
      "titel": "Capture the flag",
      "id": "ps-capture-the-flag",
+     "aenderung": ""
+    },
+    {
+     "titel": "Ballraub",
+     "id": "ps-mischling",
      "aenderung": ""
     }
    ],
@@ -6447,8 +6519,14 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Das schnelle Namensspiel",
+     "id": "sw-das-schnelle-namensspiel",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "ps-das-schokoladenspiel",
@@ -6774,7 +6852,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Namensschreck",
+     "id": "sw-namensschreck",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -7042,7 +7126,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-der-kleine-in-der-mitte",
@@ -7094,7 +7178,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-der-magier-liebt",
@@ -7257,7 +7341,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-der-ruf-eilt-dir-voraus",
@@ -7419,7 +7503,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-detektiv",
@@ -7801,7 +7885,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-dirigent",
@@ -8448,7 +8532,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-drachenschwanzfangen-einzeln",
@@ -8554,9 +8638,19 @@
      "titel": "Drachenschwanzfangen (einzeln)",
      "id": "sw-drachenschwanzfangen-einzeln",
      "aenderung": ""
+    },
+    {
+     "titel": "Memory-Fangen",
+     "id": "sw-memory-fangen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Streitwagen-Fangen",
+     "id": "sw-streitwagen-fangen",
+     "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-drachenschwanzjagen",
@@ -9460,7 +9554,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-eierauffangmaschine",
@@ -9634,8 +9728,44 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Luftballonstaffel",
+     "id": "insp-luftballonstaffel",
+     "aenderung": ""
+    },
+    {
+     "titel": "Dosenlauf",
+     "id": "sw-dosenlauf",
+     "aenderung": ""
+    },
+    {
+     "titel": "Elefantenrennen",
+     "id": "sw-elefantenrennen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Frisbeelauf",
+     "id": "sw-frisbeelauf",
+     "aenderung": ""
+    },
+    {
+     "titel": "Schwammstaffel",
+     "id": "sw-schwammstaffel",
+     "aenderung": ""
+    },
+    {
+     "titel": "T-Shirt-Staffel",
+     "id": "sw-t-shirt-staffel",
+     "aenderung": ""
+    },
+    {
+     "titel": "UNO-Staffel",
+     "id": "sw-uno-staffel",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-eiersuche",
@@ -9682,7 +9812,13 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Uhrensuche",
+     "id": "sw-uhrensuche",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -11290,7 +11426,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-fast-food-spiel",
@@ -11395,7 +11531,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Frisbee-Fußball",
+     "id": "sw-frisbee-fussball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Sitzfußball (Bewegungsspiel)",
+     "id": "sw-sitzfussball-bewegungsspiel",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -11455,6 +11602,11 @@
     {
      "titel": "Feuer, Wasser, Sturm",
      "id": "insp-feuer-wasser-sturm",
+     "aenderung": ""
+    },
+    {
+     "titel": "Fuchs Habicht Paarungszeit",
+     "id": "sw-fuchs-habicht-paarungszeit",
      "aenderung": ""
     }
    ],
@@ -12235,7 +12387,7 @@
    "uebt": [],
    "naehe": "hoch",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-fotorallye",
@@ -12490,8 +12642,14 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Frisbeezielwurf",
+     "id": "sw-frisbeezielwurf",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-frisbee-passen",
@@ -12696,7 +12854,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-fuchs-und-gans",
@@ -13388,8 +13546,14 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Geruchs-Kim mit Parfüm",
+     "id": "sw-geruchs-kim-mit-parfum",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-gerausche-kim-in-filmdose",
@@ -15695,7 +15859,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-have-you-ever-seen-a-penguin-come-to-tea",
@@ -16500,7 +16664,7 @@
      "aenderung": ""
     }
    ],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-hugo",
@@ -17210,7 +17374,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-innenkreis-aussenkreis",
@@ -17952,7 +18116,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-kalaha",
@@ -18439,7 +18603,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Ballweitergabe mit Beinen",
+     "id": "sw-ballweitergabe-mit-beinen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -18881,7 +19051,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Stuhlfangen",
+     "id": "ps-stuhlfangen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -19047,7 +19223,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Ballbewegung",
+     "id": "sw-ballbewegung",
+     "aenderung": ""
+    },
+    {
+     "titel": "Königsball",
+     "id": "sw-konigsball",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -19154,7 +19341,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Klopapierrolle",
+     "id": "sw-klopapierrolle",
+     "aenderung": ""
+    },
+    {
+     "titel": "Vorstellung mit Süßigkeiten",
+     "id": "sw-vorstellung-mit-sussigkeiten",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -19463,7 +19661,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-koenigsspiel",
@@ -20431,8 +20629,19 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Digitales Tabu",
+     "id": "insp-digitales-tabu",
+     "aenderung": ""
+    },
+    {
+     "titel": "Tiere raten",
+     "id": "insp-tiere-raten",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-krebs",
@@ -21815,7 +22024,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Armer schwarzer Kater",
+     "id": "sw-armer-schwarzer-kater",
+     "aenderung": ""
+    },
+    {
+     "titel": "Ernst auf Ernst",
+     "id": "sw-ernst-auf-ernst",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -21922,6 +22142,11 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [
+    {
+     "titel": "Liedtitel in Emojis verpacken",
+     "id": "insp-liedtitel-in-emojis-verpacken",
+     "aenderung": ""
+    },
     {
      "titel": "Lied gurgeln",
      "id": "sw-lied-gurgeln",
@@ -22044,7 +22269,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Hahnenkampf",
+     "id": "sw-hahnenkampf",
+     "aenderung": ""
+    },
+    {
+     "titel": "Schwertkampf",
+     "id": "sw-schwertkampf",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -23443,7 +23679,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-menebtekle",
@@ -23603,7 +23839,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Kindermemorix",
+     "id": "insp-kindermemorix",
+     "aenderung": ""
+    },
+    {
+     "titel": "Wölflings-Memory",
+     "id": "insp-woelflings-memory",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -23658,6 +23905,11 @@
     {
      "titel": "Partner-Merkball",
      "id": "sw-partner-merkball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Virusball",
+     "id": "sw-virusball",
      "aenderung": ""
     }
    ],
@@ -23716,6 +23968,11 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [
+    {
+     "titel": "Kim-Gedächtnisspiel",
+     "id": "insp-kim-gedaechtnisspiel",
+     "aenderung": ""
+    },
     {
      "titel": "Bilderkim",
      "id": "sw-bilderkim",
@@ -23892,7 +24149,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-mimi-klatsch-spiel",
@@ -24530,8 +24787,14 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Wer ist der Mörder",
+     "id": "sw-wer-ist-der-morder",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-morderspiel",
@@ -24581,7 +24844,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Mörder unter uns",
+     "id": "sw-morder-unter-uns",
+     "aenderung": ""
+    }
+   ],
    "kern": false
   },
   {
@@ -24982,7 +25251,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-munzen-kim",
@@ -25304,7 +25573,13 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "hoch",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Welle (Vertrauensspiel)",
+     "id": "sw-welle-vertrauensspiel",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -25747,6 +26022,16 @@
    ],
    "varianten": [
     {
+     "titel": "Ballwurfkette",
+     "id": "sw-ballwurfkette",
+     "aenderung": ""
+    },
+    {
+     "titel": "Namensbällchen",
+     "id": "sw-namensballchen",
+     "aenderung": ""
+    },
+    {
      "titel": "Namensjonglage",
      "id": "sw-namensjonglage",
      "aenderung": ""
@@ -25863,7 +26148,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Name und Bewegung",
+     "id": "sw-name-und-bewegung",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -27252,6 +27543,11 @@
      "titel": "Paarfangen",
      "id": "ps-paarfangen",
      "aenderung": ""
+    },
+    {
+     "titel": "Dreibein-Fangen",
+     "id": "sw-dreibein-fangen",
+     "aenderung": ""
     }
    ],
    "kern": true
@@ -27307,6 +27603,11 @@
     {
      "titel": "Schlüsselbund",
      "id": "sw-schlusselbund",
+     "aenderung": ""
+    },
+    {
+     "titel": "Teamvorstellung",
+     "id": "sw-teamvorstellung",
      "aenderung": ""
     }
    ],
@@ -27429,7 +27730,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-papierflieger-mit-herausforderung",
@@ -27539,7 +27840,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Papierflieger mit Herausforderung",
+     "id": "ps-papierflieger-mit-herausforderung",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -29075,7 +29382,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "ps-prinzessin-ritter-drache",
@@ -29298,7 +29605,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "eig-quiz-abend-schlag-die-fuehrung",
@@ -29357,7 +29664,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Pubquiz",
+     "id": "sw-pubquiz",
+     "aenderung": ""
+    }
+   ],
    "kern": false
   },
   {
@@ -30079,7 +30392,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-romisches-wagenrennen",
@@ -31382,7 +31695,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-schlangen-im-gras",
@@ -31978,8 +32291,24 @@
     "karte_kompass"
    ],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Schnitzeljagd mit Abstand",
+     "id": "insp-schnitzeljagd-mit-abstand",
+     "aenderung": ""
+    },
+    {
+     "titel": "Fuchs-Suche",
+     "id": "sw-fuchs-suche",
+     "aenderung": ""
+    },
+    {
+     "titel": "Schatzsuche",
+     "id": "sw-schatzsuche",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "insp-schnitzeljagd-mit-abstand",
@@ -33309,8 +33638,14 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Es fliegt es fliegt",
+     "id": "sw-es-fliegt-es-fliegt",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-singing-in-the-rain",
@@ -34612,7 +34947,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Stationenlauf",
+     "id": "sw-stationenlauf",
+     "aenderung": ""
+    }
+   ],
    "kern": false
   },
   {
@@ -34987,8 +35328,23 @@
    "naehe": "keine",
    "varianten": [
     {
+     "titel": "Pantomime Stille Post",
+     "id": "ps-pantomime-stille-post",
+     "aenderung": ""
+    },
+    {
      "titel": "Laute Post",
      "id": "sw-laute-post",
+     "aenderung": ""
+    },
+    {
+     "titel": "Schreiben und Zeichnen",
+     "id": "sw-schreiben-und-zeichnen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Stille Post in Bildern",
+     "id": "sw-stille-post-in-bildern",
      "aenderung": ""
     }
    ],
@@ -36067,7 +36423,7 @@
    "uebt": [],
    "naehe": "hoch",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-talentshow",
@@ -36215,8 +36571,14 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Münzen-Kim",
+     "id": "sw-munzen-kim",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-tausendfusserrennen",
@@ -36369,7 +36731,18 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Hammerwerfen",
+     "id": "sw-hammerwerfen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Wasserbomben-Werfen",
+     "id": "sw-wasserbomben-werfen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -37626,7 +37999,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Zahlenfangen",
+     "id": "sw-zahlenfangen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -37883,7 +38262,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-up-schubidu",
@@ -38268,7 +38647,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-verstecken",
@@ -38317,7 +38696,18 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Versteck-fangen",
+     "id": "ps-versteck-fangen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Verstecken in Gedanken",
+     "id": "sw-verstecken-in-gedanken",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -38517,13 +38907,33 @@
    "naehe": "keine",
    "varianten": [
     {
+     "titel": "Milchproduktefangen",
+     "id": "ps-milchproduktefangen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Brückenfangen",
+     "id": "sw-bruckenfangen",
+     "aenderung": ""
+    },
+    {
      "titel": "Captain Hook und Peter Pan",
      "id": "sw-captain-hook-und-peter-pan",
      "aenderung": ""
     },
     {
+     "titel": "Käferfangen",
+     "id": "sw-kaferfangen",
+     "aenderung": ""
+    },
+    {
      "titel": "Schlümpfe-Versteinern",
      "id": "sw-schlumpfe-versteinern",
+     "aenderung": ""
+    },
+    {
+     "titel": "Steinfänger Baumfänger Brückenfänger",
+     "id": "sw-steinfanger-baumfanger-bruckenfanger",
      "aenderung": ""
     }
    ],
@@ -38731,7 +39141,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-volkerball",
@@ -38778,8 +39188,29 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Ballgasse",
+     "id": "sw-ballgasse",
+     "aenderung": ""
+    },
+    {
+     "titel": "Jägerball",
+     "id": "sw-jagerball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Kaiserball",
+     "id": "sw-kaiserball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Völkerball verkehrt",
+     "id": "sw-volkerball-verkehrt",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-volkerball-verkehrt",
@@ -38936,7 +39367,7 @@
    "uebt": [],
    "naehe": "leicht",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-wachsgiessen",
@@ -39350,7 +39781,13 @@
     "natur"
    ],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Schneckenfangen",
+     "id": "sw-schneckenfangen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -40032,7 +40469,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-weihnachtskrippe",
@@ -40297,6 +40734,11 @@
     {
      "titel": "Wer bin ich?",
      "id": "ps-wer-bin-ich",
+     "aenderung": ""
+    },
+    {
+     "titel": "Initialenraten",
+     "id": "sw-initialenraten",
      "aenderung": ""
     },
     {
@@ -40569,7 +41011,18 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Farbenfangen",
+     "id": "sw-farbenfangen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Qualle Koralle",
+     "id": "sw-qualle-koralle",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -40858,9 +41311,14 @@
      "titel": "Werwolf",
      "id": "ps-werwolf",
      "aenderung": ""
+    },
+    {
+     "titel": "Mafia",
+     "id": "sw-mafia",
+     "aenderung": ""
     }
    ],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-wetttransport",
@@ -41486,7 +41944,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-wortkette",
@@ -41535,7 +41993,13 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Wortdomino",
+     "id": "sw-wortdomino",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -41748,8 +42212,39 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
-   "varianten": [],
-   "kern": false
+   "varianten": [
+    {
+     "titel": "Mörderball",
+     "id": "ps-moerderball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Kübelball",
+     "id": "sw-kubelball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Mehrfelderball",
+     "id": "sw-mehrfelderball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Reboundball",
+     "id": "sw-reboundball",
+     "aenderung": ""
+    },
+    {
+     "titel": "Rugbyfangen",
+     "id": "sw-rugbyfangen",
+     "aenderung": ""
+    },
+    {
+     "titel": "Treibball",
+     "id": "sw-treibball",
+     "aenderung": ""
+    }
+   ],
+   "kern": true
   },
   {
    "id": "sw-zahlenfangen",
@@ -41905,7 +42400,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-zauberball-sip-sop",

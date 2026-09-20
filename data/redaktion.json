@@ -2,7 +2,7 @@
   "meta": {
     "name": "Redaktionelle Entscheidungen",
     "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
-    "stand": "2026-09-08",
+    "stand": "2026-09-20",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
   "gesperrt": [
@@ -1890,6 +1890,468 @@
       ],
       "lizenzen_unvertraeglich": true,
       "grund": "Dasselbe Spiel. Der ausführliche Regeltext mit allen Rollen steht bei pfadfinder-spiele.de; die eigene Fassung führt es als ganzen Abend."
+    },
+    {
+      "haupt": "sw-volkerball",
+      "varianten": [
+        "sw-volkerball-verkehrt",
+        "sw-jagerball",
+        "sw-kaiserball",
+        "sw-ballgasse"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Vier Abschießspiele zweier Mannschaften, die sich nur in der Aufstellung und im Rückweg ins Spiel unterscheiden: 'Völkerball verkehrt' dreht um, wer im Außenfeld anfängt; Jägerball lässt Feldtrennung und König ganz weg und nennt sich selbst die Grundvariante; beim Kaiserball ersetzen ein geheimer Kaiser und ein Hofnarr den König im Rückfeld; bei der Ballgasse steht die werfende Mannschaft nicht im eigenen Feld, sondern in zwei Reihen an einer Laufstrecke."
+    },
+    {
+      "haupt": "sw-merkball",
+      "varianten": [
+        "sw-virusball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Abschießspiel aller gegen alle; beim Virusball darf der Ball aber nicht geworfen, sondern nur kurz gehalten und weitergereicht werden, und ein zweiter, andersfarbiger Ball heilt die Getroffenen wieder."
+    },
+    {
+      "haupt": "sw-zahlball",
+      "varianten": [
+        "sw-reboundball",
+        "sw-kubelball",
+        "sw-mehrfelderball",
+        "sw-treibball",
+        "ps-moerderball",
+        "sw-rugbyfangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Sechs Mannschaftsspiele, bei denen der Ball nicht auf Menschen, sondern ins Ziel gespielt wird; es wechselt nur das Ziel: zehn Pässe in der eigenen Gruppe (Zählball), die Wand (Reboundball), ein Kübel (Kübelball), mehrere Tore nach wechselnden Sportregeln (Mehrfelderball), eine Endzone (Mörderball) oder die Grundlinie mit Ticken statt Tackling (Rugbyfangen). Beim Treibball darf der große Ball nicht berührt, sondern muss mit kleinen Bällen ins Tor getrieben werden."
+    },
+    {
+      "haupt": "sw-fetzenfussball",
+      "varianten": [
+        "sw-sitzfussball-bewegungsspiel",
+        "sw-frisbee-fussball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dreimal Fußball mit einer Auflage: mit zwei Besen und einem Tuch statt des Balls (Fetzenfußball), auf dem Hosenboden rutschend (Sitzfußball) oder mit einer Frisbee-Scheibe statt des Balls (Frisbee-Fußball). Tore und Grundregeln bleiben gleich."
+    },
+    {
+      "haupt": "sw-frisbee-golf",
+      "varianten": [
+        "sw-frisbeezielwurf"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleicher Zielwurf mit der Frisbee; beim Frisbeezielwurf wird nur auf ein einziges abgestecktes Feld geworfen statt auf mehrere Ziele eines Parcours, und es werden keine Würfe gezählt."
+    },
+    {
+      "haupt": "sw-alaska-baseball",
+      "varianten": [
+        "sw-kinderbaseball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Baseball für Kinder ohne Schläger: Der Ball wird geworfen, dann läuft die eine Gruppe, während die andere den Ball zurückbringt. Beim Kinderbaseball läuft nur eine Person über die Male, bei Alaska-Baseball die ganze Gruppe um die eigene Reihe."
+    },
+    {
+      "haupt": "sw-ball-uber-die-schnur",
+      "varianten": [
+        "sw-mehrfach-volleyball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Volleyball für Kinder über eine Schnur in Kopfhöhe: Der Ball darf gefangen werden. Beim Mehrfach-Volleyball wird der Ball zusätzlich nicht mit den Händen, sondern von Paaren mit einem gespannten Tuch gefangen und geschleudert."
+    },
+    {
+      "haupt": "sw-klatschball",
+      "varianten": [
+        "sw-ballbewegung",
+        "sw-konigsball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dreimal wird ein Ball in einer festen Aufstellung zugeworfen, und nur die Zusatzaufgabe wechselt: einmal in die Hände klatschen, bevor man fängt (Klatschball); immer mehr Bälle gleichzeitig im Kreis in Bewegung halten, ohne dass einer fällt (Ballbewegung); in der Reihe zum 'König' und zurück passen, schneller als die andere Gruppe (Königsball)."
+    },
+    {
+      "haupt": "sw-teebeutel-weitwurf",
+      "varianten": [
+        "sw-hammerwerfen",
+        "sw-wasserbomben-werfen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dreimal ein Wurfwettbewerb mit einem ungewöhnlichen Wurfgegenstand: ein Teebeutel an der Schnur, eine mit einem Tennisball beschwerte Socke, oder eine Wasserbombe, die beim Fangen nicht platzen darf und mit jedem Wurf aus größerer Entfernung kommt."
+    },
+    {
+      "haupt": "sw-capture-the-flag",
+      "varianten": [
+        "ps-mischling"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Geländespiel mit Gefängnis auf der Mittellinie; beim Ballraub liegen in den Ecken statt einer Fahne mehrere Bälle, die einzeln in die eigene Hälfte geschafft werden."
+    },
+    {
+      "haupt": "sw-versteinern",
+      "varianten": [
+        "sw-kaferfangen",
+        "sw-bruckenfangen",
+        "ps-milchproduktefangen",
+        "sw-steinfanger-baumfanger-bruckenfanger"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Vier Fangspiele, bei denen Gefangene an Ort und Stelle erstarren und von den Freien erlöst werden; es wechselt nur die Haltung und die Erlösung: auf dem Rücken strampelnd wie ein Käfer, als Brücke zum Durchkriechen, hockend nach dem Ruf eines Milchprodukts, oder mit drei Fängern, die je eine eigene Erstarrung verhängen."
+    },
+    {
+      "haupt": "sw-drachenschwanzfangen-gruppenweise",
+      "varianten": [
+        "sw-streitwagen-fangen",
+        "sw-memory-fangen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Beide Quellartikel bauen ausdrücklich auf dem Drachenschwanzfangen auf: Beim Streitwagen-Fangen hängt das Pfand nicht an einer Person, sondern an einer Dreierreihe; beim Memory-Fangen trägt jede und jeder zusätzlich eine Memory-Karte, und geschnappt wird, bis die Paare gefunden sind."
+    },
+    {
+      "haupt": "sw-paarfangen",
+      "varianten": [
+        "sw-dreibein-fangen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Auch hier kann nur zu zweit gelaufen und gefangen werden; statt sich an der Hand zu halten, ist jeweils ein Bein der beiden zusammengebunden, und es laufen alle Paare von Anfang an gleichzeitig."
+    },
+    {
+      "haupt": "ps-tuchfangen",
+      "varianten": [
+        "sw-zahlenfangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel mit aufgerufenen Nummern: Zwei Mannschaften stehen sich gegenüber, die Spielleitung ruft eine Zahl, und die beiden Gerufenen rennen um denselben Gegenstand in der Mitte. Beim Zahlenfangen ist es ein Halstuch oder eine Kappe am Boden statt eines hochgehaltenen Tuchs."
+    },
+    {
+      "haupt": "sw-wer-hat-angst-vorm-schwarzen-mann",
+      "varianten": [
+        "sw-farbenfangen",
+        "sw-qualle-koralle"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dasselbe Durchlaufspiel von einer Linie zur anderen mit einem Sprechvers; beide Quellartikel nennen es selbst als Vorbild. Beim Farbenfangen dürfen nur die hinüber, die die gerufene Farbe an sich tragen, bei Qualle Koralle werden Gefangene zu Korallen, die stehend mitfangen."
+    },
+    {
+      "haupt": "sw-blinde-kuh",
+      "varianten": [
+        "sw-tischfangen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Fangen mit verbundenen Augen; beim Tischfangen ist das Spielfeld auf einen Tisch geschrumpft, an dem sich nur zwei gegenüberstehen und tasten."
+    },
+    {
+      "haupt": "sw-wascheklammernspiel",
+      "varianten": [
+        "sw-schneckenfangen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Die Quelle nennt Schneckenfangen selbst eine Variante des Wäscheklammernspiels: Beide Male muss es völlig lautlos sein und den Sitzenden bzw. Kriechenden werden Klammern abgenommen; bei den Schnecken bewegen sich beide Seiten durch den Raum, statt dass eine Gruppe still sitzt."
+    },
+    {
+      "haupt": "sw-eierlauf",
+      "varianten": [
+        "sw-dosenlauf",
+        "sw-t-shirt-staffel",
+        "sw-schwammstaffel",
+        "insp-luftballonstaffel",
+        "sw-uno-staffel",
+        "sw-frisbeelauf",
+        "sw-elefantenrennen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Acht Staffeln nach demselben Muster - hin, zurück, abklatschen -, bei denen nur die Aufgabe unterwegs wechselt: ein Ei auf dem Löffel balancieren, auf zwei Blechdosen als Stelzen gehen, ein viel zu großes T-Shirt an- und ausziehen, einen tropfenden Schwamm auswringen, einen Luftballon mit einem baumelnden Becher schaukeln, zehn UNO-Karten in die richtige Reihenfolge bringen, eine Frisbee auf dem Kopf balancieren oder sich am Wendepunkt mit dem 'Rüssel' an der Nase um die eigene Achse drehen (Elefantenrennen)."
+    },
+    {
+      "haupt": "sw-amobenwettlauf",
+      "varianten": [
+        "sw-tausendfusserrennen",
+        "sw-romisches-wagenrennen",
+        "sw-eisenbahnstaffel"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Viermal rennt nicht eine Person, sondern die ganze Gruppe aneinandergekoppelt, und wer sich löst, muss von vorn beginnen; es wechselt nur die Kopplung: als enger Kreis mit dem Gesicht nach außen und eingehakten Armen (Amöbe), als Kette in Liegestützstellung mit den Händen am Fuß des Vordermanns (Tausendfüßer), als Gespann mit Huckepack-Fahrer (Römisches Wagenrennen), oder als Zug, an den sich nach jeder Runde ein weiterer Wagen hängt (Eisenbahnstaffel)."
+    },
+    {
+      "haupt": "eig-stationenlauf-durchs-viertel",
+      "varianten": [
+        "sw-stationenlauf"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Prinzip: Gruppen laufen einen Weg ab und lösen an jeder Station eine kurze Aufgabe. Der Spielewiki-Artikel beschreibt die allgemeine Form im Gelände, die eigene Fassung einen konkreten Rundweg ums Heim samt Hinweisen für wenige Gruppenführer."
+    },
+    {
+      "haupt": "sw-alphabet-staffel",
+      "varianten": [
+        "sw-laufdiktat"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Beide Male laufen die Gruppen abwechselnd zu einem Blatt und schreiben; bei der Alphabet-Staffel sammeln sie zu einem Thema eigene Begriffe von A bis Z, beim Laufdiktat schreiben sie einen vorgegebenen Text ab, den sie sich am anderen Ende merken mussten."
+    },
+    {
+      "haupt": "ps-das-schnellste-namensspiel-der-welt",
+      "varianten": [
+        "sw-das-schnelle-namensspiel"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel gegen die Stoppuhr: Alle sagen im Kreis so schnell wie möglich ihren Namen, und die Gruppe versucht die eigene Zeit zu unterbieten."
+    },
+    {
+      "haupt": "sw-namensmaschine",
+      "varianten": [
+        "sw-name-und-bewegung"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Namensspiel: Jede und jeder nennt den eigenen Namen und macht dazu eine Bewegung, die die Gruppe übernimmt. Bei der Namensmaschine laufen am Ende alle Bewegungen gleichzeitig wie eine Maschine, bei 'Name und Bewegung' wird die Kette der Vorgänger wiederholt."
+    },
+    {
+      "haupt": "ps-namensjonglage",
+      "varianten": [
+        "sw-namensballchen",
+        "sw-ballwurfkette"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Beide Male wird im Kreis ein Wurfgegenstand zugeworfen und dabei ein Name gerufen; beim Namensbällchen wird der Ball nicht mit der Hand, sondern mit einem Joghurtbecher gefangen, bei der Ballwurfkette kommen nach und nach mehrere kleine Gegenstände in dieselbe Reihenfolge."
+    },
+    {
+      "haupt": "insp-decken-spiel-kennenlernen",
+      "varianten": [
+        "sw-namensschreck"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Spiel: Zwei Gruppen sitzen sich hinter einer Decke gegenüber, je eine Person setzt sich davor, die Decke fällt, und wer zuerst den Namen des Gegenübers ruft, gewinnt."
+    },
+    {
+      "haupt": "ps-klopapier-namensspiel",
+      "varianten": [
+        "sw-vorstellung-mit-sussigkeiten",
+        "sw-klopapierrolle"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dreimal dieselbe Vorstellrunde: Alle nehmen sich ahnungslos eine Menge von etwas - Klopapierblätter oder bunte Süßigkeiten -, und erst danach kommt die Regel, dass pro Stück etwas über sich erzählt werden muss. Bei den Süßigkeiten bestimmt zusätzlich die Farbe, wonach gefragt wird."
+    },
+    {
+      "haupt": "sw-paarweise-vorstellen",
+      "varianten": [
+        "sw-teamvorstellung"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Auch hier stellt sich niemand selbst vor: Bei der Teamvorstellung sind es die Gruppenführer, die sich den Fragen der Gruppe stellen und danach von ihr vorgestellt werden."
+    },
+    {
+      "haupt": "sw-verstecken",
+      "varianten": [
+        "sw-verstecken-in-gedanken",
+        "ps-versteck-fangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Beides sind Abwandlungen des Grundspiels: 'Verstecken in Gedanken' läuft nur im Kopf ab - das Versteck wird gedacht und erfragt -, beim Versteck-Fangen kommt ein Freischlagpunkt dazu, zu dem Gefundene und Fängerin um die Wette rennen."
+    },
+    {
+      "haupt": "sw-schnitzeljagd",
+      "varianten": [
+        "sw-fuchs-suche",
+        "sw-schatzsuche",
+        "insp-schnitzeljagd-mit-abstand"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Viermal folgt eine Gruppe einer gelegten Spur; es wechselt nur, was die Spur ist: Wegmarkierungen der vorauslaufenden Gruppe (Schnitzeljagd), Papierschnitzel eines einzelnen 'Fuchses' (Fuchs-Suche), vorbereitete Stationen mit Aufgaben (Schatzsuche) oder unterwegs eingesammelte Schnipsel einer Schatzkarte (Schnitzeljagd mit Abstand)."
+    },
+    {
+      "haupt": "sw-eiersuche",
+      "varianten": [
+        "sw-uhrensuche"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Suchspiel nach einem versteckten Gegenstand im Raum, nur der Hinweisgeber wechselt: Bei der Eiersuche summt die Gruppe lauter oder leiser, bei der Uhrensuche verrät das Ticken der Uhr selbst, wo sie liegt."
+    },
+    {
+      "haupt": "sw-wer-bin-ich",
+      "varianten": [
+        "sw-initialenraten"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Ratespiel mit Ja-Nein-Fragen; beim Initialenraten klebt kein Zettel an der Stirn, sondern es werden nur die Anfangsbuchstaben der gesuchten Person verraten - das geht ganz ohne Material."
+    },
+    {
+      "haupt": "ps-kreativ-tabu",
+      "varianten": [
+        "insp-digitales-tabu",
+        "insp-tiere-raten"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dreimal muss ein Begriff umschrieben werden, ohne ihn zu nennen. Kreativ Tabu zieht die Begriffe aus einem von der Gruppe selbst gefüllten Beutel und steigert über drei Runden vom Erklären zum einzelnen Stichwort und zur Pantomime; Digitales Tabu nimmt fertige Karten mit Pfadfinderbegriffen und verbotenen Wörtern; bei 'Tiere raten' ist der Begriff immer ein Tier."
+    },
+    {
+      "haupt": "sw-blind-fuhren",
+      "varianten": [
+        "sw-hindernisparcours",
+        "sw-blinde-wegsuche",
+        "sw-blindenfussball"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Viermal wird jemand mit verbundenen Augen von anderen gelotst; es wechselt nur, wohin: frei durch Gelände oder Raum (Blind führen), durch einen aufgebauten Parcours nach Zuruf der Partnerin (Hindernisparcours), an einer mit Kreide gezogenen Linie entlang (Blinde Wegsuche), oder zum Ball, wenn die eine Hälfte der Mannschaft die blinde andere Hälfte dirigiert (Blindenfußball)."
+    },
+    {
+      "haupt": "sw-blindes-quadrat",
+      "varianten": [
+        "sw-zeltbau-blind",
+        "sw-blind-zeichnen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dreimal löst die Gruppe mit verbundenen Augen gemeinsam eine Aufgabe, die sehend trivial wäre; es wechselt nur die Aufgabe: aus einem Seil ein Quadrat legen, ein Zelt aufbauen, oder eine Zeichnung nach Ansage der Sehenden nachzeichnen."
+    },
+    {
+      "haupt": "sw-mutprobe-und-vertrauen",
+      "varianten": [
+        "sw-welle-vertrauensspiel"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Beide Male verlässt sich eine einzelne Person darauf, dass die anderen im letzten Moment richtig reagieren: Bei 'Mutprobe und Vertrauen' lässt sie sich mit steifem Körper rückwärts in die Arme der Person hinter ihr fallen, bei der Welle rennt sie in vollem Tempo durch eine Gasse aus ausgestreckten Armen, die erst kurz vor ihr hochgerissen werden."
+    },
+    {
+      "haupt": "sw-stille-post",
+      "varianten": [
+        "sw-stille-post-in-bildern",
+        "sw-schreiben-und-zeichnen",
+        "ps-pantomime-stille-post"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Viermal wandert eine Botschaft durch die Reihe und verändert sich dabei; es wechselt nur die Form: geflüsterte Worte (Stille Post), eine abgezeichnete Zeichnung (Stille Post in Bildern), abwechselnd Satz und Zeichnung auf einem Zettel (Schreiben und Zeichnen) oder eine vorgemachte Bewegung (Pantomime Stille Post)."
+    },
+    {
+      "haupt": "sw-kette-durch-den-reifen",
+      "varianten": [
+        "sw-ballweitergabe-mit-beinen"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiche Gruppenaufgabe: Ein Gegenstand muss durch die ganze Kette wandern, ohne dass jemand loslässt oder die Hände benutzt. Statt des Reifens über die Körper wird hier ein Ball nur mit den Beinen im Stuhlkreis weitergegeben."
+    },
+    {
+      "haupt": "sw-papierflieger-wettkampf",
+      "varianten": [
+        "ps-papierflieger-mit-herausforderung"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Beide Male wird ein Papierflieger gebaut und um die Weite geworfen; bei der Fassung mit Herausforderung bauen zwei Personen gemeinsam, dürfen dabei aber nicht reden und je nur eine Hand benutzen."
+    },
+    {
+      "haupt": "sw-merkkim",
+      "varianten": [
+        "insp-kim-gedaechtnisspiel"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiches Merkspiel: Gegenstände werden eine Minute lang gezeigt, dann abgedeckt und aufgezählt. Die Inspirator-Fassung nimmt dafür ausdrücklich pfadfinderische Gegenstände."
+    },
+    {
+      "haupt": "sw-tastkim",
+      "varianten": [
+        "sw-munzen-kim"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Kimspiel mit dem Tastsinn; beim Münzen-Kim sind die Gegenstände immer Euromünzen, die an Größe und Randkerbung erkannt werden."
+    },
+    {
+      "haupt": "sw-gerausche-kim-fur-paare",
+      "varianten": [
+        "sw-geruchs-kim-mit-parfum"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiche Methode, um Paare und Gruppen zu bilden: Alle bekommen heimlich ein Merkmal und müssen die anderen mit demselben Merkmal finden - einmal über ein gerufenes Tiergeräusch, einmal über einen Duft am Handgelenk."
+    },
+    {
+      "haupt": "ps-menschenmemory",
+      "varianten": [
+        "insp-woelflings-memory",
+        "insp-kindermemorix"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dreimal dasselbe Memory mit Menschen: Paare verabreden heimlich eine gemeinsame Bewegung oder Haltung, zwei Ratende decken je zwei Personen auf und suchen die Paare. Bei Kindermemorix kommen die beiden Ratenden aus der Videokonferenz statt vor die Tür."
+    },
+    {
+      "haupt": "eig-werwolf-abend",
+      "varianten": [
+        "sw-mafia"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Nacht-und-Tag-Spiel mit heimlichen Rollen: Nachts trifft eine kleine Gruppe ihr Opfer, tagsüber diskutiert das Dorf und richtet eine Person hin. Die Quelle nennt Werwölfe selbst als sehr ähnliches Spiel; bei Mafia heißen die Rollen Mafiosi, Polizist und Arzt."
+    },
+    {
+      "haupt": "sw-morderspiel",
+      "varianten": [
+        "sw-morder-unter-uns"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Spiel über mehrere Tage nebenher: Jede und jeder zieht heimlich ein Opfer und einen Mordauftrag, führt ihn unbemerkt aus und erbt danach den Auftrag des Opfers."
+    },
+    {
+      "haupt": "sw-mordern",
+      "varianten": [
+        "sw-wer-ist-der-morder"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Zwinkerspiel: Eine heimlich bestimmte Person tötet durch Zuzwinkern, eine Detektivin muss sie erkennen, bevor alle anderen weg sind. Bei 'Wer ist der Mörder' werden die Rollen über Spielkarten verteilt statt durch Antippen."
+    },
+    {
+      "haupt": "sw-kippstuhl",
+      "varianten": [
+        "ps-stuhlfangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Gleiche Gruppenaufgabe im Stuhlkreis: Alle kippen ihren Stuhl an, lassen gleichzeitig los und rücken weiter, ohne dass ein Stuhl umfällt. Beim Stuhlfangen geht es einmal rundherum zurück auf den eigenen Platz."
+    },
+    {
+      "haupt": "sw-lieder-raten",
+      "varianten": [
+        "insp-liedtitel-in-emojis-verpacken"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Auch hier muss ein Lied erraten werden, nur wird es nicht gesummt oder gegurgelt, sondern der Titel als Folge von Emojis geschrieben."
+    },
+    {
+      "haupt": "sw-liegestutz-kampf",
+      "varianten": [
+        "sw-hahnenkampf",
+        "sw-schwertkampf"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dreimal Zweikampf ohne Material, es wechselt nur die Haltung und das Ziel: in der Liegestützhaltung die Hand des Gegenübers wegziehen, auf einem Bein mit verschränkten Armen aus dem Gleichgewicht schubsen (Hahnenkampf), oder im Stehen mit dem Zeigefinger die Wade des anderen berühren (Schwertkampf)."
+    },
+    {
+      "haupt": "sw-wortkette",
+      "varianten": [
+        "sw-wortdomino"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Sprachspiel reihum mit zusammengesetzten Wörtern; beim Wortdomino beginnt man mit einem einfachen Wort und muss daraus erst eine Zusammensetzung bauen, statt den hinteren Teil weiterzuverwenden."
+    },
+    {
+      "haupt": "eig-quiz-abend-schlag-die-fuehrung",
+      "varianten": [
+        "sw-pubquiz"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Quiz in Gruppen gegen vorbereitete Fragen; die eigene Fassung füllt damit einen ganzen Abend, gibt einen Fragenkatalog zum Pfadfinderwissen vor und wechselt zwischen Buzzer-, Wett- und Pantomimerunden."
+    },
+    {
+      "haupt": "sw-liebst-du-mich",
+      "varianten": [
+        "sw-ernst-auf-ernst",
+        "sw-armer-schwarzer-kater"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Neue Familie 'Wer lacht, verliert': Dreimal geht es darum, ernst zu bleiben, während andere einen zum Lachen bringen. Bei 'Liebst du mich' und beim 'armen schwarzen Kater' geht eine Person im Kreis herum und stellt eine feste Frage bzw. miaut, bei 'Ernst auf Ernst' sitzen sich nur zwei gegenüber und schneiden Grimassen. Der Spielewiki-Artikel nennt den Kater selbst eine Variante von Ernst auf Ernst."
+    },
+    {
+      "haupt": "sw-simon-says",
+      "varianten": [
+        "sw-es-fliegt-es-fliegt"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Neue Familie 'Kommando mit Falle': Beide Male wird eine Anweisung nur dann ausgeführt, wenn ein Signal stimmt - bei Simon sagt das vorangestellte 'Simon sagt', bei 'Es fliegt, es fliegt' die Frage, ob das genannte Tier wirklich fliegen kann."
+    },
+    {
+      "haupt": "sw-feuer-wasser-sturm",
+      "varianten": [
+        "sw-fuchs-habicht-paarungszeit"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Gleiches Kommandospiel: Die Gruppe bewegt sich frei, und auf jedes gerufene Stichwort gehört eine feste Bewegung. Nur die Stichwortliste ist eine andere - Fuchs, Habicht und Paarungszeit statt Feuer, Wasser und Sturm."
     }
   ],
   "kern": [

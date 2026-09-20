@@ -672,6 +672,169 @@
   zuruecksetzen();
   zeichneFuss();
 
+  // --- Die Brille: Wortersetzung beim Anzeigen ---
+  // Die App zeigt Texte durch data/sprache.json hindurch an; in den Dateien
+  // bleibt der Originalwortlaut stehen. Geprüft wird beides: dass ersetzt
+  // wird, und dass nur ersetzt wird, was ersetzt werden soll.
+  zuruecksetzen();
+  var brilleDa = !!(SPRACHE && SPRACHE.regeln && BRILLE_PAARE.length);
+  pruefe("Wortliste ist geladen", brilleDa,
+         brilleDa ? BRILLE_PAARE.length + " Wortpaare, Stand " + SPRACHE.meta.stand : "keine");
+  pruefe("jede Regel sagt, ob ein Änderungshinweis nötig ist",
+         brilleDa && SPRACHE.regeln.every(function (r) {
+           return typeof r.hinweis_noetig === "boolean";
+         }) && ersetztMitHinweis().length ===
+              ALLE.filter(function (e) { return e._ersetzt && e._ersetzt.length; }).length,
+         "heute verlangen alle sieben Regeln einen Hinweis");
+  pruefe("jede Regel nennt Grund und Datum",
+         brilleDa && SPRACHE.regeln.every(function (r) {
+           return r.grund && r.seit && r.woerter && r.woerter.length &&
+                  r.woerter.every(function (w) { return w.von && w.zu; });
+         }));
+
+  function ersetztMitHinweis() {
+    return ALLE.filter(function (e) { return e._hinweisNoetig; });
+  }
+  // Der angezeigte Text eines Elements – genau das, was der Nutzer liest.
+  function angezeigt(e) {
+    return [e.titel, e.kurz, e.beschreibung, e.tipps || "",
+            (e.tags || []).join(" "), (e.themen || []).join(" "),
+            (e.material || []).join(" ")].join(" ");
+  }
+  // Alle ids, die in der Wortliste ausdrücklich ausgenommen sind.
+  var brilleAusnahmen = [];
+  if (brilleDa) {
+    SPRACHE.regeln.forEach(function (r) {
+      (r.ausser || []).forEach(function (id) {
+        if (brilleAusnahmen.indexOf(id) === -1) brilleAusnahmen.push(id);
+      });
+    });
+  }
+  function ohneAusnahmen(liste) {
+    return liste.filter(function (e) { return brilleAusnahmen.indexOf(e.id) === -1; });
+  }
+
+  var mitSippe = ohneAusnahmen(ALLE.filter(function (e) {
+    return /\bSippe\b|\bSippen\b|Sippling/.test(angezeigt(e));
+  }));
+  pruefe("„Sippe“ steht nirgends mehr in der Anzeige", mitSippe.length === 0,
+         mitSippe.length ? mitSippe.map(function (e) { return e.id; }).join(", ")
+                         : brilleAusnahmen.length + " eingetragene Ausnahmen");
+  pruefe("dafür steht „Horte/Gilde“ da",
+         ALLE.filter(function (e) { return /Horte\/Gilde|Horten\/Gilden|Horten-\/Gilden/.test(angezeigt(e)); }).length > 50,
+         ALLE.filter(function (e) { return /Horte\/Gilde|Horten\/Gilden|Horten-\/Gilden/.test(angezeigt(e)); }).length + " Elemente");
+
+  var ersetzte = ALLE.filter(function (e) { return e._ersetzt && e._ersetzt.length; });
+  pruefe("die Brille hat gewirkt", ersetzte.length > 150, ersetzte.length + " Elemente geändert");
+  pruefe("jedes geänderte Element hat seinen Originaltext behalten",
+         ersetzte.every(function (e) { return e._urtext && Object.keys(e._urtext).length; }));
+  pruefe("unveränderte Elemente tragen keinen Originaltext",
+         ALLE.every(function (e) { return (e._ersetzt && e._ersetzt.length) || !e._urtext; }));
+
+  // Das Probenbuch ist der Maßstab und wird nicht angefasst.
+  var pb = ALLE.filter(function (e) { return e.id.indexOf("pb-") === 0; });
+  pruefe("Probenbuch-Elemente sind unverändert",
+         pb.length === 28 && pb.every(function (e) { return !e._ersetzt && !e._urtext; }),
+         pb.length + " pb-Elemente");
+  pruefe("selbst erfasste Ideen bleiben, wie sie getippt wurden",
+         ALLE.filter(function (e) { return e._eigen; })
+             .every(function (e) { return !e._ersetzt; }));
+
+  // Die Ausnahmen müssen wirken, sonst wird aus einer Tabu-Wortliste Unsinn.
+  var tabu = NACH_ID["insp-digitales-tabu"];
+  pruefe("eingetragene Ausnahmen bleiben unberührt",
+         !!tabu && /Sippe/.test(angezeigt(tabu)) && /Gut Pfad/.test(angezeigt(tabu)));
+
+  // Wortgrenzen: der Hordentopf ist Kochgeschirr und keine Horte.
+  pruefe("die Brille greift nicht ins Wortinnere",
+         durchDieBrille("Hordentopf und Sippenwimpel am Sippenabend", "x-test", null) ===
+         "Hordentopf und Horten-/Gildenwimpel am Sippenabend",
+         durchDieBrille("Hordentopf und Sippenwimpel am Sippenabend", "x-test", null));
+  pruefe("das längere Wortpaar gewinnt",
+         durchDieBrille("Bringt es zur Gruppenstunde mit", "x-test", null) ===
+         "Bringt es zum Heimabend mit",
+         durchDieBrille("Bringt es zur Gruppenstunde mit", "x-test", null));
+  pruefe("eine lange Regel blockiert keine kurze",
+         durchDieBrille("Zeltlager oder lange Gruppenstunden", "x-test", null) ===
+         "Zeltlager oder lange Heimabende",
+         durchDieBrille("Zeltlager oder lange Gruppenstunden", "x-test", null));
+
+  // Genderzeichen: Doppelpunkt, Sternchen, Unterstrich sind aufgelöst.
+  var mitZeichen = ohneAusnahmen(ALLE.filter(function (e) {
+    return /[A-Za-zÄÖÜäöüß]+[:*_](in|innen|innnen|r|n|e)\b/.test(angezeigt(e));
+  }));
+  pruefe("Genderzeichen sind aufgelöst", mitZeichen.length === 0,
+         mitZeichen.length ? mitZeichen.map(function (e) { return e.id; }).join(", ") : "keine übrig");
+  pruefe("aufgelöst wird als Paarform bzw. Schrägstrich",
+         durchDieBrille("Ein:e Spieler:in und alle Spieler:innen", "x-test", null) ===
+         "Ein Spieler/eine Spielerin und alle Spieler und Spielerinnen",
+         durchDieBrille("Ein:e Spieler:in und alle Spieler:innen", "x-test", null));
+
+  // Die Suche muss beide Schreibweisen finden, sonst ist die Brille eine Falle.
+  setzeSammlung(false);
+  document.getElementById("suche").value = "horte";
+  aktualisiere();
+  var horteTreffer = gefiltert.filter(function (e) {
+    return e._urtext && /Sipp/.test(JSON.stringify(e._urtext));
+  });
+  pruefe("Suche nach „Horte“ findet, wo „Sippe“ steht", horteTreffer.length > 40,
+         horteTreffer.length + " von " + gefiltert.length + " Treffern");
+  document.getElementById("suche").value = "sippenwimpel";
+  aktualisiere();
+  pruefe("Suche nach dem Originalwort findet den Baustein weiterhin",
+         gefiltert.some(function (e) { return e.id === "eig-sippenwimpel-gestalten"; }),
+         gefiltert.length + " Treffer");
+  document.getElementById("suche").value = "gildenwimpel";
+  aktualisiere();
+  pruefe("Suche nach dem neuen Wort findet ihn auch",
+         gefiltert.some(function (e) { return e.id === "eig-sippenwimpel-gestalten"; }),
+         gefiltert.length + " Treffer");
+  zuruecksetzen();
+
+  // Der Änderungshinweis in der Detailansicht.
+  var gezeigtes = NACH_ID["eig-sippenwimpel-gestalten"];
+  zeigeDetail(gezeigtes);
+  var detailText = document.getElementById("detailInhalt").textContent;
+  pruefe("Änderungshinweis steht im Quellenkasten",
+         detailText.indexOf("einzelne Wörter") > -1 && detailText.indexOf("Sippenwimpel") > -1);
+  pruefe("der Änderungshinweis kommt ohne das Wort „Lizenz“ aus",
+         document.querySelector(".kasten.quelle .brille").textContent.indexOf("Lizenz") === -1);
+  pruefe("das Original ist erst versteckt",
+         !!document.getElementById("urtextKnopf") &&
+         document.getElementById("urtextKasten").hidden);
+  document.getElementById("urtextKnopf").click();
+  pruefe("Knopf zeigt das Original",
+         !document.getElementById("urtextKasten").hidden &&
+         document.getElementById("urtextKasten").textContent.indexOf("Sippenwimpel gestalten") > -1);
+  document.getElementById("urtextKnopf").click();
+  pruefe("Knopf blendet das Original wieder aus",
+         document.getElementById("urtextKasten").hidden);
+  schliesseUeberlagerung(document.getElementById("detail"));
+
+  zeigeDetail(NACH_ID["pb-organisatorischer-aufbau"]);
+  pruefe("ohne Ersetzung steht kein Änderungshinweis da",
+         document.getElementById("detailInhalt").textContent.indexOf("einzelne Wörter") === -1 &&
+         !document.getElementById("urtextKnopf"));
+  schliesseUeberlagerung(document.getElementById("detail"));
+
+  // Der Plan-Text zum Teilen muss dieselbe Brille tragen wie der Bildschirm.
+  var gemerkterPlan = plan;
+  plan = leererPlan();
+  plan.haupt[0] = "eig-sippenwimpel-gestalten";
+  plan.einstieg = "insp-anschleichen-ueben";
+  var planText = planAlsText();
+  pruefe("Plan-Text ist ersetzt",
+         planText.indexOf("Horten-/Gildenwimpel") > -1 && planText.indexOf("Sippe") === -1);
+  pruefe("Plan-Text sagt, dass Wörter getauscht wurden",
+         planText.indexOf("sprachlich angepasst") > -1);
+  plan = leererPlan();
+  plan.haupt[0] = "pb-organisatorischer-aufbau";
+  pruefe("Plan-Text sagt es nur, wo wirklich getauscht wurde",
+         planAlsText().indexOf("sprachlich angepasst") === -1);
+  plan = gemerkterPlan;
+  zeichnePlan();
+  zuruecksetzen();
+
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);
   pruefe("Detailansicht öffnet", !document.getElementById("detail").hidden);

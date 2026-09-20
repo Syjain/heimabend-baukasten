@@ -1,8 +1,33 @@
 # Sprache und Begriffe im Heimabend-Baukasten
 
-Stand: 09.09.2026 · Grundlage: `data/elemente.json` (1037 Elemente, selbst nachgezählt),
+Stand: **20.09.2026 – die fünf Entscheidungen sind getroffen** (siehe Abschnitt 0).
+Zahlenstand der Erhebung: 09.09.2026 · Grundlage: `data/elemente.json` (1037 Elemente, selbst nachgezählt),
 `docs/heimabend-definition.md`, das DPB-Probenbuch (die 28 Elemente mit dem id-Präfix `pb-`),
 `data/SCHEMA.md` und `docs/pruefung-2026-09/begriffe.csv`.
+
+## 0. Was am 20.09.2026 entschieden wurde
+
+Die fünf Fragen aus Abschnitt 2 sind beantwortet. Die Begründungen stehen dort, die
+Umsetzung in `data/sprache.json`. Kurzfassung:
+
+| | Frage | Entscheidung vom 20.09.2026 |
+|---|---|---|
+| (a) | Sippe oder Horte/Gilde? | **Horte/Gilde – überall**, auch in fremden Texten. Im neutralen Spieltext steht die Paarform „Horte/Gilde“, weil „Horte“ allein für eine Mädchengruppe falsch wäre und das Probenbuch die beiden selbst als Paar schreibt. |
+| (b) | Spielleitung oder Gruppenführer? | **„Spielleitung“ bleibt** – die 203 Elemente werden nicht angefasst. Nur die Fremdwörter „Betreuer“ und „Gruppenleiter“ werden auf die Spielleitung gezogen. („Teamer“ kommt in den Daten 0× vor.) |
+| (c) | Welche Genderschreibweise? | **Paarform bzw. Schrägstrich wie im Probenbuch.** Doppelpunkt, Sternchen und Unterstrich werden beim Anzeigen aufgelöst. |
+| (d) | Tonfall? | **Bleibt, wie die Quelle ihn schreibt.** Es wird nicht umformuliert. |
+| (e) | Fremdtexte ändern? | **Nur, wo ein Wort für den DPB sachlich falsch ist**, nicht aus Stilgründen – mit Änderungshinweis in der App. |
+
+Dazu gehören zwei Festlegungen, die nicht zur Debatte standen:
+
+- **Das DPB-Probenbuch (28 Elemente, Präfix `pb-`) wird nicht angefasst.** Es ist der Maßstab,
+  aus dem die Wörter kommen; außerdem liegen die Rechte beim Bund und nicht bei einer CC-Lizenz.
+  In `data/sprache.json` steht es unter `meta.ausser_praefixe`.
+- **Die Ersetzung passiert beim Anzeigen, nicht in den Daten** – Weg B aus Abschnitt 4, in der
+  App „die Brille“ genannt. In `data/elemente.json` steht weiter „Sippe“, die App zeigt
+  „Horte/Gilde“. Nimmt man die Brille ab, ist das Original wieder da.
+
+---
 
 ## 1. Wozu dieses Dokument da ist
 
@@ -10,14 +35,15 @@ Die Sammlung stammt aus fünf Quellen und aus fremden Bünden, deshalb stehen un
 Wörter für dieselbe Sache nebeneinander: „Sippe" neben „Horte/Gilde", „Spielleitung" neben
 „Gruppenführer", drei verschiedene Genderschreibweisen, „Gruppenstunde" neben „Heimabend".
 Dieses Dokument sammelt an einer Stelle, welche Wörter betroffen sind, wie oft sie vorkommen und
-was das Probenbuch dazu sagt. Es trifft **keine** Entscheidung, sondern legt fünf Entscheidungen so
-vor, dass du sie in wenigen Minuten treffen kannst. Danach ist es das Wörterbuch, gegen das ein
-Skript später prüfen kann. Es ist bewusst kein Stilhandbuch – nur die Fragen, an denen viele
-Elemente hängen.
+was das Probenbuch dazu sagt. Es hat fünf Entscheidungen so vorgelegt, dass sie in wenigen Minuten
+zu treffen waren; seit dem 20.09.2026 sind sie getroffen (Abschnitt 0). Jetzt ist es das
+Wörterbuch, gegen das man `data/sprache.json` prüfen kann. Es ist bewusst kein Stilhandbuch –
+nur die Fragen, an denen viele Elemente hängen.
 
-> **Solange nichts entschieden ist, ändert sich an den Daten nichts.** Dieses Dokument ändert
-> keine Datei in `data/`, und kein Skript liest es. Erst wenn du unten Kreuze gesetzt hast, wird
-> daraus Arbeit an den Daten oder an der App.
+> **An den Daten hat sich nichts geändert.** Dieses Dokument ändert keine Datei in `data/`, und
+> `data/elemente.json` ist von den Entscheidungen unberührt geblieben: die Ersetzung passiert
+> beim Anzeigen (Abschnitt 4, Weg B). Geändert hat sich die Anzeige – und dafür ist
+> `data/sprache.json` dazugekommen.
 
 ### Wie die Zahlen entstanden sind
 
@@ -144,7 +170,18 @@ Möglichkeit 3 bleibt offen; der Weg von 3 zurück bliebe es nicht.
 **Zusatz, egal wie du entscheidest:** „Sippe" sollte in der Suche ein Synonym von „Horte" und
 „Gilde" bleiben, sonst findet jemand, der „Sippe" tippt, die Probenbuch-Elemente nicht mehr.
 
-☐ Sippe bleibt · ☐ Horte/Gilde, nur eigene Texte · ☐ Horte/Gilde überall · Entschieden am: ______
+☐ Sippe bleibt · ☐ Horte/Gilde, nur eigene Texte · **☑ Horte/Gilde überall** · Entschieden am: **20.09.2026**
+
+**Umgesetzt** in `data/sprache.json`, Regel „Horte und Gilde statt Sippe“: 31 Wortpaare, 224
+Ersetzungen in 88 Elementen. Im Spieltext steht die Paarform „Horte/Gilde“ (Mehrzahl
+„Horten/Gilden“, Zusammensetzungen „Horten-/Gildenwimpel“) – „Horte“ allein wäre für eine
+Mädchengruppe falsch, und das Probenbuch schreibt die beiden selbst als Paar
+(`pb-organisatorischer-aufbau`: „Horte / Gilde – mindestens 5“, „Horten/Gilden und Trupps“;
+`pb-zeltbau`: „in der wir zur Horte/Gilde … zusammenwachsen“). Für „Sippling“ (36 Fundstellen)
+hat das Probenbuch kein Wort; angezeigt wird „Pfadfinder“ – das Wort, das das Probenbuch
+durchgängig für ein Mitglied des Bundes benutzt, und das in allen Fällen und Zahlen passt.
+Ausnahme: `insp-digitales-tabu`, dort ist „Sippe“ ein zu erratendes Wort in einer Wortliste.
+Der Zusatz gilt weiter: Die Suche findet beide Schreibweisen (siehe Abschnitt 4).
 
 ---
 
@@ -184,8 +221,23 @@ als „Gruppenführer", weil dort ein Kind leitet. Das ist die größte Zahl im 
 Elemente) mit dem geringsten Gewinn. Umgekehrt sind „Teamer" und „Betreuer" echte
 Fremdwörter aus der allgemeinen Jugendarbeit – die 15 Elemente lohnen sich und sind billig.
 
-☐ Spielleitung bleibt (+ 15 Fremdwörter angleichen) · ☐ überall Gruppenführer · ☐ je nach Stelle
-· Entschieden am: ______
+**☑ Spielleitung bleibt (+ Fremdwörter angleichen)** · ☐ überall Gruppenführer · ☐ je nach Stelle
+· Entschieden am: **20.09.2026**
+
+**Umgesetzt** in `data/sprache.json`, Regel „Spielleitung statt Betreuer und Gruppenleiter“:
+37 Ersetzungen in 15 Elementen. Die 203 Elemente mit „Spielleitung/Spielleiter“ bleiben
+unangetastet. „Teamer“ kommt in den Daten **0×** vor; betroffen sind „Betreuer“ (12 Elemente)
+und „Gruppenleiter“ (4). Angezeigt wird „Spielleiter“ und nicht „Spielleitung“, weil in genau
+diesen Sätzen männliche Fürwörter zurückverweisen („Der Betreuer wird wieder in den Raum
+geholt. **Er** riecht …“, `sw-sesselriechen`) und weil die Mehrzahl erhalten bleiben muss
+(„Die Betreuer **einigen** sich“, `sw-laufdiktat`). Mit „die Spielleitung“ müsste man die Sätze
+umschreiben – das verbietet Entscheidung (d). „Spielleiter“ ist außerdem das Wort, das in den
+203 nicht angefassten Elementen ohnehin steht. Beim Team passt die Spielleitung:
+„das Betreuerteam“ wird „das Spielleitungsteam“.
+
+**Nicht ersetzt wird das bloße „Leiter“** (19 Elemente). Es steht nicht in der Entscheidung,
+und es ist zweideutig: in `insp-eigenes-brettspiel-bauen-entwickeln` steht „Schlangen und
+Leitern“ – das Brettspiel. Wer es ersetzen will, muss die 19 Fundstellen einzeln lesen.
 
 ---
 
@@ -232,8 +284,41 @@ Ergebnis, und keine davon würde die Sammlung wirklich vereinheitlichen, weil di
 „Jungen/Mädchen", teils „Fünf Mädchen und eine Führerin oder fünf Jungen und ein Führer" – also
 beides. Wenn du Möglichkeit 1 wählst, leg eine Reihenfolge fest, sonst wird die App wieder uneinheitlich.
 
-☐ Paarform/Schrägstrich · ☐ Doppelpunkt überall · ☐ Sternchen überall · ☐ generisches Maskulinum
-· Entschieden am: ______
+**☑ Paarform/Schrägstrich** · ☐ Doppelpunkt überall · ☐ Sternchen überall · ☐ generisches Maskulinum
+· Entschieden am: **20.09.2026**
+
+**Umgesetzt** in `data/sprache.json`, zwei Regeln („Wortgruppen“ und „einzelne Wörter“):
+408 Ersetzungen in 109 Elementen. In den Daten stehen 130 verschiedene Formen mit Doppelpunkt,
+Sternchen oder Unterstrich – sie stehen **alle einzeln ausgeschrieben** in der Liste, keine
+davon wird geraten. Die Regel dahinter:
+
+- **Einzahl bekommt den Schrägstrich** wie „Führer/Führerin“ im Probenbuch:
+  „Spieler:in“ → „Spieler/Spielerin“, „Jede:r“ → „Jeder/Jede“, „er:sie“ → „er/sie“.
+- **Mehrzahl bekommt die ausgeschriebene Paarform:** „Spieler:innen“ → „Spieler und
+  Spielerinnen“. Im Satz liest sich das ohne Umbau, der Schrägstrich in der Einzahl auch –
+  „Ein Spieler oder eine Spielerin“ dagegen verlangt einen neuen Satzbau.
+- **Steht ein Artikel davor, beugt er sich mit.** Deshalb stehen 90 Wortgruppen als ganzes Paar
+  in der Liste: „eine:n Dirigent:in“ → „einen Dirigenten/eine Dirigentin“, „Der/die
+  Spielleiter:in“ → „Der Spielleiter/die Spielleiterin“. Die längere Regel gewinnt gegen die
+  kürzere, sonst käme „Der/die Spielleiter/Spielleiterin“ heraus.
+- **Unregelmäßige Wörter stehen ausgeschrieben da:** „Biolog*in“ wird „Biologe/Biologin“ (nicht
+  „Biolog/Biologin“), „Pirat*innen“ wird „Piraten und Piratinnen“, „Nachbar:innen“ wird
+  „Nachbarn und Nachbarinnen“.
+- **Im Wortinneren gibt es keine Paarform.** „Pfadfinder*innengeschichte“ wird
+  „Pfadfindergeschichte“, „Pfadfinder*innen-Memory“ wird „Pfadfinder-Memory“.
+
+**Reihenfolge (die Zusatzfrage):** erst die männliche, dann die weibliche Form – so wie das
+Probenbuch „Führer/Führerin“, „Horten/Gilden“, „Knappe/Gildenmädchen“ schreibt.
+
+**Es blieb keine Form übrig** – alle 130 ließen sich sauber in den Satz setzen.
+Zwei Stellen sehen nach der Auflösung holprig aus, weil sie es schon vorher waren:
+`insp-digitaler-sippencontest` („Der Hortenführer/die Gildenführerin / Roversprecher/
+Roversprecherin“) und `insp-upcycling-reisespiele-basteln` („mit deiner Meute/Horte/Gilde“).
+Umschreiben wäre nach (d) nicht erlaubt.
+
+Zwei Zeichenketten sehen nur aus wie Genderformen und bleiben stehen: „filetype:ppt“ und
+„filetype:pdf“ in `sw-powerpoint-karaoke` sind Suchbefehle. Weil die Liste ausgeschriebene
+Formen enthält und keine allgemeine Regel, laufen sie von selbst nicht mit.
 
 ---
 
@@ -277,8 +362,14 @@ geschrieben sind. Für die Ansprache müsstest du die Mehrheit der Sammlung neu 
 neutral immerhin 280 Elemente. Beides ist Arbeit ohne Gewinn für den Gruppenführer im Heim, der
 eine Regel lesen will. Die Hausform kostet nichts und wirkt auf alles Neue.
 
-☐ neutrale Beschreibung · ☐ Ansprache · ☐ einen Ton wirklich durchsetzen (welchen: ______)
-· Entschieden am: ______
+**☑ Tonfall bleibt, wie die Quelle ihn schreibt** (= Möglichkeit 1, neutrale Beschreibung als
+Hausform für Neues) · ☐ Ansprache · ☐ einen Ton wirklich durchsetzen
+· Entschieden am: **20.09.2026**
+
+**Umgesetzt:** 0 Elemente. Es wird nicht umformuliert. Diese Entscheidung ist die Leitplanke
+für alle anderen: Eine Regel in `data/sprache.json` darf ein Wort tauschen und den Artikel
+mitbeugen – sie darf keinen Satz umbauen. Daran ist die Wahl „Spielleiter“ statt
+„Spielleitung“ in (b) gebunden, und daran, dass „Meute“ stehen bleibt.
 
 ---
 
@@ -337,8 +428,27 @@ unter zwei Dritteln der Sammlung steht. Die Trennlinie „sachlich falsch, nicht
 ist außerdem die einzige, die man später noch nachvollziehen kann. Für das Probenbuch: erst fragen,
 dann ändern – dort sind ohnehin nur „Tracht"/„Uniform" strittig, und die stehen dort mit Absicht.
 
-☐ Fremdtexte bleiben wörtlich · ☐ nur wo sachlich falsch (mit Hinweis) · ☐ frei umschreibbar
-· Entschieden am: ______
+☐ Fremdtexte bleiben wörtlich · **☑ nur wo sachlich falsch (mit Hinweis)** · ☐ frei umschreibbar
+· Entschieden am: **20.09.2026**
+
+**Umgesetzt:** 710 Ersetzungen in 214 von 1075 Elementen. Das Probenbuch bleibt ganz außen vor.
+Der Änderungshinweis steht in der App an zwei Stellen und **nur dort, wo wirklich etwas
+ersetzt wurde** (`web/index.html`):
+
+- **Detailansicht, Kasten „Quelle“**, eine Zeile unter der Lizenz – ohne das Wort „Lizenz“,
+  weil der Gruppenführer im Heim damit nichts anfangen kann:
+  > Wir haben in diesem Text einzelne Wörter ausgetauscht, damit sie zu unserem Bund passen:
+  > „Sippe“ → „Horte/Gilde“, „Sippenwimpel“ → „Horten-/Gildenwimpel“. Sonst steht alles so da,
+  > wie die Quelle es geschrieben hat.
+
+  Darunter der Knopf **„Original anzeigen“**: er klappt den unveränderten Wortlaut aller
+  betroffenen Felder auf. Damit ist die Auflage aus CC 4.0 3.a.1.B erfüllt, ohne dass irgendwo
+  ein Lizenzvortrag stehen muss.
+- **Plan-Text zum Teilen**, in der bestehenden Quellenzeile:
+  `Quelle: Spielewiki · CC BY-SA 4.0 · sprachlich angepasst · <url>`
+
+Titeländerungen aus `data/redaktion.json` (`titel_geaendert`) sind davon unberührt – das ist
+Weg A und bleibt Sache von `scripts/build.py`.
 
 ---
 
@@ -354,36 +464,36 @@ steht dort „offen". *Entsch.* = offen / getroffen.
 
 | # | Unser Wort | Fremdes Wort | El. (Tr.) | laut CSV | Quellen | Stand | Vorschlag | Entsch. |
 |---:|---|---|---:|---|---|---|---|---|
-| 1 | – | Spielleiter, Spielleitung | 203 (328) | gleich | sw 167, ps 28, insp 6, eig 2 | offen | belassen, siehe (b) | ☐ |
-| 2 | – (Hausform) | „ihr müsst/sollt/könnt" | 95 (113) | 95 (116) | insp 86, pb 7, sw 1, ps 1 | offen | belassen, Hausform neutral, siehe (d) | ☐ |
-| 3 | Horte / Gilde | Sippe, Sippling, Sippenführer | 88 (227) | gleich | insp 79, eig 9 | offen | siehe (a); 11 Titel betroffen | ☐ |
-| 4 | Paarform | Doppelpunkt `:in` | 77 (263) | gleich | ps 77 | offen | belassen, siehe (c) | ☐ |
+| 1 | Spielleitung | Spielleiter, Spielleitung | 203 (328) | gleich | sw 167, ps 28, insp 6, eig 2 | 20.09.2026 | **belassen** – nicht angefasst, siehe (b) | ☑ |
+| 2 | – (Hausform) | „ihr müsst/sollt/könnt" | 95 (113) | 95 (116) | insp 86, pb 7, sw 1, ps 1 | 20.09.2026 | **belassen**, Hausform neutral, siehe (d) | ☑ |
+| 3 | Horte/Gilde | Sippe, Sippling, Sippenführer | 88 (227) | gleich | insp 79, eig 9 | 20.09.2026 | **ersetzt**: 224 Ersetzungen in 88 El., 31 Wortpaare, 11 Titel | ☑ |
+| 4 | Paarform | Doppelpunkt `:in` | 77 (263) | gleich | ps 77 | 20.09.2026 | **beim Anzeigen aufgelöst**, siehe (c) | ☑ |
 | 5 | – | Corona, online, digital | 37 (73) | **73 (113)** | insp 22, ps 7, sw 7, pb 1 | offen | kein Sprach-, sondern Inhaltsthema → Frage 40 der Arbeitsliste | ☐ |
 | 6 | Stamm / Hag | (belegt) | 31 (59) | 31 (53) | insp 18, eig 7, pb 5, sw 1 | belegt | belassen; nur 17 der 31 meinen die Einheit, der Rest ist Baumstamm/Stammbaum | ☐ |
 | 7 | Wölfling | Wö, Altwolf | 25 (75) | gleich | insp 15, pb 8, sw 2 | belegt | belassen | ☐ |
 | 8 | Halstuch | Tuch | 27 (62) | **24 (45)** | sw 10, insp 9, pb 5, eig 2, ps 1 | belegt | belassen; im Feld `material` „Tuch" zulassen | ☐ |
-| 9 | Heimabend | Gruppenstunde | 19 (33) | gleich | insp 12, sw 4, ps 2, eig 1 | belegt (28/28 pb) | ersetzen, 1 Ausnahme (`insp-digitales-tabu`) | ☐ |
+| 9 | Heimabend | Gruppenstunde | 19 (33) | gleich | insp 12, sw 4, ps 2, eig 1 | 20.09.2026 | **ersetzt**: 32 Ersetzungen in 18 El., 1 Ausnahme (`insp-digitales-tabu`) | ☑ |
 | 10 | Kohte / Jurte | (belegt) | 19 (112) | gleich | insp 11, pb 5, eig 2, sw 1 | belegt | belassen | ☐ |
 | 11 | Kluft | Tracht, Uniform | 16 (49) | 16 (48) | pb 9, insp 7 | belegt | **nicht** mechanisch ersetzen, siehe Bedeutungsliste | ☐ |
-| 12 | Paarform | Sternchen `*in` | 16 (42) | gleich | insp 14, ps 2 | offen | siehe (c) | ☐ |
+| 12 | Paarform | Sternchen `*in` | 16 (42) | gleich | insp 14, ps 2 | 20.09.2026 | **beim Anzeigen aufgelöst**, siehe (c) | ☑ |
 | 13 | – | Kindergeburtstag, Party, Fasching | 13 (31) | **16 (45)** | sw 12, ps 1 | offen | Inhaltsthema → Frage 27/48 | ☐ |
-| 14 | Spielleitung | Gruppenleiter, Teamer, Betreuer, Leiter:in | 15 (37) | gleich | sw 12, insp 2, ps 1 | offen | ersetzen, siehe (b) | ☐ |
+| 14 | Spielleitung | Gruppenleiter, Betreuer | 15 (37) | gleich | sw 12, insp 2, ps 1 | 20.09.2026 | **ersetzt**: 37 Ersetzungen in 15 El.; „Teamer" kommt 0× vor; bloßes „Leiter" bleibt | ☑ |
 | 15 | Heimabend, Gruppe | Schule, Klasse, Unterricht | 11 (13) | **15 (23)** | sw 6, pb 3, eig 1, insp 1 | offen | einzeln ansehen, sehr kleine Menge | ☐ |
 | 16 | Versprechen, Aufnahme | Gelöbnis | 18 (45) | **14 (37)** | insp 10, pb 8 | belegt | belassen; „Gelöbnis" nur 1× (`pb-pfadfindergruss-und-pfadfinderversprechen`) | ☐ |
 | 17 | – | Lagerfeuer, Singerunde, Singewettstreit | 13 (20) | gleich | insp 4, pb 3, eig 3, sw 2, ps 1 | offen | dein Wort fehlt noch – bitte eintragen: ____________ | ☐ |
-| 18 | Horte / Gilde (?) | Meute | 10 (11) | gleich | insp 9, eig 1 | offen | **Bedeutungsunterschied**, siehe unten | ☐ |
-| 19 | Horte / Gilde | – | 9 (26) | 9 (24) | pb 8, sw 1 | belegt | Zielwort für (a) | ☐ |
+| 18 | – (es gibt keins) | Meute | 10 (11) | gleich | insp 9, eig 1 | 20.09.2026 | **bleibt stehen** – andere Altersstufe, siehe unten | ☑ |
+| 19 | Horte/Gilde | – | 9 (26) | 9 (24) | pb 8, sw 1 | 20.09.2026 | Zielwort für (a), jetzt in 88 weiteren El. | ☑ |
 | 20 | DPB | DPSG, VCP, BdP, DPBM | 7 (20) | **8 (26)** | pb 3, insp 2, sw 1, ps 1 | offen | stehen lassen, wo Geschichte erzählt wird | ☐ |
 | 21 | – | Alkohol, Trinkspiel | 4 (10) | **8 (38)** | insp 3, pb 1 | offen | Inhaltsthema → Frage 26; meine engere Zählung ohne „Schnapsen" | ☐ |
 | 22 | Knappe / Späher, Gildenmädchen / Gildin | Rover, Ranger, Caravelle | 6 (11) | gleich | insp 4, ps 1, pb 1 | belegt | **Bedeutungsunterschied**, siehe unten; „Ranger"/„Caravelle" kommen 0× vor | ☐ |
 | 23 | Trupp | Truppstunde | 6 (14) | gleich | insp 2, sw 2, pb 2 | belegt | „Trupp" belassen; „Truppstunde" kommt 0× vor | ☐ |
-| 24 | Pfadfinder | Pfadi, Pfadis | 5 (9) | gleich | insp 3, ps 1, sw 1 | offen | ersetzen, 2 Ausnahmen (siehe Abschnitt 5) | ☐ |
+| 24 | Pfadfinder | Pfadi, Pfadis | 5 (9) | gleich | insp 3, ps 1, sw 1 | 20.09.2026 | **ersetzt**: 8 Ersetzungen in 3 El., 2 Ausnahmen (`sw-hugo`, `ps-grenze`) | ☑ |
 | 25 | Jungenschaft / Mädelschaft | Jungschar | 5 (24) | 5 (26) | pb 5 | belegt | nichts zu tun, „Jungschar" kommt 0× vor | ☐ |
-| 26 | Paarform | Unterstrich `_in` | 5 (8) | gleich | insp 5 | offen | siehe (c) | ☐ |
+| 26 | Paarform | Unterstrich `_in` | 5 (8) | gleich | insp 5 | 20.09.2026 | **beim Anzeigen aufgelöst**, siehe (c) | ☑ |
 | 27 | Horte | Horde | 4 (5) | gleich | insp 2, pb 1, eig 1 | belegt | nichts zu tun: alle 5 Fundstellen sind „Hordentopf" (Kochgeschirr) | ☐ |
 | 28 | Wildling, Neuling, Wölfling … | Wichtel, Biber | 2 (9) | **3 (10)** | sw 2 | belegt | nichts zu tun: beide Treffer sind „Wichteln" (Geschenkspiel), „Biber" kommt 0× vor | ☐ |
 | 29 | Kornett | – | 1 (3) | gleich | pb 1 | belegt | belassen, in der App einmal erklären | ☐ |
-| 30 | Allzeit bereit | Gut Pfad | 1 (2) | gleich | insp 1 | belegt | ersetzen (Wortliste in `insp-digitales-tabu`) | ☐ |
+| 30 | Allzeit bereit | Gut Pfad | 1 (3) | gleich | insp 1, eig 1 | 20.09.2026 | **ersetzt**: 1 Ersetzung (`eig-schlussgruss`); die 2 Treffer in `insp-digitales-tabu` sind Ratewörter | ☑ |
 
 Abkürzungen der Quellen: `sw` Spielewiki · `insp` Heimabend-Inspirator (DPBM) ·
 `ps` pfadfinder-spiele.de · `eig` eigene Sammlung · `pb` DPB-Probenbuch.
@@ -419,8 +529,16 @@ Für ein späteres Skript gilt: Hände weg, ohne dass ein Mensch die Fundstelle 
   „Der Meutenführer gibt Kommandos und alle blinden Wölflinge …", `insp-finde-die-entfuehrte-person`
   „ein/eine Meutenhelfer\*in … Die Wölflinge sollen …". Zwei Elemente stellen beide Wörter
   nebeneinander („mit deiner Meute/Sippe"). Eine Ersetzung „Meute" → „Sippe" würde also die
-  Altersangabe verfälschen. Das Probenbuch hat für die Wölflingsgruppe kein eigenes Wort –
-  hier fehlt eine Antwort von dir.
+  Altersangabe verfälschen. Das Probenbuch hat für die Wölflingsgruppe kein eigenes Wort.
+  **Entschieden am 20.09.2026: „Meute" bleibt stehen** und steht in keiner Regel von
+  `data/sprache.json`. Begründung: Entscheidung (e) erlaubt nur zu ersetzen, was für den DPB
+  sachlich falsch ist – „Meute" ist aber nicht das falsche Wort für dieselbe Sache, sondern das
+  richtige Wort für eine **andere** Sache (die Gruppe der 7- bis 11-Jährigen). Aus „Meute" eine
+  „Horte/Gilde" zu machen hieße, in `insp-marionette` und `insp-finde-die-entfuehrte-person` eine
+  Altersangabe zu verfälschen; und für die Wölflingsgruppe hätten wir kein Wort anzubieten. Die
+  Folge ist an zwei Stellen sichtbar: aus „mit deiner Meute/Sippe" wird „mit deiner
+  Meute/Horte/Gilde". Das ist holprig, aber richtig – und es verschwindet in dem Moment, in dem
+  euer Wort für die Wölflingsgruppe feststeht.
 - **Trupp ≠ Truppstunde.** „Trupp" ist im DPB eine Einheit ab 10 Mitgliedern (belegt in
   `pb-organisatorischer-aufbau`), „Truppstunde" wäre DPSG-Sprache für den Heimabend. Praktisch ist
   die Frage erledigt: „Truppstunde" kommt in den Daten **0×** vor.
@@ -451,9 +569,10 @@ Für ein späteres Skript gilt: Hände weg, ohne dass ein Mensch die Fundstelle 
 
 ---
 
-## 4. Wie die Ersetzung später laufen soll
+## 4. Wie die Ersetzung läuft
 
-Das ist Frage 55 der Arbeitsliste. Es gibt zwei Wege, und sie schließen sich nicht aus.
+Das war Frage 55 der Arbeitsliste. Es gibt zwei Wege, und sie schließen sich nicht aus.
+**Am 20.09.2026 entschieden: Weg B als Regelfall.**
 
 ### Weg A – Änderung im Element speichern
 
@@ -496,7 +615,7 @@ Die Quelldaten bleiben unangetastet; eine Regelliste wird beim Laden der App ang
 - **Nachteil:** ein Änderungshinweis ist trotzdem nötig. Der Nutzer sieht einen geänderten Text;
   dass die Datei im Hintergrund unverändert ist, ändert daran nichts.
 
-### Empfehlung
+### Entscheidung vom 20.09.2026
 
 **Weg B als Regelfall, Weg A für die Ausnahmen.**
 
@@ -508,45 +627,116 @@ Die Quelldaten bleiben unangetastet; eine Regelliste wird beim Laden der App ang
   Entscheidung inhaltlich ist und nicht sprachlich.
 - Der Änderungshinweis gehört in beiden Fällen in die Anzeige, mit dem Wortlaut aus Abschnitt (e).
 
-### Das passende Datenformat – Skizze, nicht angelegt
+### Das Datenformat – so sieht `data/sprache.json` aus (seit 20.09.2026)
 
-Vorschlag: eine neue Datei `data/sprache.json` neben `redaktion.json`. **Sie wird hier nur
-skizziert und bewusst nicht angelegt** – erst entscheiden, dann bauen.
+Die Datei liegt neben `redaktion.json`. Die Skizze aus der Fassung vom 09.09. hat getragen, mit
+**einer** Abweichung: `von` und `zu` sind keine zwei gleich langen Listen mehr, sondern eine Liste
+von Paaren. Bei 281 Wortpaaren wären zwei parallele Listen nicht zu pflegen – eine Zeile
+eingeschoben, und ab da steht neben jedem Wort das falsche Gegenstück, ohne dass es jemand merkt.
+Ein Paar `{"von": …, "zu": …}` kann nicht verrutschen. Sonst ist alles wie skizziert.
 
 ```jsonc
 {
   "meta": {
-    "name": "Sprachregeln",
-    "beschreibung": "Wortersetzungen für die Anzeige. Ändert data/elemente.json nicht.",
-    "stand": "2026-09-09"
+    "name": "Sprachregeln für die Anzeige („die Brille“)",
+    "stand": "2026-09-20",
+    "felder": ["titel", "kurz", "beschreibung", "tipps", "tags", "themen", "material", "varianten"],
+    "ausser_praefixe": ["pb-", "mein-"]      // Probenbuch und selbst erfasste Ideen
   },
   "regeln": [
     {
-      "von": ["Gruppenstunde", "Gruppenstunden", "Gruppenstundenidee"],
-      "zu":  ["Heimabend",     "Heimabende",     "Heimabendidee"],
-      "felder": ["titel", "kurz", "beschreibung", "tipps"],
-      "quellen": ["Spielewiki", "Heimabend-Inspirator (DPBM)", "pfadfinder-spiele.de"],
+      "name": "Heimabend statt Gruppenstunde",
+      "woerter": [
+        { "von": "Gruppenstunde",     "zu": "Heimabend" },
+        { "von": "Gruppenstunden",    "zu": "Heimabende" },
+        { "von": "zur Gruppenstunde", "zu": "zum Heimabend" }
+      ],
       "ausser": ["insp-digitales-tabu"],
+      "ausser_grund": "Tabu-Wortliste: das Wort ist dort der Spielgegenstand.",
       "hinweis_noetig": true,
-      "grund": "Das Probenbuch benutzt in allen 28 Proben 'Heimabend'.",
-      "seit": "2026-09-09"
+      "grund": "„Heimabend“ steht in allen 28 Proben des Probenbuchs …",
+      "seit": "2026-09-20"
     }
   ]
 }
 ```
 
-Drei Dinge sind an dieser Form wichtig:
+Sechs Dinge sind an dieser Form wichtig:
 
-1. **Beugungsformen werden aufgezählt, nicht geraten.** `von` und `zu` sind gleich lange Listen.
-   Ein Skript, das aus „Gruppenstunde" selbst „Gruppenstunden" ableiten will, produziert
-   irgendwann „Heimabendn".
-2. **`ausser` ist eine Liste von Element-ids.** Ohne sie gibt es keine sicheren Regeln – jede der
-   drei unstrittigen Regeln in Abschnitt 5 hat mindestens eine Ausnahme.
-3. **`quellen` schränkt ein.** So bleibt das Probenbuch von jeder Regel unberührt, solange die
-   Rechtefrage aus (e) offen ist – man muss es nicht in jeder Regel einzeln ausschließen.
+1. **Beugungsformen werden aufgezählt, nicht geraten.** Ein Skript, das aus „Gruppenstunde“ selbst
+   „Gruppenstunden“ ableiten will, produziert irgendwann „Heimabendn“.
+2. **Ändert sich mit dem Wort der Artikel, steht die ganze Wortgruppe als Paar da.**
+   „die Gruppenstunde“ ist weiblich, „der Heimabend“ männlich – deshalb
+   `"zur Gruppenstunde" → "zum Heimabend"`. Genauso bei den Genderformen:
+   `"eine:n Dirigent:in" → "einen Dirigenten/eine Dirigentin"`.
+3. **`ausser` ist eine Liste von Element-ids,** jede mit einem `ausser_grund` daneben. Ohne sie
+   gibt es keine sicheren Regeln – „Sippe“ und „Gut Pfad“ sind in `insp-digitales-tabu` die zu
+   erratenden Wörter eines Ratespiels, „Pfadi Heidegg“ in `sw-hugo` ist ein Gruppenname.
+4. **`meta.ausser_praefixe` hält ganze Quellen heraus.** Das Probenbuch (`pb-`) ist von keiner
+   Regel betroffen, ohne dass man es in jede einzeln schreiben muss. Selbst erfasste Ideen
+   (`mein-`) auch nicht: Wer seine eigene Idee aufschreibt, soll sie so wiederfinden, wie er sie
+   getippt hat.
+5. **`meta.felder` sagt, wo die Brille hinschaut.** Alles, was die App als Text ausgibt: Titel,
+   Kurztext, Beschreibung, Tipps, Stichworte, Themen, Material und die Variantenliste. Ob ein Feld
+   ein Text oder eine Liste ist, sieht die App am Wert – die Wortliste muss nichts über den Aufbau
+   der Elemente wissen.
+6. **`hinweis_noetig` steuert den Änderungshinweis,** es ist kein Kommentar. Steht es auf `true`,
+   nennt die App bei jedem betroffenen Element, dass Wörter getauscht wurden. Eine spätere Regel,
+   die nur einen Tippfehler geradezieht, käme mit `false` aus. Heute steht es bei allen sieben
+   Regeln auf `true`.
 
-Nur ganze Wörter ersetzen (Wortgrenzen), sonst wird aus „Hordentopf" ein „Hortentopf" und aus
-„Baumstamm" etwas anderes.
+**Nur ganze Wörter.** Links und rechts vom Treffer darf kein Buchstabe stehen, sonst würde aus
+„Hordentopf“ ein „Horten-/Gildentopf“. Das längere Paar gewinnt gegen das kürzere, sonst käme aus
+„zur Gruppenstunde“ ein „zur Heimabend“ heraus.
+
+> **Ein Fallstrick, der beim Bauen aufgefallen ist.** Der naheliegende Weg – alle Wörter in ein
+> großes Suchmuster packen und einmal ersetzen lassen – geht schief. In „Kindergeburtstage o**der
+> Gruppenstunde**n“ greift die Regel `der Gruppenstunde` mitten im Wort „oder“, wird wegen der
+> Wortgrenze verworfen – und die Suche läuft hinter der verworfenen Stelle weiter, also **an
+> „Gruppenstunden“ vorbei**. Der Satz bliebe unverändert, ohne Fehlermeldung. Die App läuft
+> deshalb Zeichen für Zeichen durch den Text und probiert an jeder Stelle die längste passende
+> Regel (`durchDieBrille()` in `web/index.html`). Der Rauchtest prüft genau diesen Fall.
+
+### Wie man die Wortliste pflegt
+
+Die Liste ist für Menschen gemacht, nicht für ein Skript. Sie enthält keine regulären Ausdrücke,
+nur ausgeschriebene Wörter – wer Deutsch kann, kann sie lesen und ändern.
+
+**Ein Wort dazunehmen, in fünf Schritten:**
+
+1. **Erst zählen, dann entscheiden.** Wie oft kommt das Wort vor, und in welchen Elementen? Im
+   Zweifel mindestens fünf Fundstellen im Zusammenhang ansehen. Zusammengesetzte Wörter und
+   Wörter mit zweiter Bedeutung sind die Falle: „Horde“ ist hier immer der Hordentopf, „Stamm“ in
+   der Hälfte der Fälle ein Baumstamm, „Wichteln“ ein Geschenkspiel, „Leiter“ manchmal die
+   Leiter. Die Liste in Abschnitt „Begriffe mit echtem Bedeutungsunterschied“ ist die Warnliste.
+2. **Alle Beugungsformen aufschreiben,** Einzahl und Mehrzahl, und jede Zusammensetzung, die
+   wirklich vorkommt – nicht die, die vorkommen könnte. `Sippenwimpel` steht in der Liste,
+   `Sippenbeutel` nicht, weil es das Wort in den Daten nicht gibt.
+3. **Jede Form im Satz prüfen,** nicht nur im Nominativ. Ändert sich der Artikel mit, kommt die
+   Wortgruppe in die Liste. Verweist ein Fürwort im nächsten Satz auf das Wort zurück („… **Er**
+   riecht an den Stühlen“), muss das Geschlecht erhalten bleiben – sonst wird der Satz falsch,
+   und umschreiben ist nach Entscheidung (d) nicht erlaubt.
+4. **Ausnahmen eintragen,** mit `ausser` und `ausser_grund`. Wortlisten von Ratespielen,
+   Eigennamen und Zitate sind die häufigsten.
+5. **`grund` und `seit` ausfüllen.** Jeder Eintrag sagt, warum er da ist – so verlangt es der
+   Vertrag, und in einem halben Jahr weiß es sonst niemand mehr.
+
+**Danach, immer in dieser Reihenfolge:**
+
+- `web/sprache.js` mitziehen. Die Datei enthält dieselbe Liste als `window.SPRACHE = …;` und ist
+  nur dafür da, dass die App **auch per Doppelklick** läuft – genau wie `web/elemente.js` neben
+  `data/elemente.json`. Wer die eine ändert und die andere vergisst, sieht auf GitHub Pages etwas
+  anderes als auf dem eigenen Rechner.
+- `scripts/rauchtest.js` im Browser laufen lassen. Er prüft unter anderem, dass „Sippe“ in der
+  Anzeige nicht mehr vorkommt, dass die Suche beide Schreibweisen findet, dass die
+  Probenbuch-Elemente unverändert sind und dass der Änderungshinweis nur dort steht, wo wirklich
+  ersetzt wurde.
+- Die Zahlen in diesem Dokument nachziehen.
+
+**Eine Regel wieder loswerden** heißt: die Zeile löschen. `data/elemente.json` ist nie angefasst
+worden, also steht sofort wieder der Originalwortlaut da. Wer die ganze Brille abnehmen will,
+benennt `data/sprache.json` und `web/sprache.js` um – die App läuft dann ohne sie weiter und zeigt
+überall die Quelle im Original. Das ist der Grund, warum Weg B gewählt wurde.
 
 ---
 
@@ -569,6 +759,10 @@ zugehörigen Fragen sind damit beantwortet, ohne dass du etwas entscheiden musst
 ### 5.2 Unstrittig: darf ein Skript ersetzen
 
 Drei Regeln sind sicher – **jede mit einer Ausnahmeliste.** Zusammen betreffen sie 23 Elemente.
+**Seit dem 20.09.2026 sind alle drei in `data/sprache.json` umgesetzt.** Eine Korrektur an der
+Tabelle: „Gut Pfad" kommt 3× vor, nicht 2× – zweimal in der Tabu-Wortliste von
+`insp-digitales-tabu` (Ausnahme) und einmal als echter Gruß in `eig-schlussgruss`. Ersetzt wird
+also genau eine Stelle.
 
 | Regel | El. | Tr. | Ausnahmen, die drin bleiben müssen | Warum unstrittig |
 |---|---:|---:|---|---|
@@ -576,24 +770,27 @@ Drei Regeln sind sicher – **jede mit einer Ausnahmeliste.** Zusammen betreffen
 | Pfadi / Pfadis → Pfadfinder | 5 | 9 | `sw-hugo` („Pfadi Heidegg", „Pfadi Reiden" sind Namen Schweizer Gruppen); `ps-grenze` („Pfadis+Juffis" meint Altersstufen fremder Bünde) | Umgangssprache, im Probenbuch nicht belegt; in den 3 übrigen Elementen ist schlicht „Pfadfinder" gemeint |
 | Gut Pfad → Allzeit bereit | 1 | 2 | keine | Euer Gruß laut `heimabend-definition.md` und `pb-pfadfindergruss-und-pfadfinderversprechen`; „Gut Pfad" ist der Gruß anderer Bünde |
 
-Vor dem ersten Lauf: das Skript soll die Fundstellen mit 60 Zeichen Umgebung ausgeben und erst
-nach einer Bestätigung schreiben – so sieht man neue Falschtreffer, die durch spätere Importe
-dazukommen.
+Der Wunsch, vor dem ersten Lauf alle Fundstellen mit Umgebung zu sehen, hat sich mit Weg B
+erledigt: Es wird nichts geschrieben. Wer eine neue Regel prüfen will, trägt sie ein, lädt die
+App neu und liest nach – und nimmt sie wieder heraus, wenn sie Unsinn macht. Für neue Importe
+bleibt der Rauchtest die Kontrolle: Er sagt, wenn „Sippe" plötzlich wieder in der Anzeige steht.
 
 ### 5.3 Braucht eine Entscheidung von dir
 
-Aus Abschnitt 2 (die fünf Grundsatzfragen): Sippe/Horte/Gilde (88), Spielleitung/Gruppenführer
-(203), Genderschreibweise (97), Tonfall (95 eng / 280 breit), Umschreiben von Fremdtexten (alle).
+Die fünf Grundsatzfragen aus Abschnitt 2 sind **seit dem 20.09.2026 beantwortet** und stehen
+nicht mehr hier. Was offen blieb:
 
 Aus dem Wörterbuch, sortiert nach Aufwand:
 
-- **Meute** (10) – es fehlt euer Wort für die Wölflingsgruppe. Das Probenbuch hat keines.
+- **Meute** (10) – ~~offen~~ **entschieden 20.09.2026: bleibt stehen.** Es fehlt weiter euer Wort
+  für die Wölflingsgruppe; solange es keins gibt, wäre jede Ersetzung eine Altersverfälschung.
 - **Rover** (6) – „Ältere", „Knappen/Späher" oder Stelle streichen? Bedeutungsunterschied.
 - **Stamm** (31, davon 17 relevant) – die 17 Fundstellen einmal ansehen; die übrigen 14 sind
   Baumstämme.
 - **Lagerfeuer/Singerunde** (13) – hier fehlt schlicht euer Wort; ohne das geht keine Regel.
 - **Halstuch** (27) – im Fließtext richtig, im Feld `material` wäre „Tuch" praktischer.
-- **Teamer/Betreuer/Gruppenleiter** (15) – hängt an Entscheidung (b).
+- ~~**Teamer/Betreuer/Gruppenleiter** (15)~~ – **erledigt 20.09.2026**, siehe (b). Offen bleibt
+  das bloße „Leiter" (19 Elemente), das zweideutig ist („Schlangen und Leitern").
 - **Kluft/Tracht/Uniform** (16) – **nicht** mechanisch; die 5 relevanten Stellen sind Sätze über
   den Unterschied.
 - **Kornett** (1) – keine Ersetzung, sondern eine Erklärung in der App.
@@ -605,13 +802,24 @@ Schule/Klasse (11).
 
 ---
 
-## 6. Wenn du entschieden hast
+## 6. Was seit dem 20.09.2026 gilt
 
-1. Die Kreuze in Abschnitt 2 setzen und in der Spalte „Entsch." des Wörterbuchs von ☐ auf ☑, mit
-   Datum in der Spalte „Stand".
-2. Die getroffenen Entscheidungen mit Begründung nach `data/redaktion.json` bzw. – falls Weg B –
-   nach `data/sprache.json` übertragen. Jeder Eintrag trägt ein `grund`, so verlangt es der Vertrag.
-3. Erst danach `python3 scripts/build.py` laufen lassen (das Skript liest die Quellen neu und
-   schreibt `data/elemente.json`) und die Zahlen in diesem Dokument neu zählen.
+Erledigt:
 
-Bis dahin bleibt alles, wie es ist.
+1. Die Kreuze in Abschnitt 2 sind gesetzt, die Spalte „Entsch." des Wörterbuchs steht bei den
+   betroffenen Zeilen auf ☑, mit Datum in der Spalte „Stand".
+2. Die Entscheidungen stehen mit Begründung in `data/sprache.json` – jede Regelgruppe trägt
+   `grund` und `seit`, so verlangt es der Vertrag.
+3. Die App legt die Liste beim Laden über die Texte; `scripts/rauchtest.js` prüft das Ergebnis.
+   `data/elemente.json` ist unverändert geblieben, `scripts/build.py` musste nicht laufen.
+
+Was dabei **nicht** entschieden wurde und weiter offen ist:
+
+- **„Meute"** (10 Elemente) bleibt stehen – aber euer Wort für die Wölflingsgruppe fehlt weiter.
+  Sobald es eins gibt, ist das eine Regel von drei Zeilen.
+- **„Rover"** (6), **„Stamm"** (17 relevante von 31), **„Lagerfeuer/Singerunde"** (13),
+  **„Halstuch/Tuch" im Feld `material`** (27), **„Kluft/Tracht/Uniform"** (16) und
+  **„Kornett"** (1) stehen unverändert in Abschnitt 5.3. Keines davon ist eine reine Wortwahl.
+- **Das bloße „Leiter"** (19 Elemente) – siehe (b).
+- Die Inhaltsfragen (Corona, Kindergeburtstag, Alkohol, Schule) gehören weiter in Block 4 der
+  Arbeitsliste, nicht hierher.

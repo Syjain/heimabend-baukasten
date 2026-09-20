@@ -65,6 +65,11 @@ SPIELEWIKI_ROH = WURZEL / "data" / "quellen" / "spielewiki" / "raw" / "seiten.js
 REDAKTION = WURZEL / "data" / "redaktion.json"
 AUSGABE_JSON = WURZEL / "data" / "elemente.json"
 AUSGABE_JS = WURZEL / "web" / "elemente.js"
+# Die Wortliste der "Brille" (data/sprache.json) braucht dieselbe Doppelklick-
+# Fassung wie die Elemente. Von Hand gepflegt wird nur die JSON-Datei; die
+# js-Fassung erzeugt dieser Lauf, damit beide nie auseinanderlaufen.
+SPRACHE_JSON = WURZEL / "data" / "sprache.json"
+SPRACHE_JS = WURZEL / "web" / "sprache.js"
 
 # ---------------------------------------------------------------- Wertebereiche
 UMFAENGE = {"baustein", "ganzer_abend"}
@@ -2190,6 +2195,16 @@ def main():
         # zählt jedes Kilobyte. Die lesbare Fassung steht in data/elemente.json.
         json.dump(elemente, datei, ensure_ascii=False, separators=(",", ":"))
         datei.write(";\n")
+
+    if SPRACHE_JSON.exists():
+        with open(SPRACHE_JSON, encoding="utf-8") as datei:
+            sprache = json.load(datei)
+        with open(SPRACHE_JS, "w", encoding="utf-8") as datei:
+            datei.write("// Erzeugt von scripts/build.py aus data/sprache.json –\n")
+            datei.write("// nicht von Hand bearbeiten, sondern die JSON-Datei pflegen.\n")
+            datei.write("window.SPRACHE = ")
+            json.dump(sprache, datei, ensure_ascii=False, separators=(",", ":"))
+            datei.write(";\n")
 
     statistik(elemente, kern_bericht, gelegt)
     print("\nGeschrieben:")

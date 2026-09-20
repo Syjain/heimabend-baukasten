@@ -496,6 +496,24 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .kasten.verweis .aenderung { display: block; margin: -6px 4px 4px; font-size: .76rem; }
 .kasten.verweis .lizenzhinweis { display: block; margin-top: var(--r2); font-size: .72rem; opacity: .85; }
 
+/* Ehrlichkeitszeile im Quellenkasten: steht nur dort, wo die App wirklich
+   ein Wort ausgetauscht hat. Kein Fachwort, ein Satz, ein Knopf. */
+.kasten.quelle .brille { display: block; margin-top: var(--r3); padding-top: var(--r3);
+  border-top: 1px solid var(--linie); }
+.kasten.quelle .brille .woerter { font-family: var(--schrift-daten); }
+.kasten.quelle .brille button {
+  display: inline-block; margin-top: var(--r2); background: none;
+  border: 1px solid var(--linie); border-radius: var(--rund-klein);
+  padding: 9px 12px; min-height: 40px; color: inherit; font-size: inherit;
+  font-family: inherit; cursor: pointer;
+}
+.urtext { margin-top: var(--r3); }
+.urtext h5 { margin: 0 0 var(--r2); font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .06em; font-weight: 700; font-family: var(--schrift-daten); }
+.urtext pre { margin: 0; padding: var(--r3); background: var(--grund-tief);
+  border-radius: var(--rund-klein); white-space: pre-wrap; overflow-wrap: anywhere;
+  font-family: inherit; font-size: .82rem; line-height: 1.5; color: var(--text); }
+
 /* -------------------------------------------------------------- Chipreihen */
 .chipzeile { margin: var(--r3) 0; }
 .planzeile { margin: var(--r4) 0 var(--r2); }
@@ -705,7 +723,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 
 <header class="kopf">
   <div class="kopf-innen">
-    <h1>Heimabend-Baukasten <span>Bausteine für die Gruppenstunde</span></h1>
+    <h1>Heimabend-Baukasten <span>Bausteine für den Heimabend</span></h1>
     <nav class="reiter" aria-label="Ansicht">
       <button id="reiterBausteine" aria-current="page">Bausteine</button>
       <button id="reiterPlanen">Heimabend planen</button>
@@ -1454,6 +1472,187 @@ function ladeSkriptdaten() {
     skript.onerror = function () { fehler(new Error("elemente.js nicht gefunden")); };
     document.head.appendChild(skript);
   });
+}
+
+/**
+ * Die Wortliste. Genau wie die Elemente: auf einem Webserver per fetch,
+ * beim Doppelklick über sprache.js (window.SPRACHE).
+ * Fehlt sie, läuft die App ohne Brille weiter – dann steht überall der
+ * Originaltext. Das ist der Rückweg, wenn eine Regel Unsinn macht.
+ */
+function ladeSprache() {
+  return fetch("../data/sprache.json")
+    .then(function (antwort) {
+      if (!antwort.ok) throw new Error("HTTP " + antwort.status);
+      return antwort.json();
+    })
+    .catch(ladeSprachskript);
+}
+function ladeSprachskript() {
+  return new Promise(function (fertig) {
+    if (window.SPRACHE) { fertig(window.SPRACHE); return; }
+    var skript = document.createElement("script");
+    skript.src = "sprache.js";
+    skript.onload = function () { fertig(window.SPRACHE || null); };
+    skript.onerror = function () { fertig(null); };
+    document.head.appendChild(skript);
+  });
+}
+
+/* ------------------------------------------------------------ Die Brille */
+/* Die Sammlung stammt aus fünf Quellen und aus fremden Bünden. In den
+   Dateien bleibt jedes Wort so stehen, wie die Quelle es geschrieben hat –
+   die Quellenangabe soll stimmen. Erst beim Anzeigen legt die App die
+   Wortliste aus data/sprache.json darüber: im Text steht „Sippe“, zu lesen
+   ist „Horte/Gilde“. Nimmt man die Brille ab (Datei entfernen), ist das
+   Original wieder da. Entscheidung vom 20.09.2026, siehe docs/sprache.md. */
+
+var SPRACHE = null;              // die geladene Wortliste (oder null)
+var BRILLE_PAARE = [];           // alle Wortpaare, längste zuerst
+var BRILLE_INDEX = null;         // erster Buchstabe -> passende Paare
+/* Rückfall, falls meta.felder in der Wortliste fehlt. */
+var BRILLE_FELDER = ["titel", "kurz", "beschreibung", "tipps",
+                     "tags", "themen", "material", "varianten"];
+var BRILLE_BUCHSTABE = /[A-Za-zÄÖÜäöüßÀ-ÖØ-öø-ÿ]/;
+
+/** Baut aus der Wortliste die Nachschlagetabelle. */
+function ruesteBrille(sprache) {
+  SPRACHE = sprache || null;
+  BRILLE_PAARE = [];
+  BRILLE_INDEX = Object.create(null);
+  if (!SPRACHE || !SPRACHE.regeln) return;
+  for (var r = 0; r < SPRACHE.regeln.length; r++) {
+    var regel = SPRACHE.regeln[r];
+    var ausser = regel.ausser || [];
+    for (var w = 0; w < (regel.woerter || []).length; w++) {
+      var paar = regel.woerter[w];
+      if (!paar || !paar.von) continue;
+      // hinweis_noetig: ob ein Austausch dieser Art in der App genannt werden
+      // muss. Heute steht es bei allen sieben Regeln auf true; eine spätere
+      // Regel, die nur einen Tippfehler geradezieht, käme ohne Hinweis aus.
+      BRILLE_PAARE.push({ von: paar.von, zu: paar.zu, ausser: ausser,
+                          hinweis: regel.hinweis_noetig !== false });
+    }
+  }
+  // Das längste Paar gewinnt: „zur Gruppenstunde“ schlägt „Gruppenstunde“,
+  // sonst stünde da „zur Heimabend“.
+  BRILLE_PAARE.sort(function (a, b) { return b.von.length - a.von.length; });
+  for (var i = 0; i < BRILLE_PAARE.length; i++) {
+    var erster = BRILLE_PAARE[i].von.charAt(0);
+    if (!BRILLE_INDEX[erster]) BRILLE_INDEX[erster] = [];
+    BRILLE_INDEX[erster].push(BRILLE_PAARE[i]);
+  }
+}
+
+/**
+ * Legt die Wortliste über einen Text.
+ * Gelaufen wird Zeichen für Zeichen, nicht mit einem großen Suchmuster:
+ * Ein Muster würde an „oder Gruppenstunden“ die Regel „der Gruppenstunde“
+ * mitten im Wort „oder“ anlegen, sie wegen der Wortgrenze verwerfen – und
+ * dabei die Stelle überspringen, an der „Gruppenstunden“ gepasst hätte.
+ * Gefundene Paare werden in "notiz" gesammelt (für den Änderungshinweis).
+ */
+function durchDieBrille(text, id, notiz, merker) {
+  if (!text || !BRILLE_PAARE.length) return text;
+  var ergebnis = "", i = 0, laenge = text.length;
+  while (i < laenge) {
+    var kandidaten = BRILLE_INDEX[text.charAt(i)];
+    var treffer = null;
+    // Steht links ein Buchstabe, sind wir mitten im Wort: „Hordentopf“
+    // darf nicht zu „Horten-topf“ werden.
+    if (kandidaten && !(i > 0 && BRILLE_BUCHSTABE.test(text.charAt(i - 1)))) {
+      for (var k = 0; k < kandidaten.length; k++) {
+        var paar = kandidaten[k];
+        var ende = i + paar.von.length;
+        if (text.substr(i, paar.von.length) !== paar.von) continue;
+        if (ende < laenge && BRILLE_BUCHSTABE.test(text.charAt(ende))) continue;
+        if (paar.ausser.indexOf(id) !== -1) continue;
+        treffer = paar; break;
+      }
+    }
+    if (treffer) {
+      ergebnis += treffer.zu;
+      i += treffer.von.length;
+      if (notiz) notiz[treffer.von] = treffer.zu;
+      if (merker && treffer.hinweis) merker.hinweis = true;
+    } else {
+      ergebnis += text.charAt(i);
+      i += 1;
+    }
+  }
+  return ergebnis;
+}
+
+/**
+ * Setzt allen Elementen die Brille auf. Das passiert genau einmal, direkt
+ * nach dem Laden und vor bereiteVor() – dadurch laufen Kacheln, Listen,
+ * Suche, Detailansicht und der Plan-Text zum Teilen alle durch dieselbe
+ * Stelle. Die Originale bleiben in e._urtext stehen, die gefundenen Paare
+ * in e._ersetzt; beides braucht der Änderungshinweis.
+ */
+function setzeBrilleAuf(elemente) {
+  if (!BRILLE_PAARE.length) return elemente;
+  var praefixe = (SPRACHE.meta && SPRACHE.meta.ausser_praefixe) || [];
+  // Welche Felder unter die Brille kommen, steht in meta.felder. Ob ein Feld
+  // ein Text, eine Liste von Stichworten oder die Variantenliste ist, sieht
+  // die App am Wert – so muss die Wortliste nichts über den Aufbau wissen.
+  var felder = (SPRACHE.meta && SPRACHE.meta.felder) || BRILLE_FELDER;
+  for (var i = 0; i < elemente.length; i++) {
+    var e = elemente[i];
+    var ausgenommen = false;
+    for (var p = 0; p < praefixe.length; p++) {
+      if (e.id.indexOf(praefixe[p]) === 0) ausgenommen = true;
+    }
+    if (ausgenommen) continue;
+
+    var notiz = Object.create(null), merker = { hinweis: false }, urtext = {}, neu;
+    for (var f = 0; f < felder.length; f++) {
+      var feld = felder[f], wert = e[feld];
+      if (!wert) continue;
+      if (typeof wert === "string") {
+        neu = durchDieBrille(wert, e.id, notiz, merker);
+        if (neu !== wert) { urtext[feld] = wert; e[feld] = neu; }
+      } else if (feld === "varianten") {
+        // Varianten tragen den Titel eines anderen Elements und einen selbst
+        // geschriebenen Satz – beides wird angezeigt, also gehört beides unter die Brille.
+        for (var v = 0; v < wert.length; v++) {
+          if (!wert[v]) continue;
+          if (wert[v].titel) wert[v].titel = durchDieBrille(wert[v].titel, e.id, notiz, merker);
+          if (wert[v].aenderung) {
+            wert[v].aenderung = durchDieBrille(wert[v].aenderung, e.id, notiz, merker);
+          }
+        }
+      } else if (Array.isArray(wert)) {
+        var vorher = wert.slice(), veraendert = false;
+        for (var x = 0; x < wert.length; x++) {
+          neu = durchDieBrille(String(wert[x]), e.id, notiz, merker);
+          if (neu !== wert[x]) { wert[x] = neu; veraendert = true; }
+        }
+        if (veraendert) urtext[feld] = vorher;
+      }
+    }
+
+    var woerter = Object.keys(notiz);
+    if (woerter.length) {
+      e._urtext = urtext;
+      e._ersetzt = woerter.sort().map(function (von) {
+        return { von: von, zu: notiz[von] };
+      });
+      e._hinweisNoetig = merker.hinweis;
+    }
+  }
+  return elemente;
+}
+
+/** Alles, was vor der Brille in diesem Element stand – für die Suche. */
+function urtextAls(e) {
+  if (!e._urtext) return "";
+  var teile = [];
+  for (var schluessel in e._urtext) {
+    var wert = e._urtext[schluessel];
+    teile.push(Array.isArray(wert) ? wert.join(" ") : wert);
+  }
+  return teile.join(" ");
 }
 
 /* ------------------------------------------------------------ Filtern */
@@ -2239,7 +2438,36 @@ function zeigeDetail(e) {
     html += '<br><a href="' + schuetze(q.url) + '" target="_blank" rel="noopener">' +
             schuetze(q.url) + "</a>";
   }
-  html += "<br>Lizenz: " + schuetze(q.lizenz || "unbekannt") + "</div>";
+  html += "<br>Lizenz: " + schuetze(q.lizenz || "unbekannt");
+  /* Ehrlich bleiben: Steht hier ein Text, in dem die App wirklich ein Wort
+     ausgetauscht hat, muss das dabeistehen – und der Originalwortlaut muss
+     erreichbar sein. Ohne Fachwörter, ein Satz, ein Knopf. */
+  if (e._hinweisNoetig) {
+    var gezeigt = e._ersetzt.slice(0, 3).map(function (paar) {
+      return "„" + paar.von + "“ → „" + paar.zu + "“";
+    }).join(", ");
+    if (e._ersetzt.length > 3) gezeigt += " und " + (e._ersetzt.length - 3) + " weitere";
+    html += '<span class="brille">Wir haben in diesem Text einzelne Wörter ' +
+            "ausgetauscht, damit sie zu unserem Bund passen: " +
+            '<span class="woerter">' + schuetze(gezeigt) + "</span>. " +
+            "Sonst steht alles so da, wie die Quelle es geschrieben hat." +
+            '<br><button type="button" id="urtextKnopf" aria-expanded="false">' +
+            "Original anzeigen</button></span>";
+  }
+  html += "</div>";
+  if (e._hinweisNoetig) {
+    html += '<div class="urtext" id="urtextKasten" hidden>';
+    var felder = [["titel", "Titel"], ["kurz", "Kurztext"],
+                  ["beschreibung", "Beschreibung"], ["tipps", "Hinweise"],
+                  ["tags", "Stichworte"], ["themen", "Themen"], ["material", "Material"]];
+    for (var uf = 0; uf < felder.length; uf++) {
+      var wert = (e._urtext || {})[felder[uf][0]];
+      if (!wert) continue;
+      html += "<h5>" + felder[uf][1] + " im Original</h5><pre>" +
+              schuetze(Array.isArray(wert) ? wert.join(", ") : wert) + "</pre>";
+    }
+    html += "</div>";
+  }
 
   $("detailInhalt").innerHTML = html;
   $("detailInhalt").scrollTop = 0;
@@ -2267,6 +2495,15 @@ function zeigeDetail(e) {
       }
       clearTimeout(rueckfallUhr);
       loescheEigeneIdee(e.id);
+    });
+  }
+
+  if ($("urtextKnopf")) {
+    $("urtextKnopf").addEventListener("click", function () {
+      var kasten = $("urtextKasten");
+      kasten.hidden = !kasten.hidden;
+      this.textContent = kasten.hidden ? "Original anzeigen" : "Original ausblenden";
+      this.setAttribute("aria-expanded", kasten.hidden ? "false" : "true");
     });
   }
 
@@ -2747,7 +2984,10 @@ function planAlsText() {
     zeilen.push(nummer++ + ". " + name + ": " + e.titel + " (" + dauerText(e) + ")");
     zeilen.push("   " + e.kurz);
     var q = e.quelle || {};
+    // Wer den Plan weitergibt, gibt auch weiter, dass Wörter getauscht wurden –
+    // sonst verschickt er Text, den die Quelle nie geschrieben hat.
     zeilen.push("   Quelle: " + (q.name || "?") + " · " + (q.lizenz || "?") +
+                (e._hinweisNoetig ? " · sprachlich angepasst" : "") +
                 (q.url ? " · " + q.url : ""));
     for (var m = 0; m < (e.material || []).length; m++) {
       if (material.indexOf(e.material[m]) === -1) material.push(e.material[m]);
@@ -3974,20 +4214,29 @@ function verdrahte() {
 /** Suchtext einmal vorbereiten – dann ist die Suche auch am Handy flüssig. */
 function bereiteVor(e) {
   if (typeof e.unterkategorie !== "string") e.unterkategorie = "";
+  // Der Originalwortlaut kommt in die Suche mit hinein. Sonst wäre die
+  // Brille eine Falle: Wer "Sippe" tippt, fände das Spiel nicht mehr, in
+  // dem "Sippe" steht – und wer "Horte" tippt, fände es nur angezeigt.
+  // So findet beides.
+  var vorDerBrille = urtextAls(e);
   e._titeltext = vereinfache(e.titel);
   e._kopftext = vereinfache([e.kurz, (e.tags || []).join(" "),
                              (e.themen || []).join(" "),
                              BEREICH_TEXT[e.bereich] || "", kategorieText(e),
-                             unterText(e.unterkategorie)].join(" "));
+                             unterText(e.unterkategorie),
+                             (e._urtext ? [e._urtext.titel || "", e._urtext.kurz || "",
+                                           (e._urtext.tags || []).join(" "),
+                                           (e._urtext.themen || []).join(" ")].join(" ") : "")
+                            ].join(" "));
   e._suchtext = vereinfache([
     e.titel, e.kurz, (e.tags || []).join(" "), (e.themen || []).join(" "),
     BEREICH_TEXT[e.bereich] || "", kategorieText(e),
-    unterText(e.unterkategorie), e.beschreibung
+    unterText(e.unterkategorie), e.beschreibung, vorDerBrille
   ].join(" "));
 }
 
 function starte(elemente) {
-  DATEI_ELEMENTE = elemente;
+  DATEI_ELEMENTE = setzeBrilleAuf(elemente);
   DATEI_IDS = Object.create(null);
   for (var i = 0; i < DATEI_ELEMENTE.length; i++) DATEI_IDS[DATEI_ELEMENTE[i].id] = true;
   ladeEigeneIdeen();
@@ -4002,7 +4251,12 @@ function starte(elemente) {
   zeichneFuss();
 }
 
-ladeDaten().then(starte).catch(function (fehler) {
+/* Beide Dateien parallel holen. Die Wortliste darf fehlschlagen, ohne dass
+   die App stehenbleibt – dann läuft sie eben ohne Brille. */
+Promise.all([ladeDaten(), ladeSprache()]).then(function (beides) {
+  ruesteBrille(beides[1]);
+  starte(beides[0]);
+}).catch(function (fehler) {
   $("kacheln").innerHTML = '<p class="leer" style="grid-column:1/-1">' +
     "Die Daten konnten nicht geladen werden.<br><br>" +
     "Erwartet wird <code>../data/elemente.json</code> oder <code>elemente.js</code> " +
