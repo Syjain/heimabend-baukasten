@@ -14,7 +14,9 @@
    Am Ende setzt er alles zurück, aber ein gespeicherter Plan geht dabei verloren –
    und ebenso die gemerkte Einstellung "geprüfte Auswahl / ganze Sammlung".
    Die eigenen Ideen bleiben unangetastet: Der Test legt zwar eine an, sichert
-   aber vorher den Speicherstand und stellt ihn am Ende wieder her. */
+   aber vorher den Speicherstand und stellt ihn am Ende wieder her. Dasselbe
+   gilt für die heutige Anzahl ("Heute sind wir") und für die Bausteine, die
+   für nächste Woche vorgemerkt sind. */
 (function () {
   var ergebnisse = [];
   function pruefe(name, bedingung, zusatz) {
@@ -32,7 +34,19 @@
     // Zahlen rechnen mit der ganzen Sammlung, deshalb hier ausdrücklich
     // umschalten; die eigenen Prüfungen zum Schalter stellen selbst um.
     setzeSammlung(false);
+    // Dasselbe gilt für die heutige Anzahl: auch sie ist eine
+    // Grundeinstellung und kein Filter aus dem Kasten.
+    setzeAnzahl(0);
   }
+
+  /* Was der Test unterwegs verstellt und am Ende wieder hinlegt, wie es war:
+     die heutige Anzahl und die Vormerkungen für nächste Woche. */
+  var gemerkteAnzahl = null, gemerkteVormerkungen = null;
+  try {
+    gemerkteAnzahl = localStorage.getItem(ANZAHL_SPEICHER);
+    gemerkteVormerkungen = localStorage.getItem(VORMERK_SPEICHER);
+  } catch (f) { /* egal */ }
+  setzeAnzahl(0);
 
   // --- Umfang der Sammlung: erst prüfen, danach wird umgeschaltet ---
   pruefe("Standard ist die geprüfte Auswahl (ohne gemerkte Wahl)",
@@ -257,15 +271,143 @@
          gefiltert.length > 0 && gefiltert.every(function (e) { return e.dauer_max <= 15; }),
          gefiltert.length);
 
-  // --- Teilnehmerzahl ---
+  // --- "Heute sind wir": die heutige Anzahl an EINER Stelle ---------------
+  // Sie ersetzt den früheren Teilnehmerfilter in der Filterleiste und den
+  // im Rahmen des Abends. Geprüft wird, dass sie überall durchschlägt und
+  // dass die Hausregel gilt: wer nichts zur Gruppengröße sagt, bleibt drin.
   zuruecksetzen();
-  document.getElementById("fTeilnehmer").value = "4";
+  pruefe("die alten Teilnehmerfelder sind wirklich weg",
+         !document.getElementById("fTeilnehmer") && !document.getElementById("rTeilnehmer"));
+  pruefe("die Anzahl steht außerhalb der drei Ansichten",
+         !!document.getElementById("heuteZeile") &&
+         document.getElementById("heuteZeile").parentNode === document.querySelector("main.huelle"));
+  pruefe("Ausgangszustand ist „egal“", heuteAnzahl === 0 &&
+         document.getElementById("heuteAnzahl").value === "0");
+
   pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
   aktualisiere();
-  pruefe("Teilnehmerfilter wirft zu große Spiele raus",
-         gefiltert.length > 0 && gefiltert.every(function (e) {
+  var alleSpiele = gefiltert.length;
+  var trefferEgal = document.getElementById("treffer").textContent;
+  setzeAnzahl(4);
+  pruefe("Anzahl wirkt auf die Liste", gefiltert.length > 0 && gefiltert.length < alleSpiele,
+         alleSpiele + " -> " + gefiltert.length);
+  pruefe("Anzahl wirft zu große Spiele raus",
+         gefiltert.every(function (e) { return !e.gruppe_min || e.gruppe_min <= 4; }),
+         gefiltert.length);
+  pruefe("Elemente ohne Gruppenangabe bleiben drin",
+         gefiltert.some(function (e) { return !e.gruppe_min && !e.gruppe_max; }),
+         gefiltert.filter(function (e) { return !e.gruppe_min && !e.gruppe_max; }).length +
+         " ohne Angabe");
+  pruefe("sie stehen hinter dem, was ausdrücklich passt",
+         (function () {
+           var letzterMitAngabe = -1, ersterOhne = gefiltert.length;
+           for (var i = 0; i < gefiltert.length; i++) {
+             if (!gefiltert[i].gruppe_min && !gefiltert[i].gruppe_max) {
+               if (ersterOhne === gefiltert.length) ersterOhne = i;
+             } else { letzterMitAngabe = i; }
+           }
+           return ersterOhne > letzterMitAngabe;
+         })());
+  pruefe("die Trefferzeile sagt, wie viele ohne Gruppenangabe dabei sind",
+         document.getElementById("treffer").textContent.indexOf("ohne Gruppenangabe") > -1 &&
+         trefferEgal.indexOf("ohne Gruppenangabe") === -1,
+         document.getElementById("treffer").textContent);
+  // Auf der ersten Seite der Liste stehen sie nicht – sie sind ja bewusst
+  // nach hinten sortiert. Deshalb wird die Karte selbst gebaut und angesehen.
+  var ohneAngabe = gefiltert.filter(function (e) {
+    return !e.gruppe_min && !e.gruppe_max;
+  })[0];
+  pruefe("die Karte sagt, wo die Gruppengröße offen ist",
+         !!ohneAngabe && karteHtml(ohneAngabe, false, pfad).indexOf(">Gruppe offen<") > -1,
+         ohneAngabe ? ohneAngabe.titel : "keines");
+  pruefe("der Hinweis unter der Zahl nennt beides",
+         /\d+ Bausteine passen für 4 Kinder/.test(
+           document.getElementById("heuteHinweis").textContent) &&
+         document.getElementById("heuteHinweis").textContent
+           .indexOf("ohne Angabe zur Gruppengröße") > -1,
+         document.getElementById("heuteHinweis").textContent);
+  pruefe("der Zufallstopf folgt der Anzahl",
+         gefiltert.every(function (e) { return !e.gruppe_min || e.gruppe_min <= 4; }));
+
+  // Kacheln: die Zahlen auf den Kacheln müssen mitgehen, sonst führt die
+  // oberste Ebene in Kategorien, die nachher leer sind.
+  pfad = leererPfad(); aktualisiere();
+  var kachelVier = document.querySelectorAll("#kacheln .kachel")[0].textContent;
+  setzeAnzahl(0);
+  pfad = leererPfad(); aktualisiere();
+  pruefe("Anzahl wirkt auf die Kacheln und ihre Zahlen",
+         kachelVier !== document.querySelectorAll("#kacheln .kachel")[0].textContent,
+         kachelVier + " -> " + document.querySelectorAll("#kacheln .kachel")[0].textContent);
+
+  // Planer: Rahmen, Vorschläge und Würfeln rechnen mit derselben Zahl.
+  setzeAnzahl(4);
+  pruefe("der Planer rechnet mit derselben Zahl", rahmen.teilnehmer === 4);
+  pruefe("Planer-Vorschläge folgen der Anzahl",
+         sammle(rahmenFilter(), null, SLOTS[1].passt).every(function (e) {
            return !e.gruppe_min || e.gruppe_min <= 4;
+         }));
+  pruefe("der Rahmen des Abends sagt die Anzahl an",
+         rahmenKurzfassung().indexOf("4 Kinder") > -1, rahmenKurzfassung());
+  plan = leererPlan();
+  planWuerfeln();
+  pruefe("Würfeln zieht nichts, was für vier Kinder zu groß ist",
+         alleSlots().every(function (s) {
+           var e = planElement(s.slot.schluessel, s.index);
+           return !e || !e.gruppe_min || e.gruppe_min <= 4;
+         }));
+  plan = leererPlan(); zeichnePlan();
+
+  // Die beiden Knöpfe neben der Zahl.
+  setzeAnzahl(6);
+  stelleAnzahl(1);
+  var nachPlus = heuteAnzahl;
+  stelleAnzahl(-1);
+  pruefe("die Knöpfe gehen eine Stufe weiter und wieder zurück",
+         nachPlus === 7 && heuteAnzahl === 6, "6 -> " + nachPlus + " -> " + heuteAnzahl);
+  setzeAnzahl(0);
+  pruefe("bei „egal“ ist der Minus-Knopf gesperrt",
+         document.getElementById("heuteWeniger").disabled &&
+         !document.getElementById("heuteMehr").disabled);
+
+  // "egal" ist der Weg zurück – und er stellt den Ausgangszustand her.
+  setzeAnzahl(8);
+  pfad = leererPfad(); pfad.bereich = "spiel"; pfad.unterkategorie = "__alle__";
+  aktualisiere();
+  var mitAcht = gefiltert.length;
+  setzeAnzahl(0);
+  aktualisiere();
+  pruefe("„egal“ stellt den Ausgangszustand wieder her",
+         gefiltert.length === alleSpiele && mitAcht < alleSpiele &&
+         document.getElementById("treffer").textContent === trefferEgal,
+         mitAcht + " -> " + gefiltert.length + " von " + alleSpiele);
+  pruefe("bei „egal“ trägt keine Karte mehr „Gruppe offen“",
+         document.getElementById("liste").innerHTML.indexOf(">Gruppe offen<") === -1 &&
+         (!ohneAngabe || karteHtml(ohneAngabe, false, pfad).indexOf(">Gruppe offen<") === -1));
+
+  // Die Wahl muss das Neuladen überstehen – ladeAnzahl() ist genau das,
+  // was beim Start passiert.
+  setzeAnzahl(12);
+  heuteAnzahl = 0;
+  pruefe("die Wahl übersteht das Neuladen", ladeAnzahl() === 12 && heuteAnzahl === 12);
+  setzeAnzahl(0);
+  pruefe("„egal“ wird ebenfalls gemerkt",
+         (function () { heuteAnzahl = 15; return ladeAnzahl() === 0; })());
+
+  // Sie ist eine Grundeinstellung und kein Filter aus dem Kasten.
+  setzeAnzahl(6);
+  var zahlVorher = document.getElementById("filterZahl").textContent;
+  setzeFilterZurueck();
+  pruefe("„Filter zurücksetzen“ lässt die Anzahl stehen", heuteAnzahl === 6);
+  pruefe("die Anzahl zählt nicht als aktiver Filter im Kasten",
+         zahlVorher === "" && document.getElementById("filterZahl").textContent === "",
+         "'" + zahlVorher + "'");
+  // Suche und Anzahl greifen zusammen.
+  document.getElementById("suche").value = "fangen"; aktualisiere();
+  pruefe("Suche und Anzahl greifen zusammen",
+         gefiltert.length > 0 && gefiltert.every(function (e) {
+           return !e.gruppe_min || e.gruppe_min <= 6;
          }), gefiltert.length);
+  zuruecksetzen();
 
   // --- Suche mit zwei Wörtern ---
   zuruecksetzen();
@@ -672,6 +814,141 @@
   zuruecksetzen();
   zeichneFuss();
 
+  // --- Für nächste Woche vorbereiten -------------------------------------
+  // Die dritte Ansicht. Sie muss zwei Fragen beantworten, bevor man etwas
+  // antippt: was besorgen und wann anfangen. Und das Vormerken muss das
+  // Neuladen überstehen, sonst ist es nutzlos.
+  vorgemerkt = []; speichereVormerkungen();
+  setzeSammlung(false);
+  zeigeAnsicht("vorbereiten");
+  pruefe("der Reiter „Vorbereiten“ zeigt die Ecke",
+         !document.getElementById("ansichtVorbereiten").hidden &&
+         document.getElementById("ansichtBausteine").hidden &&
+         document.getElementById("reiterVorbereiten").getAttribute("aria-current") === "page");
+  var vorschlaege = document.querySelectorAll("#vorListe > li");
+  pruefe("die Ecke schlägt etwas vor", vorschlaege.length > 20, vorschlaege.length + " Bausteine");
+  pruefe("vorgeschlagen wird nur, was wirklich Vorlauf braucht",
+         ALLE.filter(brauchtVorlauf).length === vorschlaege.length &&
+         ALLE.filter(brauchtVorlauf).every(function (e) {
+           return e.vorbereitung === "hoch" ||
+                  (e.vorbereitung === "mittel" &&
+                   (e.umfang === "ganzer_abend" || (e.material || []).length >= 5));
+         }),
+         ALLE.filter(brauchtVorlauf).length + " nach der Regel, davon " +
+         ALLE.filter(function (e) { return brauchtVorlauf(e) && e.kern; }).length +
+         " in der geprüften Auswahl");
+  pruefe("alle zwölf Elemente mit Vorbereitung „hoch“ sind dabei",
+         ALLE.filter(function (e) { return e.vorbereitung === "hoch"; })
+             .every(brauchtVorlauf),
+         ALLE.filter(function (e) { return e.vorbereitung === "hoch"; }).length + " Stück");
+  var ersteVorKarte = document.querySelector("#vorListe .karte");
+  pruefe("die Karte nennt das Material, ohne dass man sie öffnen muss",
+         !!ersteVorKarte && ersteVorKarte.textContent.indexOf("Besorgen:") > -1);
+  pruefe("die Karte nennt den Vorbereitungsaufwand",
+         !!ersteVorKarte && /Vorbereitung (gering|mittel|hoch)/.test(ersteVorKarte.textContent));
+  pruefe("die Karte sagt, wann man anfangen soll",
+         !!ersteVorKarte && /(eine Woche vorher|ein paar Tage vorher|am Tag davor)/
+           .test(ersteVorKarte.textContent),
+         ersteVorKarte ? (ersteVorKarte.querySelector(".vorlauf") || {}).textContent : "-");
+  pruefe("Quelle und Lizenz stehen auch hier an jedem Element",
+         vorschlaege.length > 0 &&
+         Array.prototype.every.call(vorschlaege, function (li) {
+           var zeile = li.querySelector(".vor-quelle");
+           return zeile && zeile.textContent.indexOf("·") > -1 &&
+                  zeile.textContent.replace(/\s/g, "").length > 6;
+         }),
+         ersteVorKarte ? ersteVorKarte.querySelector(".vor-quelle").textContent : "-");
+
+  // Vormerken aus der Detailansicht
+  var vormerkStueck = NACH_ID["pb-kochen"] || ALLE.filter(brauchtVorlauf)[0];
+  zeigeDetail(vormerkStueck);
+  var vormerkKnopf = document.getElementById("vormerkKnopf");
+  pruefe("die Detailansicht bietet „für nächste Woche vormerken“",
+         !!vormerkKnopf && vormerkKnopf.textContent.indexOf("vormerken") > -1);
+  if (vormerkKnopf) {
+    vormerkKnopf.click();
+    pruefe("Vormerken wirkt", istVorgemerkt(vormerkStueck.id), vormerkStueck.titel);
+    pruefe("der Knopf sagt danach, dass es vorgemerkt ist",
+           document.getElementById("vormerkKnopf").textContent.indexOf("Vorgemerkt") === 0);
+  }
+  schliesseUeberlagerung(document.getElementById("detail"), true);
+  zeigeAnsicht("vorbereiten");
+  pruefe("Vorgemerktes steht in der Ecke ganz oben",
+         !!document.getElementById("vorMeineListe") &&
+         document.getElementById("vorMeineListe").textContent
+           .indexOf(vormerkStueck.titel) > -1 &&
+         document.getElementById("vorInhalt").innerHTML.indexOf("vorMeine") <
+           document.getElementById("vorInhalt").innerHTML.indexOf("vorVorschlaege"));
+  pruefe("die Ecke zeigt den Einkaufszettel",
+         document.querySelector(".zettel") &&
+         document.querySelector(".zettel").textContent.indexOf("Das musst du besorgen") > -1 &&
+         document.querySelectorAll(".zettel li").length ===
+           einkaufszettel([vormerkStueck]).length,
+         document.querySelectorAll(".zettel li").length + " Sachen");
+  // Nicht über den Text suchen: "Kochen" steckt auch in "Kochduell".
+  pruefe("Vorgemerktes steht nicht noch einmal in der Vorschlagsliste",
+         document.querySelectorAll("#vorListe > li").length === vorschlaege.length - 1 &&
+         !Array.prototype.some.call(document.querySelectorAll("#vorListe h3"),
+           function (h) { return h.textContent === vormerkStueck.titel; }),
+         document.querySelectorAll("#vorListe > li").length + " statt " + vorschlaege.length);
+  pruefe("der Reiter zeigt, wie viel vorgemerkt ist",
+         document.getElementById("reiterVorbereiten").textContent === "Vorbereiten 1",
+         document.getElementById("reiterVorbereiten").textContent);
+
+  // Neuladen: genau das, was beim Start passiert
+  vorgemerkt = [];
+  ladeVormerkungen();
+  pruefe("die Vormerkung übersteht das Neuladen", istVorgemerkt(vormerkStueck.id),
+         vorgemerkt.length + " vorgemerkt");
+
+  // Vormerken darf auch, was die Ecke gar nicht vorschlägt
+  var spontan = ALLE.filter(function (e) { return !brauchtVorlauf(e); })[0];
+  merkeVor(spontan.id, true);
+  zeichneVorbereiten();
+  pruefe("vormerken geht auch bei Bausteinen ohne Vorlauf",
+         istVorgemerkt(spontan.id) &&
+         document.getElementById("vorMeineListe").textContent.indexOf(spontan.titel) > -1,
+         spontan.titel);
+
+  // Herausnehmen: einzeln ohne Rückfrage – dabei geht nichts verloren
+  var herausKnopf = document.querySelector("#vorMeineListe .kartenfuss .knopf");
+  pruefe("vorgemerkte Karten haben einen Knopf zum Herausnehmen",
+         !!herausKnopf && herausKnopf.textContent === "Herausnehmen");
+  if (herausKnopf) {
+    herausKnopf.click();
+    pruefe("Herausnehmen wirkt sofort, ohne Rückfrage",
+           !istVorgemerkt(vormerkStueck.id) && istVorgemerkt(spontan.id),
+           vorgemerkt.length + " übrig");
+  }
+  // Die ganze Liste auf einmal fragt nach – da geht wirklich etwas verloren
+  merkeVor(vormerkStueck.id, true);
+  zeichneVorbereiten();
+  var leerKnopf = document.getElementById("vorLeeren");
+  leerKnopf.click();
+  pruefe("„Liste leeren“ fragt erst nach",
+         vorgemerkt.length === 2 && /Wirklich/.test(leerKnopf.textContent),
+         leerKnopf.textContent);
+  leerKnopf.click();
+  pruefe("der zweite Druck leert die Liste wirklich", vorgemerkt.length === 0);
+  pruefe("danach steht wieder alles in der Vorschlagsliste",
+         document.querySelectorAll("#vorListe > li").length === vorschlaege.length);
+  pruefe("die leere Ecke sagt, wie man etwas vormerkt",
+         document.getElementById("vorInhalt").textContent
+           .indexOf("Noch nichts vorgemerkt") > -1);
+
+  // Die heutige Anzahl gilt auch in dieser Ecke
+  setzeAnzahl(4);
+  zeichneVorbereiten();
+  var vorMitVier = document.querySelectorAll("#vorListe > li").length;
+  setzeAnzahl(0);
+  zeichneVorbereiten();
+  pruefe("die heutige Anzahl wirkt auch in der Vorbereitungsecke",
+         vorMitVier < document.querySelectorAll("#vorListe > li").length && vorMitVier > 0,
+         vorMitVier + " -> " + document.querySelectorAll("#vorListe > li").length);
+  zeigeAnsicht("bausteine");
+  setzeSammlung(false);
+  zuruecksetzen();
+
   // --- Die Brille: Wortersetzung beim Anzeigen ---
   // Die App zeigt Texte durch data/sprache.json hindurch an; in den Dateien
   // bleibt der Originalwortlaut stehen. Geprüft wird beides: dass ersetzt
@@ -843,8 +1120,30 @@
   schliesseUeberlagerung(document.getElementById("detail"));
   zuruecksetzen();
   zeigeAnsicht("bausteine");
+
+  // Aufräumen: die heutige Anzahl und die Vormerkungen des Nutzers
+  // zurücklegen, wie sie vor dem Test waren.
+  try {
+    if (gemerkteAnzahl === null) localStorage.removeItem(ANZAHL_SPEICHER);
+    else localStorage.setItem(ANZAHL_SPEICHER, gemerkteAnzahl);
+    if (gemerkteVormerkungen === null) localStorage.removeItem(VORMERK_SPEICHER);
+    else localStorage.setItem(VORMERK_SPEICHER, gemerkteVormerkungen);
+  } catch (f) { /* egal */ }
+  ladeAnzahl(); ladeVormerkungen(); zeichneReiterZahl();
+  pruefe("der Rauchtest räumt Anzahl und Vormerkungen wieder weg",
+         (function () {
+           var anzahlDa = null, vormerkDa = null;
+           try {
+             anzahlDa = localStorage.getItem(ANZAHL_SPEICHER);
+             vormerkDa = localStorage.getItem(VORMERK_SPEICHER);
+           } catch (f) { return true; }
+           return anzahlDa === gemerkteAnzahl && vormerkDa === gemerkteVormerkungen;
+         })(),
+         heuteAnzahl + " · " + vorgemerkt.length + " vorgemerkt");
+
   // Die App so zurücklassen, wie sie sich beim ersten Öffnen zeigt.
   setzeSammlung(true);
+  aktualisiere();
 
   return ergebnisse.join("\n") + "\n\n" +
          ergebnisse.filter(function (z) { return z.indexOf("FEHLER") === 0; }).length +

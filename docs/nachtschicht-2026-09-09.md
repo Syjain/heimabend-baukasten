@@ -121,6 +121,40 @@ gelassen, weil es verschiedene Methoden bzw. verschiedene Spiele sind.
 
 ---
 
+## 1b. Nachtrag 20.09.2026 – entschieden und gebaut
+
+Yannick hat die Sprachfragen beantwortet und aus zwei meiner Fragen bessere
+Ideen gemacht.
+
+**Entschieden:** Horte/Gilde überall (Probenbuch ausgenommen) · Spielleitung
+bleibt, nur die Fremdwörter werden angeglichen · Paarform wie im Probenbuch ·
+Tonfall der Quelle bleibt · ersetzt wird nur, was für den DPB sachlich falsch
+ist · Ersetzung beim Anzeigen, nicht in den Daten.
+
+**Rechtelage Probenbuch geklärt:** Es ist das Probenbuch des Rings Goldener
+Löwe, also des eigenen Rings. Der Text darf im Repo stehen und bleibt dort,
+die Abbildungen wurden nie übernommen, die PDF-Druckvorlage bleibt draußen.
+
+**Gebaut:**
+- **Spielfamilien** (Block 3, 13 Fragen): 53 neue Gruppen, 91 Spiele als
+  Variante. Die erste Reihe bleibt bei 299 Spielen – die Quote füllt nach –,
+  ist aber vielfältiger: Ballspiele 19 → 16, Fangen 11 → 8, Staffeln 5 → 2.
+- **Die Brille** (`data/sprache.json`): 710 Ersetzungen in 214 Elementen.
+- **„Heute sind wir …"** statt der 40 großen Spiele auszusortieren: eine Stelle
+  oben für die heutige Anzahl, die auf alles wirkt. Bei 6 Kindern bleiben von
+  299 Kern-Spielen 155. Der alte Teilnehmerfilter ist darin aufgegangen.
+- **Reiter „Vorbereiten"**: 67 Elemente, die sich nicht spontan machen lassen,
+  mit Vorlauf („eine Woche vorher anfangen"), Material zum Besorgen und einem
+  Einkaufszettel zum Vormerken.
+
+Rauchtest: 188 Prüfungen.
+
+**Damit sind 35 von 73 Punkten der Arbeitsliste erledigt.** Was offen bleibt,
+steht unten – vor allem die Zielgröße der Sammlung: Zusammenlegen macht die
+erste Reihe nicht kleiner, das tut nur eine kleinere Zielzahl.
+
+---
+
 ## 2. Was du entscheiden musst
 
 ### Sprache – fünf Fragen, alle mit Zahlen und Empfehlung in `docs/sprache.md`
@@ -192,4 +226,4 @@ streichen, `python3 scripts/build.py` laufen lassen, fertig.
 
 Nach jeder Änderung: `python3 scripts/build.py` (baut `data/elemente.json` und
 `web/elemente.js` neu) und danach `scripts/rauchtest.js` in der Browser-Konsole
-(111 Prüfungen). Push auf `main` veröffentlicht sofort.
+(188 Prüfungen). Push auf `main` veröffentlicht sofort.

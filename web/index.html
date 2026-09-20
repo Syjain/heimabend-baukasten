@@ -282,6 +282,76 @@ details.filter > summary span:last-child:not(:first-child) {
   font-size: .76rem; opacity: .85; margin-left: 5px;
 }
 
+/* --------------------------------------------- Wie viele sind heute da? */
+/* Die Anzahl gilt für alles, was man sieht – Kacheln, Listen, Suche, Zufall,
+   Planer und Vorbereitungsecke. Deshalb steht sie an EINER Stelle, außerhalb
+   der drei Ansichten, direkt unter der Zeltbahn und nicht im Filterkasten.
+   Ein Griff genügt: das Auswahlfeld springt auf jede Zahl, die beiden Knöpfe
+   daneben gehen eine Stufe weiter – beides einhändig mit dem Daumen. */
+.heute {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--r2);
+  margin: var(--r3) 0 0; padding: 9px var(--r3) 10px;
+  background: var(--karte);
+  border: 1px solid var(--linie); border-radius: var(--rund);
+}
+.heute .marke { flex: none; }
+/* Die drei Bedienteile sitzen als ein Block zusammen, rechts am Rand –
+   dort steht der Daumen, wenn man das Handy in einer Hand hält. */
+.heute-steller { display: flex; align-items: stretch; margin-left: auto; }
+.heute-steller button {
+  flex: none; width: 46px; min-height: 46px; padding: 0;
+  border: 1px solid var(--linie-stark); background: var(--grund);
+  color: var(--text); font-size: 1.25rem; font-weight: 700; line-height: 1;
+  font-family: var(--schrift-daten); border-radius: 0;
+}
+.heute-steller button:first-child { border-radius: var(--rund-klein) 0 0 var(--rund-klein); }
+.heute-steller button:last-child { border-radius: 0 var(--rund-klein) var(--rund-klein) 0; }
+.heute-steller button:disabled { opacity: .3; cursor: default; }
+.heute-steller select {
+  min-height: 46px; min-width: 118px; padding: 10px 4px;
+  font-size: 16px; font-weight: 650; text-align: center;
+  font-family: var(--schrift-daten); font-variant-numeric: tabular-nums;
+  border: 1px solid var(--linie-stark); border-inline-width: 0;
+  background: var(--karte); color: var(--text); border-radius: 0;
+}
+.heute.gesetzt .heute-steller select { color: var(--glut); }
+.heute .hinweis { flex-basis: 100%; margin: 5px 0 0; }
+@media (max-width: 359px) {
+  .heute { gap: 6px; padding-inline: 10px; }
+  .heute-steller select { min-width: 92px; }
+  .heute-steller button { width: 42px; }
+}
+
+/* ------------------------------------------- Für nächste Woche vorbereiten */
+/* Eine eigene Ecke, kein Filter: hier steht nicht „was kann ich heute
+   spielen“, sondern „was muss ich besorgen und wann fange ich an“. */
+.vor-kopf { margin: var(--r4) 0 var(--r5); }
+.vor-kopf h2 { font-size: 1.3rem; letter-spacing: -.025em; }
+.vor-kopf p { margin: 0; font-size: .88rem; color: var(--leise); }
+.vor-abschnitt { margin: 0 0 var(--r5); }
+.vor-abschnitt > .marke { display: block; margin: 0 2px var(--r2); }
+/* Material und Aufwand gehören auf die Karte, nicht erst in die Detailansicht:
+   die Ecke beantwortet genau diese beiden Fragen. */
+.vor-zeile { margin-top: var(--r3); font-size: .8rem; color: var(--leise); line-height: 1.5; }
+.vor-zeile b { color: var(--text); font-weight: 650; }
+.vor-zeile .vorlauf {
+  color: var(--glut); font-weight: 700;
+  font-family: var(--schrift-daten); font-size: .74rem;
+}
+/* Quelle und Lizenz stehen an jedem Element – auch hier, nicht nur im Detail. */
+.vor-quelle {
+  margin-top: 7px; font-size: .68rem; color: var(--leise);
+  font-family: var(--schrift-daten);
+}
+.zettel ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--r4); }
+@media (max-width: 400px) { .zettel ul { columns: 1; } }
+.zettel li { font-size: .86rem; margin-bottom: 2px; break-inside: avoid; }
+.zettel .formknoepfe { margin-top: var(--r3); }
+.vor-meldung {
+  font-size: .82rem; color: var(--akzent); font-weight: 600;
+  min-height: 1.2em; margin-top: var(--r2);
+}
+
 /* -------------------------------------------------------------- Brotkrumen */
 .pfad {
   display: flex; flex-wrap: wrap; align-items: center;
@@ -724,14 +794,33 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 <header class="kopf">
   <div class="kopf-innen">
     <h1>Heimabend-Baukasten <span>Bausteine für den Heimabend</span></h1>
+    <!-- Drei Reiter statt zwei. "Heimabend planen" heißt jetzt nur noch
+         "Planen": zu dritt passten die alten Beschriftungen bei 320 px
+         nicht mehr nebeneinander. -->
     <nav class="reiter" aria-label="Ansicht">
       <button id="reiterBausteine" aria-current="page">Bausteine</button>
-      <button id="reiterPlanen">Heimabend planen</button>
+      <button id="reiterPlanen">Planen</button>
+      <button id="reiterVorbereiten">Vorbereiten</button>
     </nav>
   </div>
 </header>
 
 <main class="huelle">
+
+  <!-- ====================================== Wie viele sind heute da? ====
+       Steht außerhalb der drei Ansichten, weil die Zahl für alle drei gilt.
+       Sie hat den früheren Filter "Teilnehmer" (Filterleiste) und den
+       früheren "Teilnehmer" im Rahmen des Abends abgelöst – dieselbe Frage
+       an drei Stellen zu stellen war die schlechtere Lösung. -->
+  <div class="heute" id="heuteZeile">
+    <span class="marke" id="heuteMarke">Heute sind wir</span>
+    <div class="heute-steller">
+      <button type="button" id="heuteWeniger" aria-label="weniger Kinder">−</button>
+      <select id="heuteAnzahl" aria-label="Wie viele sind heute da?"></select>
+      <button type="button" id="heuteMehr" aria-label="mehr Kinder">+</button>
+    </div>
+    <p class="hinweis" id="heuteHinweis"></p>
+  </div>
 
   <!-- ============================================== Ansicht: Bausteine -->
   <section id="ansichtBausteine">
@@ -781,19 +870,8 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
             <option value="90">passt in 90 Min</option>
           </select>
         </div>
-        <div class="feld">
-          <label for="fTeilnehmer">Teilnehmer</label>
-          <select id="fTeilnehmer">
-            <option value="">egal</option>
-            <option value="4">4 Kinder</option>
-            <option value="6">6 Kinder</option>
-            <option value="8">8 Kinder</option>
-            <option value="10">10 Kinder</option>
-            <option value="15">15 Kinder</option>
-            <option value="20">20 Kinder</option>
-            <option value="25">25 oder mehr</option>
-          </select>
-        </div>
+        <!-- Hier stand bis zum 20.09.2026 "Teilnehmer". Die Frage wird jetzt
+             oben in der Zeile "Heute sind wir" gestellt – einmal für alles. -->
         <div class="feld">
           <label for="fOrt">Ort</label>
           <select id="fOrt">
@@ -904,19 +982,8 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
             <option>Ältere</option>
           </select>
         </div>
-        <div class="feld">
-          <label for="rTeilnehmer">Teilnehmer</label>
-          <select id="rTeilnehmer">
-            <option value="">egal</option>
-            <option value="4">4 Kinder</option>
-            <option value="6">6 Kinder</option>
-            <option value="8">8 Kinder</option>
-            <option value="10">10 Kinder</option>
-            <option value="15">15 Kinder</option>
-            <option value="20">20 Kinder</option>
-            <option value="25">25 oder mehr</option>
-          </select>
-        </div>
+        <!-- Auch hier stand "Teilnehmer". Der Planer nimmt jetzt dieselbe
+             Zahl wie die Baustein-Ansicht, aus der Zeile "Heute sind wir". -->
         <div class="feld">
           <label for="rOrt">Ort</label>
           <select id="rOrt">
@@ -968,6 +1035,20 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
       </div>
       <div class="meldung" id="planMeldung" role="status"></div>
     </div>
+  </section>
+
+  <!-- ======================================== Ansicht: Vorbereiten ====
+       Die Ecke für alles, was spontan nicht geht: viel Vorbereitung oder ein
+       ganzer Abend, für den man einkaufen muss. Sie beantwortet zwei Fragen –
+       was muss ich besorgen, und wann fange ich an. Vorgemerktes steht oben. -->
+  <section id="ansichtVorbereiten" hidden>
+    <div class="vor-kopf">
+      <h2>Für nächste Woche vorbereiten</h2>
+      <p>Bausteine, die man nicht spontan machen kann – die sich aber lohnen,
+         wenn man eine Woche vorher daran denkt. Was zu besorgen ist und wann
+         du anfangen solltest, steht gleich auf der Karte.</p>
+    </div>
+    <div id="vorInhalt"></div>
   </section>
 
 </main>
@@ -1304,6 +1385,16 @@ var SAMMLUNG_STANDARD = true;
 var SAMMLUNG_SPEICHER = "heimabend-sammlung";
 var nurKern = SAMMLUNG_STANDARD;
 
+/* Wie viele sind heute da? 0 = egal, der Ausgangszustand.
+   Die Zahl ist wie der Umfang der Sammlung eine Grundeinstellung und kein
+   Filter aus dem Kasten: sie gilt in allen drei Ansichten und überlebt das
+   Schließen. Die Stufen folgen den Zahlen, die in den Daten wirklich
+   vorkommen (gruppe_min steht bei 735 Elementen und reicht von 1 bis 25) –
+   zwischen 10 und 12 ändert sich am Ergebnis nichts, deshalb keine 11. */
+var ANZAHL_SPEICHER = "heimabend-anzahl";
+var ANZAHL_STUFEN = [0, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25];
+var heuteAnzahl = 0;
+
 var auswahlZiel = null;          // { slot, index, zielzeit }
 var auswahlPfad = { bereich: "", kategorie: "", unterkategorie: "" };
 var auswahlListe = [];
@@ -1345,7 +1436,107 @@ function setzeSammlung(nurErsteReihe) {
     $("rahmenKurz").textContent = rahmenKurzfassung();
     zeichnePlan();
   }
+  if (!$("ansichtVorbereiten").hidden) zeichneVorbereiten();
   if (!$("auswahl").hidden) { auswahlSichtbar = SEITENGROESSE; zeichneAuswahl(); }
+}
+
+/* ------------------------------------------ Die heutige Anzahl merken */
+/* Genau wie beim Umfang der Sammlung: alles in try/catch, im privaten
+   Fenster wirft localStorage und dann gilt eben wieder "egal". */
+function ladeAnzahl() {
+  var gemerkt = null;
+  try { gemerkt = localStorage.getItem(ANZAHL_SPEICHER); } catch (fehler) { /* egal */ }
+  var zahl = parseInt(gemerkt, 10);
+  // Kein Eintrag, aber im alten gespeicherten Rahmen steht noch eine Zahl?
+  // Dann war das bisher der Teilnehmerfilter des Planers – die wird übernommen.
+  if (gemerkt === null && rahmen.teilnehmer) zahl = rahmen.teilnehmer;
+  heuteAnzahl = ANZAHL_STUFEN.indexOf(zahl) > 0 ? zahl : 0;
+  rahmen.teilnehmer = heuteAnzahl;
+  return heuteAnzahl;
+}
+function speichereAnzahl() {
+  try { localStorage.setItem(ANZAHL_SPEICHER, String(heuteAnzahl)); }
+  catch (fehler) { /* egal */ }
+}
+
+/** Sagt die Quelle überhaupt etwas zur Gruppengröße? (317 Elemente: nein) */
+function ohneGruppenangabe(e) { return !e.gruppe_min && !e.gruppe_max; }
+
+/**
+ * Setzt die heutige Anzahl und zeichnet alles neu, was davon abhängt:
+ * Kacheln und ihre Zahlen, Listen, Suche, Zufallstopf, die Vorschläge und
+ * das Würfeln im Planer und die Vorbereitungsecke.
+ */
+function setzeAnzahl(zahl) {
+  var wert = parseInt(zahl, 10);
+  if (ANZAHL_STUFEN.indexOf(wert) < 1) wert = 0;   // alles andere heißt "egal"
+  heuteAnzahl = wert;
+  rahmen.teilnehmer = wert;      // der Planer rechnet mit derselben Zahl
+  speichereAnzahl();
+  speicherePlan();
+  zeichneHeute();
+  aktualisiere();
+  if (!$("ansichtPlanen").hidden) {
+    $("rahmenKurz").textContent = rahmenKurzfassung();
+    zeichnePlan();
+  }
+  if (!$("ansichtVorbereiten").hidden) zeichneVorbereiten();
+  if (!$("auswahl").hidden) { auswahlSichtbar = SEITENGROESSE; zeichneAuswahl(); }
+}
+
+/** Eine Stufe rauf oder runter – für die beiden Knöpfe neben der Zahl. */
+function stelleAnzahl(richtung) {
+  var stelle = ANZAHL_STUFEN.indexOf(heuteAnzahl);
+  if (stelle === -1) stelle = 0;
+  setzeAnzahl(ANZAHL_STUFEN[Math.max(0, Math.min(ANZAHL_STUFEN.length - 1,
+                                                 stelle + richtung))]);
+}
+
+function anzahlText(zahl) {
+  if (!zahl) return "egal";
+  return zahl + (zahl >= 25 ? "+" : "") + " Kinder";
+}
+/** Ausgeschrieben für ganze Sätze: "… passen für 25 Kinder oder mehr." */
+function anzahlSatz(zahl) {
+  return zahl + " Kinder" + (zahl >= 25 ? " oder mehr" : "");
+}
+
+/**
+ * Zeichnet die Zeile "Heute sind wir".
+ * Der Hinweis darunter sagt in Zahlen, was die Wahl bewirkt – und vor allem,
+ * dass die Bausteine ohne Angabe zur Gruppengröße dabeibleiben. Ohne diesen
+ * Satz sähe es aus, als hätte die App sie geprüft und für passend befunden.
+ */
+function zeichneHeute() {
+  var feld = $("heuteAnzahl");
+  if (feld.options.length !== ANZAHL_STUFEN.length) {
+    feld.innerHTML = "";
+    for (var s = 0; s < ANZAHL_STUFEN.length; s++) {
+      var eintrag = document.createElement("option");
+      eintrag.value = String(ANZAHL_STUFEN[s]);
+      eintrag.textContent = anzahlText(ANZAHL_STUFEN[s]);
+      feld.appendChild(eintrag);
+    }
+  }
+  feld.value = String(heuteAnzahl);
+  var stelle = ANZAHL_STUFEN.indexOf(heuteAnzahl);
+  $("heuteWeniger").disabled = stelle <= 0;
+  $("heuteMehr").disabled = stelle >= ANZAHL_STUFEN.length - 1;
+  $("heuteZeile").className = "heute" + (heuteAnzahl ? " gesetzt" : "");
+
+  var f = leereFilter();
+  f.teilnehmer = heuteAnzahl;
+  var passend = 0, offen = 0;
+  for (var i = 0; i < ALLE.length; i++) {
+    if (!passtZuFilter(ALLE[i], f)) continue;
+    passend++;
+    if (ohneGruppenangabe(ALLE[i])) offen++;
+  }
+  $("heuteHinweis").textContent = heuteAnzahl
+    ? passend + " Bausteine passen für " + anzahlSatz(heuteAnzahl) + " – davon " + offen +
+      " ohne Angabe zur Gruppengröße. Die bleiben dabei, statt still zu verschwinden."
+    : "Noch nichts gewählt: alle " + passend + " Bausteine sind zu sehen. " +
+      "Sag die heutige Anzahl, dann fallen zu große Spiele weg.";
 }
 
 function schuetze(text) {
@@ -1657,17 +1848,21 @@ function urtextAls(e) {
 
 /* ------------------------------------------------------------ Filtern */
 function leereFilter() {
-  return { suche: "", stufe: "", dauer: 0, teilnehmer: 0, ort: "",
+  // teilnehmer steht hier wie nurKern schon drin: die heutige Anzahl ist eine
+  // Grundeinstellung der App und nicht einer der Filter aus dem Kasten.
+  return { suche: "", stufe: "", dauer: 0, teilnehmer: heuteAnzahl, ort: "",
            vorbereitung: "", ohneMaterial: false, mitAlter: false,
            platz: "", hosensack: false, ohneKontakt: false,
            // Der Umfang der Sammlung ist kein Filter im Kasten, sondern eine
            // Grundeinstellung – deshalb steht er auch im "leeren" Filter.
            nurKern: nurKern };
 }
-/** Wirklich alles, auch die zweite Reihe – letzte Rettung beim Würfeln. */
+/** Wirklich alles – auch die zweite Reihe und ohne Rücksicht auf die heutige
+    Anzahl. Letzte Rettung beim Würfeln, damit kein Platz leer bleibt. */
 function ganzeSammlungFilter() {
   var f = leereFilter();
   f.nurKern = false;
+  f.teilnehmer = 0;
   return f;
 }
 
@@ -1677,7 +1872,9 @@ function filterWerte() {
     suche: vereinfache($("suche").value.trim()),
     stufe: $("fStufe").value,
     dauer: $("fDauer").value ? parseInt($("fDauer").value, 10) : 0,
-    teilnehmer: $("fTeilnehmer").value ? parseInt($("fTeilnehmer").value, 10) : 0,
+    // Die Anzahl kommt nicht mehr aus dem Filterkasten, sondern aus der Zeile
+    // "Heute sind wir" über den Ansichten – eine Stelle für eine Frage.
+    teilnehmer: heuteAnzahl,
     ort: $("fOrt").value,
     vorbereitung: $("fVorbereitung").value,
     ohneMaterial: $("fOhneMaterial").checked,
@@ -1692,7 +1889,9 @@ function filterWerte() {
 /** Zählt die gesetzten Filter – der zugeklappte Kasten verriet das bisher nicht. */
 function aktiveFilter() {
   var f = filterWerte(), zahl = 0;
-  ["stufe", "dauer", "teilnehmer", "ort", "vorbereitung", "platz"].forEach(function (name) {
+  // "teilnehmer" zählt hier bewusst nicht mit: die Anzahl steht sichtbar über
+  // den Ansichten und ist nicht im zugeklappten Kasten versteckt.
+  ["stufe", "dauer", "ort", "vorbereitung", "platz"].forEach(function (name) {
     if (f[name]) zahl++;
   });
   if (f.ohneMaterial) zahl++;
@@ -1702,10 +1901,12 @@ function aktiveFilter() {
   return zahl;
 }
 
-/* Der Umfang der Sammlung wird hier absichtlich nicht zurückgesetzt: er ist
-   keine Einstellung des Filterkastens, sondern die Grundeinstellung der App. */
+/* Der Umfang der Sammlung und die heutige Anzahl werden hier absichtlich
+   nicht zurückgesetzt: beides sind keine Einstellungen des Filterkastens,
+   sondern Grundeinstellungen der App. Beide stehen offen sichtbar da und
+   haben ihren eigenen Weg zurück ("ganze Sammlung" bzw. "egal"). */
 function setzeFilterZurueck() {
-  ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung", "fPlatz"].forEach(function (id) {
+  ["fStufe", "fDauer", "fOrt", "fVorbereitung", "fPlatz"].forEach(function (id) {
     $(id).value = "";
   });
   $("fOhneMaterial").checked = false;
@@ -1832,6 +2033,12 @@ function sortiere(liste, art, suche, stufe) {
       var offenA = ohneAltersangabe(a) ? 1 : 0, offenB = ohneAltersangabe(b) ? 1 : 0;
       if (offenA !== offenB) return offenA - offenB;
     }
+    // Dieselbe Hausregel bei der heutigen Anzahl: Wer keine Gruppengröße
+    // nennt, fliegt nicht raus, steht aber hinter dem, was ausdrücklich passt.
+    if (heuteAnzahl) {
+      var gA = ohneGruppenangabe(a) ? 1 : 0, gB = ohneGruppenangabe(b) ? 1 : 0;
+      if (gA !== gB) return gA - gB;
+    }
     if (suche && a._rang !== b._rang) return a._rang - b._rang;
     if (art === "dauer" && a.dauer_min !== b.dauer_min) return a.dauer_min - b.dauer_min;
     if (art === "dauer-ab" && a.dauer_min !== b.dauer_min) return b.dauer_min - a.dauer_min;
@@ -1865,6 +2072,12 @@ function karteHtml(e, zielzeit, kontext) {
   merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
   if (ohneAltersangabe(e)) merkmale += '<span class="merkmal offen">Alter offen</span>';
+  // Ist eine Anzahl gewählt, muss dranstehen, wo die Quelle zur Gruppengröße
+  // nichts sagt – sonst sähe es aus, als sei das geprüft und für passend
+  // befunden. Ohne gewählte Anzahl wäre die Plakette bei 317 Bausteinen nur Lärm.
+  if (heuteAnzahl && ohneGruppenangabe(e)) {
+    merkmale += '<span class="merkmal offen">Gruppe offen</span>';
+  }
   // Gibt es denselben Titel in einer anderen Quelle, hilft der Quellname beim Unterscheiden
   if (e.dubletten && e.dubletten.length) {
     merkmale += '<span class="merkmal">' + schuetze((e.quelle || {}).name || "") + "</span>";
@@ -2057,6 +2270,9 @@ function aktualisiere() {
   var zahl = aktiveFilter();
   $("filterZahl").textContent = zahl ? zahl + " aktiv" : "";
   zeichneSammlung(f);
+  // Die Zeile "Heute sind wir" zählt mit: ihre Zahlen hängen auch am Umfang
+  // der Sammlung, also muss sie bei jedem Neuzeichnen mitkommen.
+  zeichneHeute();
   zeichnePfad();
 
   var kacheln = $("kacheln");
@@ -2229,11 +2445,15 @@ function zeigeListe(f) {
   gefiltert = sortiere(sammle(f, suchPfad), $("sortierung").value, f.suche, f.stufe);
   sichtbar = SEITENGROESSE;
   $("listenkopf").hidden = false;
-  var offene = 0;
-  for (var i = 0; i < gefiltert.length; i++) if (ohneAltersangabe(gefiltert[i])) offene++;
+  var offene = 0, offeneGruppe = 0;
+  for (var i = 0; i < gefiltert.length; i++) {
+    if (ohneAltersangabe(gefiltert[i])) offene++;
+    if (ohneGruppenangabe(gefiltert[i])) offeneGruppe++;
+  }
   $("treffer").textContent = (gefiltert.length === 1
     ? "1 Baustein" : gefiltert.length + " Bausteine") +
-    (f.stufe && offene ? " · " + offene + " ohne Altersangabe" : "");
+    (f.stufe && offene ? " · " + offene + " ohne Altersangabe" : "") +
+    (f.teilnehmer && offeneGruppe ? " · " + offeneGruppe + " ohne Gruppenangabe" : "");
   $("zufallKnopf").disabled = gefiltert.length === 0;
   zeichneListe(f);
 }
@@ -2302,6 +2522,18 @@ function zeigeDetail(e) {
     }
     html += "</div></div>";
   }
+
+  // Für nächste Woche vormerken. Steht bei jedem Baustein, nicht nur bei
+  // denen aus der Vorbereitungsecke: was man vorbereiten will, weiß man
+  // selbst am besten – die Ecke schlägt nur vor.
+  var schonVorgemerkt = istVorgemerkt(e.id);
+  html += '<div class="planzeile"><span class="chiptitel">Nächste Woche</span>' +
+          '<div class="chips"><button type="button" id="vormerkKnopf" class="knopf klein' +
+          (schonVorgemerkt ? "" : " stark") + '" aria-pressed="' +
+          (schonVorgemerkt ? "true" : "false") + '">' +
+          (schonVorgemerkt ? "Vorgemerkt – wieder herausnehmen"
+                           : "Für nächste Woche vormerken") +
+          "</button></div></div>";
 
   html += '<dl class="datenblatt">';
   html += "<dt>Bereich</dt><dd>" + schuetze(BEREICH_TEXT[e.bereich] || e.bereich) +
@@ -2497,6 +2729,23 @@ function zeigeDetail(e) {
       loescheEigeneIdee(e.id);
     });
   }
+
+  // Vormerken und wieder herausnehmen. Ohne Rückfrage: Es geht dabei nichts
+  // verloren – der Baustein bleibt, wo er ist, und ein zweiter Druck stellt
+  // die Vormerkung wieder her. Nachgefragt wird nur beim Leeren der ganzen
+  // Liste, siehe zeichneVorbereiten().
+  $("vormerkKnopf").addEventListener("click", function () {
+    var knopf = this;
+    var an = !istVorgemerkt(e.id);
+    if (!merkeVor(e.id, an)) {
+      knopf.textContent = "Ging nicht – der Browserspeicher macht nicht mit.";
+      return;
+    }
+    knopf.textContent = an ? "Vorgemerkt – wieder herausnehmen"
+                           : "Für nächste Woche vormerken";
+    knopf.className = "knopf klein" + (an ? "" : " stark");
+    knopf.setAttribute("aria-pressed", an ? "true" : "false");
+  });
 
   if ($("urtextKnopf")) {
     $("urtextKnopf").addEventListener("click", function () {
@@ -3092,7 +3341,8 @@ function ladePlan() {
       };
       $("rZielzeit").value = String(rahmen.zielzeit);
       $("rStufe").value = rahmen.stufe || "";
-      $("rTeilnehmer").value = rahmen.teilnehmer ? String(rahmen.teilnehmer) : "";
+      // rahmen.teilnehmer wird gleich danach von ladeAnzahl() gesetzt –
+      // ein alter gespeicherter Wert dient dort nur noch als Rückfall.
       $("rOrt").value = rahmen.ort || "";
       $("rVorbereitung").value = rahmen.vorbereitung || "";
       $("rOhneMaterial").checked = !!rahmen.ohneMaterial;
@@ -3571,7 +3821,9 @@ function nachEigenenIdeen() {
   zeichneIdeenStand();
   aktualisiere();
   zeichneFuss();
+  zeichneReiterZahl();
   if (!$("ansichtPlanen").hidden) zeichnePlan();
+  if (!$("ansichtVorbereiten").hidden) zeichneVorbereiten();
 }
 
 /* --------------------------------------------------------- Das Formular */
@@ -4074,6 +4326,315 @@ function verdrahteIdeen() {
   });
 }
 
+/* ==================================================================
+   Für nächste Woche vorbereiten
+
+   Die dritte Ansicht. Sie beantwortet zwei Fragen, die weder das Stöbern
+   noch der Planer beantworten: Was muss ich besorgen, und wann fange ich an?
+
+   Was hineingehört, kommt aus den Daten – nicht aus einer Handliste:
+   1. Vorbereitung "hoch" (12 Elemente). Das geht nie spontan: Escape Room,
+      Pubquiz, Geisterbahn, Chaosspiel, dazu die Proben Erste Hilfe und Kochen.
+   2. Vorbereitung "mittel" UND entweder ein ganzer Abend oder fünf und mehr
+      Sachen Material. Das ist der Unterschied zwischen "Eierlauf" (drei
+      Sachen, ein Baustein – das kauft man nebenbei) und "Wachsfackeln bauen"
+      (ein ganzer Abend, vier Sachen, die keiner im Heim liegen hat).
+   Zusammen 67 Elemente, 39 davon in der geprüften Auswahl.
+
+   Vorgemerktes steht oben und ist von der Regel unabhängig: Was man sich
+   vornimmt, entscheidet man selbst. Es liegt im localStorage dieses Browsers,
+   jeder Zugriff in try/catch.
+   ================================================================== */
+var VORMERK_SPEICHER = "heimabend-vormerken";
+var vorgemerkt = [];        // ids, in der Reihenfolge des Vormerkens
+
+function ladeVormerkungen() {
+  vorgemerkt = [];
+  var roh = null;
+  try { roh = localStorage.getItem(VORMERK_SPEICHER); }
+  catch (fehler) { return; }              // privates Fenster: ohne weitermachen
+  if (!roh) return;
+  try {
+    var daten = JSON.parse(roh);
+    var liste = (daten && Array.isArray(daten.ids)) ? daten.ids : [];
+    for (var i = 0; i < liste.length; i++) {
+      if (typeof liste[i] === "string" && liste[i] && vorgemerkt.indexOf(liste[i]) === -1) {
+        vorgemerkt.push(liste[i]);
+      }
+    }
+  } catch (fehler) { /* kaputter Inhalt: lieber ohne als gar nicht starten */ }
+}
+function speichereVormerkungen() {
+  try {
+    localStorage.setItem(VORMERK_SPEICHER,
+                         JSON.stringify({ version: 1, ids: vorgemerkt }));
+    return true;
+  } catch (fehler) { return false; }
+}
+function istVorgemerkt(id) { return vorgemerkt.indexOf(id) !== -1; }
+
+/** Vormerken (an=true) oder herausnehmen. false heißt: Speicher machte nicht mit. */
+function merkeVor(id, an) {
+  var vorher = vorgemerkt.slice();
+  if (an) {
+    if (!istVorgemerkt(id)) vorgemerkt.push(id);
+  } else {
+    vorgemerkt = vorgemerkt.filter(function (x) { return x !== id; });
+  }
+  if (!speichereVormerkungen()) { vorgemerkt = vorher; return false; }
+  zeichneReiterZahl();
+  if (!$("ansichtVorbereiten").hidden) zeichneVorbereiten();
+  return true;
+}
+
+/** Gehört der Baustein in die Vorschlagsliste der Ecke? (siehe Kopfkommentar) */
+function brauchtVorlauf(e) {
+  if (e.vorbereitung === "hoch") return true;
+  if (e.vorbereitung !== "mittel") return false;
+  return e.umfang === "ganzer_abend" || (e.material || []).length >= 5;
+}
+
+/** Wann sollte man anfangen? Die zweite Frage der Ecke, kurz beantwortet. */
+function vorlaufText(e) {
+  if (e.vorbereitung === "hoch") return "eine Woche vorher anfangen";
+  if ((e.material || []).length >= 4) return "ein paar Tage vorher besorgen";
+  return "am Tag davor bereitlegen";
+}
+
+/** Die Elemente hinter den vorgemerkten ids – Verschwundene werden übergangen. */
+function vorgemerkteElemente() {
+  var liste = [];
+  for (var i = 0; i < vorgemerkt.length; i++) {
+    var e = NACH_ID[vorgemerkt[i]];
+    if (e) liste.push(e);
+  }
+  return liste;
+}
+
+/**
+ * Eine Karte in der Vorbereitungsecke.
+ * Anders als die Karten beim Stöbern trägt sie Material, Vorbereitungsaufwand,
+ * den Vorlauf und die Quelle mit Lizenz – das ist der ganze Zweck der Ecke.
+ */
+function vorKarte(e, vormerken) {
+  var eintrag = document.createElement("li");
+  var knopf = document.createElement("button");
+  knopf.type = "button";
+  knopf.className = "karte";
+  knopf.setAttribute("aria-label", e.titel);
+  var q = e.quelle || {};
+  var material = (e.material || []).length
+    ? schuetze(e.material.join(", ")) : "nichts – nur dich selbst";
+  knopf.innerHTML =
+    '<div class="kartenkopf"><h3>' + schuetze(e.titel) + "</h3>" +
+    '<span class="kartenzeit">' + schuetze(dauerText(e)) + "</span></div>" +
+    "<p>" + schuetze(e.kurz) + "</p>" +
+    '<div class="merkmale">' +
+    '<span class="merkmal typ">' +
+    schuetze(BEREICH_EINZAHL[e.bereich] || e.bereich) + "</span>" +
+    (e.umfang === "ganzer_abend" ? '<span class="merkmal">füllt den Abend</span>' : "") +
+    '<span class="merkmal">Vorbereitung ' + schuetze(e.vorbereitung) + "</span>" +
+    (heuteAnzahl && ohneGruppenangabe(e)
+      ? '<span class="merkmal offen">Gruppe offen</span>' : "") +
+    "</div>" +
+    '<div class="vor-zeile"><span class="vorlauf">' +
+    schuetze(vorlaufText(e)) + "</span><br>" +
+    "<b>Besorgen:</b> " + material + "</div>" +
+    '<div class="vor-quelle">' + schuetze(q.name || "?") + " · " +
+    schuetze(q.lizenz || "unbekannt") + "</div>";
+  knopf.addEventListener("click", function () { zeigeDetail(e); });
+  eintrag.appendChild(knopf);
+
+  var fuss = document.createElement("div");
+  fuss.className = "kartenfuss";
+  var tun = document.createElement("button");
+  tun.type = "button";
+  tun.className = "knopf klein" + (vormerken ? " stark" : "");
+  tun.textContent = vormerken ? "Vormerken" : "Herausnehmen";
+  tun.addEventListener("click", function () { merkeVor(e.id, vormerken); });
+  fuss.appendChild(tun);
+  eintrag.appendChild(fuss);
+  return eintrag;
+}
+
+/** Der Einkaufszettel: alles Material der vorgemerkten Bausteine, einmal. */
+function einkaufszettel(elemente) {
+  var sachen = [];
+  for (var i = 0; i < elemente.length; i++) {
+    var material = elemente[i].material || [];
+    for (var m = 0; m < material.length; m++) {
+      var sache = String(material[m]).trim();
+      if (sache && sachen.indexOf(sache) === -1) sachen.push(sache);
+    }
+  }
+  return sachen.sort(function (a, b) { return nachTitel({ titel: a }, { titel: b }); });
+}
+
+/** Zahl am Reiter: wie viele Bausteine liegen schon auf dem Vormerkstapel? */
+function zeichneReiterZahl() {
+  var anzahl = vorgemerkteElemente().length;
+  $("reiterVorbereiten").textContent = anzahl ? "Vorbereiten " + anzahl : "Vorbereiten";
+}
+
+var vorMeldeUhr = null;
+function vorMelde(text) {
+  var zeile = $("vorMeldung");
+  if (!zeile) return;
+  zeile.textContent = text;
+  clearTimeout(vorMeldeUhr);
+  vorMeldeUhr = setTimeout(function () {
+    if ($("vorMeldung")) $("vorMeldung").textContent = "";
+  }, 4000);
+}
+
+function zeichneVorbereiten() {
+  var behaelter = $("vorInhalt");
+  var meine = vorgemerkteElemente();
+  var html = "";
+
+  /* ------ oben: was schon vorgemerkt ist, mit dem Einkaufszettel ------ */
+  if (meine.length) {
+    var sachen = einkaufszettel(meine);
+    html += '<div class="vor-abschnitt" id="vorMeine">' +
+            '<span class="marke">Vorgemerkt · ' + meine.length +
+            (meine.length === 1 ? " Baustein" : " Bausteine") + "</span>";
+    html += '<div class="kasten tipp zettel"><h4>Das musst du besorgen</h4>';
+    if (sachen.length) {
+      html += "<ul>";
+      for (var s = 0; s < sachen.length; s++) {
+        html += "<li>" + schuetze(sachen[s]) + "</li>";
+      }
+      html += "</ul>";
+    } else {
+      html += "Für diese Bausteine brauchst du nichts zu kaufen.";
+    }
+    html += '<div class="formknoepfe">' +
+            '<button class="knopf klein" id="zettelKopieren">Zettel kopieren</button>' +
+            '<button class="knopf klein" id="vorLeeren">Liste leeren</button></div>' +
+            '<div class="vor-meldung" id="vorMeldung" role="status"></div></div>';
+    html += '<ul class="liste" id="vorMeineListe"></ul></div>';
+  } else {
+    html += '<div class="vor-abschnitt"><p class="leer">Noch nichts vorgemerkt.<br>' +
+            "Tipp auf einen Baustein und dann auf „Für nächste Woche vormerken“ – " +
+            "hier steht er danach mit Einkaufszettel.</p></div>";
+  }
+
+  /* ------ darunter: was sich lohnt, wenn man eine Woche vorher dran denkt ------ */
+  var f = leereFilter();
+  var vorschlaege = sammle(f, null, function (e) {
+    return brauchtVorlauf(e) && !istVorgemerkt(e.id);
+  });
+  // Erst das Aufwendigste, dann das mit dem meisten Material, dann alphabetisch:
+  // Wer hier liest, sucht das, was den längsten Vorlauf braucht.
+  vorschlaege.sort(function (a, b) {
+    var rangA = VORBEREITUNG_RANG[a.vorbereitung] || 0;
+    var rangB = VORBEREITUNG_RANG[b.vorbereitung] || 0;
+    if (rangA !== rangB) return rangB - rangA;
+    var matA = (a.material || []).length, matB = (b.material || []).length;
+    if (matA !== matB) return matB - matA;
+    return nachTitel(a, b);
+  });
+
+  html += '<div class="vor-abschnitt" id="vorVorschlaege">' +
+          '<span class="marke">Lohnt sich mit Vorlauf · ' + vorschlaege.length +
+          (vorschlaege.length === 1 ? " Baustein" : " Bausteine") + "</span>" +
+          '<ul class="liste" id="vorListe"></ul>';
+  // Ehrlich bleiben: In der geprüften Auswahl fehlen gerade die großen
+  // Sachen (Escape Room, Pubquiz, Chaosspiel) – sie stehen in der zweiten
+  // Reihe, weil sie lang und groß sind. Genau die plant man aber voraus.
+  if (nurKern) {
+    var zweiteReihe = 0;
+    for (var z = 0; z < ALLE.length; z++) {
+      if (ALLE[z].kern === false && brauchtVorlauf(ALLE[z])) zweiteReihe++;
+    }
+    if (zweiteReihe) {
+      html += '<p class="hinweis">In der zweiten Reihe stehen ' + zweiteReihe +
+              " weitere – lang, groß und aufwendig, also genau das, was man " +
+              "voraus plant. <button type=\"button\" class=\"chip\" " +
+              "id=\"vorZweiteReihe\">Ganze Sammlung zeigen</button></p>";
+    }
+  }
+  html += "</div>";
+
+  behaelter.innerHTML = html;
+
+  if (meine.length) {
+    var meineListe = $("vorMeineListe");
+    for (var i = 0; i < meine.length; i++) {
+      meineListe.appendChild(vorKarte(meine[i], false));
+    }
+    $("zettelKopieren").addEventListener("click", function () {
+      var zeilen = ["Für den nächsten Heimabend besorgen:"];
+      var liste = einkaufszettel(meine);
+      for (var k = 0; k < liste.length; k++) zeilen.push("- " + liste[k]);
+      zeilen.push("");
+      zeilen.push("Dafür:");
+      for (var v = 0; v < meine.length; v++) {
+        var q = meine[v].quelle || {};
+        zeilen.push("- " + meine[v].titel + " (" + vorlaufText(meine[v]) + ") · " +
+                    (q.name || "?") + " · " + (q.lizenz || "?"));
+      }
+      vorInZwischenablage(zeilen.join("\n"));
+    });
+    // Einzelne Vormerkungen gehen ohne Rückfrage wieder weg – dabei geht
+    // nichts verloren. Die ganze Liste auf einmal schon: deshalb zwei Schritte.
+    var leerKnopf = $("vorLeeren");
+    var gefragt = false, uhr = null;
+    leerKnopf.addEventListener("click", function () {
+      if (!gefragt) {
+        gefragt = true;
+        this.textContent = "Wirklich alle " + meine.length + " herausnehmen?";
+        this.className = "knopf klein stark";
+        clearTimeout(uhr);
+        var knopf = this;
+        uhr = setTimeout(function () {
+          gefragt = false;
+          knopf.textContent = "Liste leeren";
+          knopf.className = "knopf klein";
+        }, 6000);
+        return;
+      }
+      clearTimeout(uhr);
+      var vorherIds = vorgemerkt.slice();
+      vorgemerkt = [];
+      if (!speichereVormerkungen()) {
+        vorgemerkt = vorherIds;
+        vorMelde("Der Browserspeicher macht nicht mit – es wurde nichts geändert.");
+        return;
+      }
+      zeichneReiterZahl();
+      zeichneVorbereiten();
+    });
+  }
+
+  var vorListe = $("vorListe");
+  if (!vorschlaege.length) {
+    vorListe.innerHTML = '<li><p class="leer">Mit dieser Einstellung bleibt hier ' +
+      "nichts übrig – versuch es mit einer anderen Anzahl oder der ganzen " +
+      "Sammlung.</p></li>";
+  } else {
+    var stapel = document.createDocumentFragment();
+    for (var v2 = 0; v2 < vorschlaege.length; v2++) {
+      stapel.appendChild(vorKarte(vorschlaege[v2], true));
+    }
+    vorListe.appendChild(stapel);
+  }
+  if ($("vorZweiteReihe")) {
+    $("vorZweiteReihe").addEventListener("click", function () { setzeSammlung(false); });
+  }
+}
+
+/** Wie inZwischenablage(), nur mit der Meldung dieser Ansicht. */
+function vorInZwischenablage(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      function () { vorMelde("Zettel kopiert."); },
+      function () { vorMelde("Kopieren ging nicht – markiere den Text selbst."); });
+    return;
+  }
+  vorMelde("Dieser Browser kann nicht kopieren – markiere den Text selbst.");
+}
+
 /* ---------------------------------------------------------- Fußzeile */
 function zeichneFuss() {
   var quellen = {};
@@ -4097,21 +4658,25 @@ function zeichneFuss() {
 }
 
 /* ------------------------------------------------------------ Ansichten */
+var ANSICHTEN = [["bausteine", "ansichtBausteine", "reiterBausteine"],
+                 ["planen", "ansichtPlanen", "reiterPlanen"],
+                 ["vorbereiten", "ansichtVorbereiten", "reiterVorbereiten"]];
+
 function zeigeAnsicht(name) {
-  var bausteine = name === "bausteine";
-  $("ansichtBausteine").hidden = !bausteine;
-  $("ansichtPlanen").hidden = bausteine;
-  // aria-current statt der Reiter-Rolle: die App liefert kein Pfeiltasten-
-  // Verhalten, das die Rolle "tab" versprechen würde.
-  if (bausteine) { $("reiterBausteine").setAttribute("aria-current", "page"); }
-  else { $("reiterBausteine").removeAttribute("aria-current"); }
-  if (!bausteine) { $("reiterPlanen").setAttribute("aria-current", "page"); }
-  else { $("reiterPlanen").removeAttribute("aria-current"); }
+  for (var i = 0; i < ANSICHTEN.length; i++) {
+    var dran = ANSICHTEN[i][0] === name;
+    $(ANSICHTEN[i][1]).hidden = !dran;
+    // aria-current statt der Reiter-Rolle: die App liefert kein Pfeiltasten-
+    // Verhalten, das die Rolle "tab" versprechen würde.
+    if (dran) $(ANSICHTEN[i][2]).setAttribute("aria-current", "page");
+    else $(ANSICHTEN[i][2]).removeAttribute("aria-current");
+  }
   window.scrollTo(0, 0);
-  if (!bausteine) {
+  if (name === "planen") {
     $("rahmenKurz").textContent = rahmenKurzfassung();
     zeichnePlan();
   }
+  if (name === "vorbereiten") zeichneVorbereiten();
 }
 
 /* ------------------------------------------------------------ Start */
@@ -4119,9 +4684,9 @@ function zeigeAnsicht(name) {
 function rahmenKurzfassung() {
   var teile = [rahmen.zielzeit + " Min"];
   if (rahmen.stufe) teile.push(rahmen.stufe);
-  if (rahmen.teilnehmer) {
-    teile.push(rahmen.teilnehmer + (rahmen.teilnehmer >= 25 ? "+" : "") + " Kinder");
-  }
+  // Die Anzahl steht in der Zeile "Heute sind wir" und wird hier nur noch
+  // mitgesagt, damit man im zugeklappten Rahmen sieht, womit gerechnet wird.
+  if (heuteAnzahl) teile.push(anzahlText(heuteAnzahl));
   if (rahmen.ort) teile.push(ORT_TEXT[rahmen.ort]);
   if (rahmen.vorbereitung) teile.push("Vorb. " + rahmen.vorbereitung);
   if (rahmen.ohneMaterial) teile.push("ohne Material");
@@ -4132,7 +4697,8 @@ function rahmenKurzfassung() {
 function liesRahmen() {
   rahmen.zielzeit = parseInt($("rZielzeit").value, 10) || 120;
   rahmen.stufe = $("rStufe").value;
-  rahmen.teilnehmer = $("rTeilnehmer").value ? parseInt($("rTeilnehmer").value, 10) : 0;
+  // Die Anzahl kommt aus der Zeile "Heute sind wir" und nicht mehr von hier.
+  rahmen.teilnehmer = heuteAnzahl;
   rahmen.ort = $("rOrt").value;
   rahmen.vorbereitung = $("rVorbereitung").value;
   rahmen.ohneMaterial = $("rOhneMaterial").checked;
@@ -4147,7 +4713,7 @@ function verdrahte() {
     clearTimeout(entprellen);
     entprellen = setTimeout(aktualisiere, 150);
   });
-  var felder = ["fStufe", "fDauer", "fTeilnehmer", "fOrt", "fVorbereitung",
+  var felder = ["fStufe", "fDauer", "fOrt", "fVorbereitung",
                 "fOhneMaterial", "fMitAlter", "fPlatz", "fHosensack", "fOhneKontakt"];
   for (var i = 0; i < felder.length; i++) {
     $(felder[i]).addEventListener("change", aktualisiere);
@@ -4164,6 +4730,15 @@ function verdrahte() {
 
   $("reiterBausteine").addEventListener("click", function () { zeigeAnsicht("bausteine"); });
   $("reiterPlanen").addEventListener("click", function () { zeigeAnsicht("planen"); });
+  $("reiterVorbereiten").addEventListener("click", function () {
+    zeigeAnsicht("vorbereiten");
+  });
+
+  // Die heutige Anzahl: ein Griff ins Auswahlfeld, oder eine Stufe mit den
+  // beiden Knöpfen – beides landet in derselben Funktion.
+  $("heuteAnzahl").addEventListener("change", function () { setzeAnzahl(this.value); });
+  $("heuteWeniger").addEventListener("click", function () { stelleAnzahl(-1); });
+  $("heuteMehr").addEventListener("click", function () { stelleAnzahl(1); });
 
   $("detailZurueck").addEventListener("click", function () {
     schliesseUeberlagerung($("detail"));
@@ -4193,7 +4768,7 @@ function verdrahte() {
     auswahlSichtbar += SEITENGROESSE; zeichneAuswahl();
   });
 
-  var rahmenFelder = ["rZielzeit", "rStufe", "rTeilnehmer", "rOrt", "rVorbereitung",
+  var rahmenFelder = ["rZielzeit", "rStufe", "rOrt", "rVorbereitung",
                       "rOhneMaterial"];
   for (var r = 0; r < rahmenFelder.length; r++) {
     $(rahmenFelder[r]).addEventListener("change", liesRahmen);
@@ -4247,6 +4822,10 @@ function starte(elemente) {
   ladeSammlung();
   $("rZweiteReihe").checked = !nurKern;
   ladePlan();
+  // Nach ladePlan(): die gemerkte Anzahl schlägt den alten Wert aus dem Rahmen.
+  ladeAnzahl();
+  ladeVormerkungen();
+  zeichneReiterZahl();
   aktualisiere();
   zeichneFuss();
 }

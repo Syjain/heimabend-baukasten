@@ -52,6 +52,22 @@ Neu bauen:
 Die beiden Import-Skripte kennen `--offline` und arbeiten dann nur mit den bereits
 geholten Rohdaten.
 
+## Was die App kann
+
+Drei Reiter: **Bausteine** (stöbern, suchen, filtern), **Planen** (den Abend aus
+Plätzen zusammenstellen) und **Vorbereiten** (was man nicht spontan machen kann).
+
+Oben steht **„Heute sind wir …"**. Sagt man dort die Anzahl, richtet sich die
+ganze App danach – bei 6 Kindern bleiben von 299 Kern-Spielen 155 übrig, der
+Rest braucht mehr Leute. Elemente ohne Angabe zur Gruppengröße verschwinden
+dabei nie stillschweigend; sie rutschen ans Ende und tragen die Plakette
+„Gruppe offen".
+
+Die Anzeige läuft durch die **Sprach-Brille** (`data/sprache.json`): Wörter
+fremder Bünde werden beim Anzeigen durch unsere ersetzt – Horte/Gilde statt
+Sippe, Heimabend statt Gruppenstunde –, ohne die Quelltexte anzufassen. Wo
+ersetzt wurde, sagt es der Quellenkasten und zeigt auf Wunsch das Original.
+
 ## Die App benutzen
 
 Online unter https://syjain.github.io/heimabend-baukasten/web/ – die Adresse kann man
@@ -69,7 +85,7 @@ Danach `http://localhost:8000/web/index.html` aufrufen. Was die App kann, steht 
 `web/README.md`.
 
 Nach Änderungen an der App: `scripts/rauchtest.js` in die Browser-Konsole
-kopieren, das prüft 111 Punkte auf einmal (Anleitung oben in der Datei).
+kopieren, das prüft 188 Punkte auf einmal (Anleitung oben in der Datei).
 
 ## Was noch offen ist
 - Fünf Sprachentscheidungen (Sippe oder Horte/Gilde, Spielleitung oder
