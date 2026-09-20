@@ -10,8 +10,22 @@ Zwei Dateien, eine Quelle:
 
 ## Rechte
 
-Die Rechte am Probenbuch liegen beim Projektinhaber (Auskunft vom 02.09.2026).
-Die Elemente tragen deshalb in der App:
+Das Probenbuch ist das des **Rings Goldener Löwe**, also des eigenen Rings des
+Projektinhabers (Auskunft vom 02.09.2026, präzisiert am 20.09.2026).
+
+Damit ist geklärt, was ins öffentliche Repo darf und was nicht:
+
+- **Der Text der Proben darf hier stehen** – es ist der geistige Inhalt des
+  eigenen Rings. Er liegt seit dem 02.09.2026 im Repo und bleibt dort.
+- **Die Abbildungen nicht.** Es wurde nie eine übernommen: die Daten enthalten
+  null Bildverweise, fünf Proben verweisen im Text auf eine Abbildung, die fehlt.
+  Das ist Absicht und soll so bleiben.
+- **Die PDF-Druckvorlage nicht.** `docs/Probenbuch-fuer-den-Heimabend.pdf` steht
+  in `.gitignore` und war nie committet (Entscheidung vom 20.09.2026). Sie ist der
+  Scan des ganzen Buches, also mehr als das, was die App braucht.
+
+Wer die Proben weiterverwendet, fragt beim Ring Goldener Löwe. Die Elemente
+tragen in der App:
 
     quelle.name   = "DPB-Probenbuch (3. Auflage)"
     quelle.autor  = "Deutscher Pfadfinderbund"

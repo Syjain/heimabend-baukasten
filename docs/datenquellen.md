@@ -12,7 +12,7 @@
 | Scoutopedia https://fr.scoutwiki.org/Catégorie:Jeu | 399 Spiele, 17 Unterkategorien, **französisch** | CC BY-SA 3.0 (+ GFDL) | MediaWiki-API; nur mit Übersetzung sinnvoll, Dubletten mit Spielewiki prüfen – siehe `docs/recherche-spiele-apps-und-quellen.md` |
 | Methodenkartei Uni Oldenburg https://www.methodenkartei.uni-oldenburg.de/methoden/ | 202 Schul-/Gruppenmethoden, davon ~50 für Gemeinschaft/Reflexion brauchbar | CC BY (OER-Standard; auf der Einzelseite prüfen) | Webseite, kein Export |
 | Baden-Powell, *Scouting for Boys* (1908), Teil VI | ~50 historische Spiele, englisch | gemeinfrei | https://www.gutenberg.org/ebooks/65993 – kuratierte Auswahl mit eigener Übersetzung |
-| DPB-Probenbuch, 3. Auflage | 30 Proben (28 mit Text), Stand ca. 2003, ohne Abbildungen | Rechte beim Projektinhaber | `data/quellen/probenbuch/proben-dpb.json`, aus dem PDF extrahiert; siehe README dort |
+| DPB-Probenbuch, 3. Auflage | 30 Proben (28 mit Text), Stand ca. 2003, **Text ja, Abbildungen nie übernommen** | Ring Goldener Löwe – der eigene Ring des Projektinhabers | `data/quellen/probenbuch/proben-dpb.json`, aus dem PDF extrahiert; siehe README dort |
 
 ## Nur mit Erlaubnis (anfragen)
 - ejb.vernetzt Spielekatalog https://ejb-vernetzt.de/spielekatalog/ – ~160 Spiele, offene API `https://ejb-vernetzt.de/wp-json/wc/store/v1/products?per_page=100`, keine Lizenzangabe
