@@ -3108,10 +3108,14 @@ function slotKarte(slot, index) {
   html += e ? "</button>" : "</div>";
 
   html += '<div class="slot-knoepfe">';
+  // Ein leerer Platz hat zwei Wege, kein dritter: "Vorschläge" und "Alle
+  // durchsuchen" öffneten denselben Dialog und unterschieden sich nur im
+  // vorgesetzten Häkchen "nur was in die Zeit passt" - das man dort selbst
+  // abschalten kann. Zwei Knöpfe für eine Sache lassen fragen, was der
+  // Unterschied ist.
   if (!e) html += '<button class="knopf klein stark" type="button" data-tat="vorschlag">Vorschläge</button>';
-  html += '<button class="knopf klein" type="button" data-tat="waehlen">' +
-          (e ? "Tauschen" : "Alle durchsuchen") + "</button>" +
-          '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
+  else html += '<button class="knopf klein" type="button" data-tat="waehlen">Tauschen</button>';
+  html += '<button class="knopf klein" type="button" data-tat="zufall">Zufall</button>';
   if (e) {
     html += '<button class="knopf klein" type="button" data-tat="leeren">Entfernen</button>';
   }

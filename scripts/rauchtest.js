@@ -246,6 +246,15 @@
 
   plan = { einstieg: null, haupt: [null, null], abschluss: null }; zeichnePlan();
   pruefe("leerer Plan zeigt nur die Kreise", planDauer().mitte === 10, planDauer().mitte);
+  // Ein leerer Spielplatz hat genau zwei Wege: "Vorschläge" und "Zufall". Der
+  // frühere dritte Knopf "Alle durchsuchen" öffnete denselben Dialog.
+  var leererPlatz = document.querySelector(".slot.leer");
+  var knopfTexte = leererPlatz
+    ? Array.prototype.map.call(leererPlatz.querySelectorAll("button[data-tat]"),
+        function (b) { return b.textContent.trim(); })
+    : [];
+  pruefe("ein leerer Platz bietet nur Vorschläge und Zufall",
+         knopfTexte.join("|") === "Vorschläge|Zufall", knopfTexte.join("|"));
 
   // --- Auswahl-Dialog ---
   oeffneAuswahl(SLOTS[1], 0, true);
