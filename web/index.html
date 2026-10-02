@@ -261,6 +261,22 @@ details.filter > summary span:last-child:not(:first-child) {
 .schalter label { text-transform: none; font-size: .9rem; color: var(--text);
   font-weight: 400; letter-spacing: 0; padding: 11px 0; font-family: var(--schrift); }
 .filter-fuss { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
+/* "Mehr Optionen": das Seltene, eingeklappt. Eigenes, leichtes Aussehen - ein
+   zweiter Rahmen im Rahmen würde den Kasten schwerer machen, nicht leichter. */
+details.mehr { grid-column: 1 / -1; border-top: 1px solid var(--linie); }
+details.mehr > summary {
+  padding: 12px 0; min-height: 44px; cursor: pointer; list-style: none;
+  font-size: .92rem; font-weight: 600; color: var(--akzent);
+  display: flex; justify-content: space-between; align-items: center;
+}
+details.mehr > summary::-webkit-details-marker { display: none; }
+details.mehr > summary::after {
+  content: ""; flex: none; width: 8px; height: 8px;
+  border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise);
+  transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s;
+}
+details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.filter-raster.innen { padding: 0 0 var(--r2); }
 /* Zwischenüberschrift im Filterkasten: die Spiel-Achsen (Platz, Nähe,
    Hosensackspiel) gelten nur für Spiele – ohne diese Zeile wirkte die
    Leiste wie ein einziger langer Haufen Auswahlfelder. */
@@ -902,6 +918,16 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
             <option value="draussen">draußen</option>
           </select>
         </div>
+        <div class="schalter">
+          <input type="checkbox" id="fOhneMaterial">
+          <label for="fOhneMaterial">nur ohne Material</label>
+        </div>
+        <!-- Das Seltene wohnt in "Mehr Optionen": vor einem normalen Heimabend braucht man
+             Dauer, Ort, Material und Alter. Ist darin etwas aktiv, klappt es von selbst auf
+             (aktualisiere), damit kein Filter unsichtbar wirkt. -->
+        <details class="mehr" id="mehrFilter">
+          <summary>Mehr Optionen</summary>
+          <div class="filter-raster innen">
         <div class="feld">
           <label for="fVorbereitung">Vorbereitung</label>
           <select id="fVorbereitung">
@@ -912,14 +938,10 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
           </select>
         </div>
         <div class="schalter">
-          <input type="checkbox" id="fOhneMaterial">
-          <label for="fOhneMaterial">nur ohne Material</label>
-        </div>
-        <div class="schalter">
           <input type="checkbox" id="fMitAlter">
-          <label for="fMitAlter">nur mit geprüfter Altersangabe</label>
+          <label for="fMitAlter">nur mit Altersangabe</label>
         </div>
-        <div class="abschnitt marke">Bei Spielen zusätzlich</div>
+        <div class="abschnitt marke">Nur bei Spielen</div>
         <div class="feld">
           <label for="fPlatz">Platz</label>
           <select id="fPlatz">
@@ -938,9 +960,6 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
           <input type="checkbox" id="fOhneKontakt">
           <label for="fOhneKontakt">ohne Körperkontakt</label>
         </div>
-        <div class="filter-fuss">
-          <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
-        </div>
         <!-- Sichern und Einlesen stehen hier, weil sie selten gebraucht werden
              und nichts an der Ansicht ändern. Die Datei hat dasselbe Format wie
              data/eigene/rahmen-und-methoden.json, damit build.py sie ohne
@@ -952,6 +971,11 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
           <input type="file" id="ideenDatei" accept="application/json,.json" hidden>
         </div>
         <p class="hinweis" id="ideenStand" style="grid-column:1/-1"></p>
+          </div>
+        </details>
+        <div class="filter-fuss">
+          <button class="knopf klein" id="filterZuruecksetzen">Filter zurücksetzen</button>
+        </div>
       </div>
     </details>
 
@@ -2291,6 +2315,12 @@ function aktualisiere() {
   var zahl = aktiveFilter();
   // Die Kopfzeile nennt, was vom Standard abweicht - sonst wüsste man bei
   // geschlossenem Kasten nicht, warum die Zahlen größer sind.
+  // Ein Filter, den man nicht sieht, darf nicht wirken: ist in "Mehr Optionen"
+  // etwas gesetzt, klappt das Feld von selbst auf.
+  if ($("fVorbereitung").value || $("fPlatz").value || $("fMitAlter").checked ||
+      $("fHosensack").checked || $("fOhneKontakt").checked) {
+    $("mehrFilter").open = true;
+  }
   $("filterZahl").textContent = [zahl ? zahl + " aktiv" : "",
                                  nurKern ? "" : "ganze Sammlung"]
     .filter(Boolean).join(" · ");

@@ -84,6 +84,22 @@
   pruefe("die Kopfzeile des Kastens meldet nur die Abweichung vom Standard",
          kopfStandard.indexOf("ganze Sammlung") === -1 && kopfGanze.indexOf("ganze Sammlung") > -1,
          "'" + kopfStandard + "' / '" + kopfGanze + "'");
+  // --- „Mehr Optionen“: das Seltene eingeklappt, aber nie unsichtbar wirksam ---
+  setzeFilterZurueck();
+  document.getElementById("mehrFilter").open = false; aktualisiere();
+  pruefe("„Mehr Optionen“ bleibt zu, solange darin nichts aktiv ist",
+         !document.getElementById("mehrFilter").open);
+  document.getElementById("fHosensack").checked = true; aktualisiere();
+  pruefe("ein Filter in „Mehr Optionen“ klappt das Feld von selbst auf",
+         document.getElementById("mehrFilter").open &&
+         /1 aktiv/.test(document.getElementById("filterZahl").textContent),
+         document.getElementById("filterZahl").textContent);
+  setzeFilterZurueck();
+  document.getElementById("mehrFilter").open = false;
+  pruefe("die vier Alltagsfilter stehen nicht in „Mehr Optionen“",
+         ["fStufe", "fDauer", "fOrt", "fOhneMaterial"].every(function (id) {
+           return !document.getElementById("mehrFilter").contains(document.getElementById(id));
+         }));
   pruefe("Schalter zeigt beide Zahlen an",
          /\d/.test(kachelKern) &&
          /\d/.test(document.getElementById("sammlungAlle").textContent),
