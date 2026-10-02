@@ -2107,6 +2107,12 @@ def main():
                     element["unterkategorie"] = bestimme_unterkategorie(element)
                 else:
                     element["kategorie"] = ""
+                # Die Unterkategorie gibt es nur bei Spielen. Wurde ein Element von
+                # "spiel" auf etwas anderes umgestellt (z. B. eine Bastelanleitung
+                # nach "werken"), hat die Automatik sie schon gesetzt - sie muss
+                # mit weg, sonst widerspricht das Element dem Schema.
+                if element["bereich"] != "spiel":
+                    element["unterkategorie"] = ""
                 if not element.get("_slots_fest"):
                     element["slots"] = slots_fuer(element["bereich"], element["umfang"],
                                                   element["kategorie"], element["dauer_min"])

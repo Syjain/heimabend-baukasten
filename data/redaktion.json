@@ -2,7 +2,7 @@
   "meta": {
     "name": "Redaktionelle Entscheidungen",
     "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
-    "stand": "2026-09-20",
+    "stand": "2026-10-02",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
   "gesperrt": [
@@ -1367,6 +1367,11 @@
       "bereich": "spiel",
       "kategorie": "ruhig",
       "grund": "Kim-Spiel, also ein Spiel."
+    },
+    {
+      "id": "insp-wutball-aus-alten-socken",
+      "bereich": "werken",
+      "grund": "Es ist eine Bastelanleitung (Reis oder Sand in einen Ballon, den Ballon in eine Socke, zubinden), kein Spiel - gespielt wird erst danach und mit etwas anderem. Aufgefallen beim Zusammenfassen der Ballspiele am 20.09.2026."
     }
   ],
   "zusammengelegt": [

@@ -1200,7 +1200,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-ameisenspiel",
@@ -30857,7 +30857,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-rugbyfangen",
@@ -42115,55 +42115,6 @@
    "kern": false
   },
   {
-   "id": "insp-wutball-aus-alten-socken",
-   "titel": "Wutball aus alten Socken",
-   "umfang": "baustein",
-   "kategorie": "bewegung_drinnen",
-   "slots": [
-    "hauptteil"
-   ],
-   "altersstufen": [
-    "Pfadfinder",
-    "Ältere"
-   ],
-   "dauer_min": 30,
-   "dauer_max": 45,
-   "ort": "beides",
-   "material": [],
-   "vorbereitung": "gering",
-   "kurz": "Baue deinen Wutball! Reis/Sand in Ballon, Ballon in Socke, zubinden, Haare schneiden, fertig!",
-   "beschreibung": "Gebt eine handvoll Reis oder Sand in einen nicht aufgepusteten Ballon bis dieser gut gefüllt ist. Knotet den Ballon oben zu und füllt diesen in die alte Socke.\n\nDiese könnt ihr mit einer Schnur zubinden und die Socke abschneiden. Der überstehende Sockensaum zerschnippelt, ist wie ein wuscheliger Haarschopf.\n\nIhr könnt die Socke aber auch zubinden und den restlichen Socken umstülpen. Fertig ist euer eigener Wutball!",
-   "tipps": "",
-   "tags": [
-    "Basteln",
-    "Spiel"
-   ],
-   "themen": [
-    "Basteln"
-   ],
-   "quelle": {
-    "name": "Heimabend-Inspirator (DPBM)",
-    "url": "https://gruppenstunde.de/activity/details/67",
-    "autor": "Heimabend-Inspirator (DPBM)",
-    "lizenz": "CC BY-NC 4.0"
-   },
-   "bereich": "spiel",
-   "unterkategorie": "sonstiges",
-   "wirkung": [],
-   "modus": "ohne_gewinner",
-   "sozialform": "frei",
-   "spielgeraet": [
-    "nichts"
-   ],
-   "anforderung": [],
-   "platz": "",
-   "hosensackspiel": false,
-   "uebt": [],
-   "naehe": "keine",
-   "varianten": [],
-   "kern": false
-  },
-  {
    "id": "sw-zahlball",
    "titel": "Zählball",
    "kategorie": "bewegung_drinnen",
@@ -53333,6 +53284,53 @@
     "url": "",
     "autor": "Heimabend-Baukasten",
     "lizenz": "CC BY-SA 4.0"
+   },
+   "bereich": "werken",
+   "unterkategorie": "",
+   "wirkung": [],
+   "modus": "",
+   "sozialform": "",
+   "spielgeraet": [],
+   "anforderung": [],
+   "platz": "",
+   "hosensackspiel": false,
+   "uebt": [],
+   "naehe": "",
+   "varianten": [],
+   "kern": true
+  },
+  {
+   "id": "insp-wutball-aus-alten-socken",
+   "titel": "Wutball aus alten Socken",
+   "umfang": "baustein",
+   "kategorie": "",
+   "slots": [
+    "hauptteil"
+   ],
+   "altersstufen": [
+    "Pfadfinder",
+    "Ältere"
+   ],
+   "dauer_min": 30,
+   "dauer_max": 45,
+   "ort": "beides",
+   "material": [],
+   "vorbereitung": "gering",
+   "kurz": "Baue deinen Wutball! Reis/Sand in Ballon, Ballon in Socke, zubinden, Haare schneiden, fertig!",
+   "beschreibung": "Gebt eine handvoll Reis oder Sand in einen nicht aufgepusteten Ballon bis dieser gut gefüllt ist. Knotet den Ballon oben zu und füllt diesen in die alte Socke.\n\nDiese könnt ihr mit einer Schnur zubinden und die Socke abschneiden. Der überstehende Sockensaum zerschnippelt, ist wie ein wuscheliger Haarschopf.\n\nIhr könnt die Socke aber auch zubinden und den restlichen Socken umstülpen. Fertig ist euer eigener Wutball!",
+   "tipps": "",
+   "tags": [
+    "Basteln",
+    "Spiel"
+   ],
+   "themen": [
+    "Basteln"
+   ],
+   "quelle": {
+    "name": "Heimabend-Inspirator (DPBM)",
+    "url": "https://gruppenstunde.de/activity/details/67",
+    "autor": "Heimabend-Inspirator (DPBM)",
+    "lizenz": "CC BY-NC 4.0"
    },
    "bereich": "werken",
    "unterkategorie": "",
