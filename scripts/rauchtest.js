@@ -74,6 +74,16 @@
   pruefe("Schalter verändert auch die Zahlen auf den Kacheln",
          kachelSpiele !== document.querySelectorAll("#kacheln .kachel")[0].textContent,
          kachelSpiele + " -> " + document.querySelectorAll("#kacheln .kachel")[0].textContent);
+  pruefe("der Schalter wohnt im Filterkasten, nicht vor den Kacheln",
+         document.getElementById("filterBox").contains(document.getElementById("sammlungZeile")));
+  setzeSammlung(true); aktualisiere();
+  var kopfStandard = document.getElementById("filterZahl").textContent;
+  setzeSammlung(false); aktualisiere();
+  var kopfGanze = document.getElementById("filterZahl").textContent;
+  setzeSammlung(true); aktualisiere();
+  pruefe("die Kopfzeile des Kastens meldet nur die Abweichung vom Standard",
+         kopfStandard.indexOf("ganze Sammlung") === -1 && kopfGanze.indexOf("ganze Sammlung") > -1,
+         "'" + kopfStandard + "' / '" + kopfGanze + "'");
   pruefe("Schalter zeigt beide Zahlen an",
          /\d/.test(kachelKern) &&
          /\d/.test(document.getElementById("sammlungAlle").textContent),
@@ -398,8 +408,11 @@
   var zahlVorher = document.getElementById("filterZahl").textContent;
   setzeFilterZurueck();
   pruefe("„Filter zurücksetzen“ lässt die Anzahl stehen", heuteAnzahl === 6);
+  // Der Test läuft auf der ganzen Sammlung; dort meldet die Kopfzeile gewollt
+  // "ganze Sammlung". Gemeint ist: die Anzahl taucht nicht als "aktiv" auf.
   pruefe("die Anzahl zählt nicht als aktiver Filter im Kasten",
-         zahlVorher === "" && document.getElementById("filterZahl").textContent === "",
+         zahlVorher.indexOf("aktiv") === -1 &&
+         document.getElementById("filterZahl").textContent.indexOf("aktiv") === -1,
          "'" + zahlVorher + "'");
   // Suche und Anzahl greifen zusammen.
   document.getElementById("suche").value = "fangen"; aktualisiere();

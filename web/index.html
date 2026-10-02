@@ -270,9 +270,21 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 
 /* ------------------------------------------------- Umfang der Sammlung */
-/* Der Schalter steht offen unter der Suche, nicht im Filterkasten: er
-   verändert jede Zahl auf dem Bildschirm, das darf nicht versteckt sein. */
-.sammlung { margin: var(--r2) 0 var(--r3); }
+/* Der Schalter wohnt im Filterkasten (Yannick: die Startseite war zu voll). Weil
+   er trotzdem jede Zahl verändert, steht in der Kopfzeile des Kastens
+   "ganze Sammlung", sobald er nicht auf der geprüften Auswahl steht. */
+.filter-raster .sammlung { grid-column: 1 / -1; margin: 0; }
+/* Zwei Knöpfe, die sich gegenseitig ausschließen, gehören nebeneinander: ein
+   Umschalter, keine Liste. Erst unter 360 px bleibt dafür kein Platz. */
+.filter-raster .sammlung .chips { margin-top: 6px; flex-wrap: nowrap; gap: 6px; }
+.filter-raster .sammlung .chip {
+  flex: 1 1 0; min-width: 0; padding: 10px 6px; font-size: .76rem;
+  text-align: center; white-space: nowrap;
+}
+@media (max-width: 359px) {
+  .filter-raster .sammlung .chips { flex-wrap: wrap; }
+  .filter-raster .sammlung .chip { flex-basis: 100%; }
+}
 .sammlung .chip { padding: 11px 12px; font-size: .8rem; }
 .sammlung .hinweis {
   font-size: .74rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4;
@@ -844,20 +856,20 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
               title="Eigene Idee erfassen">+</button>
     </div>
 
-    <!-- Umfang der Sammlung. Steht offen unter der Suche, weil er jede Zahl
-         auf dem Bildschirm verändert. Ohne eigene Überschrift: die beiden
-         Knöpfe sagen selbst, was sie tun, und die Zeile bleibt kurz. -->
-    <div class="chipzeile sammlung" id="sammlungZeile">
-      <div class="chips" role="group" aria-label="Umfang der Sammlung">
-        <button type="button" class="chip" id="sammlungKern">geprüfte Auswahl</button>
-        <button type="button" class="chip" id="sammlungAlle">ganze Sammlung</button>
-      </div>
-      <p class="hinweis" id="sammlungHinweis"></p>
-    </div>
-
     <details class="filter" id="filterBox">
       <summary><span>Filter</span><span id="filterZahl"></span></summary>
       <div class="filter-raster">
+        <!-- Umfang der Sammlung. Wohnt im Filterkasten, damit vor den Kacheln weniger
+             steht. Weil er jede Zahl verändert, meldet die Kopfzeile des Kastens
+             "ganze Sammlung", sobald nicht mehr die geprüfte Auswahl gilt. -->
+        <div class="chipzeile sammlung" id="sammlungZeile">
+          <span class="chiptitel">Sammlung</span>
+          <div class="chips" role="group" aria-label="Umfang der Sammlung">
+            <button type="button" class="chip" id="sammlungKern">geprüfte Auswahl</button>
+            <button type="button" class="chip" id="sammlungAlle">ganze Sammlung</button>
+          </div>
+          <p class="hinweis" id="sammlungHinweis"></p>
+        </div>
         <div class="feld">
           <label for="fStufe">Altersstufe</label>
           <select id="fStufe">
@@ -2277,7 +2289,11 @@ function zeichneSammlung(f) {
 function aktualisiere() {
   var f = filterWerte();
   var zahl = aktiveFilter();
-  $("filterZahl").textContent = zahl ? zahl + " aktiv" : "";
+  // Die Kopfzeile nennt, was vom Standard abweicht - sonst wüsste man bei
+  // geschlossenem Kasten nicht, warum die Zahlen größer sind.
+  $("filterZahl").textContent = [zahl ? zahl + " aktiv" : "",
+                                 nurKern ? "" : "ganze Sammlung"]
+    .filter(Boolean).join(" · ");
   zeichneSammlung(f);
   // Die Zeile "Heute sind wir" zählt mit: ihre Zahlen hängen auch am Umfang
   // der Sammlung, also muss sie bei jedem Neuzeichnen mitkommen.
