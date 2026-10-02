@@ -290,7 +290,7 @@ details.filter > summary span:last-child:not(:first-child) {
    daneben gehen eine Stufe weiter – beides einhändig mit dem Daumen. */
 .heute {
   display: flex; align-items: center; flex-wrap: wrap; gap: var(--r2);
-  margin: var(--r3) 0 0; padding: 9px var(--r3) 10px;
+  margin: var(--r3) 0 0; padding: 6px var(--r3);
   background: var(--karte);
   border: 1px solid var(--linie); border-radius: var(--rund);
 }
@@ -299,7 +299,7 @@ details.filter > summary span:last-child:not(:first-child) {
    dort steht der Daumen, wenn man das Handy in einer Hand hält. */
 .heute-steller { display: flex; align-items: stretch; margin-left: auto; }
 .heute-steller button {
-  flex: none; width: 46px; min-height: 46px; padding: 0;
+  flex: none; width: 42px; min-height: 44px; padding: 0;
   border: 1px solid var(--linie-stark); background: var(--grund);
   color: var(--text); font-size: 1.25rem; font-weight: 700; line-height: 1;
   font-family: var(--schrift-daten); border-radius: 0;
@@ -308,18 +308,27 @@ details.filter > summary span:last-child:not(:first-child) {
 .heute-steller button:last-child { border-radius: 0 var(--rund-klein) var(--rund-klein) 0; }
 .heute-steller button:disabled { opacity: .3; cursor: default; }
 .heute-steller select {
-  min-height: 46px; min-width: 118px; padding: 10px 4px;
+  min-height: 44px; min-width: 88px; padding: 10px 4px;
   font-size: 16px; font-weight: 650; text-align: center;
   font-family: var(--schrift-daten); font-variant-numeric: tabular-nums;
   border: 1px solid var(--linie-stark); border-inline-width: 0;
   background: var(--karte); color: var(--text); border-radius: 0;
 }
 .heute.gesetzt .heute-steller select { color: var(--glut); }
-.heute .hinweis { flex-basis: 100%; margin: 5px 0 0; }
+.heute .hinweis { flex-basis: 100%; margin: 0 0 4px; }
+/* Ohne gewählte Zahl gibt es nichts zu erklären: die Zeile bleibt eine Zeile. */
+.heute .hinweis:empty { display: none; }
+/* Das Plus neben der Suche: Name steht im aria-label, der Platz gehört dem Suchfeld. */
+#ideeNeu { flex: none; width: 46px; padding: 0; font-size: 1.35rem; font-weight: 500; line-height: 1; }
+/* Das Auswahlfeld richtet sich sonst nach seinem längsten Eintrag ("25+ Kinder")
+   und wird bei 320 px 125 px breit - dann bricht die Zeile um. Feste Breite hält
+   Beschriftung und Zähler in einer Zeile. */
+.heute-steller select { width: 96px; min-width: 0; }
 @media (max-width: 359px) {
   .heute { gap: 6px; padding-inline: 10px; }
-  .heute-steller select { min-width: 92px; }
-  .heute-steller button { width: 42px; }
+  .heute .marke { font-size: .62rem; letter-spacing: .02em; }
+  .heute-steller select { width: 92px; }
+  .heute-steller button { width: 38px; }
 }
 
 /* ------------------------------------------- Für nächste Woche vorbereiten */
@@ -460,6 +469,7 @@ details.filter > summary span:last-child:not(:first-child) {
   text-align: center; color: var(--leise); padding: var(--r6) var(--r5);
   background: none; border: 1px dashed var(--linie-stark); border-radius: var(--rund);
 }
+.vor-abschnitt .leer { padding: var(--r4); font-size: .88rem; }
 p.leer button {
   background: none; border: 0; color: var(--akzent); font-weight: 600;
   text-decoration: underline; padding: 11px 4px; min-height: 44px;
@@ -692,7 +702,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .summe {
   position: sticky; bottom: 0; z-index: 10;
   margin: var(--r5) calc(-1 * var(--r3)) 0;
-  padding: var(--r3) var(--r3) calc(var(--r3) + env(safe-area-inset-bottom));
+  padding: var(--r2) var(--r3) calc(var(--r2) + env(safe-area-inset-bottom));
   background: color-mix(in srgb, var(--karte) 94%, transparent);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--linie-stark);
@@ -704,7 +714,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 /* Die Gesamtdauer ist Glut: was schon verplant ist, glüht – der Rest ist Asche */
 .balken {
   height: 8px; border-radius: 4px; background: var(--grund-tief);
-  margin: var(--r2) 0 var(--r3); overflow: hidden;
+  margin: 6px 0 var(--r2); overflow: hidden;
   box-shadow: inset 0 0 0 1px var(--linie);
 }
 .balken i {
@@ -831,7 +841,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
       <!-- Kurze Beschriftung, weil am Handy neben Suchfeld und Zufall kaum
            Platz ist; der volle Name steht im aria-label. -->
       <button class="knopf" id="ideeNeu" aria-label="Eigene Idee erfassen"
-              title="Eigene Idee erfassen">+ Idee</button>
+              title="Eigene Idee erfassen">+</button>
     </div>
 
     <!-- Umfang der Sammlung. Steht offen unter der Suche, weil er jede Zahl
@@ -1044,9 +1054,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   <section id="ansichtVorbereiten" hidden>
     <div class="vor-kopf">
       <h2>Für nächste Woche vorbereiten</h2>
-      <p>Bausteine, die man nicht spontan machen kann – die sich aber lohnen,
-         wenn man eine Woche vorher daran denkt. Was zu besorgen ist und wann
-         du anfangen solltest, steht gleich auf der Karte.</p>
+      <p>Was sich nicht spontan machen lässt, aber lohnt, wenn du eine Woche vorher anfängst.</p>
     </div>
     <div id="vorInhalt"></div>
   </section>
@@ -1532,11 +1540,12 @@ function zeichneHeute() {
     passend++;
     if (ohneGruppenangabe(ALLE[i])) offen++;
   }
+  // Ohne Zahl bleibt die Zeile leer (siehe .heute .hinweis:empty). Mit Zahl
+  // steht dort, was sie bewirkt hat - und dass nichts still verschwindet.
   $("heuteHinweis").textContent = heuteAnzahl
     ? passend + " Bausteine passen für " + anzahlSatz(heuteAnzahl) + " – davon " + offen +
-      " ohne Angabe zur Gruppengröße. Die bleiben dabei, statt still zu verschwinden."
-    : "Noch nichts gewählt: alle " + passend + " Bausteine sind zu sehen. " +
-      "Sag die heutige Anzahl, dann fallen zu große Spiele weg.";
+      " ohne Angabe zur Gruppengröße."
+    : "";
 }
 
 function schuetze(text) {
@@ -2261,8 +2270,8 @@ function zeichneSammlung(f) {
   // Der Hinweis sagt, was in der zweiten Reihe liegt – nichts Schlechtes,
   // sondern Doppeltes, Überlanges, Übergroßes und Ideen fürs Netz.
   $("sammlungHinweis").textContent = nurKern
-    ? "Zweite Reihe ausgeblendet: Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz."
-    : "Mit zweiter Reihe: Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz.";
+    ? "Ausgeblendet: Doppeltes, sehr Langes, sehr Großes."
+    : "Alles ist zu sehen, auch Doppeltes und sehr Langes.";
 }
 
 function aktualisiere() {
@@ -4075,7 +4084,7 @@ function sichereIdeen() {
   if (!EIGENE_IDEEN.length) {
     zeigeIdeenDialog("Meine Ideen sichern",
       "<h2>Noch nichts zu sichern</h2><p class=\"anriss\">Es gibt noch keine eigene " +
-      "Idee. Mit „+ Idee“ oben neben der Suche legst du eine an.</p>");
+      "Idee. Mit dem Plus oben neben der Suche legst du eine an.</p>");
     return;
   }
   var text = JSON.stringify(ideenAlsDatei(), null, 2);
@@ -4262,7 +4271,7 @@ function zeichneIdeenStand() {
   var zeile = $("ideenStand");
   $("ideenSichern").disabled = anzahl === 0;
   if (!anzahl) {
-    zeile.textContent = "Noch keine eigenen Ideen. Mit „+ Idee“ oben legst du eine an.";
+    zeile.textContent = "Noch keine eigenen Ideen. Mit dem Plus oben neben der Suche legst du eine an.";
     return;
   }
   var wort = anzahl === 1 ? "1 eigene Idee" : anzahl + " eigene Ideen";
@@ -4514,9 +4523,9 @@ function zeichneVorbereiten() {
             '<div class="vor-meldung" id="vorMeldung" role="status"></div></div>';
     html += '<ul class="liste" id="vorMeineListe"></ul></div>';
   } else {
-    html += '<div class="vor-abschnitt"><p class="leer">Noch nichts vorgemerkt.<br>' +
-            "Tipp auf einen Baustein und dann auf „Für nächste Woche vormerken“ – " +
-            "hier steht er danach mit Einkaufszettel.</p></div>";
+    html += '<div class="vor-abschnitt"><p class="leer">Noch nichts vorgemerkt. ' +
+            "In einem Baustein „Für nächste Woche vormerken“ antippen – " +
+            "dann steht er hier mit Einkaufszettel.</p></div>";
   }
 
   /* ------ darunter: was sich lohnt, wenn man eine Woche vorher dran denkt ------ */
