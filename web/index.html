@@ -507,6 +507,13 @@ p.leer button {
   background: none; border: 0; color: var(--akzent); font-weight: 600;
   text-decoration: underline; padding: 11px 4px; min-height: 44px;
 }
+.leer-titel { margin: 0; font-weight: 700; color: var(--text); font-size: 1.05rem; }
+.leer-grund { margin: 6px 0 0; font-size: .9rem; }
+.leer-wege { display: flex; flex-direction: column; align-items: center; margin-top: var(--r2); }
+.leer-wege button {
+  background: none; border: 0; color: var(--akzent); font-weight: 600;
+  text-decoration: underline; padding: 11px 4px; min-height: 44px;
+}
 .mehr { margin: var(--r3) 0; display: flex; justify-content: center; }
 /* Knopfzeile unter einer Karte im Auswahl-Dialog */
 .kartenfuss {
@@ -2430,10 +2437,7 @@ function zeigeKacheln(behaelter, ebene, f) {
   }
 
   if (!eintraege.length) {
-    behaelter.innerHTML = '<p class="leer" style="grid-column:1/-1">' +
-      "Mit diesen Filtern bleibt nichts übrig.<br>" +
-      '<button type="button" id="leerReset">Filter zurücksetzen</button></p>';
-    $("leerReset").addEventListener("click", setzeFilterZurueck);
+    zeichneLeer(behaelter, f, true);
     return;
   }
   for (var i = 0; i < eintraege.length; i++) {
@@ -2525,26 +2529,88 @@ function zeigeListe(f) {
     (f.stufe && offene ? " · " + offene + " ohne Altersangabe" : "") +
     (f.teilnehmer && offeneGruppe ? " · " + offeneGruppe + " ohne Gruppenangabe" : "");
   $("zufallKnopf").disabled = gefiltert.length === 0;
+  // "0 Bausteine" samt Sortierfeld über dem Leer-Hinweis sagt nichts, was dort nicht schon steht.
+  $("listenkopf").hidden = gefiltert.length === 0;
   zeichneListe(f);
+}
+
+/**
+ * Leere Liste: sagt, woran es liegt, und bietet nur Wege an, die auch etwas
+ * finden (mit Zahl). Vorher stand dort "Nichts gefunden" und ein Knopf, der
+ * die Filter löschte - egal, ob Filter überhaupt gesetzt waren und ob das half.
+ * Jede Zeile lockert genau eine Einstellung; erst wenn keine hilft, bleibt
+ * der Tipp mit dem anderen Wort.
+ */
+function zeichneLeer(behaelter, f, alsKachelraster) {
+  f = f || filterWerte();
+  var suchPfad = {
+    bereich: pfad.bereich, umfang: pfad.umfang, kategorie: pfad.kategorie,
+    slot: pfad.slot, eigene: pfad.eigene,
+    unterkategorie: pfad.unterkategorie === "__alle__" ? "" : pfad.unterkategorie
+  };
+  function kopie(aendere) {
+    var g = {};
+    for (var k in f) g[k] = f[k];
+    aendere(g);
+    return g;
+  }
+  var wege = [];
+  function weg(text, g, p, tat) {
+    var n = sammle(g, p).length;
+    if (n) wege.push({ text: text + " (" + n + ")", tat: tat });
+  }
+  var hatPfad = !!(pfad.bereich || pfad.kategorie || pfad.slot || pfad.eigene);
+  if (hatPfad && f.suche) {
+    weg("Überall suchen", f, null, function () { pfad = leererPfad(); aktualisiere(); });
+  }
+  var filterZahl = aktiveFilter();
+  if (filterZahl) {
+    weg("Filter zurücksetzen", kopie(function (g) {
+      g.stufe = ""; g.dauer = 0; g.ort = ""; g.vorbereitung = ""; g.ohneMaterial = false;
+      g.mitAlter = false; g.platz = ""; g.hosensack = false; g.ohneKontakt = false;
+    }), suchPfad, setzeFilterZurueck);
+  }
+  if (heuteAnzahl) {
+    weg("Anzahl nicht beachten", kopie(function (g) { g.teilnehmer = 0; }), suchPfad,
+        function () { setzeAnzahl(0); });
+  }
+  if (nurKern) {
+    weg("Auch die zweite Reihe durchsuchen", kopie(function (g) { g.nurKern = false; }), suchPfad,
+        function () { setzeSammlung(false); });
+  }
+
+  var grund = [];
+  if (f.suche) grund.push("„" + $("suche").value.trim() + "“");
+  if (filterZahl) grund.push(filterZahl === 1 ? "1 Filter" : filterZahl + " Filter");
+  if (heuteAnzahl) grund.push(anzahlText(heuteAnzahl));
+  var html = (alsKachelraster ? '<div class="leer" style="grid-column:1/-1">' : '<li><div class="leer">') +
+             '<p class="leer-titel">Nichts gefunden</p>';
+  if (grund.length) html += '<p class="leer-grund">Gesucht mit: ' + schuetze(grund.join(" · ")) + "</p>";
+  if (wege.length) {
+    html += '<div class="leer-wege">';
+    for (var i = 0; i < wege.length; i++) {
+      html += '<button type="button" data-weg="' + i + '">' + schuetze(wege[i].text) + "</button>";
+    }
+    html += "</div>";
+  } else {
+    html += '<p class="leer-grund">Versuch ein kürzeres oder anderes Wort. ' +
+            "Gesucht wird in Titel, Stichworten und Beschreibung.</p>";
+  }
+  html += alsKachelraster ? "</div>" : "</div></li>";
+  behaelter.innerHTML = html;
+  var knoepfe = behaelter.querySelectorAll("button[data-weg]");
+  for (var j = 0; j < knoepfe.length; j++) {
+    knoepfe[j].addEventListener("click", function () {
+      wege[parseInt(this.getAttribute("data-weg"), 10)].tat();
+    });
+  }
 }
 
 function zeichneListe(f) {
   var behaelter = $("liste");
   behaelter.innerHTML = "";
   if (!gefiltert.length) {
-    var text = '<li><p class="leer">Nichts gefunden.<br>';
-    if (f && f.suche && (pfad.bereich || pfad.kategorie || pfad.slot)) {
-      text += '<button type="button" id="ueberallSuchen">Überall suchen</button> · ';
-    }
-    text += '<button type="button" id="leerReset2">Filter zurücksetzen</button></p></li>';
-    behaelter.innerHTML = text;
-    if ($("ueberallSuchen")) {
-      $("ueberallSuchen").addEventListener("click", function () {
-        pfad = leererPfad();
-        aktualisiere();
-      });
-    }
-    $("leerReset2").addEventListener("click", setzeFilterZurueck);
+    zeichneLeer(behaelter, f);
     $("mehrZeile").hidden = true;
     return;
   }

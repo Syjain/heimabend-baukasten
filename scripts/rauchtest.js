@@ -1150,6 +1150,92 @@
   zeichnePlan();
   zuruecksetzen();
 
+  // --- Handy-Nachtschicht: Leerzustand, Detailreihenfolge, Karten, Tippflächen ---
+  (function () {
+    var suche = document.getElementById("suche");
+    var nurZweite = null;
+    for (var i = 0; i < ALLE.length && !nurZweite; i++) {
+      var kand = ALLE[i];
+      if (kand.kern !== false || kand.titel.length < 8) continue;
+      var klein = vereinfache(kand.titel);
+      var woanders = ALLE.some(function (o) {
+        return o !== kand && o.kern !== false &&
+               vereinfache(o.titel + " " + o.kurz + " " + (o.beschreibung || "")).indexOf(klein) !== -1;
+      });
+      if (!woanders) nurZweite = kand;
+    }
+    pruefe("Testdaten: ein Baustein, den nur die zweite Reihe kennt", !!nurZweite);
+    if (nurZweite) {
+      setzeSammlung(true);
+      suche.value = nurZweite.titel;
+      pfad = leererPfad();
+      aktualisiere();
+      var leer = document.getElementById("liste").textContent;
+      pruefe("Leerzustand nennt, womit gesucht wurde", leer.indexOf("Gesucht mit") > -1 &&
+             leer.indexOf(nurZweite.titel) > -1);
+      var weg = document.querySelector("#liste button[data-weg]");
+      pruefe("Leerzustand bietet die zweite Reihe an, mit Zahl",
+             !!weg && /zweite Reihe.*\(\d+\)/.test(weg.textContent), weg && weg.textContent);
+      pruefe("Leerzustand zeigt kein „0 Bausteine“ mit Sortierfeld darüber",
+             document.getElementById("listenkopf").hidden);
+      if (weg) weg.click();
+      pruefe("der angebotene Weg findet den Baustein wirklich",
+             nurKern === false && gefiltert.length >= 1);
+    }
+    setzeSammlung(true);
+    suche.value = "xyzqqxyzqq";
+    aktualisiere();
+    pruefe("ohne jeden Treffer: kein Knopf, der nichts ändert, sondern ein Tipp",
+           !document.querySelector("#liste button[data-weg]") &&
+           document.getElementById("liste").textContent.indexOf("anderes Wort") > -1);
+    zuruecksetzen();
+    aktualisiere();
+
+    // Detailansicht: Regeln vor dem Datenblatt
+    var mitText = ALLE.filter(function (e) { return e.beschreibung && e.beschreibung.length > 200; })[0];
+    zeigeDetail(mitText);
+    var kinder = Array.prototype.slice.call(document.getElementById("detailInhalt").children);
+    var iText = -1, iDaten = -1;
+    kinder.forEach(function (k, n) {
+      if (iText < 0 && k.classList.contains("text")) iText = n;
+      if (iDaten < 0 && k.classList.contains("datenblatt")) iDaten = n;
+    });
+    pruefe("Detailansicht: die Beschreibung steht vor dem Datenblatt",
+           iText > -1 && iDaten > -1 && iText < iDaten, iText + " < " + iDaten);
+    schliesseUeberlagerung(document.getElementById("detail"));
+
+    // Karten: nur Aussagekräftiges
+    var normal = ALLE.filter(function (e) {
+      return e.ort === "beides" && ohneAltersangabe(e);
+    })[0];
+    document.getElementById("fStufe").value = "";
+    var ohneStufe = karteHtml(normal, 0, {});
+    pruefe("Karte ohne Altersstufen-Filter: weder „Alter offen“ noch „drinnen & draußen“",
+           ohneStufe.indexOf("Alter offen") === -1 && ohneStufe.indexOf("drinnen &amp; draußen") === -1);
+    document.getElementById("fStufe").value = "Pfadfinder";
+    pruefe("Karte mit Altersstufen-Filter: „Alter offen“ steht wieder da",
+           karteHtml(normal, 0, {}).indexOf("Alter offen") > -1);
+    document.getElementById("fStufe").value = "";
+    var draussen = ALLE.filter(function (e) { return e.ort === "draussen"; })[0];
+    pruefe("Karte: „draußen“ bleibt, weil es eine Einschränkung ist",
+           karteHtml(draussen, 0, {}).indexOf("draußen") > -1);
+
+    // Tippflächen
+    zeigeAnsicht("bausteine");
+    var klein44 = true, wer = [];
+    ["heuteWeniger", "heuteMehr", "suche", "zufallKnopf", "ideeNeu", "reiterBausteine"].forEach(function (id) {
+      var r = document.getElementById(id).getBoundingClientRect();
+      if (r.height < 44 || (r.width < 44 && innerWidth >= 360)) { klein44 = false; wer.push(id); }
+    });
+    pruefe("Haupt-Bedienelemente sind mindestens 44 px groß", klein44, wer.join(","));
+    var mehr = document.getElementById("mehrFilter");
+    pruefe("„Mehr Optionen“ ist ein Block (nicht Flex wie „Weitere anzeigen“)",
+           getComputedStyle(mehr).display === "block");
+    pruefe("„Heute sind wir“ ohne Zahl sagt „? Kinder“, nicht „egal“",
+           anzahlText(0) === "? Kinder");
+  })();
+  zuruecksetzen();
+
   // --- Detailansicht ---
   zeigeDetail(ALLE[0]);
   pruefe("Detailansicht öffnet", !document.getElementById("detail").hidden);
