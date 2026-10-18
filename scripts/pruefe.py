@@ -603,6 +603,34 @@ def pruefe_webdatei(bericht, wurzel, elemente):
                            len(a), len(b), sum(1 for i in b if a.get(i) != b[i])))
 
 
+def pruefe_spracheweb(bericht, wurzel):
+    """web/sprache.js (falls vorhanden) muss dieselben Regeln enthalten wie data/sprache.json."""
+    js = wurzel / "web" / "sprache.js"
+    quelle = wurzel / "data" / "sprache.json"
+    if not js.exists() and not quelle.exists():
+        return
+    if js.exists() and not quelle.exists():
+        bericht.fehler("web/sprache.js gibt es, aber data/sprache.json fehlt.")
+        return
+    if quelle.exists() and not js.exists():
+        bericht.hinweis("web/sprache.js fehlt: Per Doppelklick auf index.html läuft die App dann "
+                        "ohne Sprachregeln (über einen Webserver geht fetch() auf data/sprache.json).")
+        return
+    text = js.read_text(encoding="utf-8")
+    anfang = text.find("window.SPRACHE = ")
+    if anfang < 0 or not text.rstrip().endswith(";"):
+        bericht.fehler("web/sprache.js hat nicht die Form 'window.SPRACHE = {...};'.")
+        return
+    try:
+        daten = json.loads(text[anfang + len("window.SPRACHE = "):].rstrip()[:-1])
+        original = build.lade_json(quelle)
+    except (json.JSONDecodeError, build.DatenFehler) as fehler:
+        bericht.fehler("web/sprache.js oder data/sprache.json nicht lesbar: {}".format(fehler))
+        return
+    if daten != original:
+        bericht.fehler("web/sprache.js und data/sprache.json sind verschieden – build.py neu laufen lassen.")
+
+
 # ---------------------------------------------------------------- 7. Build
 def pruefsumme(pfad):
     return hashlib.sha256(pfad.read_bytes()).hexdigest()
@@ -687,6 +715,7 @@ def main():
         pruefe_sprache(bericht, sprache, elemente)
         pruefe_elemente(bericht, wurzel, elemente, redaktion)
         pruefe_webdatei(bericht, wurzel, elemente)
+        pruefe_spracheweb(bericht, wurzel)
     if eigenes_repo and not args.schnell:
         pruefe_build(bericht, wurzel)
     bericht.ausgeben()

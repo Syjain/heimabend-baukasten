@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rauchtest-Rahmen</title>
+<!-- Ein-Klick-Weg für die beiden Tests, ohne Kopieren in die Konsole:
+     Im Repo-Ordner  python3 -m http.server 8000  starten und
+     http://localhost:8000/scripts/rauchtest-seite.html öffnen. Die Seite lädt die App
+     in ein Rahmenfenster, führt rauchtest.js und rauchtest-kanten.js darin aus und
+     schreibt das Ergebnis oben auf die Seite. (Per Doppelklick geht das nicht: der
+     Browser sperrt fetch() bei file://-Adressen.) Ein Browser-Programm ohne Fenster
+     (headless) kann dieselbe Seite öffnen; das ist hier nicht getestet. -->
+<style>
+  iframe { width: 420px; height: 900px; border: 1px solid #999; }
+  pre { white-space: pre-wrap; font: 12px/1.4 monospace; }
+</style>
+</head>
+<body>
+<pre id="ergebnis">läuft …</pre>
+<iframe id="app" src="../web/index.html"></iframe>
+<script>
+(function () {
+  var rahmen = document.getElementById("app");
+  var ausgabe = document.getElementById("ergebnis");
+  var tests = ["rauchtest.js", "rauchtest-kanten.js"];
+  rahmen.addEventListener("load", function () {
+    // Der Rahmen meldet "load", bevor die App fertig gezeichnet hat: kurz warten.
+    setTimeout(function () {
+      var teile = [];
+      function weiter(i) {
+        if (i >= tests.length) {
+          ausgabe.textContent = teile.join("\n\n") + "\n\nRAHMEN-FERTIG";
+          return;
+        }
+        fetch(tests[i]).then(function (r) { return r.text(); }).then(function (text) {
+          var w = rahmen.contentWindow;
+          if (typeof w.ALLE === "undefined") throw new Error("App im Rahmen nicht geladen");
+          teile.push("=== " + tests[i] + " ===\n" + w.eval(text));
+          weiter(i + 1);
+        }).catch(function (fehler) {
+          teile.push("=== " + tests[i] + " ===\nFEHLER  Test bricht ab: " + fehler);
+          weiter(i + 1);
+        });
+      }
+      weiter(0);
+    }, 1500);
+  });
+})();
+</script>
+</body>
+</html>
