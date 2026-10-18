@@ -103,6 +103,77 @@ PFLICHTFELDER = [
 ]
 
 
+# ------------------------------------------------------- Lesen mit klaren Fehlern
+class DatenFehler(Exception):
+    """Eine Datendatei ist kaputt oder hat die falsche Form (Meldung auf Deutsch)."""
+
+
+def lade_json(pfad):
+    """
+    Liest eine JSON-Datei. Statt eines Python-Tracebacks gibt es bei kaputtem
+    JSON eine Meldung mit Datei, Zeile und Spalte, die man ohne Vorwissen
+    versteht.
+    """
+    try:
+        with open(pfad, encoding="utf-8") as datei:
+            return json.load(datei)
+    except json.JSONDecodeError as fehler:
+        raise DatenFehler(
+            "{}: kein gültiges JSON – Zeile {}, Spalte {}: {}. "
+            "Meist fehlt ein Komma oder eine Klammer, oder es steht ein Komma "
+            "zu viel vor einer schließenden Klammer.".format(
+                pfad, fehler.lineno, fehler.colno, fehler.msg))
+    except UnicodeDecodeError as fehler:
+        raise DatenFehler("{}: die Datei ist nicht UTF-8-kodiert ({}).".format(pfad, fehler.reason))
+    except OSError as fehler:
+        raise DatenFehler("{}: kann nicht gelesen werden ({}).".format(pfad, fehler.strerror))
+
+
+# Form von data/redaktion.json: Schlüssel -> Felder, die jeder Eintrag braucht.
+# Fehlt eins, gäbe es sonst mitten im Build einen KeyError ohne Hinweis.
+REDAKTION_FORM = {
+    "gesperrt": ("id",),
+    "umbenannt": ("id", "titel"),
+    "korrekturen": ("id",),
+    "bereiche": ("id",),
+    "achsen": ("id", "felder"),
+    "keine_dublette": ("ids",),
+    "auch_dublette": ("ids",),
+    "zusammengelegt": ("haupt", "varianten"),
+    "kern": ("id", "kern"),
+}
+
+
+def formfehler_redaktion(redaktion):
+    """Gibt die Formfehler von data/redaktion.json als Liste deutscher Sätze zurück."""
+    if not isinstance(redaktion, dict):
+        return ["data/redaktion.json: oberste Ebene muss ein Objekt {...} sein."]
+    fehler = []
+    for schluessel, felder in REDAKTION_FORM.items():
+        if schluessel not in redaktion:
+            continue
+        liste = redaktion[schluessel]
+        if not isinstance(liste, list):
+            fehler.append("redaktion.json, '{}': muss eine Liste sein.".format(schluessel))
+            continue
+        for nr, eintrag in enumerate(liste, 1):
+            if not isinstance(eintrag, dict):
+                fehler.append("redaktion.json, '{}', Eintrag {}: muss ein Objekt sein.".format(schluessel, nr))
+                continue
+            for feld in felder:
+                if feld not in eintrag:
+                    wer = eintrag.get("id") or eintrag.get("haupt") or eintrag.get("ids") or "?"
+                    fehler.append("redaktion.json, '{}', Eintrag {} ({}): Feld '{}' fehlt.".format(
+                        schluessel, nr, wer, feld))
+    return fehler
+
+
+def pruefe_redaktion_form(redaktion):
+    fehler = formfehler_redaktion(redaktion)
+    if fehler:
+        raise DatenFehler("data/redaktion.json hat die falsche Form:\n  - " + "\n  - ".join(fehler))
+
+
 # ---------------------------------------------------------------- Hilfsmittel
 def entschaerfe(text):
     """Kleinbuchstaben ohne Umlaute/Akzente – Grundlage für ID und Dublettensuche."""
@@ -313,8 +384,7 @@ def slots_fuer(bereich, umfang, kategorie, dauer_min):
 
 def lade_eigene(vergeben):
     """Mappt data/eigene/heimabend-ideen.json auf das Element-Schema."""
-    with open(EIGENE, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(EIGENE)
     lizenz = "CC BY-SA 4.0"
     elemente = []
     for idee in daten["ideen"]:
@@ -372,8 +442,7 @@ def lade_rahmen(vergeben):
     if not RAHMEN.exists():
         print("  Hinweis: {} fehlt - Rahmen und Methoden fehlen.".format(RAHMEN.name))
         return []
-    with open(RAHMEN, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(RAHMEN)
     elemente = []
     for roh in daten.get("elemente", []):
         element = dict(roh)
@@ -408,8 +477,7 @@ def lade_meine_ideen(vergeben):
     """
     if not MEINE_IDEEN.exists():
         return []
-    with open(MEINE_IDEEN, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(MEINE_IDEEN)
     elemente = []
     for roh in daten.get("elemente", []):
         element = dict(roh)
@@ -519,8 +587,7 @@ def lade_probenbuch_redigiert(vergeben):
     dem Wissen aus dem Probenbuch, dem, was zum Ablegen gehört, und dem Vorschlag
     für den Heimabend.
     """
-    with open(PROBENBUCH_REDIGIERT, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(PROBENBUCH_REDIGIERT)
 
     elemente = []
     for probe in daten.get("proben", []):
@@ -577,8 +644,7 @@ def lade_probenbuch(vergeben):
     if not PROBENBUCH.exists():
         print("  ACHTUNG: {} fehlt – Proben werden übersprungen.".format(PROBENBUCH))
         return []
-    with open(PROBENBUCH, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(PROBENBUCH)
 
     # Die Warnungen aus meta.achtung_veraltet den betroffenen Proben zuordnen,
     # damit niemand versehentlich Erste Hilfe von 2003 vermittelt.
@@ -672,8 +738,7 @@ def inspirator_ort(orte):
 
 def lade_inspirator(vergeben):
     """Mappt data/quellen/inspirator/inspirator-ideen.json auf das Element-Schema."""
-    with open(INSPIRATOR, encoding="utf-8") as datei:
-        daten = json.load(datei)
+    daten = lade_json(INSPIRATOR)
     elemente = []
     for idee in daten["ideen"]:
         arten = idee.get("arten") or []
@@ -731,8 +796,10 @@ def lade_import(pfad):
     if not pfad.exists():
         print("  ACHTUNG: {} fehlt – bitte das zugehörige Import-Skript laufen lassen.".format(pfad))
         return []
-    with open(pfad, encoding="utf-8") as datei:
-        return json.load(datei)["elemente"]
+    daten = lade_json(pfad)
+    if not isinstance(daten, dict) or not isinstance(daten.get("elemente"), list):
+        raise DatenFehler("{}: erwartet wird ein Objekt mit der Liste \"elemente\".".format(pfad))
+    return daten["elemente"]
 
 
 # ------------------------------------------------------------ Redaktion
@@ -741,8 +808,9 @@ def lade_redaktion():
     if not REDAKTION.exists():
         print("  Hinweis: {} fehlt – keine redaktionellen Regeln.".format(REDAKTION))
         return {}
-    with open(REDAKTION, encoding="utf-8") as datei:
-        return json.load(datei)
+    redaktion = lade_json(REDAKTION)
+    pruefe_redaktion_form(redaktion)
+    return redaktion
 
 
 def wende_redaktion_an(elemente, redaktion):
@@ -1183,8 +1251,7 @@ def lade_spielewiki_infobox():
     """
     if not SPIELEWIKI_ROH.exists():
         return {}
-    with open(SPIELEWIKI_ROH, encoding="utf-8") as datei:
-        seiten = json.load(datei)
+    seiten = lade_json(SPIELEWIKI_ROH)
     infobox = {}
     for eintrag in seiten.values():
         try:
@@ -1972,7 +2039,21 @@ def statistik(elemente, kern_bericht=None, zusammengelegt=0):
               .format(kern_bericht.get("von_hand", 0)))
 
 
-def main():
+def main(argv=None):
+    """
+    Optional: --ausgabe VERZEICHNIS schreibt elemente.json und elemente.js dorthin
+    statt nach data/ und web/ (für scripts/pruefe.py --build und Probeläufe).
+    """
+    global AUSGABE_JSON, AUSGABE_JS
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if "--ausgabe" in argv:
+        nr = argv.index("--ausgabe")
+        if nr + 1 >= len(argv):
+            print("--ausgabe braucht ein Verzeichnis.")
+            return 2
+        ziel = Path(argv[nr + 1])
+        AUSGABE_JSON = ziel / "elemente.json"
+        AUSGABE_JS = ziel / "elemente.js"
     vergeben = set()
     print("Lese Quellen ...")
     elemente = []
@@ -2064,8 +2145,11 @@ def main():
     if infobox:
         print("\nSpielewiki-Infobox: Ort/Dauer von {} Seiten gelesen".format(len(infobox)))
     else:
-        print("\nHinweis: {} fehlt – 'platz' und 'hosensackspiel' nur aus dem Text."
+        print("\nACHTUNG: {} fehlt – 'platz' und 'hosensackspiel' kommen nur aus dem Text."
               .format(SPIELEWIKI_ROH))
+        print("  Das Ergebnis weicht dann von einem Lauf mit Rohdaten ab (Stand 18.10.2026:"
+              " rund 440 Plätze und 110 Hosensackspiele). Für die Ausgabe in data/ und web/"
+              " vorher 'python3 scripts/import_spielewiki.py' laufen lassen.")
 
     # Bereich und Umfang festlegen. Die Quellen, die ihren Bereich kennen,
     # haben ihn schon in "_bereich" hinterlegt; für den Rest entscheidet
@@ -2198,5 +2282,14 @@ def main():
     return 0
 
 
+def starte():
+    try:
+        return main()
+    except DatenFehler as fehler:
+        print("\nABBRUCH: {}".format(fehler))
+        print("Es wurde nichts geschrieben.")
+        return 1
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(starte())

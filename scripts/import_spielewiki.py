@@ -683,8 +683,13 @@ def main():
             print("Bitte einmal ohne --offline laufen lassen.")
             return 1
         print("Lese Rohdaten aus {}".format(RAW))
-        with open(ROH_SEITEN, encoding="utf-8") as datei:
-            seiten = json.load(datei)
+        try:
+            with open(ROH_SEITEN, encoding="utf-8") as datei:
+                seiten = json.load(datei)
+        except json.JSONDecodeError as fehler:
+            print("{}: kein gültiges JSON (Zeile {}, Spalte {}). Datei löschen und "
+                  "ohne --offline neu holen.".format(ROH_SEITEN, fehler.lineno, fehler.colno))
+            return 1
     else:
         RAW.mkdir(parents=True, exist_ok=True)
         print("Liste die Kategorie {} ...".format(KATEGORIE))

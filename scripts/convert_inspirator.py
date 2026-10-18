@@ -35,8 +35,12 @@ STATUS = {"1": "Entwurf", "2": "Veröffentlicht", "3": "Archiviert", "4": "Revie
 
 
 def load_fixture(path: Path):
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except json.JSONDecodeError as fehler:
+        raise SystemExit("{}: kein gültiges JSON – Zeile {}, Spalte {}: {}".format(
+            path, fehler.lineno, fehler.colno, fehler.msg))
 
 
 def id_to_name(fixture):

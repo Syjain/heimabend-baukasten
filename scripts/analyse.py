@@ -460,7 +460,11 @@ def main() -> None:
     pfad = Path(args.daten)
     if not pfad.exists():
         sys.exit(f"Nicht gefunden: {pfad} – bitte im Repo-Ordner ausführen oder --daten setzen.")
-    roh = json.loads(pfad.read_text(encoding="utf-8"))
+    try:
+        roh = json.loads(pfad.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as fehler:
+        sys.exit(f"{pfad}: kein gültiges JSON – Zeile {fehler.lineno}, Spalte {fehler.colno}: "
+                 f"{fehler.msg}. Bitte 'python3 scripts/build.py' neu laufen lassen.")
     alle: list[dict] = roh["elemente"]
     if args.nur_kern:
         vorher = len(alle)
@@ -472,7 +476,11 @@ def main() -> None:
     red = {}
     rp = Path(args.redaktion)
     if rp.exists():
-        red = json.loads(rp.read_text(encoding="utf-8"))
+        try:
+            red = json.loads(rp.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as fehler:
+            sys.exit(f"{rp}: kein gültiges JSON – Zeile {fehler.lineno}, Spalte {fehler.colno}: "
+                     f"{fehler.msg}. Meist fehlt ein Komma oder eine Klammer.")
     keine_dublette = {frozenset(x["ids"]) for x in red.get("keine_dublette", [])}
     auch_dublette = [frozenset(x["ids"]) for x in red.get("auch_dublette", [])]
 
