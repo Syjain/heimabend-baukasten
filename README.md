@@ -49,6 +49,10 @@ Neu bauen:
     python3 scripts/import_spielewiki.py          # holt die Spiele aus dem Spielewiki
     python3 scripts/build.py                      # führt alles zu data/elemente.json zusammen
 
+Prüfen, ob Daten und Skripte in Ordnung sind (Schema, kaputte Verweise, Links, Idempotenz des Builds; endet mit „OK“ oder einer Problemliste):
+
+    python3 scripts/pruefe.py                     # alles, ca. 10 Sekunden; --schnell lässt die Probeläufe weg
+
 Die beiden Import-Skripte kennen `--offline` und arbeiten dann nur mit den bereits
 geholten Rohdaten.
 

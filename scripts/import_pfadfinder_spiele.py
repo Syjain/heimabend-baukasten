@@ -338,8 +338,13 @@ def main():
             print("Bitte einmal ohne --offline laufen lassen.")
             return 1
         print("Lese Rohdaten aus {}".format(ROHDATEN))
-        with open(ROHDATEN, encoding="utf-8") as datei:
-            posts = json.load(datei)
+        try:
+            with open(ROHDATEN, encoding="utf-8") as datei:
+                posts = json.load(datei)
+        except json.JSONDecodeError as fehler:
+            print("{}: kein gültiges JSON (Zeile {}, Spalte {}). Datei löschen und "
+                  "ohne --offline neu holen.".format(ROHDATEN, fehler.lineno, fehler.colno))
+            return 1
         kategorien = {}
     else:
         print("Rufe pfadfinder-spiele.de ab ...")
