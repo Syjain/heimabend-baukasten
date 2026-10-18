@@ -117,7 +117,12 @@
     {
       "id": "sw-liegestutz-kampf",
       "hinweis": "Die Quelle nimmt kleinere Blessuren ausdrücklich in Kauf. Nur mit klaren Regeln und Aufsicht, und niemanden dazu drängen.",
-      "grund": "Verletzungen werden als Normalfall beschrieben."
+      "grund": "Verletzungen werden als Normalfall beschrieben. Außerdem: Dauer laut Infobox „weniger als eine Minute“; Ort „überall (am Boden)“ ist nicht nur drinnen.",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10,
+        "ort": "beides"
+      }
     },
     {
       "id": "sw-achterbahn",
@@ -138,9 +143,13 @@
     {
       "id": "sw-ameisenkonig",
       "hinweis": "Im Spiel huldigen Mitspielende einem 'König' durch Niederknien und bekommen bei Ungehorsam Strafen und Arbeitsdienste. Wenn ihr es spielt, dann kurz, freiwillig und mit wechselnder Rolle - sonst entsteht eine echte Rangordnung in der Gruppe.",
-      "grund": "Unterwerfungsritual über mehrere Tage angelegt. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein.",
+      "grund": "Unterwerfungsritual über mehrere Tage angelegt. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle ein Auswahlkriterium (Karten oder Zettel) verlangt. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt.",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Spielkarten oder beschriftete Zettel zum Losen der Rollen"
+        ],
+        "gruppe_max": null
       }
     },
     {
@@ -300,7 +309,10 @@
     {
       "id": "sw-topfschlagen",
       "hinweis": "Die Regel ist auf ein Geburtstagskind und seine Geschenke geschrieben. Statt Geburtstag: versteckt eine gemeinsame Belohnung für die ganze Gruppe, dann passt es in jeden Heimabend.",
-      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester). Außerdem: Die Infobox sagt „1“ (ein aktiver Spieler pro Runde); das Publikum ist aber Teil des Spiels. gruppe_max 1 schloss das Spiel für Gruppen aus.",
+      "felder": {
+        "gruppe_max": null
+      }
     },
     {
       "id": "insp-agentenspiel",
@@ -404,9 +416,13 @@
       "id": "ps-mr-x",
       "felder": {
         "umfang": "ganzer_abend",
-        "tipps": "Spielgebiet vorher festlegen und auf der Karte einzeichnen. Eine Person der Spielleitung bleibt als Anlaufstelle erreichbar, jedes Team braucht eine Uhr. Rückkehrzeit vereinbaren, falls Mr. X nicht gefunden wird. Kleine Teams sollten nicht allein im Dunkeln unterwegs sein."
+        "tipps": "Spielgebiet vorher festlegen und auf der Karte einzeichnen. Eine Person der Spielleitung bleibt als Anlaufstelle erreichbar, jedes Team braucht eine Uhr. Rückkehrzeit vereinbaren, falls Mr. X nicht gefunden wird. Kleine Teams sollten nicht allein im Dunkeln unterwegs sein.",
+        "material": [
+          "Karte des Spielgebiets mit Raster",
+          "Walkie-Talkies oder Handys"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; die Quelle nennt Rasterkarte und Walkie-Talkies (Handys als Variante)."
     },
     {
       "id": "sw-nein-spiel",
@@ -579,9 +595,13 @@
     {
       "id": "insp-rauch-und-geraeuschlos-feuer-machen",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Holzbearbeitungswerkzeuge",
+          "Streichhölzer"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Material („Holzbearbeitungswerkzeige“, „Steichhölzer“)."
     },
     {
       "id": "insp-rucksack-richtig-packen",
@@ -621,9 +641,14 @@
     {
       "id": "insp-welche-pfadfinder-regel-ist-unwichtig",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Blatt Papier",
+          "Stift",
+          "ausgedruckte Pfadfinder-Regeln"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material war das letzte Wort abgeschnitten („Ausgedruckten Pfadfinderregel …“; Zeichenlimit der Quelldatei)."
     },
     {
       "id": "insp-fensterbank-kraeuterbeet",
@@ -915,9 +940,15 @@
     {
       "id": "insp-eigenes-hoerspiel-aufnehmen",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Aufnahmegerät (Handy oder Laptop)",
+          "eventuell Hintergrundgeräusche",
+          "Eine Geschichte eurer Wahl",
+          "passende Software"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material waren zwei Einträge abgeschnitten („Handy oder Lap …“, „Hintergrundgeräusch …“; Zeichenlimit der Quelldatei)."
     },
     {
       "id": "insp-gruppenstunde-als-talkshow",
@@ -936,9 +967,17 @@
     {
       "id": "insp-traumkapsel",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Papier",
+          "Stifte",
+          "Glasflasche oder anderes Gefäß",
+          "Kleber",
+          "Sand",
+          "Wachs zum Versiegeln"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material war das Wort „Gefäß“ abgeschnitten („Gefä …“; Zeichenlimit der Quelldatei)."
     },
     {
       "id": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
@@ -1013,9 +1052,13 @@
     {
       "id": "ps-sockenkampf",
       "felder": {
-        "tipps": "Vor dem Start die Regeln deutlich sagen und ein Stoppsignal vereinbaren. Weichen Boden (Turnmatten oder weiche Wiese) wählen, alle gehen nur auf den Knien. Kein Treten, Schlagen, Beißen oder Kratzen. Spielende mit Schmuck oder Brille abnehmen lassen."
+        "tipps": "Vor dem Start die Regeln deutlich sagen und ein Stoppsignal vereinbaren. Weichen Boden (Turnmatten oder weiche Wiese) wählen, alle gehen nur auf den Knien. Kein Treten, Schlagen, Beißen oder Kratzen. Spielende mit Schmuck oder Brille abnehmen lassen.",
+        "kurz": "Ein wildes Raufspiel auf weichem Boden: Alle versuchen, den anderen die Socken von den Füßen zu ziehen und die eigenen zu verteidigen. Es braucht klare Regeln, hilft aber gut gegen überschüssige Energie.",
+        "material": [
+          "Turnmatten oder weiche Wiese"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Kurzbeschreibung endete mitten im Satz mit dem Wort „Vorbereitung“ (Überschrift der Quelle); Material war der Platzhalter „Diverses“."
     },
     {
       "id": "ps-kontakt-3-2-1",
@@ -1069,9 +1112,12 @@
     {
       "id": "ps-tuchfangen",
       "felder": {
-        "tipps": "Die Zahlen so verteilen, dass sich gleich starke Kinder gegenüberstehen. Als Tuch ein Halstuch nehmen und vor dem Start Linien oder Markierungen festlegen. Nicht am Tuch zerren."
+        "tipps": "Die Zahlen so verteilen, dass sich gleich starke Kinder gegenüberstehen. Als Tuch ein Halstuch nehmen und vor dem Start Linien oder Markierungen festlegen. Nicht am Tuch zerren.",
+        "material": [
+          "Tuch"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; gebraucht wird ein Tuch."
     },
     {
       "id": "ps-versteck-fangen",
@@ -1083,9 +1129,13 @@
     {
       "id": "ps-vogeleltern",
       "felder": {
-        "tipps": "Das Spielfeld mit festen Grenzen abstecken. Futter, das nicht wiedergefunden wird, soll biologisch abbaubar sein. Am Ende alle Gegenstände einsammeln lassen. Füchse sollten die Gruppenleitung oder ältere Spielende sein, die behutsam spielen."
+        "tipps": "Das Spielfeld mit festen Grenzen abstecken. Futter, das nicht wiedergefunden wird, soll biologisch abbaubar sein. Am Ende alle Gegenstände einsammeln lassen. Füchse sollten die Gruppenleitung oder ältere Spielende sein, die behutsam spielen.",
+        "material": [
+          "Bälle als Küken (5 je Paar)",
+          "etwa 70 Gegenstände als Futter, möglichst biologisch abbaubar"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; die Quelle nennt Bälle als Küken und etwa 70 Gegenstände als Futter."
     },
     {
       "id": "ps-wald-paare",
@@ -1132,9 +1182,10 @@
     {
       "id": "sw-amobenwettlauf",
       "felder": {
-        "tipps": "Auf ebenem Boden spielen und Hindernisse niedrig halten. Wer stürzt, lässt los, damit niemand mitgerissen wird. Die Gruppen sollten etwa gleich groß sein."
+        "tipps": "Auf ebenem Boden spielen und Hindernisse niedrig halten. Wer stürzt, lässt los, damit niemand mitgerissen wird. Die Gruppen sollten etwa gleich groß sein.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle verlangt mindestens zwei Amöben zu je 3-6 Personen, aber keine Obergrenze. gruppe_max 6 war ein Fehler des Importes."
     },
     {
       "id": "sw-anna",
@@ -1167,9 +1218,11 @@
     {
       "id": "sw-baumball",
       "felder": {
-        "tipps": "Einen weichen Ball verwenden und den Platz frei von Wurzeln und Löchern halten. Wer den Ball abwehrt, hält ihn nicht fest, sondern schießt ihn wieder weg; diese Regel vor dem Start erklären."
+        "tipps": "Einen weichen Ball verwenden und den Platz frei von Wurzeln und Löchern halten. Wer den Ball abwehrt, hält ihn nicht fest, sondern schießt ihn wieder weg; diese Regel vor dem Start erklären.",
+        "gruppe_min": 5,
+        "gruppe_max": 20
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle nennt „etwa 5-20 Mitspieler“; die Felder standen auf 10 bis 10."
     },
     {
       "id": "sw-bierbank-balance",
@@ -1181,9 +1234,10 @@
     {
       "id": "sw-blinder-pirat",
       "felder": {
-        "tipps": "Ruhe im Raum vorher vereinbaren. Wer als Pirat die Augen schließt, braucht im Zweifel eine Augenbinde, damit nicht geschummelt wird. Der Raum sollte frei von Stolperfallen sein."
+        "tipps": "Ruhe im Raum vorher vereinbaren. Wer als Pirat die Augen schließt, braucht im Zweifel eine Augenbinde, damit nicht geschummelt wird. Der Raum sollte frei von Stolperfallen sein.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle sieht einen Piraten und „die übrigen Spieler“ vor; gruppe_max 2 hielt das Spiel fälschlich für ein Zweier-Spiel."
     },
     {
       "id": "sw-blindes-quadrat",
@@ -1223,9 +1277,14 @@
     {
       "id": "sw-bruchenball",
       "felder": {
-        "tipps": "Vor dem Start eindeutig festlegen, welche Gewalt erlaubt ist, und konsequent darauf achten. Der Ball ist sehr schwer; für Gruppen mit jüngeren Kindern einen leichteren Ball nehmen."
+        "tipps": "Vor dem Start eindeutig festlegen, welche Gewalt erlaubt ist, und konsequent darauf achten. Der Ball ist sehr schwer; für Gruppen mit jüngeren Kindern einen leichteren Ball nehmen.",
+        "gruppe_max": null,
+        "material": [
+          "großer, schwerer „Ball“ (traditionell ein mit Tannenzapfen gefüllter Leinensack, mindestens 20 kg)",
+          "Spielfeldmarkierungen"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt. Außerdem: Das Material war an einem Komma in drei Teile zerrissen („großer“, „schwerer Ball“ und „Feldmarkierungen“)."
     },
     {
       "id": "sw-burgherr",
@@ -1272,9 +1331,10 @@
     {
       "id": "sw-das-habe-ich-noch-nie-gemacht",
       "felder": {
-        "tipps": "Die Aussagen so wählen, dass niemand bloßgestellt wird; die Spielleitung legt vorab fest, welche Bereiche tabu sind (zum Beispiel Familie, Geld). Im Stuhlkreis einen Stuhl weniger als Mitspielende bereitstellen."
+        "tipps": "Die Aussagen so wählen, dass niemand bloßgestellt wird; die Spielleitung legt vorab fest, welche Bereiche tabu sind (zum Beispiel Familie, Geld). Im Stuhlkreis einen Stuhl weniger als Mitspielende bereitstellen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
     },
     {
       "id": "sw-das-schiff-geht-unter",
@@ -1314,9 +1374,10 @@
     {
       "id": "sw-dornroschen",
       "felder": {
-        "tipps": "Die Rollen vor dem Singen verteilen und kurz proben. Wer nicht vorspielen will, übernimmt das Volk. Das Lied gemeinsam einmal langsam durchsingen."
+        "tipps": "Die Rollen vor dem Singen verteilen und kurz proben. Wer nicht vorspielen will, übernimmt das Volk. Das Lied gemeinsam einmal langsam durchsingen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „6 Personen oder mehr“; der Import hat 6 bis 6 daraus gemacht."
     },
     {
       "id": "sw-dosenschiessen",
@@ -1335,9 +1396,12 @@
     {
       "id": "sw-drangelei",
       "felder": {
-        "tipps": "Fläche mit Kreide oder Klebeband markieren und festlegen, ob Heben erlaubt ist. Auf Zurufe achten: Wer sich unwohl fühlt, sagt „Stopp“. Mit kleinen Teams anfangen, damit sich niemand verletzt."
+        "tipps": "Fläche mit Kreide oder Klebeband markieren und festlegen, ob Heben erlaubt ist. Auf Zurufe achten: Wer sich unwohl fühlt, sagt „Stopp“. Mit kleinen Teams anfangen, damit sich niemand verletzt.",
+        "material": [
+          "Kreide oder Klebeband zum Markieren der Fläche"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Das Material bestand aus „Kreide“ und dem Fragment „ähnliches“ (an einem Komma zerrissen)."
     },
     {
       "id": "sw-dreieck",
@@ -1398,9 +1462,10 @@
     {
       "id": "sw-forderband",
       "felder": {
-        "tipps": "Wer auf dem Band liegt, wird nur vorsichtig und langsam getragen; Kopf und Nacken werden mitgehalten. Die Spielleitung achtet am Ende des Bandes auf das sichere Absetzen. Wer nicht möchte, muss nicht."
+        "tipps": "Wer auf dem Band liegt, wird nur vorsichtig und langsam getragen; Kopf und Nacken werden mitgehalten. Die Spielleitung achtet am Ende des Bandes auf das sichere Absetzen. Wer nicht möchte, muss nicht.",
+        "ort": "beides"
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Ort laut Infobox „am Boden“; der Import hat „drinnen“ daraus gemacht."
     },
     {
       "id": "sw-fuchs-habicht-paarungszeit",
@@ -1412,9 +1477,10 @@
     {
       "id": "sw-fuchs-und-gans",
       "felder": {
-        "tipps": "Die Gänse halten sich an den Schultern, nicht an der Kleidung, und der Fuchs fasst die letzte Gans nur leicht an. Bei mehr als etwa 12 Kindern in zwei Gruppen spielen."
+        "tipps": "Die Gänse halten sich an den Schultern, nicht an der Kleidung, und der Fuchs fasst die letzte Gans nur leicht an. Bei mehr als etwa 12 Kindern in zwei Gruppen spielen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
     },
     {
       "id": "sw-geruchtekuche",
@@ -1573,9 +1639,10 @@
     {
       "id": "sw-knieboxen",
       "felder": {
-        "tipps": "Die erlaubten Angriffe vor dem Spiel besprechen: Abdrängen mit dem Oberkörper ja, Arme und harte Knie-Stöße nein. Auf weichem Boden spielen, kleine Runden spielen und bei zu rauem Spiel sofort unterbrechen."
+        "tipps": "Die erlaubten Angriffe vor dem Spiel besprechen: Abdrängen mit dem Oberkörper ja, Arme und harte Knie-Stöße nein. Auf weichem Boden spielen, kleine Runden spielen und bei zu rauem Spiel sofort unterbrechen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
     },
     {
       "id": "sw-koffer-packen-auf-dem-trampolin",
@@ -1636,9 +1703,10 @@
     {
       "id": "sw-mumie",
       "felder": {
-        "tipps": "Mund, Nase und Augen frei lassen. Die Mumie bleibt ruhig stehen. Das Papier soll nicht reißen; bei mehreren Teams gleich viel Klopapier verteilen."
+        "tipps": "Mund, Nase und Augen frei lassen. Die Mumie bleibt ruhig stehen. Das Papier soll nicht reißen; bei mehreren Teams gleich viel Klopapier verteilen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „beliebig viele 2er-Teams“; gruppe_max 2 schloss das Spiel für größere Gruppen aus."
     },
     {
       "id": "sw-mutprobe-und-vertrauen",
@@ -1699,9 +1767,10 @@
     {
       "id": "sw-rollende-munze",
       "felder": {
-        "tipps": "Für die Münze eine 2-Euro-Münze nehmen, die gut rollt. Die Plane gemeinsam anheben und senken; zu Anfang langsam üben."
+        "tipps": "Für die Münze eine 2-Euro-Münze nehmen, die gut rollt. Die Plane gemeinsam anheben und senken; zu Anfang langsam üben.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
     },
     {
       "id": "sw-rot-blau-tot",
@@ -1713,9 +1782,12 @@
     {
       "id": "sw-ruppel-tuppel",
       "felder": {
-        "tipps": "Statt eines angesengten Korkens lieber einen Schminkstift oder Hautstift nehmen, der sich leicht abwaschen lässt. Alle sprechen die Sätze zuerst langsam."
+        "tipps": "Statt eines angesengten Korkens lieber einen Schminkstift oder Hautstift nehmen, der sich leicht abwaschen lässt. Alle sprechen die Sätze zuerst langsam.",
+        "material": [
+          "Hautstift oder Schminkstift (traditionell ein angesengter Korken)"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle einen Stift zur Markierung verlangt."
     },
     {
       "id": "sw-sardinli",
@@ -1741,16 +1813,22 @@
     {
       "id": "sw-schwebende-stange",
       "felder": {
-        "tipps": "Die Stange nicht zu schwer wählen. Die Gruppe sollte nicht länger sein als die Stange."
+        "tipps": "Die Stange nicht zu schwer wählen. Die Gruppe sollte nicht länger sein als die Stange.",
+        "material": [
+          "lange, leichte, unbiegsame Stange (etwa 30 cm pro Mitspielenden)"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Das Material war an einem Komma in zwei Teile zerrissen („eine lange“ und „unbiegsame Stange“)."
     },
     {
       "id": "sw-sockenraub",
       "felder": {
-        "tipps": "Auf sauberem Boden ohne Hindernisse spielen. Außer der Regel, dass niemand verletzt wird, gibt es nur eine Regel; die Spielleitung legt vorab fest, was mit erbeuteten Socken geschieht. Es kann sein, dass Socken kaputtgehen – vorher darauf hinweisen."
+        "tipps": "Auf sauberem Boden ohne Hindernisse spielen. Außer der Regel, dass niemand verletzt wird, gibt es nur eine Regel; die Spielleitung legt vorab fest, was mit erbeuteten Socken geschieht. Es kann sein, dass Socken kaputtgehen – vorher darauf hinweisen.",
+        "material": [
+          "Socken (jede Person ein Paar)"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl jede Person laut Quelle ein Paar Socken benötigt."
     },
     {
       "id": "sw-stille-post",
@@ -1818,9 +1896,10 @@
     {
       "id": "sw-welle-entspannungsspiel",
       "felder": {
-        "tipps": "Die „Bank“ stützt sich fest mit den Händen ab und bewegt den Rücken nur leicht auf und ab. Wer gerade nicht möchte, setzt aus. Bei jüngeren Kindern nur kurz massieren lassen."
+        "tipps": "Die „Bank“ stützt sich fest mit den Händen ab und bewegt den Rücken nur leicht auf und ab. Wer gerade nicht möchte, setzt aus. Bei jüngeren Kindern nur kurz massieren lassen.",
+        "gruppe_max": null
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „etwa 6 pro Gruppe“, nicht genau 6 insgesamt."
     },
     {
       "id": "sw-wer-bin-ich",
@@ -1842,6 +1921,242 @@
         "tipps": "Zuerst langsam spielen, bis alle Wörter und Zeigerichtung sicher sind. Für Fehler ein gemeinsames „Fehler“-Zeichen verwenden und niemanden bloßstellen."
       },
       "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-glockenklang",
+      "felder": {
+        "kurz": "Mit verbundenen Augen folgt die Gruppe dem Klang einer Glocke, die die Spielleitung aus 30 bis 200 Metern Entfernung im Abstand weniger Sekunden läutet.",
+        "tipps": "Bei extremem Gelände oder unsicheren Teilnehmenden Beobachter einsetzen, die bei Gefahrenstellen behutsam eingreifen. Bei Ästen in Augenhöhe unbedingt auf den Schutz der Augen achten. Das Spiel möglichst still durchführen.",
+        "material": [
+          "Augenbinden oder Schlauchschals",
+          "Glocke oder Zimbel"
+        ]
+      },
+      "grund": "Kurzbeschreibung bestand nur aus den Überschriften der Quelle (Schwierigkeitsgrad, Material), das Feld Tipps nur aus dem Wort „Anmerkung:“, Material war der Platzhalter „Diverses“. Alles aus dem Quelltext übernommen und neu zusammengesetzt, nichts erfunden."
+    },
+    {
+      "id": "ps-klopapier-namensspiel",
+      "felder": {
+        "material": [
+          "Klopapier",
+          "Bonbons oder Smarties (Variante)"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; die Quelle nennt Klopapier und als Variante Bonbons."
+    },
+    {
+      "id": "ps-gruppennetz",
+      "felder": {
+        "material": [
+          "Wollknäuel"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; im Text wird nur ein Wollknäuel gebraucht."
+    },
+    {
+      "id": "ps-messer-gabel-loeffel",
+      "felder": {
+        "material": [
+          "Messer, Gabel und Löffel (je dreimal)"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; die Quelle verlangt je dreimal Messer, Gabel und Löffel."
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "felder": {
+        "material": [
+          "Stühle",
+          "Decke"
+        ]
+      },
+      "grund": "Eine „andere Pfadfindergruppe“ ist kein Material, sondern ein Rest aus dem Quelltext (die Mitspielenden werden in zwei Gruppen geteilt)."
+    },
+    {
+      "id": "sw-1-2-3",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle schreibt, es können mehrere Zweiergruppen gleichzeitig spielen; gruppe_max 2 hielt das Spiel fälschlich für ein reines Zweierspiel."
+    },
+    {
+      "id": "sw-52-einsammeln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle: ein Spiel für eine Person, bei mehreren treten alle hintereinander an. gruppe_max 1 verbarg es vor größeren Gruppen."
+    },
+    {
+      "id": "sw-klatschball",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-mord-im-dunkeln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-tier-vogel-fisch",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-kooperatives-armdrucken",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „beliebig viele 2er-Gruppen“; gruppe_max 2 schloss das Spiel für größere Gruppen aus."
+    },
+    {
+      "id": "sw-haschen-spiel",
+      "felder": {
+        "gruppe_min": 3
+      },
+      "grund": "Die Infobox nennt „minimal drei, lustig bis zu etwa 20“; die Untergrenze 3 fehlte."
+    },
+    {
+      "id": "sw-schere-stein-papier",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Infobox nennt „wenige Sekunden“ pro Runde; 10 bis 20 Minuten waren überzogen für einen Baustein."
+    },
+    {
+      "id": "sw-eine-minute",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Quelle nennt „etwas mehr als eine Minute“; 10 bis 20 Minuten waren zu lang."
+    },
+    {
+      "id": "sw-minutenweg",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Quelle nennt „eine Minute“; 10 bis 20 Minuten waren zu lang."
+    },
+    {
+      "id": "sw-flaschenhals",
+      "felder": {
+        "ort": "beides"
+      },
+      "grund": "Ort laut Infobox „überall, am Boden“; der Import hat „drinnen“ daraus gemacht."
+    },
+    {
+      "id": "sw-fotograf",
+      "felder": {
+        "ort": "beides"
+      },
+      "grund": "Ort laut Infobox „überall, etwas Freiraum“; der Import hat „drinnen“ daraus gemacht."
+    },
+    {
+      "id": "sw-seilspringen",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „jeweils einer“, die Quelle beschreibt aber auch Wettbewerb mit mehreren Seilen und eine Teamaufgabe mit mehreren Springenden."
+    },
+    {
+      "id": "sw-taler-taler-du-musst-wandern",
+      "felder": {
+        "material": [
+          "ein kleiner Gegenstand (Münze, Ring, Schlüssel oder Papierknäuel)"
+        ]
+      },
+      "grund": "Material war leer, obwohl der Materialabschnitt der Quelle einen kleinen Gegenstand (Taler) verlangt."
+    },
+    {
+      "id": "sw-zehnerln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle: wird normalerweise allein gespielt, „kann natürlich auch von mehreren Personen betrieben werden“. gruppe_max 1 war überzogen."
+    },
+    {
+      "id": "sw-wascheklammernspiel",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „zwei Gruppen“; der Import machte daraus 2 bis 2 Personen."
+    },
+    {
+      "id": "sw-zwei-funfecke",
+      "felder": {
+        "gruppe_max": 20
+      },
+      "grund": "Die Quelle: „zwischen sechs und etwa zwanzig Personen“; die Obergrenze fehlte."
+    },
+    {
+      "id": "sw-verstecken",
+      "felder": {
+        "kurz": "Grundvariante des Versteckspiels: Ein Kind zählt bis 20, die anderen verstecken sich und versuchen, sich unbemerkt zum Spielbaum zu schleichen und abzuschlagen."
+      },
+      "grund": "Die Kurzbeschreibung war ein Wikisatz („Dieser Artikel beschreibt … Kategorie Versteckspiel“) und sagte nichts über das Spiel."
+    },
+    {
+      "id": "sw-kette-durch-den-reifen",
+      "felder": {
+        "material": [
+          "Reifen (Hula-Hoop) oder ein zu einem Ring geknotetes Seil"
+        ]
+      },
+      "grund": "Das Material bestand aus „Reifen“ und dem Fragment „ähnliches“ (an einem Komma zerrissen)."
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "felder": {
+        "material": [
+          "Teures Mineralwasser",
+          "mittleres Mineralwasser",
+          "günstiges Mineralwasser",
+          "Wasser ohne Kohlensäure",
+          "Quellwasser",
+          "Wasser aus einer Plastikflasche"
+        ]
+      },
+      "grund": "Im Material war das letzte Wort abgeschnitten („Plastikflasc …“; Zeichenlimit der Quelldatei)."
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "felder": {
+        "material": [
+          "Zutaten für euer Essen"
+        ]
+      },
+      "grund": "Im Material stand nur „Die Zutaten für euer exquisit …“ (abgeschnitten); sinngemäß ergänzt."
+    },
+    {
+      "id": "insp-fahrrad-geschicklichkeits-parkour",
+      "felder": {
+        "material": [
+          "Fahrräder"
+        ]
+      },
+      "grund": "Tippfehler im Material („Fahrränder“)."
+    },
+    {
+      "id": "insp-korken-piratenschiff",
+      "felder": {
+        "material": [
+          "Bastelschere",
+          "Korken",
+          "Zahnstocher",
+          "Paketband",
+          "Buntstifte",
+          "Blatt Papier"
+        ]
+      },
+      "grund": "Tippfehler und abgeschnittenes Wort im Material („Packetband“, „Blatt Papie …“)."
     }
   ],
   "keine_dublette": [
@@ -2831,6 +3146,26 @@
       "id": "sw-schere-stein-papier-online",
       "kern": false,
       "grund": "Die Quelle beschreibt ausdrücklich die Fassung für den Online-Call und verlangt von allen eine eingeschaltete Kamera. Im Heim spielt man einfach Schere Stein Papier."
+    },
+    {
+      "id": "sw-ameisenkonig",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-kalaha",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
+    },
+    {
+      "id": "sw-mafia",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
     }
   ],
   "achsen": [
@@ -2840,6 +3175,182 @@
         "naehe": "hoch"
       },
       "grund": "Alle legen den Kopf auf den Bauch der nächsten Person. Die Textregel für 'naehe' greift hier nicht, weil kein Wort aus der Berührungsliste vorkommt - gefunden in der Stichprobe vom 08.09.2026."
+    },
+    {
+      "id": "sw-concentration",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-das-habe-ich-noch-nie-gemacht",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-funken",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-jack-sass-in-der-kuche-mit-tina",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-platztausch",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sesselkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-sofaspiel",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „im Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-flaschenhals",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „überall, am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-forderband",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-liegestutz-kampf",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-himmel-auf-erden",
+      "felder": {
+        "platz": "saal_wiese"
+      },
+      "grund": "Das Spiel läuft auf dem Spielplatz (Klettergerüst); „Zimmer“ passte nicht zu Ort „draußen“."
+    },
+    {
+      "id": "sw-huhnerspiel",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Die Quelle sagt, das Spiel brauche weder Tisch noch Boden (Kreis); „am Tisch“ war der falsche Platz."
+    },
+    {
+      "id": "sw-korperteil-twister",
+      "felder": {
+        "naehe": "hoch"
+      },
+      "grund": "Das Spiel besteht aus Berührungen von Körperteilen anderer Spielender (laut Quelle „körperbetont“); naehe „keine“ war falsch."
+    },
+    {
+      "id": "sw-telefax",
+      "felder": {
+        "naehe": "leicht"
+      },
+      "grund": "Das Spiel besteht aus Berührungen am Rücken; naehe „keine“ war falsch."
+    },
+    {
+      "id": "sw-topfschlagen",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Beim Suchen mit Augenbinde gibt es keinen vorgesehenen Körperkontakt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-geschmackskim",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Geschmackskim braucht keinen Körperkontakt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-fahrbahnen",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Die blinde Person wird nur mit Worten geführt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-taler-taler-du-musst-wandern",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht („Papierknäuel“ als Taler ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-drangelei",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Kreide und Klebeband sind kein Seil); von Hand gesetzt."
+    },
+    {
+      "id": "sw-kette-durch-den-reifen",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Hauptgerät ist ein Reifen); von Hand gesetzt."
+    },
+    {
+      "id": "ps-klopapier-namensspiel",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Klopapier ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (ein Hautstift ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-sockenraub",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Socken); von Hand gesetzt."
+    },
+    {
+      "id": "ps-vogeleltern",
+      "felder": {
+        "spielgeraet": [
+          "ball",
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Bälle als Küken, dazu Futter-Gegenstände); von Hand gesetzt."
     }
   ]
 }

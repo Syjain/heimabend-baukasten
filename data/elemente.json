@@ -103,7 +103,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "gruppe_max": 2,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "reaktion",
@@ -311,7 +310,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 1,
-   "gruppe_max": 1,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "wettkampf",
@@ -1154,7 +1152,9 @@
    "dauer_min": 45,
    "dauer_max": 90,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "Spielkarten oder beschriftete Zettel zum Losen der Rollen"
+   ],
    "vorbereitung": "gering",
    "kurz": "Ameisenkönig ist ein Scherzspiel, das über einen längeren Zeitraum gespielt werden kann. Es hat keine intensive Handlung, kann aber zu sehr lustigen Situationen führen.",
    "beschreibung": "**Ameisenkönig** ist ein Scherzspiel, das über einen längeren Zeitraum gespielt werden kann. Es hat keine intensive Handlung, kann aber zu sehr lustigen Situationen führen.\n\n## Material\n- eine Art von Auswahlkriterium für den König. Es eignen sich etwa Spielkarten, sonstige beschriftete Zettel, oder ähnliches.\n\n## Ablauf\nDie Spieler erhalten ihre Rollen geteilt (gelost). Die meisten Spieler sind normale Ameisen, nur einige (je nach Spieleranzahl) sind Ameisenkönige oder -Königinnen. Diese haben nun eine gewisse Spieldauer lang Zeit, sich zu erkennen zu geben. Dies kann sich auch über Tage hinziehen, wenn das so vereinbart wurde.\n\nGibt einer der Könige seine Funktion bekannt, müssen ihn die anderen Spieler auf die vorhin vereinbarte Weise huldigen - durch Niederknien, Niederlegen auf den Rücken und Wegstrecken der Arme und Beine etc. Spieler, die das nicht (schnell genug) machen, werden mit anderen Strafen zur Huldigung des Königs belegt (Arbeitsdienste zum Wohl des Königs, etc.).",
@@ -1172,7 +1172,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "umfang": "ganzer_abend",
    "bereich": "spiel",
    "unterkategorie": "sonstiges",
@@ -1180,7 +1179,8 @@
    "modus": "ohne_gewinner",
    "sozialform": "frei",
    "spielgeraet": [
-    "nichts"
+    "papier_stift",
+    "karten_wuerfel"
    ],
    "anforderung": [],
    "platz": "zimmer",
@@ -1274,7 +1274,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 6,
-   "gruppe_max": 6,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "wettkampf",
@@ -2917,8 +2916,8 @@
     "autor": "Spielewiki-Autor*innen",
     "lizenz": "CC BY-SA 4.0"
    },
-   "gruppe_min": 10,
-   "gruppe_max": 10,
+   "gruppe_min": 5,
+   "gruppe_max": 20,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "ball",
@@ -4235,7 +4234,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "gruppe_max": 2,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "ruhig",
@@ -4972,9 +4970,8 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "großer",
-    "schwerer \"Ball\"",
-    "Feldmarkierungen"
+    "großer, schwerer „Ball“ (traditionell ein mit Tannenzapfen gefüllter Leinensack, mindestens 20 kg)",
+    "Spielfeldmarkierungen"
    ],
    "vorbereitung": "mittel",
    "kurz": "Bruchenball ist ein Bewegungsspiel und Kampfspiel für zwei Gruppen mit jeweils etwa 5 Spielern. Je nach Platzverhältnissen kann auch mit mehr oder weniger Spielern gespielt werden.",
@@ -4993,7 +4990,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "ball",
@@ -6177,7 +6173,7 @@
     "konzentration",
     "rhythmus"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
@@ -6271,7 +6267,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "namen",
@@ -6284,7 +6279,7 @@
     "nichts"
    ],
    "anforderung": [],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "leicht",
@@ -6736,7 +6731,6 @@
    "ort": "beides",
    "material": [
     "Stühle",
-    "eine andere Pfadfindergruppe",
     "Decke"
    ],
    "vorbereitung": "gering",
@@ -8275,7 +8269,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 6,
-   "gruppe_max": 6,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "singen",
@@ -8689,8 +8682,7 @@
    "dauer_max": 10,
    "ort": "beides",
    "material": [
-    "Kreide",
-    "ähnliches"
+    "Kreide oder Klebeband zum Markieren der Fläche"
    ],
    "vorbereitung": "mittel",
    "kurz": "Drängelei oder auch Platz ist in der kleinsten Hütte ist ein gruppendynamisches Geschicklichkeitsspiel. Es können mehrere Gruppen gegeneinander spielen.",
@@ -9895,8 +9887,8 @@
     "abschluss"
    ],
    "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
+   "dauer_min": 5,
+   "dauer_max": 10,
    "ort": "beides",
    "material": [
     "Uhr"
@@ -11190,7 +11182,7 @@
    "platz": "saal_wiese",
    "hosensackspiel": false,
    "uebt": [],
-   "naehe": "hoch",
+   "naehe": "keine",
    "varianten": [],
    "kern": true
   },
@@ -11699,7 +11691,7 @@
    "altersstufen": [],
    "dauer_min": 5,
    "dauer_max": 15,
-   "ort": "drinnen",
+   "ort": "beides",
    "material": [
     "Flaschen"
    ],
@@ -11735,7 +11727,7 @@
     "geschick",
     "denken"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
@@ -12037,7 +12029,7 @@
    "altersstufen": [],
    "dauer_min": 5,
    "dauer_max": 10,
-   "ort": "drinnen",
+   "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
    "kurz": "Förderband ist ein Vertrauensspiel für Gruppen ab mindestens zehn Personen.",
@@ -12067,7 +12059,7 @@
     "nichts"
    ],
    "anforderung": [],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "hoch",
@@ -12195,7 +12187,7 @@
    "altersstufen": [],
    "dauer_min": 10,
    "dauer_max": 20,
-   "ort": "drinnen",
+   "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
    "kurz": "Fotograf ist nicht nur ein Spiel, sondern kann auch als Methode für Kreativität, Gruppenzusammenhalten und Vertrauen genutzt werden.",
@@ -12727,7 +12719,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "toben",
@@ -12894,7 +12885,7 @@
    "anforderung": [
     "konzentration"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "leicht",
@@ -13720,7 +13711,7 @@
    "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
-   "naehe": "hoch",
+   "naehe": "keine",
    "varianten": [],
    "kern": true
   },
@@ -14065,13 +14056,13 @@
    "dauer_max": 20,
    "ort": "draussen",
    "material": [
-    "Diverses",
-    "Augenbinden"
+    "Augenbinden oder Schlauchschals",
+    "Glocke oder Zimbel"
    ],
    "vorbereitung": "mittel",
-   "kurz": "Schwierigkeitsgrad: 1. Auswahl variabel durch Art des Geländes. (Wiese, Wald) 2. Auswahl variabel durch Abstand der Gruppe zum Spielleiter. Material:",
+   "kurz": "Mit verbundenen Augen folgt die Gruppe dem Klang einer Glocke, die die Spielleitung aus 30 bis 200 Metern Entfernung im Abstand weniger Sekunden läutet.",
    "beschreibung": "Schwierigkeitsgrad:\n\n1. Auswahl variabel durch Art des Geländes. (Wiese, Wald)\n\n2. Auswahl variabel durch Abstand der Gruppe zum Spielleiter.\n\nMaterial:\n\n1. Feste Augenbinde oder Schlauchschal als Augenschutz (obligat als Augenschutz)\n\n2. Glocke oder Zimbel als Signal zur Orientierung\n\nSpiel:\n\nEine kurze Geschichte als Einstieg:\n\n„Soeben hat ein Blitz plötzlich in einen nahestehenden Baum eingeschlagen.\n\nWir sind völlig überrascht, unsere Augen sind so geblendet, dass wir nicht mehr sehen können.\n\nHilfe finden wir im nahen Dorf, eine heilende Salbe wird uns helfen, wieder zu sehen.\n\nNun müssen wir das Dorf erreichen. Aber blind? Wohin denn, in welche Richtung?\n\nPlötzlich ertönt die Glocke des Kirchturms im Dorf. *\n\n(Hier kann die Glocke ertönen und die Frage gestellt werden, wie wir das Dorf erreichen)\n\nNun wissen wir, wie wir das Dorf erreichen können.Wir folgen blind dem Klang der Kirchturmglocke.“\n\nVerlauf:\n\nDie Teilnehmer stellen sich mit 2-3 m Abstand in einer Linie nebeneinander auf.\n\nDie Teilnehmer verbinden sich die Augen und der Spielleiter entfernt sich 30 – 200 m von der Gruppe.\n\nNun gibt der Spielleiter im Abstand von 3-5 Sekunden das Signal mit der Glocke,\n\nDie Teilnehmer folgen dem Klang, bis sie die Glocke erreichen.\n\na. Bei extremem Gelände oder unsicheren Teilnehmern sollten entsprechend Beobachter eingesetzt werden, die den Teilnehmern gegebenenfalls Hilfestellung geben und bei Gefahrenstellen behutsam eingreifen.\n\nb. Bei Ästen in Augenhöhe unbedingt auf den Schutz der Augen achten.\n\nc. Das Spiel sollte „still“ durchgeführt werden.\n\nVariante:\n\nJeder Teilnehmer erhält einen „Schatten“, einen Begleiter/in, der die Teilnehmer beschützt.\n\na. Als Begleiter der mit ruhiger Stimme lenkt vor Gefahren warnt.\n\nb. Als Begleiter der die Hand hält, jedoch nicht führt.\n\nc. Als Begleiter, der nur bei schwierigen Passagen behutsam Hilfestellung gibt.",
-   "tipps": "Anmerkung:",
+   "tipps": "Bei extremem Gelände oder unsicheren Teilnehmenden Beobachter einsetzen, die bei Gefahrenstellen behutsam eingreifen. Bei Ästen in Augenhöhe unbedingt auf den Schutz der Augen achten. Das Spiel möglichst still durchführen.",
    "tags": [
     "Bewegungsspiel",
     "Geländespiel",
@@ -14747,7 +14738,7 @@
    "dauer_max": 15,
    "ort": "beides",
    "material": [
-    "Diverses"
+    "Wollknäuel"
    ],
    "vorbereitung": "mittel",
    "kurz": "Mit einem Wollknäuel wird ein Netz gesponnen, wobei jede:r beim Werfen Name und Lieblingsessen (o.ä.) nennt und sich das des/der Vorgänger:in merkt; beim Auflösen wird der/die Nächste vorgestellt.",
@@ -14985,6 +14976,7 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_max": 20,
+   "gruppe_min": 3,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "team",
@@ -16173,7 +16165,7 @@
     "bewegung",
     "geschick"
    ],
-   "platz": "zimmer",
+   "platz": "saal_wiese",
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "hoch",
@@ -16489,7 +16481,7 @@
     "konzentration",
     "sprache"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
@@ -17589,7 +17581,7 @@
    "anforderung": [
     "rhythmus"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
@@ -18402,8 +18394,7 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "Reifen",
-    "ähnliches"
+    "Reifen (Hula-Hoop) oder ein zu einem Ring geknotetes Seil"
    ],
    "vorbereitung": "gering",
    "kurz": "Kette durch den Reifen ist eine Gruppenübung, die Geschicklichkeit verlangt. Typischerweise treten mehrere Gruppen im Wettbewerb gegeneinander an.",
@@ -19026,7 +19017,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "ball",
@@ -19117,7 +19107,8 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "Diverses"
+    "Klopapier",
+    "Bonbons oder Smarties (Variante)"
    ],
    "vorbereitung": "mittel",
    "kurz": "Jede:r reißt sich Klopapierblätter ab und muss dann so viele Dinge über sich erzählen, wie er/sie Blätter hat.",
@@ -19344,7 +19335,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "kampf",
@@ -19568,7 +19558,7 @@
    "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
-   "naehe": "keine",
+   "naehe": "hoch",
    "varianten": [],
    "kern": true
   },
@@ -20069,7 +20059,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "gruppe_max": 2,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "team",
@@ -22004,9 +21993,9 @@
     "hauptteil"
    ],
    "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
-   "ort": "drinnen",
+   "dauer_min": 5,
+   "dauer_max": 10,
+   "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
    "kurz": "Der Liegestütz-Kampf ist ein Spiel für zwei Spieler. Es geht dabei um Kraft, aber auch um Geschicklichkeit. Spielen mehr als zwei Spieler, so können mehrere Einzelspiele in einem Liga- oder Turniermodus verbunden werden.",
@@ -22040,8 +22029,8 @@
    "anforderung": [
     "geschick"
    ],
-   "platz": "tisch",
-   "hosensackspiel": false,
+   "platz": "zimmer",
+   "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -23741,7 +23730,7 @@
    "dauer_max": 25,
    "ort": "beides",
    "material": [
-    "Diverses"
+    "Messer, Gabel und Löffel (je dreimal)"
    ],
    "vorbereitung": "mittel",
    "kurz": "Zwei Teams sitzen in Reihen; die hintersten Spieler:innen bekommen ein Besteckstück gezeigt und geben die Info durch Klopfen (def. Signale für Messer, Gabel, Löffel) nach vorne weiter. Der/die Vorderste greift das richtige Besteck.",
@@ -24171,8 +24160,8 @@
     "abschluss"
    ],
    "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
+   "dauer_min": 5,
+   "dauer_max": 10,
    "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
@@ -24206,7 +24195,7 @@
     "denken"
    ],
    "platz": "saal_wiese",
-   "hosensackspiel": false,
+   "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -24797,7 +24786,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "team",
@@ -24945,7 +24933,8 @@
    "dauer_max": 80,
    "ort": "draussen",
    "material": [
-    "Diverses"
+    "Karte des Spielgebiets mit Raster",
+    "Walkie-Talkies oder Handys"
    ],
    "vorbereitung": "mittel",
    "kurz": "Ein:e Spieler:in („Mr. X“) flieht, während Suchteams versuchen, ihn/sie zu fangen. Mr. X gibt alle 15 Minuten seinen Standort (Rasterfeld auf einer Karte) per Walkie-Talkie durch.",
@@ -25070,7 +25059,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "gruppe_max": 2,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "geschick",
@@ -28679,7 +28667,7 @@
    "anforderung": [
     "denken"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
@@ -30163,7 +30151,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "tisch",
@@ -30407,7 +30394,9 @@
    "dauer_min": 10,
    "dauer_max": 30,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "Hautstift oder Schminkstift (traditionell ein angesengter Korken)"
+   ],
    "vorbereitung": "gering",
    "kurz": "Rüppel Tüppel ist ein einfaches Konzentrationsspiel und Sprachspiel für beliebig große Gruppen. Es ist ab etwa vier Personen spielbar.",
    "beschreibung": "**Rüppel Tüppel** ist ein einfaches Konzentrationsspiel und Sprachspiel für beliebig große Gruppen. Es ist ab etwa vier Personen spielbar.\n\n## Material\nZur Markierung der Tüppel wird ein Stift benötigt, mit dem man auf Haut schreiben kann. Oft wird ein angesengter Korken verwendet.\n\n## Regeln\nJedem Spieler wird eine Nummer zugeteilt. Der Spieler mit der Nummer 1 beginnt. Er spricht folgenden Text:\n\nIch bin Rüppel-Tüppel Nummer 1 mit keinem Tüppel.\nRüppel Tüppel Nummer X, wie viele Tüppel hast du?\n\nX entspricht dabei der Zahl eines der Mitspieler. Diese kann sich der sprechende Mitspieler frei aussuchen. Der angesprochene Mitspieler muss nun sofort reagieren und ebenfalls den vereinbarten Satz sagen.\n\nWer dabei einen Fehler macht, bekommt einen Tüppel auf die Stirn. Er muss ab sofort nicht mehr mit keinem Tüppel sagen, sondern mit einem Tüppel (oder zwei, u.s.w.). Ein Fehler kann sein:\n- nicht schnell genug zu reagieren\n- ohne angesprochen zu werden zu reagieren\n- einen falschen Satz zu sagen\n- eine falsche Tüppel-Anzahl zu nennen\n- einen nicht existierenden Rüppel anzusprechen\n- oder ähnliche Fehler",
@@ -30435,14 +30424,14 @@
    "modus": "ohne_gewinner",
    "sozialform": "frei",
    "spielgeraet": [
-    "nichts"
+    "sonstiges"
    ],
    "anforderung": [
     "konzentration",
     "sprache"
    ],
    "platz": "zimmer",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -31236,8 +31225,8 @@
     "abschluss"
    ],
    "altersstufen": [],
-   "dauer_min": 10,
-   "dauer_max": 20,
+   "dauer_min": 5,
+   "dauer_max": 10,
    "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
@@ -31268,7 +31257,7 @@
    ],
    "anforderung": [],
    "platz": "zimmer",
-   "hosensackspiel": false,
+   "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
    "dubletten": [
@@ -32836,8 +32825,7 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "eine lange",
-    "unbiegsame Stange"
+    "lange, leichte, unbiegsame Stange (etwa 30 cm pro Mitspielenden)"
    ],
    "vorbereitung": "gering",
    "kurz": "Die Schwebende Stange ist ein gruppendynamisches Spiel. Es kann mit etwa zehn bis zwanzig Teilnehmern gespielt werden. Obwohl die Aufgabe einfach klingt, werden bei korrekter Durchführung doch einige Minuten benötigt!",
@@ -33132,7 +33120,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 1,
-   "gruppe_max": 1,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "wettkampf",
@@ -33731,10 +33718,10 @@
    "dauer_max": 15,
    "ort": "beides",
    "material": [
-    "Diverses"
+    "Turnmatten oder weiche Wiese"
    ],
    "vorbereitung": "mittel",
-   "kurz": "Ein wildes Raufspiel, das viel Spaß macht, aber klare Regeln erfordert. Es eignet sich gut, um überschüssige Energie loszuwerden. Vorbereitung",
+   "kurz": "Ein wildes Raufspiel auf weichem Boden: Alle versuchen, den anderen die Socken von den Füßen zu ziehen und die eigenen zu verteidigen. Es braucht klare Regeln, hilft aber gut gegen überschüssige Energie.",
    "beschreibung": "Ein wildes Raufspiel, das viel Spaß macht, aber klare Regeln erfordert. Es eignet sich gut, um überschüssige Energie loszuwerden.\n\nVorbereitung\n\nEs wird eine weiche Spielfläche benötigt (Turnmatten in der Halle oder eine weiche Wiese draußen). Alle Teilnehmenden ziehen ihre Schuhe aus, behalten aber die Socken an.\n\nSpielablauf\n\nAuf das Startkommando versuchen alle Spieler:innen, den anderen die Socken von den Füßen zu ziehen. Gleichzeitig müssen sie ihre eigenen Socken verteidigen. Wer keine Socken mehr anhat (oder nur noch einen, je nach Regel), scheidet aus und verlässt die Matte.\n\nGewonnen hat die Person, die am Ende als letzte noch Socken trägt.\n\nWichtige Regeln\n\n- Um Verletzungen zu vermeiden, darf nur auf den Knien gerutscht oder gekrabbelt werden. Aufstehen ist verboten!\n\n- Kein Treten, Schlagen, Beißen oder Kratzen.\n\n- Wer eine Socke in der Hand hält (eine erbeutete), wirft diese aus dem Spielfeld.",
    "tipps": "Vor dem Start die Regeln deutlich sagen und ein Stoppsignal vereinbaren. Weichen Boden (Turnmatten oder weiche Wiese) wählen, alle gehen nur auf den Knien. Kein Treten, Schlagen, Beißen oder Kratzen. Spielende mit Schmuck oder Brille abnehmen lassen.",
    "tags": [
@@ -33787,7 +33774,9 @@
    "dauer_min": 5,
    "dauer_max": 10,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "Socken (jede Person ein Paar)"
+   ],
    "vorbereitung": "gering",
    "kurz": "Der Sockenraub ist ein Spiel für beliebig viele Mitspieler. Es sollte drinnen auf einem sauberen Boden gespielt werden. Die Teilnehmer benötigen für das Bewegungsspiel etwas Koordination und Geschicklichkeit.",
    "beschreibung": "Der **Sockenraub** ist ein Spiel für beliebig viele Mitspieler. Es sollte drinnen auf einem sauberen Boden gespielt werden. Als schnelles Bewegungsspiel, das Kondition und Geschicklichkeit erfordert, eignet es sich gut zum Auspowern und Abreagieren, bevor die Gruppe sich ernsthafteren Themen zuwendet.\n\n## Material\nFür dieses Spiel benötigt jeder Spieler ein Paar Socken.\n\n## Ablauf\nAußer der Regel, dass niemand verletzt werden darf, gibt es nur eine Regel: wer keine Socken mehr trägt, ist ausgeschieden. Gewonnen hat der Spieler, der zuletzt übrig ist.\n\nDie Spieler müssen also versuchen, sich gegenseitig die Socken zu stehlen. Dabei gilt: Socken, die an den Füßen getragen werden, dürfen gestohlen werden. Wie mit bereits gestohlenen Socken verfahren wird, entscheidet die Spielleitung vorab. Entweder können diese vom Räuber eingesteckt werden (Hosentasche?), oder sie werden abgeliefert (Spielleitung, eigener Zähler), oder sie werden sofort zurück gegeben (dürfen aber nicht mehr angezogen werden).\n\nAchtung:\n- Es kann durchaus sein, dass in der Hitze des Gefechtes Socken zerstört werden. Wenn möglich sollten daher größere \"Übersocken\" zur Verfügung gestellt werden, mit denen gespielt wird.\n- Weiteres Gefahrenpotential: Macht ein Spieler, dem gerade die Socken geraubt werden, eine unglückliche Bewegung, so kann es passieren, dass er sich sein Knie verdreht. Die Spieler müssen VOR dem Spiel, also bereits beim Erklären, darauf hingewiesen werden, dass die Mitspieler NICHT festgehalten werden dürfen!\n\n### Varianten\n- Ob man bei einem oder erst bei zwei verlorenen Socken ausscheidet, sollte vor Spielbeginn vereinbart werden.\n- Was mit erfolgreich gestohlenen Socken passiert, muss im Vorfeld definiert werden (siehe oben).",
@@ -33814,14 +33803,14 @@
    "modus": "wettkampf",
    "sozialform": "paare",
    "spielgeraet": [
-    "nichts"
+    "sonstiges"
    ],
    "anforderung": [
     "bewegung",
     "geschick"
    ],
    "platz": "zimmer",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -33932,7 +33921,7 @@
     "denken",
     "merken"
    ],
-   "platz": "tisch",
+   "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
@@ -36127,7 +36116,9 @@
    "dauer_min": 10,
    "dauer_max": 20,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "ein kleiner Gegenstand (Münze, Ring, Schlüssel oder Papierknäuel)"
+   ],
    "vorbereitung": "gering",
    "kurz": "Taler, Taler, du musst wandern ist ein einfaches Kinderspiel und richtet sich eher an jünger Mitspieler.",
    "beschreibung": "**Taler, Taler, du musst wandern** ist ein einfaches Kinderspiel und richtet sich eher an jünger Mitspieler.\n\n## Material\n- irgend etwas kleines - Münze (Taler), Ring, Schlüssel, Papierknäuel, etc.\n\n## Ablauf\nDie Grundvariante funktioniert folgendermaßen:\n\nDie Spieler stehen im Kreis und halten die Handflächen vor dem Bauch zusammen (so in etwa wie beim Beten); an der Oberseite sind die Handflächen leicht geöffnet. Ein Spieler steht außerhalb des Kreises. Ein Spieler des Kreises (oder der Spielleiter) geht im Kreis umher und lässt ich den Taler in die Hände eines der Kinder fallen.\n\nDabei wird folgendes Lied gesungen:\nTaler, Taler, du musst wandern,\nvon der einen Hand zur anderen,\ndas ist schön, das ist schön,\nniemand darf den Taler sehen.\n\nEin Spieler hat während dessen den Raum verlassen. Er muss nun raten, welcher Spieler den Taler hat. Erwischt er denjenigen, so wird dieser zum neuen Suchenden, ansonsten bleibt es der alte. Anschließend startet eine neue Runde\n\n### Varianten\nVon dieser Grundvariante abweichend kann auch der Taler während des Singens des Liedes von Kind zu Kind weitergegeben werden. Dabei darf der suchende Spieler von außerhalb des Kreises zuschauen und versuchen zu erkennen, wer den Taler am Ende des Liedes (eventuell mehrfach gesungen) hat.",
@@ -36152,14 +36143,14 @@
    "modus": "ohne_gewinner",
    "sozialform": "kreis",
    "spielgeraet": [
-    "nichts"
+    "sonstiges"
    ],
    "anforderung": [
     "denken",
     "rhythmus"
    ],
    "platz": "zimmer",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -36629,7 +36620,7 @@
    "platz": "zimmer",
    "hosensackspiel": true,
    "uebt": [],
-   "naehe": "keine",
+   "naehe": "leicht",
    "varianten": [],
    "kern": true
   },
@@ -37055,7 +37046,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 10,
-   "gruppe_max": 10,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "denken",
@@ -37446,7 +37436,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 1,
-   "gruppe_max": 1,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "geschick",
@@ -37464,7 +37453,7 @@
    "platz": "zimmer",
    "hosensackspiel": false,
    "uebt": [],
-   "naehe": "hoch",
+   "naehe": "keine",
    "varianten": [],
    "kern": true
   },
@@ -37584,7 +37573,7 @@
    "dauer_max": 20,
    "ort": "beides",
    "material": [
-    "Diverses"
+    "Tuch"
    ],
    "vorbereitung": "mittel",
    "kurz": "Zwei Teams; bei Aufruf ihrer Zahl laufen Spieler:innen zu einem in der Mitte platzierten Tuch. Wer das Tuch zur eigenen Linie bringt oder den/die Tuchträger:in fängt, punktet.",
@@ -37617,7 +37606,7 @@
    "modus": "wettkampf",
    "sozialform": "mannschaften",
    "spielgeraet": [
-    "sonstiges"
+    "tuch"
    ],
    "anforderung": [
     "bewegung"
@@ -38283,7 +38272,7 @@
    "ort": "beides",
    "material": [],
    "vorbereitung": "gering",
-   "kurz": "Dieser Artikel beschreibt die Grundvariante des Verstecken-Spiels. Vielfach werden diese Regel abgewandelt und zu eigenen Spielen ausgebaut. Eine Auswahl davon findet sich in der Kategorie Versteckspiel.",
+   "kurz": "Grundvariante des Versteckspiels: Ein Kind zählt bis 20, die anderen verstecken sich und versuchen, sich unbemerkt zum Spielbaum zu schleichen und abzuschlagen.",
    "beschreibung": "Dieser Artikel beschreibt die Grundvariante des **Verstecken**-Spiels. Vielfach werden diese Regel abgewandelt und zu eigenen Spielen ausgebaut. Eine Auswahl davon findet sich in der Kategorie Versteckspiel.\n\n## Material\nEs wird in der Grundvariante kein Material benötigt.\n\n## Ablauf\n\nEin Kind schließt die Augen und zählt laut bis 20 (nicht all zu schnell). Die anderen laufen so schnell wie möglich weg und verstecken sich in der näheren Umgebung.\n\nNach Ablauf des Countdowns muss der Sucher die Kinder ausfindig machen, indem er die Namen der Entdeckten laut ruft oder laut die Stelle beschreibt, wo sich das Kind versteckt. Damit die Kinder nicht zu weit weglaufen, bekommen sie die Aufgabe, während des Suchens sich unbemerkt an den Spielbaum heranzuschleichen und dort abzuschlagen. Werden sie vorher vom Sucher entdeckt, so erhält dieser einen Punkt. Haben sie es geschafft, sich unbemerkt an den Baum zu schleichen und anzuschlagen, haben sie gewonnen.",
    "tipps": "",
    "tags": [
@@ -38845,7 +38834,8 @@
    "dauer_max": 25,
    "ort": "draussen",
    "material": [
-    "Diverses"
+    "Bälle als Küken (5 je Paar)",
+    "etwa 70 Gegenstände als Futter, möglichst biologisch abbaubar"
    ],
    "vorbereitung": "mittel",
    "kurz": "Vogelpaare verteidigen ihr Nest mit Küken gegen Füchse und sammeln gleichzeitig „Futter“ (versteckte Gegenstände) in immer kürzer werdenden Zeitfenstern.",
@@ -38874,6 +38864,7 @@
    "modus": "wettkampf",
    "sozialform": "mannschaften",
    "spielgeraet": [
+    "ball",
     "sonstiges"
    ],
    "anforderung": [
@@ -39329,7 +39320,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 2,
-   "gruppe_max": 2,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "geschick",
@@ -40117,7 +40107,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 6,
-   "gruppe_max": 6,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "sonstiges",
@@ -41999,7 +41988,6 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 1,
-   "gruppe_max": 1,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "ball",
@@ -42888,6 +42876,7 @@
     "lizenz": "CC BY-SA 4.0"
    },
    "gruppe_min": 6,
+   "gruppe_max": 20,
    "bereich": "spiel",
    "umfang": "baustein",
    "unterkategorie": "team",
@@ -46262,8 +46251,8 @@
    "dauer_max": 75,
    "ort": "draussen",
    "material": [
-    "Holzbearbeitungswerkzeige",
-    "Steichhölzer"
+    "Holzbearbeitungswerkzeuge",
+    "Streichhölzer"
    ],
    "vorbereitung": "gering",
    "kurz": "Entfache ein heimliches Feuer! Wie weit siehst und hörst du es? Welches Holz macht es unsichtbar und leise?",
@@ -47205,7 +47194,7 @@
    "material": [
     "Blatt Papier",
     "Stift",
-    "Ausgedruckten Pfadfinderregel …"
+    "ausgedruckte Pfadfinder-Regeln"
    ],
    "vorbereitung": "gering",
    "kurz": "Welche Pfadfinderregel findest du am wenigsten wichtig? Sortiert die Regeln nach Wichtigkeit und sprecht darüber!",
@@ -47845,7 +47834,7 @@
    "dauer_max": 45,
    "ort": "draussen",
    "material": [
-    "Fahrränder"
+    "Fahrräder"
    ],
    "vorbereitung": "gering",
    "kurz": "Baue einen coolen Fahrrad-Parcours! Slalom, Sprint, enge Stellen – wer ist am schnellsten? Vergesst die Verkehrssicherheit nicht!",
@@ -48916,7 +48905,7 @@
     "günstiges Mineralwasser",
     "Wasser ohne Kohlensäure",
     "Quellwasser",
-    "Wasser aus einer Plastikflasc …"
+    "Wasser aus einer Plastikflasche"
    ],
    "vorbereitung": "gering",
    "kurz": "Teste verschiedene Wasser! Schmeckt Leitungswasser anders als Mineralwasser? Erkennst du teures Wasser am Geschmack?",
@@ -51215,7 +51204,7 @@
     "Bastelschere",
     "Korken",
     "Zahnstocher",
-    "Packetband",
+    "Paketband",
     "Buntstifte",
     "Blatt Papier"
    ],
@@ -53678,7 +53667,7 @@
    "dauer_max": 30,
    "ort": "beides",
    "material": [
-    "Die Zutaten für euer exquisit …"
+    "Zutaten für euer Essen"
    ],
    "vorbereitung": "gering",
    "kurz": "Entdeckt Lebensmittel! Backt Brot, macht Chips, lernt, woher Milch und Fleisch kommen. Selbermachen schmeckt besser!",
@@ -54221,8 +54210,8 @@
    "dauer_max": 75,
    "ort": "beides",
    "material": [
-    "Aufnahmegerät (Handy oder Lap …",
-    "eventuell Hintergrundgeräusch …",
+    "Aufnahmegerät (Handy oder Laptop)",
+    "eventuell Hintergrundgeräusche",
     "Eine Geschichte eurer Wahl",
     "passende Software"
    ],
@@ -57878,7 +57867,7 @@
    "material": [
     "Papier",
     "Stifte",
-    "Glasflasche oder anderes Gefä …",
+    "Glasflasche oder anderes Gefäß",
     "Kleber",
     "Sand",
     "Wachs zum Versiegeln"
