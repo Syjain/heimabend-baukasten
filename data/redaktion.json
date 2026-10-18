@@ -555,7 +555,8 @@
       "felder": {
         "umfang": "ganzer_abend"
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Titel („Hilfsmitttel“).",
+      "titel": "Kröten ohne Hilfsmittel aufbauen"
     },
     {
       "id": "pb-lagerbau",
@@ -851,7 +852,8 @@
       "felder": {
         "umfang": "ganzer_abend"
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Titel („Lautpsrecher“).",
+      "titel": "PC-Lautsprecher selber bauen"
     },
     {
       "id": "insp-pfeil-und-bogen-bauen",
@@ -3351,6 +3353,1262 @@
         ]
       },
       "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Bälle als Küken, dazu Futter-Gegenstände); von Hand gesetzt."
+    }
+  ],
+  "ersetzungen": [
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "veranstaleten",
+      "nach": "veranstalten",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "bestehet",
+      "nach": "besteht",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "Möglichtkeit",
+      "nach": "Möglichkeit",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "klassichen",
+      "nach": "klassischen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "eigeteilt",
+      "nach": "eingeteilt",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "verschiedenene",
+      "nach": "verschiedenen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Team..",
+      "nach": "Team.",
+      "grund": "doppelter Punkt"
+    },
+    {
+      "id": "insp-der-kaiser-mag",
+      "feld": "beschreibung",
+      "von": "hiflt",
+      "nach": "hilft",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "Grupppe",
+      "nach": "Gruppe",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "Wenn eine Person Begriff korrekt erratet hat",
+      "nach": "Wenn eine Person den Begriff korrekt erraten hat",
+      "grund": "Grammatik"
+    },
+    {
+      "id": "insp-spiel-reuse",
+      "feld": "beschreibung",
+      "von": "Persoenen",
+      "nach": "Personen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": "Rythmus",
+      "nach": "Rhythmus",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-das-schreispiel",
+      "feld": "beschreibung",
+      "von": "werden die erste Gruppe",
+      "nach": "während die erste Gruppe",
+      "grund": "Tippfehler (werden statt während)"
+    },
+    {
+      "id": "ps-das-schreispiel",
+      "feld": "beschreibung",
+      "von": "versanden zu haben",
+      "nach": "verstanden zu haben",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-englischfangen",
+      "feld": "beschreibung",
+      "von": "Es wird ein fangende Person",
+      "nach": "Es wird eine fangende Person",
+      "grund": "Grammatik"
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "feld": "beschreibung",
+      "von": "Das Funktioniert",
+      "nach": "Das funktioniert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "feld": "beschreibung",
+      "von": "dirkt raten",
+      "nach": "direkt raten",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-55",
+      "feld": "beschreibung",
+      "von": "Das Spiel wird mit wird mit einem",
+      "nach": "Das Spiel wird mit einem",
+      "grund": "doppelte Wörter"
+    },
+    {
+      "id": "sw-55",
+      "feld": "beschreibung",
+      "von": "Handelt sich es bei",
+      "nach": "Handelt es sich bei",
+      "grund": "Satzbau"
+    },
+    {
+      "id": "sw-bolker-trumpf",
+      "feld": "beschreibung",
+      "von": "schäzt der Spieler",
+      "nach": "schätzt der Spieler",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-bolker-trumpf",
+      "feld": "beschreibung",
+      "von": "Jeder Zählt seine",
+      "nach": "Jeder zählt seine",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-blindes-finden",
+      "feld": "tipps",
+      "von": "## Tipps\n\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "feld": "beschreibung",
+      "von": "mir rund zehn Spielern",
+      "nach": "mit rund zehn Spielern",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "feld": "beschreibung",
+      "von": "Er Abstand sollte",
+      "nach": "Der Abstand sollte",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ei-am-berg",
+      "feld": "tipps",
+      "von": "## Tipp\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-guru-guru",
+      "feld": "kurz",
+      "von": "Das Spielt fördert",
+      "nach": "Das Spiel fördert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-guru-guru",
+      "feld": "beschreibung",
+      "von": "Das Spielt fördert",
+      "nach": "Das Spiel fördert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ha-ha-ha",
+      "feld": "beschreibung",
+      "von": "mit mit der Person B",
+      "nach": "mit der Person B",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-here-we-go-with-the-big-fat-pony",
+      "feld": "beschreibung",
+      "von": "stehen stehen und",
+      "nach": "stehen und",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-hi-my-name-is-joe",
+      "feld": "beschreibung",
+      "von": "toung (Zunge)",
+      "nach": "tongue (Zunge)",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-kreisportrat",
+      "feld": "kurz",
+      "von": "Kreiszeichnung (auch Kreiszeichnung,",
+      "nach": "Kreisporträt (auch Kreiszeichnung,",
+      "grund": "Der Haupttitel im Text lautete Kreiszeichnung und der Alternativname wiederholte ihn; der Seitentitel ist Kreisporträt."
+    },
+    {
+      "id": "sw-kreisportrat",
+      "feld": "beschreibung",
+      "von": "**Kreiszeichnung** (auch Kreiszeichnung,",
+      "nach": "**Kreisporträt** (auch Kreiszeichnung,",
+      "grund": "Der Haupttitel im Text lautete Kreiszeichnung und der Alternativname wiederholte ihn; der Seitentitel ist Kreisporträt."
+    },
+    {
+      "id": "sw-kontinentespiel",
+      "feld": "tipps",
+      "von": "## Anmerkung\n\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-namenseigenschaften",
+      "feld": "beschreibung",
+      "von": "nur einen seinen Mitspieler",
+      "nach": "nur einen seiner Mitspieler",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-pferdebandiger",
+      "feld": "beschreibung",
+      "von": "Auf keine Fall darf",
+      "nach": "Auf keinen Fall darf",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-platztausch",
+      "feld": "beschreibung",
+      "von": "Alle Spieler die ''2 Geschwister haben",
+      "nach": "Alle Spieler die 2 Geschwister haben",
+      "grund": "Rest der Quell-Formatierung (zwei Hochkommata)"
+    },
+    {
+      "id": "sw-seilspringen",
+      "feld": "beschreibung",
+      "von": "mehreren Seilten",
+      "nach": "mehreren Seilen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-stille-post",
+      "feld": "beschreibung",
+      "von": "stehen ihn einer Kette",
+      "nach": "stehen in einer Kette",
+      "grund": "Tippfehler (ihn statt in)"
+    },
+    {
+      "id": "sw-epidemie",
+      "feld": "beschreibung",
+      "von": "stehen ihn einer Kette",
+      "nach": "stehen in einer Kette",
+      "grund": "Tippfehler (ihn statt in)"
+    },
+    {
+      "id": "sw-teppich-umdrehen",
+      "feld": "beschreibung",
+      "von": "gerade gut Platz haben haben",
+      "nach": "gerade gut Platz haben",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-verstecken",
+      "feld": "beschreibung",
+      "von": "Dieser Artikel beschreibt die Grundvariante des **Verstecken**-Spiels. Vielfach werden diese Regel abgewandelt und zu eigenen Spielen ausgebaut. Eine Auswahl davon findet sich in der Kategorie Versteckspiel.",
+      "nach": "Das ist die Grundvariante des **Verstecken**-Spiels. Vielfach werden diese Regeln abgewandelt und zu eigenen Spielen ausgebaut.",
+      "grund": "Wiki-Eigenverweis („Dieser Artikel“, „Kategorie Versteckspiel“) entfernt"
+    },
+    {
+      "id": "sw-tic-tac-toe-mit-menschen",
+      "feld": "beschreibung",
+      "von": "gewinnt die Runde gewonnen",
+      "nach": "gewinnt die Runde",
+      "grund": "Grammatik (doppelt gemoppelt)"
+    },
+    {
+      "id": "sw-tier-vogel-fisch",
+      "feld": "beschreibung",
+      "von": "eine art aus der",
+      "nach": "eine Art aus der",
+      "grund": "Rechtschreibung"
+    },
+    {
+      "id": "sw-daumensumme",
+      "feld": "kurz",
+      "von": "Daumensummme",
+      "nach": "Daumensumme",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-daumensumme",
+      "feld": "beschreibung",
+      "von": "Daumensummme",
+      "nach": "Daumensumme",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-deck-zu",
+      "feld": "beschreibung",
+      "von": "Ansich muss es",
+      "nach": "An sich muss es",
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-drangelei",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-stimmungs-matrix",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-streichholzschachtel-marathon",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-dirigent",
+      "feld": "beschreibung",
+      "von": "verlässte",
+      "nach": "verlässt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-eine-minute",
+      "feld": "beschreibung",
+      "von": "nähesten",
+      "nach": "nächsten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-fotograf",
+      "feld": "kurz",
+      "von": "Gruppenzusammenhalten",
+      "nach": "Gruppenzusammenhalt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-fotograf",
+      "feld": "beschreibung",
+      "von": "Gruppenzusammenhalten",
+      "nach": "Gruppenzusammenhalt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-gruppennetz",
+      "feld": "beschreibung",
+      "von": "Wollknäuls",
+      "nach": "Wollknäuels",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-funky-chicken",
+      "feld": "beschreibung",
+      "von": "Hünchenflügel",
+      "nach": "Hühnerflügel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-minutenweg",
+      "feld": "beschreibung",
+      "von": "ale",
+      "nach": "alle",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-minutenweg",
+      "feld": "beschreibung",
+      "von": "Am Ende der zeit rufen",
+      "nach": "Am Ende der Zeit rufen",
+      "grund": "Groß-/Kleinschreibung"
+    },
+    {
+      "id": "sw-mord-im-dunkeln",
+      "feld": "beschreibung",
+      "von": "Spieleitern",
+      "nach": "Spielleitern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-pferderennen",
+      "feld": "beschreibung",
+      "von": "Uund",
+      "nach": "Und",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-pferderennen",
+      "feld": "beschreibung",
+      "von": "Beigeisterung",
+      "nach": "Begeisterung",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+      "feld": "beschreibung",
+      "von": "Fänger:innnen",
+      "nach": "Fänger:innen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigenes-holzbrettchen-erstellen",
+      "feld": "beschreibung",
+      "von": "Sippensymbolß",
+      "nach": "Sippensymbol?",
+      "wort": true,
+      "grund": "Tippfehler (ß statt ?)"
+    },
+    {
+      "id": "insp-eigenes-holzbrettchen-erstellen",
+      "feld": "beschreibung",
+      "von": "güstig",
+      "nach": "günstig",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "Verhaltsweisen",
+      "nach": "Verhaltensweisen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "Jugenbewegnung",
+      "nach": "Jugendbewegung",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "geschalfen",
+      "nach": "geschlafen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitale-karten",
+      "feld": "beschreibung",
+      "von": "durchfühen",
+      "nach": "durchführen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigene-kreuzwortraetsel-erstellen",
+      "feld": "beschreibung",
+      "von": "kennzeichenen",
+      "nach": "kennzeichnen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "Vegatarier",
+      "nach": "Vegetarier",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "Verganer",
+      "nach": "Veganer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "Painiting",
+      "nach": "Painting",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "Sauerrei",
+      "nach": "Sauerei",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "vermeindlich",
+      "nach": "vermeintlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kueche-ueben",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-debattenkultur",
+      "feld": "beschreibung",
+      "von": "vorallendingen",
+      "nach": "vor allen Dingen",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-debattenkultur",
+      "feld": "beschreibung",
+      "von": "Diese Heimabendidee stamm sinngemäß",
+      "nach": "Diese Heimabendidee stammt sinngemäß",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-karte-vom-heim-zeichnen",
+      "feld": "beschreibung",
+      "von": "detallierte",
+      "nach": "detaillierte",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-karte-vom-heim-zeichnen",
+      "feld": "beschreibung",
+      "von": "einzelen",
+      "nach": "einzelnen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kritische-pfadfinderfragen-rollenspiel",
+      "feld": "beschreibung",
+      "von": "enstanden",
+      "nach": "entstanden",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kritische-pfadfinderfragen-rollenspiel",
+      "feld": "beschreibung",
+      "von": "eigentlch",
+      "nach": "eigentlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "eigentlch",
+      "nach": "eigentlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "könnr",
+      "nach": "könnt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "Quelllwasser",
+      "nach": "Quellwasser",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "mittllere",
+      "nach": "mittlere",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "Etiket",
+      "nach": "Etikett",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kroeten-ohne-hilfsmitttel-aufbauen",
+      "feld": "beschreibung",
+      "von": "Hilfmittel",
+      "nach": "Hilfsmittel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kroeten-ohne-hilfsmitttel-aufbauen",
+      "feld": "beschreibung",
+      "von": "Herringe",
+      "nach": "Heringe",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-rauch-und-geraeuschlos-feuer-machen",
+      "feld": "beschreibung",
+      "von": "alsauch",
+      "nach": "als auch",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-pfadfindersymbolik-vergleichen",
+      "feld": "beschreibung",
+      "von": "soviele",
+      "nach": "so viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-wasserdetektive",
+      "feld": "beschreibung",
+      "von": "soviele",
+      "nach": "so viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-rucksack-richtig-packen",
+      "feld": "beschreibung",
+      "von": "auf jedenfall dabei",
+      "nach": "auf jeden Fall dabei",
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-wetter-beobachten",
+      "feld": "beschreibung",
+      "von": "ganz anderes gespür",
+      "nach": "ganz anderes Gespür",
+      "grund": "Groß-/Kleinschreibung"
+    },
+    {
+      "id": "insp-wildpflanzen-in-der-umgebung-suchen",
+      "feld": "beschreibung",
+      "von": "Guppe",
+      "nach": "Gruppe",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-baut-eure-eigene-sippen-homepage",
+      "feld": "beschreibung",
+      "von": "persöhnliche",
+      "nach": "persönliche",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-baut-eure-eigene-sippen-homepage",
+      "feld": "beschreibung",
+      "von": "integrieten",
+      "nach": "integrierten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-dosenlichter",
+      "feld": "beschreibung",
+      "von": "Dosengöße",
+      "nach": "Dosengröße",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-euer-eigenes-ab-paeckchen",
+      "feld": "beschreibung",
+      "von": "Steichhölzer",
+      "nach": "Streichhölzer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-fahrradreifen-flicken",
+      "feld": "beschreibung",
+      "von": "den erstfall in Ruhe zu tranieren",
+      "nach": "den Ernstfall in Ruhe zu trainieren",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-fahrrad-geschicklichkeits-parkour",
+      "feld": "beschreibung",
+      "von": "Fahhrad",
+      "nach": "Fahrrad",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-gemuesebruehpulver-selber-machen",
+      "feld": "beschreibung",
+      "von": "hinzugefügen",
+      "nach": "hinzufügen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kokosnussbecher-schalen-basteln",
+      "feld": "beschreibung",
+      "von": "Fruchfleisch",
+      "nach": "Fruchtfleisch",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kokosnussbecher-schalen-basteln",
+      "feld": "beschreibung",
+      "von": "Kokusnuss",
+      "nach": "Kokosnuss",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-korken-piratenschiff",
+      "feld": "beschreibung",
+      "von": "Packetschnur",
+      "nach": "Paketschnur",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "Katoffel",
+      "nach": "Kartoffel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "Zinkscharaube",
+      "nach": "Zinkschraube",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "entfehrnt",
+      "nach": "entfernt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-hungertuecher-fuer-die-sippe",
+      "feld": "beschreibung",
+      "von": "Nähmaschiene",
+      "nach": "Nähmaschine",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "Holstück",
+      "nach": "Holzstück",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "komt",
+      "nach": "kommt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "zuviele",
+      "nach": "zu viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-muehle-to-go",
+      "feld": "beschreibung",
+      "von": "Bürokklammer",
+      "nach": "Büroklammer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-muehle-to-go",
+      "feld": "beschreibung",
+      "von": "bemahlen",
+      "nach": "bemalen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "Tunier",
+      "nach": "Turnier",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "Diziplinen",
+      "nach": "Disziplinen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "mit euer Gruppe",
+      "nach": "mit eurer Gruppe",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "Lautprecher",
+      "nach": "Lautsprecher",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "Akustisk",
+      "nach": "Akustik",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "entwicklungtechnisch",
+      "nach": "entwicklungstechnisch",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "höhrerpreisige",
+      "nach": "höherpreisige",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-butter-schuetteln",
+      "feld": "beschreibung",
+      "von": "vermegen",
+      "nach": "vermengen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-die-detektiv-pizza",
+      "feld": "beschreibung",
+      "von": "Annanas",
+      "nach": "Ananas",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigenes-gruppen-kochbuch-erstellen",
+      "feld": "beschreibung",
+      "von": "gemeisam",
+      "nach": "gemeinsam",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kekse-backen",
+      "feld": "beschreibung",
+      "von": "anstregenden",
+      "nach": "anstrengenden",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kekse-backen",
+      "feld": "beschreibung",
+      "von": "Madeln",
+      "nach": "Mandeln",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Hasselnuss",
+      "nach": "Haselnuss",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Kovertüre",
+      "nach": "Kuvertüre",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Boubon",
+      "nach": "Bourbon",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Baunern",
+      "nach": "Bauern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Remolade",
+      "nach": "Remoulade",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "scheckt",
+      "nach": "schmeckt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-veganen-brotaufstrich-selber-machen",
+      "feld": "beschreibung",
+      "von": "Ölivenöl",
+      "nach": "Olivenöl",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-ultimative-kochduell",
+      "feld": "beschreibung",
+      "von": "Zuataten",
+      "nach": "Zutaten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-ultimative-kochduell",
+      "feld": "beschreibung",
+      "von": "letzem",
+      "nach": "letztem",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-treffen-mit-anderer-pfadfindergruppe",
+      "feld": "beschreibung",
+      "von": "Interent",
+      "nach": "Internet",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-weisheiten-diskutieren-zitate",
+      "feld": "beschreibung",
+      "von": "Schoppenhauer",
+      "nach": "Schopenhauer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wer-bin-ich",
+      "feld": "beschreibung",
+      "von": "Crepeband",
+      "nach": "Kreppband",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lichtmalerei",
+      "feld": "beschreibung",
+      "von": "paining",
+      "nach": "painting",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-brot-backen-ohne-ofen",
+      "feld": "beschreibung",
+      "von": "Verfeiern",
+      "nach": "Verfeinern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papier-recycling",
+      "feld": "beschreibung",
+      "von": "Recylen",
+      "nach": "Recyceln",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": "\n\nLink zum Video: YouTube Video Lulale",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": " aus dem Video unten",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "\n\nHier noch mehr: Pfadfindertabu als PDF",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-augenklappe-basteln",
+      "feld": "beschreibung",
+      "von": "\n\nLink zur einer Anleitung mit Bilder",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-augenklappe-basteln",
+      "feld": "kurz",
+      "von": " Anleitung online!",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-waldlaeuferzeichen-memory",
+      "feld": "beschreibung",
+      "von": "\n\nEine Druckvorlage kannst du hier runterladen. Download",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-waldlaeuferzeichen-memory",
+      "feld": "kurz",
+      "von": "Druck die Karten aus oder bastel deine eigenen!",
+      "nach": "Bastel dir die Karten selbst!",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-pfadi-stories",
+      "feld": "kurz",
+      "von": " Link für mehr: [Link gekürzt]",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-pfadi-stories",
+      "feld": "beschreibung",
+      "von": "\n\nWeitere 'Pfadi-stories' sowie die Lösung findet ihr unter folgendem Link. Tragt gerne eure eigenen ein und helft uns bei der Erstellung einer schönen kleinen Sammlung.\n\nLink zum Dokument",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung). Die Auflösung des Rätsels steht damit nicht in der Sammlung (offene Frage)."
+    },
+    {
+      "id": "insp-insektenhotel-in-der-dose",
+      "feld": "beschreibung",
+      "von": "\n\nWeitere Inspirationen findet ihr unter: Link zur Bastelanleitung.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-milchkarton-portmonnaie",
+      "feld": "kurz",
+      "von": " Anleitung: [Link-Kürzen, z.B. bit.ly verwenden]",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-milchkarton-portmonnaie",
+      "feld": "beschreibung",
+      "von": "\n\nEine bebilderte Anleitung findet ihr unter: Link zum Dokument.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-drachenbau-aus-muelltueten",
+      "feld": "beschreibung",
+      "von": "Hier findet ihr eine detailierte Anleitung aus dem Internet.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-papier-recycling",
+      "feld": "beschreibung",
+      "von": "Eine Möglichkeit zum Recyclen von Altpapier findet ihr hier und viele weitere Videos auf YouTube.\n\n",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-eigene-sippenchronik",
+      "feld": "beschreibung",
+      "von": "über diese einzigartigen Dokumente",
+      "nach": "über diese einzigartigen Dokumente.",
+      "grund": "Satz ohne Schlusspunkt"
+    },
+    {
+      "id": "insp-namensschilder-einnaehen",
+      "feld": "beschreibung",
+      "von": "\n\nDurch das Einnähen von Namensschildern in private Gegenstände können die",
+      "nach": "",
+      "grund": "Letzter Satz bricht mitten im Satz ab (abgeschnitten in der Quelle); der vorherige Absatz ist vollständig."
+    },
+    {
+      "id": "insp-haik-kueche-ueben",
+      "feld": "beschreibung",
+      "von": "Die Brühe angießen,",
+      "nach": "Die Brühe angießen. (Die Quelle bricht hier ab, der Rest des Rezepts fehlt.)",
+      "grund": "Rezept bricht mitten im Satz ab (abgeschnitten in der Quelle); der Hinweis macht das sichtbar, ohne etwas zu erfinden."
+    }
+  ],
+  "bereinigung": [
+    {
+      "name": "leere Aufzählungspunkte",
+      "muster": "^[ \\t]*[-*][ \\t\\xa0]*$\\n?",
+      "ersatz": "",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Aufzählungspunkte ohne Text (nur geschütztes Leerzeichen) stammen aus der Quell-Formatierung des Inspirators."
+    },
+    {
+      "name": "Zeilen nur aus geschützten Leerzeichen",
+      "muster": "^[ \\t\\xa0]*\\xa0[ \\t\\xa0]*$\\n?",
+      "ersatz": "",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Leere Absätze aus geschützten Leerzeichen (Reste der Webseiten-Formatierung) entfernen."
+    },
+    {
+      "name": "geschütztes Leerzeichen",
+      "muster": "\\xa0",
+      "ersatz": " ",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Geschützte Leerzeichen mitten im Text durch normale ersetzen (Reste der Webseiten-Formatierung)."
+    },
+    {
+      "name": "mehr als eine Leerzeile",
+      "muster": "\\n{3,}",
+      "ersatz": "\n\n",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Nach dem Entfernen leerer Absätze nicht mehrere Leerzeilen hintereinander stehen lassen."
+    },
+    {
+      "name": "doppelte Leerzeichen im Satz",
+      "muster": "(?<=\\S)  +(?=\\S)",
+      "ersatz": " ",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Doppelte Leerzeichen mitten in der Zeile (nicht Einrückungen am Zeilenanfang) auf eins kürzen."
     }
   ]
 }

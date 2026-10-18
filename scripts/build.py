@@ -834,6 +834,18 @@ def wende_textkorrekturen_an(elemente, nach_id, redaktion, bericht):
         bericht["nicht_gefunden"], damit sich nach einem Neuimport nichts
         unbemerkt verschiebt.
     """
+    # Zusammengesetzte Umlaute (a + Trema) in eine Zeichenfolge bringen, sonst
+    # findet weder die Suche der App noch eine Ersetzung das Wort.
+    bericht["normalisiert"] = 0
+    for element in elemente:
+        for feld in ("titel",) + TEXTFELDER:
+            text = element.get(feld)
+            if isinstance(text, str):
+                neu = unicodedata.normalize("NFC", text)
+                if neu != text:
+                    element[feld] = neu
+                    bericht["normalisiert"] += 1
+
     bericht["bereinigt"] = {}
     for regel in redaktion.get("bereinigung", []):
         muster = re.compile(regel["muster"], re.MULTILINE)
@@ -2078,6 +2090,7 @@ def main():
         print("     - {}".format(zeile))
     print("  korrigiert: {}".format(len(bericht["korrigiert"])))
     print("  Bereich von Hand gesetzt: {}".format(len(bericht.get("nachtraeglich", {}))))
+    print("  Texte in NFC gebracht: {}".format(bericht.get("normalisiert", 0)))
     print("  Textstellen ersetzt: {}".format(bericht.get("ersetzt", 0)))
     for name, anzahl in sorted((bericht.get("bereinigt") or {}).items()):
         print("  Bereinigung '{}': {} Treffer".format(name, anzahl))
