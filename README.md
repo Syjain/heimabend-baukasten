@@ -25,9 +25,9 @@ Nach Bereich: 794 Spiele, 77 Pfadfindertechnik, 72 Gemeinschaft, 67 Werken,
 30 Natur & Draußen, 23 Kochen, 12 Musisches.
 
 **Zwei Reihen statt löschen.** Seit dem 08.09.2026 trägt jedes Element ein Feld
-`kern`. 580 Elemente stehen in der ersten Reihe – das ist die geprüfte Auswahl,
+`kern`. 575 Elemente stehen in der ersten Reihe – das ist die geprüfte Auswahl,
 die die App beim Öffnen zeigt, darunter 299 Spiele nach Quoten je Unterkategorie.
-Die übrigen 495 (Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz) bleiben
+Die übrigen 500 (Doppeltes, sehr Langes, sehr Großes, Ideen fürs Netz) bleiben
 vollständig in den Daten und sind über einen Schalter erreichbar. Es wird nichts
 gelöscht, und jede Zuordnung lässt sich in `data/redaktion.json` unter `kern`
 von Hand umdrehen.

@@ -2,7 +2,7 @@
   "meta": {
     "name": "Redaktionelle Entscheidungen",
     "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
-    "stand": "2026-10-02",
+    "stand": "2026-10-18",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
   "gesperrt": [
@@ -117,7 +117,12 @@
     {
       "id": "sw-liegestutz-kampf",
       "hinweis": "Die Quelle nimmt kleinere Blessuren ausdrücklich in Kauf. Nur mit klaren Regeln und Aufsicht, und niemanden dazu drängen.",
-      "grund": "Verletzungen werden als Normalfall beschrieben."
+      "grund": "Verletzungen werden als Normalfall beschrieben. Außerdem: Dauer laut Infobox „weniger als eine Minute“; Ort „überall (am Boden)“ ist nicht nur drinnen.",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10,
+        "ort": "beides"
+      }
     },
     {
       "id": "sw-achterbahn",
@@ -138,9 +143,13 @@
     {
       "id": "sw-ameisenkonig",
       "hinweis": "Im Spiel huldigen Mitspielende einem 'König' durch Niederknien und bekommen bei Ungehorsam Strafen und Arbeitsdienste. Wenn ihr es spielt, dann kurz, freiwillig und mit wechselnder Rolle - sonst entsteht eine echte Rangordnung in der Gruppe.",
-      "grund": "Unterwerfungsritual über mehrere Tage angelegt. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein.",
+      "grund": "Unterwerfungsritual über mehrere Tage angelegt. Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle ein Auswahlkriterium (Karten oder Zettel) verlangt. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt.",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Spielkarten oder beschriftete Zettel zum Losen der Rollen"
+        ],
+        "gruppe_max": null
       }
     },
     {
@@ -300,7 +309,10 @@
     {
       "id": "sw-topfschlagen",
       "hinweis": "Die Regel ist auf ein Geburtstagskind und seine Geschenke geschrieben. Statt Geburtstag: versteckt eine gemeinsame Belohnung für die ganze Gruppe, dann passt es in jeden Heimabend.",
-      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester)."
+      "grund": "Anlass entschärfen: Die Quelle bindet das Element an einen fremden Anlass (Geburtstag, Party, Fasching, Silvester). Außerdem: Die Infobox sagt „1“ (ein aktiver Spieler pro Runde); das Publikum ist aber Teil des Spiels. gruppe_max 1 schloss das Spiel für Gruppen aus.",
+      "felder": {
+        "gruppe_max": null
+      }
     },
     {
       "id": "insp-agentenspiel",
@@ -403,9 +415,14 @@
     {
       "id": "ps-mr-x",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "tipps": "Spielgebiet vorher festlegen und auf der Karte einzeichnen. Eine Person der Spielleitung bleibt als Anlaufstelle erreichbar, jedes Team braucht eine Uhr. Rückkehrzeit vereinbaren, falls Mr. X nicht gefunden wird. Kleine Teams sollten nicht allein im Dunkeln unterwegs sein.",
+        "material": [
+          "Karte des Spielgebiets mit Raster",
+          "Walkie-Talkies oder Handys"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; die Quelle nennt Rasterkarte und Walkie-Talkies (Handys als Variante)."
     },
     {
       "id": "sw-nein-spiel",
@@ -538,7 +555,8 @@
       "felder": {
         "umfang": "ganzer_abend"
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Titel („Hilfsmitttel“).",
+      "titel": "Kröten ohne Hilfsmittel aufbauen"
     },
     {
       "id": "pb-lagerbau",
@@ -578,9 +596,13 @@
     {
       "id": "insp-rauch-und-geraeuschlos-feuer-machen",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Holzbearbeitungswerkzeuge",
+          "Streichhölzer"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Material („Holzbearbeitungswerkzeige“, „Steichhölzer“)."
     },
     {
       "id": "insp-rucksack-richtig-packen",
@@ -620,9 +642,14 @@
     {
       "id": "insp-welche-pfadfinder-regel-ist-unwichtig",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Blatt Papier",
+          "Stift",
+          "ausgedruckte Pfadfinder-Regeln"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material war das letzte Wort abgeschnitten („Ausgedruckten Pfadfinderregel …“; Zeichenlimit der Quelldatei)."
     },
     {
       "id": "insp-fensterbank-kraeuterbeet",
@@ -825,7 +852,8 @@
       "felder": {
         "umfang": "ganzer_abend"
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Tippfehler im Titel („Lautpsrecher“).",
+      "titel": "PC-Lautsprecher selber bauen"
     },
     {
       "id": "insp-pfeil-und-bogen-bauen",
@@ -914,9 +942,15 @@
     {
       "id": "insp-eigenes-hoerspiel-aufnehmen",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Aufnahmegerät (Handy oder Laptop)",
+          "eventuell Hintergrundgeräusche",
+          "Eine Geschichte eurer Wahl",
+          "passende Software"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material waren zwei Einträge abgeschnitten („Handy oder Lap …“, „Hintergrundgeräusch …“; Zeichenlimit der Quelldatei)."
     },
     {
       "id": "insp-gruppenstunde-als-talkshow",
@@ -935,9 +969,1253 @@
     {
       "id": "insp-traumkapsel",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "material": [
+          "Papier",
+          "Stifte",
+          "Glasflasche oder anderes Gefäß",
+          "Kleber",
+          "Sand",
+          "Wachs zum Versiegeln"
+        ]
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Im Material war das Wort „Gefäß“ abgeschnitten („Gefä …“; Zeichenlimit der Quelldatei)."
+    },
+    {
+      "id": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+      "felder": {
+        "tipps": "Die Fänger:innen für alle gut erkennbar machen, zum Beispiel mit einem Halstuch am Arm. Spielfeld vorher abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-drachenschwanzjagen",
+      "felder": {
+        "tipps": "Auf ebenem Boden ohne Hindernisse spielen. Die Hände bleiben auf den Schultern der Vorderperson, an der Kleidung wird nicht gezogen. Wer zu schnell wird, bremst, damit die Schlange nicht reißt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-englischfangen",
+      "felder": {
+        "tipps": "Spielfeld vorher abgrenzen. Die Fänger:innen laut ausrufen lassen, wenn jemand zum dritten Mal getickt wurde, damit alle den Überblick behalten. Getickt wird nur leicht an Schulter oder Arm."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-kontakto",
+      "felder": {
+        "tipps": "Das Spielfeld mit Grenzen markieren, damit sich niemand zu weit entfernt. Kontakto zählt ehrlich, laut und im gleichen Tempo von 15 herunter."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-milchproduktefangen",
+      "felder": {
+        "tipps": "Vor dem Start klären, was erlaubt ist (Milchprodukte, nicht doppelt rufen). Spielfeld abgrenzen und als Variante andere Kategorien nutzen, wenn die Milchprodukte ausgehen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-batollo",
+      "felder": {
+        "tipps": "Erst im Kreis langsam den Rhythmus üben, dann erst die Namen dazunehmen. Bei Fehlern nicht auslachen, sondern gleich weiterrutschen. Mit steigendem Tempo wird es lustig."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-koenigsspiel",
+      "felder": {
+        "tipps": "Vor dem Start ein Stoppzeichen vereinbaren. Weichen Untergrund wählen (kein Asphalt oder Beton), nicht an der Kleidung ziehen lassen. Die Könige bleiben mit dem Po auf dem Sessel."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-funky-chicken",
+      "felder": {
+        "tipps": "Erst eine Beispielrunde selbst vormachen, damit alle den Dialog kennen. Eigene Figuren mit Geräusch und Bewegung dürfen die Spielenden selbst erfinden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-menschenmemory",
+      "felder": {
+        "tipps": "Die beiden Memoryspieler:innen auf einen Stuhl oder Absatz stellen, damit sie alle sehen. Vor der ersten Runde mit allen eine Probe machen. Bewegungen oder Geräusche sollten sich deutlich unterscheiden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-pantomime-stille-post",
+      "felder": {
+        "tipps": "Zu Beginn einfache Bewegungen wählen und die Reihe nicht zu lang machen (bei großen Gruppen zwei Reihen). Am Ende gemeinsam auflösen und die Veränderungen auf dem Weg anschauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-sockenkampf",
+      "felder": {
+        "tipps": "Vor dem Start die Regeln deutlich sagen und ein Stoppsignal vereinbaren. Weichen Boden (Turnmatten oder weiche Wiese) wählen, alle gehen nur auf den Knien. Kein Treten, Schlagen, Beißen oder Kratzen. Spielende mit Schmuck oder Brille abnehmen lassen.",
+        "kurz": "Ein wildes Raufspiel auf weichem Boden: Alle versuchen, den anderen die Socken von den Füßen zu ziehen und die eigenen zu verteidigen. Es braucht klare Regeln, hilft aber gut gegen überschüssige Energie.",
+        "material": [
+          "Turnmatten oder weiche Wiese"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Kurzbeschreibung endete mitten im Satz mit dem Wort „Vorbereitung“ (Überschrift der Quelle); Material war der Platzhalter „Diverses“."
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "felder": {
+        "tipps": "Am Anfang ein einfaches Wort wählen, damit die Gruppe das Prinzip begreift. Das Zählen „3 2 1“ und das gleichzeitige Nennen am besten einmal gemeinsam üben."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-prinzball",
+      "felder": {
+        "tipps": "Einen weichen Ball (Schaumstoff oder Softball) nehmen und vor dem Start klären, dass nicht auf den Kopf geworfen wird. Das Spielfeld abgrenzen, damit niemand zu weit wegrennt. Die Leben vorher festlegen, am besten sichtbar mit Fingern anzeigen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-samurai",
+      "felder": {
+        "tipps": "Erst langsam üben, bis alle HU, HA und TSING sicher können, danach das Tempo steigern."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-sardine",
+      "felder": {
+        "tipps": "Vor dem Start Spielgebiet und Rückkehrzeit vereinbaren. In der Dunkelheit oder im Wald nicht allein suchen lassen. Ein Pfiff als Abbruchsignal macht das Beenden leicht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-schreiwurm",
+      "felder": {
+        "tipps": "Vorher klären, dass nur kurz und nicht direkt ins Ohr geschrien wird. Im Heim an die Nachbarn denken, am besten draußen oder im großen Raum spielen. Zum Ausruhen die Schreirunde nach einigen Minuten beenden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-slurp",
+      "felder": {
+        "tipps": "Je nach Gruppe vorher darauf hinweisen, dass sich niemand an Stellen festslurpt, an denen es unangenehm ist. Keine Pflicht zum Mitmachen. Für neue Gruppen eher Körperteile wie Hände und Arme vorschlagen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-tischklatschen",
+      "felder": {
+        "tipps": "Zum Üben erst ganz langsam im Kreis klatschen, dann schneller. Die gekreuzten Arme verwirren am Anfang, deshalb vorher eine Proberunde ohne Ausscheiden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-tuchfangen",
+      "felder": {
+        "tipps": "Die Zahlen so verteilen, dass sich gleich starke Kinder gegenüberstehen. Als Tuch ein Halstuch nehmen und vor dem Start Linien oder Markierungen festlegen. Nicht am Tuch zerren.",
+        "material": [
+          "Tuch"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; gebraucht wird ein Tuch."
+    },
+    {
+      "id": "ps-versteck-fangen",
+      "felder": {
+        "tipps": "Spielgebiet und Rückkehrzeit vorher festlegen und den Freischlagpunkt gut sichtbar markieren. Im Dunkeln oder im Wald nur mit festen Grenzen spielen. Ein Pfiff holt alle zurück."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-vogeleltern",
+      "felder": {
+        "tipps": "Das Spielfeld mit festen Grenzen abstecken. Futter, das nicht wiedergefunden wird, soll biologisch abbaubar sein. Am Ende alle Gegenstände einsammeln lassen. Füchse sollten die Gruppenleitung oder ältere Spielende sein, die behutsam spielen.",
+        "material": [
+          "Bälle als Küken (5 je Paar)",
+          "etwa 70 Gegenstände als Futter, möglichst biologisch abbaubar"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war der Platzhalter „Diverses“; die Quelle nennt Bälle als Küken und etwa 70 Gegenstände als Futter."
+    },
+    {
+      "id": "ps-wald-paare",
+      "felder": {
+        "tipps": "Nur Gegenstände vom Boden sammeln lassen: Laub, Zapfen, Steine oder Totholz, nichts Lebendes abreißen. Vor dem Start einen Rückkehrpunkt und ein Signal vereinbaren, etwa einen Pfiff."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-zauberball-sip-sop",
+      "felder": {
+        "tipps": "Mit der einfachsten Form beginnen und die Geräusche gemeinsam üben. Weitere Regeln wie „Flip-boing“ erst dazunehmen, wenn der Ball sicher läuft. Beim Werfen („zwuii“) Blickkontakt halten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-zuzwinckern-sterben",
+      "felder": {
+        "tipps": "Das Zählen laut und im gleichen Tempo machen, damit alle gleichzeitig hochschauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-pferderennen",
+      "felder": {
+        "tipps": "Die Kommandos vor dem Start gemeinsam üben, sie lassen sich variieren und mit eigenen Geräuschen ergänzen. Dicht aneinandersitzen, damit die Schultern sich berühren; Rennen im Wechsel von ruhig und schnell moderieren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-alaska-baseball",
+      "felder": {
+        "tipps": "Ein weicher Ball ist besser als ein harter. Das Spielfeld deutlich markieren und zuerst eine Proberunde ohne Wertung spielen. Der Ablauf ist anstrengend, deshalb Trinkpausen einplanen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ameisenspiel",
+      "felder": {
+        "tipps": "Begrüßungsformen mit Körperkontakt (zum Beispiel Küsschen oder Hochheben) nur vorschlagen, wenn die Gruppe sich kennt und alle einverstanden sind. Für neue Gruppen eignen sich Händeschütteln, Knie an Knie oder Ellenbogen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-amobenwettlauf",
+      "felder": {
+        "tipps": "Auf ebenem Boden spielen und Hindernisse niedrig halten. Wer stürzt, lässt los, damit niemand mitgerissen wird. Die Gruppen sollten etwa gleich groß sein.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle verlangt mindestens zwei Amöben zu je 3-6 Personen, aber keine Obergrenze. gruppe_max 6 war ein Fehler des Importes."
+    },
+    {
+      "id": "sw-anna",
+      "felder": {
+        "tipps": "Den Gesang einmal vormachen, bevor die Gruppe es nachmacht. Bei mehr als 20 Personen zwei Schlangen bilden, damit alle Namen im Kreis noch mitbekommen werden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-atomspiel",
+      "felder": {
+        "tipps": "Auf freier Fläche spielen, damit sich niemand stößt. Statt Strafpunkten oder Ausscheiden lässt sich das Spiel nach ein paar Runden mit den Molekülen als Kleingruppen für die nächste Aufgabe weiterführen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-au-ja",
+      "felder": {
+        "tipps": "Die Aufgaben müssen einfach zu erfüllen sein, niemanden verletzen und niemanden beleidigen. Zu Beginn macht die Spielleitung Vorschläge, danach dürfen reihum alle eine Aufgabe nennen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-auf-einem-berg-da-steht-ein-haus",
+      "felder": {
+        "tipps": "Erst Zeile für Zeile mit den Bewegungen einüben, dann zusammen schnell sprechen. Beim Ersetzen durch „ufta-ufta-uftata“ langsam beginnen und mit jeder Runde eine Zeile mehr ersetzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-baumball",
+      "felder": {
+        "tipps": "Einen weichen Ball verwenden und den Platz frei von Wurzeln und Löchern halten. Wer den Ball abwehrt, hält ihn nicht fest, sondern schießt ihn wieder weg; diese Regel vor dem Start erklären.",
+        "gruppe_min": 5,
+        "gruppe_max": 20
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle nennt „etwa 5-20 Mitspieler“; die Felder standen auf 10 bis 10."
+    },
+    {
+      "id": "sw-bierbank-balance",
+      "felder": {
+        "tipps": "Die Bank auf ebenem, rutschfestem Boden aufstellen und nur mit Schuhen spielen, die nicht rutschen. Die Spielleitung steht bereit, um Stürze abzufangen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-blinder-pirat",
+      "felder": {
+        "tipps": "Ruhe im Raum vorher vereinbaren. Wer als Pirat die Augen schließt, braucht im Zweifel eine Augenbinde, damit nicht geschummelt wird. Der Raum sollte frei von Stolperfallen sein.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Quelle sieht einen Piraten und „die übrigen Spieler“ vor; gruppe_max 2 hielt das Spiel fälschlich für ein Zweier-Spiel."
+    },
+    {
+      "id": "sw-blindes-quadrat",
+      "felder": {
+        "tipps": "Den Raum vorher freiräumen, damit niemand stolpert. Augenbinden sind freiwillig, wer lieber die Augen nur schließt, darf das tun. Nach der Aufgabe gemeinsam besprechen, wer geführt hat und wie es sich angefühlt hat."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-british-bulldog",
+      "felder": {
+        "tipps": "Das Hochheben ist die Fangregel dieser Fassung. Bei unterschiedlich großen oder kräftigen Kindern vorher eine einfachere Regel vereinbaren (zum Beispiel Antippen), damit niemand fällt. Spielfeld klar markieren und auf Gras oder weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-brot-backen",
+      "felder": {
+        "tipps": "Der „Teig“ wird nur leicht angehoben, nie hoch geworfen. Die Spielleitung greift ein, wenn zu wild geworfen wird. Wer nicht auf die Hände will, darf Bäcker oder Ofen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-bruckenfangen",
+      "felder": {
+        "tipps": "Genug Platz einplanen: Wenn es eng wird, wird das Unterkrabbeln für die Befreier gefährlich. Dann die Regel aus der Variante vereinbaren, dass Befreier unter der Brücke nicht gefangen werden können."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-burgensturm",
+      "felder": {
+        "tipps": "Vor dem Start klar sagen: Ziehen und Schieben ist erlaubt, Schlagen und Treten nicht. Die Spielleitung schließt zu hartes Spielen konsequent aus. Teams nach einer Runde tauschen, damit alle einmal stürmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-bruchenball",
+      "felder": {
+        "tipps": "Vor dem Start eindeutig festlegen, welche Gewalt erlaubt ist, und konsequent darauf achten. Der Ball ist sehr schwer; für Gruppen mit jüngeren Kindern einen leichteren Ball nehmen.",
+        "gruppe_max": null,
+        "material": [
+          "großer, schwerer „Ball“ (traditionell ein mit Tannenzapfen gefüllter Leinensack, mindestens 20 kg)",
+          "Spielfeldmarkierungen"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt. Außerdem: Das Material war an einem Komma in drei Teile zerrissen („großer“, „schwerer Ball“ und „Feldmarkierungen“)."
+    },
+    {
+      "id": "sw-burgherr",
+      "felder": {
+        "tipps": "Den Burgkreis mit Stöcken oder Seilen so groß legen, dass alle bequem hineinpassen. Der Burgherr achtet auf faires Spiel und unterbricht, wenn es zu wild wird. Vor dem Start kurz klären, wie viel Schubsen erlaubt ist."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-capture-the-flag",
+      "felder": {
+        "tipps": "Spielfeld und Grenzen vor dem Start allen zeigen und Stellungen der Teams markieren. Ein Pfiff als Abbruchsignal und eine feste Rückkehrzeit vereinbaren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chaosfangen",
+      "felder": {
+        "tipps": "Spielfläche frei von Stolperfallen halten. Berührt wird nur mit der Handfläche am Oberkörper, nie am Kopf. Wer ausgeschieden ist, setzt sich außerhalb der Fläche hin; mehrere kurze Runden hintereinander spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chinesisch-knobeln",
+      "felder": {
+        "tipps": "Die drei Figuren vorher gemeinsam einüben, damit alle sie gleichzeitig zeigen. Bei vielen Gruppen im Turniermodus spielen, damit niemand lange zuschauen muss."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chinesische-mauer",
+      "felder": {
+        "tipps": "Das Spielfeld deutlich markieren, zum Beispiel mit zwei Seilen für die Mauer. Der Fänger bleibt innerhalb der Mauer."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-concentration",
+      "felder": {
+        "tipps": "Den Rhythmus so lange ohne Namen üben, bis alle ihn halten. Erst danach die Nummern aufrufen und das Tempo langsam steigern."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-das-habe-ich-noch-nie-gemacht",
+      "felder": {
+        "tipps": "Die Aussagen so wählen, dass niemand bloßgestellt wird; die Spielleitung legt vorab fest, welche Bereiche tabu sind (zum Beispiel Familie, Geld). Im Stuhlkreis einen Stuhl weniger als Mitspielende bereitstellen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-das-schiff-geht-unter",
+      "felder": {
+        "tipps": "Aufgaben an die Fläche und an die Gruppe anpassen, keine riskanten Übungen wie Kopfstand auf hartem Boden bei jüngeren Kindern. Zwischen den Kommandos kurze Pausen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dick-und-doof",
+      "felder": {
+        "tipps": "Die Rollen nicht laut verraten und vor dem Start klären, dass nur Bänder gestohlen, nicht gehalten oder gezogen werden. Ein sicheres Spielfeld abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-die-wand",
+      "felder": {
+        "tipps": "Der Teil mit dem Hochheben braucht Sicherung: mehrere Personen stehen bereit, um zu halten und aufzufangen, und der Boden am Fuß der Wand muss frei sein. Die Höhe der Aufgabe an das Alter anpassen. Wer nicht hochgehoben werden will, hilft stattdessen mit."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dirigent",
+      "felder": {
+        "tipps": "Den Detektiv erst hereinholen, wenn der Dirigent bestimmt ist. Die Bewegung wechselt alle paar Sekunden; am besten beobachten alle den Dirigenten nur aus dem Augenwinkel."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-donner-wetter-blitz",
+      "felder": {
+        "tipps": "Die Startlinie und die Linie hinter dem Bewacher klar markieren. Vor dem Start klären, was als Bewegung zählt, wenn sich der Bewacher umdreht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dornroschen",
+      "felder": {
+        "tipps": "Die Rollen vor dem Singen verteilen und kurz proben. Wer nicht vorspielen will, übernimmt das Volk. Das Lied gemeinsam einmal langsam durchsingen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „6 Personen oder mehr“; der Import hat 6 bis 6 daraus gemacht."
+    },
+    {
+      "id": "sw-dosenschiessen",
+      "felder": {
+        "tipps": "Eine Wurflinie markieren und Zuschauende seitlich stellen, damit niemand getroffen wird. Dosen vorher auf scharfe Kanten prüfen. Als Station in einen Wettkampf einbauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dracula",
+      "felder": {
+        "tipps": "Die Spielleitung hat eine Taschenlampe bereit, falls jemand Angst bekommt oder sich verletzt. Gefährliche Räume (Treppen, Kellerabgänge) vorher sperren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-drangelei",
+      "felder": {
+        "tipps": "Fläche mit Kreide oder Klebeband markieren und festlegen, ob Heben erlaubt ist. Auf Zurufe achten: Wer sich unwohl fühlt, sagt „Stopp“. Mit kleinen Teams anfangen, damit sich niemand verletzt.",
+        "material": [
+          "Kreide oder Klebeband zum Markieren der Fläche"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Das Material bestand aus „Kreide“ und dem Fragment „ähnliches“ (an einem Komma zerrissen)."
+    },
+    {
+      "id": "sw-dreieck",
+      "felder": {
+        "tipps": "Die Lösung nicht verraten und mehrere Beispiele nacheinander geben. Wer meint, die Lösung zu kennen, zeigt es durch ein eigenes Dreieck, statt sie zu nennen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-durchzahlen",
+      "felder": {
+        "tipps": "Vor dem Start klar sagen, dass keine Reihenfolge abgesprochen werden darf und niemand durch Zeichen zeigt, wer als Nächstes spricht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ecken-begrussen",
+      "felder": {
+        "tipps": "Die Aufgaben der Ecken müssen schnell zu erfüllen und für alle harmlos sein. Die Spielleitung legt bei Bedarf Grenzen fest, zum Beispiel keine Liegestütze für kleine Kinder."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-elektrisches-gummibarchen",
+      "felder": {
+        "tipps": "Vorher nach Allergien fragen. Gummibärchen enthalten meist Gelatine, deshalb für vegetarisch lebende Kinder eine Alternative (zum Beispiel Obststücke) bereithalten. Der Teller wird jede Runde gleich bestückt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-eiersuche",
+      "felder": {
+        "tipps": "Das „Gackern“ wird lauter, je näher der Bauer kommt – am besten vorher kurz üben. Das Ei klein halten und sicher unter der Person verstecken, damit nichts kaputtgeht.",
+        "material": [
+          "kleiner Ball (zum Beispiel Tischtennisball) oder Papier mit gezeichnetem Ei"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle ein „Ei“ (kleiner Ball oder Papier) verlangt."
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "felder": {
+        "tipps": "Die Laufstrecke vorher auf Hindernisse prüfen und rutschfesten Boden wählen. Von allen wird Ehrlichkeit verlangt – das vor dem Start kurz ansprechen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-farbenfangen",
+      "felder": {
+        "tipps": "Spielfeld an den Enden klar markieren. Die Fänger rufen nur Farben, die auch getragen werden, damit das Spiel in Gang bleibt. Bei mehr als etwa 15 Kindern mehrere Fänger bestimmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-fliegender-hollander",
+      "felder": {
+        "tipps": "Zum Huckepack-Tragen nur etwa gleich große und kräftige Kinder zusammenstellen. Auf weichem, ebenem Boden spielen; wer sich nicht tragen lassen will, darf auch den Kreis halten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-forderband",
+      "felder": {
+        "tipps": "Wer auf dem Band liegt, wird nur vorsichtig und langsam getragen; Kopf und Nacken werden mitgehalten. Die Spielleitung achtet am Ende des Bandes auf das sichere Absetzen. Wer nicht möchte, muss nicht.",
+        "ort": "beides"
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Ort laut Infobox „am Boden“; der Import hat „drinnen“ daraus gemacht."
+    },
+    {
+      "id": "sw-fuchs-habicht-paarungszeit",
+      "felder": {
+        "tipps": "Die drei Kommandos zuerst ohne Ausscheiden üben. Auf sauberem Boden spielen, weil sich die Spielenden hinlegen. Weitere Kommandos erst dazunehmen, wenn die ersten sicher sitzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-fuchs-und-gans",
+      "felder": {
+        "tipps": "Die Gänse halten sich an den Schultern, nicht an der Kleidung, und der Fuchs fasst die letzte Gans nur leicht an. Bei mehr als etwa 12 Kindern in zwei Gruppen spielen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-geruchtekuche",
+      "felder": {
+        "tipps": "Vorher klarstellen, dass nur harmlose, selbst gewählte Dinge erzählt werden und niemand bloßgestellt wird. Eine Notiz-Karte hilft, die weitergegebenen Geschichten zu behalten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-geschmackskim",
+      "felder": {
+        "tipps": "Vorher nach Lebensmittelallergien fragen. Besonders bei jüngeren Kindern darauf achten, was verkostet wird; das Spiel soll keine Mutprobe mit schrecklich schmeckenden Gewürzen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gesichter-ertasten",
+      "felder": {
+        "tipps": "Vorher fragen, wer nicht im Gesicht berührt werden möchte, und vereinbaren, ob Brillen oder Ohrringe abgenommen werden. Die Gruppe verhält sich still."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gletscherspalte",
+      "felder": {
+        "tipps": "Vor dem Spiel Hindernisse aus dem Weg räumen und für einen geeigneten Boden sorgen. Die Seile nur in kleinen Schritten auseinanderlegen und beim Absprung nicht schubsen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-goofy",
+      "felder": {
+        "tipps": "Den Raum vorher freiräumen. Das Spiel bleibt ruhig; wer mit verbundenen Augen unterwegs ist, hält die Hände vorsichtig vor sich. Die Spielleitung achtet auf Zusammenstöße."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gordischer-knoten",
+      "felder": {
+        "tipps": "Wenn jemandem etwas wehtut, ruft er „Stopp“ und alle lassen sofort los. Die Hände werden nicht überdreht; ist der Knoten unlösbar, beginnt die Gruppe neu."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-guru-guru",
+      "felder": {
+        "tipps": "Die beiden Spielfelder klar abgrenzen und die Teams etwa gleich stark einteilen. Ein Mitspieler pro Seite achtet darauf, dass wirklich durchgehend „Guru Guru“ gerufen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ha-ha-ha",
+      "felder": {
+        "tipps": "Die drei Teile (Ha-Ha-Ha) erst langsam im Kreis üben, dann das Tempo steigern. Beim Schlagen Richtung Bauch nicht berühren, damit sich niemand wehtut."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-hase-und-igel",
+      "felder": {
+        "tipps": "Die Spielfeldgrenzen deutlich markieren, zum Beispiel mit drei Seilen. Die beiden Igel wechseln erst, wenn ein Hase angekommen ist, sodass das Laufen nicht stockt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-heiss-kalt",
+      "felder": {
+        "tipps": "Der Gegenstand muss frei sichtbar oder leicht zu finden sein, aber nicht am Gefahrenort (Heizung, Steckdose, Regal) liegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-heuwagen-mistwagen",
+      "felder": {
+        "tipps": "Die Blätter anonym einsammeln lassen, damit alle ehrlich schreiben. Nach dem Einsammeln die wichtigsten Punkte gemeinsam zusammenfassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-himmel-auf-erden",
+      "felder": {
+        "tipps": "Verletzungsgefahr: Der Fänger hat die Augen verbunden und die anderen klettern. Bei kleineren Kindern muss ein Betreuer dabei sein, damit niemand vom Gerüst fällt. Nur auf einem sicheren Klettergerüst mit weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-hugo",
+      "felder": {
+        "tipps": "Statt eines Vorschlaghammers lieber eine Kartonröhre oder gestapelte Kartons nehmen, die gefahrlos umstürzen. Die Hände dürfen nicht losgelassen werden; wer am Ziehen zu fest reißt, wird gebremst. Auf weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-if-you-re-happy-and-you-know-it",
+      "felder": {
+        "tipps": "Mit zwei bis drei Strophen beginnen und die Gruppe bestimmen lassen, welche Bewegungen dazukommen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-initialenraten",
+      "felder": {
+        "tipps": "Die Personen so wählen, dass die Gruppe sie kennt (Pfadfinder, Sänger, Schauspieler). Bei jüngeren Kindern lieber Figuren aus Büchern und Filmen nehmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-jammerquaks",
+      "felder": {
+        "tipps": "Der Kreis hält sich an den Händen und achtet auf die Jammerquaks, die blind und rückwärts unterwegs sind. Der Boden muss frei von Hindernissen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-jurte",
+      "felder": {
+        "tipps": "Auf rutschfestem Boden spielen und niemanden zwingen, die Position zu halten. Stehenbleiben mit steifem Körper, nicht ruckartig lehnen. Eine gerade Spielerzahl ist nötig, notfalls spielt die Spielleitung mit."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-kaiserball",
+      "felder": {
+        "tipps": "Einen weichen Ball nehmen und nicht auf den Kopf zielen. Kaiser und Hofnarr werden vor dem Start im Geheimen bestimmt; die Regeln für die Sonderrollen vorher einmal erklären."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-karottenziehen",
+      "felder": {
+        "tipps": "Die Karotten hängen sich fest ein; der Hase zieht an den Beinen oder Füßen, nie an der Kleidung oder den Gelenken. Auf sauberem, weichem Boden spielen. Wer genug hat, ruft „Stopp“."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-killerball",
+      "felder": {
+        "tipps": "Einen weichen Ball (Softball oder Schaumstoff) verwenden und festlegen, dass nicht auf den Kopf gezielt wird. Spielfeldgrenzen markieren; wer abgeschossen wurde, wartet am Rand und kommt wieder, wenn ein Gegner getroffen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-kippstuhl",
+      "felder": {
+        "tipps": "Stühle mit vier festen Beinen und ohne Wackler nehmen, nicht zu schwere. Auf glattem Boden die Stuhlbeine nicht rutschen lassen; die Gruppe so aufstellen, dass beim Umkippen niemand getroffen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-klapperschlangen",
+      "felder": {
+        "tipps": "Der Raum bleibt frei von Hindernissen. Für die Geräuschquellen Dosen ohne scharfe Kanten nehmen, zum Beispiel mit Reis gefüllt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-knieboxen",
+      "felder": {
+        "tipps": "Die erlaubten Angriffe vor dem Spiel besprechen: Abdrängen mit dem Oberkörper ja, Arme und harte Knie-Stöße nein. Auf weichem Boden spielen, kleine Runden spielen und bei zu rauem Spiel sofort unterbrechen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-koffer-packen-auf-dem-trampolin",
+      "felder": {
+        "tipps": "Nur mit Aufsicht, immer nur eine Person auf dem Trampolin. Vorab Regeln ausmachen: Niemand muss einen Sprung machen, den er sich nicht zutraut; die Spielleitung gibt Ideen für einfache Sprünge."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-korperteil-twister",
+      "felder": {
+        "tipps": "Nur mit Gruppen spielen, die sich schon kennen. Vorab klären, dass niemand an Stellen berührt wird, die er nicht möchte, und wer nicht mitmachen will, schaut zu. Auf weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-leuchtturm",
+      "felder": {
+        "tipps": "Verletzungsgefahr beachten: Das Schiff läuft mit geschlossenen Augen, deshalb ruhig und langsam bleiben. Ein Spielfeld ohne Hindernisse wählen und die Felsen (Mitspielende) so aufstellen, dass das Schiff sie früh hört.",
+        "material": [
+          "Augenbinde (oder einfach die Augen schließen)"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle eine Augenbinde nennt."
+    },
+    {
+      "id": "sw-kleiner-gruner-zauberer",
+      "felder": {
+        "tipps": "Die Lösung nicht nennen und den Eingeweihten sagen, dass sie nur „richtig“ oder „falsch“ antworten. Mehrere Beispiele nacheinander geben, bis die Gruppe Hypothesen hat."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-larmwand",
+      "felder": {
+        "tipps": "Kurz halten, damit niemand heiser wird, und nicht direkt ins Ohr rufen. Das Wort vorher flüstern und nach der Runde auflösen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-maxchen",
+      "felder": {
+        "tipps": "Ohne Geldeinsatz spielen; Strafpunkte, Streichhölzer oder Spielmarken als Einsatz nehmen. Die Reihenfolge der Würfelwerte vorher auf einen Zettel schreiben, damit alle sie nachsehen können."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-merkball",
+      "felder": {
+        "tipps": "Einen weichen Ball nehmen und vereinbaren, dass nicht auf den Kopf geworfen wird. Wie viele Schritte mit dem Ball erlaubt sind, nach Raumgröße vorher festlegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-montagsmaler",
+      "felder": {
+        "tipps": "Die Begriffe dem Alter anpassen (für Wölflinge Tiere und Gegenstände). Vor dem Start klären, ob die Zeichnenden sprechen oder Buchstaben schreiben dürfen. Die Zeit pro Runde festlegen und mit einer Uhr stoppen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-mumie",
+      "felder": {
+        "tipps": "Mund, Nase und Augen frei lassen. Die Mumie bleibt ruhig stehen. Das Papier soll nicht reißen; bei mehreren Teams gleich viel Klopapier verteilen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „beliebig viele 2er-Teams“; gruppe_max 2 schloss das Spiel für größere Gruppen aus."
+    },
+    {
+      "id": "sw-mutprobe-und-vertrauen",
+      "felder": {
+        "tipps": "Nur mit eingespielten Paaren spielen, die sich vertrauen. Der Fängerin oder dem Fänger sagen, nicht zu lange mit dem Auffangen zu warten, und etwa gleich große Paare bilden. Die Spielleitung achtet auf Rutschgefahr und weichen Boden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ninja",
+      "felder": {
+        "tipps": "Getroffen wird nur die Handfläche, nicht der Körper. Kein Schlagen mit Kraft; die Spielfläche muss frei von Hindernissen sein. Als Raum genügt auch ein Heimraum."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-peng",
+      "felder": {
+        "tipps": "Wenn das „Abschießen“ zu brutal erscheint, wie in der Quelle vorgeschlagen etwas anderes sagen, zum Beispiel den Nachnamen der Person. Die Namen sollten schon bekannt sein, bevor das Spiel schneller wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-pferdebandiger",
+      "felder": {
+        "tipps": "Das Spiel darf auf keinen Fall in einen Kampf ausarten. Vorher klären, welche Manöver erlaubt sind (zum Beispiel nur Festhalten, kein Treten oder Würgen), und die Spielfläche abstecken. Das Pferd ist eine kräftige, ausdauernde Person, oft aus der Spielleitung."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-platztausch",
+      "felder": {
+        "tipps": "Pro Runde immer einen Stuhl weniger als Mitspielende bereitstellen. Wer auf dem eigenen Platz sitzen bleiben will, steht nicht auf. Stuhlkreis eng genug aufstellen, damit niemand weit rennen muss."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-qualle-koralle",
+      "felder": {
+        "tipps": "Das Spielfeld klar abgrenzen und auf freie Laufwege achten. Die Qualle darf nur nach vorn und quer laufen, nicht zurück; diese Regel vor dem Start sagen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rapunzel",
+      "felder": {
+        "tipps": "Das Rätsel nicht verraten. Wenn zwei getrennte Räume vorhanden sind, geht das Spiel leichter."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rauber-und-kaufleute",
+      "felder": {
+        "tipps": "Vor dem Start klarstellen, dass Schlagen, Beißen und Zwicken verboten sind. Die Räuber halten die Kaufleute am besten nur vorsichtig an Händen oder Armen fest. Spielfeld abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rollende-munze",
+      "felder": {
+        "tipps": "Für die Münze eine 2-Euro-Münze nehmen, die gut rollt. Die Plane gemeinsam anheben und senken; zu Anfang langsam üben.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-rot-blau-tot",
+      "felder": {
+        "tipps": "Einen weichen Ball verwenden und nicht auf den Kopf zielen. Die Kreisgröße so wählen, dass der Ball gut zugespielt werden kann."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "felder": {
+        "tipps": "Statt eines angesengten Korkens lieber einen Schminkstift oder Hautstift nehmen, der sich leicht abwaschen lässt. Alle sprechen die Sätze zuerst langsam.",
+        "material": [
+          "Hautstift oder Schminkstift (traditionell ein angesengter Korken)"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle einen Stift zur Markierung verlangt."
+    },
+    {
+      "id": "sw-sardinli",
+      "felder": {
+        "tipps": "Rückkehrzeit und Spielgebiet vereinbaren; gefährliche Räume (Keller, Dachboden, Treppen) sperren. Gemeinsam in dasselbe Versteck zu gehen macht das Spiel leise und lustig."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schmuggeln",
+      "felder": {
+        "tipps": "Spielgebiet im Wald genau abstecken und Pfeife oder Signal für Abbruch vereinbaren. Die Schmuggelware nach dem Spiel vollständig einsammeln lassen; nicht vergraben oder liegenlassen. Gruppen: etwas mehr Schmuggler als Polizisten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schubkarrenrennen",
+      "felder": {
+        "tipps": "Der Fahrer hält die Füße nicht zu hoch und fährt „sanft“. Auf ebenem, weichem Boden spielen, am besten auf Gras."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schwebende-stange",
+      "felder": {
+        "tipps": "Die Stange nicht zu schwer wählen. Die Gruppe sollte nicht länger sein als die Stange.",
+        "material": [
+          "lange, leichte, unbiegsame Stange (etwa 30 cm pro Mitspielenden)"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Das Material war an einem Komma in zwei Teile zerrissen („eine lange“ und „unbiegsame Stange“)."
+    },
+    {
+      "id": "sw-sockenraub",
+      "felder": {
+        "tipps": "Auf sauberem Boden ohne Hindernisse spielen. Außer der Regel, dass niemand verletzt wird, gibt es nur eine Regel; die Spielleitung legt vorab fest, was mit erbeuteten Socken geschieht. Es kann sein, dass Socken kaputtgehen – vorher darauf hinweisen.",
+        "material": [
+          "Socken (jede Person ein Paar)"
+        ]
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl jede Person laut Quelle ein Paar Socken benötigt."
+    },
+    {
+      "id": "sw-stille-post",
+      "felder": {
+        "tipps": "Ein schwieriges Wort oder einen kurzen Satz wählen, der sich unterwegs gut verändert. Nicht nachfragen lassen, wenn man das Wort nicht versteht (auf Wunsch zwei Versuche erlauben). Am Ende Anfangsbegriff und Endbegriff gegenüberstellen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-streichholz-feuerwerk",
+      "felder": {
+        "tipps": "Nur im Freien oder auf feuerfester Unterlage abbrennen, ein Eimer Wasser oder Löschdecke bereit. Nur unter Aufsicht Erwachsener bzw. Älterer und nur mit Kindern, die sicher mit Streichhölzern umgehen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-telefax",
+      "felder": {
+        "tipps": "Das Rückenmalen nur zwischen Kindern machen, die sich vertraut sind; wer nicht möchte, malt auf die Handfläche. Zwischen den Personen eine bequeme Sitzposition mit etwas Abstand wählen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-teiler-7",
+      "felder": {
+        "tipps": "Das Ersatzwort (zum Beispiel „Teiler“) vorab festlegen und die Zahlenfolge zum Warmwerden einmal langsam durchgehen. Das Spiel lässt sich leicht mit einer anderen Ziffer variieren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-vampir",
+      "felder": {
+        "tipps": "Das „Beißen“ nur als leichtes Antippen an der Schulter spielen, nicht am Hals. Den Raum frei von Stolperfallen halten. Mit Augenbinden oder bei Dunkelheit sehr langsam bewegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-versteinern",
+      "felder": {
+        "tipps": "Den Fänger (bei mehreren: alle Fänger) mit einem Band oder Halstuch kenntlich machen. Das Spielfeld deutlich abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-vorstellung-mit-sussigkeiten",
+      "felder": {
+        "tipps": "Vorher nach Allergien fragen; Gummibärchen enthalten oft Gelatine, deshalb eine Alternative für vegetarisch lebende Kinder bereithalten. Die Süßigkeiten dürfen erst nach der Vorstellung gegessen werden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-waschmaschine",
+      "felder": {
+        "tipps": "Der Spieler gibt vorher an, ob er sanft oder kräftiger „gewaschen“ werden möchte. Wer nicht durch die Waschmaschine gehen möchte, muss nicht. Nie unsanft berühren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-waschstrasse",
+      "felder": {
+        "tipps": "Die Person darf vorher sagen, ob sie durch die Waschstraße gehen möchte und wie sanft. Berührt wird immer sanft, niemals unsanft. Auch als Begrüßung oder Verabschiedung geeignet."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-welle-entspannungsspiel",
+      "felder": {
+        "tipps": "Die „Bank“ stützt sich fest mit den Händen ab und bewegt den Rücken nur leicht auf und ab. Wer gerade nicht möchte, setzt aus. Bei jüngeren Kindern nur kurz massieren lassen.",
+        "gruppe_max": null
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Die Infobox sagt „etwa 6 pro Gruppe“, nicht genau 6 insgesamt."
+    },
+    {
+      "id": "sw-wer-bin-ich",
+      "felder": {
+        "tipps": "Die Begriffe vorher passend zur Gruppe wählen und die Kärtchen so anbringen, dass sie halten. Nichts Beleidigendes auf die Kärtchen schreiben."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-wolf-und-schafchen",
+      "felder": {
+        "tipps": "Vorn in der Kette stehen die älteren und stärkeren Kinder. Die Kette hält an Schultern oder Hüften, nicht an der Kleidung. Der Wolf darf nur das hinterste Schäfchen berühren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-zipp-zapp-zopp",
+      "felder": {
+        "tipps": "Zuerst langsam spielen, bis alle Wörter und Zeigerichtung sicher sind. Für Fehler ein gemeinsames „Fehler“-Zeichen verwenden und niemanden bloßstellen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-glockenklang",
+      "felder": {
+        "kurz": "Mit verbundenen Augen folgt die Gruppe dem Klang einer Glocke, die die Spielleitung aus 30 bis 200 Metern Entfernung im Abstand weniger Sekunden läutet.",
+        "tipps": "Bei extremem Gelände oder unsicheren Teilnehmenden Beobachter einsetzen, die bei Gefahrenstellen behutsam eingreifen. Bei Ästen in Augenhöhe unbedingt auf den Schutz der Augen achten. Das Spiel möglichst still durchführen.",
+        "material": [
+          "Augenbinden oder Schlauchschals",
+          "Glocke oder Zimbel"
+        ]
+      },
+      "grund": "Kurzbeschreibung bestand nur aus den Überschriften der Quelle (Schwierigkeitsgrad, Material), das Feld Tipps nur aus dem Wort „Anmerkung:“, Material war der Platzhalter „Diverses“. Alles aus dem Quelltext übernommen und neu zusammengesetzt, nichts erfunden."
+    },
+    {
+      "id": "ps-klopapier-namensspiel",
+      "felder": {
+        "material": [
+          "Klopapier",
+          "Bonbons oder Smarties (Variante)"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; die Quelle nennt Klopapier und als Variante Bonbons."
+    },
+    {
+      "id": "ps-gruppennetz",
+      "felder": {
+        "material": [
+          "Wollknäuel"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; im Text wird nur ein Wollknäuel gebraucht."
+    },
+    {
+      "id": "ps-messer-gabel-loeffel",
+      "felder": {
+        "material": [
+          "Messer, Gabel und Löffel (je dreimal)"
+        ]
+      },
+      "grund": "Material war der Platzhalter „Diverses“; die Quelle verlangt je dreimal Messer, Gabel und Löffel."
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "felder": {
+        "material": [
+          "Stühle",
+          "Decke"
+        ]
+      },
+      "grund": "Eine „andere Pfadfindergruppe“ ist kein Material, sondern ein Rest aus dem Quelltext (die Mitspielenden werden in zwei Gruppen geteilt)."
+    },
+    {
+      "id": "sw-1-2-3",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle schreibt, es können mehrere Zweiergruppen gleichzeitig spielen; gruppe_max 2 hielt das Spiel fälschlich für ein reines Zweierspiel."
+    },
+    {
+      "id": "sw-52-einsammeln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle: ein Spiel für eine Person, bei mehreren treten alle hintereinander an. gruppe_max 1 verbarg es vor größeren Gruppen."
+    },
+    {
+      "id": "sw-klatschball",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-mord-im-dunkeln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-tier-vogel-fisch",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "In der Spielewiki-Infobox steht „etwa N“ bzw. „beliebig, N“. Der Import hat daraus fälschlich die feste Größe N bis N gemacht; gruppe_max entfällt."
+    },
+    {
+      "id": "sw-kooperatives-armdrucken",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „beliebig viele 2er-Gruppen“; gruppe_max 2 schloss das Spiel für größere Gruppen aus."
+    },
+    {
+      "id": "sw-haschen-spiel",
+      "felder": {
+        "gruppe_min": 3
+      },
+      "grund": "Die Infobox nennt „minimal drei, lustig bis zu etwa 20“; die Untergrenze 3 fehlte."
+    },
+    {
+      "id": "sw-schere-stein-papier",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Infobox nennt „wenige Sekunden“ pro Runde; 10 bis 20 Minuten waren überzogen für einen Baustein."
+    },
+    {
+      "id": "sw-eine-minute",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Quelle nennt „etwas mehr als eine Minute“; 10 bis 20 Minuten waren zu lang."
+    },
+    {
+      "id": "sw-minutenweg",
+      "felder": {
+        "dauer_min": 5,
+        "dauer_max": 10
+      },
+      "grund": "Die Quelle nennt „eine Minute“; 10 bis 20 Minuten waren zu lang."
+    },
+    {
+      "id": "sw-flaschenhals",
+      "felder": {
+        "ort": "beides"
+      },
+      "grund": "Ort laut Infobox „überall, am Boden“; der Import hat „drinnen“ daraus gemacht."
+    },
+    {
+      "id": "sw-fotograf",
+      "felder": {
+        "ort": "beides"
+      },
+      "grund": "Ort laut Infobox „überall, etwas Freiraum“; der Import hat „drinnen“ daraus gemacht."
+    },
+    {
+      "id": "sw-seilspringen",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „jeweils einer“, die Quelle beschreibt aber auch Wettbewerb mit mehreren Seilen und eine Teamaufgabe mit mehreren Springenden."
+    },
+    {
+      "id": "sw-taler-taler-du-musst-wandern",
+      "felder": {
+        "material": [
+          "ein kleiner Gegenstand (Münze, Ring, Schlüssel oder Papierknäuel)"
+        ]
+      },
+      "grund": "Material war leer, obwohl der Materialabschnitt der Quelle einen kleinen Gegenstand (Taler) verlangt."
+    },
+    {
+      "id": "sw-zehnerln",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Quelle: wird normalerweise allein gespielt, „kann natürlich auch von mehreren Personen betrieben werden“. gruppe_max 1 war überzogen."
+    },
+    {
+      "id": "sw-wascheklammernspiel",
+      "felder": {
+        "gruppe_max": null
+      },
+      "grund": "Die Infobox sagt „zwei Gruppen“; der Import machte daraus 2 bis 2 Personen."
+    },
+    {
+      "id": "sw-zwei-funfecke",
+      "felder": {
+        "gruppe_max": 20
+      },
+      "grund": "Die Quelle: „zwischen sechs und etwa zwanzig Personen“; die Obergrenze fehlte."
+    },
+    {
+      "id": "sw-verstecken",
+      "felder": {
+        "kurz": "Grundvariante des Versteckspiels: Ein Kind zählt bis 20, die anderen verstecken sich und versuchen, sich unbemerkt zum Spielbaum zu schleichen und abzuschlagen."
+      },
+      "grund": "Die Kurzbeschreibung war ein Wikisatz („Dieser Artikel beschreibt … Kategorie Versteckspiel“) und sagte nichts über das Spiel."
+    },
+    {
+      "id": "sw-kette-durch-den-reifen",
+      "felder": {
+        "material": [
+          "Reifen (Hula-Hoop) oder ein zu einem Ring geknotetes Seil"
+        ]
+      },
+      "grund": "Das Material bestand aus „Reifen“ und dem Fragment „ähnliches“ (an einem Komma zerrissen)."
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "felder": {
+        "material": [
+          "Teures Mineralwasser",
+          "mittleres Mineralwasser",
+          "günstiges Mineralwasser",
+          "Wasser ohne Kohlensäure",
+          "Quellwasser",
+          "Wasser aus einer Plastikflasche"
+        ]
+      },
+      "grund": "Im Material war das letzte Wort abgeschnitten („Plastikflasc …“; Zeichenlimit der Quelldatei)."
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "felder": {
+        "material": [
+          "Zutaten für euer Essen"
+        ]
+      },
+      "grund": "Im Material stand nur „Die Zutaten für euer exquisit …“ (abgeschnitten); sinngemäß ergänzt."
+    },
+    {
+      "id": "insp-fahrrad-geschicklichkeits-parkour",
+      "felder": {
+        "material": [
+          "Fahrräder"
+        ]
+      },
+      "grund": "Tippfehler im Material („Fahrränder“)."
+    },
+    {
+      "id": "insp-korken-piratenschiff",
+      "felder": {
+        "material": [
+          "Bastelschere",
+          "Korken",
+          "Zahnstocher",
+          "Paketband",
+          "Buntstifte",
+          "Blatt Papier"
+        ]
+      },
+      "grund": "Tippfehler und abgeschnittenes Wort im Material („Packetband“, „Blatt Papie …“)."
+    },
+    {
+      "id": "sw-angeln",
+      "felder": {
+        "tipps": "Eine abgegrenzte Spielfläche oder eine Kiste verwenden, damit die Rollen beieinander bleiben. Besenstiele nicht schwingen: Wer an der Reihe ist, steht mit Abstand zu den anderen."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-der-kaiser-schickt-soldaten-aus",
+      "felder": {
+        "tipps": "Das Spielfeld mit einer Mittellinie markieren und die Entfernung dem Platz anpassen (20 bis 30 Meter). Beide Gruppen sollten etwa gleich groß und gleich schnell sein. Als Variante scheiden Verlierer aus, dann ist der Sieger schneller ermittelt."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-geisterbahn",
+      "felder": {
+        "tipps": "Keine Kerzen oder Fackeln in der Nähe von Kindern mit verbundenen Augen. Schnüre und Stoffstücke nicht in Augen- oder Halshöhe anbringen, Hindernisse am Boden vorher abgehen (Stolpergefahr). Jede Person darf jederzeit abbrechen; für jüngere Kinder die Bahn weniger gruselig halten."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-geocaching",
+      "felder": {
+        "tipps": "Statt spezieller GPS-Geräte reichen Smartphones mit einer Kartenanwendung. Die Koordinaten vorher mit dem Gerät prüfen und Spielgebiet und Rückkehrzeit festlegen. Für Gruppen als Schatzsuche mit eigenem Behälter ausprobieren."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-papierknauel-reflexion",
+      "felder": {
+        "tipps": "Die Frage kurz und klar stellen und die Länge der Antwort begrenzen (zum Beispiel höchstens fünf Wörter). Die Zettel gut mischen, damit niemand den eigenen bekommt. Die Antworten nicht kommentieren."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-tastkim",
+      "felder": {
+        "tipps": "Nur ungefährliche Gegenstände wählen (nichts Scharfes oder Spitzes). Die Gegenstände sollten sich deutlich unterscheiden. Erst wenn alle getastet haben, wird aufgeschrieben oder aufgezählt."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "felder": {
+        "material": [
+          "ein beliebiger Gegenstand (Münze, Besteck, Buch oder Tasse)"
+        ]
+      },
+      "grund": "Material war leer, obwohl der Materialabschnitt der Quelle einen Gegenstand nennt."
     }
   ],
   "keine_dublette": [
@@ -1490,10 +2768,11 @@
       "haupt": "sw-wer-bin-ich",
       "varianten": [
         "ps-wer-bin-ich",
-        "sw-wer-bin-ich-verkehrt"
+        "sw-wer-bin-ich-verkehrt",
+        "insp-wer-bin-ich"
       ],
       "lizenzen_unvertraeglich": true,
-      "grund": "Gleiches Ratespiel mit Ja-Nein-Fragen; die 'verkehrte' Fassung dreht laut Quelle nur um, wer den Begriff kennt."
+      "grund": "Gleiches Ratespiel mit Ja-Nein-Fragen; die 'verkehrte' Fassung dreht laut Quelle nur um, wer den Begriff kennt. | Dasselbe Ratespiel: Ein Begriff klebt auf der Stirn, reihum Ja-Nein-Fragen. Die Fassung des Inspirators legt nur die Stirnzettel von der Nachbarin oder dem Nachbarn fest."
     },
     {
       "haupt": "eig-waescheklammern-jagd",
@@ -1539,10 +2818,12 @@
     {
       "haupt": "sw-capture-the-flag",
       "varianten": [
-        "ps-capture-the-flag"
+        "ps-capture-the-flag",
+        "eig-capture-the-flag-im-dunkeln",
+        "eig-fahnenraub-im-wald"
       ],
       "lizenzen_unvertraeglich": true,
-      "grund": "Gleiches Geländespiel: Fahne der Gegenseite finden und in die eigene Hälfte bringen, Gefangene warten im Gefängnis."
+      "grund": "Gleiches Geländespiel: Fahne der Gegenseite finden und in die eigene Hälfte bringen, Gefangene warten im Gefängnis. | Alle drei sind Fahnenraub im Gelände; die beiden eigenen Fassungen sind Abwandlungen (bei Nacht mit Lampen, im Wald mit Bandabreißen)."
     },
     {
       "haupt": "eig-casino-abend",
@@ -2145,7 +3426,7 @@
         "ps-versteck-fangen"
       ],
       "lizenzen_unvertraeglich": true,
-      "grund": "Beides sind Abwandlungen des Grundspiels: 'Verstecken in Gedanken' läuft nur im Kopf ab - das Versteck wird gedacht und erfragt -, beim Versteck-Fangen kommt ein Freischlagpunkt dazu, zu dem Gefundene und Fängerin um die Wette rennen."
+      "grund": "Beides sind Abwandlungen des Grundspiels: 'Verstecken in Gedanken' läuft nur im Kopf ab - das Versteck wird gedacht und erfragt -, beim Versteck-Fangen kommt ein Freischlagpunkt dazu, zu dem Gefundene und Fängerin um die Wette rennen. | Dasselbe Versteckspiel mit Zählen, Suchen und Freischlagen am Spielbaum oder Freischlagpunkt."
     },
     {
       "haupt": "sw-schnitzeljagd",
@@ -2230,10 +3511,11 @@
     {
       "haupt": "sw-papierflieger-wettkampf",
       "varianten": [
-        "ps-papierflieger-mit-herausforderung"
+        "ps-papierflieger-mit-herausforderung",
+        "insp-papierflieger-wettbewerb"
       ],
       "lizenzen_unvertraeglich": true,
-      "grund": "Beide Male wird ein Papierflieger gebaut und um die Weite geworfen; bei der Fassung mit Herausforderung bauen zwei Personen gemeinsam, dürfen dabei aber nicht reden und je nur eine Hand benutzen."
+      "grund": "Beide Male wird ein Papierflieger gebaut und um die Weite geworfen; bei der Fassung mit Herausforderung bauen zwei Personen gemeinsam, dürfen dabei aber nicht reden und je nur eine Hand benutzen. | Dasselbe Spiel: Papierflieger bauen und gegeneinander antreten (Weite, Höhe, Dauer, Aussehen)."
     },
     {
       "haupt": "sw-merkkim",
@@ -2357,6 +3639,46 @@
       ],
       "lizenzen_unvertraeglich": false,
       "grund": "Gleiches Kommandospiel: Die Gruppe bewegt sich frei, und auf jedes gerufene Stichwort gehört eine feste Bewegung. Nur die Stichwortliste ist eine andere - Fuchs, Habicht und Paarungszeit statt Feuer, Wasser und Sturm."
+    },
+    {
+      "haupt": "sw-sardinli",
+      "varianten": [
+        "ps-sardine"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Versteckspiel: Eine Person versteckt sich, wer sie findet, versteckt sich dazu - bis alle wie Sardinen beieinander sitzen."
+    },
+    {
+      "haupt": "sw-larmwand",
+      "varianten": [
+        "ps-das-schreispiel"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel: Ein Hörer steht bei der gegnerischen Gruppe, die eigene Gruppe ruft ihm einen Satz zu, die Gegner übertönen sie durch Schreien."
+    },
+    {
+      "haupt": "eig-seilbruecke-bauen",
+      "varianten": [
+        "insp-seilbruecke-bauen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dieselbe Aufgabe: Eine Seilbrücke bauen und überqueren. Die eigene Fassung führt zusätzlich Spannknoten und Sicherung auf."
+    },
+    {
+      "haupt": "eig-geschmacks-kim-blind-tasting",
+      "varianten": [
+        "sw-geschmackskim"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dasselbe Spiel: Mit verbundenen Augen Lebensmittel am Geschmack erkennen; die eigene Fassung ist als Abend ausgearbeitet."
+    },
+    {
+      "haupt": "eig-blitzlicht-runde",
+      "varianten": [
+        "sw-blitzlicht-reflexion"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dieselbe Methode: Reihum ein paar kurze Sätze zum Abend, ohne Antworten."
     }
   ],
   "kern": [
@@ -2394,6 +3716,61 @@
       "id": "sw-schere-stein-papier-online",
       "kern": false,
       "grund": "Die Quelle beschreibt ausdrücklich die Fassung für den Online-Call und verlangt von allen eine eingeschaltete Kamera. Im Heim spielt man einfach Schere Stein Papier."
+    },
+    {
+      "id": "sw-ameisenkonig",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-kalaha",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
+    },
+    {
+      "id": "sw-mafia",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
+    },
+    {
+      "id": "insp-gitarrenkurs",
+      "kern": false,
+      "grund": "Der Baustein besteht nur aus einer Linksammlung (jede Zeile endet auf „Link zu Youtube“), die Links stehen nicht in den Daten. Ohne sie bleibt nur eine Liste von Liedtiteln. Bleibt über die zweite Reihe erreichbar."
+    },
+    {
+      "id": "insp-wer-bin-ich",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Wer bin ich“ (Spielewiki), das ausführlicher ist."
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Papierflieger-Wettkampf“ (Spielewiki)."
+    },
+    {
+      "id": "insp-seilbruecke-bauen",
+      "kern": false,
+      "grund": "Zusammengelegt mit der eigenen Fassung „Seilbrücke bauen“, die Knoten und Sicherung ausführt."
+    },
+    {
+      "id": "eig-fahnenraub-im-wald",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Capture the Flag“ als Fahnenraub-Variante im Wald."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-zahlensumme",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
     }
   ],
   "achsen": [
@@ -2403,6 +3780,1465 @@
         "naehe": "hoch"
       },
       "grund": "Alle legen den Kopf auf den Bauch der nächsten Person. Die Textregel für 'naehe' greift hier nicht, weil kein Wort aus der Berührungsliste vorkommt - gefunden in der Stichprobe vom 08.09.2026."
+    },
+    {
+      "id": "sw-concentration",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-das-habe-ich-noch-nie-gemacht",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-funken",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-jack-sass-in-der-kuche-mit-tina",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-platztausch",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „Sesselkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-sofaspiel",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „im Sitzkreis“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-flaschenhals",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „überall, am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-forderband",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-liegestutz-kampf",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Ort laut Infobox „am Boden“, nicht „am Tisch“."
+    },
+    {
+      "id": "sw-himmel-auf-erden",
+      "felder": {
+        "platz": "saal_wiese"
+      },
+      "grund": "Das Spiel läuft auf dem Spielplatz (Klettergerüst); „Zimmer“ passte nicht zu Ort „draußen“."
+    },
+    {
+      "id": "sw-huhnerspiel",
+      "felder": {
+        "platz": "zimmer"
+      },
+      "grund": "Die Quelle sagt, das Spiel brauche weder Tisch noch Boden (Kreis); „am Tisch“ war der falsche Platz."
+    },
+    {
+      "id": "sw-korperteil-twister",
+      "felder": {
+        "naehe": "hoch"
+      },
+      "grund": "Das Spiel besteht aus Berührungen von Körperteilen anderer Spielender (laut Quelle „körperbetont“); naehe „keine“ war falsch."
+    },
+    {
+      "id": "sw-telefax",
+      "felder": {
+        "naehe": "leicht"
+      },
+      "grund": "Das Spiel besteht aus Berührungen am Rücken; naehe „keine“ war falsch."
+    },
+    {
+      "id": "sw-topfschlagen",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Beim Suchen mit Augenbinde gibt es keinen vorgesehenen Körperkontakt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-geschmackskim",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Geschmackskim braucht keinen Körperkontakt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-fahrbahnen",
+      "felder": {
+        "naehe": "keine"
+      },
+      "grund": "Die blinde Person wird nur mit Worten geführt; naehe „hoch“ stammte nur von der Augenbinde."
+    },
+    {
+      "id": "sw-taler-taler-du-musst-wandern",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht („Papierknäuel“ als Taler ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-drangelei",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Kreide und Klebeband sind kein Seil); von Hand gesetzt."
+    },
+    {
+      "id": "sw-kette-durch-den-reifen",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Hauptgerät ist ein Reifen); von Hand gesetzt."
+    },
+    {
+      "id": "ps-klopapier-namensspiel",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Klopapier ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (ein Hautstift ist kein Papier und Stift); von Hand gesetzt."
+    },
+    {
+      "id": "sw-sockenraub",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Socken); von Hand gesetzt."
+    },
+    {
+      "id": "ps-vogeleltern",
+      "felder": {
+        "spielgeraet": [
+          "ball",
+          "sonstiges"
+        ]
+      },
+      "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Bälle als Küken, dazu Futter-Gegenstände); von Hand gesetzt."
+    },
+    {
+      "id": "sw-leuchtturm",
+      "felder": {
+        "spielgeraet": [
+          "tuch"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (Augenbinde)."
+    },
+    {
+      "id": "sw-eiersuche",
+      "felder": {
+        "spielgeraet": [
+          "ball"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (kleiner Ball)."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (beliebiger Gegenstand)."
+    }
+  ],
+  "ersetzungen": [
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "veranstaleten",
+      "nach": "veranstalten",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "bestehet",
+      "nach": "besteht",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "Möglichtkeit",
+      "nach": "Möglichkeit",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-duell-um-die-geld",
+      "feld": "beschreibung",
+      "von": "klassichen",
+      "nach": "klassischen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "eigeteilt",
+      "nach": "eingeteilt",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "verschiedenene",
+      "nach": "verschiedenen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-decken-spiel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Team..",
+      "nach": "Team.",
+      "grund": "doppelter Punkt"
+    },
+    {
+      "id": "insp-der-kaiser-mag",
+      "feld": "beschreibung",
+      "von": "hiflt",
+      "nach": "hilft",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "Grupppe",
+      "nach": "Gruppe",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "Wenn eine Person Begriff korrekt erratet hat",
+      "nach": "Wenn eine Person den Begriff korrekt erraten hat",
+      "grund": "Grammatik"
+    },
+    {
+      "id": "insp-spiel-reuse",
+      "feld": "beschreibung",
+      "von": "Persoenen",
+      "nach": "Personen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": "Rythmus",
+      "nach": "Rhythmus",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-das-schreispiel",
+      "feld": "beschreibung",
+      "von": "werden die erste Gruppe",
+      "nach": "während die erste Gruppe",
+      "grund": "Tippfehler (werden statt während)"
+    },
+    {
+      "id": "ps-das-schreispiel",
+      "feld": "beschreibung",
+      "von": "versanden zu haben",
+      "nach": "verstanden zu haben",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-englischfangen",
+      "feld": "beschreibung",
+      "von": "Es wird ein fangende Person",
+      "nach": "Es wird eine fangende Person",
+      "grund": "Grammatik"
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "feld": "beschreibung",
+      "von": "Das Funktioniert",
+      "nach": "Das funktioniert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "feld": "beschreibung",
+      "von": "dirkt raten",
+      "nach": "direkt raten",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-55",
+      "feld": "beschreibung",
+      "von": "Das Spiel wird mit wird mit einem",
+      "nach": "Das Spiel wird mit einem",
+      "grund": "doppelte Wörter"
+    },
+    {
+      "id": "sw-55",
+      "feld": "beschreibung",
+      "von": "Handelt sich es bei",
+      "nach": "Handelt es sich bei",
+      "grund": "Satzbau"
+    },
+    {
+      "id": "sw-bolker-trumpf",
+      "feld": "beschreibung",
+      "von": "schäzt der Spieler",
+      "nach": "schätzt der Spieler",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-bolker-trumpf",
+      "feld": "beschreibung",
+      "von": "Jeder Zählt seine",
+      "nach": "Jeder zählt seine",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-blindes-finden",
+      "feld": "tipps",
+      "von": "## Tipps\n\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "feld": "beschreibung",
+      "von": "mir rund zehn Spielern",
+      "nach": "mit rund zehn Spielern",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "feld": "beschreibung",
+      "von": "Er Abstand sollte",
+      "nach": "Der Abstand sollte",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ei-am-berg",
+      "feld": "tipps",
+      "von": "## Tipp\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-guru-guru",
+      "feld": "kurz",
+      "von": "Das Spielt fördert",
+      "nach": "Das Spiel fördert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-guru-guru",
+      "feld": "beschreibung",
+      "von": "Das Spielt fördert",
+      "nach": "Das Spiel fördert",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-ha-ha-ha",
+      "feld": "beschreibung",
+      "von": "mit mit der Person B",
+      "nach": "mit der Person B",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-here-we-go-with-the-big-fat-pony",
+      "feld": "beschreibung",
+      "von": "stehen stehen und",
+      "nach": "stehen und",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-hi-my-name-is-joe",
+      "feld": "beschreibung",
+      "von": "toung (Zunge)",
+      "nach": "tongue (Zunge)",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-kreisportrat",
+      "feld": "kurz",
+      "von": "Kreiszeichnung (auch Kreiszeichnung,",
+      "nach": "Kreisporträt (auch Kreiszeichnung,",
+      "grund": "Der Haupttitel im Text lautete Kreiszeichnung und der Alternativname wiederholte ihn; der Seitentitel ist Kreisporträt."
+    },
+    {
+      "id": "sw-kreisportrat",
+      "feld": "beschreibung",
+      "von": "**Kreiszeichnung** (auch Kreiszeichnung,",
+      "nach": "**Kreisporträt** (auch Kreiszeichnung,",
+      "grund": "Der Haupttitel im Text lautete Kreiszeichnung und der Alternativname wiederholte ihn; der Seitentitel ist Kreisporträt."
+    },
+    {
+      "id": "sw-kontinentespiel",
+      "feld": "tipps",
+      "von": "## Anmerkung\n\n",
+      "nach": "",
+      "grund": "Quell-Überschrift im Feld Tipps (wiederholt nur den Feldnamen)"
+    },
+    {
+      "id": "sw-namenseigenschaften",
+      "feld": "beschreibung",
+      "von": "nur einen seinen Mitspieler",
+      "nach": "nur einen seiner Mitspieler",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-pferdebandiger",
+      "feld": "beschreibung",
+      "von": "Auf keine Fall darf",
+      "nach": "Auf keinen Fall darf",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-platztausch",
+      "feld": "beschreibung",
+      "von": "Alle Spieler die ''2 Geschwister haben",
+      "nach": "Alle Spieler die 2 Geschwister haben",
+      "grund": "Rest der Quell-Formatierung (zwei Hochkommata)"
+    },
+    {
+      "id": "sw-seilspringen",
+      "feld": "beschreibung",
+      "von": "mehreren Seilten",
+      "nach": "mehreren Seilen",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-stille-post",
+      "feld": "beschreibung",
+      "von": "stehen ihn einer Kette",
+      "nach": "stehen in einer Kette",
+      "grund": "Tippfehler (ihn statt in)"
+    },
+    {
+      "id": "sw-epidemie",
+      "feld": "beschreibung",
+      "von": "stehen ihn einer Kette",
+      "nach": "stehen in einer Kette",
+      "grund": "Tippfehler (ihn statt in)"
+    },
+    {
+      "id": "sw-teppich-umdrehen",
+      "feld": "beschreibung",
+      "von": "gerade gut Platz haben haben",
+      "nach": "gerade gut Platz haben",
+      "grund": "doppeltes Wort"
+    },
+    {
+      "id": "sw-verstecken",
+      "feld": "beschreibung",
+      "von": "Dieser Artikel beschreibt die Grundvariante des **Verstecken**-Spiels. Vielfach werden diese Regel abgewandelt und zu eigenen Spielen ausgebaut. Eine Auswahl davon findet sich in der Kategorie Versteckspiel.",
+      "nach": "Das ist die Grundvariante des **Verstecken**-Spiels. Vielfach werden diese Regeln abgewandelt und zu eigenen Spielen ausgebaut.",
+      "grund": "Wiki-Eigenverweis („Dieser Artikel“, „Kategorie Versteckspiel“) entfernt"
+    },
+    {
+      "id": "sw-tic-tac-toe-mit-menschen",
+      "feld": "beschreibung",
+      "von": "gewinnt die Runde gewonnen",
+      "nach": "gewinnt die Runde",
+      "grund": "Grammatik (doppelt gemoppelt)"
+    },
+    {
+      "id": "sw-tier-vogel-fisch",
+      "feld": "beschreibung",
+      "von": "eine art aus der",
+      "nach": "eine Art aus der",
+      "grund": "Rechtschreibung"
+    },
+    {
+      "id": "sw-daumensumme",
+      "feld": "kurz",
+      "von": "Daumensummme",
+      "nach": "Daumensumme",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-daumensumme",
+      "feld": "beschreibung",
+      "von": "Daumensummme",
+      "nach": "Daumensumme",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-deck-zu",
+      "feld": "beschreibung",
+      "von": "Ansich muss es",
+      "nach": "An sich muss es",
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-drangelei",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-stimmungs-matrix",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-streichholzschachtel-marathon",
+      "feld": "beschreibung",
+      "von": "ansich",
+      "nach": "an sich",
+      "wort": true,
+      "grund": "Zusammenschreibung (an sich)"
+    },
+    {
+      "id": "sw-dirigent",
+      "feld": "beschreibung",
+      "von": "verlässte",
+      "nach": "verlässt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-eine-minute",
+      "feld": "beschreibung",
+      "von": "nähesten",
+      "nach": "nächsten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-fotograf",
+      "feld": "kurz",
+      "von": "Gruppenzusammenhalten",
+      "nach": "Gruppenzusammenhalt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-fotograf",
+      "feld": "beschreibung",
+      "von": "Gruppenzusammenhalten",
+      "nach": "Gruppenzusammenhalt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-gruppennetz",
+      "feld": "beschreibung",
+      "von": "Wollknäuls",
+      "nach": "Wollknäuels",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-funky-chicken",
+      "feld": "beschreibung",
+      "von": "Hünchenflügel",
+      "nach": "Hühnerflügel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-minutenweg",
+      "feld": "beschreibung",
+      "von": "ale",
+      "nach": "alle",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "sw-minutenweg",
+      "feld": "beschreibung",
+      "von": "Am Ende der zeit rufen",
+      "nach": "Am Ende der Zeit rufen",
+      "grund": "Groß-/Kleinschreibung"
+    },
+    {
+      "id": "sw-mord-im-dunkeln",
+      "feld": "beschreibung",
+      "von": "Spieleitern",
+      "nach": "Spielleitern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-pferderennen",
+      "feld": "beschreibung",
+      "von": "Uund",
+      "nach": "Und",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-pferderennen",
+      "feld": "beschreibung",
+      "von": "Beigeisterung",
+      "nach": "Begeisterung",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+      "feld": "beschreibung",
+      "von": "Fänger:innnen",
+      "nach": "Fänger:innen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigenes-holzbrettchen-erstellen",
+      "feld": "beschreibung",
+      "von": "Sippensymbolß",
+      "nach": "Sippensymbol?",
+      "wort": true,
+      "grund": "Tippfehler (ß statt ?)"
+    },
+    {
+      "id": "insp-eigenes-holzbrettchen-erstellen",
+      "feld": "beschreibung",
+      "von": "güstig",
+      "nach": "günstig",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "Verhaltsweisen",
+      "nach": "Verhaltensweisen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "Jugenbewegnung",
+      "nach": "Jugendbewegung",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-buendisch-oder-scoutistisch",
+      "feld": "beschreibung",
+      "von": "geschalfen",
+      "nach": "geschlafen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-digitale-karten",
+      "feld": "beschreibung",
+      "von": "durchfühen",
+      "nach": "durchführen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigene-kreuzwortraetsel-erstellen",
+      "feld": "beschreibung",
+      "von": "kennzeichenen",
+      "nach": "kennzeichnen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "Vegatarier",
+      "nach": "Vegetarier",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "Verganer",
+      "nach": "Veganer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-hackfleisch",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "Painiting",
+      "nach": "Painting",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "Sauerrei",
+      "nach": "Sauerei",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-action-painting",
+      "feld": "beschreibung",
+      "von": "vermeindlich",
+      "nach": "vermeintlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kueche-ueben",
+      "feld": "beschreibung",
+      "von": "vorallem",
+      "nach": "vor allem",
+      "wort": true,
+      "grund": "Zusammenschreibung (vor allem)"
+    },
+    {
+      "id": "insp-debattenkultur",
+      "feld": "beschreibung",
+      "von": "vorallendingen",
+      "nach": "vor allen Dingen",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-debattenkultur",
+      "feld": "beschreibung",
+      "von": "Diese Heimabendidee stamm sinngemäß",
+      "nach": "Diese Heimabendidee stammt sinngemäß",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-karte-vom-heim-zeichnen",
+      "feld": "beschreibung",
+      "von": "detallierte",
+      "nach": "detaillierte",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-karte-vom-heim-zeichnen",
+      "feld": "beschreibung",
+      "von": "einzelen",
+      "nach": "einzelnen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kritische-pfadfinderfragen-rollenspiel",
+      "feld": "beschreibung",
+      "von": "enstanden",
+      "nach": "entstanden",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kritische-pfadfinderfragen-rollenspiel",
+      "feld": "beschreibung",
+      "von": "eigentlch",
+      "nach": "eigentlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "eigentlch",
+      "nach": "eigentlich",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "könnr",
+      "nach": "könnt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "Quelllwasser",
+      "nach": "Quellwasser",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "mittllere",
+      "nach": "mittlere",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wasser-am-geschmack-erkennen",
+      "feld": "beschreibung",
+      "von": "Etiket",
+      "nach": "Etikett",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kroeten-ohne-hilfsmitttel-aufbauen",
+      "feld": "beschreibung",
+      "von": "Hilfmittel",
+      "nach": "Hilfsmittel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kroeten-ohne-hilfsmitttel-aufbauen",
+      "feld": "beschreibung",
+      "von": "Herringe",
+      "nach": "Heringe",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-rauch-und-geraeuschlos-feuer-machen",
+      "feld": "beschreibung",
+      "von": "alsauch",
+      "nach": "als auch",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-pfadfindersymbolik-vergleichen",
+      "feld": "beschreibung",
+      "von": "soviele",
+      "nach": "so viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-wasserdetektive",
+      "feld": "beschreibung",
+      "von": "soviele",
+      "nach": "so viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-rucksack-richtig-packen",
+      "feld": "beschreibung",
+      "von": "auf jedenfall dabei",
+      "nach": "auf jeden Fall dabei",
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-wetter-beobachten",
+      "feld": "beschreibung",
+      "von": "ganz anderes gespür",
+      "nach": "ganz anderes Gespür",
+      "grund": "Groß-/Kleinschreibung"
+    },
+    {
+      "id": "insp-wildpflanzen-in-der-umgebung-suchen",
+      "feld": "beschreibung",
+      "von": "Guppe",
+      "nach": "Gruppe",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-baut-eure-eigene-sippen-homepage",
+      "feld": "beschreibung",
+      "von": "persöhnliche",
+      "nach": "persönliche",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-baut-eure-eigene-sippen-homepage",
+      "feld": "beschreibung",
+      "von": "integrieten",
+      "nach": "integrierten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-dosenlichter",
+      "feld": "beschreibung",
+      "von": "Dosengöße",
+      "nach": "Dosengröße",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-euer-eigenes-ab-paeckchen",
+      "feld": "beschreibung",
+      "von": "Steichhölzer",
+      "nach": "Streichhölzer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-fahrradreifen-flicken",
+      "feld": "beschreibung",
+      "von": "den erstfall in Ruhe zu tranieren",
+      "nach": "den Ernstfall in Ruhe zu trainieren",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-fahrrad-geschicklichkeits-parkour",
+      "feld": "beschreibung",
+      "von": "Fahhrad",
+      "nach": "Fahrrad",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-gemuesebruehpulver-selber-machen",
+      "feld": "beschreibung",
+      "von": "hinzugefügen",
+      "nach": "hinzufügen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kokosnussbecher-schalen-basteln",
+      "feld": "beschreibung",
+      "von": "Fruchfleisch",
+      "nach": "Fruchtfleisch",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kokosnussbecher-schalen-basteln",
+      "feld": "beschreibung",
+      "von": "Kokusnuss",
+      "nach": "Kokosnuss",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-korken-piratenschiff",
+      "feld": "beschreibung",
+      "von": "Packetschnur",
+      "nach": "Paketschnur",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "Katoffel",
+      "nach": "Kartoffel",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "Zinkscharaube",
+      "nach": "Zinkschraube",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-kartoffelbatterie",
+      "feld": "beschreibung",
+      "von": "entfehrnt",
+      "nach": "entfernt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-hungertuecher-fuer-die-sippe",
+      "feld": "beschreibung",
+      "von": "Nähmaschiene",
+      "nach": "Nähmaschine",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "Holstück",
+      "nach": "Holzstück",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "komt",
+      "nach": "kommt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-mosaik-aus-tellern",
+      "feld": "beschreibung",
+      "von": "zuviele",
+      "nach": "zu viele",
+      "wort": true,
+      "grund": "Zusammenschreibung"
+    },
+    {
+      "id": "insp-muehle-to-go",
+      "feld": "beschreibung",
+      "von": "Bürokklammer",
+      "nach": "Büroklammer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-muehle-to-go",
+      "feld": "beschreibung",
+      "von": "bemahlen",
+      "nach": "bemalen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "Tunier",
+      "nach": "Turnier",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "Diziplinen",
+      "nach": "Disziplinen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "feld": "beschreibung",
+      "von": "mit euer Gruppe",
+      "nach": "mit eurer Gruppe",
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "Lautprecher",
+      "nach": "Lautsprecher",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "Akustisk",
+      "nach": "Akustik",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "entwicklungtechnisch",
+      "nach": "entwicklungstechnisch",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-pc-lautpsrecher-selber-bauen",
+      "feld": "beschreibung",
+      "von": "höhrerpreisige",
+      "nach": "höherpreisige",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-butter-schuetteln",
+      "feld": "beschreibung",
+      "von": "vermegen",
+      "nach": "vermengen",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-die-detektiv-pizza",
+      "feld": "beschreibung",
+      "von": "Annanas",
+      "nach": "Ananas",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-eigenes-gruppen-kochbuch-erstellen",
+      "feld": "beschreibung",
+      "von": "gemeisam",
+      "nach": "gemeinsam",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kekse-backen",
+      "feld": "beschreibung",
+      "von": "anstregenden",
+      "nach": "anstrengenden",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-haik-kekse-backen",
+      "feld": "beschreibung",
+      "von": "Madeln",
+      "nach": "Mandeln",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Hasselnuss",
+      "nach": "Haselnuss",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Kovertüre",
+      "nach": "Kuvertüre",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-selbstgemachte-haselnuss-schokocreme",
+      "feld": "beschreibung",
+      "von": "Boubon",
+      "nach": "Bourbon",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Baunern",
+      "nach": "Bauern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "Remolade",
+      "nach": "Remoulade",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lebensmittel-kennenlernen",
+      "feld": "beschreibung",
+      "von": "scheckt",
+      "nach": "schmeckt",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-veganen-brotaufstrich-selber-machen",
+      "feld": "beschreibung",
+      "von": "Ölivenöl",
+      "nach": "Olivenöl",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-ultimative-kochduell",
+      "feld": "beschreibung",
+      "von": "Zuataten",
+      "nach": "Zutaten",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-das-ultimative-kochduell",
+      "feld": "beschreibung",
+      "von": "letzem",
+      "nach": "letztem",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-treffen-mit-anderer-pfadfindergruppe",
+      "feld": "beschreibung",
+      "von": "Interent",
+      "nach": "Internet",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-weisheiten-diskutieren-zitate",
+      "feld": "beschreibung",
+      "von": "Schoppenhauer",
+      "nach": "Schopenhauer",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-wer-bin-ich",
+      "feld": "beschreibung",
+      "von": "Crepeband",
+      "nach": "Kreppband",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-lichtmalerei",
+      "feld": "beschreibung",
+      "von": "paining",
+      "nach": "painting",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-brot-backen-ohne-ofen",
+      "feld": "beschreibung",
+      "von": "Verfeiern",
+      "nach": "Verfeinern",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "insp-papier-recycling",
+      "feld": "beschreibung",
+      "von": "Recylen",
+      "nach": "Recyceln",
+      "wort": true,
+      "grund": "Tippfehler"
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": "\n\nLink zum Video: YouTube Video Lulale",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "ps-lulale",
+      "feld": "beschreibung",
+      "von": " aus dem Video unten",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-digitales-tabu",
+      "feld": "beschreibung",
+      "von": "\n\nHier noch mehr: Pfadfindertabu als PDF",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-augenklappe-basteln",
+      "feld": "beschreibung",
+      "von": "\n\nLink zur einer Anleitung mit Bilder",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-augenklappe-basteln",
+      "feld": "kurz",
+      "von": " Anleitung online!",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-waldlaeuferzeichen-memory",
+      "feld": "beschreibung",
+      "von": "\n\nEine Druckvorlage kannst du hier runterladen. Download",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-waldlaeuferzeichen-memory",
+      "feld": "kurz",
+      "von": "Druck die Karten aus oder bastel deine eigenen!",
+      "nach": "Bastel dir die Karten selbst!",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-pfadi-stories",
+      "feld": "kurz",
+      "von": " Link für mehr: [Link gekürzt]",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-pfadi-stories",
+      "feld": "beschreibung",
+      "von": "\n\nWeitere 'Pfadi-stories' sowie die Lösung findet ihr unter folgendem Link. Tragt gerne eure eigenen ein und helft uns bei der Erstellung einer schönen kleinen Sammlung.\n\nLink zum Dokument",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung). Die Auflösung des Rätsels steht damit nicht in der Sammlung (offene Frage)."
+    },
+    {
+      "id": "insp-insektenhotel-in-der-dose",
+      "feld": "beschreibung",
+      "von": "\n\nWeitere Inspirationen findet ihr unter: Link zur Bastelanleitung.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-milchkarton-portmonnaie",
+      "feld": "kurz",
+      "von": " Anleitung: [Link-Kürzen, z.B. bit.ly verwenden]",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-milchkarton-portmonnaie",
+      "feld": "beschreibung",
+      "von": "\n\nEine bebilderte Anleitung findet ihr unter: Link zum Dokument.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-drachenbau-aus-muelltueten",
+      "feld": "beschreibung",
+      "von": "Hier findet ihr eine detailierte Anleitung aus dem Internet.",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-papier-recycling",
+      "feld": "beschreibung",
+      "von": "Eine Möglichkeit zum Recyclen von Altpapier findet ihr hier und viele weitere Videos auf YouTube.\n\n",
+      "nach": "",
+      "grund": "Verweis auf einen Link oder ein Video, das in den Daten nicht steht (Rest der Quell-Formatierung)."
+    },
+    {
+      "id": "insp-eigene-sippenchronik",
+      "feld": "beschreibung",
+      "von": "über diese einzigartigen Dokumente",
+      "nach": "über diese einzigartigen Dokumente.",
+      "grund": "Satz ohne Schlusspunkt"
+    },
+    {
+      "id": "insp-namensschilder-einnaehen",
+      "feld": "beschreibung",
+      "von": "\n\nDurch das Einnähen von Namensschildern in private Gegenstände können die",
+      "nach": "",
+      "grund": "Letzter Satz bricht mitten im Satz ab (abgeschnitten in der Quelle); der vorherige Absatz ist vollständig."
+    },
+    {
+      "id": "insp-haik-kueche-ueben",
+      "feld": "beschreibung",
+      "von": "Die Brühe angießen,",
+      "nach": "Die Brühe angießen. (Die Quelle bricht hier ab, der Rest des Rezepts fehlt.)",
+      "grund": "Rezept bricht mitten im Satz ab (abgeschnitten in der Quelle); der Hinweis macht das sichtbar, ohne etwas zu erfinden."
+    }
+  ],
+  "bereinigung": [
+    {
+      "name": "leere Aufzählungspunkte",
+      "muster": "^[ \\t]*[-*][ \\t\\xa0]*$\\n?",
+      "ersatz": "",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Aufzählungspunkte ohne Text (nur geschütztes Leerzeichen) stammen aus der Quell-Formatierung des Inspirators."
+    },
+    {
+      "name": "Zeilen nur aus geschützten Leerzeichen",
+      "muster": "^[ \\t\\xa0]*\\xa0[ \\t\\xa0]*$\\n?",
+      "ersatz": "",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Leere Absätze aus geschützten Leerzeichen (Reste der Webseiten-Formatierung) entfernen."
+    },
+    {
+      "name": "geschütztes Leerzeichen",
+      "muster": "\\xa0",
+      "ersatz": " ",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Geschützte Leerzeichen mitten im Text durch normale ersetzen (Reste der Webseiten-Formatierung)."
+    },
+    {
+      "name": "mehr als eine Leerzeile",
+      "muster": "\\n{3,}",
+      "ersatz": "\n\n",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Nach dem Entfernen leerer Absätze nicht mehrere Leerzeilen hintereinander stehen lassen."
+    },
+    {
+      "name": "doppelte Leerzeichen im Satz",
+      "muster": "(?<=\\S)  +(?=\\S)",
+      "ersatz": " ",
+      "felder": [
+        "kurz",
+        "beschreibung",
+        "tipps"
+      ],
+      "grund": "Doppelte Leerzeichen mitten in der Zeile (nicht Einrückungen am Zeilenanfang) auf eins kürzen."
     }
   ]
 }

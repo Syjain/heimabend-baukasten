@@ -803,14 +803,88 @@ def wende_redaktion_an(elemente, redaktion):
             element["titel"] = eintrag["titel"]
             element["titel_geaendert"] = True
         for feld, wert in (eintrag.get("felder") or {}).items():
-            element[feld] = wert
+            if wert is None:
+                # null entfernt ein optionales Feld (zum Beispiel gruppe_max)
+                element.pop(feld, None)
+            else:
+                element[feld] = wert
         if eintrag.get("hinweis"):
             # Der Hinweis steht vorn, damit er in der App zuerst gelesen wird.
             element["tipps"] = (eintrag["hinweis"] + "\n\n" + (element.get("tipps") or "")).strip()
         bericht["korrigiert"].append("{} ({})".format(element["titel"], eintrag["id"]))
 
+    wende_textkorrekturen_an(elemente, nach_id, redaktion, bericht)
+
     elemente = [e for e in elemente if e["id"] not in gesperrt]
     return elemente, bericht
+
+
+TEXTFELDER = ("kurz", "beschreibung", "tipps")
+
+
+def wende_textkorrekturen_an(elemente, nach_id, redaktion, bericht):
+    """
+    Zwei Schlüssel für Texte in data/redaktion.json:
+
+    "bereinigung" - Regeln für alle Elemente (Reste der Quell-Formatierung):
+        {"name": "…", "muster": "regulärer Ausdruck", "ersatz": "…",
+         "felder": ["kurz", "beschreibung", "tipps"], "grund": "…"}
+        Das Muster gilt zeilenweise (re.MULTILINE).
+
+    "ersetzungen" - einzelne Stellen eines Elements (Tippfehler, tote Verweise):
+        {"id": "sw-x", "feld": "beschreibung", "von": "…", "nach": "…",
+         "wort": true, "grund": "…"}
+        Mit "wort": true wird nur das ganze Wort ersetzt, nicht ein Wortteil.
+        "von" muss im Feld vorkommen; sonst landet der Eintrag unter
+        bericht["nicht_gefunden"], damit sich nach einem Neuimport nichts
+        unbemerkt verschiebt.
+    """
+    # Zusammengesetzte Umlaute (a + Trema) in eine Zeichenfolge bringen, sonst
+    # findet weder die Suche der App noch eine Ersetzung das Wort.
+    bericht["normalisiert"] = 0
+    for element in elemente:
+        for feld in ("titel",) + TEXTFELDER:
+            text = element.get(feld)
+            if isinstance(text, str):
+                neu = unicodedata.normalize("NFC", text)
+                if neu != text:
+                    element[feld] = neu
+                    bericht["normalisiert"] += 1
+
+    bericht["bereinigt"] = {}
+    for regel in redaktion.get("bereinigung", []):
+        muster = re.compile(regel["muster"], re.MULTILINE)
+        treffer = 0
+        for element in elemente:
+            for feld in regel.get("felder") or TEXTFELDER:
+                text = element.get(feld)
+                if not isinstance(text, str):
+                    continue
+                neu, anzahl = muster.subn(lambda _m, e=regel.get("ersatz", ""): e, text)
+                if anzahl:
+                    element[feld] = neu
+                    treffer += anzahl
+        bericht["bereinigt"][regel.get("name") or regel["muster"]] = treffer
+
+    bericht["ersetzt"] = 0
+    bericht["nicht_gefunden"] = []
+    for eintrag in redaktion.get("ersetzungen", []):
+        element = nach_id.get(eintrag["id"])
+        if not element:
+            bericht["unbekannt"].append(eintrag["id"])
+            continue
+        feld = eintrag.get("feld") or "beschreibung"
+        text = element.get(feld) or ""
+        von = eintrag["von"]
+        if eintrag.get("wort"):
+            muster = re.compile(r"(?<![\wÄÖÜäöüß])" + re.escape(von) + r"(?![\wÄÖÜäöüß])")
+        else:
+            muster = re.compile(re.escape(von))
+        if not muster.search(text):
+            bericht["nicht_gefunden"].append("{} [{}]: {!r}".format(eintrag["id"], feld, von[:40]))
+            continue
+        element[feld] = muster.sub(lambda _m, n=eintrag.get("nach", ""): n, text)
+        bericht["ersetzt"] += 1
 
 
 # ------------------------------------------------------------- Bereiche
@@ -2021,6 +2095,12 @@ def main():
         print("     - {}".format(zeile))
     print("  korrigiert: {}".format(len(bericht["korrigiert"])))
     print("  Bereich von Hand gesetzt: {}".format(len(bericht.get("nachtraeglich", {}))))
+    print("  Texte in NFC gebracht: {}".format(bericht.get("normalisiert", 0)))
+    print("  Textstellen ersetzt: {}".format(bericht.get("ersetzt", 0)))
+    for name, anzahl in sorted((bericht.get("bereinigt") or {}).items()):
+        print("  Bereinigung '{}': {} Treffer".format(name, anzahl))
+    if bericht.get("nicht_gefunden"):
+        print("  ACHTUNG, Textstelle nicht gefunden: {}".format("; ".join(bericht["nicht_gefunden"])))
     if bericht["unbekannt"]:
         print("  ACHTUNG, IDs gibt es nicht (mehr): {}".format(", ".join(bericht["unbekannt"])))
 

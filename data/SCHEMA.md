@@ -263,5 +263,11 @@ Die Schlüssel im Überblick:
 | `auch_dublette` / `keine_dublette` | Dublettengruppen verbinden bzw. wieder lösen |
 | `zusammengelegt` | `{"haupt": "sw-x", "varianten": ["ps-y"], "lizenzen_unvertraeglich": true, "aenderungen": {"ps-y": "eigener Satz"}, "grund": "…"}` – setzt `varianten` beim Hauptelement, `kern: false` bei den Varianten |
 | `kern` | `{"id": "sw-x", "kern": false, "grund": "…"}` – Handentscheidung, schlägt die Punkte in beide Richtungen |
+| `ersetzungen` | Einzelne Textstellen: `{"id": "sw-x", "feld": "beschreibung", "von": "…", "nach": "…", "wort": true, "grund": "…"}` – `wort: true` ersetzt nur ganze Wörter. Steht `von` nicht im Feld, meldet `build.py` „Textstelle nicht gefunden“ |
+| `bereinigung` | Regeln für alle Elemente, zeilenweise (reguläre Ausdrücke): `{"name": "…", "muster": "…", "ersatz": "…", "felder": ["kurz", "beschreibung", "tipps"], "grund": "…"}` – für Reste der Quell-Formatierung (geschützte Leerzeichen, leere Aufzählungspunkte) |
+
+In `korrekturen` → `felder` entfernt der Wert `null` ein optionales Feld (zum Beispiel `gruppe_max`, wenn
+die Quelle „beliebig viele“ meint). `build.py` bringt außerdem alle Texte vorab in die Unicode-Form NFC,
+damit zusammengesetzte Umlaute (a + Trema) von Suche und Ersetzung gefunden werden.
 
 Alle Schlüssel sind freiwillig: Fehlt einer, läuft `scripts/build.py` sauber durch.
