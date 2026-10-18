@@ -721,6 +721,9 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   border-radius: var(--r2);
 }
 .slot-oeffnen:hover .gewaehlt { text-decoration: underline; }
+/* Auf dem Handy gibt es kein Hover: der Pfeil sagt, dass man den Baustein antippen
+   und seine Regeln lesen kann. */
+.slot-oeffnen .gewaehlt::after { content: " ›"; color: var(--akzent); font-weight: 400; }
 .slot-inhalt .gewaehlt {
   font-family: var(--schrift-titel); font-weight: 700; font-size: 1.08rem; letter-spacing: -.02em;
 }
@@ -1148,7 +1151,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
     <span class="titel" id="ideenFormTitel">Eigene Idee</span>
   </div>
   <div class="ueber-inhalt">
-    <div class="kasten warnung" id="iFehler" hidden>
+    <div class="kasten warnung" id="iFehler" role="alert" hidden>
       <h4>Bitte noch ergänzen</h4><div id="iFehlerText"></div>
     </div>
     <div class="formular">
@@ -2120,9 +2123,15 @@ function karteHtml(e, zielzeit, kontext) {
   // Selbst erfasst: das muss auf der Karte stehen, sonst sieht eine eigene
   // Idee im Stöbern aus wie ein geprüfter Baustein aus einer Sammlung.
   if (e._eigen) merkmale += '<span class="merkmal eigen">eigene Idee</span>';
-  merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
+  // "drinnen & draußen" ist der Normalfall und sagt nichts; nur eine Einschränkung
+  // ist eine Auskunft. Ebenso "Alter offen": bei zwei Dritteln aller Bausteine
+  // wäre es auf jeder Karte Lärm - es zählt erst, wenn eine Altersstufe gewählt ist
+  // (dann steht es auch in der Trefferzeile).
+  if (e.ort !== "beides") merkmale += '<span class="merkmal">' + schuetze(ORT_TEXT[e.ort] || e.ort) + "</span>";
   if (!e.material || !e.material.length) merkmale += '<span class="merkmal">ohne Material</span>';
-  if (ohneAltersangabe(e)) merkmale += '<span class="merkmal offen">Alter offen</span>';
+  if (ohneAltersangabe(e) && ($("fStufe").value || rahmen.stufe)) {
+    merkmale += '<span class="merkmal offen">Alter offen</span>';
+  }
   // Ist eine Anzahl gewählt, muss dranstehen, wo die Quelle zur Gruppengröße
   // nichts sagt – sonst sähe es aus, als sei das geprüft und für passend
   // befunden. Ohne gewählte Anzahl wäre die Plakette bei 317 Bausteinen nur Lärm.
@@ -2556,8 +2565,11 @@ function zeigeDetail(e) {
   var html = "<h2>" + schuetze(e.titel) + "</h2>";
   // Bei vielen Elementen ist der Kurztext aus dem Anfang der Beschreibung
   // erzeugt – dann stünde er hier zweimal wörtlich untereinander.
-  var anfang = (e.beschreibung || "").replace(/\s+/g, " ").slice(0, 60);
-  var kurzAnfang = (e.kurz || "").replace(/\s+/g, " ").slice(0, 60);
+  // Die Beschreibung ist Markdown: ohne die **-Zeichen herauszunehmen, sah
+  // "Das **Geräusche-Kim**" anders aus als der Kurztext und er stand doppelt da.
+  function ohneAuszeichnung(t) { return String(t || "").replace(/[*#>]/g, "").replace(/\s+/g, " ").trim(); }
+  var anfang = ohneAuszeichnung(e.beschreibung).slice(0, 25);
+  var kurzAnfang = ohneAuszeichnung(e.kurz).slice(0, 25);
   if (kurzAnfang && kurzAnfang !== anfang) {
     html += '<p class="anriss">' + schuetze(e.kurz) + "</p>";
   }
@@ -2570,6 +2582,16 @@ function zeigeDetail(e) {
             '<button type="button" class="knopf klein" id="ideeBearbeiten">Bearbeiten</button>' +
             '<button type="button" class="knopf klein" id="ideeLoeschen">Löschen</button>' +
             "</div></div>";
+  }
+
+  // Die Regeln stehen gleich unter dem Titel. Vorher kamen erst Plan-Knöpfe und
+  // ein Datenblatt aus neun Zeilen - der erste Satz der Beschreibung lag am
+  // Handy mehr als eine Bildschirmhöhe weit unten.
+  html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
+
+  if (e.tipps) {
+    html += '<div class="kasten tipp"><h4>Hinweise für die Spielleitung</h4>' +
+            '<div class="text">' + textZuHtml(e.tipps) + "</div></div>";
   }
 
   // Ohne diese Zeile sind Stöbern und Planen zwei getrennte Apps: man findet
@@ -2600,8 +2622,7 @@ function zeigeDetail(e) {
   html += "<dt>Bereich</dt><dd>" + schuetze(BEREICH_TEXT[e.bereich] || e.bereich) +
           (e.kategorie ? " · " + schuetze(kategorieText(e)) : "") +
           (e.unterkategorie ? " · " + schuetze(unterText(e.unterkategorie)) : "") + "</dd>";
-  html += "<dt>Umfang</dt><dd>" + (e.umfang === "ganzer_abend"
-          ? "füllt einen ganzen Heimabend" : "einzelner Baustein") + "</dd>";
+  if (e.umfang === "ganzer_abend") html += "<dt>Umfang</dt><dd>füllt einen ganzen Heimabend</dd>";
   html += "<dt>Dauer</dt><dd>" + schuetze(dauerText(e)) + "</dd>";
   html += "<dt>Ort</dt><dd>" + schuetze(ORT_TEXT[e.ort] || e.ort) + "</dd>";
   // Die neuen Spiel-Achsen nur zeigen, wenn die Quelle etwas hergibt –
@@ -2628,13 +2649,6 @@ function zeigeDetail(e) {
           (e.material && e.material.length ? schuetze(e.material.join(", ")) : "keines") + "</dd>";
   html += "<dt>Vorbereitung</dt><dd>" + schuetze(e.vorbereitung) + "</dd>";
   html += "</dl>";
-
-  html += '<div class="text">' + textZuHtml(e.beschreibung) + "</div>";
-
-  if (e.tipps) {
-    html += '<div class="kasten tipp"><h4>Hinweise für die Spielleitung</h4>' +
-            '<div class="text">' + textZuHtml(e.tipps) + "</div></div>";
-  }
 
   // Themen und Stichworte als Knöpfe: damit lässt sich ein Abend um ein Thema
   // herum bauen ("Knoten"), was vorher nur über erneutes Tippen ging.
@@ -3101,8 +3115,8 @@ function slotKarte(slot, index) {
   if (e) {
     html += '<div class="gewaehlt">' + schuetze(e.titel) + "</div>" +
             '<div class="kurz">' + schuetze(e.kurz) + "</div>" +
-            '<div class="quellzeile">' + schuetze(kategorieText(e)) + " · " +
-            schuetze((e.quelle || {}).name || "") + "</div>";
+            '<div class="quellzeile">' + schuetze([kategorieText(e), (e.quelle || {}).name || ""]
+              .filter(Boolean).join(" · ")) + "</div>";
   } else {
     var frei = freieZeit({ slot: slot, index: index });
     var vorschlag = zieldauerFuer(slot, index);
