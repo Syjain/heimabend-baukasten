@@ -269,7 +269,7 @@ def pruefe_redaktion(bericht, wurzel, elemente_ids, quell_id_menge):
     for e in redaktion.get("kern", []):
         if not isinstance(e["kern"], bool):
             bericht.fehler("'kern': {}: 'kern' muss true oder false sein.".format(e["id"]))
-    erlaubt = set(build.PFLICHTFELDER) | {"gruppe_min", "gruppe_max", "alter_ab"}
+    erlaubt = set(build.PFLICHTFELDER) | {"gruppe_min", "gruppe_max", "alter_ab", "tipps"}
     for e in redaktion.get("achsen", []):
         if not isinstance(e["felder"], dict):
             bericht.fehler("'achsen': {}: 'felder' muss ein Objekt sein.".format(e["id"]))

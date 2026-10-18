@@ -22,7 +22,7 @@ Eröffnungskreis → Einstiegsspiel → Hauptteil (1–2 Spiele + eine Probe und
 
 ## Technische Leitplanken
 - Sprache im Code, in Daten und in der Oberfläche: **Deutsch** (Feldnamen deutsch, wie im Schema).
-- Python 3.10+, keine Abhängigkeiten außer Standardbibliothek (requests ist ok, wenn nötig – dann `requirements.txt`).
+- Python 3.9+, keine Abhängigkeiten außer Standardbibliothek (requests ist ok, wenn nötig – dann `requirements.txt`).
 - Web: eine statische Seite ohne Framework und ohne Build-Schritt, muss per Doppelklick auf `web/index.html`
   UND auf GitHub Pages laufen. Mobile-first (Gruppenführer nutzen das am Handy im Heim).
 - Skripte müssen idempotent sein (mehrfach ausführbar, überschreiben ihre Ausgabe).
