@@ -1436,9 +1436,12 @@
     {
       "id": "sw-eiersuche",
       "felder": {
-        "tipps": "Das „Gackern“ wird lauter, je näher der Bauer kommt – am besten vorher kurz üben. Das Ei klein halten und sicher unter der Person verstecken, damit nichts kaputtgeht."
+        "tipps": "Das „Gackern“ wird lauter, je näher der Bauer kommt – am besten vorher kurz üben. Das Ei klein halten und sicher unter der Person verstecken, damit nichts kaputtgeht.",
+        "material": [
+          "kleiner Ball (zum Beispiel Tischtennisball) oder Papier mit gezeichnetem Ei"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle ein „Ei“ (kleiner Ball oder Papier) verlangt."
     },
     {
       "id": "sw-ein-hase-lauft-uber-das-feld",
@@ -1663,9 +1666,12 @@
     {
       "id": "sw-leuchtturm",
       "felder": {
-        "tipps": "Verletzungsgefahr beachten: Das Schiff läuft mit geschlossenen Augen, deshalb ruhig und langsam bleiben. Ein Spielfeld ohne Hindernisse wählen und die Felsen (Mitspielende) so aufstellen, dass das Schiff sie früh hört."
+        "tipps": "Verletzungsgefahr beachten: Das Schiff läuft mit geschlossenen Augen, deshalb ruhig und langsam bleiben. Ein Spielfeld ohne Hindernisse wählen und die Felsen (Mitspielende) so aufstellen, dass das Schiff sie früh hört.",
+        "material": [
+          "Augenbinde (oder einfach die Augen schließen)"
+        ]
       },
-      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden. Außerdem: Material war leer, obwohl der Materialabschnitt der Quelle eine Augenbinde nennt."
     },
     {
       "id": "sw-kleiner-gruner-zauberer",
@@ -2201,6 +2207,15 @@
         "tipps": "Nur ungefährliche Gegenstände wählen (nichts Scharfes oder Spitzes). Die Gegenstände sollten sich deutlich unterscheiden. Erst wenn alle getastet haben, wird aufgeschrieben oder aufgezählt."
       },
       "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "felder": {
+        "material": [
+          "ein beliebiger Gegenstand (Münze, Besteck, Buch oder Tasse)"
+        ]
+      },
+      "grund": "Material war leer, obwohl der Materialabschnitt der Quelle einen Gegenstand nennt."
     }
   ],
   "keine_dublette": [
@@ -3308,6 +3323,16 @@
       "id": "eig-fahnenraub-im-wald",
       "kern": false,
       "grund": "Zusammengelegt mit „Capture the Flag“ als Fahnenraub-Variante im Wald."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "kern": true,
+      "grund": "Bleibt in der ersten Reihe: Die Korrektur des Materials hätte das Spiel sonst durch die Punkterechnung verdrängt. Die Auswahl soll sich durch Datenpflege nicht verschieben."
+    },
+    {
+      "id": "sw-zahlensumme",
+      "kern": false,
+      "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
     }
   ],
   "achsen": [
@@ -3493,6 +3518,33 @@
         ]
       },
       "grund": "Die Geräte-Zuordnung aus dem korrigierten Material passte nicht (Bälle als Küken, dazu Futter-Gegenstände); von Hand gesetzt."
+    },
+    {
+      "id": "sw-leuchtturm",
+      "felder": {
+        "spielgeraet": [
+          "tuch"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (Augenbinde)."
+    },
+    {
+      "id": "sw-eiersuche",
+      "felder": {
+        "spielgeraet": [
+          "ball"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (kleiner Ball)."
+    },
+    {
+      "id": "sw-offen-oder-geschlossen-weitergeben",
+      "felder": {
+        "spielgeraet": [
+          "sonstiges"
+        ]
+      },
+      "grund": "Geräte-Zuordnung zur korrigierten Materialangabe (beliebiger Gegenstand)."
     }
   ],
   "ersetzungen": [

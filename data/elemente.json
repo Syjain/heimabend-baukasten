@@ -9651,7 +9651,9 @@
    "dauer_min": 5,
    "dauer_max": 10,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "kleiner Ball (zum Beispiel Tischtennisball) oder Papier mit gezeichnetem Ei"
+   ],
    "vorbereitung": "gering",
    "kurz": "Eiersuche ist ein einfaches Suchspiel für Kinder. Es ist eine Variante der Spielidee Heiß Kalt, kann aber im Gegensatz zu diesem Spiel erst ab etwa zehn Mitspielern sinnvoll gespielt werden.",
    "beschreibung": "**Eiersuche** ist ein einfaches Suchspiel für Kinder. Es ist eine Variante der Spielidee Heiß Kalt, kann aber im Gegensatz zu diesem Spiel erst ab etwa zehn Mitspielern sinnvoll gespielt werden.\n\n## Material\nEs wird ein \"Ei\" benötigt. Dies kann entweder ein kleiner Ball (zum Beispiel Tischtennisball) sein oder ein kleines Stück Papier mit einer Zeichnung eines Hühnereis.\n\n## Ablauf\nDie Gruppe sitzt in einem Raum (entweder im Kreis oder wild verteilt, aber doch relativ dicht beisammen). Diese Spieler stellen Hühner dar. Eines der Hühner hat gerade ein Ei gelegt und brütet dieses nun. Dazu erhält es das Ei und setzt sich darauf, so dass man das Ei nicht mehr sieht (und natürlich so, dass es nicht kaputt geht!).\n\nEin weiterer Spieler, der Bauer, hatte zuvor den Raum verlassen und weiß natürlich nicht, wo sich das Ei befindet. Er muss das Ei suchen. Die einzige Hilfe die er dabei erhält ist das Gegacker der Hühner. Je näher er dem Ei kommt, desto lauter gackern die Hühner. Ziel des Bauern ist es natürlich, das Ei so schnell wie möglich zu finden.\n\n### Varianten\nBei der Variante Summen (Brummen) einigen sich die Mitspieler auf einen Ort im Raum, zu dem sich der aktive Spieler bewegen muss. Es kann auch eine einfache Aktivität dabei eingeschlossen werden, zum Beispiel das Niedersetzen auf eine Bank. Dem aktiven Spieler wird das System nicht erklärt. Wenn er - nachdem den restlichen Spielern das System erklärt wurde und sie sich auf den Ort geeinigt haben - den Raum betritt, \"Summen\" diese lediglich lauter, wenn sich der Spieler dem Ort (und der Aktivität) nähert; und sie summen leiser, wenn er sich davon entfernt.",
@@ -9677,11 +9679,11 @@
    "modus": "ohne_gewinner",
    "sozialform": "kreis",
    "spielgeraet": [
-    "nichts"
+    "ball"
    ],
    "anforderung": [],
    "platz": "zimmer",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
@@ -21625,7 +21627,9 @@
    "dauer_min": 10,
    "dauer_max": 15,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "Augenbinde (oder einfach die Augen schließen)"
+   ],
    "vorbereitung": "gering",
    "kurz": "Leuchtturm ist ein ruhiges Bewegungsspiel. Es ist ideal für Gruppen zwischen 10-20 Personen, kann aber auch mit mehr Spielern gespielt werden.",
    "beschreibung": "**Leuchtturm** ist ein ruhiges Bewegungsspiel. Es ist ideal für Gruppen zwischen 10-20 Personen, kann aber auch mit mehr Spielern gespielt werden.\n\n## Material\nBenötigt wird eine Augenbinde; alternativ tut es auch, bei Vertrauen in die Kinder, auch einfaches Schließen der Augen.\n\n## Ablauf\nEin Kind wird bestimmt, es stellt das Schiff dar; ein weiteres darf Leuchtturm sein. Diese starten an entgegengesetzten Enden des Spielfeldes. Da dichter Nebel herrscht, kann das Schiff nichts sehen, es schließt seine Augen (oder bekommt diese mit einer Augenbinde verbunden). Die übrigen Mitspieler verteilen sich im Raum, sie stellen Sandbänke oder Felsen dar.\n\nUm das Ziel (den Leuchtturm) zu erreichen, darf das Schiff sein Schiffshorn (Tuuuuut) benutzen, worauf der Leuchtturm mit seinem Signal (nach Wahl des Turmes, etwa ebenfalls ein Nebelhorn, oder ein akustisches Blinken) antwortet. Auch die Felsen geben Signale von sich, wenn sich das Schiff zu sehr nähert (sie piepsen oder imitieren die Brandung des Wassers).\n\nZiel des Schiffes ist es, den Leuchtturm zu erreichen, ohne gegen einen Felsen oder eine Sandbank zu fahren.\n\n### Varianten\n- Es könnte auch mehrere Leuchttürme geben, die das Schiff nacheinander erreichen muss. Diese geben dann, wie auch echte Leuchttürme, unterschiedliche und damit identifizierbare Signale ab (einer piepst zweimal kurz, der nächste einmal lang, der dritte kurz-lang-kurz, der vierte trötet, etc.)",
@@ -21654,13 +21658,13 @@
    "modus": "ohne_gewinner",
    "sozialform": "frei",
    "spielgeraet": [
-    "nichts"
+    "tuch"
    ],
    "anforderung": [
     "bewegung"
    ],
    "platz": "saal_wiese",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "hoch",
    "varianten": [],
@@ -26634,7 +26638,9 @@
    "dauer_min": 10,
    "dauer_max": 30,
    "ort": "beides",
-   "material": [],
+   "material": [
+    "ein beliebiger Gegenstand (Münze, Besteck, Buch oder Tasse)"
+   ],
    "vorbereitung": "gering",
    "kurz": "Offen oder geschlossen Weitergeben ist ein Rätselspiel. Ein Gegenstand wird in der Runde herumgereicht und dabei entweder offen oder geschlossen übergeben. Doch wie unterscheidet sich das?",
    "beschreibung": "**Offen oder geschlossen Weitergeben** ist ein Rätselspiel. Ein Gegenstand wird in der Runde herumgereicht und dabei entweder offen oder geschlossen übergeben. Doch wie unterscheidet sich das?\n\n## Material\n- Irgendein Gegenstand. Münze, Besteck, Buch, Tasse. Besonderen Charme haben natürlich Gegenstände, die tatsächlich offen oder geschlossen sein können (eben beispielsweise ein Buch).\n\n## Ablauf\nEin Gegenstand wird in der Gruppe von Person zu Person weiter gegeben. Die eingeweihten Spieler beurteilen dabei jeweils, ob der Gegenstand \"offen\" oder \"geschlossen\" übergeben wurde. Ziel der übrigen Spieler ist es, das System dahinter zu erkennen - wann wurde ein Gegenstand offen, wann geschlossen übergeben?\n\nSpieler, die das System erraten haben, teilen die Lösung natürlich nicht mit. Es darf auf nicht öffentlich über die Lösung spekuliert werden. Einzige erlaubte Diskussion über das Problem ist es, ein praktisches Beispiel zu machen - also den Gegenstand eben korrekt offen oder geschlossen zu übergeben.\n\n## Lösung\nEs kommt überhaupt nicht auf den Gegenstand an. Egal ob dieser in der linken oder rechten Hand gehalten wird, ob der Gegenstand nach links oder rechts gegeben wird, ob der Gegenstand physikalisch offen oder geschlossen ist (beispielsweise ein Buch oder eine Flasche) - all das ist irrelevant. Einzig bestimmend für den Status des Objekte ist der Mund des Übergebers. Ist dieser geöffnet, gilt der Gegenstand als \"offen\" übergeben. Ist er geschlossen, so gilt auch der Gegenstand als \"geschlossen\" übergeben.",
@@ -26658,13 +26664,13 @@
    "modus": "ohne_gewinner",
    "sozialform": "frei",
    "spielgeraet": [
-    "nichts"
+    "sonstiges"
    ],
    "anforderung": [
     "denken"
    ],
    "platz": "zimmer",
-   "hosensackspiel": true,
+   "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
