@@ -2159,6 +2159,48 @@
         ]
       },
       "grund": "Tippfehler und abgeschnittenes Wort im Material („Packetband“, „Blatt Papie …“)."
+    },
+    {
+      "id": "sw-angeln",
+      "felder": {
+        "tipps": "Eine abgegrenzte Spielfläche oder eine Kiste verwenden, damit die Rollen beieinander bleiben. Besenstiele nicht schwingen: Wer an der Reihe ist, steht mit Abstand zu den anderen."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-der-kaiser-schickt-soldaten-aus",
+      "felder": {
+        "tipps": "Das Spielfeld mit einer Mittellinie markieren und die Entfernung dem Platz anpassen (20 bis 30 Meter). Beide Gruppen sollten etwa gleich groß und gleich schnell sein. Als Variante scheiden Verlierer aus, dann ist der Sieger schneller ermittelt."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-geisterbahn",
+      "felder": {
+        "tipps": "Keine Kerzen oder Fackeln in der Nähe von Kindern mit verbundenen Augen. Schnüre und Stoffstücke nicht in Augen- oder Halshöhe anbringen, Hindernisse am Boden vorher abgehen (Stolpergefahr). Jede Person darf jederzeit abbrechen; für jüngere Kinder die Bahn weniger gruselig halten."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-geocaching",
+      "felder": {
+        "tipps": "Statt spezieller GPS-Geräte reichen Smartphones mit einer Kartenanwendung. Die Koordinaten vorher mit dem Gerät prüfen und Spielgebiet und Rückkehrzeit festlegen. Für Gruppen als Schatzsuche mit eigenem Behälter ausprobieren."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-papierknauel-reflexion",
+      "felder": {
+        "tipps": "Die Frage kurz und klar stellen und die Länge der Antwort begrenzen (zum Beispiel höchstens fünf Wörter). Die Zettel gut mischen, damit niemand den eigenen bekommt. Die Antworten nicht kommentieren."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
+    },
+    {
+      "id": "sw-tastkim",
+      "felder": {
+        "tipps": "Nur ungefährliche Gegenstände wählen (nichts Scharfes oder Spitzes). Die Gegenstände sollten sich deutlich unterscheiden. Erst wenn alle getastet haben, wird aufgeschrieben oder aufgezählt."
+      },
+      "grund": "Rückt durch das Zusammenlegen von Dubletten in die erste Reihe nach (Quote je Unterkategorie) und hatte keine Tipps. Kurze Hinweise aus der Beschreibung ergänzt."
     }
   ],
   "keine_dublette": [
@@ -3111,6 +3153,79 @@
       ],
       "lizenzen_unvertraeglich": true,
       "grund": "Dasselbe Spiel. Der ausführliche Regeltext mit allen Rollen steht bei pfadfinder-spiele.de; die eigene Fassung führt es als ganzen Abend."
+    },
+    {
+      "haupt": "sw-sardinli",
+      "varianten": [
+        "ps-sardine"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Versteckspiel: Eine Person versteckt sich, wer sie findet, versteckt sich dazu - bis alle wie Sardinen beieinander sitzen."
+    },
+    {
+      "haupt": "sw-larmwand",
+      "varianten": [
+        "ps-das-schreispiel"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel: Ein Hörer steht bei der gegnerischen Gruppe, die eigene Gruppe ruft ihm einen Satz zu, die Gegner übertönen sie durch Schreien."
+    },
+    {
+      "haupt": "sw-wer-bin-ich",
+      "varianten": [
+        "insp-wer-bin-ich"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Ratespiel: Ein Begriff klebt auf der Stirn, reihum Ja-Nein-Fragen. Die Fassung des Inspirators legt nur die Stirnzettel von der Nachbarin oder dem Nachbarn fest."
+    },
+    {
+      "haupt": "sw-papierflieger-wettkampf",
+      "varianten": [
+        "insp-papierflieger-wettbewerb"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Spiel: Papierflieger bauen und gegeneinander antreten (Weite, Höhe, Dauer, Aussehen)."
+    },
+    {
+      "haupt": "eig-seilbruecke-bauen",
+      "varianten": [
+        "insp-seilbruecke-bauen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dieselbe Aufgabe: Eine Seilbrücke bauen und überqueren. Die eigene Fassung führt zusätzlich Spannknoten und Sicherung auf."
+    },
+    {
+      "haupt": "sw-capture-the-flag",
+      "varianten": [
+        "eig-capture-the-flag-im-dunkeln",
+        "eig-fahnenraub-im-wald"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Alle drei sind Fahnenraub im Gelände; die beiden eigenen Fassungen sind Abwandlungen (bei Nacht mit Lampen, im Wald mit Bandabreißen)."
+    },
+    {
+      "haupt": "sw-verstecken",
+      "varianten": [
+        "ps-versteck-fangen"
+      ],
+      "lizenzen_unvertraeglich": true,
+      "grund": "Dasselbe Versteckspiel mit Zählen, Suchen und Freischlagen am Spielbaum oder Freischlagpunkt."
+    },
+    {
+      "haupt": "eig-geschmacks-kim-blind-tasting",
+      "varianten": [
+        "sw-geschmackskim"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dasselbe Spiel: Mit verbundenen Augen Lebensmittel am Geschmack erkennen; die eigene Fassung ist als Abend ausgearbeitet."
+    },
+    {
+      "haupt": "eig-blitzlicht-runde",
+      "varianten": [
+        "sw-blitzlicht-reflexion"
+      ],
+      "lizenzen_unvertraeglich": false,
+      "grund": "Dieselbe Methode: Reihum ein paar kurze Sätze zum Abend, ohne Antworten."
     }
   ],
   "kern": [
@@ -3168,6 +3283,31 @@
       "id": "sw-mafia",
       "kern": false,
       "grund": "Wäre durch die Materialkorrektur zweier anderer Spiele in die erste Reihe nachgerückt; bleibt in der zweiten Reihe, bis die Auswahl bewusst überarbeitet wird."
+    },
+    {
+      "id": "insp-gitarrenkurs",
+      "kern": false,
+      "grund": "Der Baustein besteht nur aus einer Linksammlung (jede Zeile endet auf „Link zu Youtube“), die Links stehen nicht in den Daten. Ohne sie bleibt nur eine Liste von Liedtiteln. Bleibt über die zweite Reihe erreichbar."
+    },
+    {
+      "id": "insp-wer-bin-ich",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Wer bin ich“ (Spielewiki), das ausführlicher ist."
+    },
+    {
+      "id": "insp-papierflieger-wettbewerb",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Papierflieger-Wettkampf“ (Spielewiki)."
+    },
+    {
+      "id": "insp-seilbruecke-bauen",
+      "kern": false,
+      "grund": "Zusammengelegt mit der eigenen Fassung „Seilbrücke bauen“, die Knoten und Sicherung ausführt."
+    },
+    {
+      "id": "eig-fahnenraub-im-wald",
+      "kern": false,
+      "grund": "Zusammengelegt mit „Capture the Flag“ als Fahnenraub-Variante im Wald."
     }
   ],
   "achsen": [

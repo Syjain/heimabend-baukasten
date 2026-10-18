@@ -1368,7 +1368,7 @@
    "vorbereitung": "mittel",
    "kurz": "Angeln ist ein Geschicklichkeitsspiel. Je nach Platz- und Materialangebot können nur einige wenige Spieler daran gleichzeitig teilnehmen, allerdings können viele Spieler knapp hintereinander gegen die Uhr spielen.",
    "beschreibung": "**Angeln** (oder auch: **Fischen**) ist ein Geschicklichkeitsspiel. Je nach Platz- und Materialangebot können nur einige wenige Spieler daran gleichzeitig teilnehmen, allerdings können viele Spieler knapp hintereinander gegen die Uhr spielen.\n\n## Material\n- Kartonrollen (zum Beispiel leere Toilettenpapier-Rollen)\n- Besenstiele oder ähnliches\n- optional: abgegrenztes Spielfeld; ideal eine größere Kiste/Box, zum Beispiel eine leere Sandkiste\n\n## Ablauf\nDie Spieler spielen entweder gegeneinander, oder einzeln gegen die Uhr. Ziel ist es, die Karton-Rollen mittels des Besenstiels aus dem Spielfeld zu angeln. Gewonnen hat der Spieler, der innerhalb der vorgegebenen Zeit die meisten Rollen ergattern kann.",
-   "tipps": "",
+   "tipps": "Eine abgegrenzte Spielfläche oder eine Kiste verwenden, damit die Rollen beieinander bleiben. Besenstiele nicht schwingen: Wer an der Reihe ist, steht mit Abstand zu den anderen.",
    "tags": [
     "Geschicklichkeitsspiel",
     "Spiel für Stationenlauf"
@@ -1399,7 +1399,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "ps-angesprochen",
@@ -4469,7 +4469,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-bodyguard",
@@ -5541,6 +5541,16 @@
    ],
    "varianten": [
     {
+     "titel": "Capture the Flag im Dunkeln",
+     "id": "eig-capture-the-flag-im-dunkeln",
+     "aenderung": ""
+    },
+    {
+     "titel": "Fahnenraub im Wald",
+     "id": "eig-fahnenraub-im-wald",
+     "aenderung": ""
+    },
+    {
      "titel": "Capture the flag",
      "id": "ps-capture-the-flag",
      "aenderung": ""
@@ -5605,7 +5615,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-carrot-in-the-box",
@@ -6561,7 +6571,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-daumenkonig",
@@ -7001,7 +7011,7 @@
    "vorbereitung": "gering",
    "kurz": "Der Kaiser schickt Soldaten aus ist ein einfaches Fangspiel für zwei Gruppen.",
    "beschreibung": "**Der Kaiser schickt Soldaten aus** ist ein einfaches Fangspiel für zwei Gruppen.\n\n## Material\nEs wird kein Material benötigt.\n\n## Ablauf\nDie Kinder werden in zwei Gruppen geteilt, jede Gruppe wählt einen Kaiser. Die übrigen Spieler (Soldaten) stellen sich in einer Reihe auf, so dass sie den Soldaten der gegnerischen Mannschaft in gewissem Abstand (20-30 Meter, je nach Platz) gegenüberstehen. Alle Soldaten strecken eine ihrer Hände nach vor.\n\nDie Kaiser senden nun immer abwechselnd einen der Soldaten (Angreifer) ins Feindesland. Dort geht dieser die Reihen der Soldaten entlang und klatscht in drei beliebige Hände. Anschließend läuft der Angreifer so schnell wie möglich zurück zu seinem Team. Bei den ersten beiden Berührungen darf es keine Reaktion der verteidigenden Soldaten geben. Der Verteidiger aber, dem die dritte Hand gehört, muss den nun bereits flüchtenden Angreifer aber so schnell wie möglich berühren. Schafft er dies, bevor der Angreifer seine Mannschaft erreicht hat, so kommt der Angreifer in das Team der Verteidiger. Ist der Angreifer aber schneller und schafft es zurück zu seinem Team, so kommt der Verteidiger zum Team der Angreifer. Anschließend schickt das gerade verteidigende Team einen Soldaten aus.\n\n### Variante\n- Der Soldat, der verliert, kann auch ausscheiden anstatt zum Gegner zu wechseln. Dann ist der Sieger leichter ermittelbar.",
-   "tipps": "",
+   "tipps": "Das Spielfeld mit einer Mittellinie markieren und die Entfernung dem Platz anpassen (20 bis 30 Meter). Beide Gruppen sollten etwa gleich groß und gleich schnell sein. Als Variante scheiden Verlierer aus, dann ist der Sieger schneller ermittelt.",
    "tags": [
     "Fangspiel",
     "ohne Material"
@@ -7036,7 +7046,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-der-kleine-in-der-mitte",
@@ -13130,7 +13140,7 @@
    "vorbereitung": "hoch",
    "kurz": "Eine Geisterbahn zu bauen ist weniger ein Spiel als ein Abenteuer für die aufbauende und die erlebende Gruppe. Es wird einiges an Material und Vorbereitung benötigt und sollte bevorzugt in der Nacht oder zumindest Dämmerung durchgeführt werden.",
    "beschreibung": "Eine **Geisterbahn** zu bauen ist weniger ein Spiel als ein Abenteuer für die aufbauende und die erlebende Gruppe. Es wird einiges an Material und Vorbereitung benötigt und sollte bevorzugt in der Nacht oder zumindest Dämmerung durchgeführt werden. Am einfachsten zu errichten ist sie in einem nicht all zu dicht bewachsenen Wald mit vielen Baumstämmen, aber wenig Ästen.\n\n## Material\n- lange Seile (Schnüre)\n- eventuell Kerzen oder Fackeln\n- eine Augenbinde pro Mitspieler\n- unterschiedliche Gruselmaterialien:\n- Schnüre\n- (Nase) Stoffstücke\n- Handschuhe\n- Plastikfolien\n- u.s.w.\n\n## Vorbereitung\nDie vorbereitende Gruppe - meist ältere Kinder oder Jugendliche oder die Leiter selber - brauchen etwas Vorlaufzeit, um die Geisterbahn aufzubauen. Dazu wird durch den Wald ein Seil von Baum zu Baum gespannt. Die Teilnehmer müssen sich anschließend an dem Seil mit verbundenen Augen durch den Wald bewegen können.\n\nZusätzlich werden die weiteren \"Gruselmaterialien\" angebracht. Dabei sind der Phantasie keine Grenzen gesetzt: Es können Fetzen oder Schnüre in Kopfhöhe montiert werden (aber aufpassen, dass man daran hängen bleibt!), klebende Flüssigkeiten am Seil anbringen, das Seil kurz unterbrechen, Hindernisse am Boden auslegen (Achtung, Stolpergefahr!) oder ähnliches.\n\n## Ablauf\nDer grundlegende Ablauf ist einfach: Die Teilnehmer werden einzeln (oder in sehr kleinen Gruppen) vom einen Ende der Geisterbahn zum anderen Ende geschickt. Es sind ihnen dabei die Augen verbunden. Die Betreuer der Geisterbahn (\"Geister\") laufen dabei durch die Bahn und gruseln die Leute durch Geräusche, sanfte Berührungen oder ähnlichem.\n\nDieser Ablauf kann natürlich nach Belieben variiert und an die besonderen Gegebenheiten der Kinder, des Geländes, der Spielgeschichte und so weiter angepasst werden.",
-   "tipps": "",
+   "tipps": "Keine Kerzen oder Fackeln in der Nähe von Kindern mit verbundenen Augen. Schnüre und Stoffstücke nicht in Augen- oder Halshöhe anbringen, Hindernisse am Boden vorher abgehen (Stolpergefahr). Jede Person darf jederzeit abbrechen; für jüngere Kinder die Bahn weniger gruselig halten.",
    "tags": [
     "Geländespiel",
     "Gruselspiel",
@@ -13167,7 +13177,7 @@
    "uebt": [],
    "naehe": "hoch",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-gemeinsam-aufstehen",
@@ -13296,7 +13306,7 @@
    "vorbereitung": "mittel",
    "kurz": "Geocaching ist ein Geländespiel der etwas anderen Art.",
    "beschreibung": "**Geocaching** ist ein Geländespiel der etwas anderen Art.\n\n## Material\nJeder Teilnehmer oder jede Teilnehmergruppe benötigt einen GPS-Empfänger, der zumindest die aktuellen Geokoordinaten anzeigen kann. PDAs, GPS-fähige Mobiltelefone oder spezielle GPS-Empfänger mit Display eignen sich dafür gut; Notebooks mit GPS-Empfänger sind für den mobilen Einsatz im Gelände natürlich weniger geeignet.\n\n## Ablauf\nZiel des Spiele ist es, einen vorgegebenen Punkt in der Landschaft (oder auch der Stadt) zu erreichen. Dort ist ein Behälter (ein Cache) versteckt. Dieser enthält typischerweise eine Nachricht oder einen Gegenstand. Der Punkt wird über die genaue Geokoordinate (Beispiel: 48° 46′ 17″ N, 13° 51′ 26″ O) den Teilnehmer mitgeteilt, die mit Hilfe des GPS-Empfängers den Punkt so schnell wie möglich erreichen sollen und das geheime Versteck finden.\n\n### Eigentliches Geocaching\nDie ursprüngliche Idee ist es, in den Caches Dinge zu verstecken und den Cache zu dokumentieren (meist im Internet, etwa auf geocaching.com). Wer den Cache findet, tauscht den Gegenstand oft durch einen eigenen aus und Dokumentiert den Fund im Internet.\n\n### Als Gruppenspiel\nAls Gruppenspiel lässt sich Geocaching etwa als Schnitzeljagd oder Schatzsuche einsetzen oder in diese Spiele einbauen.",
-   "tipps": "",
+   "tipps": "Statt spezieller GPS-Geräte reichen Smartphones mit einer Kartenanwendung. Die Koordinaten vorher mit dem Gerät prüfen und Spielgebiet und Rückkehrzeit festlegen. Für Gruppen als Schatzsuche mit eigenem Behälter ausprobieren.",
    "tags": [
     "Geländespiel"
    ],
@@ -13326,7 +13336,7 @@
    ],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-gerausche-kim-fur-paare",
@@ -13713,7 +13723,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-gesichter-ertasten",
@@ -21097,7 +21107,13 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Das Schreispiel",
+     "id": "ps-das-schreispiel",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -27527,7 +27543,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Papierflieger Wettbewerb",
+     "id": "insp-papierflieger-wettbewerb",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -27551,7 +27573,7 @@
    "vorbereitung": "gering",
    "kurz": "Die Papierknäuel-Reflexion ist eine Reflexionsmethode. Es eignet sich für kurze Reflexionen in kleineren Gruppen, bei denen die Antwort anonymisiert werden soll. Qualitativ hochwertige Antworten können nicht erwartet werden, sondern eher ein grobes Stimmungsbild.",
    "beschreibung": "Die **Papierknäuel-Reflexion** ist eine Reflexionsmethode. Es eignet sich für kurze Reflexionen in kleineren Gruppen, bei denen die Antwort anonymisiert werden soll. Qualitativ hochwertige Antworten können nicht erwartet werden, sondern eher ein grobes Stimmungsbild.\n\n## Material\nJeder Teilnehmer benötigt einen kleinen Zettel und einen Stift. Darüber hinaus wird ein Sammelbehälter benötigt (beispielsweise Schachtel, Topf, Hut, etc.)\n\n## Ablauf\nDer Leiter formuliert eine Frage, typischerweise \"wie geht es euch nach der (zuvor gestellten) Aufgabe\". Die Teilnehmer überlegen sich eine gute, möglichst kurze Antwort auf diese Frage und schreiben sie auf ihren Zettel (die Länge der Antwort, etwa die Wortanzahl, kann von den Leitern beschränkt werden). Diese werden anschließend zusammengeknüllt und in die \"Wahlurne\" geworfen. Haben dies alle Teilnehmer erledigt, Mischen die Leiter die abgegebenen Zettel und teilen jedem Spieler wieder einen Zettel zu. Die darauf stehende Antwort wird schließlich von allen Spielern reihum vorgelesen. So ergibt sich ein anonymisiertes Stimmungsbild der Gruppe.",
-   "tipps": "",
+   "tipps": "Die Frage kurz und klar stellen und die Länge der Antwort begrenzen (zum Beispiel höchstens fünf Wörter). Die Zettel gut mischen, damit niemand den eigenen bekommt. Die Antworten nicht kommentieren.",
    "tags": [
     "Reflexionsmethode"
    ],
@@ -27582,7 +27604,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "insp-pappteller-golf",
@@ -30906,7 +30928,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-sardinli",
@@ -30951,7 +30973,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Sardine",
+     "id": "ps-sardine",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -36175,7 +36203,7 @@
    "vorbereitung": "gering",
    "kurz": "Ein Tastkim ist ein Kimspiel, das den Tastsinn und das Gedächtnis der Mitspieler anspricht.",
    "beschreibung": "Ein **Tastkim** ist ein Kimspiel, das den Tastsinn und das Gedächtnis der Mitspieler anspricht.\n\n## Material\nEs wird kein besonderes Material benötigt, wohl aber eine größere Anzahl unterschiedlicher Gegenstände. Dies können durchaus Alltagsgegenstände sein (beispielsweise Münze, Schlüssel, Zeitung, Uhr), sie sollten sich allerdings voneinander deutlich unterscheiden (nicht zum Beispiel zwei unterschiedliche Münzen).\n\nZusätzlich muss ein Sichtschutz vorhanden sein, etwa eine Decke oder ein Karton.\n\n## Ablauf\nDie Gegenstände werden aufgelegt (am Boden oder auf einem Tisch) und sind unter einer Decke oder ähnlichem versteckt. Der Spielleiter erklärt das Spiel und lässt dann den ersten Spieler unter die Decke greifen, um die Gegenstände zu ertasten.\n\nDie Spieler müssen nun der Reihe nach die Gegenstände berühren und dabei erkennen, um welche Gegenstände es sich handelt. Gleichzeitig müssen sie sich die Gegenstände merken.\n\nErst wenn alle Spieler fertig sind und die Gegenstände ertastet haben, dürfen sie einzeln oder gemeinsam alle gemerkten Gegenstände aufschreiben oder aufzählen. Schafft es die Gruppe, alle Gegenstände aus dem Gedächtnis abzurufen?",
-   "tipps": "",
+   "tipps": "Nur ungefährliche Gegenstände wählen (nichts Scharfes oder Spitzes). Die Gegenstände sollten sich deutlich unterscheiden. Erst wenn alle getastet haben, wird aufgeschrieben oder aufgezählt.",
    "tags": [
     "Kimspiel"
    ],
@@ -36207,7 +36235,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": false
+   "kern": true
   },
   {
    "id": "sw-tausendfusserrennen",
@@ -38257,7 +38285,7 @@
    "uebt": [],
    "naehe": "keine",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "sw-verstecken",
@@ -38306,7 +38334,13 @@
    "hosensackspiel": true,
    "uebt": [],
    "naehe": "keine",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Versteck-fangen",
+     "id": "ps-versteck-fangen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -40283,6 +40317,11 @@
     "ps-wer-bin-ich"
    ],
    "varianten": [
+    {
+     "titel": "Wer bin ich?",
+     "id": "insp-wer-bin-ich",
+     "aenderung": ""
+    },
     {
      "titel": "Wer bin ich?",
      "id": "ps-wer-bin-ich",
@@ -46506,7 +46545,13 @@
    "dubletten": [
     "insp-seilbruecke-bauen"
    ],
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Seilbrücke bauen",
+     "id": "insp-seilbruecke-bauen",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -46563,7 +46608,7 @@
     "eig-seilbruecke-bauen"
    ],
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "insp-sippen-packliste-erstellen",
@@ -47817,7 +47862,7 @@
    "uebt": [],
    "naehe": "",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "insp-fahrrad-geschicklichkeits-parkour",
@@ -51958,7 +52003,7 @@
    "uebt": [],
    "naehe": "",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "insp-papierturm-bauen",
@@ -53302,7 +53347,13 @@
    "hosensackspiel": false,
    "uebt": [],
    "naehe": "",
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Geschmackskim",
+     "id": "sw-geschmackskim",
+     "aenderung": ""
+    }
+   ],
    "kern": true
   },
   {
@@ -54615,7 +54666,7 @@
    "uebt": [],
    "naehe": "",
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "eig-impro-theater-und-sketch-abend",
@@ -55321,7 +55372,13 @@
    ],
    "themen": [],
    "kern": true,
-   "varianten": [],
+   "varianten": [
+    {
+     "titel": "Blitzlicht-Reflexion",
+     "id": "sw-blitzlicht-reflexion",
+     "aenderung": ""
+    }
+   ],
    "quelle": {
     "name": "Heimabend-Baukasten (eigene Sammlung)",
     "url": "",
@@ -58343,7 +58400,7 @@
     "sw-wer-bin-ich"
    ],
    "varianten": [],
-   "kern": true
+   "kern": false
   },
   {
    "id": "eig-wetterkarte-zum-abend",
