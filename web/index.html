@@ -144,7 +144,7 @@ button { cursor: pointer; }
 /* Kleine Überschrift über einer Gruppe – an vielen Stellen wiederverwendet */
 .marke {
   font-family: var(--schrift-daten);
-  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+  font-size: .75rem; font-weight: 700; letter-spacing: .08em;
   text-transform: uppercase; color: var(--leise);
 }
 
@@ -246,7 +246,7 @@ details.filter > summary span:last-child:not(:first-child) {
 }
 @media (max-width: 359px) { .filter-raster { grid-template-columns: minmax(0,1fr); } }
 .feld { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-.feld label { font-family: var(--schrift-daten); font-size: .68rem; color: var(--leise);
+.feld label { font-family: var(--schrift-daten); font-size: .75rem; color: var(--leise);
   font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .feld select {
   padding: 10px 12px; min-height: 44px; font-size: 16px;
@@ -297,7 +297,7 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
    Umschalter, keine Liste. Erst unter 360 px bleibt dafür kein Platz. */
 .filter-raster .sammlung .chips { margin-top: 6px; flex-wrap: nowrap; gap: 6px; }
 .filter-raster .sammlung .chip {
-  flex: 1 1 0; min-width: 0; padding: 10px 6px; font-size: .76rem;
+  flex: 1 1 0; min-width: 0; padding: 10px 6px; font-size: .8rem;
   text-align: center; white-space: nowrap;
 }
 @media (max-width: 359px) {
@@ -306,11 +306,11 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 }
 .sammlung .chip { padding: 11px 12px; font-size: .8rem; }
 .sammlung .hinweis {
-  font-size: .74rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4;
+  font-size: .8rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4;
 }
 .sammlung .chip .zahl {
   font-family: var(--schrift-daten); font-variant-numeric: tabular-nums;
-  font-size: .76rem; opacity: .85; margin-left: 5px;
+  font-size: .8rem; opacity: .85; margin-left: 5px;
 }
 
 /* --------------------------------------------- Wie viele sind heute da? */
@@ -330,7 +330,7 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
    dort steht der Daumen, wenn man das Handy in einer Hand hält. */
 .heute-steller { display: flex; align-items: stretch; margin-left: auto; }
 .heute-steller button {
-  flex: none; width: 42px; min-height: 44px; padding: 0;
+  flex: none; width: 44px; min-height: 44px; padding: 0;
   border: 1px solid var(--linie-stark); background: var(--grund);
   color: var(--text); font-size: 1.25rem; font-weight: 700; line-height: 1;
   font-family: var(--schrift-daten); border-radius: 0;
@@ -354,11 +354,12 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 /* Das Auswahlfeld richtet sich sonst nach seinem längsten Eintrag ("25+ Kinder")
    und wird bei 320 px 125 px breit - dann bricht die Zeile um. Feste Breite hält
    Beschriftung und Zähler in einer Zeile. */
-.heute-steller select { width: 96px; min-width: 0; }
+/* Systemschrift statt Monospace: "25+ Kinder" und "? Kinder" wurden sonst abgeschnitten. */
+.heute-steller select { width: 114px; min-width: 0; font-family: var(--schrift); }
 @media (max-width: 359px) {
   .heute { gap: 6px; padding-inline: 10px; }
   .heute .marke { font-size: .62rem; letter-spacing: .02em; }
-  .heute-steller select { width: 92px; }
+  .heute-steller select { width: 108px; }
   .heute-steller button { width: 38px; }
 }
 
@@ -376,11 +377,11 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 .vor-zeile b { color: var(--text); font-weight: 650; }
 .vor-zeile .vorlauf {
   color: var(--glut); font-weight: 700;
-  font-family: var(--schrift-daten); font-size: .74rem;
+  font-family: var(--schrift-daten); font-size: .8rem;
 }
 /* Quelle und Lizenz stehen an jedem Element – auch hier, nicht nur im Detail. */
 .vor-quelle {
-  margin-top: 7px; font-size: .68rem; color: var(--leise);
+  margin-top: 7px; font-size: .75rem; color: var(--leise);
   font-family: var(--schrift-daten);
 }
 .zettel ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--r4); }
@@ -430,7 +431,7 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
   /* Ohne Silbentrennung bricht "Pfadfindertechnik" mitten im Wort um */
   hyphens: auto; -webkit-hyphens: auto;
 }
-.kachel .zahl { font-size: .74rem; color: var(--leise); margin-top: 2px; }
+.kachel .zahl { font-size: .8rem; color: var(--leise); margin-top: 2px; }
 .kachel.gross {
   grid-column: 1 / -1; flex-direction: row; align-items: center;
   justify-content: space-between; min-height: 0; padding: 13px var(--r4);
@@ -439,7 +440,8 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 .kachel.gross .name { font-size: .9rem; color: var(--akzent); font-family: var(--schrift); }
 
 /* Symbol für die Bereiche (nur auf der obersten Ebene) */
-.kachel.mitzeichen { flex-direction: row; align-items: center; gap: var(--r3); min-height: 92px; }
+.kachel.mitzeichen { flex-direction: row; align-items: center; gap: var(--r2); padding-inline: var(--r3); min-height: 92px; }
+@media (min-width: 360px) { .kachel .zahl { white-space: nowrap; } }
 .kachel.mitzeichen .zeichen { flex: none; color: var(--akzent); }
 .kachel.mitzeichen .beschriftung { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 
@@ -475,7 +477,7 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
   font-size: 1.02rem; margin: 0 0 var(--r1); flex: 1; min-width: 0;
 }
 .kartenzeit {
-  flex: none; font-size: .76rem; font-weight: 600; color: var(--glut);
+  flex: none; font-size: .8rem; font-weight: 600; color: var(--glut);
   white-space: nowrap; padding-top: 1px;
 }
 .karte p {
@@ -485,7 +487,7 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 .merkmale { display: flex; flex-wrap: wrap; gap: 5px; margin-top: var(--r3); }
 .merkmal {
   font-family: var(--schrift-daten);
-  font-size: .68rem; padding: 3px 8px; border-radius: var(--r1);
+  font-size: .75rem; padding: 3px 8px; border-radius: var(--r1);
   border: 1px solid var(--linie); color: var(--leise);
   white-space: normal; max-width: 100%;
 }
@@ -567,7 +569,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 
 .text { font-size: 1rem; line-height: 1.65; }
 .text h4 {
-  margin: 1.4em 0 .35em; font-size: .72rem; color: var(--leise);
+  margin: 1.4em 0 .35em; font-size: .8rem; color: var(--leise);
   font-family: var(--schrift-daten); text-transform: uppercase; letter-spacing: .08em;
 }
 .text p { margin: 0 0 .85em; }
@@ -588,7 +590,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .kasten.dublette, .kasten.verweis {
   border: 1px dashed var(--linie-stark); background: none; color: var(--leise);
 }
-.kasten h4 { margin: 0 0 var(--r2); font-size: .68rem; text-transform: uppercase;
+.kasten h4 { margin: 0 0 var(--r2); font-size: .75rem; text-transform: uppercase;
   letter-spacing: .08em; color: var(--leise); font-weight: 700; font-family: var(--schrift-daten); }
 .kasten.tipp h4 { color: var(--akzent); }
 @media (prefers-color-scheme: dark) { .kasten.tipp h4 { color: var(--akzent-hell); } }
@@ -604,8 +606,8 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
    Aus der fremden Fassung steht hier nie ein Text, nur ihr Name. */
 .kasten.verweis ul { list-style: none; margin: 0; padding: 0; }
 .kasten.verweis li { margin: 0; }
-.kasten.verweis .aenderung { display: block; margin: -6px 4px 4px; font-size: .76rem; }
-.kasten.verweis .lizenzhinweis { display: block; margin-top: var(--r2); font-size: .72rem; opacity: .85; }
+.kasten.verweis .aenderung { display: block; margin: -6px 4px 4px; font-size: .8rem; }
+.kasten.verweis .lizenzhinweis { display: block; margin-top: var(--r2); font-size: .8rem; opacity: .85; }
 
 /* Ehrlichkeitszeile im Quellenkasten: steht nur dort, wo die App wirklich
    ein Wort ausgetauscht hat. Kein Fachwort, ein Satz, ein Knopf. */
@@ -619,7 +621,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   font-family: inherit; cursor: pointer;
 }
 .urtext { margin-top: var(--r3); }
-.urtext h5 { margin: 0 0 var(--r2); font-size: .72rem; text-transform: uppercase;
+.urtext h5 { margin: 0 0 var(--r2); font-size: .8rem; text-transform: uppercase;
   letter-spacing: .06em; font-weight: 700; font-family: var(--schrift-daten); }
 .urtext pre { margin: 0; padding: var(--r3); background: var(--grund-tief);
   border-radius: var(--rund-klein); white-space: pre-wrap; overflow-wrap: anywhere;
@@ -630,7 +632,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .planzeile { margin: var(--r4) 0 var(--r2); }
 .chipzeile .chiptitel, .planzeile .chiptitel {
   font-family: var(--schrift-daten);
-  font-size: .68rem; color: var(--leise); font-weight: 700;
+  font-size: .75rem; color: var(--leise); font-weight: 700;
   text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; display: block;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -706,7 +708,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 .slot-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: var(--r2); }
 .slot-name {
   font-family: var(--schrift-daten);
-  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  font-size: .75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .08em; color: var(--leise);
 }
 .slot-dauer { font-size: .78rem; color: var(--glut); font-weight: 600; white-space: nowrap; }
@@ -728,7 +730,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 }
 .slot-inhalt .frei { font-size: .86rem; color: var(--leise); margin-top: 3px; }
 .slot-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--r3); }
-.slot .quellzeile { font-size: .7rem; color: var(--leise); margin-top: 6px; }
+.slot .quellzeile { font-size: .8rem; color: var(--leise); margin-top: 6px; }
 
 .summe {
   position: sticky; bottom: 0; z-index: 10;
@@ -784,7 +786,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 /* Zwei Knöpfe nebeneinander (sichern/einlesen) – am Handy dürfen sie umbrechen */
 .werkzeuge { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
 .werkzeuge .knopf { flex: 1 1 auto; text-align: center; }
-.hinweis { font-size: .74rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4; }
+.hinweis { font-size: .8rem; color: var(--leise); margin: 6px 2px 0; line-height: 1.4; }
 
 /* Das Formular. Mobil zuerst: eine Spalte, große Felder, und alles außer
    den fünf Pflichtangaben steckt in einem zugeklappten Kasten. */
@@ -796,7 +798,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
   background: var(--karte); -webkit-appearance: none;
 }
 .formular .feld textarea { min-height: 150px; line-height: 1.5; resize: vertical; }
-.formular .feld .nebentext { font-size: .74rem; color: var(--leise);
+.formular .feld .nebentext { font-size: .8rem; color: var(--leise);
   font-family: var(--schrift); text-transform: none; letter-spacing: 0; font-weight: 400; }
 .formular .zweispaltig { display: grid; grid-template-columns: 1fr 1fr; gap: var(--r3); }
 .formular details.filter { background: none; }
@@ -824,7 +826,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
 /* ----------------------------------------------------------------- Fußzeile */
 .fuss {
   margin-top: var(--r6); padding-top: var(--r5);
-  border-top: 1px solid var(--linie-stark); font-size: .74rem; color: var(--leise);
+  border-top: 1px solid var(--linie-stark); font-size: .8rem; color: var(--leise);
 }
 .fuss p { margin: 0 0 .6em; }
 .fuss .quellenliste { display: grid; gap: 3px; }
@@ -1540,7 +1542,8 @@ function stelleAnzahl(richtung) {
 }
 
 function anzahlText(zahl) {
-  if (!zahl) return "egal";
+  // Steht hinter "Heute sind wir" - "egal" las sich dort wie eine Antwort auf die Frage.
+  if (!zahl) return "? Kinder";
   return zahl + (zahl >= 25 ? "+" : "") + " Kinder";
 }
 /** Ausgeschrieben für ganze Sätze: "… passen für 25 Kinder oder mehr." */
