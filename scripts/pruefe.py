@@ -520,6 +520,9 @@ def pruefe_elemente(bericht, wurzel, elemente, redaktion):
             ohne_md = MD_LINK.sub("", text)
             for roh in NACKTE_URL.findall(ohne_md):
                 url = roh.rstrip(".,;:!?")
+                if url != roh:
+                    bericht.hinweis("{}: Adresse '{}' in '{}' endet im Text mit Satzzeichen; die App macht "
+                                    "es zum Teil des Links (Befund zu index.html).".format(k, roh[:50], feld))
                 grund = url_fehler(url)
                 if grund:
                     bericht.fehler("{}: Adresse '{}' in '{}' ist kaputt: {}.".format(k, url[:60], feld, grund))
