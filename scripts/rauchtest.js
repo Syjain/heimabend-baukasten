@@ -1185,9 +1185,10 @@
     setzeSammlung(true);
     suche.value = "xyzqqxyzqq";
     aktualisiere();
-    pruefe("ohne jeden Treffer: kein Knopf, der nichts ändert, sondern ein Tipp",
-           !document.querySelector("#liste button[data-weg]") &&
-           document.getElementById("liste").textContent.indexOf("anderes Wort") > -1);
+    // Runde 2: bei 0 Treffern durch das Suchwort bleibt "Filter zurücksetzen" (leert die Suche)
+    var wegeSuche = document.querySelectorAll("#liste button[data-weg]");
+    pruefe("ohne jeden Treffer: genau ein Weg, und der leert die Suche",
+           wegeSuche.length === 1 && /^Filter zurücksetzen/.test(wegeSuche[0].textContent));
     zuruecksetzen();
     aktualisiere();
 

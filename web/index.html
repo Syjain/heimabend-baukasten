@@ -1560,11 +1560,11 @@ function stelleAnzahl(richtung) {
 function anzahlText(zahl) {
   // Steht hinter "Heute sind wir" - "egal" las sich dort wie eine Antwort auf die Frage.
   if (!zahl) return "? Kinder";
-  return zahl + (zahl >= 25 ? "+" : "") + " Kinder";
+  return zahl + " Kinder";
 }
-/** Ausgeschrieben für ganze Sätze: "… passen für 25 Kinder oder mehr." */
+/** Ausgeschrieben für ganze Sätze: "… passen für 25 Kinder." */
 function anzahlSatz(zahl) {
-  return zahl + " Kinder" + (zahl >= 25 ? " oder mehr" : "");
+  return zahl + " Kinder";
 }
 
 /**
@@ -1677,8 +1677,10 @@ function textZuHtml(roh) {
     var inhalt = schuetze(zeile).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     // Internetadressen anklickbar machen. Der Text ist zu diesem Zeitpunkt
     // schon maskiert, es kann also nichts eingeschleust werden.
-    inhalt = inhalt.replace(/(https?:\/\/[^\s<]+)/g,
-      '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    // Satzzeichen am Ende (. , ; : ! ? ) und ein maskiertes Anführungszeichen)
+    // gehören zum Satz, nicht zur Adresse.
+    inhalt = inhalt.replace(/(https?:\/\/[^\s<]+?)((?:[.,;:!?)]|&quot;|&#39;)*)(?=\s|<|$)/g,
+      '<a href="$1" target="_blank" rel="noopener">$1</a>$2');
     if (!zeile) { absatzSchliessen(); listeSchliessen(); continue; }
     var ueberschrift = zeile.match(/^(#{2,4})\s+(.*)$/);
     if (ueberschrift) {
@@ -1980,6 +1982,8 @@ function setzeFilterZurueck() {
   $("fMitAlter").checked = false;
   $("fHosensack").checked = false;
   $("fOhneKontakt").checked = false;
+  // Kommt das "Nichts gefunden" vom Suchwort, wäre der Knopf sonst wirkungslos.
+  $("suche").value = "";
   aktualisiere();
 }
 
@@ -2570,12 +2574,6 @@ function zeichneLeer(behaelter, f, alsKachelraster) {
     weg("Überall suchen", f, null, function () { pfad = leererPfad(); aktualisiere(); });
   }
   var filterZahl = aktiveFilter();
-  if (filterZahl) {
-    weg("Filter zurücksetzen", kopie(function (g) {
-      g.stufe = ""; g.dauer = 0; g.ort = ""; g.vorbereitung = ""; g.ohneMaterial = false;
-      g.mitAlter = false; g.platz = ""; g.hosensack = false; g.ohneKontakt = false;
-    }), suchPfad, setzeFilterZurueck);
-  }
   if (heuteAnzahl) {
     weg("Anzahl nicht beachten", kopie(function (g) { g.teilnehmer = 0; }), suchPfad,
         function () { setzeAnzahl(0); });
@@ -2583,6 +2581,12 @@ function zeichneLeer(behaelter, f, alsKachelraster) {
   if (nurKern) {
     weg("Auch die zweite Reihe durchsuchen", kopie(function (g) { g.nurKern = false; }), suchPfad,
         function () { setzeSammlung(false); });
+  }
+  if (filterZahl || f.suche) {
+    weg("Filter zurücksetzen", kopie(function (g) {
+      g.suche = ""; g.stufe = ""; g.dauer = 0; g.ort = ""; g.vorbereitung = ""; g.ohneMaterial = false;
+      g.mitAlter = false; g.platz = ""; g.hosensack = false; g.ohneKontakt = false;
+    }), suchPfad, setzeFilterZurueck);
   }
 
   var grund = [];
@@ -3463,15 +3467,16 @@ function ladePlan() {
     if (!roh) return;
     var gespeichert = JSON.parse(roh);
     if (gespeichert && gespeichert.plan && Array.isArray(gespeichert.plan.haupt)) {
+      // Nur IDs übernehmen, die es noch gibt (nach einem Neubau fehlen manche).
+      var bekannt = function (id) {
+        return typeof id === "string" && NACH_ID[id] ? id : null;
+      };
       plan = {
-        eroeffnung: typeof gespeichert.plan.eroeffnung === "string"
-                    ? gespeichert.plan.eroeffnung : null,
-        einstieg: typeof gespeichert.plan.einstieg === "string" ? gespeichert.plan.einstieg : null,
-        abschluss: typeof gespeichert.plan.abschluss === "string" ? gespeichert.plan.abschluss : null,
-        schluss: typeof gespeichert.plan.schluss === "string" ? gespeichert.plan.schluss : null,
-        haupt: gespeichert.plan.haupt.map(function (id) {
-          return typeof id === "string" ? id : null;
-        })
+        eroeffnung: bekannt(gespeichert.plan.eroeffnung),
+        einstieg: bekannt(gespeichert.plan.einstieg),
+        abschluss: bekannt(gespeichert.plan.abschluss),
+        schluss: bekannt(gespeichert.plan.schluss),
+        haupt: gespeichert.plan.haupt.map(bekannt)
       };
       if (!plan.haupt.length) plan.haupt = [null, null];
     }

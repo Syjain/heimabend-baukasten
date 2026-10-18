@@ -170,13 +170,13 @@
   });
   sicher("Filter zurücksetzen holt die ganze Sammlung zurück", function () {
     el("suche").value = "qqqxyzzy"; aktualisiere();
-    var knopf = el("leerReset") || el("leerReset2");
+    var knopf = Array.prototype.filter.call(document.querySelectorAll("button[data-weg]"),
+      function (b) { return /^Filter zurücksetzen/.test(b.textContent); })[0];
     if (!knopf) return { ok: false, zusatz: "kein Zurücksetzen-Knopf bei 0 Treffern" };
     knopf.click();
     var suchfeld = el("suche").value;
     pfad = leererPfad(); pfad.unterkategorie = "__alle__"; aktualisiere();
-    // Stand 18.10.2026 FEHLER: setzeFilterZurueck() leert nur den Filterkasten, nicht das
-    // Suchfeld. Kommt das "Nichts gefunden" von der Suche, tut der Knopf nichts.
+    // Behoben 18.10.2026: der Knopf leert auch das Suchfeld (Runde 2).
     return { ok: gefiltert.length > 0 && suchfeld === "",
              zusatz: gefiltert.length + " Treffer, Suchfeld danach: '" + suchfeld + "'" };
   });
@@ -258,21 +258,14 @@
       var t = el("heuteHinweis").textContent;
       return { ok: /^\d+ Bausteine passen für 8 Kinder – davon \d+ ohne Angabe/.test(t), zusatz: t };
     });
-    sicher("Anzahl 25 sagt 'oder mehr'", function () {
+    sicher("Anzahl 25 sagt ehrlich '25 Kinder' (kein 'oder mehr', kein '+')", function () {
       zuruecksetzen();
       setzeAnzahl(25);
       var t = el("heuteHinweis").textContent;
-      return { ok: /25 Kinder oder mehr/.test(t), zusatz: t };
+      var wahl = el("heuteAnzahl").options[el("heuteAnzahl").selectedIndex].textContent;
+      return { ok: /für 25 Kinder/.test(t) && !/mehr/.test(t) && wahl === "25 Kinder",
+               zusatz: t + " / " + wahl };
     });
-    if (gesehen["25"] === 25) {
-      var fuer40 = ALLE.filter(function (e) { return !e.gruppe_max || e.gruppe_max >= 40; }).length;
-      var fuer25 = ALLE.filter(function (e) {
-        return !(e.gruppe_min && e.gruppe_min > 25) && !(e.gruppe_max && e.gruppe_max < 25);
-      }).length;
-      befund("Stufe '25 Kinder oder mehr' filtert nur mit genau 25: " + fuer25 + " Bausteine passen, " +
-             "für wirklich 40 Kinder (nichts über gruppe_max 39) bleiben nur " + fuer40 +
-             ". Der Text 'oder mehr' verspricht mehr, als der Filter hält.");
-    }
     // Zustand zurück
     setzeAnzahl(vorherAnzahl);
   }
@@ -382,6 +375,68 @@
       }
     } finally {
       Object.defineProperty(window, "localStorage", beschr);
+    }
+  })();
+
+  // ------------------------- Runde 2 (18.10.2026): Gespeichertes und Links
+  (function () {
+    var schluessel = "heimabend-plan", vorher = null, hatte = true;
+    try { vorher = localStorage.getItem(schluessel); } catch (f) { hatte = false; }
+    sicher("gespeicherter Plan mit unbekannten IDs: wird still ignoriert, Plätze bleiben offen", function () {
+      if (!hatte || !da("ladePlan", "planElement", "zeichnePlan", "NACH_ID")) {
+        return { ok: true, zusatz: "übersprungen (kein Speicher oder keine Planfunktionen)" };
+      }
+      var echte = ALLE[0].id;
+      localStorage.setItem(schluessel, JSON.stringify({ plan: {
+        eroeffnung: "gibt-es-nicht-1", einstieg: echte, abschluss: "gibt-es-nicht-2",
+        schluss: "__proto__", haupt: ["gibt-es-nicht-3", echte, 42, "constructor"] }, rahmen: {} }));
+      ladePlan();
+      zeichnePlan();
+      var ok = plan.eroeffnung === null && plan.abschluss === null && plan.schluss === null &&
+               plan.einstieg === echte && plan.haupt.length === 4 && plan.haupt[0] === null &&
+               plan.haupt[1] === echte && plan.haupt[2] === null && plan.haupt[3] === null &&
+               !planElement("haupt", 0) && !!planElement("einstieg");
+      return { ok: ok, zusatz: JSON.stringify(plan.haupt) };
+    });
+    sicher("Vormerkungen mit unbekannten IDs: nichts bricht, Zähler zählt nur Vorhandenes", function () {
+      if (!da("ladeVormerkungen", "vorgemerkteElemente", "zeichneVorbereiten")) {
+        return { ok: true, zusatz: "übersprungen" };
+      }
+      var alt = null; try { alt = localStorage.getItem("heimabend-vormerken"); } catch (f) {}
+      var echte = ALLE[0].id;
+      localStorage.setItem("heimabend-vormerken", JSON.stringify({ version: 1,
+        ids: ["gibt-es-nicht", echte, "constructor", 7] }));
+      ladeVormerkungen();
+      zeichneVorbereiten();
+      var n = vorgemerkteElemente().length;
+      if (alt === null) localStorage.removeItem("heimabend-vormerken");
+      else localStorage.setItem("heimabend-vormerken", alt);
+      ladeVormerkungen();
+      return { ok: n === 1, zusatz: n + " vorhanden" };
+    });
+    if (hatte) {
+      try {
+        if (vorher === null) localStorage.removeItem(schluessel);
+        else localStorage.setItem(schluessel, vorher);
+      } catch (f) {}
+      if (da("ladePlan")) ladePlan();
+    }
+    if (da("textZuHtml")) {
+      sicher("Adressen im Text: Satzzeichen am Ende gehören nicht in den Link", function () {
+        var h = textZuHtml("Siehe https://stellarium-web.org/. Oder https://r9.whiteboardfox.com, " +
+                           "(https://a.de/x), https://b.de/y?a=1&b=2; ja!");
+        var ziele = [];
+        h.replace(/href="([^"]*)"/g, function (m, z) { ziele.push(z); return m; });
+        var soll = ["https://stellarium-web.org/", "https://r9.whiteboardfox.com",
+                    "https://a.de/x", "https://b.de/y?a=1&amp;b=2"];
+        return { ok: JSON.stringify(ziele) === JSON.stringify(soll) &&
+                     h.indexOf("</a>.") > -1 && h.indexOf("</a>,") > -1,
+                 zusatz: ziele.join(" | ") };
+      });
+      sicher("Adresse in Liste und mitten im Satz bleibt ganz", function () {
+        var h = textZuHtml("- Mehr unter https://example.org/a-b_c.html und weiter");
+        return { ok: h.indexOf('href="https://example.org/a-b_c.html"') > -1, zusatz: h };
+      });
     }
   })();
 
