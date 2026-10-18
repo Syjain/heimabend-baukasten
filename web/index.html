@@ -351,6 +351,12 @@ details.mehr[open] > summary::after { transform: rotate(-135deg) translate(-2px,
 .heute .hinweis:empty { display: none; }
 /* Das Plus neben der Suche: Name steht im aria-label, der Platz gehört dem Suchfeld. */
 #ideeNeu { flex: none; width: 46px; padding: 0; font-size: 1.35rem; font-weight: 500; line-height: 1; }
+/* Ein einzelnes Plus sagt nicht, wofür es steht - wo der Platz reicht, steht das Wort daneben. */
+.idee-wort { display: none; }
+@media (min-width: 360px) {
+  #ideeNeu { width: auto; padding: 0 14px; font-size: 1rem; font-weight: 600; }
+  .idee-wort { display: inline; }
+}
 /* Das Auswahlfeld richtet sich sonst nach seinem längsten Eintrag ("25+ Kinder")
    und wird bei 320 px 125 px breit - dann bricht die Zeile um. Feste Breite hält
    Beschriftung und Zähler in einer Zeile. */
@@ -884,7 +890,7 @@ li:has(.kartenfuss) .karte { border-radius: var(--rund) var(--rund) 0 0; }
       <!-- Kurze Beschriftung, weil am Handy neben Suchfeld und Zufall kaum
            Platz ist; der volle Name steht im aria-label. -->
       <button class="knopf" id="ideeNeu" aria-label="Eigene Idee erfassen"
-              title="Eigene Idee erfassen">+</button>
+              title="Eigene Idee erfassen">+<span class="idee-wort"> Idee</span></button>
     </div>
 
     <details class="filter" id="filterBox">
@@ -3675,8 +3681,47 @@ function zeichneAuswahl() {
     ? "1 Baustein" : auswahlListe.length + " Bausteine";
 
   if (!auswahlListe.length) {
-    behaelter.innerHTML = '<li><p class="leer">Nichts gefunden. Nimm den Haken bei ' +
-      '„nur was in die Zeit passt“ heraus oder lockere den Rahmen des Abends.</p></li>';
+    // Wie im Stöbern: sagen, woran es liegt, und nur Wege anbieten, die etwas finden.
+    var wege = [];
+    function zaehleOhne(ohneSuche, ohneZeit) {
+      var g = rahmenFilter();
+      g.suche = ohneSuche ? "" : f.suche;
+      return sammle(g, null, function (e) {
+        if (!auswahlZiel.slot.passt(e)) return false;
+        return !(nurPassend && !ohneZeit && e.dauer_max > spielraum);
+      }).length;
+    }
+    if (f.suche) {
+      var nOhneSuche = zaehleOhne(true, false);
+      if (nOhneSuche) wege.push({ text: "Suchwort löschen (" + nOhneSuche + ")", tat: function () {
+        $("auswahlSuche").value = ""; auswahlSichtbar = SEITENGROESSE; zeichneAuswahl();
+      } });
+    }
+    if (nurPassend) {
+      var nOhneZeit = zaehleOhne(false, true);
+      if (nOhneZeit) wege.push({ text: "Auch Längeres zeigen (" + nOhneZeit + ")", tat: function () {
+        $("auswahlZeit").checked = false; auswahlSichtbar = SEITENGROESSE; zeichneAuswahl();
+      } });
+    }
+    var html = '<li><div class="leer"><p class="leer-titel">Nichts gefunden</p>';
+    if (f.suche) html += '<p class="leer-grund">Gesucht mit: „' + schuetze($("auswahlSuche").value.trim()) + "“</p>";
+    if (wege.length) {
+      html += '<div class="leer-wege">';
+      for (var w = 0; w < wege.length; w++) {
+        html += '<button type="button" data-weg="' + w + '">' + schuetze(wege[w].text) + "</button>";
+      }
+      html += "</div>";
+    } else {
+      html += '<p class="leer-grund">Der Rahmen des Abends (Reiter Planen) schließt hier alles aus. ' +
+              "Lockere dort Altersstufe, Ort, Vorbereitung oder Material.</p>";
+    }
+    behaelter.innerHTML = html + "</div></li>";
+    var wegKnoepfe = behaelter.querySelectorAll("button[data-weg]");
+    for (var wk = 0; wk < wegKnoepfe.length; wk++) {
+      wegKnoepfe[wk].addEventListener("click", function () {
+        wege[parseInt(this.getAttribute("data-weg"), 10)].tat();
+      });
+    }
     $("auswahlMehrZeile").hidden = true;
     return;
   }
