@@ -2,7 +2,7 @@
   "meta": {
     "name": "Redaktionelle Entscheidungen",
     "beschreibung": "Was aus den importierten Quellen herausfällt, umbenannt oder korrigiert wird. scripts/build.py wendet diese Datei bei jedem Lauf an. Ohne sie holt der nächste Importlauf alles wieder herein, weil die Import-Skripte idempotent sind und die Quellen unverändert bleiben.",
-    "stand": "2026-09-08",
+    "stand": "2026-10-18",
     "grundsatz": "Die Zielgruppe sind Kinder und Jugendliche ab 7 Jahren. Im Zweifel für die Sicherheit. Jede Entscheidung steht hier mit Begründung und ist durch Löschen der Zeile umkehrbar."
   },
   "gesperrt": [
@@ -403,9 +403,10 @@
     {
       "id": "ps-mr-x",
       "felder": {
-        "umfang": "ganzer_abend"
+        "umfang": "ganzer_abend",
+        "tipps": "Spielgebiet vorher festlegen und auf der Karte einzeichnen. Eine Person der Spielleitung bleibt als Anlaufstelle erreichbar, jedes Team braucht eine Uhr. Rückkehrzeit vereinbaren, falls Mr. X nicht gefunden wird. Kleine Teams sollten nicht allein im Dunkeln unterwegs sein."
       },
-      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+      "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein. Außerdem: Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
     },
     {
       "id": "sw-nein-spiel",
@@ -938,6 +939,909 @@
         "umfang": "ganzer_abend"
       },
       "grund": "Laut Schema ist ein Element ab 75 Minuten Regeldauer kein Baustein mehr, sondern füllt den Abend. Stand als baustein."
+    },
+    {
+      "id": "ps-berg-zwerg-riese-versteinerte-hexe-virus",
+      "felder": {
+        "tipps": "Die Fänger:innen für alle gut erkennbar machen, zum Beispiel mit einem Halstuch am Arm. Spielfeld vorher abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-drachenschwanzjagen",
+      "felder": {
+        "tipps": "Auf ebenem Boden ohne Hindernisse spielen. Die Hände bleiben auf den Schultern der Vorderperson, an der Kleidung wird nicht gezogen. Wer zu schnell wird, bremst, damit die Schlange nicht reißt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-englischfangen",
+      "felder": {
+        "tipps": "Spielfeld vorher abgrenzen. Die Fänger:innen laut ausrufen lassen, wenn jemand zum dritten Mal getickt wurde, damit alle den Überblick behalten. Getickt wird nur leicht an Schulter oder Arm."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-kontakto",
+      "felder": {
+        "tipps": "Das Spielfeld mit Grenzen markieren, damit sich niemand zu weit entfernt. Kontakto zählt ehrlich, laut und im gleichen Tempo von 15 herunter."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-milchproduktefangen",
+      "felder": {
+        "tipps": "Vor dem Start klären, was erlaubt ist (Milchprodukte, nicht doppelt rufen). Spielfeld abgrenzen und als Variante andere Kategorien nutzen, wenn die Milchprodukte ausgehen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-batollo",
+      "felder": {
+        "tipps": "Erst im Kreis langsam den Rhythmus üben, dann erst die Namen dazunehmen. Bei Fehlern nicht auslachen, sondern gleich weiterrutschen. Mit steigendem Tempo wird es lustig."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-koenigsspiel",
+      "felder": {
+        "tipps": "Vor dem Start ein Stoppzeichen vereinbaren. Weichen Untergrund wählen (kein Asphalt oder Beton), nicht an der Kleidung ziehen lassen. Die Könige bleiben mit dem Po auf dem Sessel."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-funky-chicken",
+      "felder": {
+        "tipps": "Erst eine Beispielrunde selbst vormachen, damit alle den Dialog kennen. Eigene Figuren mit Geräusch und Bewegung dürfen die Spielenden selbst erfinden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-menschenmemory",
+      "felder": {
+        "tipps": "Die beiden Memoryspieler:innen auf einen Stuhl oder Absatz stellen, damit sie alle sehen. Vor der ersten Runde mit allen eine Probe machen. Bewegungen oder Geräusche sollten sich deutlich unterscheiden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-pantomime-stille-post",
+      "felder": {
+        "tipps": "Zu Beginn einfache Bewegungen wählen und die Reihe nicht zu lang machen (bei großen Gruppen zwei Reihen). Am Ende gemeinsam auflösen und die Veränderungen auf dem Weg anschauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-sockenkampf",
+      "felder": {
+        "tipps": "Vor dem Start die Regeln deutlich sagen und ein Stoppsignal vereinbaren. Weichen Boden (Turnmatten oder weiche Wiese) wählen, alle gehen nur auf den Knien. Kein Treten, Schlagen, Beißen oder Kratzen. Spielende mit Schmuck oder Brille abnehmen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-kontakt-3-2-1",
+      "felder": {
+        "tipps": "Am Anfang ein einfaches Wort wählen, damit die Gruppe das Prinzip begreift. Das Zählen „3 2 1“ und das gleichzeitige Nennen am besten einmal gemeinsam üben."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-prinzball",
+      "felder": {
+        "tipps": "Einen weichen Ball (Schaumstoff oder Softball) nehmen und vor dem Start klären, dass nicht auf den Kopf geworfen wird. Das Spielfeld abgrenzen, damit niemand zu weit wegrennt. Die Leben vorher festlegen, am besten sichtbar mit Fingern anzeigen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-samurai",
+      "felder": {
+        "tipps": "Erst langsam üben, bis alle HU, HA und TSING sicher können, danach das Tempo steigern."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-sardine",
+      "felder": {
+        "tipps": "Vor dem Start Spielgebiet und Rückkehrzeit vereinbaren. In der Dunkelheit oder im Wald nicht allein suchen lassen. Ein Pfiff als Abbruchsignal macht das Beenden leicht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-schreiwurm",
+      "felder": {
+        "tipps": "Vorher klären, dass nur kurz und nicht direkt ins Ohr geschrien wird. Im Heim an die Nachbarn denken, am besten draußen oder im großen Raum spielen. Zum Ausruhen die Schreirunde nach einigen Minuten beenden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-slurp",
+      "felder": {
+        "tipps": "Je nach Gruppe vorher darauf hinweisen, dass sich niemand an Stellen festslurpt, an denen es unangenehm ist. Keine Pflicht zum Mitmachen. Für neue Gruppen eher Körperteile wie Hände und Arme vorschlagen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-tischklatschen",
+      "felder": {
+        "tipps": "Zum Üben erst ganz langsam im Kreis klatschen, dann schneller. Die gekreuzten Arme verwirren am Anfang, deshalb vorher eine Proberunde ohne Ausscheiden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-tuchfangen",
+      "felder": {
+        "tipps": "Die Zahlen so verteilen, dass sich gleich starke Kinder gegenüberstehen. Als Tuch ein Halstuch nehmen und vor dem Start Linien oder Markierungen festlegen. Nicht am Tuch zerren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-versteck-fangen",
+      "felder": {
+        "tipps": "Spielgebiet und Rückkehrzeit vorher festlegen und den Freischlagpunkt gut sichtbar markieren. Im Dunkeln oder im Wald nur mit festen Grenzen spielen. Ein Pfiff holt alle zurück."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-vogeleltern",
+      "felder": {
+        "tipps": "Das Spielfeld mit festen Grenzen abstecken. Futter, das nicht wiedergefunden wird, soll biologisch abbaubar sein. Am Ende alle Gegenstände einsammeln lassen. Füchse sollten die Gruppenleitung oder ältere Spielende sein, die behutsam spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-wald-paare",
+      "felder": {
+        "tipps": "Nur Gegenstände vom Boden sammeln lassen: Laub, Zapfen, Steine oder Totholz, nichts Lebendes abreißen. Vor dem Start einen Rückkehrpunkt und ein Signal vereinbaren, etwa einen Pfiff."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-zauberball-sip-sop",
+      "felder": {
+        "tipps": "Mit der einfachsten Form beginnen und die Geräusche gemeinsam üben. Weitere Regeln wie „Flip-boing“ erst dazunehmen, wenn der Ball sicher läuft. Beim Werfen („zwuii“) Blickkontakt halten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-zuzwinckern-sterben",
+      "felder": {
+        "tipps": "Das Zählen laut und im gleichen Tempo machen, damit alle gleichzeitig hochschauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "ps-pferderennen",
+      "felder": {
+        "tipps": "Die Kommandos vor dem Start gemeinsam üben, sie lassen sich variieren und mit eigenen Geräuschen ergänzen. Dicht aneinandersitzen, damit die Schultern sich berühren; Rennen im Wechsel von ruhig und schnell moderieren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-alaska-baseball",
+      "felder": {
+        "tipps": "Ein weicher Ball ist besser als ein harter. Das Spielfeld deutlich markieren und zuerst eine Proberunde ohne Wertung spielen. Der Ablauf ist anstrengend, deshalb Trinkpausen einplanen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ameisenspiel",
+      "felder": {
+        "tipps": "Begrüßungsformen mit Körperkontakt (zum Beispiel Küsschen oder Hochheben) nur vorschlagen, wenn die Gruppe sich kennt und alle einverstanden sind. Für neue Gruppen eignen sich Händeschütteln, Knie an Knie oder Ellenbogen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-amobenwettlauf",
+      "felder": {
+        "tipps": "Auf ebenem Boden spielen und Hindernisse niedrig halten. Wer stürzt, lässt los, damit niemand mitgerissen wird. Die Gruppen sollten etwa gleich groß sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-anna",
+      "felder": {
+        "tipps": "Den Gesang einmal vormachen, bevor die Gruppe es nachmacht. Bei mehr als 20 Personen zwei Schlangen bilden, damit alle Namen im Kreis noch mitbekommen werden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-atomspiel",
+      "felder": {
+        "tipps": "Auf freier Fläche spielen, damit sich niemand stößt. Statt Strafpunkten oder Ausscheiden lässt sich das Spiel nach ein paar Runden mit den Molekülen als Kleingruppen für die nächste Aufgabe weiterführen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-au-ja",
+      "felder": {
+        "tipps": "Die Aufgaben müssen einfach zu erfüllen sein, niemanden verletzen und niemanden beleidigen. Zu Beginn macht die Spielleitung Vorschläge, danach dürfen reihum alle eine Aufgabe nennen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-auf-einem-berg-da-steht-ein-haus",
+      "felder": {
+        "tipps": "Erst Zeile für Zeile mit den Bewegungen einüben, dann zusammen schnell sprechen. Beim Ersetzen durch „ufta-ufta-uftata“ langsam beginnen und mit jeder Runde eine Zeile mehr ersetzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-baumball",
+      "felder": {
+        "tipps": "Einen weichen Ball verwenden und den Platz frei von Wurzeln und Löchern halten. Wer den Ball abwehrt, hält ihn nicht fest, sondern schießt ihn wieder weg; diese Regel vor dem Start erklären."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-bierbank-balance",
+      "felder": {
+        "tipps": "Die Bank auf ebenem, rutschfestem Boden aufstellen und nur mit Schuhen spielen, die nicht rutschen. Die Spielleitung steht bereit, um Stürze abzufangen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-blinder-pirat",
+      "felder": {
+        "tipps": "Ruhe im Raum vorher vereinbaren. Wer als Pirat die Augen schließt, braucht im Zweifel eine Augenbinde, damit nicht geschummelt wird. Der Raum sollte frei von Stolperfallen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-blindes-quadrat",
+      "felder": {
+        "tipps": "Den Raum vorher freiräumen, damit niemand stolpert. Augenbinden sind freiwillig, wer lieber die Augen nur schließt, darf das tun. Nach der Aufgabe gemeinsam besprechen, wer geführt hat und wie es sich angefühlt hat."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-british-bulldog",
+      "felder": {
+        "tipps": "Das Hochheben ist die Fangregel dieser Fassung. Bei unterschiedlich großen oder kräftigen Kindern vorher eine einfachere Regel vereinbaren (zum Beispiel Antippen), damit niemand fällt. Spielfeld klar markieren und auf Gras oder weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-brot-backen",
+      "felder": {
+        "tipps": "Der „Teig“ wird nur leicht angehoben, nie hoch geworfen. Die Spielleitung greift ein, wenn zu wild geworfen wird. Wer nicht auf die Hände will, darf Bäcker oder Ofen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-bruckenfangen",
+      "felder": {
+        "tipps": "Genug Platz einplanen: Wenn es eng wird, wird das Unterkrabbeln für die Befreier gefährlich. Dann die Regel aus der Variante vereinbaren, dass Befreier unter der Brücke nicht gefangen werden können."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-burgensturm",
+      "felder": {
+        "tipps": "Vor dem Start klar sagen: Ziehen und Schieben ist erlaubt, Schlagen und Treten nicht. Die Spielleitung schließt zu hartes Spielen konsequent aus. Teams nach einer Runde tauschen, damit alle einmal stürmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-bruchenball",
+      "felder": {
+        "tipps": "Vor dem Start eindeutig festlegen, welche Gewalt erlaubt ist, und konsequent darauf achten. Der Ball ist sehr schwer; für Gruppen mit jüngeren Kindern einen leichteren Ball nehmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-burgherr",
+      "felder": {
+        "tipps": "Den Burgkreis mit Stöcken oder Seilen so groß legen, dass alle bequem hineinpassen. Der Burgherr achtet auf faires Spiel und unterbricht, wenn es zu wild wird. Vor dem Start kurz klären, wie viel Schubsen erlaubt ist."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-capture-the-flag",
+      "felder": {
+        "tipps": "Spielfeld und Grenzen vor dem Start allen zeigen und Stellungen der Teams markieren. Ein Pfiff als Abbruchsignal und eine feste Rückkehrzeit vereinbaren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chaosfangen",
+      "felder": {
+        "tipps": "Spielfläche frei von Stolperfallen halten. Berührt wird nur mit der Handfläche am Oberkörper, nie am Kopf. Wer ausgeschieden ist, setzt sich außerhalb der Fläche hin; mehrere kurze Runden hintereinander spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chinesisch-knobeln",
+      "felder": {
+        "tipps": "Die drei Figuren vorher gemeinsam einüben, damit alle sie gleichzeitig zeigen. Bei vielen Gruppen im Turniermodus spielen, damit niemand lange zuschauen muss."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-chinesische-mauer",
+      "felder": {
+        "tipps": "Das Spielfeld deutlich markieren, zum Beispiel mit zwei Seilen für die Mauer. Der Fänger bleibt innerhalb der Mauer."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-concentration",
+      "felder": {
+        "tipps": "Den Rhythmus so lange ohne Namen üben, bis alle ihn halten. Erst danach die Nummern aufrufen und das Tempo langsam steigern."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-das-habe-ich-noch-nie-gemacht",
+      "felder": {
+        "tipps": "Die Aussagen so wählen, dass niemand bloßgestellt wird; die Spielleitung legt vorab fest, welche Bereiche tabu sind (zum Beispiel Familie, Geld). Im Stuhlkreis einen Stuhl weniger als Mitspielende bereitstellen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-das-schiff-geht-unter",
+      "felder": {
+        "tipps": "Aufgaben an die Fläche und an die Gruppe anpassen, keine riskanten Übungen wie Kopfstand auf hartem Boden bei jüngeren Kindern. Zwischen den Kommandos kurze Pausen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dick-und-doof",
+      "felder": {
+        "tipps": "Die Rollen nicht laut verraten und vor dem Start klären, dass nur Bänder gestohlen, nicht gehalten oder gezogen werden. Ein sicheres Spielfeld abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-die-wand",
+      "felder": {
+        "tipps": "Der Teil mit dem Hochheben braucht Sicherung: mehrere Personen stehen bereit, um zu halten und aufzufangen, und der Boden am Fuß der Wand muss frei sein. Die Höhe der Aufgabe an das Alter anpassen. Wer nicht hochgehoben werden will, hilft stattdessen mit."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dirigent",
+      "felder": {
+        "tipps": "Den Detektiv erst hereinholen, wenn der Dirigent bestimmt ist. Die Bewegung wechselt alle paar Sekunden; am besten beobachten alle den Dirigenten nur aus dem Augenwinkel."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-donner-wetter-blitz",
+      "felder": {
+        "tipps": "Die Startlinie und die Linie hinter dem Bewacher klar markieren. Vor dem Start klären, was als Bewegung zählt, wenn sich der Bewacher umdreht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dornroschen",
+      "felder": {
+        "tipps": "Die Rollen vor dem Singen verteilen und kurz proben. Wer nicht vorspielen will, übernimmt das Volk. Das Lied gemeinsam einmal langsam durchsingen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dosenschiessen",
+      "felder": {
+        "tipps": "Eine Wurflinie markieren und Zuschauende seitlich stellen, damit niemand getroffen wird. Dosen vorher auf scharfe Kanten prüfen. Als Station in einen Wettkampf einbauen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dracula",
+      "felder": {
+        "tipps": "Die Spielleitung hat eine Taschenlampe bereit, falls jemand Angst bekommt oder sich verletzt. Gefährliche Räume (Treppen, Kellerabgänge) vorher sperren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-drangelei",
+      "felder": {
+        "tipps": "Fläche mit Kreide oder Klebeband markieren und festlegen, ob Heben erlaubt ist. Auf Zurufe achten: Wer sich unwohl fühlt, sagt „Stopp“. Mit kleinen Teams anfangen, damit sich niemand verletzt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-dreieck",
+      "felder": {
+        "tipps": "Die Lösung nicht verraten und mehrere Beispiele nacheinander geben. Wer meint, die Lösung zu kennen, zeigt es durch ein eigenes Dreieck, statt sie zu nennen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-durchzahlen",
+      "felder": {
+        "tipps": "Vor dem Start klar sagen, dass keine Reihenfolge abgesprochen werden darf und niemand durch Zeichen zeigt, wer als Nächstes spricht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ecken-begrussen",
+      "felder": {
+        "tipps": "Die Aufgaben der Ecken müssen schnell zu erfüllen und für alle harmlos sein. Die Spielleitung legt bei Bedarf Grenzen fest, zum Beispiel keine Liegestütze für kleine Kinder."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-elektrisches-gummibarchen",
+      "felder": {
+        "tipps": "Vorher nach Allergien fragen. Gummibärchen enthalten meist Gelatine, deshalb für vegetarisch lebende Kinder eine Alternative (zum Beispiel Obststücke) bereithalten. Der Teller wird jede Runde gleich bestückt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-eiersuche",
+      "felder": {
+        "tipps": "Das „Gackern“ wird lauter, je näher der Bauer kommt – am besten vorher kurz üben. Das Ei klein halten und sicher unter der Person verstecken, damit nichts kaputtgeht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ein-hase-lauft-uber-das-feld",
+      "felder": {
+        "tipps": "Die Laufstrecke vorher auf Hindernisse prüfen und rutschfesten Boden wählen. Von allen wird Ehrlichkeit verlangt – das vor dem Start kurz ansprechen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-farbenfangen",
+      "felder": {
+        "tipps": "Spielfeld an den Enden klar markieren. Die Fänger rufen nur Farben, die auch getragen werden, damit das Spiel in Gang bleibt. Bei mehr als etwa 15 Kindern mehrere Fänger bestimmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-fliegender-hollander",
+      "felder": {
+        "tipps": "Zum Huckepack-Tragen nur etwa gleich große und kräftige Kinder zusammenstellen. Auf weichem, ebenem Boden spielen; wer sich nicht tragen lassen will, darf auch den Kreis halten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-forderband",
+      "felder": {
+        "tipps": "Wer auf dem Band liegt, wird nur vorsichtig und langsam getragen; Kopf und Nacken werden mitgehalten. Die Spielleitung achtet am Ende des Bandes auf das sichere Absetzen. Wer nicht möchte, muss nicht."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-fuchs-habicht-paarungszeit",
+      "felder": {
+        "tipps": "Die drei Kommandos zuerst ohne Ausscheiden üben. Auf sauberem Boden spielen, weil sich die Spielenden hinlegen. Weitere Kommandos erst dazunehmen, wenn die ersten sicher sitzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-fuchs-und-gans",
+      "felder": {
+        "tipps": "Die Gänse halten sich an den Schultern, nicht an der Kleidung, und der Fuchs fasst die letzte Gans nur leicht an. Bei mehr als etwa 12 Kindern in zwei Gruppen spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-geruchtekuche",
+      "felder": {
+        "tipps": "Vorher klarstellen, dass nur harmlose, selbst gewählte Dinge erzählt werden und niemand bloßgestellt wird. Eine Notiz-Karte hilft, die weitergegebenen Geschichten zu behalten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-geschmackskim",
+      "felder": {
+        "tipps": "Vorher nach Lebensmittelallergien fragen. Besonders bei jüngeren Kindern darauf achten, was verkostet wird; das Spiel soll keine Mutprobe mit schrecklich schmeckenden Gewürzen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gesichter-ertasten",
+      "felder": {
+        "tipps": "Vorher fragen, wer nicht im Gesicht berührt werden möchte, und vereinbaren, ob Brillen oder Ohrringe abgenommen werden. Die Gruppe verhält sich still."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gletscherspalte",
+      "felder": {
+        "tipps": "Vor dem Spiel Hindernisse aus dem Weg räumen und für einen geeigneten Boden sorgen. Die Seile nur in kleinen Schritten auseinanderlegen und beim Absprung nicht schubsen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-goofy",
+      "felder": {
+        "tipps": "Den Raum vorher freiräumen. Das Spiel bleibt ruhig; wer mit verbundenen Augen unterwegs ist, hält die Hände vorsichtig vor sich. Die Spielleitung achtet auf Zusammenstöße."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-gordischer-knoten",
+      "felder": {
+        "tipps": "Wenn jemandem etwas wehtut, ruft er „Stopp“ und alle lassen sofort los. Die Hände werden nicht überdreht; ist der Knoten unlösbar, beginnt die Gruppe neu."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-guru-guru",
+      "felder": {
+        "tipps": "Die beiden Spielfelder klar abgrenzen und die Teams etwa gleich stark einteilen. Ein Mitspieler pro Seite achtet darauf, dass wirklich durchgehend „Guru Guru“ gerufen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ha-ha-ha",
+      "felder": {
+        "tipps": "Die drei Teile (Ha-Ha-Ha) erst langsam im Kreis üben, dann das Tempo steigern. Beim Schlagen Richtung Bauch nicht berühren, damit sich niemand wehtut."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-hase-und-igel",
+      "felder": {
+        "tipps": "Die Spielfeldgrenzen deutlich markieren, zum Beispiel mit drei Seilen. Die beiden Igel wechseln erst, wenn ein Hase angekommen ist, sodass das Laufen nicht stockt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-heiss-kalt",
+      "felder": {
+        "tipps": "Der Gegenstand muss frei sichtbar oder leicht zu finden sein, aber nicht am Gefahrenort (Heizung, Steckdose, Regal) liegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-heuwagen-mistwagen",
+      "felder": {
+        "tipps": "Die Blätter anonym einsammeln lassen, damit alle ehrlich schreiben. Nach dem Einsammeln die wichtigsten Punkte gemeinsam zusammenfassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-himmel-auf-erden",
+      "felder": {
+        "tipps": "Verletzungsgefahr: Der Fänger hat die Augen verbunden und die anderen klettern. Bei kleineren Kindern muss ein Betreuer dabei sein, damit niemand vom Gerüst fällt. Nur auf einem sicheren Klettergerüst mit weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-hugo",
+      "felder": {
+        "tipps": "Statt eines Vorschlaghammers lieber eine Kartonröhre oder gestapelte Kartons nehmen, die gefahrlos umstürzen. Die Hände dürfen nicht losgelassen werden; wer am Ziehen zu fest reißt, wird gebremst. Auf weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-if-you-re-happy-and-you-know-it",
+      "felder": {
+        "tipps": "Mit zwei bis drei Strophen beginnen und die Gruppe bestimmen lassen, welche Bewegungen dazukommen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-initialenraten",
+      "felder": {
+        "tipps": "Die Personen so wählen, dass die Gruppe sie kennt (Pfadfinder, Sänger, Schauspieler). Bei jüngeren Kindern lieber Figuren aus Büchern und Filmen nehmen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-jammerquaks",
+      "felder": {
+        "tipps": "Der Kreis hält sich an den Händen und achtet auf die Jammerquaks, die blind und rückwärts unterwegs sind. Der Boden muss frei von Hindernissen sein."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-jurte",
+      "felder": {
+        "tipps": "Auf rutschfestem Boden spielen und niemanden zwingen, die Position zu halten. Stehenbleiben mit steifem Körper, nicht ruckartig lehnen. Eine gerade Spielerzahl ist nötig, notfalls spielt die Spielleitung mit."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-kaiserball",
+      "felder": {
+        "tipps": "Einen weichen Ball nehmen und nicht auf den Kopf zielen. Kaiser und Hofnarr werden vor dem Start im Geheimen bestimmt; die Regeln für die Sonderrollen vorher einmal erklären."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-karottenziehen",
+      "felder": {
+        "tipps": "Die Karotten hängen sich fest ein; der Hase zieht an den Beinen oder Füßen, nie an der Kleidung oder den Gelenken. Auf sauberem, weichem Boden spielen. Wer genug hat, ruft „Stopp“."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-killerball",
+      "felder": {
+        "tipps": "Einen weichen Ball (Softball oder Schaumstoff) verwenden und festlegen, dass nicht auf den Kopf gezielt wird. Spielfeldgrenzen markieren; wer abgeschossen wurde, wartet am Rand und kommt wieder, wenn ein Gegner getroffen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-kippstuhl",
+      "felder": {
+        "tipps": "Stühle mit vier festen Beinen und ohne Wackler nehmen, nicht zu schwere. Auf glattem Boden die Stuhlbeine nicht rutschen lassen; die Gruppe so aufstellen, dass beim Umkippen niemand getroffen wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-klapperschlangen",
+      "felder": {
+        "tipps": "Der Raum bleibt frei von Hindernissen. Für die Geräuschquellen Dosen ohne scharfe Kanten nehmen, zum Beispiel mit Reis gefüllt."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-knieboxen",
+      "felder": {
+        "tipps": "Die erlaubten Angriffe vor dem Spiel besprechen: Abdrängen mit dem Oberkörper ja, Arme und harte Knie-Stöße nein. Auf weichem Boden spielen, kleine Runden spielen und bei zu rauem Spiel sofort unterbrechen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-koffer-packen-auf-dem-trampolin",
+      "felder": {
+        "tipps": "Nur mit Aufsicht, immer nur eine Person auf dem Trampolin. Vorab Regeln ausmachen: Niemand muss einen Sprung machen, den er sich nicht zutraut; die Spielleitung gibt Ideen für einfache Sprünge."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-korperteil-twister",
+      "felder": {
+        "tipps": "Nur mit Gruppen spielen, die sich schon kennen. Vorab klären, dass niemand an Stellen berührt wird, die er nicht möchte, und wer nicht mitmachen will, schaut zu. Auf weichem Boden spielen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-leuchtturm",
+      "felder": {
+        "tipps": "Verletzungsgefahr beachten: Das Schiff läuft mit geschlossenen Augen, deshalb ruhig und langsam bleiben. Ein Spielfeld ohne Hindernisse wählen und die Felsen (Mitspielende) so aufstellen, dass das Schiff sie früh hört."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-kleiner-gruner-zauberer",
+      "felder": {
+        "tipps": "Die Lösung nicht nennen und den Eingeweihten sagen, dass sie nur „richtig“ oder „falsch“ antworten. Mehrere Beispiele nacheinander geben, bis die Gruppe Hypothesen hat."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-larmwand",
+      "felder": {
+        "tipps": "Kurz halten, damit niemand heiser wird, und nicht direkt ins Ohr rufen. Das Wort vorher flüstern und nach der Runde auflösen lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-maxchen",
+      "felder": {
+        "tipps": "Ohne Geldeinsatz spielen; Strafpunkte, Streichhölzer oder Spielmarken als Einsatz nehmen. Die Reihenfolge der Würfelwerte vorher auf einen Zettel schreiben, damit alle sie nachsehen können."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-merkball",
+      "felder": {
+        "tipps": "Einen weichen Ball nehmen und vereinbaren, dass nicht auf den Kopf geworfen wird. Wie viele Schritte mit dem Ball erlaubt sind, nach Raumgröße vorher festlegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-montagsmaler",
+      "felder": {
+        "tipps": "Die Begriffe dem Alter anpassen (für Wölflinge Tiere und Gegenstände). Vor dem Start klären, ob die Zeichnenden sprechen oder Buchstaben schreiben dürfen. Die Zeit pro Runde festlegen und mit einer Uhr stoppen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-mumie",
+      "felder": {
+        "tipps": "Mund, Nase und Augen frei lassen. Die Mumie bleibt ruhig stehen. Das Papier soll nicht reißen; bei mehreren Teams gleich viel Klopapier verteilen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-mutprobe-und-vertrauen",
+      "felder": {
+        "tipps": "Nur mit eingespielten Paaren spielen, die sich vertrauen. Der Fängerin oder dem Fänger sagen, nicht zu lange mit dem Auffangen zu warten, und etwa gleich große Paare bilden. Die Spielleitung achtet auf Rutschgefahr und weichen Boden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ninja",
+      "felder": {
+        "tipps": "Getroffen wird nur die Handfläche, nicht der Körper. Kein Schlagen mit Kraft; die Spielfläche muss frei von Hindernissen sein. Als Raum genügt auch ein Heimraum."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-peng",
+      "felder": {
+        "tipps": "Wenn das „Abschießen“ zu brutal erscheint, wie in der Quelle vorgeschlagen etwas anderes sagen, zum Beispiel den Nachnamen der Person. Die Namen sollten schon bekannt sein, bevor das Spiel schneller wird."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-pferdebandiger",
+      "felder": {
+        "tipps": "Das Spiel darf auf keinen Fall in einen Kampf ausarten. Vorher klären, welche Manöver erlaubt sind (zum Beispiel nur Festhalten, kein Treten oder Würgen), und die Spielfläche abstecken. Das Pferd ist eine kräftige, ausdauernde Person, oft aus der Spielleitung."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-platztausch",
+      "felder": {
+        "tipps": "Pro Runde immer einen Stuhl weniger als Mitspielende bereitstellen. Wer auf dem eigenen Platz sitzen bleiben will, steht nicht auf. Stuhlkreis eng genug aufstellen, damit niemand weit rennen muss."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-qualle-koralle",
+      "felder": {
+        "tipps": "Das Spielfeld klar abgrenzen und auf freie Laufwege achten. Die Qualle darf nur nach vorn und quer laufen, nicht zurück; diese Regel vor dem Start sagen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rapunzel",
+      "felder": {
+        "tipps": "Das Rätsel nicht verraten. Wenn zwei getrennte Räume vorhanden sind, geht das Spiel leichter."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rauber-und-kaufleute",
+      "felder": {
+        "tipps": "Vor dem Start klarstellen, dass Schlagen, Beißen und Zwicken verboten sind. Die Räuber halten die Kaufleute am besten nur vorsichtig an Händen oder Armen fest. Spielfeld abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rollende-munze",
+      "felder": {
+        "tipps": "Für die Münze eine 2-Euro-Münze nehmen, die gut rollt. Die Plane gemeinsam anheben und senken; zu Anfang langsam üben."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-rot-blau-tot",
+      "felder": {
+        "tipps": "Einen weichen Ball verwenden und nicht auf den Kopf zielen. Die Kreisgröße so wählen, dass der Ball gut zugespielt werden kann."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-ruppel-tuppel",
+      "felder": {
+        "tipps": "Statt eines angesengten Korkens lieber einen Schminkstift oder Hautstift nehmen, der sich leicht abwaschen lässt. Alle sprechen die Sätze zuerst langsam."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-sardinli",
+      "felder": {
+        "tipps": "Rückkehrzeit und Spielgebiet vereinbaren; gefährliche Räume (Keller, Dachboden, Treppen) sperren. Gemeinsam in dasselbe Versteck zu gehen macht das Spiel leise und lustig."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schmuggeln",
+      "felder": {
+        "tipps": "Spielgebiet im Wald genau abstecken und Pfeife oder Signal für Abbruch vereinbaren. Die Schmuggelware nach dem Spiel vollständig einsammeln lassen; nicht vergraben oder liegenlassen. Gruppen: etwas mehr Schmuggler als Polizisten."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schubkarrenrennen",
+      "felder": {
+        "tipps": "Der Fahrer hält die Füße nicht zu hoch und fährt „sanft“. Auf ebenem, weichem Boden spielen, am besten auf Gras."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-schwebende-stange",
+      "felder": {
+        "tipps": "Die Stange nicht zu schwer wählen. Die Gruppe sollte nicht länger sein als die Stange."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-sockenraub",
+      "felder": {
+        "tipps": "Auf sauberem Boden ohne Hindernisse spielen. Außer der Regel, dass niemand verletzt wird, gibt es nur eine Regel; die Spielleitung legt vorab fest, was mit erbeuteten Socken geschieht. Es kann sein, dass Socken kaputtgehen – vorher darauf hinweisen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-stille-post",
+      "felder": {
+        "tipps": "Ein schwieriges Wort oder einen kurzen Satz wählen, der sich unterwegs gut verändert. Nicht nachfragen lassen, wenn man das Wort nicht versteht (auf Wunsch zwei Versuche erlauben). Am Ende Anfangsbegriff und Endbegriff gegenüberstellen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-streichholz-feuerwerk",
+      "felder": {
+        "tipps": "Nur im Freien oder auf feuerfester Unterlage abbrennen, ein Eimer Wasser oder Löschdecke bereit. Nur unter Aufsicht Erwachsener bzw. Älterer und nur mit Kindern, die sicher mit Streichhölzern umgehen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-telefax",
+      "felder": {
+        "tipps": "Das Rückenmalen nur zwischen Kindern machen, die sich vertraut sind; wer nicht möchte, malt auf die Handfläche. Zwischen den Personen eine bequeme Sitzposition mit etwas Abstand wählen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-teiler-7",
+      "felder": {
+        "tipps": "Das Ersatzwort (zum Beispiel „Teiler“) vorab festlegen und die Zahlenfolge zum Warmwerden einmal langsam durchgehen. Das Spiel lässt sich leicht mit einer anderen Ziffer variieren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-vampir",
+      "felder": {
+        "tipps": "Das „Beißen“ nur als leichtes Antippen an der Schulter spielen, nicht am Hals. Den Raum frei von Stolperfallen halten. Mit Augenbinden oder bei Dunkelheit sehr langsam bewegen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-versteinern",
+      "felder": {
+        "tipps": "Den Fänger (bei mehreren: alle Fänger) mit einem Band oder Halstuch kenntlich machen. Das Spielfeld deutlich abgrenzen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-vorstellung-mit-sussigkeiten",
+      "felder": {
+        "tipps": "Vorher nach Allergien fragen; Gummibärchen enthalten oft Gelatine, deshalb eine Alternative für vegetarisch lebende Kinder bereithalten. Die Süßigkeiten dürfen erst nach der Vorstellung gegessen werden."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-waschmaschine",
+      "felder": {
+        "tipps": "Der Spieler gibt vorher an, ob er sanft oder kräftiger „gewaschen“ werden möchte. Wer nicht durch die Waschmaschine gehen möchte, muss nicht. Nie unsanft berühren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-waschstrasse",
+      "felder": {
+        "tipps": "Die Person darf vorher sagen, ob sie durch die Waschstraße gehen möchte und wie sanft. Berührt wird immer sanft, niemals unsanft. Auch als Begrüßung oder Verabschiedung geeignet."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-welle-entspannungsspiel",
+      "felder": {
+        "tipps": "Die „Bank“ stützt sich fest mit den Händen ab und bewegt den Rücken nur leicht auf und ab. Wer gerade nicht möchte, setzt aus. Bei jüngeren Kindern nur kurz massieren lassen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-wer-bin-ich",
+      "felder": {
+        "tipps": "Die Begriffe vorher passend zur Gruppe wählen und die Kärtchen so anbringen, dass sie halten. Nichts Beleidigendes auf die Kärtchen schreiben."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-wolf-und-schafchen",
+      "felder": {
+        "tipps": "Vorn in der Kette stehen die älteren und stärkeren Kinder. Die Kette hält an Schultern oder Hüften, nicht an der Kleidung. Der Wolf darf nur das hinterste Schäfchen berühren."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
+    },
+    {
+      "id": "sw-zipp-zapp-zopp",
+      "felder": {
+        "tipps": "Zuerst langsam spielen, bis alle Wörter und Zeigerichtung sicher sind. Für Fehler ein gemeinsames „Fehler“-Zeichen verwenden und niemanden bloßstellen."
+      },
+      "grund": "Kern-Spiel ohne Tipps für die Spielleitung. Kurze, praktische Hinweise aus Ablauf und Sicherheitsfragen der Beschreibung ergänzt (Absprachen, Spielfeld, Material); keine neuen Regeln erfunden."
     }
   ],
   "keine_dublette": [
